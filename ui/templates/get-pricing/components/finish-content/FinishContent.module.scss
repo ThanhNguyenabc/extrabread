@@ -1,0 +1,25 @@
+.finishContent {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  align-items: center;
+  max-width: 600px;
+  padding: 64px;
+  margin-inline: auto;
+  text-align: center;
+  background-color: $bg-white;
+
+  @include sp {
+    row-gap: 8px;
+    margin-top: -24px;
+  }
+
+  a {
+    color: $green-600;
+  }
+
+  .finishContentContact {
+    flex-direction: column !important;
+    margin-top: 16px;
+  }
+}

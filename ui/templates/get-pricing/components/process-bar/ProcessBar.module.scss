@@ -1,0 +1,103 @@
+.processBar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2px;
+  background-color: $neutral-0;
+
+  @include sp {
+    transform: translateY(-1px);
+  }
+
+  &-item {
+    padding: 14px 8px;
+    border-top: 4px solid $neutral-300;
+
+    @include sp {
+      padding: 0;
+      border-width: 8px;
+    }
+
+    span {
+      font-size: 14px;
+      color: $neutral-700;
+
+      @include tablet-down {
+        font-size: 12px;
+      }
+
+      @include sp {
+        display: none;
+      }
+    }
+
+    &--active {
+      border-color: $green-500;
+    }
+
+    &-text--active {
+      font-weight: 600;
+      color: $green-600 !important;
+    }
+  }
+
+  &-header {
+    @include sp {
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $bg-white;
+      box-shadow: 0 1px 4px rgb(0 0 0 / 15%);
+
+      span {
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 28px;
+      }
+    }
+  }
+
+  &-btn {
+    &--active {
+      background-color: $neutral-100;
+      box-shadow: 0 4px 4px $neutral-100;
+    }
+  }
+
+  &-popup {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgb(0 0 0 / 30%);
+  }
+
+  &-steps {
+    background-color: $neutral-100;
+  }
+
+  &-step {
+    padding: 18px 8px;
+
+    &--pass {
+      span {
+        font-weight: 600;
+      }
+    }
+
+    &--active {
+      background-color: $green-100;
+
+      span {
+        color: $green-600 !important;
+      }
+    }
+
+    &--inactive {
+      span {
+        color: $neutral-400 !important;
+      }
+    }
+  }
+}

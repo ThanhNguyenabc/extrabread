@@ -1,0 +1,223 @@
+.testimonials {
+  overflow: hidden;
+
+  @include sp {
+    h4 {
+      display: none;
+    }
+  }
+
+  &-slide {
+    &-wrapper {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr;
+      margin-top: $spacing-6;
+      overflow: hidden;
+      border-radius: 24px;
+
+      @include tablet-down {
+        height: 444px;
+        margin-top: $spacing-4;
+      }
+
+      @include sp {
+        grid-template-columns: 1fr;
+        height: unset;
+        margin-top: 0;
+      }
+    }
+
+    &-left-block {
+      display: inline-flex;
+      flex-direction: column;
+      padding: $spacing-6;
+      background-color: $neutral-200;
+
+      :global {
+        .ant-rate-star-full {
+          margin-inline-end: 4px !important;
+        }
+      }
+
+      @include tablet-down {
+        padding: $spacing-3;
+      }
+
+      @include sp {
+        padding: $spacing-2;
+      }
+    }
+
+    &_link {
+      margin-top: $spacing-3;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 28px;
+      color: $info-base !important;
+
+      @include tablet-down {
+        margin-top: $spacing-2;
+        font-size: 16px;
+      }
+    }
+
+    &_quote {
+      margin-top: $spacing-3;
+      font-size: 24px;
+
+      @include tablet-down {
+        margin-top: $spacing-2;
+        font-size: 18px;
+      }
+    }
+
+    &_author {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-top: auto;
+
+      @include tablet-down {
+        align-items: flex-end;
+      }
+
+      @include sp {
+        margin-top: $spacing-4;
+      }
+    }
+
+    &_author-name {
+      font-size: 18px;
+
+      @include sp {
+        font-size: 16px;
+      }
+    }
+
+    &-right-block {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        @include sp {
+          height: 350px;
+          border-bottom-right-radius: 24px;
+          border-bottom-left-radius: 24px;
+        }
+      }
+    }
+  }
+
+  &-rate-slide {
+    margin-top: 40px;
+    margin-right: -120px;
+
+    @include sp {
+      margin-top: 0;
+      margin-right: 0;
+    }
+
+    :global {
+      .slick-list {
+        height: 223px;
+        padding: 0 20% 0 0 !important;
+        overflow: hidden;
+
+        @include sp {
+          height: auto;
+        }
+      }
+
+      .slick-slide {
+        @include tablet-up {
+          width: 304px !important;
+          pointer-events: fill !important;
+        }
+      }
+
+      @include sp {
+        .slick-dots-bottom {
+          top: 250px;
+
+          li,
+          button {
+            width: 8px !important;
+            height: 8px !important;
+            background-color: $neutral-300 !important;
+            border-radius: 10px !important;
+          }
+
+          li.slick-active > button {
+            background-color: #00b57a !important;
+          }
+        }
+      }
+    }
+  }
+
+  &_rate-item {
+    width: 280px !important;
+    margin-right: 24px;
+
+    @include sp-up {
+      padding: 36px 20px;
+      border: 1px solid $neutral-300;
+    }
+
+    @include sp {
+      width: 100% !important;
+      padding-block: 20px;
+      border-top: 1px solid $neutral-300;
+      border-left: 1px solid $neutral-0;
+    }
+
+    &_inner {
+      display: flex !important;
+      flex-direction: column;
+      row-gap: 8px;
+    }
+
+    &_top {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &_divider {
+      width: 60px;
+      height: 1px;
+      background-color: $neutral-300;
+    }
+  }
+
+  &_rate-item--first {
+    display: flex !important;
+    flex-direction: column;
+    row-gap: 8px;
+    align-items: center;
+    justify-content: center;
+    padding: 36.5px 20px;
+    text-align: center;
+
+    @include sp-up {
+      width: 280px !important;
+    }
+
+    @include sp {
+      padding: 0 0 16px;
+    }
+  }
+
+  &_sp-slide-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+
+    button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

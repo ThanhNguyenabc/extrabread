@@ -1,0 +1,28 @@
+.breadcrumb {
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+  padding: 8px 0;
+  list-style: none;
+
+  @include container;
+
+  @include tablet-down {
+    padding-inline: $spacing-5;
+  }
+
+  @include sp {
+    padding: 6px $spacing-2;
+  }
+
+  li {
+    font-size: 14px;
+    color: $neutral-400;
+    text-transform: capitalize;
+
+    &:last-child {
+      font-weight: 600;
+      color: $neutral-900 !important;
+    }
+  }
+}

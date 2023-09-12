@@ -1,0 +1,117 @@
+.priceSlider {
+  width: 580px;
+  padding: $spacing-4;
+  border: 1px solid $neutral-300;
+  border-radius: $radius-md;
+  box-shadow: $shadow-lg;
+
+  @include tablet-down {
+    width: 608px;
+  }
+
+  @include sp {
+    width: 100%;
+    padding: $spacing-2;
+  }
+
+  &_slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 21px;
+
+    h3 {
+      line-height: 1;
+    }
+
+    @include tablet-down {
+      margin-top: 12px;
+    }
+
+    @include sp {
+      margin-top: 0;
+
+      :global {
+        .flex {
+          flex-direction: column-reverse !important;
+          padding-inline: 5rem;
+        }
+      }
+    }
+  }
+
+  &_slider {
+    padding: 18px 0 20px;
+    margin: 40px 0 0;
+
+    @include sp {
+      margin-top: 24px;
+    }
+
+    :global {
+      .ant-slider-handle {
+        width: 40px;
+        height: 40px;
+        background: url('/images/color-icons/slider-track-green.svg');
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        box-shadow: $shadow-md;
+
+        &:after,
+        &:before {
+          display: none;
+        }
+      }
+
+      .ant-slider-track,
+      .ant-slider-rail {
+        height: 8px;
+      }
+
+      .ant-slider-mark {
+        transform: translateY(34px);
+
+        .ant-slider-mark-text {
+          font-size: 14px;
+          line-height: 20px;
+          color: $neutral-400;
+
+          &:last-child {
+            transform: translateX(-100%) !important;
+          }
+
+          &:nth-child(1) {
+            margin-left: 8px;
+          }
+
+          &:nth-child(2) {
+            margin-left: 18px;
+          }
+
+          &:nth-child(3) {
+            margin-left: 20px;
+          }
+
+          &:nth-child(4) {
+            display: none;
+          }
+        }
+      }
+
+      .ant-slider-step {
+        transform: translateY(16px);
+
+        .ant-slider-dot {
+          width: 2px;
+          background-color: $bg-white;
+          border: none;
+          border-radius: 0;
+
+          &:last-child,
+          &:first-child {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

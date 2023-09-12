@@ -1,0 +1,115 @@
+.solution-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+
+  @include tablet-down {
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    h5 {
+      font-size: 30px;
+    }
+  }
+
+  @include sp {
+    row-gap: 16px;
+  }
+
+  img {
+    width: 480px;
+    height: auto;
+
+    @include tablet {
+      justify-self: center;
+      width: 100%;
+      height: 577px;
+      object-fit: contain;
+    }
+
+    @include sp {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &--reversed {
+    img {
+      @include pc-stand-up {
+        order: 2;
+      }
+    }
+
+    text-align: start;
+
+    @include pc-stand-up {
+      grid-auto-flow: column dense;
+    }
+
+    @include sp {
+      grid-auto-flow: unset;
+    }
+  }
+
+  & + & {
+    margin-top: $spacing-10;
+
+    @include tablet-down {
+      margin-top: 64px;
+    }
+
+    @include sp {
+      margin-top: 40px;
+    }
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-4;
+
+    @include tablet-up {
+      padding-left: 48px;
+    }
+
+    @include tablet-down {
+      row-gap: $spacing-3;
+    }
+
+    @include sp {
+      row-gap: $spacing-2;
+
+      h5 {
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+  }
+
+  &_details {
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-2;
+
+    @include tablet-down {
+      row-gap: $spacing-1;
+    }
+  }
+
+  &_description {
+    display: block;
+    font-size: 18px;
+    color: $neutral-700;
+
+    @include sp {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &_button {
+    column-gap: $spacing-1;
+    align-self: start;
+    padding-inline: $spacing-2 !important;
+  }
+}

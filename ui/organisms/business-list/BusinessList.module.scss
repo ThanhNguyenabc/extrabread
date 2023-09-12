@@ -1,0 +1,58 @@
+.business-list {
+  visibility: visible;
+
+  $root: &;
+
+  &--2 {
+    #{$root}_items {
+      grid-template-columns: repeat(2, 1fr);
+
+      @include sp {
+        grid-template-columns: repeat(3, 240px);
+        overflow: auto;
+      }
+    }
+  }
+
+  &_items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-1;
+    margin-top: 16px;
+
+    @include sp {
+      grid-template-columns: repeat(3, 240px);
+      overflow: auto;
+    }
+
+    @include tablet-down {
+      margin-top: 12px;
+    }
+  }
+
+  &_item {
+    display: inline-flex;
+    flex-direction: column;
+    row-gap: $spacing-2;
+    padding: $spacing-4;
+    background-color: $neutral-100;
+    border-radius: $radius-md;
+
+    @include tablet-down {
+      row-gap: 12px;
+      padding: $spacing-2;
+    }
+
+    @include sp {
+      row-gap: 8px;
+
+      & > span {
+        line-height: 24px !important;
+      }
+
+      strong {
+        font-size: 16px !important;
+      }
+    }
+  }
+}

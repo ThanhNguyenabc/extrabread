@@ -1,0 +1,92 @@
+.product-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+
+  @include tablet-down {
+    gap: 32px;
+  }
+
+  @include sp {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+
+    @include tablet-down {
+      width: auto;
+      height: 244px;
+      margin-inline: auto;
+    }
+  }
+
+  &--reversed {
+    img {
+      order: 2;
+
+      @include sp {
+        order: 0;
+      }
+    }
+
+    grid-auto-flow: column dense;
+    text-align: start;
+
+    @include sp {
+      grid-auto-flow: unset;
+    }
+  }
+
+  & + & {
+    margin-top: 110px;
+
+    @include tablet-down {
+      margin-top: 64px;
+    }
+
+    @include sp {
+      margin-top: 24px;
+    }
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_details {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  &_description {
+    display: block;
+    margin-top: $spacing-3;
+    margin-bottom: $spacing-5;
+    font-size: 18px;
+    color: $neutral-700;
+
+    @include tablet-down {
+      margin-top: $spacing-2;
+      margin-bottom: $spacing-3;
+      font-size: 16px;
+    }
+
+    @include sp {
+      margin-top: $spacing-1;
+      line-height: 24px;
+    }
+  }
+
+  .checked-icon {
+    @include tablet-up {
+      width: 26.67px;
+      height: 26.67px;
+    }
+  }
+}

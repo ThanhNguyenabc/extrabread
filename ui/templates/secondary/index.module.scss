@@ -1,0 +1,331 @@
+.contact {
+  overflow: hidden;
+
+  :global {
+    .ant-divider {
+      margin: 0;
+      background-color: $neutral-300;
+
+      @include tablet-down {
+        width: 200%;
+        margin-left: -50%;
+      }
+    }
+  }
+
+  &_inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-10;
+
+    @include tablet-down {
+      row-gap: 56px;
+    }
+
+    @include sp {
+      row-gap: 40px;
+    }
+  }
+
+  &_info-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: $spacing-4;
+
+    @include tablet-down {
+      margin-top: -32px;
+    }
+
+    @include sp {
+      grid-template-columns: 1fr;
+      row-gap: $spacing-3;
+      margin-top: -16px;
+    }
+  }
+
+  &_info {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: $spacing-1;
+    transform-origin: top;
+
+    @include tablet-up {
+      justify-items: center;
+      text-align: center;
+    }
+
+    @include tablet {
+      row-gap: $spacing-2;
+
+      // span:nth-child(3) {
+      //   margin-bottom: -16px;
+      // }
+
+      a {
+        margin-top: auto;
+      }
+    }
+
+    @include sp {
+      grid-template-columns: 64px auto;
+      row-gap: 4px;
+      align-items: flex-start;
+      text-align: start;
+
+      img {
+        grid-row: 1 / 4;
+        grid-column: 1 / 2;
+        justify-self: self-start;
+        width: 40px;
+      }
+
+      & > div:first-of-type {
+        grid-row: 1 / 4;
+
+        & + span {
+          font-size: 18px;
+          line-height: 28px;
+
+          // & + span {
+          //   font-size: 14px;
+          //   line-height: 20px;
+          // }
+        }
+      }
+
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &_form {
+    @include container-tablet;
+
+    &-header {
+      text-align: center;
+
+      @include tablet-down {
+        h4 {
+          font-size: 48px;
+          line-height: 48px;
+        }
+      }
+
+      @include sp {
+        h4 {
+          font-size: 24px;
+          line-height: 32px;
+
+          & ~ span {
+            margin-top: 8px !important;
+            font-size: 16px !important;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+
+    @include sp {
+      button[type='submit'] {
+        display: block;
+        width: 100%;
+        margin-top: 16px !important;
+      }
+    }
+
+    &-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 32px;
+
+      @include sp {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+
+.faqs {
+  &_heading {
+    padding: 40px;
+    background-color: $green-100;
+  }
+
+  &_inner {
+    @include container-tablet;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-10;
+    padding: $spacing-10 0;
+
+    @include tablet-down {
+      padding-inline: 40px;
+    }
+
+    @include sp {
+      row-gap: $spacing-5;
+      padding: 40px 16px;
+
+      h5 {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+  }
+
+  &_segment {
+    margin-top: -40px;
+    text-align: center;
+  }
+
+  &_content-img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.privacy-policy {
+  display: block;
+
+  h2 {
+    margin-bottom: $spacing-4 !important;
+
+    @include tablet-down {
+      margin-bottom: $spacing-3 !important;
+    }
+  }
+
+  &_inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-6;
+
+    @include container-tablet;
+
+    :global {
+      .ant-typography:not(.heading) {
+        font-size: 18px;
+        color: $neutral-700;
+
+        @include tablet-down {
+          line-height: 28px;
+        }
+
+        @include sp {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+
+      .heading {
+        @include tablet-down {
+          line-height: 32px;
+        }
+
+        @include sp {
+          font-size: 18px;
+          line-height: 28px;
+        }
+      }
+    }
+
+    a {
+      color: #095acb;
+    }
+
+    & > div:first-of-type {
+      @include tablet-down {
+        margin-bottom: 8px;
+      }
+
+      @include sp {
+        margin-bottom: 16px;
+      }
+    }
+
+    @include sp {
+      row-gap: $spacing-3;
+    }
+  }
+
+  &_right-list {
+    font-size: 18px;
+    line-height: 28px;
+
+    li {
+      color: $neutral-700;
+    }
+
+    @include sp {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+.terms-of-service {
+  display: block;
+
+  h2 {
+    margin-bottom: 48px !important;
+
+    @include tablet-down {
+      margin-bottom: $spacing-3 !important;
+    }
+  }
+
+  &_inner {
+    @include container-tablet;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-6;
+
+    @include tablet-down {
+      row-gap: $spacing-4;
+    }
+
+    @include sp {
+      row-gap: $spacing-6;
+    }
+
+    :global {
+      .ant-typography:not(.heading) {
+        font-size: 18px;
+        color: $neutral-700;
+
+        @include tablet-down {
+          line-height: 28px;
+        }
+
+        @include sp {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+
+      .heading {
+        @include tablet-down {
+          line-height: 32px;
+        }
+
+        @include sp {
+          font-size: 18px;
+          line-height: 28px;
+        }
+      }
+    }
+
+    & > div:first-of-type {
+      @include tablet-down {
+        margin-bottom: 24px;
+      }
+
+      @include sp {
+        margin-bottom: -8px;
+      }
+    }
+  }
+}

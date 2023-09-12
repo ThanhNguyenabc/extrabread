@@ -1,0 +1,271 @@
+.header {
+  position: relative;
+
+  &:after {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100vw;
+    height: 1px;
+    content: '';
+    background-color: $neutral-200;
+  }
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    height: $header-height-pc !important;
+    padding-inline: $spacing-3 !important;
+    line-height: $header-height-pc !important;
+    background-color: $bg-white !important;
+
+    @include tablet-down {
+      height: $header-height-tablet !important;
+      padding-inline: $spacing-2 !important;
+      line-height: $header-height-tablet !important;
+    }
+
+    @include sp {
+      height: $header-height-mobile !important;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    :global {
+      .ant-menu-overflow-item {
+        display: inline-flex !important;
+        flex-direction: row-reverse !important;
+        align-items: center !important;
+      }
+    }
+
+    &_menu-icon {
+      width: 28px !important;
+    }
+  }
+
+  &-right-content {
+    display: inline-flex;
+    flex-shrink: 0;
+    column-gap: 16px;
+
+    i {
+      width: 20px;
+    }
+  }
+
+  &-logo {
+    margin-right: 40px;
+
+    img {
+      height: 32px;
+    }
+
+    @include pc {
+      margin-top: -2px;
+    }
+
+    @include tablet-down {
+      margin-right: auto;
+      transform: translateX(-10px) scale(calc(24 / 32));
+    }
+  }
+
+  &-flag {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px;
+    cursor: pointer;
+  }
+
+  &_flags-mb {
+    display: flex;
+    column-gap: 16px;
+    margin-bottom: 16px;
+
+    button {
+      display: flex;
+      column-gap: 4px;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+    }
+
+    &--active {
+      background-color: $neutral-100;
+    }
+  }
+
+  &-phone {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 0;
+
+    & > div {
+      @include sp {
+        justify-content: end;
+      }
+    }
+  }
+
+  &-menu-wrapper {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &-subMenu {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: fill-available;
+
+    @include tablet {
+      padding-inline: 40px;
+    }
+
+    @include sp {
+      top: 56px;
+      bottom: calc(env(safe-area-inset-bottom) + 96px);
+
+      & > section {
+        height: 100%;
+        padding-top: $spacing-2;
+        padding-bottom: calc(env(safe-area-inset-bottom) + 16px);
+        overflow: auto;
+      }
+    }
+
+    & > div:first-of-type {
+      display: flex;
+      column-gap: $spacing-2;
+      align-items: flex-start;
+      padding-block: 14.5px;
+
+      @include sp {
+        padding-block: 12px;
+      }
+    }
+
+    &--enter {
+      transform: translateX(100%);
+    }
+
+    &--enter-active {
+      transition: transform 350ms ease-in-out;
+      transform: translateX(0%);
+    }
+
+    &--exit {
+      transform: translateX(0%);
+    }
+
+    &--exit-active {
+      transition: transform 350ms ease-in-out;
+      transform: translateX(100%);
+    }
+
+    & > div > span:first-of-type {
+      font-size: 18px !important;
+    }
+  }
+
+  &-mainMenu {
+    &--enter {
+      transform: translateX(-100%);
+    }
+
+    &--enter-active {
+      transition: transform 350ms ease-in-out;
+      transform: translateX(0%);
+    }
+
+    &--exit {
+      transform: translateX(0%);
+    }
+
+    &--exit-active {
+      transition: transform 350ms ease-in-out;
+      transform: translateX(-100%);
+    }
+  }
+
+  &-drawer {
+    :global {
+      .ant-drawer-body {
+        position: relative !important;
+        padding: 0 $spacing-5 $spacing-5 !important;
+        overflow: hidden !important;
+
+        @include sp {
+          padding: $spacing-2 !important;
+
+          & > div {
+            position: relative !important;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    footer {
+      display: none;
+      color: $neutral-400;
+
+      @include sp {
+        display: block;
+        margin-top: auto;
+      }
+    }
+  }
+
+  &-nav {
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-1;
+    margin-top: $spacing-3;
+
+    &_logo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px 13px;
+      margin-inline: -16px;
+      border-bottom: 1px solid $neutral-200;
+
+      img {
+        height: 30px;
+      }
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    @include sp {
+      height: calc(100% - 56px);
+      margin-top: $spacing-2;
+    }
+  }
+
+  &-nav-item {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 12px;
+    padding-inline: 0 !important;
+    text-align: start;
+
+    @include sp {
+      strong {
+        font-size: 16px;
+      }
+    }
+  }
+}

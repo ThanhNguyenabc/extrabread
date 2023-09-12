@@ -1,0 +1,151 @@
+.equipment-info {
+  :global {
+    .ant-col-sm-24 {
+      @include sp {
+        width: 100%;
+      }
+    }
+  }
+
+  @include sp {
+    padding-inline: 8px;
+    margin-top: -16px;
+  }
+
+  &_text-logo {
+    display: flex;
+    column-gap: 24px;
+    margin-bottom: $spacing-6;
+
+    @include tablet-down {
+      column-gap: 40px;
+    }
+
+    @include sp {
+      flex-direction: column;
+      row-gap: 24px;
+      margin-bottom: $spacing-5;
+    }
+  }
+
+  &_text {
+    display: inline-flex;
+    flex-direction: column;
+
+    @include tablet-up {
+      width: calc(100% / 3 * 2);
+      margin-left: auto;
+    }
+
+    @include sp {
+      span {
+        font-size: 14px !important;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &_logo {
+    @include sp {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    img {
+      width: 240px;
+      height: 120px;
+      margin-bottom: 8px;
+      object-fit: contain;
+      object-position: left;
+
+      @include tablet-down {
+        height: 80px;
+      }
+
+      @include sp {
+        width: auto;
+        height: 56px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &_os {
+    padding: 10px;
+    border: 1px solid $neutral-300;
+    border-radius: 50%;
+
+    @include tablet-down {
+      padding: 5.5px;
+
+      i {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &_pros,
+  &_cons {
+    height: 100%;
+    padding: $spacing-2 $spacing-3;
+    background-color: $neutral-100;
+    border-left: 4px solid transparent;
+    border-radius: 4px;
+
+    @include tablet-down {
+      padding: $spacing-2;
+    }
+
+    @include sp {
+      padding: $spacing-2 $spacing-3;
+    }
+
+    & > span {
+      display: block;
+      margin-bottom: $spacing-1;
+
+      @include sp {
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+  }
+
+  &_pros {
+    border-color: $green-500;
+
+    & > span {
+      color: $green-600;
+    }
+  }
+
+  &_cons {
+    border-color: $red-600;
+
+    & > span {
+      color: $red-700;
+    }
+  }
+
+  &_item {
+    i {
+      width: 32px;
+      height: 32px;
+    }
+
+    @include sp {
+      column-gap: 8px !important;
+
+      i {
+        width: 20px;
+        height: 20px;
+      }
+
+      span {
+        font-size: 14px !important;
+      }
+    }
+  }
+}

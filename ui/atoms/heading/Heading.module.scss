@@ -1,0 +1,64 @@
+.heading {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+
+  &--centered {
+    max-width: $container-tablet;
+    margin: 0 auto;
+
+    // How a Credit Card Terminal works
+    // @include tablet-up {
+    text-align: center;
+  }
+
+  &--pc {
+    max-width: $container-pc;
+  }
+
+  &--sm {
+    font-size: 1.5rem;
+  }
+
+  &--xs {
+    font-size: 1.25rem !important;
+  }
+}
+
+.section-heading {
+  @include container-tablet;
+
+  letter-spacing: -0.02em;
+
+  &--centered {
+    @include tablet-up {
+      text-align: center;
+    }
+  }
+
+  &--centerSp {
+    @include sp {
+      text-align: center;
+    }
+  }
+
+  &--noAlignLeft {
+    @include tablet-down {
+      text-align: center;
+    }
+  }
+
+  & > span {
+    display: block;
+    margin-top: 24px;
+
+    @include tablet-down {
+      // changed by Our secret sauce to your success.
+      margin-top: 16px;
+    }
+
+    @include sp {
+      // changed by Our secret sauce to your success.
+      margin-top: 8px;
+    }
+  }
+}

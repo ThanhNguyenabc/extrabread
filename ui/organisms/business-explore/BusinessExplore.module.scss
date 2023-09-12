@@ -1,0 +1,105 @@
+.business-explore {
+  display: block;
+
+  @include sp {
+    margin-right: -16px;
+    overflow: hidden;
+  }
+
+  h4 {
+    @include tablet-down {
+      text-align: start;
+    }
+  }
+
+  &_card {
+    position: relative;
+    overflow: hidden;
+    border-radius: $radius-md;
+
+    @include sp {
+      width: 160px;
+      height: 200px;
+    }
+
+    &-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 56px;
+      margin-bottom: $spacing-4;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 28px;
+      color: $neutral-0;
+      text-align: center;
+
+      @include tablet-down {
+        padding-inline: $spacing-3;
+        margin-inline: auto;
+        margin-bottom: $spacing-2;
+        font-size: 18px !important;
+        font-weight: 600;
+      }
+    }
+
+    &-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+
+      @include tablet-down {
+        height: 250px;
+      }
+
+      @include sp {
+        height: inherit;
+      }
+    }
+
+    &-backdrop {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 92px;
+      background: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 98%) 100%);
+    }
+  }
+
+  &_grid {
+    @include tablet-up {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      column-gap: 32px;
+      align-items: center;
+      margin-top: 32px;
+    }
+
+    @include tablet-down {
+      display: flex;
+      column-gap: 24px;
+      margin-top: 24px;
+      margin-right: -40px;
+      overflow: auto;
+    }
+
+    @include tablet {
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 24px;
+
+      & > div {
+        flex: 0 0 208px;
+      }
+    }
+
+    @include sp {
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+  }
+}

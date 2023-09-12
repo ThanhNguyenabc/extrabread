@@ -1,0 +1,192 @@
+.pricing {
+  margin-top: $spacing-10;
+
+  h3 {
+    @include tablet-down {
+      text-align: center;
+    }
+  }
+
+  h5 {
+    @include tablet-down {
+      font-size: 18px;
+    }
+  }
+
+  strong {
+    @include tablet-down {
+      font-size: 14px;
+    }
+  }
+
+  &_inner {
+    display: flex;
+    column-gap: $spacing-2;
+    align-items: center;
+    margin-top: $spacing-6;
+
+    @include tablet-down {
+      margin-top: $spacing-5;
+    }
+
+    @include sp {
+      flex-direction: column;
+      row-gap: 24px;
+      margin-top: $spacing-3;
+    }
+  }
+
+  &_left-block,
+  &_right-block {
+    flex: 1;
+    align-self: stretch;
+    padding: $spacing-4;
+    text-align: center;
+    border-radius: $radius-md;
+
+    @include tablet-down {
+      padding: $spacing-3;
+    }
+  }
+
+  &_left-block {
+    background-color: $neutral-100;
+
+    @include tablet-down {
+      padding-bottom: 12px;
+    }
+
+    &_heading {
+      color: $black;
+
+      @include tablet-down {
+        font-size: 18px !important;
+      }
+
+      @include sp {
+        font-size: 16px !important;
+        font-weight: 600;
+      }
+    }
+
+    &_items {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: $spacing-1;
+
+      @include sp {
+        margin-top: 0;
+      }
+    }
+
+    &_item {
+      display: inline-flex;
+      flex-direction: column;
+      row-gap: $spacing-1;
+      justify-content: center;
+      padding: $spacing-2 0;
+
+      @include sp {
+        row-gap: 4px;
+      }
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid #d9d9d9;
+      }
+
+      &-price {
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 36px;
+
+        @include tablet-down {
+          font-size: 24px;
+        }
+
+        & + span {
+          @include tablet-down {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    & ~ span {
+      @include sp {
+        font-size: 16px !important;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &_right-block {
+    background-color: $bg-dark;
+
+    :global {
+      .ant-typography {
+        color: $neutral-0;
+      }
+    }
+
+    h5 {
+      @include sp {
+        font-weight: 600 !important;
+      }
+    }
+
+    &_inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    &_text {
+      max-width: 374px;
+      margin: 0 auto;
+    }
+
+    &_tag {
+      margin-top: -1 * $spacing-4 - 10px;
+      margin-bottom: 18px;
+
+      @include tablet-down {
+        margin-top: -1 * $spacing-4 - 4px;
+      }
+
+      @include sp {
+        margin-top: -1 * $spacing-4 - 2px;
+      }
+
+      span {
+        padding: 4px $spacing-2;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        background-color: $light-green-secondary;
+        border-radius: $spacing-2;
+
+        @include tablet-down {
+          font-size: 12px;
+        }
+      }
+    }
+
+    &_price {
+      font-size: 72px;
+      font-weight: 800;
+      line-height: 72px;
+
+      @include tablet-down {
+        font-size: 60px;
+      }
+
+      @include sp {
+        padding-block: 48px;
+        font-size: 48px;
+        line-height: 48px;
+      }
+    }
+  }
+}

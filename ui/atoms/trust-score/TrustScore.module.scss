@@ -1,0 +1,23 @@
+.trustScore {
+  display: inline-flex;
+  flex-direction: column;
+  row-gap: 4px;
+
+  :global {
+    margin-top: 16px;
+
+    @include sp {
+      margin-top: 8px;
+
+      .flex {
+        justify-content: center;
+      }
+    }
+  }
+
+  &-text {
+    font-size: 14px;
+    line-height: 20px;
+    color: $neutral-700;
+  }
+}

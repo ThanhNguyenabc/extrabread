@@ -1,0 +1,56 @@
+.howYaModal {
+  :global {
+    .ant-modal-mask {
+      background-color: rgba($color: $green-600, $alpha: 60%);
+    }
+
+    .ant-modal-content {
+      padding: 40px 120px 40px 40px;
+
+      @include sp {
+        padding: 24px;
+      }
+    }
+  }
+
+  &_inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+
+    ul {
+      padding-inline-start: 24px;
+      margin: 0;
+    }
+  }
+
+  &_heading {
+    margin-top: 0 !important;
+    line-height: 1.2 !important;
+
+    @include sp {
+      padding-right: 120px;
+      font-size: 24px !important;
+    }
+  }
+
+  &_bubble {
+    position: absolute;
+    top: -67px;
+    right: -57px;
+
+    @include sp {
+      top: -71px;
+      right: 0;
+      width: 163px;
+      height: auto;
+    }
+  }
+
+  button {
+    @include sp-up {
+      align-self: flex-start;
+    }
+  }
+}

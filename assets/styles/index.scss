@@ -1,0 +1,20 @@
+@import './utils';
+
+body {
+  min-height: fill-available;
+  overflow-x: hidden;
+  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+  font-family: Inter;
+
+  ::selection {
+    background-color: $green-500;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.ant-typography[color='white'] {
+  color: $neutral-0 !important;
+}

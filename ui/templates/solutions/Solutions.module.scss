@@ -1,0 +1,146 @@
+.solutions {
+  &_segment {
+    text-align: center;
+  }
+
+  &_pricing-button {
+    @include tablet {
+      padding-inline: 100px !important;
+    }
+
+    @include sp {
+      margin-top: 8px;
+    }
+  }
+
+  &_collapse {
+    max-width: 768px;
+    margin: 80px auto 0;
+
+    @include tablet-down {
+      margin-top: $spacing-5;
+    }
+
+    @include sp {
+      margin-top: $spacing-3;
+    }
+
+    :global {
+      .ant-collapse-header {
+        padding: 26px 0 !important;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 28px;
+        border-top: 1px solid $neutral-300;
+
+        @include tablet-down {
+          padding: 24px 0 !important;
+        }
+
+        @include sp {
+          padding: 16px 0 !important;
+        }
+      }
+    }
+  }
+
+  &_features {
+    margin-top: $spacing-10;
+
+    @include tablet-down {
+      margin-top: 56px;
+    }
+
+    @include sp {
+      margin-top: $spacing-5;
+    }
+  }
+
+  &_info {
+    @include container-tablet;
+
+    span {
+      font-size: 36px;
+      font-weight: 800;
+      line-height: $spacing-5;
+
+      // Not for solution
+      // color: $neutral-700;
+
+      letter-spacing: -0.02em;
+
+      &[color='green'] {
+        color: $green-500;
+      }
+
+      @include tablet-down {
+        font-size: 30px;
+        line-height: 36px;
+      }
+
+      @include sp {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+  }
+
+  &_highlight {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: $spacing-10;
+    align-items: center;
+    padding: $spacing-10;
+    background-color: $neutral-900;
+    border-radius: $radius-md;
+
+    @include tablet-down {
+      column-gap: $spacing-4;
+      padding: $spacing-3;
+    }
+
+    @include sp {
+      grid-template-columns: 1fr;
+    }
+
+    &-heading {
+      margin-bottom: $spacing-3 !important;
+
+      @include tablet-down {
+        margin-bottom: $spacing-2 !important;
+        font-size: 36px !important;
+      }
+
+      @include sp {
+        margin-bottom: $spacing-1 !important;
+        font-size: 18px !important;
+        line-height: 28px !important;
+      }
+    }
+
+    &-description {
+      font-size: 18px;
+      color: $neutral-300;
+
+      @include sp {
+        display: block;
+        margin-bottom: $spacing-3;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      // @include tablet-down {
+      //   font-size: 16px;
+      // }
+    }
+  }
+
+  &_faq-button {
+    margin-top: 40px;
+    text-align: center;
+
+    @include sp {
+      margin-top: 0;
+    }
+  }
+}

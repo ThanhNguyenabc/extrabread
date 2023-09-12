@@ -1,0 +1,107 @@
+/* stylelint-disable scss/dollar-variable-pattern */
+@use 'sass:string';
+
+@mixin pc-up {
+  @media (min-width: $breakpoint-pc) {
+    @content;
+  }
+}
+
+@mixin container {
+  max-width: $container-pc;
+  margin: 0 auto;
+}
+
+@mixin container-tablet {
+  max-width: $container-tablet;
+  margin: 0 auto;
+}
+
+@mixin pc-stand-up {
+  @media (min-width: $breakpoint-stand) {
+    @content;
+  }
+}
+
+@mixin pc-stand {
+  @media (min-width: $breakpoint-stand) and (max-width: #{$breakpoint-pc - $delta}) {
+    @content;
+  }
+}
+
+@mixin pc-stand-down {
+  @media (min-width: $breakpoint-sp) and (max-width: #{$breakpoint-stand - $delta}) {
+    @content;
+  }
+}
+
+@mixin pc-down {
+  @media (max-width: #{$breakpoint-pc - $delta}) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media (min-width: $breakpoint-pc - $delta) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: $breakpoint-tb) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $breakpoint-sp) and (max-width: #{$breakpoint-tb - $delta}) {
+    @content;
+  }
+}
+
+@mixin tablet-down {
+  @media (max-width: #{$breakpoint-tb - $delta}) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media (max-width: #{$breakpoint-sp - $delta}) {
+    @content;
+  }
+}
+
+@mixin sp-up {
+  @media (min-width: #{$breakpoint-sp - $delta}) {
+    @content;
+  }
+}
+
+@mixin hover() {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin line-clamp($lineCount: 1) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lineCount;
+}
+
+@function calculate-type-offset($lh, $fontSize, $descenderHeightScale) {
+  $lineHeightScale: $lh / $fontSize;
+
+  @return ($lineHeightScale - 1) / 2 + $descenderHeightScale;
+}
+
+@mixin hover-border {
+  transition: border-color 0.3s ease-in-out;
+
+  @include hover {
+    border-color: $green-500;
+  }
+}

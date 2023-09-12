@@ -1,0 +1,33 @@
+.collapse {
+  margin-top: 40px;
+
+  @include tablet-down {
+    margin-top: 24px;
+  }
+
+  :global {
+    .ant-collapse-header {
+      padding: $spacing-3 0 $spacing-2 !important;
+      border-top: 1px solid $neutral-300;
+
+      .ant-collapse-header-text {
+        font-size: 18px;
+        font-weight: 600;
+
+        @include sp {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+
+    .ant-collapse-content-box {
+      padding: 0 $spacing-6 $spacing-3 0 !important;
+      color: $neutral-700;
+
+      @include sp {
+        padding: 0 $spacing-4 $spacing-3 0 !important;
+      }
+    }
+  }
+}

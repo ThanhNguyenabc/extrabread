@@ -1,0 +1,90 @@
+.additionalInfo {
+  margin-top: 40px;
+  background-color: $bg-white;
+
+  $root: &;
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    #{$root}_checkbox-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 32px;
+      align-items: flex-start;
+      text-align: start;
+
+      @include tablet-down {
+        grid-template-columns: 1fr 240px;
+      }
+
+      @include sp {
+        grid-template-columns: 1fr;
+        row-gap: 8px;
+      }
+
+      label {
+        font-size: 16px !important;
+        font-weight: 600;
+        line-height: 24px;
+      }
+
+      :global {
+        .ant-radio-group {
+          label {
+            font-size: 14px !important;
+            font-weight: 400;
+          }
+        }
+      }
+
+      #{$root}_radio {
+        display: flex;
+
+        &:not(:first-child) {
+          margin-top: 16px;
+        }
+      }
+    }
+
+    &_button {
+      @include tablet-up {
+        text-align: right;
+      }
+
+      button {
+        padding-inline: 72px !important;
+
+        @include sp {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &_tooltip {
+    max-width: 312px;
+    font-size: 12px;
+    line-height: 18px;
+
+    @include sp {
+      max-width: 276px;
+    }
+
+    :global {
+      .ant-tooltip-inner {
+        padding: 8px;
+      }
+    }
+  }
+
+  &_numberInput {
+    :global {
+      .ant-input-number-handler-wrap {
+        width: 40px;
+      }
+    }
+  }
+}

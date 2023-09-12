@@ -1,0 +1,400 @@
+/* stylelint-disable no-descending-specificity */
+@mixin common-css {
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 0 0 2px $neutral-100;
+  transition: all 0.3s ease-in-out;
+
+  @include hover {
+    background-color: $bg-white;
+    box-shadow: 0 0 0 2px $green-500;
+  }
+}
+
+.navigation {
+  margin-right: auto;
+
+  @include tablet-down {
+    display: none;
+  }
+
+  :global {
+    .ant-menu-horizontal {
+      border-bottom: 0;
+    }
+
+    .ant-menu-title-content {
+      font-weight: 600;
+      color: $neutral-700;
+    }
+
+    .ant-menu-submenu {
+      padding-inline: 0;
+      margin-right: 24px;
+
+      &:after {
+        inset-inline: 0 !important;
+        border-bottom-width: 4px !important;
+      }
+
+      @include hover {
+        color: $green-500 !important;
+
+        i {
+          background-color: currentColor;
+        }
+      }
+    }
+
+    .ant-menu-item-selected,
+    .ant-menu-submenu-open {
+      color: $green-500;
+
+      i {
+        background-color: currentColor;
+        transform: rotate(180deg);
+      }
+
+      .ant-menu-title-content {
+        color: $green-500;
+      }
+    }
+
+    .ant-menu-submenu-active {
+      .ant-space-item {
+        color: $green-500;
+
+        i {
+          background-color: currentColor;
+        }
+      }
+    }
+  }
+
+  &_mega-menu {
+    left: 0;
+    width: 100%;
+    box-shadow: none;
+
+    :global {
+      .ant-menu-vertical {
+        box-shadow: none;
+      }
+
+      .ant-menu-item-group-title {
+        padding: 32px 16px;
+      }
+    }
+  }
+
+  &_solution-menus {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    justify-content: center;
+    width: 100%;
+    padding: 2px;
+
+    @include tablet-up {
+      & > a {
+        max-width: 386px;
+      }
+    }
+
+    @include tablet-down {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-2;
+      margin-top: 16px;
+
+      img {
+        width: 104px;
+      }
+    }
+
+    @include sp {
+      grid-template-columns: 1fr;
+      max-height: calc(100vh - 146px);
+      overflow: auto;
+    }
+  }
+
+  &-solution-card {
+    @include common-css;
+
+    display: flex;
+    justify-content: space-between;
+    background-color: $neutral-100;
+
+    :global {
+      .ant-typography {
+        font-size: 16px;
+      }
+
+      .ant-typography-secondary {
+        font-size: 14px;
+      }
+    }
+
+    &_content {
+      padding: $spacing-3;
+
+      @include tablet-down {
+        padding: $spacing-2;
+      }
+    }
+
+    &_img {
+      width: 150px;
+      height: 100%;
+      margin-right: -2px;
+    }
+  }
+
+  &_pos-menus {
+    width: 100%;
+    height: 100%;
+
+    @include sp {
+      height: 62%;
+    }
+
+    &-container {
+      display: grid;
+      grid-template-rows: max-content;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px 40px;
+
+      @include tablet-down {
+        gap: 4px 24px;
+        margin-top: 16px;
+      }
+
+      @include sp {
+        grid-template-rows: repeat(15, max-content);
+        grid-template-columns: 1fr;
+        gap: 4px 16px;
+        height: fill-available;
+        padding: 2px;
+        margin-bottom: 16px;
+        overflow: auto;
+      }
+    }
+
+    &-footer {
+      display: flex;
+      column-gap: 16px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 32px;
+
+      @include tablet-down {
+        margin-top: 40px;
+      }
+
+      @include sp {
+        padding: 12px 16px;
+        margin: 0 -16px;
+        border-top: 1px solid $neutral-300;
+      }
+
+      strong {
+        @include tablet-down {
+          font-size: 14px;
+        }
+      }
+
+      @include tablet-up {
+        padding-top: 34px;
+        border-top: 1px solid $neutral-200;
+      }
+    }
+  }
+
+  &-pos-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+
+    :global {
+      .ant-typography-secondary {
+        @include tablet-down {
+          font-size: 14px;
+        }
+      }
+    }
+
+    @include hover {
+      background-color: $neutral-100;
+
+      i {
+        opacity: 1;
+      }
+    }
+
+    i {
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    @include sp-up {
+      padding: $spacing-1;
+    }
+
+    @include tablet-down {
+      // padding: $spacing-2;
+    }
+
+    @include sp {
+      padding: $spacing-1;
+
+      & > span {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &_business-menus {
+    width: 100%;
+
+    &_container {
+      display: grid;
+      grid-template-rows: repeat(2, 200px);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      padding: 2px;
+
+      @include container;
+
+      @include tablet-down {
+        grid-template-rows: repeat(3, 140px);
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 16px;
+      }
+
+      @include sp {
+        max-height: calc(100vh - 146px);
+        overflow: auto;
+      }
+    }
+  }
+
+  &-business-card {
+    @include common-css;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: none;
+
+    &_title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      width: 100%;
+      padding: 24px;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 28px;
+      color: $neutral-0;
+      box-shadow: $shadow-md;
+
+      @include tablet-down {
+        display: block;
+        padding: 16px;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+      }
+
+      @include sp {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        padding: 0 16px;
+        margin-bottom: 16px;
+      }
+    }
+
+    &_img {
+      width: 100%;
+      height: auto;
+
+      @include tablet-down {
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @include sp {
+        height: 168px;
+        object-position: unset;
+      }
+    }
+
+    &_backdrop {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 92px;
+      background: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 98%) 100%);
+
+      @include sp {
+        height: 96px;
+      }
+    }
+  }
+
+  &_products-menus {
+    width: 100%;
+    height: 72%;
+    padding: 2px;
+    overflow: auto;
+
+    &_container {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+
+      @include container;
+
+      @include tablet-down {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 16px;
+      }
+
+      @include sp {
+        grid-template-rows: repeat(8, 80px);
+        grid-template-columns: 1fr;
+        margin-top: $spacing-1;
+      }
+    }
+  }
+
+  &-product-card {
+    @include common-css;
+
+    display: flex;
+    align-items: center;
+    background-color: $neutral-100;
+
+    &_content {
+      padding: 24px;
+
+      @include sp {
+        padding: 27px 16px;
+
+        strong {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

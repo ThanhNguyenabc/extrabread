@@ -1,0 +1,31 @@
+.bread-card {
+  $root: &;
+
+  @include sp {
+    overflow: hidden;
+  }
+
+  &--grey {
+    background-color: $neutral-100;
+  }
+
+  &_inner {
+    @include container;
+
+    padding-block: 80px;
+
+    @include tablet-down {
+      padding-block: 56px;
+      padding-inline: $spacing-5;
+    }
+
+    @include sp {
+      padding-block: $spacing-5;
+      padding-inline: $spacing-2;
+    }
+
+    #{$root}--no-padding & {
+      padding-block: 0;
+    }
+  }
+}

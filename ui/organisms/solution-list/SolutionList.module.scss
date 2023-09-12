@@ -1,0 +1,55 @@
+.solution-list {
+  &-heading {
+    max-width: $container-tablet;
+    margin-inline: auto;
+    margin-bottom: 48px !important;
+    text-align: center;
+
+    span {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 48px;
+      text-align: center;
+      letter-spacing: -0.02em;
+
+      &[color='green'] {
+        color: $green-500;
+      }
+
+      @include tablet-down {
+        font-size: 30px;
+        line-height: 36px;
+      }
+
+      @include sp {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+
+    @include tablet-down {
+      max-width: 80vw;
+    }
+
+    @include sp {
+      max-width: 100%;
+      margin-bottom: 24px !important;
+    }
+  }
+
+  &-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 32px;
+    align-items: stretch;
+
+    @include tablet-down {
+      gap: 32px;
+    }
+
+    @include sp {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+}

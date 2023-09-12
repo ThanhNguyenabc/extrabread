@@ -1,0 +1,12 @@
+.flex {
+  gap: var(--gap, 8px);
+  visibility: initial;
+
+  @include tablet-down {
+    gap: var(--gap-tb, 8px);
+  }
+
+  @include sp {
+    gap: var(--gap-sp, 8px);
+  }
+}

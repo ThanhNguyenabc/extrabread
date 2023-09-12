@@ -1,0 +1,34 @@
+.link-more {
+  display: block;
+  text-decoration: none;
+
+  span {
+    font-size: 16px !important;
+    line-height: 1;
+
+    @include sp {
+      font-size: 14px !important;
+    }
+  }
+
+  &--green {
+    span {
+      color: $green-500;
+    }
+
+    i {
+      background-color: $green-500;
+    }
+  }
+
+  &--small {
+    i {
+      width: 20px;
+      height: 20px;
+    }
+
+    span {
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.work-with-best {
+  &_logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+
+    @include sp {
+      gap: 8px;
+      justify-content: space-evenly;
+    }
+
+    & > a {
+      display: inline-flex;
+      align-items: center;
+      height: 104px;
+      padding: 12px 9px;
+      overflow: hidden;
+      filter: grayscale(100%);
+      border-radius: 8px;
+      transition: background-color 0.3s ease-in-out;
+
+      @include hover {
+        background-color: $neutral-200;
+        filter: unset;
+      }
+
+      img {
+        width: 160px;
+        object-fit: contain;
+      }
+
+      @include sp {
+        width: calc(100vw / 3 - 16px);
+        height: 64px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    @include tablet {
+      margin-top: $spacing-4;
+    }
+  }
+}

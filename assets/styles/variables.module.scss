@@ -1,0 +1,18 @@
+/* stylelint-disable property-case */
+@import './colors';
+
+:export {
+  errorColor: $red-600;
+  errorHoverColor: $red-700;
+  primaryColor: $green-500;
+  primaryHoverColor: $green-600;
+  infoColor: $blue-500;
+  textColor: $neutral-900;
+  warningColor: $yellow-500;
+  neutral200: $neutral-200;
+  neutral300: $neutral-300;
+  neutral400: $neutral-400;
+  neutral600: $neutral-600;
+  whiteColor: $neutral-0;
+  infoBaseColor: $info-base;
+}

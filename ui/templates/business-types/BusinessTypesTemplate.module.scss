@@ -1,0 +1,159 @@
+/* stylelint-disable no-descending-specificity */
+.business-types {
+  display: inherit;
+
+  &_banner-description {
+    margin-top: $spacing-3;
+    margin-right: $spacing-4;
+
+    @include tablet {
+      margin-top: -$spacing-2;
+    }
+
+    @include sp {
+      margin-top: -$spacing-1;
+    }
+  }
+
+  &_banner-footer {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-6;
+    align-items: center;
+    justify-content: center;
+    padding-block: 20px;
+    text-align: center;
+    background-color: $neutral-0;
+
+    @include tablet-down {
+      gap: 24px;
+      align-items: flex-start;
+      padding-block: 24px;
+      padding-inline: $spacing-5;
+
+      & > span {
+        display: block;
+        flex-basis: 100%;
+      }
+
+      :global {
+        .text-grey {
+          max-width: 155px;
+          white-space: pre-wrap;
+        }
+      }
+
+      svg {
+        transform: scale(0.9);
+      }
+    }
+
+    @include sp {
+      gap: $spacing-2;
+      justify-content: center;
+      padding: $spacing-2;
+      text-align: center;
+
+      & > div {
+        flex-basis: 45%;
+      }
+
+      // :global {
+      //   .ant-space {
+      //     row-gap: 0 !important;
+      //   }
+
+      //   .ant-space > .ant-space-item:first-of-type {
+      //     transform: scale(0.8);
+      //     transform-origin: top left;
+      //   }
+      // }
+    }
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: -50%;
+      width: 200vw;
+      height: 1px;
+      content: '';
+      background-color: $neutral-300;
+    }
+
+    & span {
+      white-space: nowrap;
+
+      &:first-of-type {
+        @include tablet-down {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &_tags {
+    @include tablet-down {
+      margin-bottom: -12px;
+    }
+
+    @include sp {
+      margin-top: -8px;
+    }
+
+    & > div {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 8px;
+      margin-right: 12px;
+      margin-bottom: 12px;
+      background: $neutral-200;
+      border-radius: 30px;
+
+      @include sp {
+        padding: 2px 8px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1px;
+        color: $neutral-700;
+      }
+    }
+  }
+
+  &_business-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-10;
+    margin-top: 80px;
+
+    @include tablet-down {
+      row-gap: $spacing-5;
+      margin-top: $spacing-5;
+
+      h5 {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+
+    @include sp {
+      margin-top: 40px;
+
+      h5 {
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+  }
+
+  &_pricing-btn {
+    @include sp {
+      margin-top: 16px;
+    }
+  }
+}

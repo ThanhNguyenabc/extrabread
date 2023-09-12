@@ -1,0 +1,65 @@
+.a-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  background-color: currentColor;
+  mask-type: alpha;
+  transition: background-color 0.25s ease-in-out, transform 0.3s ease-in-out;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+
+  @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+      -webkit-mask-size: 100% 100%;
+    }
+  }
+
+  &--green {
+    background-color: $green-500;
+  }
+
+  &--green-active {
+    background-color: $green-600;
+  }
+
+  &--black {
+    background-color: $neutral-900;
+  }
+
+  &--grey {
+    background-color: $neutral-700;
+  }
+
+  &--light {
+    background-color: $neutral-400;
+  }
+
+  &--white {
+    background-color: $neutral-0;
+  }
+
+  &--red {
+    background-color: $red-700;
+  }
+
+  &--animation {
+    cursor: pointer;
+
+    @include hover {
+      background-color: $green-500;
+      transform: scale(1.1);
+    }
+  }
+
+  @mixin icon-shape($name) {
+    &--#{$name} {
+      -webkit-mask-image: url('/images/icons/#{$name}.svg');
+    }
+  }
+
+  @each $shape in $icon-shapes {
+    @include icon-shape($shape);
+  }
+}

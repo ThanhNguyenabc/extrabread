@@ -1,0 +1,99 @@
+.equipments-template {
+  display: block;
+  overflow: hidden;
+
+  &_lightbox {
+    display: grid;
+    grid-template-rows: 192px 192px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: $spacing-2;
+
+    @include tablet-down {
+      grid-template-rows: 167px 167px;
+    }
+
+    @include sp {
+      display: flex;
+      column-gap: $spacing-1;
+      width: 100vw;
+      margin-inline: -16px;
+      overflow: auto;
+    }
+
+    & > div {
+      overflow: hidden;
+
+      @include sp {
+        flex-basis: 85%;
+        flex-shrink: 0;
+      }
+
+      img {
+        width: 100%;
+        cursor: pointer;
+        transition: transform 0.35s ease-in-out;
+        object-fit: cover;
+
+        @include hover {
+          transform: scale(1.05);
+        }
+
+        @include tablet-down {
+          width: 100%;
+        }
+      }
+    }
+
+    &-main {
+      grid-row: 1 / -1;
+      grid-column: 1 / 3;
+    }
+  }
+
+  &_features-heading {
+    text-align: center;
+
+    @include tablet {
+      margin-top: 24px;
+    }
+
+    @include sp {
+      margin-top: -40px;
+    }
+  }
+
+  &_features {
+    margin-top: 64px;
+
+    @include tablet-down {
+      margin-top: $spacing-5;
+    }
+
+    @include sp {
+      margin-top: $spacing-3;
+    }
+  }
+
+  &_card {
+    margin-bottom: -$spacing-10;
+
+    @include tablet {
+      margin-bottom: -56px;
+    }
+
+    @include sp {
+      margin-bottom: 0;
+    }
+  }
+
+  &_cate-card {
+    /* stylelint-disable-next-line no-descending-specificity */
+    img {
+      @include tablet-up {
+        height: 300px;
+      }
+
+      object-fit: cover;
+    }
+  }
+}

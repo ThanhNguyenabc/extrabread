@@ -1,0 +1,429 @@
+.clover-app {
+  &_app-items {
+    display: inline-flex;
+    flex-direction: column;
+    row-gap: $spacing-10;
+    margin-top: 80px;
+
+    @include tablet-down {
+      row-gap: $spacing-5;
+    }
+
+    @include sp {
+      width: calc(100vw - 32px);
+      margin-top: -16px;
+      margin-bottom: -16px;
+
+      :global {
+        .ant-tabs-nav-wrap {
+          .ant-tabs-tab {
+            padding-block: 13px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+  &_app-item {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    padding: $spacing-3;
+    text-align: left;
+    background-color: $neutral-0;
+    border-radius: $radius-md;
+
+    @include tablet-down {
+      padding: $spacing-2;
+
+      :global {
+        .font-14 {
+          font-size: 12px;
+        }
+      }
+    }
+
+    @include sp {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      grid-template-row: auto auto;
+      gap: 8px 16px;
+
+      img {
+        grid-row: 1 / 3;
+      }
+    }
+  }
+
+  &_app-item-title {
+    margin-top: 16px;
+    margin-bottom: 8px;
+
+    @include sp {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &_app-heading {
+    margin-bottom: $spacing-3 !important;
+
+    @include tablet-down {
+      margin-bottom: $spacing-2 !important;
+    }
+  }
+
+  &_app-item-decs {
+    font-size: 14px;
+    color: $neutral-700;
+
+    @include tablet {
+      font-size: 12px;
+    }
+
+    @include sp {
+      line-height: 20px;
+    }
+  }
+
+  &_row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: $spacing-4;
+
+    @include tablet-down {
+      column-gap: $spacing-2;
+    }
+
+    @include sp {
+      grid-template-columns: calc(100vw - 32px);
+      row-gap: $spacing-2;
+    }
+  }
+
+  &_row-heading {
+    font-size: 24px;
+    font-weight: 800;
+
+    @include tablet-down {
+      font-size: 18px;
+    }
+
+    @include sp {
+      margin-bottom: 8px !important;
+    }
+  }
+
+  &_main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 64px;
+    align-items: center;
+
+    @include tablet-down {
+      column-gap: 32px;
+      padding-top: 56px;
+    }
+
+    @include sp {
+      grid-template-columns: 1fr;
+      row-gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    h3 {
+      margin-bottom: 24px !important;
+      white-space: break-spaces;
+
+      @include tablet-down {
+        margin-bottom: 16px !important;
+      }
+
+      @include sp {
+        margin-bottom: 8px !important;
+      }
+    }
+
+    & > div {
+      &:first-child {
+        @include tablet-up {
+          padding: 50px;
+        }
+      }
+    }
+
+    img {
+      width: 479px;
+      height: auto;
+
+      @include tablet-down {
+        width: auto;
+        height: 382px;
+      }
+    }
+  }
+}
+
+.cash-discount-program {
+  &_info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+  }
+
+  &_collapse {
+    max-width: 768px;
+    margin: $spacing-10 auto 0;
+
+    :global {
+      .ant-collapse-content-box {
+        padding: 0 0 24px !important;
+      }
+
+      .ant-collapse-header {
+        padding: 26px 0 !important;
+        font-size: 18px;
+        font-weight: 600;
+        border-top: 1px solid $neutral-300;
+
+        @include sp {
+          padding: 24px 0 !important;
+          font-size: 16px;
+        }
+      }
+    }
+
+    @include tablet-down {
+      margin-top: $spacing-5;
+    }
+
+    @include sp {
+      margin-top: $spacing-3;
+    }
+  }
+
+  &_main-section {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: $spacing-4;
+
+    @include tablet-down {
+      justify-items: center;
+
+      img {
+        width: 380px;
+        height: auto;
+        margin-bottom: 40px;
+      }
+    }
+
+    @include sp {
+      grid-template-columns: 1fr;
+      row-gap: 16px;
+      margin-top: -40px;
+
+      img {
+        margin-bottom: 20px;
+      }
+    }
+
+    & > img {
+      @include tablet-up {
+        grid-row: 1 / 3;
+      }
+
+      @include tablet {
+        grid-column: 1 / 3;
+      }
+
+      @include sp {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &_main_sub-header {
+    display: block;
+    font-weight: 600;
+
+    @include tablet-up {
+      margin-block: $spacing-5;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    @include tablet-down {
+      margin-bottom: $spacing-2;
+    }
+
+    @include sp {
+      font-size: 18px;
+    }
+  }
+}
+
+.gift-card {
+  display: block;
+
+  &_card-red,
+  &_card-blue {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: $red-200;
+    border-radius: $radius-md;
+
+    img {
+      width: 100%;
+      margin-top: auto;
+
+      @include sp {
+        height: 100px;
+      }
+    }
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    & > div {
+      padding: $spacing-5 $spacing-5 0 $spacing-5;
+
+      @include tablet {
+        padding: $spacing-3 $spacing-3 0 $spacing-3;
+      }
+
+      @include sp {
+        padding: $spacing-2 $spacing-2 0 $spacing-2;
+      }
+
+      h4 {
+        @include tablet {
+          font-size: 24px;
+          line-height: 32px;
+        }
+
+        @include sp {
+          font-size: 18px;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+
+  &_card-blue {
+    background-color: $blue-200;
+  }
+
+  &_card-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 32px;
+    align-items: center;
+
+    @include tablet-down {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 32px;
+      align-items: stretch;
+    }
+
+    @include sp {
+      // grid-template-columns: repeat(2, 1fr);
+      gap: 24px 16px;
+    }
+  }
+
+  &-heading {
+    margin-bottom: $spacing-3 !important;
+
+    @include tablet-down {
+      margin-bottom: $spacing-2 !important;
+    }
+
+    @include sp {
+      margin-bottom: $spacing-1 !important;
+      font-size: 24px !important;
+      line-height: 32px !important;
+    }
+  }
+
+  &_text {
+    @include tablet-down {
+      grid-column: 1 / 3;
+    }
+
+    @include sp {
+      grid-column: 1 / 3;
+    }
+  }
+}
+
+.checked-icon {
+  width: 26.67px;
+  height: 26.67px;
+
+  @include sp {
+    width: 23.3px;
+    height: 23.3px;
+  }
+}
+
+.section-heading {
+  @include tablet {
+    text-align: center;
+
+    & + span {
+      text-align: center;
+    }
+  }
+}
+
+.product_info {
+  @include tablet-up {
+    @include container-tablet;
+  }
+
+  span {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: $spacing-5;
+    color: $neutral-700;
+    letter-spacing: -0.02em;
+
+    &[color='green'] {
+      color: $green-500;
+    }
+
+    @include tablet-down {
+      font-size: 30px;
+      line-height: 36px;
+    }
+
+    @include sp {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+}
+
+.product_icon-check {
+  @include sp {
+    column-gap: 8px !important;
+
+    i {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.product-items {
+  @include tablet-up {
+    margin-top: 30px;
+  }
+
+  // @include tablet-down {
+  //   margin-top: -56px;
+  // }
+}

@@ -1,0 +1,116 @@
+.base-form {
+  :global {
+    input {
+      appearance: none;
+    }
+
+    input[inputmode='numeric'] {
+      padding: 9px !important;
+      font-size: 16px;
+    }
+
+    input[type='email'] {
+      background-color: $neutral-0;
+    }
+
+    .ant-input-lg {
+      padding: 10.5px 12px !important;
+      font-size: 16px;
+      border-width: 2px !important;
+
+      @include sp {
+        padding: 10px 12px !important;
+      }
+    }
+
+    .ant-input-number-lg {
+      padding-block: 4px !important;
+      font-size: 16px;
+      border-width: 2px !important;
+
+      @include sp {
+        padding: 4px 2px !important;
+      }
+    }
+
+    .ant-form-item {
+      @include tablet-down {
+        margin-bottom: $spacing-2;
+      }
+
+      @include sp {
+        width: 100%;
+        margin-bottom: $spacing-3;
+      }
+    }
+
+    .ant-form-item-label {
+      padding: 0;
+
+      & > label {
+        height: 30px !important;
+        font-size: 14px !important;
+        font-weight: 600;
+        line-height: 30px !important;
+      }
+
+      @include tablet-down {
+        padding: 0;
+      }
+    }
+
+    .ant-input-affix-wrapper {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .ant-radio-wrapper {
+      display: inline-flex;
+      align-items: center;
+      margin-inline-end: $spacing-4;
+      margin-top: 8px;
+
+      span {
+        white-space: nowrap;
+      }
+
+      @include tablet-down {
+        margin-inline-end: $spacing-3;
+      }
+
+      @include hover {
+        .ant-radio-inner {
+          border-color: $green-500;
+        }
+      }
+
+      .ant-radio-inner {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .ant-radio-wrapper-checked {
+      .ant-radio-inner {
+        vertical-align: middle;
+        background-color: $green-500;
+        border-color: $neutral-400;
+        mask-type: alpha;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        -webkit-mask-size: contain;
+        -webkit-mask-image: url('/images/icons/check-circle-solid.svg');
+        transform: scale(1.2);
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    .ant-form-item-explain {
+      font-size: 12px;
+      text-align: left;
+    }
+  }
+}
