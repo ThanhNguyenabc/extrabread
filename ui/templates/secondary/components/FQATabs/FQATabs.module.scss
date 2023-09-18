@@ -1,10 +1,7 @@
-.fqaTabs {
+.fqa-tabs {
+  overflow-x: auto;
+
   :global {
-    .ant-segmented {
-      padding: 4px;
-      border: 1px solid $neutral-300;
-      border-radius: 12px;
-    }
 
     .ant-segmented-group {
       column-gap: 8px;
@@ -23,6 +20,9 @@
         font-size: 16px;
         line-height: 24px;
       }
+
+      @include container-tablet;
+
     }
 
     .ant-segmented-item-selected {
@@ -30,4 +30,42 @@
       background-color: $green-500;
     }
   }
+}
+
+.faq-container {
+  @include container-tablet;
+
+  display: flex;
+  position: relative;
+  align-items: center;
+  background-color: white;
+  padding: 4px;
+  border: 1px solid $neutral-300;
+  border-radius: 12px;
+  margin-top: -40px;
+
+  @include sp {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  @include tablet-down {
+    margin-left: $spacing-10;
+    margin-right: $spacing-10;
+  }
+}
+
+.swipe-btn {
+  cursor: pointer;
+  border-radius: 15px;
+  width: 30px;
+  flex: flex;
+  padding-top: 3px;
+  padding-left: 3px;
+  height: 30px;
+  background-color: $neutral-200;
+}
+
+.fqa-tabs::-webkit-scrollbar {
+  height: 2px;
 }
