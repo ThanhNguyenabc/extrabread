@@ -16,7 +16,7 @@ const nanoid = customAlphabet('1234567890abcdef', 10);
 // Airtable section
 Airtable.configure({
   apiKey:
-    process.env.API_KEY ??
+    process.env.NEXT_PUBLIC_AIR_TABLE_KEY ??
     'patpGE7pGfa3hMw8l.9f39b4a6f50ea6c806a18a69d22c94aa19980fd06376fc63afd86499a6151406',
 });
 
@@ -25,7 +25,7 @@ const BASE_ID = process.env.BASE_ID ?? 'appx9rNfGWh24YO2e';
 
 // Email section
 const BRAVO_API_KEY =
-  process.env.BRAVO_API_KEY ??
+  process.env.NEXT_PUBLIC_BRAVO_API_KEY ??
   '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';
 const SUBJECT = 'Extrabread lead - New Inquiry';
 const SENDER_EMAIL = 'no-reply@extrabread.com';
