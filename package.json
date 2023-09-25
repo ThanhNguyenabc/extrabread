@@ -46,8 +46,8 @@
     "@types/react-highlighter": "0.3.5",
     "@types/react-transition-group": "4.4.5",
     "@types/uuidv4": "5.0.0",
-    "@typescript-eslint/eslint-plugin": "5.48.0",
-    "@typescript-eslint/parser": "5.48.0",
+    "@typescript-eslint/eslint-plugin": "6.7.2",
+    "@typescript-eslint/parser": "6.7.2",
     "autoprefixer": "^10.4.7",
     "babel-plugin-lodash": "3.3.4",
     "eslint": "8.19.0",
@@ -64,6 +64,6 @@
     "stylelint-scss": "4.3.0",
     "ts-node": "10.9.1",
     "tslib": "2.5.0",
-    "typescript": "4.7.4"
+    "typescript": "5.2.2"
   }
 }
