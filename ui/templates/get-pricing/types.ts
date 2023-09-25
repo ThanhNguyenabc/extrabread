@@ -4,6 +4,7 @@ export type FormValue = {
   cashBonus?: string;
   stationsLookingFor?: string;
   name?: string;
+  business_name?: string;
   phone?: string;
   email?: string;
   website?: string;

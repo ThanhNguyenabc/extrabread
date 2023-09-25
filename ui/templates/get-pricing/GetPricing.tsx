@@ -85,7 +85,8 @@ export const GetPricingTemplate: FC<Props> = ({ type = 'default', children }) =>
               <li><strong>How many stations are you looking for?</strong> ${
                 formValues.stationsLookingFor
               }</li>
-              <li><strong>Business name:</strong> ${formValues.name}</li>
+              <li><strong>Personal name:</strong> ${formValues.name}</li>
+              <li><strong>Business name:</strong> ${formValues.business_name}</li>
               <li><strong>Phone number:</strong> ${formValues.phone}</li>
               <li><strong>Email:</strong> ${formValues.email}</li>
               <li><strong>Website:</strong> ${formValues.website}</li>
@@ -128,7 +129,8 @@ export const GetPricingTemplate: FC<Props> = ({ type = 'default', children }) =>
       'What are you looking for?': formValues.lookingFor,
       'Cash signing bonus': formValues.cashBonus ? '1' : '0',
       'How many stations are you looking for?': formValues.stationsLookingFor,
-      'Business name': formValues.name,
+      'Business name': formValues.business_name,
+      'Personal name': formValues.name,
       'Phone number': formValues.phone,
       Email: formValues.email,
       Website: formValues.website,

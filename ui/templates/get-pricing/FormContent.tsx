@@ -279,7 +279,10 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
                 },
               }}
             >
-              <Form.Item label="Business name" name="name" rules={[{ required: true }]}>
+              <Form.Item label="Your name" name="name" rules={[{ required: true }]}>
+                <Input placeholder="e.g. John" size="large" />
+              </Form.Item>
+              <Form.Item label="Business name" name="business_name" rules={[{ required: true }]}>
                 <Input placeholder="e.g. Burger King" size="large" />
               </Form.Item>
               <Form.Item
