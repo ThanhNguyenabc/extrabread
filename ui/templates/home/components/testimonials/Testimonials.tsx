@@ -41,7 +41,7 @@ const CONTENTS: {
   {
     index: uuid(),
     rating: 5,
-    title: 'Switched from Pixapoint to Union',
+    title: 'Switched from Revel to Union',
     img: '/images/Testimonials-cabana.jpeg',
     quote:
       'Tom is great. Helped me find the best suited for my bar/restaurant business POS and replace my old system with Union. Paid for the hardware at no cost',
