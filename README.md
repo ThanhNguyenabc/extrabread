@@ -14,11 +14,3 @@ This playground is a mirror of the [Next.js v13 App Directory Playground](https:
 **Note:** The playground uses [Tailwind CSS](https://tailwindcss.com) via [PostCSS](https://turbo.build/pack/docs/features/css#postcss).
 
 For more information, see: https://turbo.build/pack/docs/features/css#tailwind-css
-
-## Documentation
-
-https://nextjs.link/with-turbopack
-
-## Providing Feedback
-
-https://nextjs.link/turbopack-feedback
