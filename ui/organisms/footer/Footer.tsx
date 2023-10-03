@@ -211,22 +211,8 @@ export const BreadFooter = () => {
             ExtraBread is a POS consultant service that provides financial assistance and advice to
             businesses. We strive to provide accurate and up-to-date information to our clients, but
             we do not guarantee the accuracy, completeness, or timeliness of the information
-            provided. Our service is intended for informational purposes only, and we strongly
-            recommend that businesses consult with their own financial and legal advisors before
-            making any decisions based on the information we provide.
-          </Text>
-
-          <Text className={styles['text-400']}>
-            EPI - Electronic Payments Inc. They are a national recognized product and we&#39;re
-            partners with them. That&#39;s perhaps a badge/certificate we can add somewhere for
-            credibility.
-          </Text>
-
-          <Text className={styles['text-400']}>
-            We do not accept any liability for any loss or damage that may arise from the use of our
-            service or the information provided on our website. The use of our service is at your
-            own risk, and we recommend that you exercise due diligence and care when making
-            financial decisions.
+            provided. This website is owned and operated by ELECPAYMENTS INC. Reproduction of this
+            website, in whole or in part, is strictly prohibited. 
           </Text>
 
           <Text className={styles['text-400']}>
