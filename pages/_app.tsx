@@ -1,5 +1,6 @@
 import 'antd/dist/reset.css';
 import 'assets/styles/index.scss';
+import 'assets/styles/tailwind.scss';
 
 import { Loading } from '@/ui/atoms/loading/Loading';
 import { StyleProvider } from '@ant-design/cssinjs';
