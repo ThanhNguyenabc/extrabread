@@ -28,9 +28,7 @@ const formSchema = z.object({
     .max(14)
     .refine(
       value => {
-        console.log(value);
         const areaCode = Number(value.substring(1, 4));
-        console.log(areaCode);
         if (US_STATE_CODE.includes(areaCode)) return true;
         return false;
       },

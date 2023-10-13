@@ -2,6 +2,7 @@ import { sendEmail, sendEmailToSaleTeam } from '@/apis/send_mail';
 import React, { HTMLAttributes, ReactElement } from 'react';
 import ContactForm from './contact_form';
 import Hero from './hero';
+import { useToast } from './use-toast';
 
 interface FooterRegisterFromProps extends HTMLAttributes<HTMLDivElement> {
   heading: ReactElement | string;
@@ -12,8 +13,14 @@ interface FooterRegisterFromProps extends HTMLAttributes<HTMLDivElement> {
 
 const FooterRegisterFrom = React.forwardRef<HTMLDivElement, FooterRegisterFromProps>(
   ({ className, heading, description, formTitle, formSubTilte, ...props }, ref) => {
-    const onSubmitData = data => {
-      sendEmailToSaleTeam(data);
+    const { toast, toasts } = useToast();
+    const onSubmitData = async data => {
+      await sendEmailToSaleTeam(data);
+      toast({
+        title: 'Successfull',
+        description: 'We have received your registration',
+        variant: 'success',
+      });
     };
 
     return (

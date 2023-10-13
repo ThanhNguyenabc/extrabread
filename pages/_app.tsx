@@ -15,6 +15,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useDevice } from '~/hooks/useDetectMobile';
 import { globalState } from '~/hooks/useLanguage';
 
+import { Toaster } from '@/components/ui/toaster';
 import { RouteConfig } from '@/constants';
 import { Alert } from '@/ui/organisms/alert/Alert';
 import { BreadFooter } from '@/ui/organisms/footer/Footer';
@@ -173,6 +174,7 @@ const App = (props: AppProps) => {
             <BreadFooter />
           </StyleProvider>
         </div>
+        <Toaster />
       </ConfigProvider>
     </>
   );

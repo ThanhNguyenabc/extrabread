@@ -35,7 +35,8 @@ const sendEmail = async (data: EmailContent) => {
 const sendEmailToCustomer = async () => {};
 
 const sendEmailToSaleTeam = async (data: FormData) => {
-  const htmlContent = `<!DOCTYPE html>
+  try {
+    const htmlContent = `<!DOCTYPE html>
     <html>
       <head>
         <meta charset="UTF-8">
@@ -55,20 +56,26 @@ const sendEmailToSaleTeam = async (data: FormData) => {
       </body>
     </html>`;
 
-  await sendEmail({
-    sender: {
-      name: `${process.env.NEXT_PUBLIC_SENDER_NAME}`,
-      email: `${process.env.NEXT_PUBLIC_SENDER_EMAIL}`,
-    },
-    to: [
-      {
-        name: `${process.env.NEXT_PUBLIC_EMAIL_SALE_TEAM_NAME}`,
-        email: `${process.env.NEXT_PUBLIC_EMAIL_SALE_TEAM}`,
+    await sendEmail({
+      sender: {
+        name: `${process.env.NEXT_PUBLIC_SENDER_NAME}`,
+        email: `${process.env.NEXT_PUBLIC_SENDER_EMAIL}`,
       },
-    ],
-    subject: 'Extrabread lead - New Inquiry',
-    htmlContent: htmlContent,
-  });
+      to: [
+        {
+          name: `${process.env.NEXT_PUBLIC_EMAIL_SALE_TEAM_NAME}`,
+          email: `${process.env.NEXT_PUBLIC_EMAIL_SALE_TEAM}`,
+        },
+      ],
+      subject: 'Extrabread lead - New Inquiry',
+      htmlContent: htmlContent,
+    });
+    return true;
+  } catch (error) {
+    console.log('sending email error: ', error);
+  }
+
+  return false;
 };
 
 export { sendEmail, sendEmailToCustomer, sendEmailToSaleTeam };
