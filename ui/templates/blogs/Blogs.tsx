@@ -74,11 +74,7 @@ export const BlogsTemplate = () => {
           </div>
         </Spin>
 
-        <SubscriptionForm
-          onSubmit={values => {
-            console.log(values);
-          }}
-        />
+        <SubscriptionForm onSubmit={values => {}} />
       </BreadCard>
     </main>
   );

@@ -118,8 +118,6 @@ export const GetPricingTemplate: FC<Props> = ({ type = 'default', children }) =>
       body: raw,
       redirect: 'follow',
     });
-    // send the email
-    console.log('Email sent successfully:', response.text());
   };
 
   const sendAirtable = async (id: string, formValues: FormValue) => {
