@@ -1,4 +1,5 @@
 import { submitForm } from '@/apis';
+import { FormData } from '@/models/form_data';
 import React, { HTMLAttributes, ReactElement, useEffect, useState } from 'react';
 import useSWRMutation from 'swr/mutation';
 import ContactForm from './contact_form';
@@ -23,17 +24,14 @@ const FooterRegisterFrom = React.forwardRef<HTMLDivElement, FooterRegisterFromPr
         {
           arg,
         }: {
-          arg: {
-            data: FormData;
-            conversion_funnel: string;
-            ref_url: string;
-          };
+          arg: FormData;
         },
       ) => submitForm(arg),
     );
 
     const onSubmitData = async data => {
       trigger({
+        contact: data,
         data,
         conversion_funnel: 'partner',
         ref_url: 'window.location.href',

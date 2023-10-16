@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 
 import { US_STATE_CODE } from '@/constants/us-state-code';
-import { FormData } from '@/models/form_data';
+import { Contact } from '@/models/contact.model';
 import { IcLoading } from '@/ui/img-resource/ImageResources';
 import { Button, ButtonProps } from './button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from './form';
@@ -16,7 +16,7 @@ interface ContactFormProps {
     btnProps?: ButtonProps;
     showLoading?: boolean;
   };
-  onSubmitData: (data?: FormData) => void;
+  onSubmitData: (data?: Contact) => void;
 }
 
 const formSchema = z.object({

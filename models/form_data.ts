@@ -1,6 +1,8 @@
+import { Contact } from './contact.model';
+
 export interface FormData {
-  firstname: string;
-  lastname: string;
-  phone: string;
-  email: string;
+  contact: Contact;
+  data?: any;
+  conversion_funnel: string;
+  ref_url: string;
 }

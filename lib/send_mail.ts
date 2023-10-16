@@ -1,4 +1,4 @@
-import { FormData } from '@/models/form_data';
+import { Contact } from '@/models/contact.model';
 import ejs from 'ejs';
 import { readFile } from 'fs/promises';
 import nodemailer from 'nodemailer';
@@ -42,7 +42,7 @@ const sendEmailToCustomer = async ({
   data,
   serviceName = 'POS provider',
 }: {
-  data: FormData;
+  data: Contact;
   serviceName?: string;
 }) => {
   try {
@@ -71,7 +71,7 @@ const sendEmailToSaleTeam = async ({
   desc = 'We have received a new inquiry from a potential customer. Here are the details:',
   data,
 }: {
-  data: FormData;
+  data: Contact;
   title?: string;
   desc?: string;
 }) => {
