@@ -47,7 +47,7 @@ const sendEmailToCustomer = async ({
 }) => {
   try {
     const template = await generateEmailTemplate({
-      pathFile: 'public/customer_email.html',
+      pathFile: 'customer_email.html',
       data: {
         name: `${data.firstname} ${data.lastname}`.toUpperCase(),
         content: serviceName,
