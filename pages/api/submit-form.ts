@@ -26,6 +26,7 @@ export default async function handler(request: NextApiRequest, response: NextApi
           conversion_funnel,
           ref_url,
           contact,
+          sendMailToCustomer = true,
           adminHtmlBody = null,
         } = JSON.parse(request.body);
 
@@ -37,11 +38,7 @@ export default async function handler(request: NextApiRequest, response: NextApi
           airtableBody: (data) => object;
         } = PageConfigs[conversion_funnel] || PageConfigs['default'];
 
-        await Promise.all([
-          sendEmailToCustomer({
-            data: contact,
-            serviceName: pageConfig.service,
-          }),
+        const promises = [
           sendEmailToSaleTeam({
             data: contact,
             title: pageConfig.title,
@@ -49,7 +46,16 @@ export default async function handler(request: NextApiRequest, response: NextApi
             htmlBody: adminHtmlBody,
           }),
           sendToAirtable(pageConfig.table, data),
-        ]);
+        ];
+
+        if (sendMailToCustomer)
+          promises.push(
+            sendEmailToCustomer({
+              data: contact,
+              serviceName: pageConfig.service,
+            }),
+          );
+        await Promise.all(promises);
         return response.status(200).json({ status: 200 });
 
       default:

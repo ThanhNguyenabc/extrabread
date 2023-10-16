@@ -6,4 +6,5 @@ export interface FormData {
   conversion_funnel: string;
   ref_url: string;
   adminHtmlBody?: string;
+  sendMailToCustomer?: boolean;
 }

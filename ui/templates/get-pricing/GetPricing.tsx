@@ -30,7 +30,7 @@ export const GetPricingTemplate: FC<Props> = ({ type = 'default', children }) =>
     window.dataLayer.push({ event: 'getpricing_business_type' });
   }, []);
 
-  const softSubmit = async (formValues: FormValue) => {
+  const softSubmit = async (formValues: FormValue, sendMailToCustomer = true) => {
     try {
       if (currentStep === 1) {
         leadsId = nanoid();
@@ -83,6 +83,7 @@ export const GetPricingTemplate: FC<Props> = ({ type = 'default', children }) =>
         conversion_funnel: 'get_pricing',
         ref_url: window.location.href,
         adminHtmlBody: mailHtmlBody,
+        sendMailToCustomer: sendMailToCustomer,
         data: {
           'What type of business?': formValues.typeBusiness,
           'What are you looking for?': formValues.lookingFor,
@@ -120,7 +121,7 @@ export const GetPricingTemplate: FC<Props> = ({ type = 'default', children }) =>
   };
 
   const handleSubmit = async (formValues: FormValue) => {
-    await softSubmit(formValues);
+    await softSubmit(formValues, false);
     setShowFinish(true);
     window.dataLayer.push({ event: 'getpricing_fullinfo' });
     window.scrollTo({ top: 0, behavior: 'smooth' });
