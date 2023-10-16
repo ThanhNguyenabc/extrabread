@@ -5,12 +5,17 @@ import * as z from 'zod';
 
 import { US_STATE_CODE } from '@/constants/us-state-code';
 import { FormData } from '@/models/form_data';
-import { Button } from './button';
+import { IcLoading } from '@/ui/img-resource/ImageResources';
+import { Button, ButtonProps } from './button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from './form';
 import { Input } from './input';
 
 interface ContactFormProps {
-  btnSubmit?: React.ReactElement;
+  btnSubmitConfig?: {
+    title?: string;
+    btnProps?: ButtonProps;
+    showLoading?: boolean;
+  };
   onSubmitData: (data?: FormData) => void;
 }
 
@@ -39,7 +44,9 @@ const formSchema = z.object({
   email: z.string().email('This is not a valid email.'),
 });
 
-const ContactForm = ({ btnSubmit, onSubmitData }: ContactFormProps) => {
+const ContactForm = ({ btnSubmitConfig, onSubmitData }: ContactFormProps) => {
+  const { btnProps, title, showLoading = false } = btnSubmitConfig || {};
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -138,11 +145,14 @@ const ContactForm = ({ btnSubmit, onSubmitData }: ContactFormProps) => {
           )}
         />
 
-        {btnSubmit || (
-          <Button type="submit" className="w-[200px] mt-4 md:mt-6 self-center">
-            Submit
-          </Button>
-        )}
+        <Button
+          type="submit"
+          className="w-[200px] md:w-[200px] mt-4 md:mt-6 self-center gap-2"
+          {...btnProps}
+        >
+          {showLoading && <IcLoading className="text-white" />}
+          {title || 'Submit'}
+        </Button>
       </form>
     </Form>
   );

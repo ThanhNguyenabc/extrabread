@@ -72,6 +72,9 @@ export enum RouteConfig {
   CashAdvance = '/cash-advance',
   QuickbooksPlugin = '/quickbooks-plugin',
   Invoicing = '/invoicing',
+  Partner = '/partner',
+  PaymentProcessing = '/payment-processing',
+  AboutUs = '/about-us',
 }
 
 export type RouteConfigType = `${RouteConfig}`;
@@ -95,6 +98,10 @@ export const COMPANY_MENU = [
   { title: 'FAQ', href: RouteConfig.Faqs },
   { title: 'State Regulations', href: '#' },
   { title: 'Blog', href: RouteConfig.Blogs },
+  { title: 'Partner', href: RouteConfig.Partner },
+  { title: 'Payment Processing', href: RouteConfig.PaymentProcessing },
+  { title: 'About us', href: RouteConfig.AboutUs },
+
   // TODO: hide
   // { title: 'Privacy Policy', href: RouteConfig.PrivacyPolicy },
   // { title: 'Terms of service', href: RouteConfig.TermsOfService },

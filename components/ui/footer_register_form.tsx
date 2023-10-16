@@ -1,5 +1,6 @@
-import { sendEmail, sendEmailToSaleTeam } from '@/apis/send_mail';
-import React, { HTMLAttributes, ReactElement } from 'react';
+import { submitForm } from '@/apis';
+import React, { HTMLAttributes, ReactElement, useEffect, useState } from 'react';
+import useSWRMutation from 'swr/mutation';
 import ContactForm from './contact_form';
 import Hero from './hero';
 import { useToast } from './use-toast';
@@ -13,15 +14,41 @@ interface FooterRegisterFromProps extends HTMLAttributes<HTMLDivElement> {
 
 const FooterRegisterFrom = React.forwardRef<HTMLDivElement, FooterRegisterFromProps>(
   ({ className, heading, description, formTitle, formSubTilte, ...props }, ref) => {
-    const { toast, toasts } = useToast();
+    const { toast } = useToast();
+
+    const { data, trigger, isMutating } = useSWRMutation(
+      `api/submit-form`,
+      async (
+        url,
+        {
+          arg,
+        }: {
+          arg: {
+            data: FormData;
+            conversion_funnel: string;
+            ref_url: string;
+          };
+        },
+      ) => submitForm(arg),
+    );
+
     const onSubmitData = async data => {
-      await sendEmailToSaleTeam(data);
-      toast({
-        title: 'Successfull',
-        description: 'We have received your registration',
-        variant: 'success',
+      trigger({
+        data,
+        conversion_funnel: 'partner',
+        ref_url: 'window.location.href',
       });
     };
+
+    useEffect(() => {
+      if (data && !isMutating) {
+        toast({
+          title: 'Successfull',
+          description: 'We have received your registration',
+          variant: 'success',
+        });
+      }
+    }, [isMutating]);
 
     return (
       <div ref={ref} className=" bg-green-200" {...props}>
@@ -37,7 +64,15 @@ const FooterRegisterFrom = React.forwardRef<HTMLDivElement, FooterRegisterFromPr
               <h4 className="text-xl-semibold md:heading-md">{formTitle}</h4>
               <p className="text-base text-neutral-700 md:text-lg">{formSubTilte}</p>
             </div>
-            <ContactForm onSubmitData={onSubmitData} />
+            <ContactForm
+              onSubmitData={onSubmitData}
+              btnSubmitConfig={{
+                btnProps: {
+                  disabled: isMutating,
+                },
+                showLoading: isMutating,
+              }}
+            />
           </div>
         </Hero>
       </div>

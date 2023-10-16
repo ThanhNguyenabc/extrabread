@@ -40,6 +40,7 @@ import WirelessIcon from 'public/images/color-icons/wireless.svg';
 import WritingIcon from 'public/images/color-icons/writing.svg';
 import ZeroProcessingFeesIcon from 'public/images/color-icons/Zero Processing Fees.svg';
 import LogoFooterIcon from 'public/images/footer-logo.svg';
+import IcLoading from 'public/images/icons/loading.svg';
 
 import LandingBanner from 'public/images/banners/landing.png';
 import CashAdvanceImg from 'public/images/Cash Advance.png';
@@ -86,7 +87,14 @@ import PartnerCalling from 'public/images/partner/calling_person.webp';
 import PartnerTeamate from 'public/images/partner/teamate.webp';
 import PartnerWFH from 'public/images/partner/working_from_home.webp';
 
+//About us
+import AboutBanner from 'public/images/about-us/about-banner.png';
+import PosSytem from 'public/images/about-us/pos-system.png';
+import ProcessingFee from 'public/images/about-us/processing-fee.png';
+import SigningBonus from 'public/images/about-us/signing-bonus.png';
+
 export {
+  AboutBanner,
   AcceptAllPaymentIcon,
   BarNightImg,
   CartIcon,
@@ -113,6 +121,7 @@ export {
   IcBasePay,
   IcBonus,
   IcIncome,
+  IcLoading,
   InterfaceIcon,
   InvoicingImg,
   ItemManagementIcon,
@@ -142,6 +151,8 @@ export {
   PaymentTerminalIcon,
   PhoneIcon,
   PizzeriasImg,
+  PosSytem,
+  ProcessingFee,
   PromosIcon,
   PuzzleIcon,
   QuestionIcon,
@@ -151,6 +162,7 @@ export {
   RetailBusinessesImg,
   RewardIcon,
   SaveMoneyIcon,
+  SigningBonus,
   SmallBusinessImg,
   SystemIcon,
   TipPoolingIcon,
