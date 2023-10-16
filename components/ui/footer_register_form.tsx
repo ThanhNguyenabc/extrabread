@@ -1,6 +1,6 @@
 import { submitForm } from '@/apis';
 import { FormData } from '@/models/form_data';
-import React, { HTMLAttributes, ReactElement, useEffect, useState } from 'react';
+import React, { HTMLAttributes, ReactElement, useEffect } from 'react';
 import useSWRMutation from 'swr/mutation';
 import ContactForm from './contact_form';
 import Hero from './hero';
@@ -14,10 +14,10 @@ interface FooterRegisterFromProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const FooterRegisterFrom = React.forwardRef<HTMLDivElement, FooterRegisterFromProps>(
-  ({ className, heading, description, formTitle, formSubTilte, ...props }, ref) => {
+  ({ heading, description, formTitle, formSubTilte, ...props }, ref) => {
     const { toast } = useToast();
 
-    const { data, trigger, isMutating , } = useSWRMutation(
+    const { data, trigger, isMutating } = useSWRMutation(
       `api/submit-form`,
       async (
         url,
@@ -38,8 +38,8 @@ const FooterRegisterFrom = React.forwardRef<HTMLDivElement, FooterRegisterFromPr
           'Phone number': data.phone,
           Email: data.email,
         },
-        conversion_funnel: 'partner',
-        ref_url: 'window.location.href',
+        conversionFunnel: 'partner',
+        refUrl: 'window.location.href',
       });
     };
 
@@ -54,7 +54,7 @@ const FooterRegisterFrom = React.forwardRef<HTMLDivElement, FooterRegisterFromPr
     }, [isMutating]);
 
     return (
-      <div ref={ref} className=" bg-green-200" {...props}>
+      <div ref={ref} className="bg-green-200" {...props}>
         <Hero className="gap-6 md:gap-8 md:flex-row items-center">
           <div className="flex-1 flex flex-col gap-4 lg:gap-6 ">
             <h3 className="heading-xs md:heading-lg text-center md:text-start">{heading}</h3>

@@ -22,7 +22,6 @@ interface BannerX {
 
 const BannerX = ({
   heading,
-  className,
   headingClassName,
   leftCmpClassName,
   desc,

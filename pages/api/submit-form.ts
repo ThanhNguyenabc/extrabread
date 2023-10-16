@@ -23,8 +23,8 @@ export default async function handler(request: NextApiRequest, response: NextApi
       case 'POST':
         const {
           data,
-          conversion_funnel,
-          ref_url,
+          conversionFunnel,
+          refUrl,
           contact,
           sendMailToCustomer = true,
           adminHtmlBody = null,
@@ -36,7 +36,7 @@ export default async function handler(request: NextApiRequest, response: NextApi
           table: string;
           service: string;
           airtableBody: (data) => object;
-        } = PageConfigs[conversion_funnel] || PageConfigs['default'];
+        } = PageConfigs[conversionFunnel] || PageConfigs['default'];
 
         const promises = [
           sendEmailToSaleTeam({

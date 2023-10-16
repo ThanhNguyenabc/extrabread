@@ -80,8 +80,8 @@ export const GetPricingTemplate: FC<Props> = ({ type = 'default', children }) =>
       </html>`;
 
       await submitForm({
-        conversion_funnel: 'get_pricing',
-        ref_url: window.location.href,
+        conversionFunnel: 'get_pricing',
+        refUrl: window.location.href,
         adminHtmlBody: mailHtmlBody,
         sendMailToCustomer: sendMailToCustomer,
         data: {

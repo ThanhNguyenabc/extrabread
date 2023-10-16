@@ -1,5 +1,4 @@
 import { cn } from '@/lib/utils';
-import Image, { StaticImageData } from 'next/image';
 import React, { HTMLAttributes } from 'react';
 import { Badge } from './badge';
 import { Button, ButtonProps } from './button';

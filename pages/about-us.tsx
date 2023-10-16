@@ -83,7 +83,10 @@ const AboutUS = () => {
         <Hero className=" relative md:h-[400px] lg:h-[600px]">
           <div className="grid gap-6 grid-cols-2 z-10 my-auto md:gap-8 lg:grid-cols-4 lg:px-[]">
             {DataStatistics.map(item => (
-              <div className="flex flex-col text-white gap-2 text-center md:gap-4">
+              <div
+                key={`${item.title}`}
+                className="flex flex-col text-white gap-2 text-center md:gap-4"
+              >
                 <h3 className="heading-md md:heading-lg">{item.title}</h3>
                 <p className="text-sm-semibold md:text-base">{item.desc}</p>
               </div>
@@ -108,6 +111,7 @@ const AboutUS = () => {
         {InfoSections.map(item => {
           return (
             <InfoSection
+              key={`${item.title}`}
               className="pb-0 md:pb-0 xl:pb-0"
               dataConfig={{
                 ...item,
@@ -117,7 +121,7 @@ const AboutUS = () => {
                   onClick: () => {},
                   buttonProps: {
                     variant: 'outline',
-                    size :"default"
+                    size: 'default',
                   },
                 },
               }}

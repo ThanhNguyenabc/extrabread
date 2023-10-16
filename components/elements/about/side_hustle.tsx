@@ -1,4 +1,3 @@
-import Hero from '@/components/ui/hero';
 import InfoSection from '@/components/ui/info_section';
 import { PartnerCalling } from '@/ui/img-resource/ImageResources';
 import Image from 'next/image';
@@ -24,7 +23,11 @@ const SideHustle = () => {
         }}
         image={
           <div className="flex-1 md:h-[310px]">
-            <Image src={PartnerCalling} alt="partner" className=" md:h-[310px] object-cover rounded-xl" />
+            <Image
+              src={PartnerCalling}
+              alt="partner"
+              className=" md:h-[310px] object-cover rounded-xl"
+            />
           </div>
         }
       />
