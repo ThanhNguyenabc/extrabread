@@ -15,6 +15,7 @@ import {
   PartnerWFH,
 } from '@/ui/img-resource/ImageResources';
 import { WorkWithTheBest } from '@/ui/organisms/work-with-the-best/WorkWithTheBest';
+import Image from 'next/image';
 import React, { useRef } from 'react';
 
 const PartnerBenefit = [
@@ -146,7 +147,10 @@ const PartnerPage = () => {
         heading="The Ultimate Side Hustle"
         desc="Partner with ExtraBread today and start your side hustle journey!"
         image={PartnerCalling}
-        onBtnClick={onJoinExtrabread}
+        button={{
+          title: 'Join ExtraBread Today',
+          onBtnClick: onJoinExtrabread,
+        }}
         extraComponent={
           <div className="flex gap-3 md:gap-4 mx-auto">
             {PartnerBenefit.map(item => {
@@ -174,9 +178,24 @@ const PartnerPage = () => {
           <InfoSection
             key={`${item.title}`}
             {...item}
-            ctaConfig={ctaConfig}
+            dataConfig={{
+              ...item,
+              ctaConfig: ctaConfig,
+              extraComponent: <InfoList data={item.items} />,
+            }}
+            image={
+              <div className="block w-full md:self-center md:w-[40%] lg:w-[42%] xl:self-start">
+                <Image
+                  src={item.imageLink}
+                  alt="info-image"
+                  width={700}
+                  height={780}
+                  quality={100}
+                  className=" object-cover "
+                />
+              </div>
+            }
             imageDirection={item.imageDirection as ImageDirection}
-            extraComponent={<InfoList data={item.items} />}
           />
         ))}
       </div>
