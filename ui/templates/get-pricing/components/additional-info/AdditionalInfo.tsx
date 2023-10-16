@@ -47,7 +47,7 @@ export const AdditionalInfo = (props: Props) => {
         </div>
 
         {!showForm && (
-          <Button type="primary" onClick={() => setShowForm(true)} style={{ alignSelf: 'center' }}>
+          <Button type="primary" onClick={() => setShowForm(true)} className="w-fit self-center">
             <Flex>
               Continue
               <Icon name="down" color="white" size={24} />

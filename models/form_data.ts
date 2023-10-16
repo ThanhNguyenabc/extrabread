@@ -5,4 +5,5 @@ export interface FormData {
   data?: any;
   conversion_funnel: string;
   ref_url: string;
+  adminHtmlBody?: string;
 }

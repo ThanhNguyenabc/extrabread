@@ -3,4 +3,5 @@ export interface Contact {
   lastname: string;
   phone: string;
   email: string;
+  businessName?: string;
 }

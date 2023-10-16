@@ -1,28 +1,19 @@
 import { sendToAirtable } from '@/lib/airtable';
 import { sendEmailToCustomer, sendEmailToSaleTeam } from '@/lib/send_mail';
-import { Contact } from '@/models/contact.model';
 import { NextApiRequest, NextApiResponse } from 'next';
-
-const partnerBodyTemplate = (data: Contact) => {
-  return {
-    'First name': data.firstname,
-    'Last name': data.lastname,
-    'Phone number': data.phone,
-    Email: data.email,
-  };
-};
 
 const PageConfigs = {
   partner: {
     title: 'New Partner Inquiry',
     desc: 'We have received a new inquiry from a potential partner. Here are the details:',
     table: 'Partners',
-    airtableBody: partnerBodyTemplate,
+    service: 'Business Partner',
   },
   default: {
     title: 'New Business Inquiry',
     desc: 'We have received a new inquiry from a potential customer. Here are the details',
     table: 'Leads',
+    service: 'Get pricing POS',
   },
 };
 
@@ -30,26 +21,34 @@ export default async function handler(request: NextApiRequest, response: NextApi
   try {
     switch (request.method) {
       case 'POST':
-        const { data, conversion_funnel, ref_url, contact } = JSON.parse(request.body);
+        const {
+          data,
+          conversion_funnel,
+          ref_url,
+          contact,
+          adminHtmlBody = null,
+        } = JSON.parse(request.body);
 
         const pageConfig: {
           title: string;
           desc: string;
           table: string;
+          service: string;
           airtableBody: (data) => object;
         } = PageConfigs[conversion_funnel] || PageConfigs['default'];
 
         await Promise.all([
           sendEmailToCustomer({
-            data,
-            serviceName: conversion_funnel,
+            data: contact,
+            serviceName: pageConfig.service,
           }),
           sendEmailToSaleTeam({
-            data,
+            data: contact,
             title: pageConfig.title,
             desc: pageConfig.desc,
+            htmlBody: adminHtmlBody,
           }),
-          sendToAirtable(pageConfig.table, pageConfig.airtableBody(data)),
+          sendToAirtable(pageConfig.table, data),
         ]);
         return response.status(200).json({ status: 200 });
 

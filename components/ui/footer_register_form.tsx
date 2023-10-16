@@ -17,7 +17,7 @@ const FooterRegisterFrom = React.forwardRef<HTMLDivElement, FooterRegisterFromPr
   ({ className, heading, description, formTitle, formSubTilte, ...props }, ref) => {
     const { toast } = useToast();
 
-    const { data, trigger, isMutating } = useSWRMutation(
+    const { data, trigger, isMutating , } = useSWRMutation(
       `api/submit-form`,
       async (
         url,
@@ -32,7 +32,12 @@ const FooterRegisterFrom = React.forwardRef<HTMLDivElement, FooterRegisterFromPr
     const onSubmitData = async data => {
       trigger({
         contact: data,
-        data,
+        data: {
+          'First name': data.firstname,
+          'Last name': data.lastname,
+          'Phone number': data.phone,
+          Email: data.email,
+        },
         conversion_funnel: 'partner',
         ref_url: 'window.location.href',
       });

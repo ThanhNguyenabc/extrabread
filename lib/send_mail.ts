@@ -70,13 +70,17 @@ const sendEmailToSaleTeam = async ({
   title = 'New Business Inquiry',
   desc = 'We have received a new inquiry from a potential customer. Here are the details:',
   data,
+  htmlBody,
 }: {
   data: Contact;
   title?: string;
   desc?: string;
+  htmlBody?: string;
 }) => {
   try {
-    const htmlContent = `<!DOCTYPE html>
+    const htmlContent =
+      htmlBody ||
+      `<!DOCTYPE html>
     <html>
       <body>
         <h1>${title}</h1>
