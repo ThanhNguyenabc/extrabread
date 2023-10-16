@@ -57,10 +57,9 @@ export default async function handler(request: NextApiRequest, response: NextApi
         await Promise.all(promises);
         return response.status(200).json({ status: 200 });
       }
-
-      default:
-        break;
     }
-  } catch (error) {}
+  } catch (error) {
+    console.log('submit form error = ', error);
+  }
   return response.status(500).json({ status: 500, message: 'Internal server error' });
 }
