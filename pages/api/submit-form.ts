@@ -24,7 +24,6 @@ export default async function handler(request: NextApiRequest, response: NextApi
         const {
           data,
           conversionFunnel,
-          refUrl,
           contact,
           sendMailToCustomer = true,
           adminHtmlBody = null,
