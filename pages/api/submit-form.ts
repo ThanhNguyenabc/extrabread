@@ -20,7 +20,7 @@ const PageConfigs = {
 export default async function handler(request: NextApiRequest, response: NextApiResponse) {
   try {
     switch (request.method) {
-      case 'POST':
+      case 'POST': {
         const {
           data,
           conversionFunnel,
@@ -56,6 +56,7 @@ export default async function handler(request: NextApiRequest, response: NextApi
           );
         await Promise.all(promises);
         return response.status(200).json({ status: 200 });
+      }
 
       default:
         break;
