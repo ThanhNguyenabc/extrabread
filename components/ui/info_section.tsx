@@ -42,17 +42,14 @@ const InfoSection = ({
         imageDirection === 'left' && 'md:flex-row-reverse',
       )}
     >
-      <div
-        className={cn(
-          `flex flex-1 flex-col gap-4 mx-auto lg:max-w-[560px] justify-between`,
-          infoClassName,
-        )}
-      >
+      <div className={cn(`flex flex-1 flex-col gap-4 mx-auto justify-between`, infoClassName)}>
         {tagConfig && (
           <Badge className={cn('bg-neutral-300', tagConfig.tagClassName)}>{tagConfig.text}</Badge>
         )}
         <h3 className="heading-xs md:heading-md lg:heading-lg">{title}</h3>
-        <p className="text-sm text-neutral-700 md:text-base lg:text-lg">{desc}</p>
+        <p className="text-sm  whitespace-pre-wrap text-neutral-700 md:text-base lg:text-lg">
+          {desc}
+        </p>
         {extraComponent && extraComponent}
         {ctaConfig && (
           <Button

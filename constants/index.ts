@@ -99,12 +99,8 @@ export const COMPANY_MENU = [
   { title: 'State Regulations', href: '#' },
   { title: 'Blog', href: RouteConfig.Blogs },
   { title: 'Partner', href: RouteConfig.Partner },
-  { title: 'Payment Processing', href: '#' },
-  { title: 'About us', href: '#' },
-
-  // TODO: hide
-  // { title: 'Privacy Policy', href: RouteConfig.PrivacyPolicy },
-  // { title: 'Terms of service', href: RouteConfig.TermsOfService },
+  { title: 'Payment Processing', href: '' },
+  { title: 'About us', href: RouteConfig.AboutUs },
 ] as const;
 
 export const SOLUTIONS_MENU = [

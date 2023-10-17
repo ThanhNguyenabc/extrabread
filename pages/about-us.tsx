@@ -54,6 +54,7 @@ const InfoSections = [
 ];
 const AboutUS = () => {
   const onGetStart = () => {};
+
   return (
     <>
       <BannerX
@@ -94,6 +95,7 @@ const AboutUS = () => {
           </div>
         </Hero>
       </div>
+
       <div className="bg-neutral-100">
         <Hero className="gap-4 md:flex-row md:gap-8 lg:gap-16">
           <h3 className="heading-xs text-center md:text-start md:heading-lg ">What we do?</h3>
@@ -107,6 +109,7 @@ const AboutUS = () => {
           </div>
         </Hero>
       </div>
+
       <div className="flex flex-col pb-10 md:pb-16 lg:pb-20">
         {InfoSections.map(item => {
           return (
@@ -135,6 +138,7 @@ const AboutUS = () => {
           );
         })}
       </div>
+
       <SideHustle />
 
       <CTAInnerFooter

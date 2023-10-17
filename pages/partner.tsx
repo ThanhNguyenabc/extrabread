@@ -179,9 +179,11 @@ const PartnerPage = () => {
           <InfoSection
             key={`${item.title}`}
             {...item}
+            
             dataConfig={{
               ...item,
               ctaConfig: ctaConfig,
+              infoClassName: "lg:max-w-[560px]",
               extraComponent: <InfoList data={item.items} />,
             }}
             image={

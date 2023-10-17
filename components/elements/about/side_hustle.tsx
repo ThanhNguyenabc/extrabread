@@ -31,7 +31,6 @@ const SideHustle = () => {
           </div>
         }
       />
-      ;
     </div>
   );
 };
