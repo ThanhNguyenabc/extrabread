@@ -46,13 +46,13 @@ const sendEmailToCustomer = async ({
   serviceName?: string;
 }) => {
   try {
-    const template = await generateEmailTemplate({
-      pathFile: 'customer_email.html',
+    const template = await generateEmailTemplate('customer_email.html', {
       data: {
         name: `${data.firstname} ${data.lastname}`.toUpperCase(),
         content: serviceName,
       },
     });
+
     await sendEmail({
       mailOption: {
         html: template,
@@ -110,14 +110,16 @@ const sendEmailToSaleTeam = async ({
   return false;
 };
 
-export const generateEmailTemplate = async ({
-  pathFile,
-  data,
-}: {
-  data?: { [key: string]: string };
-  pathFile: string;
-}) => {
-  const template = await readFile(path.resolve(pathFile), 'utf-8');
+export const generateEmailTemplate = async (
+  fileName: string,
+  {
+    data,
+  }: {
+    data?: { [key: string]: string };
+  },
+) => {
+  const publicFolder = path.resolve(process.cwd(), 'public');
+  const template = await readFile(path.join(publicFolder, fileName), 'utf-8');
   return ejs.render(template, data);
 };
 
