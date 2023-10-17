@@ -151,8 +151,9 @@ const PartnerPage = () => {
           title: 'Join ExtraBread Today',
           onBtnClick: onJoinExtrabread,
         }}
+        leftCmpClassName='lg:justify-between'
         extraComponent={
-          <div className="flex gap-3 md:gap-4 mx-auto">
+          <div className="flex gap-3 md:gap-4 lg:mx-auto">
             {PartnerBenefit.map(item => {
               const Icon = item.icon;
               return (
