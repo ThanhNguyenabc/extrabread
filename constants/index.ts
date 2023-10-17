@@ -99,7 +99,7 @@ export const COMPANY_MENU = [
   { title: 'State Regulations', href: '#' },
   { title: 'Blog', href: RouteConfig.Blogs },
   { title: 'Partner', href: RouteConfig.Partner },
-  { title: 'Payment Processing', href: '' },
+  { title: 'Payment Processing', href: RouteConfig.PaymentProcessing },
   { title: 'About us', href: RouteConfig.AboutUs },
 ] as const;
 

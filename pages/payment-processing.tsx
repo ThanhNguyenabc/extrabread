@@ -106,7 +106,7 @@ const PaymentProcessing = () => {
               className="pb-0 md:pb-0 md:gap-8 lg:gap-16 xl:pb-0"
               dataConfig={{
                 ...data,
-                infoClassName: 'justify-center ',
+                infoClassName: 'justify-center',
                 ctaConfig: {
                   title: 'Learn more',
                   onClick: () => {},
@@ -116,11 +116,14 @@ const PaymentProcessing = () => {
                   },
                 },
                 extraComponent: (
-                  <div className="flex bg-green-500 w-full flex-col gap-4 my-4 lg:my-10 lg:flex-row md:gap-8 ">
+                  <div className="flex  flex-col gap-4 my-4 md:gap-8 lg:my-10 lg:flex-row">
                     {data.items.map(item => (
-                      <div key={`${item.text}`} className="flex flex-row gap-4 items-center">
-                        <item.image className="w-8 h-8 lg:flex-1 md:w-12 md:h-12" />
-                        <p className="text-sm-semibold lg:flex-1 md:text-">{item.text}</p>
+                      <div
+                        key={`${item.text}`}
+                        className="w-fit flex flex-row gap-4 items-center"
+                      >
+                        <item.image className="w-8 h-8 md:w-12 md:h-12" />
+                        <p className="text-sm-semibold  md:text-">{item.text}</p>
                       </div>
                     ))}
                   </div>
@@ -128,14 +131,13 @@ const PaymentProcessing = () => {
               }}
               imageDirection={data.imageDirection as ImageDirection}
               image={
-                <div className=" bg-neutral-100 md:w-[50%] lg:max-w-[447px] xl:max-h-[500px]">
+                <div className="md:w-[50%] self-center h-fit bg-neutral-100 lg:max-w-[447px] xl:max-h-[500px]">
                   <Image
                     src={data.image}
                     alt={`${data.title}`}
                     quality={90}
                     width={447}
                     height={500}
-                    className="my-auto"
                   />
                 </div>
               }
