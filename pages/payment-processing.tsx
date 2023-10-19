@@ -1,6 +1,7 @@
 import SideHustle from '@/components/elements/about/side_hustle';
 import BannerX from '@/components/elements/partner/BannerX';
 import InfoSection, { ImageDirection } from '@/components/ui/info_section';
+import { RouteConfig } from '@/constants';
 import {
   CartIcon,
   ChipIcon,
@@ -17,6 +18,7 @@ import {
 } from '@/ui/img-resource/ImageResources';
 import { CTAInnerFooter } from '@/ui/organisms/cta-inner-footer/CTAInnerFooter';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 const PaymentInfoSections = [
@@ -39,6 +41,7 @@ const PaymentInfoSections = [
         text: 'Wifi and Wireless models available',
       },
     ],
+    url: `${RouteConfig.Solution}#credit-card`,
   },
   {
     image: MobileCardReaderBanner,
@@ -59,6 +62,7 @@ const PaymentInfoSections = [
         text: 'Affordablechoices',
       },
     ],
+    url: `${RouteConfig.Solution}#mobile-card`,
   },
   {
     image: OnlineProcessingBanner,
@@ -79,11 +83,17 @@ const PaymentInfoSections = [
         text: 'Onlineterminal',
       },
     ],
+
+    url: `${RouteConfig.Solution}#online-processing`,
   },
 ];
 
 const PaymentProcessing = () => {
-  const onGetStart = () => {};
+  const router = useRouter();
+
+  const onGetStart = () => {
+    router.push(RouteConfig.GetPricing);
+  };
 
   return (
     <>
@@ -109,7 +119,7 @@ const PaymentProcessing = () => {
                 infoClassName: 'justify-center',
                 ctaConfig: {
                   title: 'Learn more',
-                  onClick: () => {},
+                  onClick: () => router.push(data.url),
                   buttonProps: {
                     variant: 'outline',
                     size: 'default',
@@ -118,10 +128,7 @@ const PaymentProcessing = () => {
                 extraComponent: (
                   <div className="flex  flex-col gap-4 my-4 md:gap-8 lg:my-10 lg:flex-row">
                     {data.items.map(item => (
-                      <div
-                        key={`${item.text}`}
-                        className="w-fit flex flex-row gap-4 items-center"
-                      >
+                      <div key={`${item.text}`} className="w-fit flex flex-row gap-4 items-center">
                         <item.image className="w-8 h-8 md:w-12 md:h-12" />
                         <p className="text-sm-semibold  md:text-">{item.text}</p>
                       </div>
