@@ -3,6 +3,7 @@ import BannerX from '@/components/elements/partner/BannerX';
 import { Button } from '@/components/ui/button';
 import Hero from '@/components/ui/hero';
 import InfoSection, { ImageDirection } from '@/components/ui/info_section';
+import { RouteConfig } from '@/constants';
 import {
   AboutBanner,
   PosSytem,
@@ -11,6 +12,7 @@ import {
 } from '@/ui/img-resource/ImageResources';
 import { CTAInnerFooter } from '@/ui/organisms/cta-inner-footer/CTAInnerFooter';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 const DataStatistics = [
@@ -49,11 +51,20 @@ const InfoSections = [
     image: PosSytem,
     imageDirection: 'right',
     title: 'Premium POS Systems',
-    desc: 'Provides your business with the necessary funding and flexibility to expand operations or weather difficult times with your staff.',
+    desc: "Discover the possibilities with our extensive selection of point-of-sale systems designed to elevate your business. At ExtraBread, we take pride in offering a wide range of POS solutions tailored to meet the unique needs of your enterprise.\n\nWhether you're a small boutique or a large retail chain, our systems are crafted for efficiency and user-friendly functionality. When you make the switch to ExtraBread, you could potentially acquire a complete POS system for as low as $0.\n\nExplore the future of streamlined transactions with ExtraBread's innovative POS solutions today.",
   },
 ];
+
 const AboutUS = () => {
-  const onGetStart = () => {};
+  const router = useRouter();
+  
+  const onGetStart = () => {
+    router.push(`${RouteConfig.GetPricing}`);
+  };
+
+  const learnMore = () => {
+    router.push(`${RouteConfig.Solution}#credit-card`);
+  };
 
   return (
     <>
@@ -103,7 +114,11 @@ const AboutUS = () => {
             <p className=" text-sm whitespace-pre-wrap md:text-lg">
               {`ExtraBread is your trusted partners in the world of processing fees and point-of-sale systems.\n \n Our mission is clear: we guide you in finding the best POS system for your business needs when signing up with us to do your payment processing. Along with a point-of-sale system, receive up to possibly $5,000+ in a cash signing bonus. \n\n We're  passionate about helping businesses succeed and want to be there with you every step of the way. Work with ExtraBread today and get more bread with less problems.`}
             </p>
-            <Button className=" bg-neutral-900 hover:bg-neutral-900/90" size={'responsive'}>
+            <Button
+              className=" bg-neutral-900 hover:bg-neutral-900/90"
+              size={'responsive'}
+              onClick={onGetStart}
+            >
               Get Started
             </Button>
           </div>
@@ -118,10 +133,10 @@ const AboutUS = () => {
               className="pb-0 md:pb-0 xl:pb-0"
               dataConfig={{
                 ...item,
-                infoClassName: 'justify-center',
+                infoClassName: 'flex-1 justify-center lg:p-7',
                 ctaConfig: {
                   title: 'Learn more',
-                  onClick: () => {},
+                  onClick: learnMore,
                   buttonProps: {
                     variant: 'outline',
                     size: 'default',
@@ -130,7 +145,7 @@ const AboutUS = () => {
               }}
               imageDirection={item.imageDirection as ImageDirection}
               image={
-                <div className="flex-1">
+                <div className=" w-[584px]">
                   <Image src={item.image} alt={`${item.title}`} quality={90} />
                 </div>
               }
