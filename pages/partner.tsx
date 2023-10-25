@@ -214,7 +214,7 @@ const PartnerPage = () => {
         description={
           'Join ExtraBread now to earn extra income, expand your skills, and maintain your commitments. Gain valuable experience with established point-of-sale systems and be part of a collaborative team for personal and financial growth!'
         }
-        formTitle="Start Earning Money Today"
+        formTitle="Join The Ultimate Side Hustle"
         formSubTilte="Fill out the form and we will reach out to you in 24-48 hours"
       />
     </div>
