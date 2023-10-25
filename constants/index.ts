@@ -75,6 +75,7 @@ export enum RouteConfig {
   Partner = '/partner',
   PaymentProcessing = '/payment-processing',
   AboutUs = '/about-us',
+  ElevateBusiness = '/elevate-your-business',
 }
 
 export type RouteConfigType = `${RouteConfig}`;
@@ -101,6 +102,7 @@ export const COMPANY_MENU = [
   { title: 'Partner', href: RouteConfig.Partner },
   { title: 'Payment Processing', href: RouteConfig.PaymentProcessing },
   { title: 'About us', href: RouteConfig.AboutUs },
+  { title: 'Elevate Your Business', href: RouteConfig.ElevateBusiness },
 ] as const;
 
 export const SOLUTIONS_MENU = [

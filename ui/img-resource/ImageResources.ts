@@ -40,6 +40,7 @@ import WirelessIcon from 'public/images/color-icons/wireless.svg';
 import WritingIcon from 'public/images/color-icons/writing.svg';
 import ZeroProcessingFeesIcon from 'public/images/color-icons/Zero Processing Fees.svg';
 import LogoFooterIcon from 'public/images/footer-logo.svg';
+import IcCheck from 'public/images/icons/check.svg';
 import IcLoading from 'public/images/icons/loading.svg';
 
 import LandingBanner from 'public/images/banners/landing.png';
@@ -120,6 +121,7 @@ export {
   IcAppointment,
   IcBasePay,
   IcBonus,
+  IcCheck,
   IcIncome,
   IcLoading,
   InterfaceIcon,
