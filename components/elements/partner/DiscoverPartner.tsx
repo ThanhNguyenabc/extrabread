@@ -12,7 +12,7 @@ const DiscoverItem = [
     color: 'bg-red-200',
   },
   {
-    text: 'Iso Agent',
+    text: 'ISO Agent',
     color: 'bg-green-100',
   },
 ];
