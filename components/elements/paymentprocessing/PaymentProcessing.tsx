@@ -152,14 +152,7 @@ const PaymentProcessing = () => {
           );
         })}
       </div>
-
       <SideHustle />
-
-      <CTAInnerFooter
-        htmlText="Discover the perfect point of sale system for your business today!"
-        bonus={2500}
-        sale={250000}
-      />
     </>
   );
 };

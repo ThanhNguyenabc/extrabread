@@ -100,27 +100,33 @@ export const COMPANY_MENU = [
   { title: 'State Regulations', href: '#' },
   { title: 'Blog', href: RouteConfig.Blogs },
   { title: 'Partner', href: RouteConfig.Partner },
-  { title: 'Payment Processing', href: RouteConfig.PaymentProcessing },
   { title: 'About us', href: RouteConfig.AboutUs },
   { title: 'Elevate Your Business', href: RouteConfig.ElevateBusiness },
 ] as const;
 
 export const SOLUTIONS_MENU = [
   {
-    href: `${RouteConfig.Solution}#credit-card`,
+    href: `${RouteConfig.Solution}/payment-processing`,
+    title: 'Payment Processing',
+    replaceTitle: 'Capital & Funding',
+    description: 'In-person payments have never been easier.',
+    src: CreditCardTerminalImg.src,
+  },
+  {
+    href: `${RouteConfig.Solution}/credit-card`,
     title: 'Credit Card Terminal',
     replaceTitle: 'Capital & Funding',
     description: 'In-person payments have never been easier.',
     src: CreditCardTerminalImg.src,
   },
   {
-    href: `${RouteConfig.Solution}#mobile-card`,
+    href: `${RouteConfig.Solution}/mobile-card`,
     title: 'Mobile Card Reader',
     description: 'Accept Payments Anywhere ',
     src: MobileCardReaderImg.src,
   },
   {
-    href: `${RouteConfig.Solution}#online-processing`,
+    href: `${RouteConfig.Solution}/online-processing`,
     title: 'Online Processing',
     description: 'Streamline Your Online Payments ',
     src: OnlineProcessingImg.src,
