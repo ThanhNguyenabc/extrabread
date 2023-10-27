@@ -16,7 +16,6 @@ import {
   VirtualIcon,
   WirelessIcon,
 } from '@/ui/img-resource/ImageResources';
-import { CTAInnerFooter } from '@/ui/organisms/cta-inner-footer/CTAInnerFooter';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
