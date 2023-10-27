@@ -33,10 +33,12 @@ const FooterRegisterFrom = React.forwardRef<HTMLDivElement, FooterRegisterFromPr
       trigger({
         contact: data,
         data: {
-          'First name': data.firstname,
-          'Last name': data.lastname,
-          'Phone number': data.phone,
-          Email: data.email,
+          airtable: {
+            'First name': data.firstname,
+            'Last name': data.lastname,
+            'Phone number': data.phone,
+            Email: data.email,
+          },
         },
         conversionFunnel: 'partner',
         refUrl: 'window.location.href',

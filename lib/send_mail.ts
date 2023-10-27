@@ -30,7 +30,6 @@ export const sendEmail = async ({
       to: `${process.env.RECEIVER_EMAIL}`,
       ...mailOption,
     });
-    console.log(res);
     return true;
   } catch (error) {
     console.log('error ', error);
@@ -41,12 +40,14 @@ export const sendEmail = async ({
 const sendEmailToCustomer = async ({
   data,
   serviceName = 'POS provider',
+  templateName = 'customer_email.html',
 }: {
   data: Contact;
   serviceName?: string;
+  templateName?: string;
 }) => {
   try {
-    const template = await generateEmailTemplate('customer_email.html', {
+    const template = await generateEmailTemplate(templateName, {
       data: {
         name: `${data.firstname} ${data.lastname}`.toUpperCase(),
         content: serviceName,

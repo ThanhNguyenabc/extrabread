@@ -8,6 +8,7 @@ const PageConfigs = {
     desc: 'We have received a new inquiry from a potential partner. Here are the details:',
     table: 'Partners',
     service: 'Business Partner',
+    templateName: 'partner_email.html',
   },
   default: {
     title: 'New Business Inquiry',
@@ -34,7 +35,7 @@ export default async function handler(request: NextApiRequest, response: NextApi
           desc: string;
           table: string;
           service: string;
-          airtableBody: (data) => object;
+          templateName?: string;
         } = PageConfigs[conversionFunnel] || PageConfigs['default'];
 
         const promises = [
@@ -44,16 +45,19 @@ export default async function handler(request: NextApiRequest, response: NextApi
             desc: pageConfig.desc,
             htmlBody: adminHtmlBody,
           }),
-          sendToAirtable(pageConfig.table, data),
+          sendToAirtable(pageConfig.table, data['airtable'] || {}),
         ];
 
-        if (sendMailToCustomer)
+        if (sendMailToCustomer) {
           promises.push(
             sendEmailToCustomer({
               data: contact,
-              serviceName: pageConfig.service,
+              serviceName: data['service'] || pageConfig.service,
+              templateName: pageConfig.templateName,
             }),
           );
+        }
+
         await Promise.all(promises);
         return response.status(200).json({ status: 200 });
       }
