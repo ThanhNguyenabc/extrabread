@@ -24,7 +24,7 @@ export const sendEmail = async ({
       },
     });
 
-    const res = await transporter.sendMail({
+    await transporter.sendMail({
       from: `${prefix} <${senderMail}>`,
       subject: 'Extrabread',
       to: `${process.env.RECEIVER_EMAIL}`,
