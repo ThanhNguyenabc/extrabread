@@ -106,13 +106,6 @@ export const COMPANY_MENU = [
 
 export const SOLUTIONS_MENU = [
   {
-    href: `${RouteConfig.Solution}/payment-processing`,
-    title: 'Payment Processing',
-    replaceTitle: 'Capital & Funding',
-    description: 'In-person payments have never been easier.',
-    src: CreditCardTerminalImg.src,
-  },
-  {
     href: `${RouteConfig.Solution}/credit-card`,
     title: 'Credit Card Terminal',
     replaceTitle: 'Capital & Funding',
