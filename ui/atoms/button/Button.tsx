@@ -12,7 +12,6 @@ const { textColor, primaryColor } = variables;
 
 export const Button = forwardRef<HTMLButtonElement, BreadButtonProps>(
   ({ className, color, type, ...rest }, ref) => {
-    const bgColor = type == 'primary' ? primaryColor : 'white';
     if (color == 'black')
       return (
         <ConfigProvider
@@ -26,7 +25,7 @@ export const Button = forwardRef<HTMLButtonElement, BreadButtonProps>(
             type={type}
             ref={ref}
             className={classNames(styles.button, className)}
-            style={{ backgroundColor: bgColor }}
+            style={{ backgroundColor: color }}
           />
         </ConfigProvider>
       );
@@ -37,7 +36,9 @@ export const Button = forwardRef<HTMLButtonElement, BreadButtonProps>(
         type={type}
         ref={ref}
         className={classNames(styles.button, className)}
-        style={{ backgroundColor: bgColor }}
+        style={{
+          backgroundColor: type == 'primary' ? color || primaryColor : 'white',
+        }}
       />
     );
   },

@@ -75,7 +75,7 @@ export enum RouteConfig {
   Partner = '/partner',
   PaymentProcessing = '/payment-processing',
   AboutUs = '/about-us',
-  ElevateBusiness = '/elevate-your-business',
+  ElevateBusiness = '/point-of-sale-systems',
 }
 
 export type RouteConfigType = `${RouteConfig}`;

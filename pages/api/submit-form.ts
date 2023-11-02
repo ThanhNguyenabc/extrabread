@@ -4,17 +4,24 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 const PageConfigs = {
   partner: {
-    title: 'New Partner Inquiry',
-    desc: 'We have received a new inquiry from a potential partner. Here are the details:',
+    adminEmail: {
+      title: 'New Partner Inquiry',
+      desc: 'We have received a new inquiry from a potential partner. Here are the details:',
+    },
     table: 'Partners',
     service: 'Business Partner',
     templateName: 'partner_email.html',
+    customerEmail: {
+      subject: "Let's Get Your Side Hustle Started! 🥳",
+    },
   },
   default: {
-    title: 'New Business Inquiry',
-    desc: 'We have received a new inquiry from a potential customer. Here are the details',
+    adminEmail: {
+      title: 'New Business Inquiry',
+      desc: 'We have received a new inquiry from a potential customer. Here are the details',
+    },
     table: 'Leads',
-    service: 'Get pricing POS',
+    service: '',
   },
 };
 
@@ -31,18 +38,18 @@ export default async function handler(request: NextApiRequest, response: NextApi
         } = JSON.parse(request.body);
 
         const pageConfig: {
-          title: string;
-          desc: string;
           table: string;
           service: string;
+          adminEmail: object;
+          customerEmail: object;
           templateName?: string;
         } = PageConfigs[conversionFunnel] || PageConfigs['default'];
 
         const promises = [
           sendEmailToSaleTeam({
-            data: contact,
-            title: pageConfig.title,
-            desc: pageConfig.desc,
+            contact: contact,
+            title: pageConfig['adminEmail']?.['title'],
+            desc: pageConfig['adminEmail']?.['desc'],
             htmlBody: adminHtmlBody,
           }),
           sendToAirtable(pageConfig.table, data['airtable'] || {}),
@@ -51,15 +58,21 @@ export default async function handler(request: NextApiRequest, response: NextApi
         if (sendMailToCustomer) {
           promises.push(
             sendEmailToCustomer({
-              data: contact,
+              contact: contact,
               serviceName: data['service'] || pageConfig.service,
               templateName: pageConfig.templateName,
+              mailOptions: {
+                subject: pageConfig['customerEmail']?.['subject'] || 'Extrabread',
+              },
             }),
           );
         }
 
+        response.status(200).json({ status: 200 });
+
         await Promise.all(promises);
-        return response.status(200).json({ status: 200 });
+
+        return;
       }
     }
   } catch (error) {

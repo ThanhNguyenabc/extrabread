@@ -19,7 +19,7 @@ const ElevateCardItem = ({ desc, logo, pros, route }: ElevateCardItemProps) => {
         width={200}
         height={100}
         quality={90}
-        className="self-center aspect-[2/1] w-[96px] md:w-[160px] lg:w-[200px]"
+        className="self-center aspect-[2/1] w-[120px] md:w-[160px] lg:w-[200px] object-contain"
       />
       <p className="text-sm-semibold"> {desc}</p>
       <div className="flex-1 flex flex-col gap-1">

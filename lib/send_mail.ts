@@ -5,6 +5,20 @@ import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
 import path from 'path';
 
+const senderMail = `${process.env.SENDER_EMAIL}`;
+const senderEmailPassword = `${process.env.SENDER_EMAIL_PASSWORD}`;
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  host: 'smtp.gmail.com',
+  secure: true,
+  auth: {
+    user: senderMail,
+    pass: senderEmailPassword,
+  },
+});
+
+
 export const sendEmail = async ({
   mailOption,
   prefix = 'Extrabread',
@@ -12,18 +26,7 @@ export const sendEmail = async ({
   mailOption?: Mail.Options;
   prefix?: string;
 }) => {
-  const senderMail = `${process.env.SENDER_EMAIL}`;
   try {
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      host: 'smtp.gmail.com',
-      secure: true,
-      auth: {
-        user: senderMail,
-        pass: `${process.env.SENDER_EMAIL_PASSWORD}`,
-      },
-    });
-
     await transporter.sendMail({
       from: `${prefix} <${senderMail}>`,
       subject: 'Extrabread',
@@ -38,18 +41,20 @@ export const sendEmail = async ({
 };
 
 const sendEmailToCustomer = async ({
-  data,
+  contact,
+  mailOptions,
   serviceName = 'POS provider',
   templateName = 'customer_email.html',
 }: {
-  data: Contact;
+  contact: Contact;
+  mailOptions?: Mail.Options;
   serviceName?: string;
   templateName?: string;
 }) => {
   try {
     const template = await generateEmailTemplate(templateName, {
       data: {
-        name: `${data.firstname} ${data.lastname}`.toUpperCase(),
+        name: `${contact.firstname} ${contact.lastname}`.toUpperCase(),
         content: serviceName,
       },
     });
@@ -57,7 +62,8 @@ const sendEmailToCustomer = async ({
     await sendEmail({
       mailOption: {
         html: template,
-        to: data.email,
+        to: contact.email,
+        ...mailOptions,
       },
     });
     return true;
@@ -70,10 +76,10 @@ const sendEmailToCustomer = async ({
 const sendEmailToSaleTeam = async ({
   title = 'New Business Inquiry',
   desc = 'We have received a new inquiry from a potential customer. Here are the details:',
-  data,
+  contact,
   htmlBody,
 }: {
-  data: Contact;
+  contact: Contact;
   title?: string;
   desc?: string;
   htmlBody?: string;
@@ -88,9 +94,9 @@ const sendEmailToSaleTeam = async ({
         <p>Dear Sales Team,</p>
         <p>${desc}</p>
         <ul>
-          <li><strong>Customer name:</strong> ${data.firstname} ${data.lastname}</li>
-          <li><strong>Phone number:</strong> ${data.phone}</li>
-          <li><strong>Email:</strong> ${data.email}</li>
+          <li><strong>Customer name:</strong> ${contact.firstname} ${contact.lastname}</li>
+          <li><strong>Phone number:</strong> ${contact.phone}</li>
+          <li><strong>Email:</strong> ${contact.email}</li>
         </ul>
         <p>Please follow up with the customer as soon as possible.</p>
         <p>Best regards</p>

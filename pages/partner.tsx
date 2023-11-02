@@ -1,8 +1,8 @@
 import BannerX from '@/components/elements/partner/BannerX';
 import DiscoverPartner from '@/components/elements/partner/DiscoverPartner';
 import InfoList from '@/components/elements/partner/InfoList';
+import PartnerForm from '@/components/elements/partner/PartnerForm';
 import Stories from '@/components/elements/partner/Stories';
-import FooterRegisterFrom from '@/components/ui/footer_register_form';
 import InfoSection, { ImageDirection } from '@/components/ui/info_section';
 import {
   IcAppointment,
@@ -151,7 +151,7 @@ const PartnerPage = () => {
           title: 'Join ExtraBread Today',
           onBtnClick: onJoinExtrabread,
         }}
-        leftCmpClassName='lg:justify-between'
+        leftCmpClassName="lg:justify-between"
         extraComponent={
           <div className="flex gap-3 md:gap-4 lg:mx-auto">
             {PartnerBenefit.map(item => {
@@ -179,11 +179,10 @@ const PartnerPage = () => {
           <InfoSection
             key={`${item.title}`}
             {...item}
-            
             dataConfig={{
               ...item,
               ctaConfig: ctaConfig,
-              infoClassName: "lg:max-w-[560px]",
+              infoClassName: 'lg:max-w-[560px]',
               extraComponent: <InfoList data={item.items} />,
             }}
             image={
@@ -204,7 +203,7 @@ const PartnerPage = () => {
       </div>
 
       <Stories />
-      <FooterRegisterFrom
+      <PartnerForm
         ref={registerForm}
         heading={
           <>

@@ -16,7 +16,7 @@ const ElevateYourBusiness = () => {
         desc="Explore our range of cutting-edge point of sale systems and discover how we're revolutionizing the way businesses operate "
       />
       <div className="bg-neutral-100">
-        <Hero className="grid grid-cols-1 gap-2 md:gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <Hero className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:gap-6 lg:grid-cols-3">
           {ProductData.map((item, index) => (
             <ElevateCardItem key={`elevate-card-item${index}`} {...item} />
           ))}

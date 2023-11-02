@@ -2,9 +2,9 @@ import { submitForm } from '@/apis';
 import { FormData } from '@/models/form_data';
 import React, { HTMLAttributes, ReactElement, useEffect } from 'react';
 import useSWRMutation from 'swr/mutation';
-import ContactForm from './contact_form';
-import Hero from './hero';
-import { useToast } from './use-toast';
+import ContactForm from '../../ui/contact_form';
+import Hero from '../../ui/hero';
+import { useToast } from '../../ui/use-toast';
 
 interface FooterRegisterFromProps extends HTMLAttributes<HTMLDivElement> {
   heading: ReactElement | string;
@@ -13,7 +13,7 @@ interface FooterRegisterFromProps extends HTMLAttributes<HTMLDivElement> {
   formSubTilte?: string;
 }
 
-const FooterRegisterFrom = React.forwardRef<HTMLDivElement, FooterRegisterFromProps>(
+const PartnerForm = React.forwardRef<HTMLDivElement, FooterRegisterFromProps>(
   ({ heading, description, formTitle, formSubTilte, ...props }, ref) => {
     const { toast } = useToast();
 
@@ -85,4 +85,4 @@ const FooterRegisterFrom = React.forwardRef<HTMLDivElement, FooterRegisterFromPr
   },
 );
 
-export default FooterRegisterFrom;
+export default PartnerForm;
