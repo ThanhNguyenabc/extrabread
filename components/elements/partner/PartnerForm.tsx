@@ -17,7 +17,7 @@ const PartnerForm = React.forwardRef<HTMLDivElement, FooterRegisterFromProps>(
   ({ heading, description, formTitle, formSubTilte, ...props }, ref) => {
     const { toast } = useToast();
 
-    const { data, trigger } = useSWRMutation(
+    const { trigger } = useSWRMutation(
       `api/submit-form`,
       async (
         url,
