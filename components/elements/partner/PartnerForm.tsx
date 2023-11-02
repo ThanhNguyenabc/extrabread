@@ -1,6 +1,6 @@
 import { submitForm } from '@/apis';
 import { FormData } from '@/models/form_data';
-import React, { HTMLAttributes, ReactElement, useEffect } from 'react';
+import React, { HTMLAttributes, ReactElement, useEffect, useState } from 'react';
 import useSWRMutation from 'swr/mutation';
 import ContactForm from '../../ui/contact_form';
 import Hero from '../../ui/hero';
@@ -17,7 +17,7 @@ const PartnerForm = React.forwardRef<HTMLDivElement, FooterRegisterFromProps>(
   ({ heading, description, formTitle, formSubTilte, ...props }, ref) => {
     const { toast } = useToast();
 
-    const { data, trigger, isMutating } = useSWRMutation(
+    const { data, trigger } = useSWRMutation(
       `api/submit-form`,
       async (
         url,
@@ -28,6 +28,8 @@ const PartnerForm = React.forwardRef<HTMLDivElement, FooterRegisterFromProps>(
         },
       ) => submitForm(arg),
     );
+
+    const [isLoading, setLoading] = useState(false);
 
     const onSubmitData = async data => {
       trigger({
@@ -43,17 +45,22 @@ const PartnerForm = React.forwardRef<HTMLDivElement, FooterRegisterFromProps>(
         conversionFunnel: 'partner',
         refUrl: 'window.location.href',
       });
+      setLoading(true);
     };
 
     useEffect(() => {
-      if (data && !isMutating) {
-        toast({
-          title: 'Successfull',
-          description: 'We have received your registration',
-          variant: 'success',
-        });
+      if (isLoading) {
+        const listenner = setTimeout(() => {
+          if (listenner) clearTimeout(listenner);
+          toast({
+            title: 'Successfull',
+            description: 'We have received your registration',
+            variant: 'success',
+          });
+          setLoading(false);
+        }, 500);
       }
-    }, [isMutating]);
+    }, [isLoading]);
 
     return (
       <div ref={ref} className="bg-green-200" {...props}>
@@ -73,9 +80,9 @@ const PartnerForm = React.forwardRef<HTMLDivElement, FooterRegisterFromProps>(
               onSubmitData={onSubmitData}
               btnSubmitConfig={{
                 btnProps: {
-                  disabled: isMutating,
+                  disabled: isLoading,
                 },
-                showLoading: isMutating,
+                showLoading: isLoading,
               }}
             />
           </div>

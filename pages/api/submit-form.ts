@@ -68,11 +68,9 @@ export default async function handler(request: NextApiRequest, response: NextApi
           );
         }
 
-        response.status(200).json({ status: 200 });
-
         await Promise.all(promises);
 
-        return;
+        return response.status(200).json({ status: 200 });
       }
     }
   } catch (error) {
