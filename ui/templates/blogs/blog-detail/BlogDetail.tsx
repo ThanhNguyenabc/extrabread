@@ -27,7 +27,7 @@ type Props = {
 export const BlogDetail: FC<Props> = () => {
   const [blogs, setBlogs] = useState<any>([]);
 
-  useEffect(() => {
+    useEffect(() => {
     const getBlogs = async () => {
       const blogs = await getBlogsAPI();
       setBlogs(blogs);

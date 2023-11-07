@@ -10,6 +10,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     props: {
       ...(await serverSideTranslations(locale ?? 'en', ['common'])),
     },
+    revalidate: 60,
   };
 };
 
@@ -18,11 +19,11 @@ export async function getStaticPaths() {
   // For example, you can query a database or an API to get the list of available blogIds
   const blogs = await fetch(BLOGS_API).then(response => response.json());
   const blogIds = blogs.map(el => el.slug);
-  // Generate an array of objects containing the `params` key
+  // // Generate an array of objects containing the `params` key
   const paths = blogIds.map(blogId => ({ params: { blogId } }));
 
   return {
-    paths,
+    paths: paths,
     fallback: false, // Or 'blocking' or true based on your requirements
   };
 }
