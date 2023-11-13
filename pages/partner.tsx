@@ -45,7 +45,7 @@ const PartnerPrograms = [
     imageDirection: 'left',
     tagConfig: {
       text: 'Referral Program',
-      bgColor: 'bg-yellow-200',
+      tagClassName: 'bg-yellow-200',
     },
     items: [
       {
@@ -73,7 +73,7 @@ const PartnerPrograms = [
     imageDirection: 'right',
     tagConfig: {
       text: 'In-house Agent Program',
-      bgColor: 'bg-red-200',
+      tagClassName: 'bg-red-200',
     },
     items: [
       {
@@ -101,7 +101,7 @@ const PartnerPrograms = [
     imageDirection: 'left',
     tagConfig: {
       text: 'Iso Agent Program',
-      bgColor: 'bg-green-200',
+      tagClassName: 'bg-green-200',
     },
     items: [
       {
@@ -181,6 +181,7 @@ const PartnerPage = () => {
             {...item}
             dataConfig={{
               ...item,
+              tagConfig: item.tagConfig,
               ctaConfig: ctaConfig,
               infoClassName: 'lg:max-w-[560px]',
               extraComponent: <InfoList data={item.items} />,
