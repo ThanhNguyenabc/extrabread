@@ -26,7 +26,7 @@ export const parseBlogData = (blog: any) => {
   return {
     id: blog.id,
     slug: blog.slug,
-    img: blog.jetpack_featured_media_url,
+    img: blog.featured_media_src_url,
     title: blog.title.rendered,
     description: blog.excerpt.rendered,
     author: 'Admin',
