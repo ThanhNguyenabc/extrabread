@@ -5,28 +5,13 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Seo } from '~/ui/util-components/Seo';
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getServerSideProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale ?? 'en', ['common'])),
     },
-    revalidate: 60,
   };
 };
-
-export async function getStaticPaths() {
-  // Fetch the list of blogIds dynamically from your data source
-  // For example, you can query a database or an API to get the list of available blogIds
-  const blogs = await fetch(BLOGS_API).then(response => response.json());
-  const blogIds = blogs.map(el => el.slug);
-  // // Generate an array of objects containing the `params` key
-  const paths = blogIds.map(blogId => ({ params: { blogId } }));
-
-  return {
-    paths: paths,
-    fallback: false, // Or 'blocking' or true based on your requirements
-  };
-}
 
 const Blog = () => {
   const { t } = useTranslation('common');

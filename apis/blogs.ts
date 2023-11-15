@@ -11,3 +11,14 @@ export const getBlogsAPI = () => {
     }
   });
 };
+
+export const getBlogDetailBySlug = (slug: string) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const blogs = await fetch(`${BLOGS_API}?slug=${slug}`).then(response => response.json());
+      resolve(blogs);
+    } catch (error) {
+      reject(error);
+    }
+  });
+};
