@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import React, { HTMLAttributes } from 'react';
+import React, { HTMLAttributes, ReactElement } from 'react';
 import { Badge } from './badge';
 import { Button, ButtonProps } from './button';
 import Hero from './hero';
@@ -16,6 +16,7 @@ interface InfoSectionProps extends HTMLAttributes<HTMLDivElement> {
     extraComponent?: React.ReactElement;
     ctaConfig?: {
       title: string;
+      rightIcon?: ReactElement;
       ctaClassName?: string;
       buttonProps?: ButtonProps;
       onClick: () => void;
@@ -59,6 +60,7 @@ const InfoSection = ({
             {...ctaConfig.buttonProps}
           >
             {ctaConfig.title}
+            {ctaConfig.rightIcon}
           </Button>
         )}
       </div>

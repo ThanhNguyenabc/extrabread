@@ -18,7 +18,6 @@ enum SolutionSubMenus {
 }
 
 const PAGES = {
-  [SolutionSubMenus.PaymentProcessing]: PaymentProcessing,
   [SolutionSubMenus.CreditCardTerminal]: CreditCardTerminal,
   [SolutionSubMenus.MobileCardReader]: MobileCardReader,
   [SolutionSubMenus.OnlineProcessing]: OnlineProcessing,
@@ -34,7 +33,7 @@ export const SolutionsTemplate = () => {
     setActiveTab(slug);
   }, [slug]);
 
-  const Cmp = PAGES[activeTab] || PaymentProcessing;
+  const Cmp = PAGES[activeTab];
   return (
     <main className={styles['solutions']}>
       <div className={styles['solutions_segment']}>

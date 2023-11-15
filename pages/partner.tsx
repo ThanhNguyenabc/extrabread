@@ -173,7 +173,6 @@ const PartnerPage = () => {
       />
       <DiscoverPartner />
       <WorkWithTheBest />
-
       <div className="flex flex-col">
         {PartnerPrograms.map(item => (
           <InfoSection
@@ -206,15 +205,11 @@ const PartnerPage = () => {
       <Stories />
       <PartnerForm
         ref={registerForm}
-        heading={
-          <>
-            Ready to earn some <span className="text-green-500">Extra Bread</span>?
-          </>
-        }
+        heading={'Earn Extra Cash with ExtraBread'}
         description={
-          'Join ExtraBread now to earn extra income, expand your skills, and maintain your commitments. Gain valuable experience with established point-of-sale systems and be part of a collaborative team for personal and financial growth!'
+          'Turn your downtime into extra cash with ExtraBread! No need for big commitments - refer businesses and watch the bonuses and monthly residual income roll in. Sign up with us today.'
         }
-        formTitle="Join The Ultimate Side Hustle"
+        formTitle="Start Earning Monthly Residual Income Today"
         formSubTilte="Fill out the form and we will reach out to you in 24-48 hours"
       />
     </div>

@@ -73,7 +73,7 @@ const PartnerForm = React.forwardRef<HTMLDivElement, FooterRegisterFromProps>(
           </div>
           <div className="flex-1 flex flex-col bg-white p-4 md:p-8 rounded-2xl gap-8 md:gap-10">
             <div className="flex flex-col gap-1 text-center">
-              <h4 className="text-xl-semibold md:heading-md">{formTitle}</h4>
+              <h4 className="text-xl-semibold md:heading-md md:max-w-xl">{formTitle}</h4>
               <p className="text-base text-neutral-700 md:text-lg">{formSubTilte}</p>
             </div>
             <ContactForm

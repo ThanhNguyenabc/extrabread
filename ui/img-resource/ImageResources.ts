@@ -41,6 +41,7 @@ import WritingIcon from 'public/images/color-icons/writing.svg';
 import ZeroProcessingFeesIcon from 'public/images/color-icons/Zero Processing Fees.svg';
 import LogoFooterIcon from 'public/images/footer-logo.svg';
 import IcCheck from 'public/images/icons/check.svg';
+import IcChevronRight from 'public/images/icons/chevron-right.svg';
 import IcLoading from 'public/images/icons/loading.svg';
 
 import LandingBanner from 'public/images/banners/landing.png';
@@ -93,6 +94,7 @@ import AboutBanner from 'public/images/about-us/about-banner.png';
 import PosSytem from 'public/images/about-us/pos-system.png';
 import ProcessingFee from 'public/images/about-us/processing-fee.png';
 import SigningBonus from 'public/images/about-us/signing-bonus.png';
+import Support from 'public/images/about-us/support24.jpg';
 
 export {
   AboutBanner,
@@ -122,6 +124,7 @@ export {
   IcBasePay,
   IcBonus,
   IcCheck,
+  IcChevronRight,
   IcIncome,
   IcLoading,
   InterfaceIcon,
@@ -166,6 +169,7 @@ export {
   SaveMoneyIcon,
   SigningBonus,
   SmallBusinessImg,
+  Support,
   SystemIcon,
   TipPoolingIcon,
   UniqueValueImg,

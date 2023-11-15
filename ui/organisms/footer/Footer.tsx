@@ -24,7 +24,7 @@ const { Panel } = Collapse;
 const FOOTER_SOLUTION_MENU = [
   ...SOLUTIONS_MENU,
   {
-    href: `${RouteConfig.Solution}/payment-processing`,
+    href: RouteConfig.PaymentProcessing,
     title: 'Payment Processing',
     replaceTitle: 'Payment Processing',
     description: 'In-person payments have never been easier.',

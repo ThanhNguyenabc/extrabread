@@ -8,6 +8,7 @@ import {
   CreditCardBanner,
   CreditCardIcon,
   DevicesIcon,
+  IcChevronRight,
   InterfaceIcon,
   MobileCardReaderBanner,
   OnlineProcessingBanner,
@@ -40,7 +41,7 @@ const PaymentInfoSections = [
         text: 'Wifi and Wireless models available',
       },
     ],
-    url: `${RouteConfig.Solution}#credit-card`,
+    url: RouteConfig.CreditCard,
   },
   {
     image: MobileCardReaderBanner,
@@ -61,7 +62,7 @@ const PaymentInfoSections = [
         text: 'Affordablechoices',
       },
     ],
-    url: `${RouteConfig.Solution}#mobile-card`,
+    url: RouteConfig.MobileCard,
   },
   {
     image: OnlineProcessingBanner,
@@ -83,7 +84,7 @@ const PaymentInfoSections = [
       },
     ],
 
-    url: `${RouteConfig.Solution}#online-processing`,
+    url: RouteConfig.OnlineProcessing,
   },
 ];
 
@@ -119,6 +120,7 @@ const PaymentProcessing = () => {
                 ctaConfig: {
                   title: 'Learn more',
                   onClick: () => router.push(data.url),
+                  rightIcon: <IcChevronRight />,
                   buttonProps: {
                     variant: 'outline',
                     size: 'default',

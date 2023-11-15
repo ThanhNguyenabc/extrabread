@@ -31,7 +31,7 @@ const ElevateCardItem = ({ desc, logo, pros, route }: ElevateCardItemProps) => {
         ))}
       </div>
       <Link href={route}>
-        <Button className="w-full md:w-full">Learn more</Button>
+        <Button className="w-full bg-neutral-900 hover:bg-slate-800 md:w-full">Learn more</Button>
       </Link>
     </div>
   );

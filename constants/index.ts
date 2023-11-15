@@ -75,7 +75,11 @@ export enum RouteConfig {
   Partner = '/partner',
   PaymentProcessing = '/payment-processing',
   AboutUs = '/about-us',
-  ElevateBusiness = '/point-of-sale-systems',
+  SaleSystems = '/point-of-sale-systems',
+  MobileCard = "/solutions/mobile-card",
+  CreditCard = "/solutions/credit-card",
+  OnlineProcessing = "/solutions/online-processing"
+
 }
 
 export type RouteConfigType = `${RouteConfig}`;
@@ -101,25 +105,25 @@ export const COMPANY_MENU = [
   { title: 'Blog', href: RouteConfig.Blogs },
   { title: 'Partner', href: RouteConfig.Partner },
   { title: 'About us', href: RouteConfig.AboutUs },
-  { title: 'Elevate Your Business', href: RouteConfig.ElevateBusiness },
+  { title: 'Point Of Sale Systems', href: RouteConfig.SaleSystems },
 ] as const;
 
 export const SOLUTIONS_MENU = [
   {
-    href: `${RouteConfig.Solution}/credit-card`,
+    href: RouteConfig.CreditCard,
     title: 'Credit Card Terminal',
     replaceTitle: 'Capital & Funding',
     description: 'In-person payments have never been easier.',
     src: CreditCardTerminalImg.src,
   },
   {
-    href: `${RouteConfig.Solution}/mobile-card`,
+    href: RouteConfig.MobileCard,
     title: 'Mobile Card Reader',
     description: 'Accept Payments Anywhere ',
     src: MobileCardReaderImg.src,
   },
   {
-    href: `${RouteConfig.Solution}/online-processing`,
+    href: RouteConfig.OnlineProcessing,
     title: 'Online Processing',
     description: 'Streamline Your Online Payments ',
     src: OnlineProcessingImg.src,

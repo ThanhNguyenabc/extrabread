@@ -6,15 +6,17 @@ import InfoSection, { ImageDirection } from '@/components/ui/info_section';
 import { RouteConfig } from '@/constants';
 import {
   AboutBanner,
+  IcChevronRight,
   PosSytem,
   ProcessingFee,
   SigningBonus,
+  Support,
 } from '@/ui/img-resource/ImageResources';
 import { CTAInnerFooter } from '@/ui/organisms/cta-inner-footer/CTAInnerFooter';
+import { UniqueValue } from '@/ui/organisms/unique-value/UniqueValue';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
-
 const DataStatistics = [
   {
     title: '$100K',
@@ -36,28 +38,50 @@ const DataStatistics = [
 
 const InfoSections = [
   {
-    image: ProcessingFee,
+    image: PosSytem,
     imageDirection: 'right',
-    title: 'Zero Processing Fees',
-    desc: 'Let us help you choose the right receipt layout for your business. Our agents can even work with your current POS company in helping implement the cash discount program.',
+    title: 'Point of Sale Solutions',
+    ctaConfig: {
+      title: 'Explore POS equipments',
+      href: RouteConfig.SaleSystems,
+    },
+    desc: "We offer expert consultation and a comprehensive review of your business's specifics to pinpoint the most suitable POS systems that align seamlessly with your operational requirements. Our extensive network includes partnerships with 20+ industry-leading POS systems, giving us the versatility to present you with options. Plus, we offer POS solutions starting at a low cost of $0.  Learn more about the partners we work with.",
+  },
+  {
+    image: ProcessingFee,
+    imageDirection: 'left',
+    title: 'Payment Processing Solutions',
+    ctaConfig: {
+      title: 'Payment Processing',
+      href: RouteConfig.PaymentProcessing,
+    },
+    desc: 'We offer tailored payment processing solutions for business types.  Current solutions can be complex and eat into your profits with costly fees - with us, you can reduce your fees to $0 & leave it to us to handle the whole setup. Make it easy for yourself and for your customers in accepting cc payments.  Make the switch today for smooth, affordable payment processing.  Ask about our Cash Discount Program.',
+  },
+  {
+    image: Support,
+    imageDirection: 'right',
+    title: 'Seamless Installation and 24/7 Support',
+    ctaConfig: {
+      title: 'Get Started',
+      href: RouteConfig.Contacts,
+    },
+    desc: "We've got your back, 24/7. When you sign up with us, we handle all the logistics, including rolling up our sleeves if necessary. Additionally, we're at your service for any challenges that may arise. We understand the frustration that a faulty POS or payment terminal can bring to your business and well-being. But worry not, we're here to take care of it from day one. Add ExtraBread to your team to seamlessly manage your merchant service needs.",
   },
   {
     image: SigningBonus,
     imageDirection: 'left',
     title: 'Cash Signing Bonus',
-    desc: 'Provides your business with the necessary funding and flexibility to expand operations or weather difficult times with your staff.',
-  },
-  {
-    image: PosSytem,
-    imageDirection: 'right',
-    title: 'Premium POS Systems',
-    desc: "Discover the possibilities with our extensive selection of point-of-sale systems designed to elevate your business. At ExtraBread, we take pride in offering a wide range of POS solutions tailored to meet the unique needs of your enterprise.\n\nWhether you're a small boutique or a large retail chain, our systems are crafted for efficiency and user-friendly functionality. When you make the switch to ExtraBread, you could potentially acquire a complete POS system for as low as $0.\n\nExplore the future of streamlined transactions with ExtraBread's innovative POS solutions today.",
+    ctaConfig: {
+      title: 'Get Pricing',
+      href: RouteConfig.GetPricing,
+    },
+    desc: "While our services already come with fantastic incentives and savings, the benefits don't stop there. At Extrabread, we go the extra mile by offering a generous cash signing bonus of up to $100k. No strings attached, no interests, contracts, or hidden fees involved. It's our way of expressing gratitude for welcoming you into our Extrabread family. Take the first step and get started now to discover all that awaits you. Get started now to learn more.",
   },
 ];
 
 const AboutUS = () => {
   const router = useRouter();
-  
+
   const onGetStart = () => {
     router.push(`${RouteConfig.GetPricing}`);
   };
@@ -70,14 +94,14 @@ const AboutUS = () => {
     <>
       <BannerX
         leftCmpClassName="w-full items-center"
-        headingClassName="text-center md:max-w-[700px] xl:max-w-[980px]"
+        headingClassName="text-center md:max-w-[700px] xl:max-w-[1000px]"
         heading={
           <>
-            <span className="text-green-500 ">Your Growth, Our Priority:</span> Elevate Your
-            Business and Say Goodbye to Processing Fees{' '}
+            <span className="text-green-500 ">From Consultation to Installation</span>, We Are Your
+            One Stop Shop For All Things Merchant Services.
           </>
         }
-        desc="Discuss services we provide but mostly what we do and why we do for business owners. "
+        desc="We consult and set your business up with the best POS and Payment Processing Solutions."
         button={{
           title: 'Get Started',
           onBtnClick: onGetStart,
@@ -109,10 +133,12 @@ const AboutUS = () => {
 
       <div className="bg-neutral-100">
         <Hero className="gap-4 md:flex-row md:gap-8 lg:gap-16">
-          <h3 className="heading-xs text-center md:text-start md:heading-lg ">What we do?</h3>
+          <h3 className="heading-xs text-center md:text-start md:heading-lg ">A bit about us</h3>
           <div className="flex flex-col gap-4 md:gap-8 md:w-[65%]">
             <p className=" text-sm whitespace-pre-wrap md:text-lg">
-              {`ExtraBread is your trusted partners in the world of processing fees and point-of-sale systems.\n \n Our mission is clear: we guide you in finding the best POS system for your business needs when signing up with us to do your payment processing. Along with a point-of-sale system, receive up to possibly $5,000+ in a cash signing bonus. \n\n We're  passionate about helping businesses succeed and want to be there with you every step of the way. Work with ExtraBread today and get more bread with less problems.`}
+              {`Extrabread is your one-stop-shop for comprehensive Point of Sale and credit card processing solutions. Our unique strength lies in our partnerships with top-tier POS and CC processing providers, which enables us to offer tailor-made packages with unmatched flexibility.
+              \nWe're not the 'set it and forget it' type – we're here to provide 24/7 support, ensuring a smooth installation process and addressing any issues you encounter along the way. 
+              \nWith over two decades of industry experience, we've weathered the storms and celebrated the successes alongside countless business owners. Count on us to stand by your side every step of the way. Ready to simplify your payment solutions? Get started with a free consultation today.`}
             </p>
             <Button
               className=" bg-neutral-900 hover:bg-neutral-900/90"
@@ -135,8 +161,10 @@ const AboutUS = () => {
                 ...item,
                 infoClassName: 'flex-1 justify-center lg:p-7',
                 ctaConfig: {
-                  title: 'Learn more',
-                  onClick: learnMore,
+                  title: item.ctaConfig.title,
+                  rightIcon: <IcChevronRight />,
+                  ctaClassName: 'flex gap-2',
+                  onClick: () => router.push(item.ctaConfig.href),
                   buttonProps: {
                     variant: 'outline',
                     size: 'default',
@@ -154,6 +182,7 @@ const AboutUS = () => {
         })}
       </div>
 
+      <UniqueValue />
       <SideHustle />
 
       <CTAInnerFooter
