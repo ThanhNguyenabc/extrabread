@@ -26,7 +26,7 @@ const DiscoverPartner = () => {
       </h3>
       <p className="mt-6 text-base text-neutral-700  md:text-lg md:mt-12">
         At ExtraBread, we offer the ultimate side hustle for individuals seeking flexible
-        opportunities during their free time.We're dedicated to keeping you at the forefront of the
+        opportunities during their free time.We&apos;re dedicated to keeping you at the forefront of the
         ever-changing payments landscape through innovative products and program offerings.
         Construct your sales office with a partner deeply invested in ensuring your success! With
         our three programs:

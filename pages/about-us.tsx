@@ -86,10 +86,6 @@ const AboutUS = () => {
     router.push(`${RouteConfig.GetPricing}`);
   };
 
-  const learnMore = () => {
-    router.push(`${RouteConfig.Solution}#credit-card`);
-  };
-
   return (
     <>
       <BannerX
