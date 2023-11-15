@@ -1,6 +1,4 @@
-import { BLOGS_API } from '@/constants';
 import { BlogDetail } from '@/ui/templates/blogs/blog-detail/BlogDetail';
-import { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Seo } from '~/ui/util-components/Seo';
