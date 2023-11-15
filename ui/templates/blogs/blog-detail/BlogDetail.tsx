@@ -20,11 +20,7 @@ import { SubscriptionForm } from '../subscription-form/SubscriptionForm';
 
 const { Paragraph, Text } = Typography;
 
-type Props = {
-  // EMPTY
-};
-
-export const BlogDetail: FC<Props> = () => {
+export const BlogDetail = () => {
   const [blogs, setBlogs] = useState<any>([]);
 
   useEffect(() => {
