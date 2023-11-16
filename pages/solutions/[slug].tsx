@@ -1,4 +1,4 @@
-import { SolutionsTemplate } from '~/ui/templates/solutions/SolutionsTemplate';
+import { SolutionsTemplate } from '@/ui/templates/solutions/SolutionsTemplate';
 import { Seo } from '~/ui/util-components/Seo';
 
 const SolutionPage = () => {

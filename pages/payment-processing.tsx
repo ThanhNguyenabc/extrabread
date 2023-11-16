@@ -1,8 +1,8 @@
 import PaymentProcessing from '@/components/elements/paymentprocessing/PaymentProcessing';
 import React from 'react';
 
-const index = () => {
+const Index = () => {
   return <PaymentProcessing />;
 };
 
-export default index;
+export default Index;

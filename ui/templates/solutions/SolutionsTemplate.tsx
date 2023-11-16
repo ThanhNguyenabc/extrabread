@@ -1,5 +1,3 @@
-import PaymentProcessing from '@/components/elements/paymentprocessing/PaymentProcessing';
-import { getHash } from 'helpers';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { RouteConfig, SOLUTIONS_MENU } from '~/constants/index';
@@ -11,7 +9,6 @@ import { OnlineProcessing } from './OnlineProcessing';
 import styles from './Solutions.module.scss';
 
 enum SolutionSubMenus {
-  PaymentProcessing = 'payment-processing',
   CreditCardTerminal = 'credit-card',
   MobileCardReader = 'mobile-card',
   OnlineProcessing = 'online-processing',
@@ -25,7 +22,7 @@ const PAGES = {
 
 export const SolutionsTemplate = () => {
   const { push, query } = useRouter();
-  const slug = query['slug']?.[0] || '';
+  const slug = (query['slug'] as string) || '';
   const [activeTab, setActiveTab] = useState(slug);
 
   useEffect(() => {
@@ -33,7 +30,8 @@ export const SolutionsTemplate = () => {
     setActiveTab(slug);
   }, [slug]);
 
-  const Cmp = PAGES[activeTab];
+  const Cmp = PAGES[activeTab] || null;
+
   return (
     <main className={styles['solutions']}>
       <div className={styles['solutions_segment']}>
@@ -46,7 +44,7 @@ export const SolutionsTemplate = () => {
           }))}
         />
       </div>
-      <Cmp />
+      {Cmp && <Cmp />}
       <CTAInnerFooter
         htmlText="Discover the perfect point of sale system for your business today!"
         bonus={240}
