@@ -26,7 +26,7 @@ export const HomeTemplate = () => {
       <Banner
         hasBackground
         type="home"
-        content={<>Save & Earn extra bread for your business</>}
+        content={<>Save & Earn More with Top Payment & POS Solutions</>}
         button={
           <>
             <GetPricingButton title="Get Pricing Today" size="large" />

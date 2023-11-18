@@ -8,20 +8,38 @@ export interface BreadButtonProps extends ButtonProps {
   color?: 'black';
   direction?: 'left' | 'right';
 }
-const { textColor } = variables;
+const { textColor, primaryColor } = variables;
 
 export const Button = forwardRef<HTMLButtonElement, BreadButtonProps>(
-  ({ className, color, ...rest }, ref) =>
-    color === 'black' ? (
-      <ConfigProvider
-        theme={{
-          hashed: true,
-          token: { colorPrimary: textColor },
+  ({ className, color, type, ...rest }, ref) => {
+    if (color == 'black')
+      return (
+        <ConfigProvider
+          theme={{
+            hashed: true,
+            token: { colorPrimary: textColor },
+          }}
+        >
+          <AntButton
+            {...rest}
+            type={type}
+            ref={ref}
+            className={classNames(styles.button, className)}
+            style={{ backgroundColor: color }}
+          />
+        </ConfigProvider>
+      );
+
+    return (
+      <AntButton
+        {...rest}
+        type={type}
+        ref={ref}
+        className={classNames(styles.button, className)}
+        style={{
+          backgroundColor: type == 'primary' ? color || primaryColor : 'white',
         }}
-      >
-        <AntButton {...rest} ref={ref} className={classNames(styles.button, className)} />
-      </ConfigProvider>
-    ) : (
-      <AntButton {...rest} ref={ref} className={classNames(styles.button, className)} />
-    ),
+      />
+    );
+  },
 );

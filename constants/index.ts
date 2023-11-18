@@ -72,6 +72,14 @@ export enum RouteConfig {
   CashAdvance = '/cash-advance',
   QuickbooksPlugin = '/quickbooks-plugin',
   Invoicing = '/invoicing',
+  Partner = '/partner',
+  PaymentProcessing = '/payment-processing',
+  AboutUs = '/about-us',
+  SaleSystems = '/point-of-sale-systems',
+  MobileCard = "/solutions/mobile-card",
+  CreditCard = "/solutions/credit-card",
+  OnlineProcessing = "/solutions/online-processing"
+
 }
 
 export type RouteConfigType = `${RouteConfig}`;
@@ -95,27 +103,27 @@ export const COMPANY_MENU = [
   { title: 'FAQ', href: RouteConfig.Faqs },
   { title: 'State Regulations', href: '#' },
   { title: 'Blog', href: RouteConfig.Blogs },
-  // TODO: hide
-  // { title: 'Privacy Policy', href: RouteConfig.PrivacyPolicy },
-  // { title: 'Terms of service', href: RouteConfig.TermsOfService },
+  { title: 'Partner', href: RouteConfig.Partner },
+  { title: 'About us', href: RouteConfig.AboutUs },
+  { title: 'Point Of Sale Systems', href: RouteConfig.SaleSystems },
 ] as const;
 
 export const SOLUTIONS_MENU = [
   {
-    href: `${RouteConfig.Solution}#credit-card`,
+    href: RouteConfig.CreditCard,
     title: 'Credit Card Terminal',
     replaceTitle: 'Capital & Funding',
     description: 'In-person payments have never been easier.',
     src: CreditCardTerminalImg.src,
   },
   {
-    href: `${RouteConfig.Solution}#mobile-card`,
+    href: RouteConfig.MobileCard,
     title: 'Mobile Card Reader',
     description: 'Accept Payments Anywhere ',
     src: MobileCardReaderImg.src,
   },
   {
-    href: `${RouteConfig.Solution}#online-processing`,
+    href: RouteConfig.OnlineProcessing,
     title: 'Online Processing',
     description: 'Streamline Your Online Payments ',
     src: OnlineProcessingImg.src,

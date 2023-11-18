@@ -106,11 +106,7 @@ export const BlogDetail = () => {
             </Flex>
           </div>
 
-          <SubscriptionForm
-            onSubmit={values => {
-              console.log(values);
-            }}
-          />
+          <SubscriptionForm onSubmit={values => {}} />
         </BreadCard>
       </Spin>
 

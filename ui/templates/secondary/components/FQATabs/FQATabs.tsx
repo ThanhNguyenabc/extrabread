@@ -36,7 +36,6 @@ export const FQATabs = ({ onChange, value }: Props) => {
   };
 
   const slideRight = () => {
-    console.log(ref.current);
     if (ref?.current) {
       ref.current.scrollLeft = ref.current.scrollLeft + 400;
     }

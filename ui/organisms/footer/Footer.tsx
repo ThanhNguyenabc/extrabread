@@ -21,6 +21,15 @@ const { Text } = Typography;
 const { Footer } = Layout;
 const { Panel } = Collapse;
 
+const FOOTER_SOLUTION_MENU = [
+  ...SOLUTIONS_MENU,
+  {
+    href: RouteConfig.PaymentProcessing,
+    title: 'Payment Processing',
+    replaceTitle: 'Payment Processing',
+    description: 'In-person payments have never been easier.',
+  },
+];
 const MenuCategory = ({
   title,
   menus,
@@ -88,7 +97,7 @@ export const BreadFooter = () => {
               }}
             >
               <Panel header={NavigationLabel.Solutions} key={NavigationLabel.Solutions}>
-                {SOLUTIONS_MENU.map((item, idx) => (
+                {FOOTER_SOLUTION_MENU.map((item, idx) => (
                   <Link key={`${idx}`} href={item.href}>
                     <Text className={styles['text-400']}>{item.title}</Text>
                   </Link>
@@ -168,7 +177,7 @@ export const BreadFooter = () => {
           <div className={styles['footer-menus']}>
             <MenuCategory
               title={NavigationLabel.Solutions}
-              menus={SOLUTIONS_MENU.map(item => ({
+              menus={FOOTER_SOLUTION_MENU.map(item => ({
                 text: item.title,
                 href: item.href,
                 // @ts-ignore

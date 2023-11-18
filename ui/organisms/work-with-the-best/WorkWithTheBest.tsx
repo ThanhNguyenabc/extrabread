@@ -107,17 +107,7 @@ export const WorkWithTheBest = () => {
   return (
     <div className={styles['work-with-best']}>
       <BreadCard>
-        <SectionHeading
-          centered
-          noAlignLeft
-          heading="Work with the best"
-          subHeading={
-            <Text className="font-16-16-14">
-              We have teamed up with the top POS providers in the market to offer the <br />
-              best-suited solution for your business.
-            </Text>
-          }
-        />
+        <SectionHeading centered noAlignLeft heading="Work with the best" />
         <div className={styles['work-with-best_logos']}>
           {DATA.map((item, idx) => (
             <Link key={idx} href={item.href}>

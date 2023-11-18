@@ -40,6 +40,9 @@ import WirelessIcon from 'public/images/color-icons/wireless.svg';
 import WritingIcon from 'public/images/color-icons/writing.svg';
 import ZeroProcessingFeesIcon from 'public/images/color-icons/Zero Processing Fees.svg';
 import LogoFooterIcon from 'public/images/footer-logo.svg';
+import IcCheck from 'public/images/icons/check.svg';
+import IcChevronRight from 'public/images/icons/chevron-right.svg';
+import IcLoading from 'public/images/icons/loading.svg';
 
 import LandingBanner from 'public/images/banners/landing.png';
 import CashAdvanceImg from 'public/images/Cash Advance.png';
@@ -76,75 +79,105 @@ import LogoFooter from 'public/images/logo-footer.png';
 import LogoFullIcon from 'public/images/logo-full.png';
 import LogoSmallIcon from 'public/images/logo-icon.png';
 
+// Partner
+import IcAppointment from 'public/images/icons/ic_appointment.svg';
+import IcBasePay from 'public/images/icons/ic_base_pay.svg';
+import IcBonus from 'public/images/icons/ic_bonus.svg';
+import IcIncome from 'public/images/icons/ic_income.svg';
+import PartnerBoss from 'public/images/partner/being_boss.webp';
+import PartnerCalling from 'public/images/partner/calling_person.webp';
+import PartnerTeamate from 'public/images/partner/teamate.webp';
+import PartnerWFH from 'public/images/partner/working_from_home.webp';
+
+//About us
+import AboutBanner from 'public/images/about-us/about-banner.png';
+import PosSytem from 'public/images/about-us/pos-system.png';
+import ProcessingFee from 'public/images/about-us/processing-fee.png';
+import SigningBonus from 'public/images/about-us/signing-bonus.png';
+import Support from 'public/images/about-us/support24.jpg';
+
 export {
-  CashBonusIcon,
-  NotificationIcon,
-  CloudSystemIcon,
-  ManagementIcon,
-  OnsiteSupportIcon,
-  SaveMoneyIcon,
-  UserFriendlyIcon,
-  WirelessIcon,
+  AboutBanner,
+  AcceptAllPaymentIcon,
+  BarNightImg,
   CartIcon,
+  CashAdvanceImg,
+  CashBonusIcon,
+  CashDiscountProgramImg,
   ChartIcon,
+  CheckServicesImg,
   ChipIcon,
+  CloudSystemIcon,
+  CloverAppMarketImg,
+  CreditCardBanner,
   CreditCardIcon,
+  CreditCardTerminalImg,
   DevicesIcon,
+  EfficientFastIcon,
   EmailIcon,
+  ESIcon,
+  FastCheckoutIcon,
+  FullServiceRestaurantsImg,
   GiftCardIcon,
+  GiftCardProgramImg,
+  IcAppointment,
+  IcBasePay,
+  IcBonus,
+  IcCheck,
+  IcChevronRight,
+  IcIncome,
+  IcLoading,
   InterfaceIcon,
+  InvoicingImg,
+  ItemManagementIcon,
+  LandingBanner,
+  LogoFooter,
+  LogoFooterIcon,
+  LogoFullIcon,
+  LogoSmallIcon,
+  LoyaltyRewardsImg,
+  ManagementIcon,
   MenuIcon,
+  MobileCardReaderBanner,
+  MobileCardReaderImg,
+  NegociationIcon,
+  NotificationIcon,
+  OnlineOrderingIcon,
+  OnlineProcessingBanner,
+  OnlineProcessingImg,
   OnlineRemoteIcon,
+  OnlineReportingImg,
+  OnsiteSupportIcon,
   OptionIcon,
+  PartnerBoss,
+  PartnerCalling,
+  PartnerTeamate,
+  PartnerWFH,
   PaymentTerminalIcon,
   PhoneIcon,
-  PromosIcon,
-  QuestionIcon,
-  RewardIcon,
-  SystemIcon,
-  VirtualIcon,
-  LogoFullIcon,
-  LogoFooter,
-  LogoSmallIcon,
-  LogoFooterIcon,
-  USIcon,
-  ESIcon,
-  FullServiceRestaurantsImg,
-  QuickServiceRestaurantsImg,
-  GiftCardProgramImg,
-  InvoicingImg,
-  LoyaltyRewardsImg,
-  MobileCardReaderImg,
-  OnlineProcessingImg,
-  OnlineReportingImg,
-  QuickBooksPluginImg,
-  RetailBusinessesImg,
-  SmallBusinessImg,
-  BarNightImg,
   PizzeriasImg,
-  CashAdvanceImg,
-  CashDiscountProgramImg,
-  CheckServicesImg,
-  CloverAppMarketImg,
-  CreditCardTerminalImg,
-  OnlineProcessingBanner,
-  CreditCardBanner,
-  LandingBanner,
-  MobileCardReaderBanner,
+  PosSytem,
+  ProcessingFee,
+  PromosIcon,
+  PuzzleIcon,
+  QuestionIcon,
+  QuickBooksPluginImg,
+  QuickServiceRestaurantsImg,
+  ReceiveCashIcon,
+  RetailBusinessesImg,
+  RewardIcon,
+  SaveMoneyIcon,
+  SigningBonus,
+  SmallBusinessImg,
+  Support,
+  SystemIcon,
+  TipPoolingIcon,
   UniqueValueImg,
   UniqueValueTbImg,
-  ZeroProcessingFeesIcon,
-  ReceiveCashIcon,
+  UserFriendlyIcon,
+  USIcon,
+  VirtualIcon,
+  WirelessIcon,
   WritingIcon,
-  PuzzleIcon,
-  NegociationIcon,
-  TipPoolingIcon,
-  FastCheckoutIcon,
-  OnlineOrderingIcon,
-  EfficientFastIcon,
-  AcceptAllPaymentIcon,
-  ItemManagementIcon,
-  // RewardsImg,
-  // AbreezeLinkImg,
-  // PromosImg,
+  ZeroProcessingFeesIcon,
 };

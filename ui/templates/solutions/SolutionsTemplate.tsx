@@ -1,7 +1,6 @@
-import { getHash } from 'helpers';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { SOLUTIONS_MENU } from '~/constants/index';
+import { RouteConfig, SOLUTIONS_MENU } from '~/constants/index';
 import { Segmented } from '~/ui/atoms/segment/Segment';
 import { CTAInnerFooter } from '~/ui/organisms/cta-inner-footer/CTAInnerFooter';
 import { CreditCardTerminal } from './CreditCardTerminal';
@@ -10,43 +9,42 @@ import { OnlineProcessing } from './OnlineProcessing';
 import styles from './Solutions.module.scss';
 
 enum SolutionSubMenus {
-  CreditCardTerminal = '#credit-card',
-  MobileCardReader = '#mobile-card',
-  OnlineProcessing = '#online-processing',
+  CreditCardTerminal = 'credit-card',
+  MobileCardReader = 'mobile-card',
+  OnlineProcessing = 'online-processing',
 }
 
+const PAGES = {
+  [SolutionSubMenus.CreditCardTerminal]: CreditCardTerminal,
+  [SolutionSubMenus.MobileCardReader]: MobileCardReader,
+  [SolutionSubMenus.OnlineProcessing]: OnlineProcessing,
+};
+
 export const SolutionsTemplate = () => {
-  const { push, asPath, pathname } = useRouter();
-  const hash = getHash(asPath) as any;
-  const [activeTab, setActiveTab] = useState<`${SolutionSubMenus}`>(
-    SolutionSubMenus.CreditCardTerminal,
-  );
+  const { push, query } = useRouter();
+  const slug = (query['slug'] as string) || '';
+  const [activeTab, setActiveTab] = useState(slug);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    if (hash === '#') {
-      return;
-    }
-    setActiveTab(hash);
-  }, [asPath]);
+    setActiveTab(slug);
+  }, [slug]);
+
+  const Cmp = PAGES[activeTab] || null;
 
   return (
     <main className={styles['solutions']}>
       <div className={styles['solutions_segment']}>
         <Segmented
-          activeKey={activeTab}
-          onChange={value => push(`${pathname}${value}`)}
+          activeKey={`${RouteConfig.Solution}/${activeTab}`}
+          onChange={value => push(value)}
           items={SOLUTIONS_MENU.map(item => ({
             title: item.title,
-            value: getHash(item.href),
+            value: item.href,
           }))}
         />
       </div>
-
-      {activeTab === SolutionSubMenus.CreditCardTerminal && <CreditCardTerminal />}
-      {activeTab === SolutionSubMenus.MobileCardReader && <MobileCardReader />}
-      {activeTab === SolutionSubMenus.OnlineProcessing && <OnlineProcessing />}
-
+      {Cmp && <Cmp />}
       <CTAInnerFooter
         htmlText="Discover the perfect point of sale system for your business today!"
         bonus={240}
