@@ -1,16 +1,6 @@
 import { BlogDetail } from '@/ui/templates/blogs/blog-detail/BlogDetail';
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Seo } from '~/ui/util-components/Seo';
-
-export const getServerSideProps = async ({ locale }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
-    },
-    revalidate: 60,
-  };
-};
 
 const Blog = () => {
   const { t } = useTranslation('common');
