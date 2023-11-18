@@ -6,7 +6,7 @@ This playground is a mirror of the [Next.js v13 App Directory Playground](https:
 
 **As a reminder, Turbopack is currently in alpha and not yet ready for production. We appreciate your ongoing support as we work to make it ready for everyone.**
 
-## Running Locally
+## Running Locally  
 
 1. Install dependencies: `yarn`
 1. Start the dev server: `yarn dev`
