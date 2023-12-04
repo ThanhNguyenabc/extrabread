@@ -38,7 +38,7 @@ const InfoSection = ({
   return (
     <Hero
       className={cn(
-        'flex flex-col-reverse md:flex-row gap-4 md:gap-6 lg:max-h-[920px]',
+        'flex flex-col-reverse md:flex-row gap-4 md:gap-6',
         className,
         imageDirection === 'left' && 'md:flex-row-reverse',
       )}

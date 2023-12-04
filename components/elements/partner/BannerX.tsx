@@ -32,7 +32,12 @@ const BannerX = ({
 }: BannerX) => {
   return (
     <Hero className="gap-4 md:gap-8 lg:flex-row">
-      <div className={cn(`flex flex-col gap-4 md:gap-10 lg:gap-12`, leftCmpClassName)}>
+      <div
+        className={cn(
+          `flex flex-col h-fit self-center gap-4 md:gap-10 lg:gap-12`,
+          leftCmpClassName,
+        )}
+      >
         <div
           className={cn(
             'flex flex-col gap-4 max-w-[300px] md:gap-6 md:max-w-[480px]',
@@ -43,23 +48,16 @@ const BannerX = ({
           <h1 className="heading-md md:heading-xl"> {heading}</h1>
           {desc && <h3 className="text-base text-neutral-700 font-semibold md:text-lg"> {desc}</h3>}
         </div>
+        {extraComponent && extraComponent}
         {button && (
           <Button size={'responsive'} onClick={button.onBtnClick} className="md:w-[250px]">
             {button.title}
           </Button>
         )}
-        {extraComponent && extraComponent}
       </div>
       {image && (
-        <div className="block flex-1 w-full md:w-[682px] md:h-[524px] mx-auto justify-items-end">
-          <Image
-            src={image}
-            width={682}
-            height={524}
-            alt="banner-image"
-            className="self-end"
-            quality={100}
-          />
+        <div className="block flex-1 w-full mx-auto justify-items-end">
+          <Image src={image} width={682} alt="banner-image" className="self-end" quality={100} />
         </div>
       )}
     </Hero>

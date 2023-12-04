@@ -17,6 +17,7 @@ import {
   VirtualIcon,
   WirelessIcon,
 } from '@/ui/img-resource/ImageResources';
+import { CTAInnerFooter } from '@/ui/organisms/cta-inner-footer/CTAInnerFooter';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -59,7 +60,7 @@ const PaymentInfoSections = [
       },
       {
         image: OptionIcon,
-        text: 'Affordablechoices',
+        text: 'Affordable choices',
       },
     ],
     url: RouteConfig.MobileCard,
@@ -107,7 +108,6 @@ const PaymentProcessing = () => {
           onBtnClick: onGetStart,
         }}
       />
-
       <div className="flex flex-col pb-10 md:pb-16 lg:pb-20">
         {PaymentInfoSections.map(data => {
           return (
@@ -154,6 +154,11 @@ const PaymentProcessing = () => {
         })}
       </div>
       <SideHustle />
+      <CTAInnerFooter
+        htmlText="Discover the perfect point of sale system for your business today!"
+        bonus={2500}
+        sale={250000}
+      />
     </>
   );
 };

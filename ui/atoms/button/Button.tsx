@@ -5,7 +5,7 @@ import { forwardRef } from 'react';
 import styles from './Button.module.scss';
 
 export interface BreadButtonProps extends ButtonProps {
-  color?: 'black';
+  color?: 'black' ;
   direction?: 'left' | 'right';
 }
 const { textColor, primaryColor } = variables;

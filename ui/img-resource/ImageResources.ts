@@ -88,6 +88,7 @@ import PartnerBoss from 'public/images/partner/being_boss.webp';
 import PartnerCalling from 'public/images/partner/calling_person.webp';
 import PartnerTeamate from 'public/images/partner/teamate.webp';
 import PartnerWFH from 'public/images/partner/working_from_home.webp';
+import PartnerCover from 'public/images/partner/partner_cover.png';
 
 //About us
 import AboutBanner from 'public/images/about-us/about-banner.png';
@@ -153,6 +154,7 @@ export {
   PartnerCalling,
   PartnerTeamate,
   PartnerWFH,
+  PartnerCover,
   PaymentTerminalIcon,
   PhoneIcon,
   PizzeriasImg,
