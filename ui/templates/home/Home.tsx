@@ -1,12 +1,15 @@
 import { Space } from 'antd';
 import {
+  IcChevronRight,
   LandingBanner,
   ReceiveCashIcon,
   SaveMoneyIcon,
   ZeroProcessingFeesIcon,
 } from '~/ui/img-resource/ImageResources';
 
-import { BUSINESS_MENU } from '~/constants/index';
+import { Button } from '@/ui/atoms/button/Button';
+import Link from 'next/link';
+import { BUSINESS_MENU, RouteConfig } from '~/constants/index';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { TrustScore } from '~/ui/atoms/trust-score/TrustScore';
@@ -29,7 +32,18 @@ export const HomeTemplate = () => {
         content={<>Save & Earn More with Top Payment & POS Solutions</>}
         button={
           <>
-            <GetPricingButton title="Get Pricing Today" size="large" />
+            <div className="flex gap-4">
+              <GetPricingButton title="Get Pricing Today" size="large" />
+              <Link href={RouteConfig.Partner}>
+                <Button
+                  size="large"
+                  className="flex items-center gap-2 border-none hover:text-green-500"
+                >
+                  {'Partner with us'}
+                  <IcChevronRight />
+                </Button>
+              </Link>
+            </div>
             <div>
               <TrustScore score={4.5} />
             </div>

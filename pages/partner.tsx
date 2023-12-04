@@ -10,7 +10,7 @@ import {
   IcBonus,
   IcIncome,
   PartnerBoss,
-  PartnerCalling,
+  PartnerCover,
   PartnerTeamate,
   PartnerWFH,
 } from '@/ui/img-resource/ImageResources';
@@ -68,7 +68,7 @@ const PartnerPrograms = [
   },
   {
     title: 'Working With The Best',
-    desc: 'At ExtraBread, we are committed to excellence and providing unparalleled support to help you achieve your goals. Join our dynamic team and unlock the path to success with the best by your side!',
+    desc: "Our In-house Agent Program is an exclusive opportunity to delve deep into our service offerings. By enrolling, you'll gain valuable insights, become an integral team member, and receive expert training to excel in your role. Alongside this, you'll enjoy numerous benefits, such as access to dedicated office facilities, administrative support, and a variety of enticing perks. The program also offers a competitive base salary with the potential for significant residuals and performance-based bonuses.",
     imageLink: PartnerTeamate,
     imageDirection: 'right',
     tagConfig: {
@@ -145,8 +145,8 @@ const PartnerPage = () => {
       <BannerX
         tag={'Partnership'}
         heading="The Ultimate Side Hustle"
-        desc="Partner with ExtraBread today and start your side hustle journey!"
-        image={PartnerCalling}
+        desc="This is the perfect opportunity to earn extra monthly income & bonuses on your free time."
+        image={PartnerCover}
         button={{
           title: 'Join ExtraBread Today',
           onBtnClick: onJoinExtrabread,
@@ -172,7 +172,6 @@ const PartnerPage = () => {
         }
       />
       <DiscoverPartner />
-      <WorkWithTheBest />
       <div className="flex flex-col">
         {PartnerPrograms.map(item => (
           <InfoSection
@@ -186,14 +185,14 @@ const PartnerPage = () => {
               extraComponent: <InfoList data={item.items} />,
             }}
             image={
-              <div className="block w-full md:self-center md:w-[40%] lg:w-[42%] xl:self-start">
+              <div className="flex w-full md:w-[40%] lg:w-[45%] h-[100%] bg-green-100">
                 <Image
                   src={item.imageLink}
                   alt="info-image"
                   width={700}
                   height={780}
                   quality={100}
-                  className=" object-cover "
+                  className=" object-contain bg-green-100 h-full"
                 />
               </div>
             }
@@ -201,7 +200,7 @@ const PartnerPage = () => {
           />
         ))}
       </div>
-
+      <WorkWithTheBest />
       <Stories />
       <PartnerForm
         ref={registerForm}

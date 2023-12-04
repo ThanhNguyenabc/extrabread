@@ -14,6 +14,7 @@ import {
 } from '@/ui/img-resource/ImageResources';
 import { CTAInnerFooter } from '@/ui/organisms/cta-inner-footer/CTAInnerFooter';
 import { UniqueValue } from '@/ui/organisms/unique-value/UniqueValue';
+import { WorkWithTheBest } from '@/ui/organisms/work-with-the-best/WorkWithTheBest';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -169,7 +170,7 @@ const AboutUS = () => {
               }}
               imageDirection={item.imageDirection as ImageDirection}
               image={
-                <div className=" w-[584px]">
+                <div className="w-full flex-1 self-center">
                   <Image src={item.image} alt={`${item.title}`} quality={90} />
                 </div>
               }
@@ -178,6 +179,7 @@ const AboutUS = () => {
         })}
       </div>
 
+      <WorkWithTheBest />
       <UniqueValue />
       <SideHustle />
 
