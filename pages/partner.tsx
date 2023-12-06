@@ -4,6 +4,7 @@ import InfoList from '@/components/elements/partner/InfoList';
 import PartnerForm from '@/components/elements/partner/PartnerForm';
 import Stories from '@/components/elements/partner/Stories';
 import InfoSection, { ImageDirection } from '@/components/ui/info_section';
+import { subject } from '@/helpers';
 import {
   IcAppointment,
   IcBasePay,
@@ -16,7 +17,7 @@ import {
 } from '@/ui/img-resource/ImageResources';
 import { WorkWithTheBest } from '@/ui/organisms/work-with-the-best/WorkWithTheBest';
 import Image from 'next/image';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const PartnerBenefit = [
   {
@@ -39,6 +40,7 @@ const PartnerBenefit = [
 
 const PartnerPrograms = [
   {
+    key: 'referral',
     title: 'Quick & Easy Cash Flow',
     desc: 'Earn quick and easy money through our referral program by introducing your favorite establishments to ExtraBread. Enjoy residual monthly income for successful referrals and closed deals. Join now to turn your network into a lucrative source of earnings!',
     imageLink: PartnerWFH,
@@ -67,6 +69,7 @@ const PartnerPrograms = [
     ],
   },
   {
+    key: 'in-house',
     title: 'Working With The Best',
     desc: "Our In-house Agent Program is an exclusive opportunity to delve deep into our service offerings. By enrolling, you'll gain valuable insights, become an integral team member, and receive expert training to excel in your role. Alongside this, you'll enjoy numerous benefits, such as access to dedicated office facilities, administrative support, and a variety of enticing perks. The program also offers a competitive base salary with the potential for significant residuals and performance-based bonuses.",
     imageLink: PartnerTeamate,
@@ -95,6 +98,7 @@ const PartnerPrograms = [
     ],
   },
   {
+    key: 'iso-agent',
     title: 'Being Your Own Boss',
     desc: 'Join ExtraBread as an independent sales office agent and embrace the freedom of being your own boss. Empower merchants with expert advice on ideal point-of-sale systems, build long-term relationships, and expand your portfolio alongside us.',
     imageLink: PartnerBoss,
@@ -140,6 +144,17 @@ const PartnerPage = () => {
     onClick: onJoinExtrabread,
   };
 
+  useEffect(() => {
+    subject?.subscribe({
+      next(value) {
+        const { id } = value || {};
+        const section = document.getElementById(id);
+        if (section)
+          section.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'center' });
+      },
+    });
+  }, []);
+
   return (
     <div className="flex flex-col">
       <BannerX
@@ -175,8 +190,8 @@ const PartnerPage = () => {
       <div className="flex flex-col">
         {PartnerPrograms.map(item => (
           <InfoSection
-            key={`${item.title}`}
-            {...item}
+            id={item.key}
+            key={`${item.key}`}
             dataConfig={{
               ...item,
               tagConfig: item.tagConfig,

@@ -1,23 +1,34 @@
 import Hero from '@/components/ui/hero';
+import { subject } from '@/helpers';
 import { cn } from '@/lib/utils';
-import React from 'react';
+import React, { useCallback } from 'react';
 
 const DiscoverItem = [
   {
+    id: 'referral',
     text: 'Referral',
-    color: 'bg-yellow-200',
+    bgColor: 'bg-yellow-200',
+    hoverColor: 'bg-yellow-500',
   },
   {
+    id: 'in-house',
     text: 'In-House',
-    color: 'bg-red-200',
+    bgColor: 'bg-red-200',
+    hoverColor: 'bg-red-400',
   },
   {
+    id: 'iso-agent',
     text: 'ISO Agent',
-    color: 'bg-green-100',
+    bgColor: 'bg-green-100',
+    hoverColor: 'bg-green-400',
   },
 ];
 
 const DiscoverPartner = () => {
+  const onItemClick = id => () => {
+    subject.next({ id });
+  };
+
   return (
     <Hero className="md:max-w-[784px]">
       <span className="text-sm-semibold text-green-500">HOW IT WORKS</span>
@@ -26,22 +37,24 @@ const DiscoverPartner = () => {
       </h3>
       <p className="mt-6 text-base text-neutral-700  md:text-lg md:mt-12">
         At ExtraBread, we offer the ultimate side hustle for individuals seeking flexible
-        opportunities during their free time.We&apos;re dedicated to keeping you at the forefront of the
-        ever-changing payments landscape through innovative products and program offerings.
+        opportunities during their free time.We&apos;re dedicated to keeping you at the forefront of
+        the ever-changing payments landscape through innovative products and program offerings.
         Construct your sales office with a partner deeply invested in ensuring your success! With
         our three programs:
       </p>
       <div className="grid grid-cols-3 gap-4 py-4 md:py-6">
-        {DiscoverItem.map(({ text, color }) => (
-          <p
-            key={`${text}`}
-            className={cn(
-              `block text-lg-semibold p-3 text-center rounded-lg md:p-8 md:heading-sm`,
-              color,
-            )}
-          >
-            {text}
-          </p>
+        {DiscoverItem.map(({ bgColor, text, id }, index) => (
+          <button onClick={onItemClick(id)} key={`${text}`}>
+            <p
+              className={cn(
+                `block text-lg-semibold p-3 text-center rounded-lg cursor-pointer md:p-8 md:heading-sm transition`,
+                bgColor,
+                `hover:bg-green-500 hover:text-white`,
+              )}
+            >
+              {text}
+            </p>
+          </button>
         ))}
       </div>
       <p className="text-base text-neutral-700 md:text-lg">
