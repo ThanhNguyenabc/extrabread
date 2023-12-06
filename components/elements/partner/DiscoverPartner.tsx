@@ -1,7 +1,7 @@
 import Hero from '@/components/ui/hero';
 import { subject } from '@/helpers';
 import { cn } from '@/lib/utils';
-import React, { useCallback } from 'react';
+import React from 'react';
 
 const DiscoverItem = [
   {
@@ -43,7 +43,7 @@ const DiscoverPartner = () => {
         our three programs:
       </p>
       <div className="grid grid-cols-3 gap-4 py-4 md:py-6">
-        {DiscoverItem.map(({ bgColor, text, id }, index) => (
+        {DiscoverItem.map(({ bgColor, text, id }) => (
           <button onClick={onItemClick(id)} key={`${text}`}>
             <p
               className={cn(
