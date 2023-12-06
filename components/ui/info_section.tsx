@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import React, { HTMLAttributes, ReactElement } from 'react';
+import React, { HTMLAttributes, ReactElement, forwardRef } from 'react';
 import { Badge } from './badge';
 import { Button, ButtonProps } from './button';
 import Hero from './hero';
@@ -28,45 +28,45 @@ interface InfoSectionProps extends HTMLAttributes<HTMLDivElement> {
   };
 }
 
-const InfoSection = ({
-  imageDirection = 'left',
-  className,
-  image,
-  dataConfig,
-}: InfoSectionProps) => {
-  const { ctaConfig, title, desc, infoClassName, extraComponent, tagConfig } = dataConfig;
-  return (
-    <Hero
-      className={cn(
-        'flex flex-col-reverse md:flex-row gap-4 md:gap-6',
-        className,
-        imageDirection === 'left' && 'md:flex-row-reverse',
-      )}
-    >
-      <div className={cn(`flex flex-1 flex-col gap-4 mx-auto justify-between`, infoClassName)}>
-        {tagConfig && (
-          <Badge className={cn('bg-neutral-300', tagConfig.tagClassName)}>{tagConfig.text}</Badge>
+const InfoSection = forwardRef<HTMLDivElement, InfoSectionProps>(
+  ({ imageDirection = 'left', className, image, dataConfig, ...props }, ref) => {
+    const { ctaConfig, title, desc, infoClassName, extraComponent, tagConfig } = dataConfig;
+
+    return (
+      <Hero
+        ref={ref}
+        className={cn(
+          'flex flex-col-reverse md:flex-row gap-4 md:gap-6',
+          className,
+          imageDirection === 'left' && 'md:flex-row-reverse',
         )}
-        <h3 className="heading-xs md:heading-md lg:heading-lg">{title}</h3>
-        <p className="text-sm  whitespace-pre-wrap text-neutral-700 md:text-base lg:text-lg">
-          {desc}
-        </p>
-        {extraComponent && extraComponent}
-        {ctaConfig && (
-          <Button
-            onClick={ctaConfig.onClick}
-            size={'responsive'}
-            className={cn(ctaConfig.ctaClassName)}
-            {...ctaConfig.buttonProps}
-          >
-            {ctaConfig.title}
-            {ctaConfig.rightIcon}
-          </Button>
-        )}
-      </div>
-      {image && image}
-    </Hero>
-  );
-};
+        {...props}
+      >
+        <div className={cn(`flex flex-1 flex-col gap-4 mx-auto justify-between`, infoClassName)}>
+          {tagConfig && (
+            <Badge className={cn('bg-neutral-300', tagConfig.tagClassName)}>{tagConfig.text}</Badge>
+          )}
+          <h3 className="heading-xs md:heading-md lg:heading-lg">{title}</h3>
+          <p className="text-sm  whitespace-pre-wrap text-neutral-700 md:text-base lg:text-lg">
+            {desc}
+          </p>
+          {extraComponent && extraComponent}
+          {ctaConfig && (
+            <Button
+              onClick={ctaConfig.onClick}
+              size={'responsive'}
+              className={cn(ctaConfig.ctaClassName)}
+              {...ctaConfig.buttonProps}
+            >
+              {ctaConfig.title}
+              {ctaConfig.rightIcon}
+            </Button>
+          )}
+        </div>
+        {image && image}
+      </Hero>
+    );
+  },
+);
 
 export default InfoSection;

@@ -32,12 +32,12 @@ export const HomeTemplate = () => {
         content={<>Save & Earn More with Top Payment & POS Solutions</>}
         button={
           <>
-            <div className="flex gap-4">
+            <div className="flex items-center justify-center flex-col gap-3 md:flex-row  md:gap-4 lg:justify-start">
               <GetPricingButton title="Get Pricing Today" size="large" />
               <Link href={RouteConfig.Partner}>
                 <Button
                   size="large"
-                  className="flex items-center gap-2 border-none hover:text-green-500"
+                  className="flex justify-center items-center gap-2 border-none hover:text-green-500"
                 >
                   {'Partner with us'}
                   <IcChevronRight />
