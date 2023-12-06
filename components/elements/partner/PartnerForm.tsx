@@ -36,8 +36,10 @@ const PartnerForm = React.forwardRef<HTMLDivElement, FooterRegisterFromProps>(
         contact: data,
         data: {
           airtable: {
+            'Full Name': `${data.lastname} ${data.firstname}`,
             'First name': data.firstname,
             'Last name': data.lastname,
+            'Created Date': new Date().toDateString(),
             'Phone number': data.phone,
             Email: data.email,
           },

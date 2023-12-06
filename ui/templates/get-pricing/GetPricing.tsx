@@ -1,8 +1,6 @@
 import { submitForm } from '@/apis';
 import { mapModifiers } from '@/helpers';
-import Airtable from 'airtable';
 import { message } from 'antd';
-import { customAlphabet } from 'nanoid';
 import { FC, PropsWithChildren, useEffect, useState } from 'react';
 import { useDevice } from '~/hooks/useDetectMobile';
 import { Container } from '~/ui/atoms/container/Container';
@@ -12,10 +10,7 @@ import { IntroduceContent } from './IntroduceContent';
 import { FinishContent } from './components/finish-content/FinishContent';
 import { FormValue } from './types';
 
-const nanoid = customAlphabet('1234567890abcdef', 10);
-
 let currentStep = 1;
-let leadsId;
 
 type Props = PropsWithChildren & {
   type?: 'default' | 'lilmo';
@@ -32,10 +27,6 @@ export const GetPricingTemplate: FC<Props> = ({ type = 'default', children }) =>
 
   const softSubmit = async (formValues: FormValue, sendMailToCustomer = true) => {
     try {
-      if (currentStep === 1) {
-        leadsId = nanoid();
-      }
-
       const mailHtmlBody = `<!DOCTYPE html>
       <html>
         <head>
