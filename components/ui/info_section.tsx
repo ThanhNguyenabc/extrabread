@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import React, { HTMLAttributes, ReactElement, forwardRef, useEffect, useRef } from 'react';
+import React, { HTMLAttributes, ReactElement, forwardRef } from 'react';
 import { Badge } from './badge';
 import { Button, ButtonProps } from './button';
 import Hero from './hero';
