@@ -87,7 +87,7 @@ const InfoSections = [
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const [seoTag, translation] = await Promise.all([
-    getSEOTag('home', locale),
+    getSEOTag('about-us', locale),
     serverSideTranslations(locale ?? 'en', ['common', 'home']),
   ]);
   return {
