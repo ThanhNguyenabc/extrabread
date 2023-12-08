@@ -21,7 +21,7 @@ export const Seo: React.FC<Props> = ({
   const url = asPath ? `${DOMAIN}${asPath}` : DOMAIN;
   const title = initTitle || 'ExtraBread: Save and Earn more Bread$ for your business';
   const isHome = asPath === '/';
-  let image = '/images/seo/seo-img-1.png';
+  let image = 'https://res.cloudinary.com/dgrym3yz3/image/upload/v1702024071/extrabread/ebrz7dhu2jh8zvaaw2fd.png';
   if (initImage && initImage.length > 0) image = initImage;
 
   return (
