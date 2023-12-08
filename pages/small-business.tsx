@@ -1,26 +1,30 @@
+import { Meta } from '@/models/app_config.model';
 import { BusinessTypesTemplate } from '@/ui/templates/business-types/BusinessTypesTemplate';
 import { SmallBusiness } from '@/ui/templates/business-types/SmallBusiness';
 import { Seo } from '@/ui/util-components/Seo';
 import { GetStaticProps } from 'next';
-import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { getSEOTag } from './api/app-configs';
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale ?? 'en', ['business'])),
-  },
-});
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const [seoTag, translation] = await Promise.all([
+    getSEOTag('small-business', locale),
+    serverSideTranslations(locale ?? 'en', ['common', 'business']),
+  ]);
+  return {
+    props: {
+      seoTag,
+      ...translation,
+    },
+    revalidate: 120,
+  };
+};
 
-const index = () => {
-  const { t } = useTranslation('business');
-  const title = t('smallService.title');
-  const description = t('smallService.description');
-  const tags = t('smallService.tags');
-  const thumbnail = t('smallService.thumbnail');
-
+const index = ({ seoTag }: { seoTag?: Meta }) => {
+  const { title, description, keywords, image } = seoTag || {};
   return (
     <>
-      <Seo title={title} description={description} keywords={tags} imageFeature={thumbnail} />
+      <Seo title={title} description={description} keywords={keywords} imageFeature={image} />
       <BusinessTypesTemplate>
         <SmallBusiness />
       </BusinessTypesTemplate>

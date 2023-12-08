@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import Hero from '@/components/ui/hero';
 import InfoSection, { ImageDirection } from '@/components/ui/info_section';
 import { RouteConfig } from '@/constants';
+import { Meta } from '@/models/app_config.model';
 import {
   AboutBanner,
   IcChevronRight,
@@ -15,9 +16,13 @@ import {
 import { CTAInnerFooter } from '@/ui/organisms/cta-inner-footer/CTAInnerFooter';
 import { UniqueValue } from '@/ui/organisms/unique-value/UniqueValue';
 import { WorkWithTheBest } from '@/ui/organisms/work-with-the-best/WorkWithTheBest';
+import { Seo } from '@/ui/util-components/Seo';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { GetStaticProps } from 'next/types';
 import React from 'react';
+import { getSEOTag } from './api/app-configs';
 const DataStatistics = [
   {
     title: '$100K',
@@ -80,7 +85,23 @@ const InfoSections = [
   },
 ];
 
-const AboutUS = () => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const [seoTag, translation] = await Promise.all([
+    getSEOTag('home', locale),
+    serverSideTranslations(locale ?? 'en', ['common', 'home']),
+  ]);
+  return {
+    props: {
+      seoTag,
+      ...translation,
+    },
+    revalidate: 120,
+  };
+};
+
+const AboutUS = ({ seoTag }: { seoTag?: Meta }) => {
+  const { title, description, keywords, image } = seoTag || {};
+
   const router = useRouter();
 
   const onGetStart = () => {
@@ -89,6 +110,7 @@ const AboutUS = () => {
 
   return (
     <>
+      <Seo title={title} description={description} keywords={keywords} imageFeature={image}></Seo>
       <BannerX
         leftCmpClassName="w-full items-center"
         headingClassName="text-center md:max-w-[700px] xl:max-w-[1000px]"

@@ -5,6 +5,7 @@ import PartnerForm from '@/components/elements/partner/PartnerForm';
 import Stories from '@/components/elements/partner/Stories';
 import InfoSection, { ImageDirection } from '@/components/ui/info_section';
 import { subject } from '@/helpers';
+import { Meta } from '@/models/app_config.model';
 import {
   IcAppointment,
   IcBasePay,
@@ -16,8 +17,12 @@ import {
   PartnerWFH,
 } from '@/ui/img-resource/ImageResources';
 import { WorkWithTheBest } from '@/ui/organisms/work-with-the-best/WorkWithTheBest';
+import { Seo } from '@/ui/util-components/Seo';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Image from 'next/image';
+import { GetStaticProps } from 'next/types';
 import React, { useEffect, useRef } from 'react';
+import { getSEOTag } from './api/app-configs';
 
 const PartnerBenefit = [
   {
@@ -128,7 +133,23 @@ const PartnerPrograms = [
   },
 ];
 
-const PartnerPage = () => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const [seoTag, translation] = await Promise.all([
+    getSEOTag('partner', locale),
+    serverSideTranslations(locale ?? 'en', ['common']),
+  ]);
+  return {
+    props: {
+      seoTag,
+      ...translation,
+    },
+    revalidate: 120,
+  };
+};
+
+const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
+  const { title, description, keywords, image } = seoTag || {};
+
   const registerForm = useRef<HTMLDivElement>(null);
 
   const onJoinExtrabread = () => {
@@ -156,77 +177,80 @@ const PartnerPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col">
-      <BannerX
-        tag={'Partnership'}
-        heading="The Ultimate Side Hustle"
-        desc="This is the perfect opportunity to earn extra monthly income & bonuses on your free time."
-        image={PartnerCover}
-        button={{
-          title: 'Join ExtraBread Today',
-          onBtnClick: onJoinExtrabread,
-        }}
-        leftCmpClassName="lg:justify-between"
-        extraComponent={
-          <div className="flex gap-3 md:gap-4 lg:mx-auto">
-            {PartnerBenefit.map(item => {
-              const Icon = item.icon;
-              return (
-                <div key={`${item.desc}`} className="flex flex-col items-center gap-2">
-                  <Icon
-                    style={{
-                      width: 48,
-                      height: 48,
-                    }}
-                  />
-                  <p className="text-center text-sm max-w-[100px]">{item.desc}</p>
-                </div>
-              );
-            })}
-          </div>
-        }
-      />
-      <DiscoverPartner />
+    <>
+      <Seo title={title} description={description} keywords={keywords} imageFeature={image}></Seo>
       <div className="flex flex-col">
-        {PartnerPrograms.map(item => (
-          <InfoSection
-            id={item.key}
-            key={`${item.key}`}
-            dataConfig={{
-              ...item,
-              tagConfig: item.tagConfig,
-              ctaConfig: ctaConfig,
-              infoClassName: 'lg:max-w-[560px]',
-              extraComponent: <InfoList data={item.items} />,
-            }}
-            image={
-              <div className="flex w-full md:w-[40%] lg:w-[45%] h-[100%] bg-green-100">
-                <Image
-                  src={item.imageLink}
-                  alt="info-image"
-                  width={700}
-                  height={780}
-                  quality={100}
-                  className=" object-contain bg-green-100 h-full"
-                />
-              </div>
-            }
-            imageDirection={item.imageDirection as ImageDirection}
-          />
-        ))}
+        <BannerX
+          tag={'Partnership'}
+          heading="The Ultimate Side Hustle"
+          desc="This is the perfect opportunity to earn extra monthly income & bonuses on your free time."
+          image={PartnerCover}
+          button={{
+            title: 'Join ExtraBread Today',
+            onBtnClick: onJoinExtrabread,
+          }}
+          leftCmpClassName="lg:justify-between"
+          extraComponent={
+            <div className="flex gap-3 md:gap-4 lg:mx-auto">
+              {PartnerBenefit.map(item => {
+                const Icon = item.icon;
+                return (
+                  <div key={`${item.desc}`} className="flex flex-col items-center gap-2">
+                    <Icon
+                      style={{
+                        width: 48,
+                        height: 48,
+                      }}
+                    />
+                    <p className="text-center text-sm max-w-[100px]">{item.desc}</p>
+                  </div>
+                );
+              })}
+            </div>
+          }
+        />
+        <DiscoverPartner />
+        <div className="flex flex-col">
+          {PartnerPrograms.map(item => (
+            <InfoSection
+              id={item.key}
+              key={`${item.key}`}
+              dataConfig={{
+                ...item,
+                tagConfig: item.tagConfig,
+                ctaConfig: ctaConfig,
+                infoClassName: 'lg:max-w-[560px]',
+                extraComponent: <InfoList data={item.items} />,
+              }}
+              image={
+                <div className="flex w-full md:w-[40%] lg:w-[45%] h-[100%] bg-green-100">
+                  <Image
+                    src={item.imageLink}
+                    alt="info-image"
+                    width={700}
+                    height={780}
+                    quality={100}
+                    className=" object-contain bg-green-100 h-full"
+                  />
+                </div>
+              }
+              imageDirection={item.imageDirection as ImageDirection}
+            />
+          ))}
+        </div>
+        <WorkWithTheBest />
+        <Stories />
+        <PartnerForm
+          ref={registerForm}
+          heading={'Earn Extra Cash with ExtraBread'}
+          description={
+            'Turn your downtime into extra cash with ExtraBread! No need for big commitments - refer businesses and watch the bonuses and monthly residual income roll in. Sign up with us today.'
+          }
+          formTitle="Start Earning Monthly Residual Income Today"
+          formSubTilte="Fill out the form and we will reach out to you in 24-48 hours"
+        />
       </div>
-      <WorkWithTheBest />
-      <Stories />
-      <PartnerForm
-        ref={registerForm}
-        heading={'Earn Extra Cash with ExtraBread'}
-        description={
-          'Turn your downtime into extra cash with ExtraBread! No need for big commitments - refer businesses and watch the bonuses and monthly residual income roll in. Sign up with us today.'
-        }
-        formTitle="Start Earning Monthly Residual Income Today"
-        formSubTilte="Fill out the form and we will reach out to you in 24-48 hours"
-      />
-    </div>
+    </>
   );
 };
 

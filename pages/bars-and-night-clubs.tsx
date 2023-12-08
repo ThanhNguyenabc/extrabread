@@ -1,26 +1,31 @@
+import { Meta } from '@/models/app_config.model';
 import { BarNightClubs } from '@/ui/templates/business-types/BarNightClubs';
 import { BusinessTypesTemplate } from '@/ui/templates/business-types/BusinessTypesTemplate';
 import { Seo } from '@/ui/util-components/Seo';
 import { GetStaticProps } from 'next';
-import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { getSEOTag } from './api/app-configs';
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale ?? 'en', ['business'])),
-  },
-});
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const [seoTag, translation] = await Promise.all([
+    getSEOTag('bars-and-night-clubs', locale),
+    serverSideTranslations(locale ?? 'en', ['common', 'home']),
+  ]);
+  return {
+    props: {
+      seoTag,
+      ...translation,
+    },
+    revalidate: 120,
+  };
+};
 
-const index = () => {
-  const { t } = useTranslation('business');
-  const title = t('barsAndNight.title');
-  const description = t('barsAndNight.description');
-  const tags = t('barsAndNight.tags');
-  const thumbnail = t('barsAndNight.thumbnail');
+const index = ({ seoTag }: { seoTag?: Meta }) => {
+  const { title, description, keywords, image } = seoTag || {};
 
   return (
     <>
-      <Seo title={title} description={description} keywords={tags} imageFeature={thumbnail} />
+      <Seo title={title} description={description} keywords={keywords} imageFeature={image} />
       <BusinessTypesTemplate>
         <BarNightClubs />
       </BusinessTypesTemplate>
