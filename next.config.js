@@ -23,14 +23,7 @@ const nextConfig = {
   TABLE_NAME: process.env.TABLE_NAME,
   BASE_ID: process.env.BASE_ID,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'blog.extrabread.com',
-        pathname: '/wp-content/uploads/**',
-        port: '',
-      },
-    ],
+    domain: ['https://blog.extrabread.com', 'https://res.cloudinary.com'],
   },
   webpack(config) {
     config.module.rules.push({

@@ -1,23 +1,30 @@
+import { Meta } from '@/models/app_config.model';
 import { BusinessTypesTemplate } from '@/ui/templates/business-types/BusinessTypesTemplate';
 import { RetailBusinesses } from '@/ui/templates/business-types/RetailBusinesses';
 import { Seo } from '@/ui/util-components/Seo';
 import { GetStaticProps } from 'next';
-import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { getSEOTag } from './api/app-configs';
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale ?? 'en', ['business'])),
-  },
-});
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const [seoTag, translation] = await Promise.all([
+    getSEOTag('retail', locale),
+    serverSideTranslations(locale ?? 'en', ['common', 'business']),
+  ]);
+  return {
+    props: {
+      seoTag,
+      ...translation,
+    },
+    revalidate: 120,
+  };
+};
 
-const index = () => {
-  const { t } = useTranslation('business');
-  const title = t('retail.title');
-  const description = t('retail.description');
-  const tags = t('retail.tags');
-  const thumbnail = t('retail.thumbnail');
-
+const index = ({ seoTag }: { seoTag?: Meta }) => {
+  const title = seoTag?.title;
+  const description = seoTag?.description;
+  const tags = seoTag?.keywords;
+  const thumbnail = seoTag?.image;
   return (
     <>
       <Seo title={title} description={description} keywords={tags} imageFeature={thumbnail} />

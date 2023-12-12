@@ -3,12 +3,34 @@ import ElevateCardItem from '@/components/elements/elevatebusiness/ElevateCardIt
 import BannerX from '@/components/elements/partner/BannerX';
 import Hero from '@/components/ui/hero';
 import { ProductData } from '@/constants/products';
+import { Meta } from '@/models/app_config.model';
 import { CTAInnerFooter } from '@/ui/organisms/cta-inner-footer/CTAInnerFooter';
+import { Seo } from '@/ui/util-components/Seo';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { GetStaticProps } from 'next/types';
 import React from 'react';
+import { getSEOTag } from './api/app-configs';
 
-const ElevateYourBusiness = () => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const [seoTag, translation] = await Promise.all([
+    getSEOTag('point-of-sale-systems', locale),
+    serverSideTranslations(locale ?? 'en', ['common', 'home']),
+  ]);
+  return {
+    props: {
+      seoTag,
+      ...translation,
+    },
+    revalidate: 120,
+  };
+};
+
+const ElevateYourBusiness = ({ seoTag }: { seoTag?: Meta }) => {
+  const { title, description, keywords, image } = seoTag || {};
+
   return (
     <>
+      <Seo title={title} description={description} keywords={keywords} imageFeature={image}></Seo>
       <BannerX
         leftCmpClassName="w-full items-center"
         headingClassName="text-center md:max-w-[700px] xl:max-w-[980px]"
