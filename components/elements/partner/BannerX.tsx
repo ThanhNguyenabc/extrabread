@@ -57,7 +57,7 @@ const BannerX = ({
       </div>
       {image && (
         <div className="block flex-1 w-full mx-auto justify-items-end">
-          <Image src={image} width={682} alt="banner-image" className="self-end" quality={100} />
+          <Image src={image} width={682} alt="banner-image" className="lg:mt-4" quality={100} />
         </div>
       )}
     </Hero>
