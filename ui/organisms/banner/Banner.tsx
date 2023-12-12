@@ -49,12 +49,12 @@ export const Banner = ({
         </div>
         <div className={cn(styles['banner-img'])}>
           <Image
-            width={682}
+            width={700}
             height={600}
             src={src}
             alt="banner"
             quality={100}
-            className=" aspect-[700/560]"
+            className="aspect-[700/600]"
           />
         </div>
       </div>

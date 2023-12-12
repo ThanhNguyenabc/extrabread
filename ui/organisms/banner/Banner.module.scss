@@ -86,7 +86,7 @@
 
   &-inner {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
     column-gap: 32px;
     align-items: center;
     max-width: $container-pc;
