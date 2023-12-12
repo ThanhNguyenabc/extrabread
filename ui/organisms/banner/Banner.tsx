@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils';
 import classNames from 'classnames';
 import { mapModifiers } from 'helpers/component';
 import Image from 'next/image';
@@ -38,7 +39,7 @@ export const Banner = ({
   return (
     <div className={classNames(_className, className)}>
       <div className={styles['banner-inner']}>
-        <div className={styles['banner-text']}>
+        <div className={cn(styles['banner-text'])}>
           {tagText ? <div className={styles['banner-tag']}>{tagText}</div> : null}
           <div className={styles['banner-content']}>{content}</div>
           {descriptions ? (
@@ -46,8 +47,15 @@ export const Banner = ({
           ) : null}
           <div className={styles['banner-btn']}>{button}</div>
         </div>
-        <div className={styles['banner-img']}>
-          <Image width={682} height={600} src={src} alt="banner" quality={100} />
+        <div className={cn(styles['banner-img'])}>
+          <Image
+            width={682}
+            height={600}
+            src={src}
+            alt="banner"
+            quality={100}
+            className=" aspect-[700/560]"
+          />
         </div>
       </div>
       {extractComponent && <div className={styles['banner-extract']}>{extractComponent}</div>}

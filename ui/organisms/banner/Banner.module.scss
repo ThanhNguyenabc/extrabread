@@ -170,7 +170,6 @@
     img {
       width: auto;
       height: 100%;
-      object-fit: cover;
 
       @include tablet-down {
         height: 500px;
