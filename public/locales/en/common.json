@@ -1,1 +1,101 @@
-{}
+{
+    "trustscore": "TrustScore",
+    "trustpilot": "Trustpilot",
+    "get_started": "Get Started",
+    "get_pricing": "Get Pricing",
+    "get_pricing_today": "Get Pricing Today",
+    "get_start_today": "Get Stated today!",
+    "partner_with_us": "Partner with us",
+    "Zero Processing Fees": "Zero Processing Fees",
+    "email": "Email",
+    "support": "Support",
+    "contact_us": "Contact Us",
+    "call_us": "or Call us",
+    "privacy_policy": "Privacy Policy",
+    "term_of_service": "Terms of Service",
+    "and": "and",
+    "footer": {
+        "heading": "Discover the perfect point of sale system for your business today! Get started today!",
+        "subTitle": "Plus a cash signing bonus. Find out how much!",
+        "subTitle2": "Cash Signing\nBonus Estimate",
+        "subtitle3": "Estimated Yearly\nCredit Card Sales",
+        "working_day": [
+            "Monday - Friday, 5am - 7pm PT",
+            "Saturday - Sunday, 6am - 5pm PT"
+        ],
+        "policy": "ExtraBread is a POS consultant service that provides financial assistance and advice to businesses. We strive to provide accurate and up-to-date information to our clients, but we do not guarantee the accuracy, completeness, or timeliness of the information provided. This website is owned and operated by ELECPAYMENTS INC. Reproduction of this website, in whole or in part, is strictly prohibited.\n\nBy using our service, you agree to be bound by these",
+        "any_question": "If you have any questions or concerns, please contact us at info@extrabread.com.",
+        "copy_right": "@ Copyright 2023 ExtraBread. All Rights Reserved."
+    },
+    "solution": "Solution",
+    "pos_equipments": "POS Equipments",
+    "business_type": "Business Type",
+    "products": "Products",
+    "company": "Company",
+    "home": "Home",
+    "unique": {
+        "heading": "Our secret sauce to your success.",
+        "desc": "At ExtraBread, we're committed to helping you save on Point of Sale costs and increase your profits through reduced payment processing fees. That's why we offer professional and personalized consulting on the ideal point of sale system, payment processing, merchant services, and more",
+        "items": [
+            "24/7 U.S. - based, in-house technical support",
+            "Cash Discount Program",
+            "Compliant Dual Pricing Receipt",
+            "Free Point-of-Sale Placement Program",
+            "Free EMV (Chip Readers) Integration",
+            "No cancellation fee",
+            "Quick, seamless setup & implementation",
+            "Next day funding",
+            "Simplified batch processing"
+        ]
+    },
+    "work_with_thebest": "Work with the best",
+    "point_of_sale": {
+        "heading": "<span className='text-green-500'>Point-of-sale</span> for all business categories"
+    },
+    "find_right_solution": "Find the right processing solutions for your business.",
+    "hear_from_client": "Hear From Our Satisfied Clients",
+    "solutions": {
+        "credit-card": {
+            "title": "Credit Card Terminal",
+            "secondTitle": "Capital & Funding",
+            "desc": "In-person payments have never been easier",
+            "path": "credit-card"
+        },
+        "mobile-card": {
+            "title": "Mobile Card Reader",
+            "desc": "Accept payments anywhere",
+            "path": "mobile-card"
+        },
+        "online-processing": {
+            "title": "Online Processing",
+            "desc": "Streamline your online payments ",
+            "path": "online-processing"
+        }
+    },
+    "payment_processing": "Payment Processing",
+    "business_categories": {
+        "full_service": "Full Service Restaurants",
+        "retail": "Retail Businesses",
+        "quick_service": "Quick Service Restaurant",
+        "small_business": "Smalll Business",
+        "bar_nightclub": "Bars & nightclubs",
+        "pizza": "Pizzerias"
+    },
+    "product_types": {
+        "market": "Clover App Market",
+        "cash_discount": "Cash Discount Program",
+        "quick_book": "Quickbooks Plugin",
+        "gift": "Gift Card Program",
+        "check_service": "Check Services",
+        "cash_advance": "Cash advance",
+        "loyalty": "Loyalty & Rewards",
+        "online_analytics": "Online Analytics",
+        "invoicing": "Invoicing"
+    },
+    "learn_more": "Learn more",
+    "side_hustle": {
+        "partner_ship": "Partnership",
+        "heading": "The Ultimate Side Hustle",
+        "desc": "Partner with ExtraBread today and start your side hustle journey!"
+    }
+}

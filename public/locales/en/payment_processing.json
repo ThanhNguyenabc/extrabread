@@ -1,0 +1,24 @@
+{
+    "payment_desc": "Our processing solutions allow customers to pay using their preferred payment methods, keeping the line moving and enabling your business to function smoothly.",
+    "payment_credit_card": {
+        "title": "Credit Card Terminal",
+        "desc": "Making payments in person has never been simpler. With ExtraBread’s credit card terminals operate your business at incredible speeds, be able to receive contactless payments and accept chip cards and magstripe.\n \n Our processing solutions allow customers to pay using their preferred payment methods, keeping the line moving and enabling your business to function smoothly.",
+        "payment_flexible": "Payment flexbility",
+        "chip_reader": "EMV chip reader compatibility",
+        "wireless_models": "Wifi and Wireless models available"
+    },
+    "payment_mobile_card": {
+        "title": "Credit Card Terminal",
+        "desc": "Accept payments from anywhere at any time and allow for compatibility with any mobile device. Turn your smartphone or tablet into a POS, allowing you to accept card transactions or record cash-based sales. Take more payments on the go and expand your POS capabilities for less.",
+        "pair_device": "Pairs with any device",
+        "collect_payments": "Collect payments with ease",
+        "affordable": "Affordable choices"
+    },
+    "payment_online_processing": {
+        "title": "Online Processing",
+        "desc": "To cater to consumers who shop at any time, it's crucial to have a dependable online payment processing service. ExtraBread provides this service, allowing you to accept credit and debit cards online through Authorize.Net non-stop.",
+        "shopping_cart": "Shopping cart compatibility",
+        "mechant_interface": "A built-in merchant interface",
+        "online_terminal": "Online terminal"
+    }
+}

@@ -1,1 +1,102 @@
-{}
+{
+    "trustscore": "Puntuación de confianza",
+    "trustpilot": "Piloto de confianza",
+    "get_started": "Empieze Hoy!",
+    "get_pricing": "Obtenga Precios",
+    "get_pricing_today": "Obtenga Precios Hoy",
+    "get_start_today": "¡Empiece hoy!",
+    "partner_with_us": "Asóciese con nosotros",
+    "Zero Processing Fees": "Cero tarifas de procesamiento",
+    "How it works?": "¿Cómo funciona?",
+    "email": "Correo electrónico",
+    "contact_us": "Contáctenos",
+    "support": "Soporte",
+    "call_us": "o Llámanos",
+    "privacy_policy": "Política de privacidad",
+    "term_of_service": "Términos de servicio",
+    "and": "y",
+    "footer": {
+        "heading": "¡Descubra hoy el sistema de punto de venta perfecto para su negocio! ¡Empiece hoy!",
+        "subTitle": "Más un bono por firmar en efectivo. ¡Descubre cuánto!",
+        "subTitle2": "Estimación del bono de firma en efectivo",
+        "subtitle3": "Ventas anuales estimadas con tarjetas de crédito",
+        "working_day": [
+            "MLunes a viernes, de 5 a. m. a 7 p. m., hora del Pacífico",
+            "Sábado - domingo, 6 am - 5 pm hora del Pacífico"
+        ],
+        "policy": "ExtraBread es un servicio de consultoría de POS que brinda asistencia financiera y asesoramiento a empresas. Nos esforzamos por proporcionar información precisa y actualizada a nuestros clientes, pero no garantizamos la exactitud, integridad o actualidad de la información proporcionada. Este sitio web es propiedad y está operado por ELECPAYMENTS INC. La reproducción de este sitio web, total o parcial, está estrictamente prohibida.\n\nAl utilizar nuestro servicio, usted acepta estar sujeto a esta Política de privacidad y Términos de servicio",
+        "any_question": "Si tiene alguna pregunta o inquietud, contáctenos en info@extrabread.com.",
+        "copy_right": "@ Copyright 2023 Pan Extra. Reservados todos los derechos."
+    },
+    "solution": "Soluciones",
+    "pos_equipments": "Equipos POS",
+    "business_type": "Tipos de Negocios",
+    "products": "Productos",
+    "company": "Compañía",
+    "home": "Home",
+    "unique": {
+        "heading": "Nuestra salsa secreta para tu éxito.",
+        "desc": "En ExtraBread, estamos comprometidos a ayudarlos a ahorrar en costos de punto de venta y aumentar sus ganancias mediante tarifas reducidas de procesamiento de pagos. Es por eso que ofrecemos consultoría profesional y personalizada sobre el sistema ideal de punto de venta, procesamiento de pagos, servicios comerciales y más.",
+        "items": [
+            "Soporte técnico interno las 24 horas, los 7 días de la semana en EE. UU.",
+            "Programa de descuento en efectivo",
+            "Recibo de precio dual compatible",
+            "Programa gratuito de colocación en puntos de venta",
+            "Integración gratuita de EMV (lectores de chips)",
+            "Sin gastos de cancelación",
+            "Configuración e implementación rápidas y fluidas",
+            "Financiación al día siguiente",
+            "Procesamiento por lotes simplificado"
+        ]
+    },
+    "work_with_thebest": "Trabaja con lo mejor",
+    "point_of_sale": {
+        "heading": "<span className='text-green-500'>Punto de venta para</span> todas las categorías comerciales"
+    },
+    "find_right_solution": "Encuentre las soluciones de procesamiento adecuadas para su negocio.",
+    "hear_from_client": "Escuche de nuestros clientes satisfechos",
+    "solutions": {
+        "credit-card": {
+            "title": "Terminal de tarjeta de crédito",
+            "secondTitle": "Capital & Funding",
+            "desc": "Los pagos en persona nunca han sido tan fáciles",
+            "path": "credit-card"
+        },
+        "mobile-card": {
+            "title": "Lector de tarjetas móvil",
+            "desc": "Acepta pagos en cualquier lugar",
+            "path": "mobile-card"
+        },
+        "online-processing": {
+            "title": "Procesamiento en línea",
+            "desc": "Optimice sus pagos en línea",
+            "path": "online-processing"
+        }
+    },
+    "payment_processing": "Procesimiento de pago",
+    "business_categories": {
+        "full_service": "Restaurantes servicio completo",
+        "retail": "Comercio minorista",
+        "quick_service": "Restaurantes de comida rápida",
+        "small_business": "Pequeños negocios",
+        "bar_nightclub": "Bares y discotecas",
+        "pizza": "Pizzerías"
+    },
+    "product_types": {
+        "market": "Mercado de aplicaciones Clover",
+        "cash_discount": "Programa de descuento por pronto pago",
+        "quick_book": "Complemento Quickbooks",
+        "gift": "Programa de tarjetas de regalo",
+        "check_service": "Servicios de cheques",
+        "cash_advance": "Avance de efectivo",
+        "loyalty": "Lealtad y recompensas",
+        "online_analytics": "Análisis en línea",
+        "invoicing": "Facturación"
+    },
+    "learn_more": "Aprende más",
+    "side_hustle": {
+        "partner_ship": "Camaradería",
+        "heading": "El mejor trabajo secundario",
+        "desc": "¡Asóciese con ExtraBread hoy y comience su viaje paralelo!"
+    }
+}

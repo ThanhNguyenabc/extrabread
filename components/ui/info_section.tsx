@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils';
+import { TFunction, UseTranslation, useTranslation } from 'next-i18next';
 import React, { HTMLAttributes, ReactElement, forwardRef } from 'react';
 import { Badge } from './badge';
 import { Button, ButtonProps } from './button';
@@ -26,12 +27,12 @@ interface InfoSectionProps extends HTMLAttributes<HTMLDivElement> {
       tagClassName?: string;
     };
   };
+  translation?: TFunction;
 }
 
 const InfoSection = forwardRef<HTMLDivElement, InfoSectionProps>(
-  ({ imageDirection = 'left', className, image, dataConfig, ...props }, ref) => {
+  ({ imageDirection = 'left', className, image, dataConfig, translation, ...props }, ref) => {
     const { ctaConfig, title, desc, infoClassName, extraComponent, tagConfig } = dataConfig;
-
     return (
       <Hero
         ref={ref}
@@ -46,9 +47,11 @@ const InfoSection = forwardRef<HTMLDivElement, InfoSectionProps>(
           {tagConfig && (
             <Badge className={cn('bg-neutral-300', tagConfig.tagClassName)}>{tagConfig.text}</Badge>
           )}
-          <h3 className="heading-xs md:heading-md lg:heading-lg">{title}</h3>
+          <h3 className="heading-xs md:heading-md lg:heading-lg">
+            {translation?.(title) || title}
+          </h3>
           <p className="text-sm  whitespace-pre-wrap text-neutral-700 md:text-base lg:text-lg">
-            {desc}
+            {translation?.(desc) || desc}
           </p>
           {extraComponent && extraComponent}
           {ctaConfig && (

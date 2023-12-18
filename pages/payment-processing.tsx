@@ -9,7 +9,7 @@ import { getSEOTag } from './api/app-configs';
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const [seoTag, translation] = await Promise.all([
     getSEOTag('payment-processing', locale),
-    serverSideTranslations(locale ?? 'en', ['common', 'home']),
+    serverSideTranslations(locale ?? 'en', ['common', 'payment_processing']),
   ]);
   return {
     props: {
