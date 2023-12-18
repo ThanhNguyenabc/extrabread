@@ -1,29 +1,30 @@
 import InfoSection from '@/components/ui/info_section';
 import { RouteConfig } from '@/constants';
 import { PartnerCalling } from '@/ui/img-resource/ImageResources';
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
 
 const SideHustle = () => {
   const router = useRouter();
-
+  const { t } = useTranslation();
   return (
     <div className="bg-neutral-100">
       <InfoSection
         imageDirection="left"
         dataConfig={{
           tagConfig: {
-            text: 'Partnership',
+            text: t('side_hustle.partner_ship'),
             tagClassName: 'font-semibold text-base',
           },
-          title: 'The Ultimate Side Hustle',
+          title: t('side_hustle.heading'),
           ctaConfig: {
-            title: 'Learn more',
+            title: t('learn_more'),
             onClick: () => router.push(RouteConfig.Partner),
           },
           infoClassName: 'font-semibold justify-center md:gap-6',
-          desc: 'Partner with ExtraBread today and start your side hustle journey!',
+          desc: t('side_hustle.desc'),
         }}
         image={
           <div className="flex-1 md:h-[244px]">

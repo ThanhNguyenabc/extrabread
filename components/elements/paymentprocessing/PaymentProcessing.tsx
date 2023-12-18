@@ -18,6 +18,7 @@ import {
   WirelessIcon,
 } from '@/ui/img-resource/ImageResources';
 import { CTAInnerFooter } from '@/ui/organisms/cta-inner-footer/CTAInnerFooter';
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -26,20 +27,20 @@ const PaymentInfoSections = [
   {
     image: CreditCardBanner,
     imageDirection: 'right',
-    title: 'Credit Card Terminal',
-    desc: 'Making payments in person has never been simpler. With ExtraBread’s credit card terminals operate your business at incredible speeds, be able to receive contactless payments and accept chip cards and magstripe.\n \n Our processing solutions allow customers to pay using their preferred payment methods, keeping the line moving and enabling your business to function smoothly.',
+    title: 'payment_credit_card.title',
+    desc: 'payment_credit_card.desc',
     items: [
       {
         image: PaymentTerminalIcon,
-        text: 'Payment flexbility',
+        text: 'payment_credit_card.payment_flexible',
       },
       {
         image: ChipIcon,
-        text: 'EMV chip reader compatibility',
+        text: 'payment_credit_card.chip_reader',
       },
       {
         image: WirelessIcon,
-        text: 'Wifi and Wireless models available',
+        text: 'payment_credit_card.wireless_models',
       },
     ],
     url: RouteConfig.CreditCard,
@@ -47,20 +48,20 @@ const PaymentInfoSections = [
   {
     image: MobileCardReaderBanner,
     imageDirection: 'left',
-    title: 'Mobile Card Reader',
-    desc: 'Accept payments from anywhere at any time and allow for compatibility with any mobile device. Turn your smartphone or tablet into a POS, allowing you to accept card transactions or record cash-based sales. Take more payments on the go and expand your POS capabilities for less.',
+    title: 'payment_mobile_card.title',
+    desc: 'payment_mobile_card.desc',
     items: [
       {
         image: DevicesIcon,
-        text: 'Pairs with any device',
+        text: 'payment_mobile_card.pair_device',
       },
       {
         image: CreditCardIcon,
-        text: 'Collect payments with ease',
+        text: 'payment_mobile_card.collect_payments',
       },
       {
         image: OptionIcon,
-        text: 'Affordable choices',
+        text: 'payment_mobile_card.affordable',
       },
     ],
     url: RouteConfig.MobileCard,
@@ -68,30 +69,30 @@ const PaymentInfoSections = [
   {
     image: OnlineProcessingBanner,
     imageDirection: 'right',
-    title: 'Online Processing',
-    desc: "To cater to consumers who shop at any time, it's crucial to have a dependable online payment processing service. ExtraBread provides this service, allowing you to accept credit and debit cards online through Authorize.Net non-stop.",
+    title: 'payment_online_processing.title',
+    desc: 'payment_online_processing.desc',
     items: [
       {
         image: CartIcon,
-        text: 'Shopping cart compatibility',
+        text: 'payment_online_processing.shopping_cart',
       },
       {
         image: InterfaceIcon,
-        text: 'A built-in merchant interface',
+        text: 'payment_online_processing.mechant_interface',
       },
       {
         image: VirtualIcon,
-        text: 'Onlineterminal',
+        text: 'payment_online_processing.online_terminal',
       },
     ],
-
     url: RouteConfig.OnlineProcessing,
   },
 ];
 
 const PaymentProcessing = () => {
   const router = useRouter();
-
+  const { t } = useTranslation();
+  const { t: paymentTrans } = useTranslation('payment_processing');
   const onGetStart = () => {
     router.push(RouteConfig.GetPricing);
   };
@@ -101,10 +102,12 @@ const PaymentProcessing = () => {
       <BannerX
         leftCmpClassName="w-full items-center"
         headingClassName="text-center md:max-w-[700px] xl:max-w-[980px]"
-        heading={<>Payment Processing</>}
-        desc="Our processing solutions allow customers to pay using their preferred payment methods, keeping the line moving and enabling your business to function smoothly."
+        heading={t('payment_processing')}
+        desc={t('payment_desc', {
+          ns: 'payment_processing',
+        })}
         button={{
-          title: 'Get Started',
+          title: t('get_started'),
           onBtnClick: onGetStart,
         }}
       />
@@ -113,12 +116,13 @@ const PaymentProcessing = () => {
           return (
             <InfoSection
               key={`${data.title}`}
+              translation={paymentTrans}
               className="pb-0 md:pb-0 md:gap-8 lg:gap-16 xl:pb-0"
               dataConfig={{
                 ...data,
                 infoClassName: 'justify-center',
                 ctaConfig: {
-                  title: 'Learn more',
+                  title: t('learn_more'),
                   onClick: () => router.push(data.url),
                   rightIcon: <IcChevronRight />,
                   buttonProps: {
@@ -131,7 +135,11 @@ const PaymentProcessing = () => {
                     {data.items.map(item => (
                       <div key={`${item.text}`} className="w-fit flex flex-row gap-4 items-center">
                         <item.image className="w-8 h-8 md:w-12 md:h-12" />
-                        <p className="text-sm-semibold  md:text-">{item.text}</p>
+                        <p className="text-sm-semibold  md:text-">
+                          {t(item.text, {
+                            ns: 'payment_processing',
+                          })}
+                        </p>
                       </div>
                     ))}
                   </div>
@@ -154,11 +162,7 @@ const PaymentProcessing = () => {
         })}
       </div>
       <SideHustle />
-      <CTAInnerFooter
-        htmlText="Discover the perfect point of sale system for your business today!"
-        bonus={2500}
-        sale={250000}
-      />
+      <CTAInnerFooter htmlText={t('footer.heading')} bonus={2500} sale={250000} />
     </>
   );
 };
