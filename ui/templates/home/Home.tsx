@@ -8,6 +8,7 @@ import {
 } from '~/ui/img-resource/ImageResources';
 
 import { Button } from '@/ui/atoms/button/Button';
+import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { BUSINESS_MENU, RouteConfig } from '~/constants/index';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
@@ -24,22 +25,24 @@ import { SolutionList } from './components/SolutionList';
 import { Testimonials } from './components/testimonials/Testimonials';
 
 export const HomeTemplate = () => {
+  const { t } = useTranslation(['common', 'home']);
+
   return (
     <>
       <Banner
         hasBackground
         type="home"
-        content={<>Save & Earn More with Top Payment & POS Solutions</>}
+        content={<>{t('pageTitle', { ns: 'home' })}</>}
         button={
           <>
             <div className="flex items-center justify-center flex-col gap-3 md:flex-row  md:gap-4 lg:justify-start">
-              <GetPricingButton title="Get Pricing Today" size="large" />
+              <GetPricingButton title={t('get_pricing_today')} size="large" />
               <Link href={RouteConfig.Partner}>
                 <Button
                   size="large"
                   className="flex justify-center items-center gap-2 border-none hover:text-green-500"
                 >
-                  {'Partner with us'}
+                  {t('partner_with_us')}
                   <IcChevronRight />
                 </Button>
               </Link>
@@ -54,13 +57,19 @@ export const HomeTemplate = () => {
           <div className={styles['home-template_banner-footer']}>
             <Space>
               <SaveMoneyIcon />
-              Save money with a free POS
+              {t('Save money with a free POS', {
+                ns: 'home',
+              })}
             </Space>
             <Space>
-              <ReceiveCashIcon /> Receive a large cash signing bonus
+              <ReceiveCashIcon />
+              {t('Receive a large cash signing bonus', {
+                ns: 'home',
+              })}
             </Space>
             <Space>
-              <ZeroProcessingFeesIcon /> Zero Processing Fees
+              <ZeroProcessingFeesIcon />
+              {t('Zero Processing Fees')}
             </Space>
           </div>
         }
@@ -73,21 +82,14 @@ export const HomeTemplate = () => {
       <WorkWithTheBest />
 
       <BreadCard>
-        <AllBusinesses
-          heading={['Point-of-sale', 'for all business categories']}
-          list={BUSINESS_MENU}
-        />
+        <AllBusinesses heading={t('point_of_sale.heading')} list={BUSINESS_MENU} />
       </BreadCard>
 
       <SolutionList />
 
       <Testimonials />
 
-      <CTAInnerFooter
-        htmlText="Discover the perfect point of sale system for your business today!"
-        bonus={2500}
-        sale={250000}
-      />
+      <CTAInnerFooter htmlText={t('footer.heading')} bonus={2500} sale={250000} />
     </>
   );
 };

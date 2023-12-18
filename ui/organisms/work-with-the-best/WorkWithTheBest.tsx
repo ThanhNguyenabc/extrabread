@@ -17,12 +17,11 @@ import unionLogo from 'public/images/service-logos/union-color.png';
 import upserveLogo from 'public/images/service-logos/upserve-color.png';
 
 import { RouteConfig } from '@/constants';
-import { Typography } from 'antd';
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { SectionHeading } from '~/ui/atoms/heading/Heading';
 import styles from './WorkWithTheBest.module.scss';
-const { Text } = Typography;
 
 const DATA = [
   {
@@ -104,10 +103,11 @@ const DATA = [
 ];
 
 export const WorkWithTheBest = () => {
+  const { t } = useTranslation();
   return (
     <div className={styles['work-with-best']}>
       <BreadCard>
-        <SectionHeading centered noAlignLeft heading="Work with the best" />
+        <SectionHeading centered noAlignLeft heading={t('work_with_thebest')} />
         <div className={styles['work-with-best_logos']}>
           {DATA.map((item, idx) => (
             <Link key={idx} href={item.href}>

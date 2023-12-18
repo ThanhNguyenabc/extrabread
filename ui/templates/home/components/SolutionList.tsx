@@ -1,7 +1,8 @@
 import { RouteConfig } from '@/constants';
 import { Typography } from 'antd';
 import classNames from 'classnames';
-import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { Heading } from '~/ui/atoms/heading/Heading';
@@ -13,83 +14,55 @@ import {
 import styles from '../Home.module.scss';
 const { Text } = Typography;
 
+export type Solution = {
+  title: string;
+  desc: string;
+  path: string;
+};
+
+const Images: { [key: string]: StaticImageData } = {
+  'credit-card': CreditCardBanner,
+  'mobile-card': MobileCardReaderBanner,
+  'online-processing': OnlineProcessingBanner,
+};
+
 export const SolutionList = () => {
+  const { t } = useTranslation();
+  const items = t('solutions', { returnObjects: true });
+
+  console.log(items);
   return (
     <div className={styles['home-template_solution-list']}>
       <BreadCard>
         <Heading level={3} centered wrapper="pc">
-          Find the right processing solutions <br className="hide-sp" />
-          for your business.
+          {t('find_right_solution')}
         </Heading>
         <div className={styles['home-template_solution-list_grid']}>
-          <Link
-            href={`${RouteConfig.Solution}#credit-card`}
-            className={classNames(styles['home-template_solution-list_grid-item'])}
-          >
-            <div className={styles['home-template_solution-list_text']}>
-              <Text className={styles['home-template_solution-list_item-title']}>
-                Credit Card Terminal
-              </Text>
-              <Text type="secondary">In-person payments have never been easier.</Text>
-            </div>
-            <Image alt="" width={376} height={376} quality={100} src={CreditCardBanner.src} />
-          </Link>
-
-          <Link
-            href={`${RouteConfig.Solution}#mobile-card`}
-            className={styles['home-template_solution-list_grid-item']}
-          >
-            <div className={styles['home-template_solution-list_text']}>
-              <Text className={styles['home-template_solution-list_item-title']}>
-                Mobile Card Reader
-              </Text>
-              <Text>Accept Payments Anywhere</Text>
-            </div>
-            <Image alt="" width={376} height={376} quality={100} src={MobileCardReaderBanner.src} />
-          </Link>
-
-          <Link
-            href={`${RouteConfig.Solution}#online-processing`}
-            className={styles['home-template_solution-list_grid-item']}
-          >
-            <div className={styles['home-template_solution-list_text']}>
-              <Text className={styles['home-template_solution-list_item-title']}>
-                Online Processing
-              </Text>
-              <Text>Streamline Your Online Payments</Text>
-            </div>
-
-            <Image alt="" width={376} height={376} quality={100} src={OnlineProcessingBanner.src} />
-          </Link>
+          {items &&
+            Object.values(items)?.map(item => {
+              return (
+                <Link
+                  key={item.title}
+                  href={`${RouteConfig.Solution}/${item.path}`}
+                  className={classNames(styles['home-template_solution-list_grid-item'])}
+                >
+                  <div className={styles['home-template_solution-list_text']}>
+                    <Text className={styles['home-template_solution-list_item-title']}>
+                      {t(item.title)}
+                    </Text>
+                    <Text type="secondary">{t(item.desc)}</Text>
+                  </div>
+                  <Image
+                    alt={item.path}
+                    width={376}
+                    height={376}
+                    quality={100}
+                    src={Images[item.path]}
+                  />
+                </Link>
+              );
+            })}
         </div>
-        {/* <SolutionList
-          heading="Find the right processing solutions for your business."
-          content={[
-            {
-              href: EQUIPMENTS_MENU[0].href,
-              logo: <ServiceLogo1 />,
-              thumbnail: ServiceImg1,
-              images: [ServiceImg1, ServiceImg1, ServiceImg1],
-            },
-            {
-              href: EQUIPMENTS_MENU[1].href,
-              logo: <ServiceLogo2 />,
-              thumbnail: ServiceImg2,
-              images: [ServiceLogo2, ServiceLogo2, ServiceLogo2],
-            },
-            {
-              href: EQUIPMENTS_MENU[2].href,
-              logo: <ServiceLogo3 />,
-              thumbnail: ServiceImg3,
-              images: [ServiceImg3, ServiceImg3, ServiceImg3],
-            },
-            {
-              href: EQUIPMENTS_MENU[11].href,
-              logo: <ServiceLogo4 />,
-              thumbnail: ServiceImg4,
-            },
-          ]}
-        /> */}
       </BreadCard>
     </div>
   );

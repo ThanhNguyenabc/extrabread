@@ -1,6 +1,7 @@
 import { Button, Carousel, Rate, Space, Typography } from 'antd';
 import { CarouselProps, CarouselRef } from 'antd/es/carousel';
 import classNames from 'classnames';
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 import { uuid } from 'uuidv4';
@@ -154,6 +155,8 @@ const scoreConfigsSp: CarouselProps = {
 
 export const Testimonials = () => {
   const { isMobile } = useDevice();
+  const { t } = useTranslation();
+
   const carouselRef = useRef<CarouselRef>(null);
   const scoreCarouselRef = useRef<CarouselRef>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -162,7 +165,7 @@ export const Testimonials = () => {
     <div className={styles['testimonials']}>
       <BreadCard>
         <Heading className="text-center" level={4}>
-          Hear From Our Satisfied Clients
+          {t('hear_from_client')}
         </Heading>
 
         <Carousel
