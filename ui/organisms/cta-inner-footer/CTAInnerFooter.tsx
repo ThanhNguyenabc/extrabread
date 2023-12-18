@@ -3,6 +3,7 @@ import { useHookstate } from '@hookstate/core';
 import { Col, Row, Slider, Space, Typography } from 'antd';
 import variables from 'assets/styles/variables.module.scss';
 import { formatCurrency } from 'helpers/number';
+import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { commonState } from '~/hooks/useCtaFooterState';
@@ -21,6 +22,7 @@ interface Props {
 }
 
 export const CTAInnerFooter = (props: Props) => {
+  const { t } = useTranslation();
   const state = useHookstate(commonState);
   const { push } = useRouter();
   const [price, setPrice] = useState<number>(Number(props.sale ?? state.sale.get() ?? 0));
@@ -46,7 +48,7 @@ export const CTAInnerFooter = (props: Props) => {
                 className={styles['cta-footer_btn']}
                 onClick={() => push(RouteConfig.GetPricing)}
               >
-                Get Started today!
+                {t('get_start_today')}
               </Button>
             </Space>
           </Col>
@@ -57,22 +59,20 @@ export const CTAInnerFooter = (props: Props) => {
             className={styles['cta-footer_right-block']}
           >
             <Text strong className={styles['cta-footer_right-block_text']}>
-              Plus a Cash Signing Bonus. Find out how much!
+              {t('footer.subTitle')}
             </Text>
 
             <div className={styles['cta-footer_signing-bonus']}>
-              <Text strong className="font-18-14">
-                Cash Signing Bonus
-                <br className="hide-tb" />
-                Estimate
+              <Text strong className="font-18-14 whitespace-pre-line max-w-[200px]">
+                {t('footer.subTitle2')}
               </Text>
               <Heading level={3}>${formatCurrency(price / 100)}</Heading>
             </div>
 
             <div className={styles['cta-footer_estimated']}>
               <div>
-                <Text strong className="font-18-14">
-                  Estimated Yearly Credit Card Sales
+                <Text strong className="font-18-14 whitespace-pre-line max-w-[200px]">
+                  {t('footer.subtitle3')}
                 </Text>
                 <Heading level={3}>${formatCurrency(price)}</Heading>
               </div>

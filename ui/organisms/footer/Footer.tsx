@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
+import { cn } from '@/lib/utils';
 import { Collapse, Layout, Space, Typography } from 'antd';
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -25,34 +27,39 @@ const FOOTER_SOLUTION_MENU = [
   ...SOLUTIONS_MENU,
   {
     href: RouteConfig.PaymentProcessing,
-    title: 'Payment Processing',
-    replaceTitle: 'Payment Processing',
-    description: 'In-person payments have never been easier.',
+    title: 'payment_processing',
   },
 ];
+
 const MenuCategory = ({
   title,
   menus,
 }: {
   title: string;
   menus: {
-    text: string;
+    title: string;
     href: string;
-    replaceTitle?: string;
+    replaceTitle?: string | undefined;
   }[];
-}) => (
-  <div className={styles['footer_menu-category']}>
-    <Text strong>{title}</Text>
-    {menus.map((item, idx) => (
-      <Link key={`${idx}`} href={item.href}>
-        <Text className={styles['text-400']}>{item.replaceTitle ?? item.text}</Text>
-      </Link>
-    ))}
-  </div>
-);
+}) => {
+  const { t } = useTranslation();
+  return (
+    <div className={styles['footer_menu-category']}>
+      <Text strong>{t(title)}</Text>
+      {menus.map((item, idx) => (
+        <Link key={`${idx}`} href={item.href}>
+          <Text className={styles['text-400']}>{t(item.title)}</Text>
+        </Link>
+      ))}
+    </div>
+  );
+};
 
 export const BreadFooter = () => {
   const { isMobile } = useDevice();
+  const { t } = useTranslation();
+  const workingDay = t('footer.working_day', { returnObjects: true }) as Array<string> | null;
+
   return (
     <Footer className={styles['footer']}>
       <div className={styles['footer-inner']}>
@@ -68,7 +75,7 @@ export const BreadFooter = () => {
 
           <Space direction="vertical" size={0} style={{ marginRight: 24 }}>
             <Text type="success" strong>
-              Email
+              {t('email')}
             </Text>
             <a className={styles['footer-link']} href={`mailto:${EMAIL}`}>
               {EMAIL}
@@ -76,13 +83,16 @@ export const BreadFooter = () => {
           </Space>
           <div className={styles['footer_contact']}>
             <Text type="success" strong>
-              or Call us
+              {t('call_us')}
             </Text>
             <a className={styles['footer-link']} href={`tel:${PHONE}`}>
               {PHONE}
             </a>
-            <Text className={styles['footer_time']}>Monday - Friday, 5am - 7pm PT</Text>
-            <Text className={styles['footer_time']}>Saturday - Sunday, 6am - 5pm PT</Text>
+            {workingDay?.map(item => (
+              <Text key={item} className={styles['footer_time']}>
+                {item}
+              </Text>
+            ))}
           </div>
         </div>
 
@@ -96,7 +106,7 @@ export const BreadFooter = () => {
                 return <Icon name={props.isActive ? 'chevron-up' : 'chevron-down'} color="white" />;
               }}
             >
-              <Panel header={NavigationLabel.Solutions} key={NavigationLabel.Solutions}>
+              <Panel header={t(NavigationLabel.Solutions)} key={NavigationLabel.Solutions}>
                 {FOOTER_SOLUTION_MENU.map((item, idx) => (
                   <Link key={`${idx}`} href={item.href}>
                     <Text className={styles['text-400']}>{item.title}</Text>
@@ -113,7 +123,7 @@ export const BreadFooter = () => {
                 return <Icon name={props.isActive ? 'chevron-up' : 'chevron-down'} color="white" />;
               }}
             >
-              <Panel header={NavigationLabel.Equipments} key={NavigationLabel.Equipments}>
+              <Panel header={t(NavigationLabel.Equipments)} key={NavigationLabel.Equipments}>
                 {EQUIPMENTS_MENU.map((item, idx) => (
                   <Link key={`${idx}`} href={item.href}>
                     <Text className={styles['text-400']}>{item.title}</Text>
@@ -130,7 +140,7 @@ export const BreadFooter = () => {
                 return <Icon name={props.isActive ? 'chevron-up' : 'chevron-down'} color="white" />;
               }}
             >
-              <Panel header={NavigationLabel.BusinessTypes} key={NavigationLabel.BusinessTypes}>
+              <Panel header={t(NavigationLabel.BusinessTypes)} key={NavigationLabel.BusinessTypes}>
                 {BUSINESS_MENU.map((item, idx) => (
                   <Link key={`${idx}`} href={item.href}>
                     <Text className={styles['text-400']}>{item.title}</Text>
@@ -147,7 +157,7 @@ export const BreadFooter = () => {
                 return <Icon name={props.isActive ? 'chevron-up' : 'chevron-down'} color="white" />;
               }}
             >
-              <Panel header={NavigationLabel.Products} key={NavigationLabel.Products}>
+              <Panel header={t(NavigationLabel.Products)} key={NavigationLabel.Products}>
                 {PRODUCTS_MENU.map((item, idx) => (
                   <Link key={`${idx}`} href={item.href}>
                     <Text className={styles['text-400']}>{item.title}</Text>
@@ -164,7 +174,7 @@ export const BreadFooter = () => {
                 return <Icon name={props.isActive ? 'chevron-up' : 'chevron-down'} color="white" />;
               }}
             >
-              <Panel header={NavigationLabel.Company} key={NavigationLabel.Company}>
+              <Panel header={t(NavigationLabel.Company)} key={NavigationLabel.Company}>
                 {COMPANY_MENU.map((item, idx) => (
                   <Link key={`${idx}`} href={item.href}>
                     <Text className={styles['text-400']}>{item.title}</Text>
@@ -175,74 +185,34 @@ export const BreadFooter = () => {
           </div>
         ) : (
           <div className={styles['footer-menus']}>
-            <MenuCategory
-              title={NavigationLabel.Solutions}
-              menus={FOOTER_SOLUTION_MENU.map(item => ({
-                text: item.title,
-                href: item.href,
-                // @ts-ignore
-                replaceTitle: item.replaceTitle,
-              }))}
-            />
-            <MenuCategory
-              title={NavigationLabel.Equipments}
-              menus={EQUIPMENTS_MENU.map(item => ({
-                text: item.title,
-                href: item.href,
-              }))}
-            />
-            <MenuCategory
-              title={NavigationLabel.BusinessTypes}
-              menus={BUSINESS_MENU.map(item => ({
-                text: item.title,
-                href: item.href,
-              }))}
-            />
-            <MenuCategory
-              title={NavigationLabel.Products}
-              menus={PRODUCTS_MENU.map(item => ({
-                text: item.title,
-                href: item.href,
-              }))}
-            />
-            <MenuCategory
-              title={NavigationLabel.Company}
-              menus={COMPANY_MENU.map(item => ({
-                text: item.title,
-                href: item.href,
-              }))}
-            />
+            <MenuCategory title={t(NavigationLabel.Solutions)} menus={FOOTER_SOLUTION_MENU} />
+            <MenuCategory title={t(NavigationLabel.Equipments)} menus={EQUIPMENTS_MENU} />
+            <MenuCategory title={t(NavigationLabel.BusinessTypes)} menus={BUSINESS_MENU} />
+            <MenuCategory title={t(NavigationLabel.Products)} menus={PRODUCTS_MENU} />
+            <MenuCategory title={t(NavigationLabel.Company)} menus={COMPANY_MENU} />
           </div>
         )}
 
         <Space direction="vertical" size={16}>
-          <Text className={styles['text-400']}>
-            ExtraBread is a POS consultant service that provides financial assistance and advice to
-            businesses. We strive to provide accurate and up-to-date information to our clients, but
-            we do not guarantee the accuracy, completeness, or timeliness of the information
-            provided. This website is owned and operated by ELECPAYMENTS INC. Reproduction of this
-            website, in whole or in part, is strictly prohibited. 
-          </Text>
-
-          <Text className={styles['text-400']}>
-            By using our service, you agree to be bound by these{' '}
+          <Text className={cn(styles['text-400'], 'whitespace-pre-line')}>
+            {t('footer.policy')}{' '}
             <Link href={RouteConfig.PrivacyPolicy} passHref>
               <Text className={styles['text-400']} underline>
-                Privacy Policy
-              </Text>
-            </Link>{' '}
-            and{' '}
-            <Link href={RouteConfig.TermsOfService} passHref>
-              <Text className={styles['text-400']} underline>
-                Terms of Service
+                {t('privacy_policy')}
               </Text>
             </Link>
-            . If you have any questions or concerns, please contact us at info@extrabread.com.
+            {` ${t('and')} `}
+            <Link href={RouteConfig.TermsOfService} passHref>
+              <Text className={styles['text-400']} underline>
+                {t('term_of_service')}
+              </Text>
+            </Link>
+            . {t('footer.any_question')}
           </Text>
         </Space>
 
         <div className={styles['footer-copyright']}>
-          <span>&#169; Copyright 2023 ExtraBread. All Rights Reserved.</span>
+          <span>{t('footer.copy_right')}</span>
           <Space size={24}>
             <Text>
               <Icon name="facebook" color="light" />

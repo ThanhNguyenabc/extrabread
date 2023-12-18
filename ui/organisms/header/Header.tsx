@@ -1,6 +1,7 @@
 import { useHookstate } from '@hookstate/core';
 import { Drawer, DrawerProps, Dropdown, Layout, Space, Typography } from 'antd';
 import classNames from 'classnames';
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -43,6 +44,7 @@ const MenuDrawer = ({
   lang?: string;
   margin?: number;
 }) => {
+  const { t } = useTranslation();
   const [currentMenu, setCurrentMenu] = useState('');
   const [selectedLang, setSelectedLang] = useState(lang);
   const { isMobile, isLessTablet } = useDevice();
@@ -119,7 +121,7 @@ const MenuDrawer = ({
                 className={styles['header-nav-item']}
                 onClick={() => setCurrentMenu(item.label)}
               >
-                <Text strong>{item.label}</Text>
+                <Text strong>{t(item.label)}</Text>
                 <Icon name="chevron-right" />
               </Button>
             ))}
@@ -128,11 +130,11 @@ const MenuDrawer = ({
               className={styles['header-nav-item']}
               onClick={() => setCurrentMenu(NavigationLabel.Company)}
             >
-              <Text strong>{NavigationLabel.Company}</Text>
+              <Text strong>{t(NavigationLabel.Company)}</Text>
               <Icon name="chevron-right" />
             </Button>
             <footer>
-              <div className="mb-16">&#169; Copyright 2023 ExtraBread. All Rights Reserved.</div>
+              <div className="mb-16">{t('footer.copy_right')}</div>
               <Space size={24}>
                 <AntLink>
                   <Icon name="facebook" color="light" />
@@ -159,7 +161,7 @@ const MenuDrawer = ({
                   <Space direction="vertical" size={24} style={{ marginTop: 16 }}>
                     {COMPANY_MENU.map((item, idx) => (
                       <Link key={idx} href={item.href}>
-                        <Text strong>{item.title}</Text>
+                        <Text strong>{t(item.title)}</Text>
                       </Link>
                     ))}
                   </Space>
@@ -198,6 +200,7 @@ const MenuDrawer = ({
 };
 
 export const Header = () => {
+  const { t } = useTranslation('common');
   const { isLaptop } = useDevice();
   const state = useHookstate(globalState);
   const { asPath, push, pathname, query } = useRouter();
@@ -244,7 +247,7 @@ export const Header = () => {
               <Space size={4}>
                 <Icon name="phone" color="green" />
                 <AntLink strong href={`tel:${PHONE}`} className="font-14-12">
-                  Support 24/7
+                  {t('support')} 24/7
                 </AntLink>
               </Space>
               <Text strong>{PHONE}</Text>

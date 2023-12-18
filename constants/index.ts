@@ -76,10 +76,9 @@ export enum RouteConfig {
   PaymentProcessing = '/payment-processing',
   AboutUs = '/about-us',
   SaleSystems = '/point-of-sale-systems',
-  MobileCard = "/solutions/mobile-card",
-  CreditCard = "/solutions/credit-card",
-  OnlineProcessing = "/solutions/online-processing"
-
+  MobileCard = '/solutions/mobile-card',
+  CreditCard = '/solutions/credit-card',
+  OnlineProcessing = '/solutions/online-processing',
 }
 
 export type RouteConfigType = `${RouteConfig}`;
@@ -90,12 +89,12 @@ export enum Languages {
 }
 
 export enum NavigationLabel {
-  Solutions = 'Solutions',
-  Equipments = 'POS Equipments',
-  BusinessTypes = 'Business Types',
-  Products = 'Products',
-  Home = 'Home',
-  Company = 'Company',
+  Solutions = 'solution',
+  Equipments = 'pos_equipments',
+  BusinessTypes = 'business_type',
+  Products = 'products',
+  Home = 'home',
+  Company = 'company',
 }
 
 export const COMPANY_MENU = [
@@ -106,29 +105,29 @@ export const COMPANY_MENU = [
   { title: 'Partner', href: RouteConfig.Partner },
   { title: 'About us', href: RouteConfig.AboutUs },
   { title: 'Point Of Sale Systems', href: RouteConfig.SaleSystems },
-] as const;
+];
 
 export const SOLUTIONS_MENU = [
   {
     href: RouteConfig.CreditCard,
-    title: 'Credit Card Terminal',
-    replaceTitle: 'Capital & Funding',
-    description: 'In-person payments have never been easier.',
+    title: 'solutions.credit-card.title',
+    replaceTitle: 'solutions.credit-card.secondTitle',
+    description: 'solutions.credit-card.desc',
     src: CreditCardTerminalImg.src,
   },
   {
     href: RouteConfig.MobileCard,
-    title: 'Mobile Card Reader',
-    description: 'Accept Payments Anywhere ',
+    title: 'solutions.mobile-card.title',
+    description: 'solutions.mobile-card.desc',
     src: MobileCardReaderImg.src,
   },
   {
     href: RouteConfig.OnlineProcessing,
-    title: 'Online Processing',
-    description: 'Streamline Your Online Payments ',
+    title: 'solutions.online-processing.title',
+    description: 'solutions.online-processing.desc',
     src: OnlineProcessingImg.src,
   },
-] as const;
+];
 
 export const EQUIPMENTS_MENU = [
   {
@@ -207,85 +206,85 @@ export const EQUIPMENTS_MENU = [
     description: 'Toast is a easy-to-use software with a sleek station & handheld hardware',
     href: RouteConfig.Touchbistro,
   },
-] as const;
+];
 
 export const BUSINESS_MENU = [
   {
-    title: 'Full Service Restaurants',
+    title: 'business_categories.full_service',
     src: FullServiceRestaurantsImg.src,
     href: RouteConfig.FullServiceRestaurants,
   },
   {
-    title: 'Retail Businesses',
+    title: 'business_categories.retail',
     src: RetailBusinessesImg.src,
     href: RouteConfig.Retail,
   },
   {
-    title: 'Quick Service Restaurant',
+    title: 'business_categories.quick_service',
     src: QuickServiceRestaurantsImg.src,
     href: RouteConfig.QuickServiceRestaurants,
   },
   {
-    title: 'Small Business',
+    title: 'business_categories.small_business',
     src: SmallBusinessImg.src,
     href: RouteConfig.SmallBusiness,
   },
   {
-    title: 'Bars & nightclubs',
+    title: 'business_categories.bar_nightclub',
     src: BarNightImg.src,
     href: RouteConfig.BarsAndNightClubs,
   },
   {
-    title: 'Pizzerias',
+    title: 'business_categories.pizza',
     src: PizzeriasImg.src,
     href: RouteConfig.Pizzerias,
   },
-] as const;
+];
 
 export const PRODUCTS_MENU = [
   {
-    title: 'Clover App Market',
+    title: 'product_types.market',
     src: CloverAppMarketImg.src,
     href: RouteConfig.CloverAppMarket,
   },
   {
-    title: 'Gift Card Program',
+    title: 'product_types.gift',
     src: GiftCardProgramImg.src,
     href: RouteConfig.GiftCardProgram,
   },
   {
-    title: 'Loyalty & Rewards',
+    title: 'product_types.loyalty',
     src: LoyaltyRewardsImg.src,
     href: RouteConfig.CustomerLoyaltyProgramsAndRewards,
   },
   {
-    title: 'Cash Discount Program',
+    title: 'product_types.cash_discount',
     src: CashDiscountProgramImg.src,
     href: RouteConfig.CashDiscountProgram,
   },
   {
-    title: 'Check Services',
+    title: 'product_types.check_service',
     src: CheckServicesImg.src,
     href: RouteConfig.CheckServices,
   },
   {
-    title: 'Online Analytics',
+    title: 'product_types.online_analytics',
     src: OnlineReportingImg.src,
     href: RouteConfig.OnlineAnalytics,
   },
   {
-    title: 'QuickBooks Plugin',
+    title: 'product_types.quick_book',
     src: QuickBooksPluginImg.src,
     href: RouteConfig.QuickbooksPlugin,
   },
   {
-    title: 'Cash Advance',
+    title: 'product_types.cash_advance',
     src: CashAdvanceImg.src,
     href: RouteConfig.CashAdvance,
   },
   {
-    title: 'Invoicing',
+    title: 'product_types.invoicing',
     src: InvoicingImg.src,
     href: RouteConfig.Invoicing,
   },
-] as const;
+];

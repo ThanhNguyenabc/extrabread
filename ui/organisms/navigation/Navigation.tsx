@@ -1,4 +1,5 @@
 import { Menu, Space, Typography } from 'antd';
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -25,11 +26,12 @@ type CardProp = {
 };
 
 const SolutionCard = ({ title, description, src, href }: CardProp) => {
+  const { t } = useTranslation();
   return (
     <Link href={href} className={styles['navigation-solution-card']}>
       <Space direction="vertical" className={styles['navigation-solution-card_content']}>
-        <Text strong>{title}</Text>
-        <Text type="secondary">{description}</Text>
+        <Text strong>{title && t(title)}</Text>
+        <Text type="secondary">{description && t(description)}</Text>
       </Space>
 
       <Image
@@ -54,6 +56,8 @@ const POSCard = ({ title, href }: CardProp) => {
 };
 
 const BusinessCard = ({ title, src, href }: CardProp) => {
+  const { t } = useTranslation();
+
   return (
     <Link href={href} className={styles['navigation-business-card']}>
       <div className={styles['navigation-business-card_backdrop']} />
@@ -65,12 +69,14 @@ const BusinessCard = ({ title, src, href }: CardProp) => {
         src={src}
         className={styles['navigation-business-card_img']}
       />
-      <Text className={styles['navigation-business-card_title']}>{title}</Text>
+      <Text className={styles['navigation-business-card_title']}>{title && t(title)}</Text>
     </Link>
   );
 };
 
 const ProductCard = ({ title, src, href }: CardProp) => {
+  const { t } = useTranslation();
+
   return (
     <Link href={href} className={styles['navigation-product-card']}>
       <Image
@@ -82,12 +88,28 @@ const ProductCard = ({ title, src, href }: CardProp) => {
         className={styles['navigation-product-card_img']}
       />
       <div className={styles['navigation-product-card_content']}>
-        <Text strong>{title}</Text>
+        <Text strong>{title && t(title)}</Text>
       </div>
     </Link>
   );
 };
 
+const ContactUs = () => {
+  const { t } = useTranslation();
+  return (
+    <div className={styles['navigation_pos-menus-footer']}>
+      <Text type="secondary" className="font-14">
+        Request your POS brand
+      </Text>
+      <Space size={4} className="cursor">
+        <Link href={RouteConfig.Contacts}>
+          <Text strong>{t('contact_us')}</Text>
+        </Link>
+        <Icon name="chevron-right" />
+      </Space>
+    </div>
+  );
+};
 export const MENU_ITEMS = [
   {
     key: RouteConfig.Solution,
@@ -118,17 +140,7 @@ export const MENU_ITEMS = [
                 <POSCard key={`${idx}`} {...item} />
               ))}
             </Container>
-            <div className={styles['navigation_pos-menus-footer']}>
-              <Text type="secondary" className="font-14">
-                Request your POS brand
-              </Text>
-              <Space size={4} className="cursor">
-                <Link href={RouteConfig.Contacts}>
-                  <Text strong>Contact Us</Text>
-                </Link>
-                <Icon name="chevron-right" />
-              </Space>
-            </div>
+            <ContactUs />
           </div>
         ),
       },
@@ -174,6 +186,7 @@ export const MENU_ITEMS = [
 
 export const Navigation: FC = () => {
   const { pathname } = useRouter();
+  const { t } = useTranslation();
 
   const activeKey = useMemo(() => {
     if (
@@ -238,7 +251,7 @@ export const Navigation: FC = () => {
           ...item,
           label: (
             <Space size={0}>
-              {item.label}
+              {t(item.label)}
               <Icon name="chevron-down" color="grey" />
             </Space>
           ),
