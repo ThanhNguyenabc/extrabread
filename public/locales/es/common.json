@@ -74,6 +74,10 @@
         }
     },
     "payment_processing": "Procesimiento de pago",
+    "general":"General",
+    "signing_bonus":"Bono por firmar",
+    "cash_discount":"Descuento de efectivo",
+    "sale_system":"Sistema de venta",
     "business_categories": {
         "full_service": "Restaurantes servicio completo",
         "retail": "Comercio minorista",
@@ -97,7 +101,10 @@
     "side_hustle": {
         "partner_ship": "Camaradería",
         "heading": "El mejor trabajo secundario",
-        "desc": "¡Asóciese con ExtraBread hoy y comience su viaje paralelo!"
+        "desc": "¡Asóciese con ExtraBread hoy y comience su viaje paralelo!",
+        "desc2": "Esta es la oportunidad perfecta para obtener ingresos mensuales adicionales y bonificaciones en tu tiempo libre."
     },
-    "explore_pos": "Exolora los equipos POS"
+    "explore_pos": "Exolora los equipos POS",
+    "join_extrbread": "Únete hoy",
+    "how_it_works": "CÓMO FUNCIONA"
 }

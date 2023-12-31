@@ -73,6 +73,10 @@
         }
     },
     "payment_processing": "Payment Processing",
+    "general":"General",
+    "signing_bonus":"Signing Bonus",
+    "cash_discount":"Cash Discount",
+    "sale_system":"Sale System",
     "business_categories": {
         "full_service": "Full Service Restaurants",
         "retail": "Retail Businesses",
@@ -96,7 +100,11 @@
     "side_hustle": {
         "partner_ship": "Partnership",
         "heading": "The Ultimate Side Hustle",
-        "desc": "Partner with ExtraBread today and start your side hustle journey!"
+        "desc": "Partner with ExtraBread today and start your side hustle journey!",
+        "desc2": "This is the perfect opportunity to earn extra monthly income & bonuses on your free time."
     },
-    "explore_pos": "Explore POS equipments"
+    "explore_pos": "Explore POS equipments",
+    "join_extrbread": "Join ExtraBread Today",
+    "how_it_works":"HOW IT WORKS"
+
 }
