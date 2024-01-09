@@ -1,15 +1,38 @@
+import { SOLUTIONS_MENU } from '@/constants';
+import { Meta } from '@/models/app_config.model';
 import { SolutionsTemplate } from '@/ui/templates/solutions/SolutionsTemplate';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Seo } from '~/ui/util-components/Seo';
+import { getSEOTag } from '../api/app-configs';
 
-const SolutionPage = () => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const [seoTag, translation] = await Promise.all([
+    getSEOTag('home', locale),
+    serverSideTranslations(locale ?? 'en', ['common', 'solutions']),
+  ]);
+  return {
+    props: {
+      seoTag,
+      ...translation,
+    },
+    revalidate: 120,
+  };
+};
+
+export const getStaticPaths = () => {
+  return {
+    paths: SOLUTIONS_MENU.map(item => item.href),
+    fallback: true,
+  };
+};
+
+const SolutionPage = ({ seoTag }: { seoTag?: Meta }) => {
+  const { title, description, keywords, image } = seoTag || {};
+
   return (
     <>
-      <Seo
-        title="Breadme: 0% Processing Fees"
-        description="Tired of paying outrageous merchant service fees and want to earn up to 100% of the revenue? Switch to Breadme today & accept credit cards without the cost."
-        keywords="breadme, start slice, cash discount, cash discount program, capital, free capital, credit card processing, point of sale, pos, pos system, free pos, revel, clover, ovvi, clover flex, clover duo, aldelo, lightspeed, simphony, exatouch, light speed"
-        imageFeature="/images/seo/seo-img-4.jpg"
-      />
+      <Seo title={title} description={description} keywords={keywords} imageFeature={image}></Seo>
       <SolutionsTemplate />
     </>
   );

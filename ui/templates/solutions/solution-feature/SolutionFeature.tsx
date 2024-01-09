@@ -10,13 +10,13 @@ import styles from './SolutionFeature.module.scss';
 
 const { Text } = Typography;
 
-type Props = {
+export type SectionItem = {
   src: StaticImageData;
   alt: string;
   reversed?: boolean;
   href?: string;
   textLink?: string;
-  content: {
+  content?: {
     title: string;
     description: string;
     details: string[];
@@ -24,22 +24,22 @@ type Props = {
   };
 };
 
-export const SolutionFeature = ({ src, alt, content, reversed, href, textLink }: Props) => {
+export const SolutionFeature = ({ src, alt, content, reversed, href, textLink }: SectionItem) => {
   return (
     <div className={mapModifiers('solution-feature', styles, reversed && 'reversed')}>
       <Image src={src} alt={alt} width={480} quality={100} />
       <div className={styles['solution-feature_content']}>
-        <Heading level={5}>{content.title}</Heading>
+        <Heading level={5}>{content?.title}</Heading>
 
-        <Text className={styles['solution-feature_description']}>{content.description}</Text>
+        <Text className={styles['solution-feature_description']}>{content?.description}</Text>
 
         <div className={styles['solution-feature_details']}>
-          {content.details.map((item, idx) => (
+          {content?.details.map((item, idx) => (
             <Space key={`${idx}`} size={12} align="baseline">
               <Icon name={'check'} color="green" />
               <div>
                 <Text className="font-16 block text-grey">{item}</Text>
-                {content.subDetails && <Text className="text-grey">{content.subDetails[idx]}</Text>}
+                {content?.subDetails && <Text className="text-grey">{content?.subDetails[idx]}</Text>}
               </div>
             </Space>
           ))}

@@ -14,6 +14,8 @@
     "call_us": "o Llámanos",
     "privacy_policy": "Política de privacidad",
     "term_of_service": "Términos de servicio",
+    "frequently_questions": "Preguntas frecuentes",
+    "view_detail": "Ver detalles",
     "and": "y",
     "footer": {
         "heading": "¡Descubra hoy el sistema de punto de venta perfecto para su negocio! ¡Empiece hoy!",
@@ -74,10 +76,10 @@
         }
     },
     "payment_processing": "Procesimiento de pago",
-    "general":"General",
-    "signing_bonus":"Bono por firmar",
-    "cash_discount":"Descuento de efectivo",
-    "sale_system":"Sistema de venta",
+    "general": "General",
+    "signing_bonus": "Bono por firmar",
+    "cash_discount": "Descuento de efectivo",
+    "sale_system": "Sistema de venta",
     "business_categories": {
         "full_service": "Restaurantes servicio completo",
         "retail": "Comercio minorista",

@@ -1,6 +1,15 @@
+import { BreadCard } from '@/ui/atoms/bread-card/BreadCard';
+import { Button } from '@/ui/atoms/button/Button';
+import { Collapse, Panel } from '@/ui/atoms/collapse/Collapse';
+import { Flex } from '@/ui/atoms/flex/Flex';
+import { Icon } from '@/ui/atoms/icon/Icon';
+import { WorkWithTheBest } from '@/ui/organisms/work-with-the-best/WorkWithTheBest';
+import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { RouteConfig, SOLUTIONS_MENU } from '~/constants/index';
+import { Heading } from '~/ui/atoms/heading/Heading';
 import { Segmented } from '~/ui/atoms/segment/Segment';
 import { CTAInnerFooter } from '~/ui/organisms/cta-inner-footer/CTAInnerFooter';
 import { CreditCardTerminal } from './CreditCardTerminal';
@@ -21,6 +30,9 @@ const PAGES = {
 };
 
 export const SolutionsTemplate = () => {
+  const { t: common } = useTranslation();
+  const { t } = useTranslation('solutions');
+
   const { push, query } = useRouter();
   const slug = (query['slug'] as string) || '';
   const [activeTab, setActiveTab] = useState(slug);
@@ -39,17 +51,44 @@ export const SolutionsTemplate = () => {
           activeKey={`${RouteConfig.Solution}/${activeTab}`}
           onChange={value => push(value)}
           items={SOLUTIONS_MENU.map(item => ({
-            title: item.title,
+            title: common(item.title),
             value: item.href,
           }))}
         />
       </div>
-      {Cmp && <Cmp />}
-      <CTAInnerFooter
-        htmlText="Discover the perfect point of sale system for your business today!"
-        bonus={240}
-        sale={7500}
-      />
+      {Cmp && (
+        <Cmp>
+          <BreadCard>
+            <Heading level={3} centered>
+              {common('frequently_questions')}
+            </Heading>
+
+            <Collapse>
+              {(t('faq.items', { returnObjects: true }) as Array<any>)?.map(
+                ({ header, content }, index) => (
+                  <Panel header={header} key={header}>
+                    {content}
+                  </Panel>
+                ),
+              )}
+            </Collapse>
+
+            <div className={styles['solutions_faq-button']}>
+              <Button>
+                <Link href={RouteConfig.Faqs}>
+                  <Flex gap={8}>
+                    {common('learn_more')}
+                    <Icon name="right" />
+                  </Flex>
+                </Link>
+              </Button>
+            </div>
+          </BreadCard>
+
+          <WorkWithTheBest />
+        </Cmp>
+      )}
+      <CTAInnerFooter htmlText={common('footer.heading')} bonus={240} sale={7500} />
     </main>
   );
 };

@@ -2,6 +2,7 @@ import { Icon } from '@/ui/atoms/icon/Icon';
 import { Space, Typography } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 import { Heading } from '~/ui/atoms/heading/Heading';
 import styles from './SolutionExplore.module.scss';
 
@@ -17,6 +18,7 @@ type Props = {
   }[];
 };
 export const SolutionExplore = ({ heading, cards }: Props) => {
+  const { t } = useTranslation();
   return (
     <div className={styles['solution-explore']}>
       <div className={styles['solution-explore_heading']}>
@@ -28,9 +30,10 @@ export const SolutionExplore = ({ heading, cards }: Props) => {
           <Space direction="vertical">
             <Text className="font-18-16-16 weight-600">{item.name}</Text>
             <Text type="secondary">{item.description}</Text>
+
             <Space>
               <Text strong className="hover">
-                Learn more
+                {t('learn_more')}
               </Text>
               <Icon name="right" color="black" />
             </Space>

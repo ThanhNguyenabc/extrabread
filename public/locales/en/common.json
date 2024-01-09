@@ -13,6 +13,8 @@
     "call_us": "or Call us",
     "privacy_policy": "Privacy Policy",
     "term_of_service": "Terms of Service",
+    "frequently_questions": "Frequently asked questions",
+    "view_detail" : "View Detail",
     "and": "and",
     "footer": {
         "heading": "Discover the perfect point of sale system for your business today! Get started today!",
@@ -73,10 +75,10 @@
         }
     },
     "payment_processing": "Payment Processing",
-    "general":"General",
-    "signing_bonus":"Signing Bonus",
-    "cash_discount":"Cash Discount",
-    "sale_system":"Sale System",
+    "general": "General",
+    "signing_bonus": "Signing Bonus",
+    "cash_discount": "Cash Discount",
+    "sale_system": "Sale System",
     "business_categories": {
         "full_service": "Full Service Restaurants",
         "retail": "Retail Businesses",
@@ -105,6 +107,5 @@
     },
     "explore_pos": "Explore POS equipments",
     "join_extrbread": "Join ExtraBread Today",
-    "how_it_works":"HOW IT WORKS"
-
+    "how_it_works": "HOW IT WORKS"
 }
