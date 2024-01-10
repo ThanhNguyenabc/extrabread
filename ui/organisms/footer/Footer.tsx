@@ -4,6 +4,7 @@ import { Collapse, Layout, Space, Typography } from 'antd';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useMemo } from 'react';
 import {
   BUSINESS_MENU,
   COMPANY_MENU,
@@ -58,7 +59,9 @@ const MenuCategory = ({
 export const BreadFooter = () => {
   const { isMobile } = useDevice();
   const { t } = useTranslation();
-  const workingDay = t('footer.working_day', { returnObjects: true }) as Array<string> | null;
+  const WorkingDays = useMemo(() => {
+    return (t('footer.working_day', { returnObjects: true }) as Array<string>) || [];
+  }, [t]);
 
   return (
     <Footer className={styles['footer']}>
@@ -88,7 +91,7 @@ export const BreadFooter = () => {
             <a className={styles['footer-link']} href={`tel:${PHONE}`}>
               {PHONE}
             </a>
-            {workingDay?.map(item => (
+            {WorkingDays?.map(item => (
               <Text key={item} className={styles['footer_time']}>
                 {item}
               </Text>

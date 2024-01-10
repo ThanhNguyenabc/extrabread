@@ -55,6 +55,9 @@
     "point_of_sale": {
         "heading": "<span className='text-green-500'>Punto de venta para</span> todas las categorías comerciales"
     },
+    "point_of_sale_features": {
+        "heading": "Funciones del punto de venta"
+    },
     "find_right_solution": "Encuentre las soluciones de procesamiento adecuadas para su negocio.",
     "hear_from_client": "Escuche de nuestros clientes satisfechos",
     "solutions": {
@@ -89,15 +92,38 @@
         "pizza": "Pizzerías"
     },
     "product_types": {
-        "market": "Mercado de aplicaciones Clover",
-        "cash_discount": "Programa de descuento por pronto pago",
-        "quick_book": "Complemento Quickbooks",
-        "gift": "Programa de tarjetas de regalo",
-        "check_service": "Servicios de cheques",
-        "cash_advance": "Avance de efectivo",
-        "loyalty": "Lealtad y recompensas",
-        "online_analytics": "Análisis en línea",
-        "invoicing": "Facturación"
+        "market": {
+            "title": "Mercado de aplicaciones Clover",
+            "description": "Choose from over 200 powerful apps designed to help you run your business."
+        },
+        "cash_discount": {
+            "title": "Programa de descuento por pronto pago",
+            "description": "Encourage brand loyalty with upfront payments for future purchases."
+        },
+        "gift": {
+            "title": "Programa de tarjetas de regalo",
+            "description": ""
+        },
+        "quick_book": {
+            "title": "Complemento Quickbooks"
+        },
+        "check_service": {
+            "title": "Servicios de cheques",
+            "description": "Convert checks into electronic payments and speed up your cash flow."
+        },
+        "cash_advance": {
+            "title": "Avance de efectivo"
+        },
+        "loyalty": {
+            "title": "Lealtad y recompensas",
+            "description": "Choose from over 200 powerful apps designed to help you run your business."
+        },
+        "online_analytics": {
+            "title": "Análisis en línea"
+        },
+        "invoicing": {
+            "title": "Facturación"
+        }
     },
     "learn_more": "Aprende más",
     "side_hustle": {
@@ -108,5 +134,9 @@
     },
     "explore_pos": "Exolora los equipos POS",
     "join_extrbread": "Únete hoy",
-    "how_it_works": "CÓMO FUNCIONA"
+    "how_it_works": "CÓMO FUNCIONA",
+    "explore_other_types": "Explora otros tipos de negocios",
+    "feature_favored": "Funciones de POS preferidas por empresas como la suya",
+    "top_recommend": "Top recomendado",
+    "pos_system_for": "Sistemas POS para"
 }

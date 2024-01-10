@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { clsx } from 'yet-another-react-lightbox/core';
 import { useDevice } from '~/hooks/useDetectMobile';
@@ -9,19 +10,7 @@ import { Icon } from '~/ui/atoms/icon/Icon';
 import { UniqueValueImg } from '~/ui/img-resource/ImageResources';
 import styles from './UniqueValue.module.scss';
 
-const Detail = () => {
-  const data = [
-    '24/7 U.S. - based, in-house technical support',
-    'Cash Discount Program',
-    'Compliant Dual Pricing Receipt',
-    'Free Point-of-Sale Placement Program',
-    'Free EMV (Chip Readers) Integration',
-    'No cancellation fee',
-    'Quick, seamless setup & implementation',
-    'Next day funding',
-    'Simplified batch processing',
-  ];
-
+const Detail = ({ data }: { data: Array<string> }) => {
   return (
     <div className={styles['unique-value_detail']}>
       {data.map((item, idx) => (
@@ -36,16 +25,19 @@ const Detail = () => {
 
 export const UniqueValue = () => {
   const { isMobile } = useDevice();
+  const { t } = useTranslation();
+  const items = t('unique.items', { returnObjects: true }) as Array<string> | null;
+
   return (
     <Container className={styles['unique-value']}>
       <BreadCard>
         <div className={styles['unique-value_inner']}>
-          {isMobile && <Detail />}
+          {isMobile && items && <Detail data={items} />}
           <div className={styles['unique-value_text']}>
             <SectionHeading
               noMargin
-              heading={<span className="hide-sp">Our secret sauce to your success.</span>}
-              subHeading={`At ExtraBread, we're committed to helping you save on Point of Sale costs and increase your profits through reduced payment processing fees. That's why we offer professional and personalized consulting on the ideal point of sale system, payment processing, merchant services, and more`}
+              heading={<span className="hide-sp">{t('unique.heading')}</span>}
+              subHeading={t('unique.desc')}
             />
           </div>
           <div className={styles['unique-value_content']}>
@@ -57,8 +49,7 @@ export const UniqueValue = () => {
               src={UniqueValueImg.src}
               alt="UniqueValue"
             />
-
-            {!isMobile && <Detail />}
+            {!isMobile && items && <Detail data={items} />}
           </div>
         </div>
       </BreadCard>

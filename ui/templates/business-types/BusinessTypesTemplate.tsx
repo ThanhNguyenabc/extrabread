@@ -8,6 +8,7 @@ import { CTAInnerFooter } from '~/ui/organisms/cta-inner-footer/CTAInnerFooter';
 import { BreadFooter } from '~/ui/organisms/footer/Footer';
 
 import { useHookstate } from '@hookstate/core';
+import { useTranslation } from 'next-i18next';
 import { commonState } from '~/hooks/useCtaFooterState';
 import { useDevice } from '~/hooks/useDetectMobile';
 import {
@@ -21,59 +22,69 @@ import { SolutionPackages } from '~/ui/organisms/solution-packages/SolutionPacka
 import { UniqueValue } from '~/ui/organisms/unique-value/UniqueValue';
 import styles from './BusinessTypesTemplate.module.scss';
 
-const SOLUTION_PACKAGES = [
+const SOLUTION_CONFIGS = [
   {
-    title: 'Clover App Market',
-    description: 'Choose from over 200 powerful apps designed to help you run your business.',
+    title: 'product_types.market.title',
+    description: 'product_types.market.description',
     href: RouteConfig.CloverAppMarket,
     src: CloverAppMarketImg.src,
   },
   {
-    title: 'Gift Card Program',
-    description: 'Encourage brand loyalty with upfront payments for future purchases.',
+    title: 'product_types.gift.title',
+    description: 'product_types.gift.description',
     href: RouteConfig.GiftCardProgram,
     src: GiftCardProgramImg.src,
   },
   {
-    title: 'Loyalty & Rewards',
-    description: 'Choose from over 200 powerful apps designed to help you run your business.',
+    title: 'product_types.loyalty.title',
+    description: 'product_types.loyalty.description',
     href: RouteConfig.CustomerLoyaltyProgramsAndRewards,
     src: LoyaltyRewardsImg.src,
   },
   {
-    title: 'Cash Discount Program',
-    description: 'Encourage brand loyalty with upfront payments for future purchases.',
+    title: 'product_types.cash_discount.title',
+    description: 'product_types.cash_discount.description',
     href: RouteConfig.CashDiscountProgram,
     src: CashDiscountProgramImg.src,
   },
   {
-    title: 'Check Services',
-    description: 'Convert checks into electronic payments and speed up your cash flow.',
+    title: 'product_types.check_service.title',
+    description: 'product_types.check_service.description',
     href: RouteConfig.CheckServices,
     src: CheckServicesImg.src,
   },
 ];
 
 export const BusinessTypesTemplate = ({ children }: PropsWithChildren) => {
-  const state = useHookstate(commonState);
+  const { t: common } = useTranslation();
   const { push, asPath } = useRouter();
   const path = asPath as RouteConfigType;
   const { isMobile } = useDevice();
   const [activeTab, setActiveTab] = useState<RouteConfigType>('/full-service-restaurants');
 
+  const SOLUTION_PACKAGES = useMemo(() => {
+    return SOLUTION_CONFIGS.map(item => ({
+      ...item,
+      title: common(item.title),
+      description: common(item.description),
+    }));
+  }, [common]);
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setActiveTab(path);
-    state.set({
-      footerText: 'Discover the perfect point of sale system for your business today!',
-    });
   }, [path]);
 
   const menus = useMemo(() => {
-    return !path
+    const items = !path
       ? BUSINESS_MENU.slice(0, 5)
       : BUSINESS_MENU.filter(item => !item.href.startsWith(path));
-  }, [asPath, isMobile]);
+
+    return items.map(item => ({
+      ...item,
+      title: common(item.title),
+    }));
+  }, [asPath, isMobile, common]);
 
   return (
     <main className={styles['business-types']}>
@@ -91,23 +102,16 @@ export const BusinessTypesTemplate = ({ children }: PropsWithChildren) => {
       {children}
 
       <BreadCard isGrey>
-        <SolutionPackages
-          heading="POS Features favored by businesses like yours"
-          items={SOLUTION_PACKAGES}
-        />
+        <SolutionPackages heading={common('feature_favored')} items={SOLUTION_PACKAGES} />
       </BreadCard>
 
-      <UniqueValue />
+      <UniqueValue />s
 
       <BreadCard>
-        <BusinessExplore heading="Explore other business types" items={menus as any} />
+        <BusinessExplore heading={common('explore_other_types')} items={menus as any} />
       </BreadCard>
 
-      <CTAInnerFooter
-        htmlText="Discover the perfect point of sale system for your business today!"
-        bonus={240}
-        sale={7500}
-      />
+      <CTAInnerFooter htmlText={common('footer.heading')} bonus={240} sale={7500} />
     </main>
   );
 };

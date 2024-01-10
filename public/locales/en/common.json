@@ -14,10 +14,10 @@
     "privacy_policy": "Privacy Policy",
     "term_of_service": "Terms of Service",
     "frequently_questions": "Frequently asked questions",
-    "view_detail" : "View Detail",
+    "view_detail": "View Detail",
     "and": "and",
     "footer": {
-        "heading": "Discover the perfect point of sale system for your business today! Get started today!",
+        "heading": "Discover the perfect point of sale system for your business today!",
         "subTitle": "Plus a cash signing bonus. Find out how much!",
         "subTitle2": "Cash Signing\nBonus Estimate",
         "subtitle3": "Estimated Yearly\nCredit Card Sales",
@@ -54,6 +54,9 @@
     "point_of_sale": {
         "heading": "<span className='text-green-500'>Point-of-sale</span> for all business categories"
     },
+    "point_of_sale_features": {
+        "heading": "Point-of-Sale Features"
+    },
     "find_right_solution": "Find the right processing solutions for your business.",
     "hear_from_client": "Hear From Our Satisfied Clients",
     "solutions": {
@@ -88,15 +91,38 @@
         "pizza": "Pizzerias"
     },
     "product_types": {
-        "market": "Clover App Market",
-        "cash_discount": "Cash Discount Program",
-        "quick_book": "Quickbooks Plugin",
-        "gift": "Gift Card Program",
-        "check_service": "Check Services",
-        "cash_advance": "Cash advance",
-        "loyalty": "Loyalty & Rewards",
-        "online_analytics": "Online Analytics",
-        "invoicing": "Invoicing"
+        "market": {
+            "title": "Clover App Market",
+            "description": "Choose from over 200 powerful apps designed to help you run your business."
+        },
+        "cash_discount": {
+            "title": "Cash Discount Program",
+            "description": "Encourage brand loyalty with upfront payments for future purchases."
+        },
+        "quick_book": {
+            "title": "Quickbooks Plugin"
+        },
+        "gift": {
+            "title": "Gift Card Program",
+            "description": "Encourage brand loyalty with upfront payments for future purchases."
+        },
+        "check_service": {
+            "title": "Check Services",
+            "description": "Convert checks into electronic payments and speed up your cash flow."
+        },
+        "cash_advance": {
+            "title": "Cash advance"
+        },
+        "loyalty": {
+            "title": "Loyalty & Rewards",
+            "description": "Choose from over 200 powerful apps designed to help you run your business."
+        },
+        "online_analytics": {
+            "title": "Online Analytics"
+        },
+        "invoicing": {
+            "title": "Invoicing"
+        }
     },
     "learn_more": "Learn more",
     "side_hustle": {
@@ -107,5 +133,9 @@
     },
     "explore_pos": "Explore POS equipments",
     "join_extrbread": "Join ExtraBread Today",
-    "how_it_works": "HOW IT WORKS"
+    "how_it_works": "HOW IT WORKS",
+    "explore_other_types": "Explore other business types",
+    "feature_favored": "POS Features favored by businesses like yours",
+    "top_recommend": "Top recommended",
+    "pos_system_for" : "POS systems for"
 }

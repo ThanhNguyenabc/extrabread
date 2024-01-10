@@ -9,7 +9,36 @@ import { NextBackButton } from '~/ui/atoms/next-back-button/NextBackButton';
 import styles from './SolutionPackages.module.scss';
 
 const { Text } = Typography;
-interface Props {
+
+const configs: CarouselProps = {
+  initialSlide: 2,
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  centerMode: true,
+  responsive: [
+    {
+      breakpoint: BreakPoints.mobile,
+      settings: {
+        centerPadding: '88px',
+        slidesToShow: 1,
+        infinite: true,
+        centerMode: true,
+      },
+    },
+    {
+      breakpoint: BreakPoints.tablet,
+      settings: {
+        slidesToShow: 2,
+        infinite: true,
+        centerMode: true,
+        centerPadding: '92px',
+      },
+    },
+  ],
+};
+
+export interface SolutionPackageProps {
   heading: string;
   items: {
     title: string;
@@ -20,35 +49,9 @@ interface Props {
   }[];
 }
 
-export const SolutionPackages: FC<Props> = ({ heading, items }) => {
+export const SolutionPackages: FC<SolutionPackageProps> = ({ heading, items }) => {
   const { isMobile } = useDevice();
-  const configs: CarouselProps = {
-    initialSlide: 2,
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    centerMode: true,
-    responsive: [
-      {
-        breakpoint: BreakPoints.mobile,
-        settings: {
-          centerPadding: '88px',
-          slidesToShow: 1,
-          infinite: true,
-          centerMode: true,
-        },
-      },
-      {
-        breakpoint: BreakPoints.tablet,
-        settings: {
-          slidesToShow: 2,
-          infinite: true,
-          centerMode: true,
-          centerPadding: '92px',
-        },
-      },
-    ],
-  };
+
   const carouselRef = useRef<CarouselRef>(null);
 
   return (
