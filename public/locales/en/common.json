@@ -87,7 +87,7 @@
         "retail": "Retail Businesses",
         "quick_service": "Quick Service Restaurant",
         "small_business": "Smalll Business",
-        "bar_nightclub": "Bars & nightclubs",
+        "bar_nightclub": "Bars & Night Clubs",
         "pizza": "Pizzerias"
     },
     "product_types": {
@@ -137,5 +137,6 @@
     "explore_other_types": "Explore other business types",
     "feature_favored": "POS Features favored by businesses like yours",
     "top_recommend": "Top recommended",
-    "pos_system_for" : "POS systems for"
+    "pos_system_for": "POS systems for",
+    "must_have": "Must-Haves"
 }
