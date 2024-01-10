@@ -1,0 +1,107 @@
+{
+    "title": "Retail Businesses Must-Haves",
+    "desc": "Organize inventory, handle returns seamlessly, accept payments at the touch of a button, and manage your staff with retail-ready POS solutions, which are designed to help you do more with your store.",
+    "tags": [
+        "Retail Storefronts",
+        "Grocery and Convenience",
+        "Beauty Salons",
+        "Auto Repair",
+        "+ More"
+    ],
+    "features": [
+        "Customizable cloud system",
+        "Great back office management",
+        "User-friendly",
+        "Local on-site support"
+    ],
+    "services": {
+        "heading": "Customer Payments",
+        "items": [
+            {
+                "heading": "Customer Payments",
+                "items": [
+                    {
+                        "title": "Additional Screens for Increased Freedom",
+                        "description": "With both merchant and customer-facing screen options, you can manage the transaction on your end while giving customers the ability to pay using their preferred method."
+                    },
+                    {
+                        "title": "Efficient and Contactless Payments",
+                        "description": "The portability allows customers to quickly handle over-the-counter payments or make contactless payments with ease."
+                    },
+                    {
+                        "title": "Flexible Payment Processing",
+                        "description": "Process payments quickly while in line or anywhere in the store with our POS systems and provide your customers with the convenience of contactless payment options through swiping, dipping, or tapping."
+                    }
+                ]
+            },
+            {
+                "heading": "Inventory Management",
+                "items": [
+                    {
+                        "title": "Establish SKUs and Variants",
+                        "description": "Efficiently manage your products and stock by creating size or style variants that fit your business needs."
+                    },
+                    {
+                        "title": "Receive Low-Stock Alerts",
+                        "description": "Set up inventory management alerts based on your ordering process to avoid missing sales."
+                    },
+                    {
+                        "title": "Quickly Add or Update Products",
+                        "description": "By using accessories like a barcode scanner, you can quickly and efficiently add or update your inventory."
+                    }
+                ]
+            },
+            {
+                "heading": "Payments Processing and Refunds",
+                "items": [
+                    {
+                        "title": "Speedy Payment Acceptance",
+                        "description": "The POS systems retail software quickly accepts credit, debit, gift cards, and mobile payments, and automatically applies pre-set tax rates to each sale."
+                    },
+                    {
+                        "title": "Operate Offline",
+                        "description": "Continue to work even during interruptions by accepting payments in offline mode and processing them when the connection is restored."
+                    },
+                    {
+                        "title": "Efficient Refund Processing",
+                        "description": "Easily process all refunds, even for transactions with multiple payments, and offer store credit."
+                    }
+                ]
+            },
+            {
+                "heading": "Staff Management",
+                "items": [
+                    {
+                        "title": "Monitor Employee Sales",
+                        "description": "Monitor and keep track of sales made by your staff to incentivize top performers and establish commission plans for teams."
+                    },
+                    {
+                        "title": "Establish Access Controls",
+                        "description": "Maintain control over access to confidential business information and records by your staff members."
+                    },
+                    {
+                        "title": "Efficient Shift Planning",
+                        "description": "Easily plan and schedule employee shifts on a weekly, monthly, or yearly basis using the shift management feature."
+                    }
+                ]
+            },
+            {
+                "heading": "Customer Loyalty Programs",
+                "items": [
+                    {
+                        "title": "Offer Rewards & Send Promotions",
+                        "description": "Reach out to your customers through text, email, or receipts with special deals, promotions, and sales."
+                    },
+                    {
+                        "title": "Gain Customer Insights",
+                        "description": "Use our various POS systems to gather immediate feedback from your customers and continuously improve your business."
+                    },
+                    {
+                        "title": "Increase Sales with Gift Cards",
+                        "description": "Enhance your profits and brand by offering custom or pre-designed physical or digital gift cards that can be redeemed using smartphones."
+                    }
+                ]
+            }
+        ]
+    }
+}
