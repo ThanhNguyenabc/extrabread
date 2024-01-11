@@ -99,6 +99,7 @@ export const RetailBusinesses = () => {
           headings={[
             common('top_recommend'),
             <>
+              {' '}
               {common('pos_system_for')} <br key={'2'} className="hide-pc" />{' '}
               {common('business_categories.retail')}
             </>,
@@ -142,7 +143,9 @@ export const RetailBusinesses = () => {
       </BreadCard>
 
       <BreadCard>
-        <Heading level={3}>{t('title')}</Heading>
+        <Heading level={3}>{`${common('business_categories.retail')} ${common(
+          'must_have',
+        )}`}</Heading>
         <div className={styles['business-types_business-list']}>
           {Services.map((item, idx) => (
             <BusinessList {...item} key={`${idx}`} />

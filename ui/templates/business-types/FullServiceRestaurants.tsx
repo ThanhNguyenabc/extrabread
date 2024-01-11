@@ -97,7 +97,7 @@ export const FullServiceRestaurants = () => {
         <SolutionList
           headings={[
             common('top_recommend'),
-            `${common('pos_system_for')}  ${common('business_categories.full_service')}`,
+            ` ${common('pos_system_for')} ${common('business_categories.full_service')}`,
           ]}
           content={[
             {
@@ -138,7 +138,9 @@ export const FullServiceRestaurants = () => {
       </BreadCard>
 
       <BreadCard>
-        <Heading level={3}>{t('services.heading')}</Heading>
+        <Heading level={3}>{`${common('business_categories.full_service')} ${common(
+          'must_have',
+        )}`}</Heading>
         <div className={styles['business-types_business-list']}>
           {Services.map((item, idx) => (
             <BusinessList {...item} key={`${idx}`} />
