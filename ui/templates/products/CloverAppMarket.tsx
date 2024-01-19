@@ -1,6 +1,5 @@
 import { Row, Space, Tabs, Typography } from 'antd';
 import CloverAppMarketBanner from 'public/images/banners/Clover App Market.png';
-import { BUSINESS_MENU } from '~/constants/index';
 import { Icon } from '~/ui/atoms/icon/Icon';
 import { Banner } from '~/ui/organisms/banner/Banner';
 import styles from './ProductsTemplate.module.scss';
@@ -363,9 +362,8 @@ export const CloverAppMarket = () => {
         <AllBusinesses
           noColor
           type="product"
-          heading={['Clover App Market for all types of business.']}
+          heading={'Clover App Market for all types of business.'}
           subHeading="Learn more about how we can help your business."
-          list={BUSINESS_MENU}
         />
       </BreadCard>
 

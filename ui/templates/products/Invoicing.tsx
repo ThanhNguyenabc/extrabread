@@ -4,15 +4,14 @@ import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { Icon } from '~/ui/atoms/icon/Icon';
 import { Banner } from '~/ui/organisms/banner/Banner';
+import styles from './ProductsTemplate.module.scss';
 import { DiscoverBanner } from './components/discover-banner/DiscoverBanner';
 import { ProductFeature } from './components/features/ProductFeature';
-import styles from './ProductsTemplate.module.scss';
 
 import Improve247Img from 'public/images/products/Improve24-7.png';
 import LevelingUpImg from 'public/images/products/Leveling Up.png';
 import PersonalizeYourInvoicingImg from 'public/images/products/Personalize Your Invoicing.png';
 import PreventFraudActivitiesImg from 'public/images/products/Prevent Fraud Activities.png';
-import { BUSINESS_MENU } from '~/constants/index';
 import { AllBusinesses } from '~/ui/organisms/all-businesses/AllBusinesses';
 
 const { Text } = Typography;
@@ -121,9 +120,8 @@ export const Invoicing = () => {
         <AllBusinesses
           noColor
           type="product"
-          heading={['Invoicing for every business.']}
+          heading={'Invoicing for every business.'}
           subHeading="Collect payments confidently with a faster and more simplified invoicing solution. Find one that is right for your business."
-          list={BUSINESS_MENU}
         />
       </BreadCard>
 

@@ -11,7 +11,6 @@ import FasterFundsImg from 'public/images/products/Faster Funds.png';
 import MitigateRiskImg from 'public/images/products/Mitigate Risk.png';
 import NeverMissImg from 'public/images/products/Never Miss A Sale.png';
 
-import { BUSINESS_MENU } from '~/constants/index';
 import { AllBusinesses } from '~/ui/organisms/all-businesses/AllBusinesses';
 import styles from './ProductsTemplate.module.scss';
 
@@ -106,9 +105,8 @@ export const CheckServices = () => {
         <AllBusinesses
           noColor
           type="product"
-          heading={['Check Services for every business.']}
+          heading="Check Services for every business."
           subHeading="Maintain happy customers and your cash flow with faster, simpler, and more secure check services. Find the one that’s right for your business."
-          list={BUSINESS_MENU}
         />
       </BreadCard>
 

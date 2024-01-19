@@ -30,7 +30,6 @@ export const SolutionList = () => {
   const { t } = useTranslation();
   const items = t('solutions', { returnObjects: true });
 
-  console.log(items);
   return (
     <div className={styles['home-template_solution-list']}>
       <BreadCard>

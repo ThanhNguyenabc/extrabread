@@ -11,7 +11,6 @@ import CustomizeYourSupportImg from 'public/images/products/Customize Your Suppo
 import EffortlesslyImg from 'public/images/products/Effortlessly.png';
 import TrackYourStatementsImg from 'public/images/products/Track Your Statements.png';
 
-import { BUSINESS_MENU } from '~/constants/index';
 import { AllBusinesses } from '~/ui/organisms/all-businesses/AllBusinesses';
 import styles from './ProductsTemplate.module.scss';
 
@@ -115,9 +114,8 @@ export const QuickBooksPlugin = () => {
         <AllBusinesses
           noColor
           type="product"
-          heading={['Quickbooks Plugin for every business.']}
+          heading={'Quickbooks Plugin for every business.'}
           subHeading="Eliminate manual bookkeeping for good with QuickBooks Plugin. Find the one that’s right for your business."
-          list={BUSINESS_MENU}
         />
       </BreadCard>
 

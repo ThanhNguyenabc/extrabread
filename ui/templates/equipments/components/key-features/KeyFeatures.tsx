@@ -13,7 +13,7 @@ type Props = {
 export const KeyFeatures = ({ items }: Props) => {
   return (
     <div className={styles['key-features']}>
-      {items.map((item, idx) => (
+      {items?.map((item, idx) => (
         <div className={styles['key-features_item']} key={`${idx}`}>
           <Icon name="check-circle-solid" color="green" style={{ width: 48, height: 48 }} />
           <Typography.Text className="text-grey">{item.description}</Typography.Text>

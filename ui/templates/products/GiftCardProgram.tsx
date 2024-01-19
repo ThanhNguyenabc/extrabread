@@ -1,6 +1,5 @@
 import { Space, Typography } from 'antd';
 import GiftCardProgramBanner from 'public/images/banners/Gift Card Program.png';
-import { BUSINESS_MENU } from '~/constants/index';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { Heading } from '~/ui/atoms/heading/Heading';
@@ -133,9 +132,8 @@ export const GiftCardProgram = () => {
         <AllBusinesses
           noColor
           type="product"
-          heading={['Gift Card Program for all types of business']}
+          heading={'Gift Card Program for all types of business'}
           subHeading="Learn more about how we can help your business."
-          list={BUSINESS_MENU}
         />
       </BreadCard>
 

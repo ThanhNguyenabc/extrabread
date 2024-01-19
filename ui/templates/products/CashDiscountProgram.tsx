@@ -2,7 +2,6 @@ import { Collapse, Space, Typography } from 'antd';
 import Image from 'next/image';
 import CashDiscountProgramBanner from 'public/images/banners/Cash Discount Program.png';
 import TheUltimateSolutionImg from 'public/images/products/The Ultimate Solution.png';
-import { BUSINESS_MENU } from '~/constants/index';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { Flex } from '~/ui/atoms/flex/Flex';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
@@ -147,9 +146,8 @@ export const CashDiscountProgram = () => {
         <AllBusinesses
           noColor
           type="product"
-          heading={['Cash Discount Pricing for all types of business']}
+          heading="Cash Discount Pricing for all types of business"
           subHeading="Learn more about how we can help your business."
-          list={BUSINESS_MENU}
         />
       </BreadCard>
 

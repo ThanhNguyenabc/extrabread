@@ -11,10 +11,9 @@ import HandlingDisputesImg from 'public/images/products/Handling Disputes.png';
 import ReviewYourDepositImg from 'public/images/products/Review Your Deposit History.png';
 import TrackYourStatementsImg from 'public/images/products/Track Your Statements.png';
 
-import { BUSINESS_MENU } from '~/constants/index';
 import { AllBusinesses } from '~/ui/organisms/all-businesses/AllBusinesses';
-import { DiscoverBanner } from './components/discover-banner/DiscoverBanner';
 import styles from './ProductsTemplate.module.scss';
+import { DiscoverBanner } from './components/discover-banner/DiscoverBanner';
 
 const { Text } = Typography;
 const BANNER_CONTENT = [
@@ -122,9 +121,8 @@ export const OnlineReporting = () => {
         <AllBusinesses
           noColor
           type="product"
-          heading={['Online Analytics for all types of business']}
+          heading={'Online Analytics for all types of business'}
           subHeading="Learn more about how we can help your business."
-          list={BUSINESS_MENU}
         />
       </BreadCard>
 

@@ -1,5 +1,6 @@
 import { Space, Typography } from 'antd';
 import { formatCurrency } from 'helpers';
+import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { FC } from 'react';
 import { Button } from '~/ui/atoms/button/Button';
@@ -27,11 +28,12 @@ interface Props {
 }
 
 export const Pricing: FC<Props> = ({ leftBlock, rightBlock }) => {
+  const { t } = useTranslation();
   const { push } = useRouter();
   return (
     <div className={styles['pricing']}>
       <Heading level={3} centered>
-        Pricing
+        {t('pricing')}
       </Heading>
       <div className={styles['pricing_inner']}>
         <div className={styles['pricing_left-block']}>
@@ -51,7 +53,7 @@ export const Pricing: FC<Props> = ({ leftBlock, rightBlock }) => {
             ))}
           </div>
         </div>
-        <Text className="font-24 weight-600">Or</Text>
+        <Text className="font-24 weight-600">{t('or')}</Text>
         <div className={styles['pricing_right-block']}>
           <div className={styles['pricing_right-block_tag']}>
             <span>{rightBlock.tag}</span>
@@ -68,7 +70,7 @@ export const Pricing: FC<Props> = ({ leftBlock, rightBlock }) => {
             </Text>
             <Button type="primary" className="block" onClick={() => push(rightBlock.href)}>
               <Space>
-                Get Started
+                {t('get_started')}
                 <Icon name="right" color="white" />
               </Space>
             </Button>

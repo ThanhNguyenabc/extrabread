@@ -11,7 +11,6 @@ import EffortlesslyImg from 'public/images/products/Effortlessly.png';
 import FasterFundsImg from 'public/images/products/Faster Funds.png';
 import LevelingUpImg from 'public/images/products/Leveling Up.png';
 import MitigateRiskImg from 'public/images/products/Mitigate Risk.png';
-import { BUSINESS_MENU } from '~/constants/index';
 import { AllBusinesses } from '~/ui/organisms/all-businesses/AllBusinesses';
 import styles from './ProductsTemplate.module.scss';
 
@@ -117,9 +116,8 @@ export const CashAdvance = () => {
         <AllBusinesses
           noColor
           type="product"
-          heading={['Cash Advance for every business.']}
+          heading="Cash Advance for every business."
           subHeading="Eliminate manual bookkeeping for good with QuickBooks Plugin. Find the one that’s right for your business."
-          list={BUSINESS_MENU}
         />
       </BreadCard>
 
