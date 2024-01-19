@@ -98,13 +98,13 @@ export enum NavigationLabel {
 }
 
 export const COMPANY_MENU = [
-  { title: 'Support', href: RouteConfig.Contacts },
+  { title: 'support', href: RouteConfig.Contacts },
   { title: 'FAQ', href: RouteConfig.Faqs },
-  { title: 'State Regulations', href: '#' },
+  { title: 'state_regulation', href: '#' },
   { title: 'Blog', href: RouteConfig.Blogs },
-  { title: 'Partner', href: RouteConfig.Partner },
-  { title: 'About us', href: RouteConfig.AboutUs },
-  { title: 'Point Of Sale Systems', href: RouteConfig.SaleSystems },
+  { title: 'partner', href: RouteConfig.Partner },
+  { title: 'about_us', href: RouteConfig.AboutUs },
+  { title: 'point_of_sale_systems', href: RouteConfig.SaleSystems },
 ];
 
 export const SOLUTIONS_MENU = [
@@ -243,47 +243,47 @@ export const BUSINESS_MENU = [
 
 export const PRODUCTS_MENU = [
   {
-    title: 'product_types.market',
+    title: 'product_types.market.title',
     src: CloverAppMarketImg.src,
     href: RouteConfig.CloverAppMarket,
   },
   {
-    title: 'product_types.gift',
+    title: 'product_types.gift.title',
     src: GiftCardProgramImg.src,
     href: RouteConfig.GiftCardProgram,
   },
   {
-    title: 'product_types.loyalty',
+    title: 'product_types.loyalty.title',
     src: LoyaltyRewardsImg.src,
     href: RouteConfig.CustomerLoyaltyProgramsAndRewards,
   },
   {
-    title: 'product_types.cash_discount',
+    title: 'product_types.cash_discount.title',
     src: CashDiscountProgramImg.src,
     href: RouteConfig.CashDiscountProgram,
   },
   {
-    title: 'product_types.check_service',
+    title: 'product_types.check_service.title',
     src: CheckServicesImg.src,
     href: RouteConfig.CheckServices,
   },
   {
-    title: 'product_types.online_analytics',
+    title: 'product_types.online_analytics.title',
     src: OnlineReportingImg.src,
     href: RouteConfig.OnlineAnalytics,
   },
   {
-    title: 'product_types.quick_book',
+    title: 'product_types.quick_book.title',
     src: QuickBooksPluginImg.src,
     href: RouteConfig.QuickbooksPlugin,
   },
   {
-    title: 'product_types.cash_advance',
+    title: 'product_types.cash_advance.title',
     src: CashAdvanceImg.src,
     href: RouteConfig.CashAdvance,
   },
   {
-    title: 'product_types.invoicing',
+    title: 'product_types.invoicing.title',
     src: InvoicingImg.src,
     href: RouteConfig.Invoicing,
   },
