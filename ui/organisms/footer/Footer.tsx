@@ -60,8 +60,6 @@ export const BreadFooter = () => {
   const { isMobile } = useDevice();
   const { t } = useTranslation('common');
 
-  console.log('-----------footer-------');
-  console.log(t);
   const WorkingDays = useMemo(() => {
     return t('footer.working_day', { returnObjects: true }) as Array<string>;
   }, [t]);
