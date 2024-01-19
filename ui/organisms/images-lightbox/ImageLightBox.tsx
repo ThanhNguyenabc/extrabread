@@ -7,7 +7,7 @@ import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/styles.css';
 
 interface Props {
-  images: StaticImageData[];
+  images: StaticImageData[] | Array<{ src: string }> | undefined;
   onClose: VoidFunction;
   open: boolean;
   startIndex?: number;
