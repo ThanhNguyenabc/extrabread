@@ -17,6 +17,9 @@
     "frequently_questions": "Preguntas frecuentes",
     "view_detail": "Ver detalles",
     "and": "y",
+    "pros": "Pros",
+    "cons": "Contras",
+    "read_more": "Leer más",
     "footer": {
         "heading": "¡Descubra hoy el sistema de punto de venta perfecto para su negocio! ¡Empiece hoy!",
         "subTitle": "Más un bono por firmar en efectivo. ¡Descubre cuánto!",
@@ -139,5 +142,22 @@
     "feature_favored": "Funciones de POS preferidas por empresas como la suya",
     "top_recommend": "Top recomendado",
     "pos_system_for": "Sistemas POS para",
-    "must_have": "Imprescindibles"
+    "must_have": "Imprescindibles",
+    "state_regulation": "Regulaciones estatales",
+    "about_us": "Sobre nosotras",
+    "partner": "Pareja",
+    "point_of_sale_systems": "Sistemas de punto de venta",
+    "get_your_hand": "Obtenga hoy mismo un sistema POS [name] gratuito",
+    "extrabread_offer": "ExtraBread Sacrificio",
+    "pos_cost": "Ahorre mucho en costos de POS",
+    "pricing_desc": "Comience a usar [name] para su negocio hoy, con opciones de precios desde",
+    "get_full_price_from": "Obtenga el precio completo desde",
+    "monthly_price": "Plan Mensual de Servicio",
+    "onetime_price": "Compra única",
+    "key_features": "Características clave",
+    "per_station": "Por estación",
+    "monthly_pricing_desc": "Por mes (promedio de 3 estaciones o más)",
+    "pricing": "Precios",
+    "or": "O",
+    "suggested_business": "Tipos de negocios sugeridos"
 }

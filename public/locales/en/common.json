@@ -16,6 +16,9 @@
     "frequently_questions": "Frequently asked questions",
     "view_detail": "View Detail",
     "and": "and",
+    "pros": "Pros",
+    "cons":"Cons",
+    "read_more":"Read more",
     "footer": {
         "heading": "Discover the perfect point of sale system for your business today!",
         "subTitle": "Plus a cash signing bonus. Find out how much!",
@@ -138,5 +141,22 @@
     "feature_favored": "POS Features favored by businesses like yours",
     "top_recommend": "Top recommended",
     "pos_system_for": "POS systems for",
-    "must_have": "Must-Haves"
+    "must_have": "Must-Haves",
+    "state_regulation": "State Regulations",
+    "point_of_sale_systems": "Point Of Sale Systems",
+    "about_us": "About Us",
+    "partner": "Partner",
+    "get_your_hand": "Get your hands on on a Free [name] POS <br/> System today!",
+    "extrabread_offer": "ExtraBread’s Offer",
+    "pos_cost": "Save Big on POS Costs",
+    "pricing_desc": "Start using [name] for your business today, with pricing options starting at",
+    "get_full_price_from": "Get full the price from",
+    "monthly_price": "Service Monthly Plan",
+    "onetime_price": "One Time Purchase",
+    "key_features": "Key Features",
+    "per_station": "Per Station",
+    "monthly_pricing_desc": "Per Month (avg. 3 stations or more)",
+    "pricing": "Pricing",
+    "or": "Or",
+    "suggested_business": "Suggested Types of Business"
 }

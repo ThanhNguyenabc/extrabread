@@ -23,7 +23,7 @@ const nextConfig = {
   TABLE_NAME: process.env.TABLE_NAME,
   BASE_ID: process.env.BASE_ID,
   images: {
-    domain: ['https://blog.extrabread.com', 'https://res.cloudinary.com'],
+    domains: ['res.cloudinary.com', 'blog.extrabread.com'],
   },
   webpack(config) {
     config.module.rules.push({
@@ -35,6 +35,14 @@ const nextConfig = {
   },
   typescript: {
     ignoreBuildErrors: true,
+  },
+  rewrites: () => {
+    return [
+      {
+        source: '/:pos',
+        destination: '/products/:pos',
+      },
+    ];
   },
 };
 

@@ -1,0 +1,105 @@
+{
+    "referral": "REFERRAL",
+    "iso-agent": "ISO AGENT",
+    "in-house": "IN-HOUSE",
+    "items": [
+        {
+            "key": "basePay",
+            "text": "Base Pay"
+        },
+        {
+            "key": "bonus",
+            "text": "Upfront Bonuses"
+        },
+        {
+            "key": "income",
+            "text": "Residual Income"
+        },
+        {
+            "key": "appointment",
+            "text": "Preset Appointments"
+        }
+    ],
+    "form_heading": "Earn Extra Cash with ExtraBread",
+    "from_sub_heading": "Turn your downtime into extra cash with ExtraBread! No need for big commitments - refer businesses and watch the bonuses and monthly residual income roll in. Sign up with us today.",
+    "form_title": "Start Earning Monthly Residual Income Today",
+    "form_desc": "Fill out the form and we will reach out to you in 24-48 hours",
+    "programs": [
+        {
+            "key": "referral",
+            "tag" : "Referral Program",
+            "title": "Quick & Easy Cash Flow",
+            "desc": "Earn quick and easy money through our referral program by introducing your favorite establishments to ExtraBread. Enjoy residual monthly income for successful referrals and closed deals. Join now to turn your network into a lucrative source of earnings!",
+            "items": [
+                {
+                    "title": "Lucrative Signing Bonus",
+                    "desc": "Receive bonuses up to $10,000+ for merchants who use ExtraBread"
+                },
+                {
+                    "title": "Virtual Office",
+                    "desc": "With our virtual office you’ll be able to see your signed referrals, daily & monthly reporting, bonus and residual payouts"
+                },
+                {
+                    "title": "Monthly Residual Income",
+                    "desc": "Receive the most competitive monthly residual income in the market for credit card processing"
+                },
+                {
+                    "title": "Competitive Products",
+                    "desc": "Our competitive products and services put our agents at an advantage to build their portfolio"
+                }
+            ]
+        },
+        {
+            "key": "in-house",
+            "tag" : "In-house Agent Program",
+            "title": "Working With The Best",
+            "desc": "Our In-house Agent Program is an exclusive opportunity to delve deep into our service offerings. By enrolling, you'll gain valuable insights, become an integral team member, and receive expert training to excel in your role. Alongside this, you'll enjoy numerous benefits, such as access to dedicated office facilities, administrative support, and a variety of enticing perks. The program also offers a competitive base salary with the potential for significant residuals and performance-based bonuses.",
+            "items": [
+                {
+                    "title": "Lucrative Signing Bonus",
+                    "desc": "Receive bonuses up to $10,000+ for merchants who use ExtraBread"
+                },
+                {
+                    "title": "Consultations",
+                    "desc": "With your guidance, you are able to offer assistance to merchants of what POS system is best for their business"
+                },
+                {
+                    "title": "Experienced Staff",
+                    "desc": "Work alongside an amazing crew that possesses in-depth knowledge of the ins and outs of the industry"
+                },
+                {
+                    "title": "Updated Products",
+                    "desc": "Work with constantly updated products and services in the point-of-sale industry"
+                }
+            ]
+        },
+        {
+            "key": "iso-agent",
+            "tag" : "Iso Agent Program",
+            "title": "Being Your Own Boss",
+            "desc": "Join ExtraBread as an independent sales office agent and embrace the freedom of being your own boss. Empower merchants with expert advice on ideal point-of-sale systems, build long-term relationships, and expand your portfolio alongside us.",
+            "imageDirection": "left",
+            "items": [
+                {
+                    "title": "Competitive Residual Income",
+                    "desc": "Receive bonuses up to $10,000+ for merchants who use ExtraBread"
+                },
+                {
+                    "title": "Consultations",
+                    "desc": "With your guidance, you are able to offer assistance to merchants of what POS system is best for their business"
+                },
+                {
+                    "title": "Experienced Staff'",
+                    "desc": "Work alongside an amazing crew that possesses in-depth knowledge of the ins and outs of the industry"
+                },
+                {
+                    "title": "Competitive Products",
+                    "desc": "Our competitive products and services put our agents at an advantage to build their portfolio"
+                }
+            ]
+        }
+    ],
+    "discover_side_hustle": "Discover the Ultimate Side Hustle with ExtraBread",
+    "discover_desc": "At ExtraBread, we offer the ultimate side hustle for individuals seeking flexible opportunities during their free time.We&apos;re dedicated to keeping you at the forefront of the ever-changing payments landscape through innovative products and program offerings. Construct your sales office with a partner deeply invested in ensuring your success! With our three programs:",
+    "discover_desc1": "You can generate extra income and expand your skill set while maintaining your current commitments. Partnered with numerous established point-of-sale systems, you will have the chance to learn all about the ins and outs of the business."
+}

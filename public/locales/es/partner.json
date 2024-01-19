@@ -1,0 +1,108 @@
+{
+    "referral": "REMISIÓN",
+    "iso-agent": "AGENTE ISO",
+    "in-house": "EN CASA",
+    "referral_program": "Referral Program",
+    "agent_program": "In-house Agent Program",
+    "inhouse_program": "Iso Agent Program",
+    "items": [
+        {
+            "key": "basePay",
+            "text": "Salario base"
+        },
+        {
+            "key": "bonus",
+            "text": "Bonos iniciales"
+        },
+        {
+            "key": "income",
+            "text": "Ingreso residual"
+        },
+        {
+            "key": "appointment",
+            "text": "Citas preestablecidas"
+        }
+    ],
+    "form_heading": "Gana dinero extra con ExtraBread",
+    "from_sub_heading": "¡Convierta su tiempo de inactividad en dinero extra con ExtraBread! No hay necesidad de grandes compromisos - consulte empresas y observe cómo llegan las bonificaciones y los ingresos residuales mensuales. Regístrese con nosotros hoy.",
+    "form_title": "Comience a obtener ingresos residuales mensuales hoy",
+    "form_desc": "Complete el formulario y nos comunicaremos con usted en 24-48 horas",
+    "programs": [
+        {
+            "key": "referral",
+            "tag-title": "Programa de referencia",
+            "title": "Flujo de fundos rápidas y sencillo",
+            "desc": "Gana dinero rápido y fácil a través de nuestro programa de referencias presentando tu favorito establecimientos a ExtraBread. Disfrute de ingresos mensuales residuales para referencias exitosas y tratos cerrados. ¡Únase ahora para convertir su red en una lucrativa fuente de ingresos!",
+            "items": [
+                {
+                    "title": "Bono de firma lucrativo",
+                    "desc": "Reciba bonos de hasta $10,000+ para comerciantes que usan ExtraBread"
+                },
+                {
+                    "title": "Oficina Virtual",
+                    "desc": "Con nuestra oficina virtual podrá ver sus referencias firmadas, informes diarios y mensuales, bonos y pagos residuales"
+                },
+                {
+                    "title": "Ingreso residual mensual",
+                    "desc": "Reciba el ingreso residual mensual más competitivo del mercado para procesamiento de tarjetas de crédito"
+                },
+                {
+                    "title": "Productos competitivos",
+                    "desc": "Nuestros productos y servicios competitivos ponen a nuestros agentes en ventaja para construir su portafolio de proyectos"
+                }
+            ]
+        },
+        {
+            "key": "in-house",
+            "tag-title": "Programa de agente interno",
+            "title": "Trabajando con los mejores",
+            "desc": "Nuestro programa de agentes internos es una oportunidad exclusiva para profundizar en nuestras ofertas de servicios. Al inscribirse, obtendrá información valiosa, se convertirá en un miembro integral del equipo y recibirá capacitación experta para sobresalir en su rol. Además de esto, disfrutará de numerosos beneficios, como acceso a instalaciones de oficina dedicadas, soporte administrativo y una variedad de atractivos beneficios. El programa también ofrece un salario base competitivo con potencial para importantes remanentes. y bonificaciones basadas en el desempeño.",
+            "items": [
+                {
+                    "title": "Bono de firma lucrativo",
+                    "desc": "Reciba bonos de hasta $10,000+ para comerciantes que usan ExtraBread"
+                },
+                {
+                    "title": "Consultas",
+                    "desc": "Con su orientación, podrá ofrecer asistencia a los comerciantes sobre qué sistema POS es lo mejor para su negocio"
+                },
+                {
+                    "title": "Personal experimentado",
+                    "desc": "Trabaje junto a un equipo increíble que posee un conocimiento profundo de la industria"
+                },
+                {
+                    "title": "Productos actualizados",
+                    "desc": "Trabajar con productos y servicios constantemente actualizados en la industria del punto de venta."
+                }
+            ]
+        },
+        {
+            "key": "iso-agent",
+            "tag-title": "Programa de agente ISO",
+            "title": "Ser tu propio jefe",
+            "desc": "Join ExtraBread as an independent sales office agent and embrace the freedom of being your own boss. Empower merchants with expert advice on ideal point-of-sale systems, build long-term relationships, and expand your portfolio alongside us.",
+            "imageDirection": "left",
+            "items": [
+                {
+                    "title": "Ingreso residual competitivo",
+                    "desc": "Reciba bonos de hasta $10,000+ para comerciantes que usan ExtraBread"
+                },
+                {
+                    "title": "Consultas",
+                    "desc": "Con su orientación, podrá ofrecer asistencia a los comerciantes sobre qué es el sistema POS. lo mejor para su negocio"
+                },
+                {
+                    "title": "Personal experimentado",
+                    "desc": "Trabaje junto a un equipo increíble que posee un conocimiento profundo de los entresijos. de la industria"
+                },
+                {
+                    "title": "Productos competitivos",
+                    "desc": "Nuestros productos y servicios competitivos ponen a nuestros agentes en ventaja para construir su cartera."
+                }
+            ]
+        }
+    ],
+    "discover_side_hustle": "Descubra el mejor trabajo secundario con ExtraBread",
+    "discover_desc": "En ExtraBread, ofrecemos lo último en actividades secundarias para personas que buscan flexibilidad oportunidades durante su tiempo libre. Estamos dedicados a mantenerlo al marjen del panorama de pagos en constante cambio a través de productos y ofertas de programas innovadores. ¡Construya su oficina de ventas con un socio profundamente comprometido en garantizar su éxito! Con nuestros tres programas:",
+    "discover_desc1": "Puede generar ingresos adicionales y ampliar su conjunto de habilidades mientras mantiene su actual compromisos. En asociación con numerosos sistemas de punto de venta establecidos, tendrá la oportunidad de aprender todos los detalles del negocio."
+}

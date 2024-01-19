@@ -1,0 +1,105 @@
+{
+    "desc": "When operating your restaurant tableside, you're going to be in need of a point-of-sale system that allows for built-in dining solutions to provide you and your customers an easy experience",
+    "tags": [
+        "Casual Dining",
+        "Coffee Shops",
+        "Retail", 
+        "Bakeries",
+        "+ More"
+    ],
+    "features": [
+        "pago rápido",
+        "Pedidos en línea",
+        "Soporte local en sitio",
+        "Fácil de usar"
+    ],
+    "services": {
+        "items": [
+            {
+                "heading": "Customizable cloud system",
+                "items": [
+                    {
+                        "title": "Online Data Storage",
+                        "description": "Instead of being stored on a local computer or server, the point-of-sale systems process and store the data online, making it accessible from anywhere with internet connection"
+                    },
+                    {
+                        "title": "Fast Processing",
+                        "description": "Allow for faster transactions with a wider range of payment options with a system that has been improved for increased speed and accuracy."
+                    },
+                    {
+                        "title": "Keep Your Business Running",
+                        "description": "In the event of a crash or malfunction, you can easily retrieve your data due to a secure backup system and know that all your important business information is protected at all times"
+                    }
+                ]
+            },
+            {
+                "heading": "Customer Payments",
+                "items": [
+                    {
+                        "title": "Additional Screens for Increased Freedom",
+                        "description": "With both merchant and customer-facing screen options, you can manage the transaction on your end while giving customers the ability to pay using their preferred method."
+                    },
+                    {
+                        "title": "Efficient and Contactless Payments",
+                        "description": "The portability allows customers to quickly handle over-the-counter payments or make contactless payments with ease."
+                    },
+                    {
+                        "title": "Flexible Payment Processing",
+                        "description": "Process payments quickly while in line or anywhere in the store with our POS systems and provide your customers with the convenience of contactless payment options through swiping, dipping, or tapping."
+                    }
+                ]
+            },
+            {
+                "heading": "Staff Management",
+                "items": [
+                    {
+                        "title": "Monitor Employee Sales",
+                        "description": "Monitor and keep track of sales made by your staff to incentivize top performers and establish commission plans for teams."
+                    },
+                    {
+                        "title": "Establish Access Controls",
+                        "description": "Maintain control over access to confidential business information and records by your staff members."
+                    },
+                    {
+                        "title": "Efficient Shift Planning",
+                        "description": "Easily plan and schedule employee shifts on a weekly, monthly, or yearly basis using the shift management feature."
+                    }
+                ]
+            },
+            {
+                "heading": "Inventory Management",
+                "items": [
+                    {
+                        "title": "Establish SKUs and Variants",
+                        "description": "Efficiently manage your products and stock by creating size or style variants that fit your business needs."
+                    },
+                    {
+                        "title": "Receive Low-Stock Alerts",
+                        "description": "Set up inventory management alerts based on your ordering process to avoid missing sales."
+                    },
+                    {
+                        "title": "Quickly Add or Update Products",
+                        "description": "By using accessories like a barcode scanner, you can quickly and efficiently add or update your inventory."
+                    }
+                ]
+            },
+            {
+                "heading": "Customer Loyalty Programs",
+                "items": [
+                    {
+                        "title": "Offer Rewards & Send Promotions",
+                        "description": "Reach out to your customers through text, email, or receipts with special deals, promotions, and sales."
+                    },
+                    {
+                        "title": "Gain Customer Insights",
+                        "description": "Use our various POS systems to gather immediate feedback from your customers and continuously improve your business."
+                    },
+                    {
+                        "title": "Increase Sales with Gift Cards",
+                        "description": "Enhance your profits and brand by offering custom or pre-designed physical or digital gift cards that can be redeemed using smartphones."
+                    }
+                ]
+            }
+        ]
+    }
+}
