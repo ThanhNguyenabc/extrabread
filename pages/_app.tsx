@@ -21,7 +21,7 @@ import { Alert } from '@/ui/organisms/alert/Alert';
 import { BreadFooter } from '@/ui/organisms/footer/Footer';
 import { Header } from '@/ui/organisms/header/Header';
 import { appWithTranslation } from 'next-i18next';
-
+import nextI18NextConfig from '../next-i18next.config.js';
 const {
   errorColor,
   errorHoverColor,
@@ -180,4 +180,9 @@ const App = (props: AppProps) => {
   );
 };
 
-export default appWithTranslation(App);
+export default appWithTranslation(App, {
+  i18n: {
+    defaultLocale: nextI18NextConfig.i18n.defaultLocale,
+    locales: nextI18NextConfig.i18n.locales,
+  },
+});
