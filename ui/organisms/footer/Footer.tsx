@@ -58,9 +58,12 @@ const MenuCategory = ({
 
 export const BreadFooter = () => {
   const { isMobile } = useDevice();
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
+
+  console.log('-----------footer-------');
+  console.log(t);
   const WorkingDays = useMemo(() => {
-    return (t('footer.working_day', { returnObjects: true }) as Array<string>) || [];
+    return t('footer.working_day', { returnObjects: true }) as Array<string>;
   }, [t]);
 
   return (
@@ -91,11 +94,12 @@ export const BreadFooter = () => {
             <a className={styles['footer-link']} href={`tel:${PHONE}`}>
               {PHONE}
             </a>
-            {WorkingDays?.map(item => (
-              <Text key={item} className={styles['footer_time']}>
-                {item}
-              </Text>
-            ))}
+            {Array.isArray(WorkingDays) &&
+              WorkingDays?.map(item => (
+                <Text key={item} className={styles['footer_time']}>
+                  {item}
+                </Text>
+              ))}
           </div>
         </div>
 

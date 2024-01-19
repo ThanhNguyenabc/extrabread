@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { TFunction, UseTranslation, useTranslation } from 'next-i18next';
+import { TFunction } from 'next-i18next';
 import React, { HTMLAttributes, ReactElement, forwardRef } from 'react';
 import { Badge } from './badge';
 import { Button, ButtonProps } from './button';

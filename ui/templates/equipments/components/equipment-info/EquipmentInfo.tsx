@@ -4,12 +4,13 @@ import { Heading } from '~/ui/atoms/heading/Heading';
 import { Icon } from '~/ui/atoms/icon/Icon';
 const { Text, Link } = Typography;
 
+import { useTranslation } from 'next-i18next';
 import Image, { StaticImageData } from 'next/image';
 import { Flex } from '~/ui/atoms/flex/Flex';
 import styles from './EquipmentInfo.module.scss';
 
 interface Props {
-  logo: StaticImageData;
+  logo: StaticImageData | string;
   description: JSX.Element | string;
   pros: string[];
   cons: string[];
@@ -31,11 +32,12 @@ export const EquipmentInfo: FC<Props> = ({
   cons,
   os,
 }) => {
+  const { t } = useTranslation();
   return (
     <div className={styles['equipment-info']} onClick={onClick}>
       <div className={styles['equipment-info_text-logo']}>
         <div className={styles['equipment-info_logo']}>
-          <Image alt="" width={240} height={120} src={logo.src} quality={100} />
+          <Image alt="" width={240} height={120} src={logo} quality={100} />
           {os && (
             <Flex gap={16}>
               {os.map((os, idx) => (
@@ -58,7 +60,7 @@ export const EquipmentInfo: FC<Props> = ({
           {readMore && (
             <Link href={href} className="font-18 weight-600 mt-16">
               <Space size={4} align="start">
-                Read more
+                {t('read_more')}
                 <Icon name="chevron-down" color="green" />
               </Space>
             </Link>
@@ -68,7 +70,7 @@ export const EquipmentInfo: FC<Props> = ({
       <Row gutter={[32, 16]}>
         <Col md={{ span: 12 }} sm={{ span: 24 }}>
           <div className={styles['equipment-info_pros']}>
-            <Heading size="sm">Pros</Heading>
+            <Heading size="sm">{t('pros')}</Heading>
 
             <Flex direction="column" align="start" gapSp={4}>
               {pros.map((item, idx) => (
@@ -83,7 +85,7 @@ export const EquipmentInfo: FC<Props> = ({
 
         <Col md={{ span: 12 }} sm={{ span: 24 }}>
           <div className={styles['equipment-info_cons']}>
-            <Heading size="sm">Cons</Heading>
+            <Heading size="sm">{t('cons')}</Heading>
 
             <Flex direction="column" align="start" gapSp={4}>
               {cons.map((item, idx) => (

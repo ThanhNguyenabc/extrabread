@@ -10,7 +10,7 @@ import {
 import { Button } from '@/ui/atoms/button/Button';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
-import { BUSINESS_MENU, RouteConfig } from '~/constants/index';
+import { RouteConfig } from '~/constants/index';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { TrustScore } from '~/ui/atoms/trust-score/TrustScore';
@@ -24,25 +24,41 @@ import { HowItWorks } from './components/HowItWorks';
 import { SolutionList } from './components/SolutionList';
 import { Testimonials } from './components/testimonials/Testimonials';
 
+const BannerItems = [
+  {
+    title: 'saving_money',
+    icon: SaveMoneyIcon,
+  },
+  {
+    title: 'siging_bonus',
+    icon: ReceiveCashIcon,
+  },
+  {
+    title: 'processing_fee',
+    icon: ZeroProcessingFeesIcon,
+  },
+];
+
 export const HomeTemplate = () => {
-  const { t } = useTranslation(['common', 'home']);
+  const { t: common } = useTranslation();
+  const { t } = useTranslation('home');
 
   return (
     <>
       <Banner
         hasBackground
         type="home"
-        content={<>{t('pageTitle', { ns: 'home' })}</>}
+        content={<>{t('pageTitle')}</>}
         button={
           <>
             <div className="flex items-center justify-center flex-col gap-3 md:flex-row  md:gap-4 lg:justify-start">
-              <GetPricingButton title={t('get_pricing_today')} size="large" />
+              <GetPricingButton title={common('get_pricing_today')} size="large" />
               <Link href={RouteConfig.Partner}>
                 <Button
                   size="large"
                   className="flex justify-center items-center gap-2 border-none hover:text-green-500"
                 >
-                  {t('partner_with_us')}
+                  {common('partner_with_us')}
                   <IcChevronRight />
                 </Button>
               </Link>
@@ -55,22 +71,12 @@ export const HomeTemplate = () => {
         src={LandingBanner.src}
         extractComponent={
           <div className={styles['home-template_banner-footer']}>
-            <Space>
-              <SaveMoneyIcon />
-              {t('Save money with a free POS', {
-                ns: 'home',
-              })}
-            </Space>
-            <Space>
-              <ReceiveCashIcon />
-              {t('Receive a large cash signing bonus', {
-                ns: 'home',
-              })}
-            </Space>
-            <Space>
-              <ZeroProcessingFeesIcon />
-              {t('Zero Processing Fees')}
-            </Space>
+            {BannerItems.map(({ title, icon: Icon }) => (
+              <Space key={title}>
+                <Icon />
+                {t(title)}
+              </Space>
+            ))}
           </div>
         }
       />
@@ -82,14 +88,14 @@ export const HomeTemplate = () => {
       <WorkWithTheBest />
 
       <BreadCard>
-        <AllBusinesses heading={t('point_of_sale.heading')} list={BUSINESS_MENU} />
+        <AllBusinesses heading={common('point_of_sale.heading')} />
       </BreadCard>
 
       <SolutionList />
 
       <Testimonials />
 
-      <CTAInnerFooter htmlText={t('footer.heading')} bonus={2500} sale={250000} />
+      <CTAInnerFooter htmlText={common('footer.heading')} bonus={2500} sale={250000} />
     </>
   );
 };

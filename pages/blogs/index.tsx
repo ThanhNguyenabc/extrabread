@@ -10,7 +10,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   };
 };
 
-const index = () => {
+const BlogPage = () => {
   const { t } = useTranslation('common');
   const title = t('home.title');
   const description = t('home.description');
@@ -25,4 +25,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default BlogPage;

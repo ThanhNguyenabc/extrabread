@@ -18,125 +18,59 @@ import {
 } from '@/ui/img-resource/ImageResources';
 import { WorkWithTheBest } from '@/ui/organisms/work-with-the-best/WorkWithTheBest';
 import { Seo } from '@/ui/util-components/Seo';
+import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Image from 'next/image';
 import { GetStaticProps } from 'next/types';
 import React, { useEffect, useRef } from 'react';
 import { getSEOTag } from './api/app-configs';
 
-const PartnerBenefit = [
-  {
-    icon: IcBasePay,
-    desc: 'Base Pay',
-  },
-  {
-    icon: IcBonus,
-    desc: 'Upfront Bonuses',
-  },
-  {
-    icon: IcIncome,
-    desc: 'Residual Income',
-  },
-  {
-    icon: IcAppointment,
-    desc: 'Preset Appointments ',
-  },
-];
+type PartnerProgram = {
+  key: string;
+  tag: string;
+  title: string;
+  desc: string;
+  items: Array<{
+    title: string;
+    desc: string;
+  }>;
+};
 
-const PartnerPrograms = [
-  {
-    key: 'referral',
-    title: 'Quick & Easy Cash Flow',
-    desc: 'Earn quick and easy money through our referral program by introducing your favorite establishments to ExtraBread. Enjoy residual monthly income for successful referrals and closed deals. Join now to turn your network into a lucrative source of earnings!',
+const PartnerProgramConfigs = {
+  referral: {
     imageLink: PartnerWFH,
     imageDirection: 'left',
     tagConfig: {
       text: 'Referral Program',
       tagClassName: 'bg-yellow-200',
     },
-    items: [
-      {
-        title: 'Lucrative Signing Bonus',
-        desc: 'Receive bonuses up to $10,000+ for merchants who use ExtraBread',
-      },
-      {
-        title: 'Virtual Office',
-        desc: 'With our virtual office you’ll be able to see your signed referrals, daily & monthly reporting, bonus and residual payouts',
-      },
-      {
-        title: 'Monthly Residual Income',
-        desc: 'Receive the most competitive monthly residual income in the market for credit card processing',
-      },
-      {
-        title: 'Competitive Products',
-        desc: 'Our competitive products and services put our agents at an advantage to build their portfolio',
-      },
-    ],
   },
-  {
-    key: 'in-house',
-    title: 'Working With The Best',
-    desc: "Our In-house Agent Program is an exclusive opportunity to delve deep into our service offerings. By enrolling, you'll gain valuable insights, become an integral team member, and receive expert training to excel in your role. Alongside this, you'll enjoy numerous benefits, such as access to dedicated office facilities, administrative support, and a variety of enticing perks. The program also offers a competitive base salary with the potential for significant residuals and performance-based bonuses.",
+  'in-house': {
     imageLink: PartnerTeamate,
     imageDirection: 'right',
     tagConfig: {
       text: 'In-house Agent Program',
       tagClassName: 'bg-red-200',
     },
-    items: [
-      {
-        title: 'Lucrative Signing Bonus',
-        desc: 'Receive bonuses up to $10,000+ for merchants who use ExtraBread',
-      },
-      {
-        title: 'Consultations',
-        desc: 'With your guidance, you are able to offer assistance to merchants of what POS system is best for their business',
-      },
-      {
-        title: 'Experienced Staff',
-        desc: 'Work alongside an amazing crew that possesses in-depth knowledge of the ins and outs of the industry',
-      },
-      {
-        title: 'Updated Products',
-        desc: 'Work with constantly updated products and services in the point-of-sale industry',
-      },
-    ],
   },
-  {
-    key: 'iso-agent',
-    title: 'Being Your Own Boss',
-    desc: 'Join ExtraBread as an independent sales office agent and embrace the freedom of being your own boss. Empower merchants with expert advice on ideal point-of-sale systems, build long-term relationships, and expand your portfolio alongside us.',
+  'iso-agent': {
     imageLink: PartnerBoss,
     imageDirection: 'left',
     tagConfig: {
       text: 'Iso Agent Program',
       tagClassName: 'bg-green-200',
     },
-    items: [
-      {
-        title: 'Competitive Residual Income',
-        desc: 'Receive bonuses up to $10,000+ for merchants who use ExtraBread',
-      },
-      {
-        title: 'Consultations',
-        desc: 'With your guidance, you are able to offer assistance to merchants of what POS system is best for their business',
-      },
-      {
-        title: 'Experienced Staff',
-        desc: 'Work alongside an amazing crew that possesses in-depth knowledge of the ins and outs of the industry',
-      },
-      {
-        title: 'Competitive Products',
-        desc: 'Our competitive products and services put our agents at an advantage to build their portfolio',
-      },
-    ],
   },
-];
+  basePay: IcBasePay,
+  bonus: IcBonus,
+  income: IcIncome,
+  appointment: IcAppointment,
+};
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const [seoTag, translation] = await Promise.all([
     getSEOTag('partner', locale),
-    serverSideTranslations(locale ?? 'en', ['common']),
+    serverSideTranslations(locale ?? 'en', ['common', 'partner']),
   ]);
   return {
     props: {
@@ -149,9 +83,12 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
 const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
   const { title, description, keywords, image } = seoTag || {};
-
+  const { t: common } = useTranslation();
+  const { t } = useTranslation('partner');
   const registerForm = useRef<HTMLDivElement>(null);
 
+  const programs = t('programs', { returnObjects: true }) as Array<PartnerProgram>;
+  const bannerItems = t('items', { returnObjects: true }) as Array<any>;
   const onJoinExtrabread = () => {
     registerForm?.current?.scrollIntoView({
       behavior: 'smooth',
@@ -161,7 +98,7 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
   };
 
   const ctaConfig = {
-    title: 'Join ExtraBread Today',
+    title: common('join_extrbread'),
     onClick: onJoinExtrabread,
   };
 
@@ -181,28 +118,28 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
       <Seo title={title} description={description} keywords={keywords} imageFeature={image}></Seo>
       <div className="flex flex-col">
         <BannerX
-          tag={'Partnership'}
-          heading="The Ultimate Side Hustle"
-          desc="This is the perfect opportunity to earn extra monthly income & bonuses on your free time."
+          tag={common('side_hustle.partner_ship')}
+          heading={common('side_hustle.heading')}
+          desc={common('side_hustle.desc2')}
           image={PartnerCover}
           button={{
-            title: 'Join ExtraBread Today',
+            title: common('join_extrbread'),
             onBtnClick: onJoinExtrabread,
           }}
           leftCmpClassName="lg:justify-between"
           extraComponent={
             <div className="flex gap-3 md:gap-4 lg:mx-auto">
-              {PartnerBenefit.map(item => {
-                const Icon = item.icon;
+              {bannerItems.map(item => {
+                const Icon = PartnerProgramConfigs[item.key];
                 return (
-                  <div key={`${item.desc}`} className="flex flex-col items-center gap-2">
+                  <div key={`${item.key}`} className="flex flex-col items-center gap-2">
                     <Icon
                       style={{
                         width: 48,
                         height: 48,
                       }}
                     />
-                    <p className="text-center text-sm max-w-[100px]">{item.desc}</p>
+                    <p className="text-center text-sm max-w-[100px]">{t(item.text)}</p>
                   </div>
                 );
               })}
@@ -211,13 +148,16 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
         />
         <DiscoverPartner />
         <div className="flex flex-col">
-          {PartnerPrograms.map(item => (
+          {programs.map(item => (
             <InfoSection
               id={item.key}
               key={`${item.key}`}
               dataConfig={{
                 ...item,
-                tagConfig: item.tagConfig,
+                tagConfig: {
+                  ...PartnerProgramConfigs[item.key]['tagConfig'],
+                  text: t(item.tag),
+                },
                 ctaConfig: ctaConfig,
                 infoClassName: 'lg:max-w-[560px]',
                 extraComponent: <InfoList data={item.items} />,
@@ -225,7 +165,7 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
               image={
                 <div className="flex w-full md:w-[40%] lg:w-[45%] h-[100%] bg-green-100">
                   <Image
-                    src={item.imageLink}
+                    src={PartnerProgramConfigs[item.key].imageLink || ''}
                     alt="info-image"
                     width={700}
                     height={780}
@@ -234,7 +174,7 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
                   />
                 </div>
               }
-              imageDirection={item.imageDirection as ImageDirection}
+              imageDirection={PartnerProgramConfigs[item.key]['imageDirection'] as ImageDirection}
             />
           ))}
         </div>
@@ -242,12 +182,10 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
         <Stories />
         <PartnerForm
           ref={registerForm}
-          heading={'Earn Extra Cash with ExtraBread'}
-          description={
-            'Turn your downtime into extra cash with ExtraBread! No need for big commitments - refer businesses and watch the bonuses and monthly residual income roll in. Sign up with us today.'
-          }
-          formTitle="Start Earning Monthly Residual Income Today"
-          formSubTilte="Fill out the form and we will reach out to you in 24-48 hours"
+          heading={t('form_heading')}
+          description={t('from_sub_heading')}
+          formTitle={t('form_title')}
+          formSubTilte={t('form_desc')}
         />
       </div>
     </>

@@ -2,7 +2,7 @@ import { Icon } from '@/ui/atoms/icon/Icon';
 import { Space, Typography } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { Heading } from '~/ui/atoms/heading/Heading';
 import styles from './SolutionExplore.module.scss';
 

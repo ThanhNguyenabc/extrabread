@@ -1,8 +1,23 @@
 import { BlogDetail } from '@/ui/templates/blogs/blog-detail/BlogDetail';
 import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { GetStaticPaths, GetStaticProps } from 'next/types';
 import { Seo } from '~/ui/util-components/Seo';
 
-const Blog = () => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+  },
+});
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: false,
+  };
+};
+
+const BlogDetailPage = () => {
   const { t } = useTranslation('common');
   const title = t('home.title');
   const description = t('home.description');
@@ -17,4 +32,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default BlogDetailPage;
