@@ -7,17 +7,19 @@ import { BUSINESS_MENU } from '~/constants/index';
 import { Container } from '~/ui/atoms/container/Container';
 import { Heading } from '~/ui/atoms/heading/Heading';
 
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
+import { useMemo } from 'react';
 import styles from './AllBusinesses.module.scss';
 
 const { Text } = Typography;
 
 type Props = {
-  heading?: string[];
+  heading?: string;
   subHeading?: string;
   noColor?: boolean;
   gridClass?: string;
-  list: typeof BUSINESS_MENU;
+  list?: typeof BUSINESS_MENU;
   bolder?: boolean;
   cardClassName?: string;
   gridClassName?: string;
@@ -26,7 +28,7 @@ type Props = {
 
 export const AllBusinesses = ({
   heading,
-  list,
+  list = BUSINESS_MENU,
   subHeading,
   noColor,
   type,
@@ -34,6 +36,15 @@ export const AllBusinesses = ({
   gridClassName,
   bolder = true,
 }: Props) => {
+  const { t: common } = useTranslation();
+
+  const Business = useMemo(() => {
+    return list.map(item => ({
+      ...item,
+      title: common(item.title),
+    }));
+  }, [common]);
+
   return (
     <div
       className={mapModifiers(
@@ -47,9 +58,7 @@ export const AllBusinesses = ({
       {heading && (
         <div className={styles['all-businesses_heading']}>
           <Heading level={3} centered>
-            {heading.map((item, idx) => (
-              <Text key={`${idx}`}>{item}&nbsp;</Text>
-            ))}
+            <div dangerouslySetInnerHTML={{ __html: heading }} />
           </Heading>
         </div>
       )}
@@ -61,7 +70,7 @@ export const AllBusinesses = ({
       )}
 
       <Container className={classNames(styles['all-businesses_cards'], gridClassName)}>
-        {list.map((item, idx) => {
+        {Business?.map((item, idx) => {
           return (
             <Link href={item.href} key={`${idx}`}>
               <div className={classNames(styles['all-businesses_card'], cardClassName)}>

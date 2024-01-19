@@ -22,6 +22,8 @@ import revelLogo from 'public/images/service-logos/revel-color.png';
 import toastLogo from 'public/images/service-logos/toast-color.png';
 
 import { RouteConfig } from '@/constants';
+import { useTranslation } from 'next-i18next';
+import { useMemo } from 'react';
 import { Flex } from '~/ui/atoms/flex/Flex';
 import { Heading } from '~/ui/atoms/heading/Heading';
 import { BusinessList } from '~/ui/organisms/business-list/BusinessList';
@@ -30,117 +32,31 @@ import styles from './BusinessTypesTemplate.module.scss';
 
 const { Text } = Typography;
 
-const SERVICES: any[] = [
-  {
-    heading: 'Customizable cloud system',
-    items: [
-      {
-        title: 'Online Data Storage',
-        description:
-          'Instead of being stored on a local computer or server, the point-of-sale systems process and store the data online, making it accessible from anywhere with internet connection',
-      },
-      {
-        title: 'Fast Processing',
-        description:
-          'Allow for faster transactions with a wider range of payment options with a system that has been improved for increased speed and accuracy.',
-      },
-      {
-        title: 'Keep Your Business Running',
-        description:
-          'In the event of a crash or malfunction, you can easily retrieve your data due to a secure backup system and know that all your important business information is protected at all times',
-      },
-    ],
-  },
-  {
-    heading: 'Customer Payments',
-    items: [
-      {
-        title: 'Additional Screens for Increased Freedom',
-        description:
-          'With both merchant and customer-facing screen options, you can manage the transaction on your end while giving customers the ability to pay using their preferred method.',
-      },
-      {
-        title: 'Efficient and Contactless Payments',
-        description:
-          'The portability allows customers to quickly handle over-the-counter payments or make contactless payments with ease.',
-      },
-      {
-        title: 'Flexible Payment Processing',
-        description:
-          'Process payments quickly while in line or anywhere in the store with our POS systems and provide your customers with the convenience of contactless payment options through swiping, dipping, or tapping.',
-      },
-    ],
-  },
-  {
-    heading: 'Staff Management',
-    items: [
-      {
-        title: 'Monitor Employee Sales',
-        description:
-          'Monitor and keep track of sales made by your staff to incentivize top performers and establish commission plans for teams.',
-      },
-      {
-        title: 'Establish Access Controls',
-        description:
-          'Maintain control over access to confidential business information and records by your staff members.',
-      },
-      {
-        title: 'Efficient Shift Planning',
-        description:
-          'Easily plan and schedule employee shifts on a weekly, monthly, or yearly basis using the shift management feature.',
-      },
-    ],
-  },
-  {
-    heading: 'Inventory Management',
-    items: [
-      {
-        title: 'Establish SKUs and Variants',
-        description:
-          'Efficiently manage your products and stock by creating size or style variants that fit your business needs.',
-      },
-      {
-        title: 'Receive Low-Stock Alerts',
-        description:
-          'Set up inventory management alerts based on your ordering process to avoid missing sales.',
-      },
-      {
-        title: 'Quickly Add or Update Products',
-        description:
-          'By using accessories like a barcode scanner, you can quickly and efficiently add or update your inventory.',
-      },
-    ],
-  },
-  {
-    heading: 'Customer Loyalty Programs',
-    items: [
-      {
-        title: 'Offer Rewards & Send Promotions',
-        description:
-          'Reach out to your customers through text, email, or receipts with special deals, promotions, and sales.',
-      },
-      {
-        title: 'Gain Customer Insights',
-        description:
-          'Use our various POS systems to gather immediate feedback from your customers and continuously improve your business.',
-      },
-      {
-        title: 'Increase Sales with Gift Cards',
-        description:
-          'Enhance your profits and brand by offering custom or pre-designed physical or digital gift cards that can be redeemed using smartphones.',
-      },
-    ],
-  },
-];
-
-const TAGS = ['Casual Dining', 'Coffee Shops', 'Retail', 'Bakeries', '+ More'];
+const ICONS = [AcceptAllPaymentIcon, FastCheckoutIcon, UserFriendlyIcon, OnsiteSupportIcon];
 
 export const SmallBusiness = () => {
+  const { t } = useTranslation('small_business');
+  const { t: common } = useTranslation();
+
+  const Services = useMemo(() => {
+    return t('services.items', { returnObjects: true }) as Array<any>;
+  }, [t]);
+
+  const Features = useMemo(() => {
+    return (t('features', { returnObjects: true }) as string[]).map((item, index) => ({
+      icon: ICONS[index],
+      text: item,
+    }));
+  }, [common]);
+
+  const Tags = useMemo(() => {
+    return t('tags', { returnObjects: true }) as string[];
+  }, [t]);
   return (
     <div>
       <Banner
         type={['business', 'align-left']}
-        content={<span>Small Business</span>}
+        content={<span>{common('business_categories.small_business')}</span>}
         button={
           <GetPricingButton
             className={styles['business-types_pricing-btn']}
@@ -151,13 +67,9 @@ export const SmallBusiness = () => {
         src={BannerImg.src}
         descriptions={
           <div className={styles['business-types_banner-description']}>
-            <Text className="font-18-16-16 block mb-24">
-              When operating your restaurant tableside, you&#39;re going to be in need of a
-              point-of-sale system that allows for built-in dining solutions to provide you and your
-              customers an easy experience
-            </Text>
+            <Text className="font-18-16-16 block mb-24">{t('desc')}</Text>
             <div className={styles['business-types_tags']}>
-              {TAGS.map((item, idx) => (
+              {Tags?.map((item, idx) => (
                 <Space key={`${idx}`} size={4}>
                   <Icon name="check" color="grey" style={{ width: 20 }} />
                   <span>{item}</span>
@@ -169,20 +81,14 @@ export const SmallBusiness = () => {
         extractComponent={
           <div className={styles['business-types_banner-footer']}>
             <Text strong className="font-18">
-              Point-of-Sale Features
+              {common('point_of_sale_features.heading')}
             </Text>
-            <Flex direction="column" align="center">
-              <AcceptAllPaymentIcon /> <Text className="text-grey">Accept all payment forms</Text>
-            </Flex>
-            <Flex direction="column" align="center">
-              <FastCheckoutIcon /> <Text className="text-grey">Fast checkout</Text>
-            </Flex>
-            <Flex direction="column" align="center">
-              <UserFriendlyIcon /> <Text className="text-grey">User Friendly</Text>
-            </Flex>
-            <Flex direction="column" align="center">
-              <OnsiteSupportIcon /> <Text className="text-grey">Local on-site support</Text>
-            </Flex>
+            {Features?.map(({ text, icon: Icon }) => (
+              <Flex direction="column" align="center">
+                <Icon />
+                <Text className="text-grey">{text}</Text>
+              </Flex>
+            ))}
           </div>
         }
       />
@@ -190,10 +96,8 @@ export const SmallBusiness = () => {
       <BreadCard isGrey>
         <SolutionList
           headings={[
-            'Top recommended ',
-            <>
-              POS systems <br className="hide-pc" /> for Small Businesses
-            </>,
+            common('top_recommend'),
+            ` ${common('pos_system_for')} ${common('business_categories.small_business')}`,
           ]}
           content={[
             {
@@ -234,9 +138,11 @@ export const SmallBusiness = () => {
       </BreadCard>
 
       <BreadCard>
-        <Heading level={3}>Small Businesses Must-Haves</Heading>
+        <Heading level={3}>{`${common('business_categories.small_business')} ${common(
+          'must_have',
+        )}`}</Heading>{' '}
         <div className={styles['business-types_business-list']}>
-          {SERVICES.map((item, idx) => (
+          {Services?.map((item, idx) => (
             <BusinessList {...item} key={`${idx}`} column={3} />
           ))}
         </div>

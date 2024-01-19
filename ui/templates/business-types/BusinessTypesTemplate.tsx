@@ -7,9 +7,7 @@ import { BusinessExplore } from '~/ui/organisms/business-explore/BusinessExplore
 import { CTAInnerFooter } from '~/ui/organisms/cta-inner-footer/CTAInnerFooter';
 import { BreadFooter } from '~/ui/organisms/footer/Footer';
 
-import { useHookstate } from '@hookstate/core';
 import { useTranslation } from 'next-i18next';
-import { commonState } from '~/hooks/useCtaFooterState';
 import { useDevice } from '~/hooks/useDetectMobile';
 import {
   CashDiscountProgramImg,
@@ -93,24 +91,19 @@ export const BusinessTypesTemplate = ({ children }: PropsWithChildren) => {
           activeKey={activeTab}
           onChange={value => push(value)}
           items={BUSINESS_MENU.map(item => ({
-            title: item.title,
+            title: common(item.title),
             value: item.href,
           }))}
         />
       </div>
-
       {children}
-
       <BreadCard isGrey>
         <SolutionPackages heading={common('feature_favored')} items={SOLUTION_PACKAGES} />
       </BreadCard>
-
       <UniqueValue />s
-
       <BreadCard>
         <BusinessExplore heading={common('explore_other_types')} items={menus as any} />
       </BreadCard>
-
       <CTAInnerFooter htmlText={common('footer.heading')} bonus={240} sale={7500} />
     </main>
   );
