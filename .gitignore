@@ -39,3 +39,5 @@ yarn-error.log*
 .turbo
 styles/dist.css
 yarn.lock
+.vscode
+
