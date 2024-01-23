@@ -20,20 +20,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   };
 };
 
-const slugs = ['credit-card', 'mobile-card', 'online-processing'];
-
 export const getStaticPaths = () => {
-  console.log('--------server side-----------');
-  console.log(
-    slugs.flatMap(item => {
-      return ['en', 'es'].map(locale => ({
-        params: {
-          slug: item,
-        },
-        locale,
-      }));
-    }),
-  );
   return {
     paths: SOLUTIONS_MENU.flatMap(item => {
       return ['en', 'es'].map(locale => ({
