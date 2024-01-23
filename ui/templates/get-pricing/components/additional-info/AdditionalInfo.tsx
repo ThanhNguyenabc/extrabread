@@ -1,4 +1,5 @@
 import { Form, Input, InputNumber, Radio, Tooltip } from 'antd';
+import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 import { Button } from '~/ui/atoms/button/Button';
 import { Flex } from '~/ui/atoms/flex/Flex';
@@ -13,6 +14,9 @@ type Props = {
 };
 
 export const AdditionalInfo = (props: Props) => {
+  const { t } = useTranslation('questionnaire');
+  const { t: common } = useTranslation();
+
   const [form] = Form.useForm<FormValue>();
   const [showForm, setShowForm] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -20,8 +24,8 @@ export const AdditionalInfo = (props: Props) => {
   useEffect(() => {
     form.setFieldsValue({
       price: 50,
-      onCashDiscount: `Yes, I'm on it`,
-      franchise: "Yes, I'm a franchise",
+      onCashDiscount: t('on_cash_discount'),
+      franchise: t('franchise'),
       locationsHave: 1,
       stationsHave: '0-1',
     });
@@ -49,7 +53,7 @@ export const AdditionalInfo = (props: Props) => {
         {!showForm && (
           <Button type="primary" onClick={() => setShowForm(true)} className="w-fit self-center">
             <Flex>
-              Continue
+              {common('continue')}
               <Icon name="down" color="white" size={24} />
             </Flex>
           </Button>
@@ -59,19 +63,13 @@ export const AdditionalInfo = (props: Props) => {
           <>
             <div className={styles['additionalInfo_checkbox-row']}>
               <Flex>
-                <label>Are you currently on cash discount?</label>
+                <label>{t('cash_discount')}</label>
                 <Tooltip
                   arrow
                   placement="right"
                   overlayClassName={styles['additionalInfo_tooltip']}
                   align={{ offset: [8, 0] }}
-                  title={
-                    <span>
-                      Also known as Zero processing, or passing off the fees to the customer. A cash
-                      discount is when you post credit card prices and offer a discount on that
-                      price for customers who pay with cash.
-                    </span>
-                  }
+                  title={<span>{t('cash_discount_desc')}</span>}
                 >
                   <span>
                     <Icon name="info" color="light" />
@@ -80,35 +78,34 @@ export const AdditionalInfo = (props: Props) => {
               </Flex>
               <Form.Item name="onCashDiscount" rules={[{ required: true }]}>
                 <Radio.Group>
-                  {[
-                    "Yes, I'm on it",
-                    "No, but I'm willing to go on it",
-                    'Not sure what that is',
-                    'Not interested',
-                  ].map((item, idx) => (
-                    <Radio key={idx} value={item} className={styles['additionalInfo_radio']}>
-                      {item}
-                    </Radio>
-                  ))}
+                  {(t('cash_discount_questions', { returnObjects: true }) as string[])?.map(
+                    (item, idx) => (
+                      <Radio key={idx} value={item} className={styles['additionalInfo_radio']}>
+                        {item}
+                      </Radio>
+                    ),
+                  )}
                 </Radio.Group>
               </Form.Item>
             </div>
 
             <div className={styles['additionalInfo_checkbox-row']}>
-              <label>Are you a franchise/franchisee?</label>
+              <label>{t('franchise_heading')}</label>
               <Form.Item name="franchise" rules={[{ required: true }]}>
                 <Radio.Group>
-                  {["Yes, I'm a franchise", "Yes, I'm a franchisee", 'Neither'].map((item, idx) => (
-                    <Radio key={idx} value={item} className={styles['additionalInfo_radio']}>
-                      {item}
-                    </Radio>
-                  ))}
+                  {(t('franchise_questions', { returnObjects: true }) as string[])?.map(
+                    (item, idx) => (
+                      <Radio key={idx} value={item} className={styles['additionalInfo_radio']}>
+                        {item}
+                      </Radio>
+                    ),
+                  )}
                 </Radio.Group>
               </Form.Item>
             </div>
 
             <div className={styles['additionalInfo_checkbox-row']}>
-              <label>How many locations do you have?</label>
+              <label>{t('location_question')}</label>
               <Form.Item name="locationsHave" rules={[{ required: true }]}>
                 <InputNumber
                   size="large"
@@ -131,7 +128,7 @@ export const AdditionalInfo = (props: Props) => {
             </div>
 
             <div className={styles['additionalInfo_checkbox-row']}>
-              <label>How many stations do you currently have?</label>
+              <label> {t('station_question')}</label>
               <Form.Item name="stationsHave" rules={[{ required: true }]}>
                 <Radio.Group>
                   {['0-1', '2-4', '5+'].map((item, idx) => (
@@ -144,15 +141,15 @@ export const AdditionalInfo = (props: Props) => {
             </div>
 
             <div className={styles['additionalInfo_checkbox-row']}>
-              <label>What point-of-sale system are you currently using?</label>
+              <label>{t('sale_system_question')}</label>
               <Form.Item name="usingPointOfSale" rules={[{ required: true }]}>
-                <Input placeholder="Name of POS system" size="large" />
+                <Input placeholder={t('name_of_pos')} size="large" />
               </Form.Item>
             </div>
 
             <div className={styles['additionalInfo-form_button']}>
               <Button htmlType="submit" type="primary" loading={loading}>
-                Submit
+                {common('submit')}
               </Button>
             </div>
           </>

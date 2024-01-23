@@ -1,4 +1,6 @@
 import { Modal, ModalProps, Typography } from 'antd';
+import HtmlParser from 'html-react-parser';
+import { useTranslation } from 'next-i18next';
 import { useEffect } from 'react';
 import { EMAIL, PHONE } from '~/constants/index';
 import { Button } from '~/ui/atoms/button/Button';
@@ -13,6 +15,9 @@ type Props = ModalProps & {
 };
 
 export const ConfirmModal = ({ onContinue, ...props }: Props) => {
+  const { t } = useTranslation('questionnaire');
+  const { t: common } = useTranslation();
+
   useEffect(() => {
     props.open && window.dataLayer.push({ event: 'getpricing_leadsubmitted' });
   }, [props.open]);
@@ -27,20 +32,14 @@ export const ConfirmModal = ({ onContinue, ...props }: Props) => {
     >
       <div className={styles['confirm-modal_inner']}>
         <Flex direction="column" gap={16}>
-          <Heading level={4}>
-            Great! We&#39;ve received <br className="only-sp" /> your initial information.
-          </Heading>
-
-          <Text className="font-18 text-grey">
-            To speed up the process and receive a direct quote, you can either complete the next
-            part (only 6 questions) or schedule a call with us at your convenience.
-          </Text>
+          <Heading level={4}>{HtmlParser(t('confirm_heading'))}</Heading>
+          <Text className="font-18 text-grey">{t('confirm_desc')}</Text>
         </Flex>
 
         <Flex direction="column" gap={16}>
           <Button block type="primary" onClick={onContinue}>
             <Flex type="inline">
-              Continue to Proceed Quotation
+              {t('next_processing')}
               <Icon name="right" color="white" />
             </Flex>
           </Button>
@@ -50,16 +49,14 @@ export const ConfirmModal = ({ onContinue, ...props }: Props) => {
             target="_blank"
           >
             <Flex type="inline">
-              Schedule a Call
+              {common('schedule_call')}
               <Icon name="calendar" />
             </Flex>
           </Button>
         </Flex>
 
         <Flex direction="column" gap={16} className="hide-tb">
-          <Text className="text-grey">
-            If you would like to learn more, feel free to contact us at
-          </Text>
+          <Text className="text-grey">{common('learn_more_infor')}</Text>
           <Flex gap={16}>
             <Flex gap={0}>
               <Icon name="phone" color="green-active" />

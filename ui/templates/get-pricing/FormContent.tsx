@@ -1,10 +1,12 @@
 import { ConfigProvider, Form, Input, Radio, Space, Typography } from 'antd';
 import variables from 'assets/styles/variables.module.scss';
 import classNames from 'classnames';
-import React, { FC, Fragment, useEffect, useState } from 'react';
+import React, { FC, Fragment, useEffect, useMemo, useState } from 'react';
 import { PatternFormat } from 'react-number-format';
 
 import { US_STATE_CODE } from '@/constants/us-state-code';
+import HtmlParser from 'html-react-parser';
+import { useTranslation } from 'next-i18next';
 import { US_MASK } from '~/constants/index';
 import { useDevice } from '~/hooks/useDetectMobile';
 import { Button } from '~/ui/atoms/button/Button';
@@ -23,17 +25,14 @@ import { FormValue } from './types';
 
 const STATIONS = [
   {
-    label: '0-2 station',
     value: '0-2',
     img: '/images/1-stations.png',
   },
   {
-    label: '2-3 stations',
     value: '2-3',
     img: '/images/2-stations.png',
   },
   {
-    label: '5+ stations',
     value: '5+',
     img: '/images/4-stations.png',
   },
@@ -48,21 +47,9 @@ type Props = {
 const { infoBaseColor } = variables;
 const { Text } = Typography;
 
-const STEPS = [
-  { tab: 'Type of business', label: 'What type of business?' },
-  { tab: 'What are you looking for?', label: 'What are you looking for?' },
-  {
-    tab: 'Contact Information',
-    label: (
-      <div className="text-center">
-        We need your contact <br className="hide-pc" /> to follow up
-      </div>
-    ),
-  },
-  { tab: 'Additional info', label: 'Final set of questions' },
-];
-
 export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
+  const { t } = useTranslation('questionnaire');
+  const { t: common } = useTranslation();
   const { isMobile } = useDevice();
   const [step, setStep] = useState(1);
   const [subStep2, setSubStep2] = useState(0);
@@ -82,12 +69,25 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
     }
   }, [step]);
 
+  const STEPS = useMemo(() => {
+    return [
+      { ...t('steps.first', { returnObjects: true }) },
+      { ...t('steps.second', { returnObjects: true }) },
+
+      {
+        tab: t('steps.third.tab'),
+        label: <div className="text-center">{t('steps.third.label')}</div>,
+      },
+      { ...t('steps.fourth', { returnObjects: true }) },
+    ] as Array<{ tab: string; label: string }>;
+  }, [t]);
+
   return (
     <Fragment>
       <ProcessBar activeIndex={step - 1} steps={STEPS} onGoBack={() => setStep(step - 1)} />
       {step === 1 && (
         <div className={styles['get-pricing_list']}>
-          {!isMobile && <Text className="heading-display-sm">What type of business?</Text>}
+          {!isMobile && <Text className="heading-display-sm">{t('type_of_business')}</Text>}
           <PricingBusinessList
             onClick={value => {
               setBusiness(value.index);
@@ -109,9 +109,7 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
           {!isMobile && (
             <div className={styles['get-pricing_heading']}>
               <ArrowCircleButton onClick={() => setStep(1)} />
-              <Heading level={5}>
-                What are you <br className="only-sp" /> looking for?
-              </Heading>
+              <Heading level={5}>{HtmlParser(t('looking_for'))}</Heading>
               <div style={{ width: 40 }} />
             </div>
           )}
@@ -131,19 +129,16 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
                   setAnswer(preVal => ({
                     ...preVal,
                     stationsLookingFor: undefined,
-                    lookingFor: 'Cash signing bonus',
+                    lookingFor: t('cash_signing_bonus'),
                   }));
                 }}
                 className={classNames(subStep2 === 1 && styles['btn-selected'])}
               >
-                Cash signing bonus
+                {t('cash_signing_bonus')}
               </Button>
               {subStep2 === 1 && (
                 <div className={styles['get-pricing_form-inner']}>
-                  <Text>
-                    Are you currently passing your card payments fees to the customer?{' '}
-                    <br className="hide-pc" /> (cash discount program)
-                  </Text>
+                  <Text>{HtmlParser(t('card_payment_fee'))}</Text>
                   <Space size={16}>
                     <Button
                       size="small"
@@ -154,7 +149,7 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
                         setStep(3);
                       }}
                     >
-                      Yes
+                      {common('yes')}
                     </Button>
                     <Button
                       size="small"
@@ -163,7 +158,7 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
                         setStep(3);
                       }}
                     >
-                      No
+                      {common('no')}
                     </Button>
                   </Space>
                 </div>
@@ -181,7 +176,7 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
                 }}
                 className={classNames(subStep2 === 2 && styles['btn-selected'])}
               >
-                Zero processing fees
+                {common('Zero Processing Fees')}
               </Button>
 
               {/* Point-of-sale system button */}
@@ -191,17 +186,17 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
                   setAnswer(preVal => ({
                     ...preVal,
                     cashBonus: undefined,
-                    lookingFor: 'Point-of-sale system',
+                    lookingFor: common('point_of_sale_systems'),
                   }));
                 }}
                 className={classNames(subStep2 === 3 && styles['btn-selected'])}
               >
-                Point-of-sale system
+                {common('point_of_sale_systems')}
               </Button>
 
               {subStep2 === 3 && (
                 <div className={styles['get-pricing_form-inner']}>
-                  <Text>How many stations are you looking for?</Text>
+                  <Text>{t('question_for_stations')}</Text>
                   <div className={styles['get-pricing_point-of-sale']}>
                     {STATIONS.map((item, idx) => (
                       <Button
@@ -220,7 +215,7 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
                         )}
                       >
                         <img src={item.img} />
-                        <Text className="weight-600">{item.label}</Text>
+                        <Text className="weight-600"> {`${item.value} ${common('stations')}`}</Text>
                       </Button>
                     ))}
                   </div>
@@ -234,13 +229,13 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
                     ...preVal,
                     cashBonus: undefined,
                     stationsLookingFor: undefined,
-                    lookingFor: 'All of the above',
+                    lookingFor: t('all_of_above'),
                   }));
                   setStep(3);
                 }}
                 className={classNames(subStep2 === 4 && styles['btn-selected'])}
               >
-                All of the above
+                {t('all_of_above')}
               </Button>
             </div>
           </ConfigProvider>
@@ -252,9 +247,7 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
           {!isMobile && (
             <div className={styles['get-pricing_heading']}>
               <ArrowCircleButton onClick={() => setStep(2)} />
-              <Heading level={5}>
-                We need your contact <br className="hide-pc" /> to follow up
-              </Heading>
+              <Heading level={5}>{t('follow_up_contact')}</Heading>
               <div style={{ width: 40 }} />
             </div>
           )}
@@ -279,14 +272,18 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
                 },
               }}
             >
-              <Form.Item label="Your name" name="name" rules={[{ required: true }]}>
+              <Form.Item label={common('your_name')} name="name" rules={[{ required: true }]}>
                 <Input placeholder="e.g. John" size="large" />
               </Form.Item>
-              <Form.Item label="Business name" name="business_name" rules={[{ required: true }]}>
+              <Form.Item
+                label={common('business_name')}
+                name="business_name"
+                rules={[{ required: true }]}
+              >
                 <Input placeholder="e.g. Burger King" size="large" />
               </Form.Item>
               <Form.Item
-                label="Phone Number"
+                label={common('phone_number')}
                 name="phone"
                 rules={[
                   {
@@ -294,7 +291,7 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
                     validator: (__, value: string) => {
                       const areaCode = (value ?? '').replace(/\D/g, '').substring(0, 3);
                       if (!US_STATE_CODE.includes(+areaCode)) {
-                        return Promise.reject('Invalid us area code');
+                        return Promise.reject(common('error_invalid_area_code'));
                       }
                       return Promise.resolve();
                     },
@@ -308,7 +305,7 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
                 />
               </Form.Item>
               <Form.Item
-                label="Email"
+                label={common('email')}
                 name="email"
                 rules={[
                   {
@@ -317,33 +314,37 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
                   },
                 ]}
               >
-                <Input placeholder="email@example.com" size="large" />
+                <Input
+                  placeholder={`${common('email').toLowerCase()}@${common('example')}`}
+                  size="large"
+                />
               </Form.Item>
-              <Form.Item label="Website" name="website" rules={[{ required: true }]}>
+              <Form.Item label={common('website')} name="website" rules={[{ required: true }]}>
                 <Input placeholder="e.g. extrabread.co" size="large" />
               </Form.Item>
               <Form.Item
-                label="How did you hear about us?"
+                label={common('hear_about_us')}
                 name="heardAbout"
                 rules={[{ required: true }]}
               >
                 <Radio.Group>
-                  <Radio value={'Lil Mo'}>Lil Mo</Radio>
-                  <Radio value={'BestPOS'}>BestPOS</Radio>
-                  <Radio value={'Referral'}>Referral</Radio>
-                  <Radio value={'Other'}>Other</Radio>
+                  {(common('sources', { returnObjects: true }) as string[]).map(item => (
+                    <Radio key={item} value={item}>
+                      {item}
+                    </Radio>
+                  ))}
                 </Radio.Group>
               </Form.Item>
               {heardAbout === 'Other' && (
                 <Form.Item name="other" rules={[{ required: true }]}>
-                  <Input placeholder="Please specify" size="large" />
+                  <Input placeholder={common('please_specify')} size="large" />
                 </Form.Item>
               )}
             </ConfigProvider>
             <div style={{ textAlign: 'start' }}>
               <Button type="primary" htmlType="submit">
                 <Flex align="center">
-                  Continue
+                  {common('continue')}
                   <Icon name="right" color="white" size={24} />
                 </Flex>
               </Button>
@@ -367,7 +368,7 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
           {!isMobile && (
             <div className={styles['get-pricing_heading']}>
               <ArrowCircleButton onClick={() => setStep(3)} />
-              <Heading level={5}>Final set of questions</Heading>
+              <Heading level={5}>{t('set_of_questions')}</Heading>
               <div style={{ width: 40 }} />
             </div>
           )}

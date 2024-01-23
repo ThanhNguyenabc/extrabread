@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { BUSINESS_MENU } from '~/constants/index';
 import { Container } from '~/ui/atoms/container/Container';
 
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import styles from './GetPricing.module.scss';
 
@@ -14,10 +15,12 @@ interface Props {
 }
 
 export const PricingBusinessList = ({ activeIndex, onClick }: Props) => {
+  const { t: common } = useTranslation();
   return (
     <Container className={classNames(styles['pricing-business_cards'])}>
       {BUSINESS_MENU.map((item, idx) => {
         const isActive = activeIndex === idx;
+        const title = common(item.title);
         return (
           <div
             key={`${idx}`}
@@ -28,7 +31,7 @@ export const PricingBusinessList = ({ activeIndex, onClick }: Props) => {
             onClick={() =>
               onClick?.({
                 index: idx,
-                value: item.title,
+                value: title,
               })
             }
           >
@@ -41,7 +44,7 @@ export const PricingBusinessList = ({ activeIndex, onClick }: Props) => {
               src={item.src}
               className={styles['pricing-business_card-img']}
             />
-            <Text className={styles['pricing-business_card-title']}>{item.title}</Text>
+            <Text className={styles['pricing-business_card-title']}>{title}</Text>
 
             {isActive && (
               <img

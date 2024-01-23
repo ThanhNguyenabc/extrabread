@@ -1,4 +1,5 @@
 import { Typography } from 'antd';
+import { useTranslation } from 'next-i18next';
 import React from 'react';
 import { Button } from '~/ui/atoms/button/Button';
 import styles from './GetPricing.module.scss';
@@ -10,19 +11,22 @@ type Props = {
 };
 
 export const IntroduceContent = (props: Props) => {
+  const { t: common } = useTranslation();
+  const { t } = useTranslation('questionnaire');
+
   return (
     <div className={styles['get-pricing_introduce']}>
       <Text className={styles['get-pricing_introduce-heading']}>
-        Get pricing for POS and CC processing packages
+        {t('heading')}
       </Text>
 
       <Text className={styles['get-pricing_introduce-text']}>
-        To ensure we provide the most effective payment processing, point of sale solutions & cash
-        signing bonus for your business, we require some initial information from you.{' '}
+      
+        {t('description')}
       </Text>
 
       <Button onClick={props.onNext} type="primary" color="black" block className="mt-40">
-        Get Started
+        {common('get_started')}
       </Button>
     </div>
   );

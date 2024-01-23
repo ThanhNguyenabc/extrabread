@@ -159,5 +159,28 @@
     "monthly_pricing_desc": "Por mes (promedio de 3 estaciones o más)",
     "pricing": "Precios",
     "or": "O",
-    "suggested_business": "Tipos de negocios sugeridos"
+    "suggested_business": "Tipos de negocios sugeridos",
+    "your_name": "Su nombre",
+    "business_name": "Nombre del Negocio",
+    "phone_number": "Teléfono",
+    "website": "Sitio web",
+    "continue": "Continuar",
+    "please_specify": "Por favor especifica",
+    "error_invalid_area_code": "Código de área estadounidense no válido",
+    "hear_about_us": "¿Cómo te enteraste de nosotros?",
+    "yes": "Sí",
+    "no": "No",
+    "sources": [
+        "Lil Mo",
+        "BestPOS",
+        "Referral",
+        "Other"
+    ],
+    "example": "ejemplo",
+    "schedule_call": "Programe una llamada",
+    "learn_more_infor": "Si desea obtener más información, no dude en contactarnos en",
+    "required_message": "¡Este campo es obligatorio!",
+    "station": "estación",
+    "stations": "estaciones",
+    "submit": "Entregar"
 }

@@ -115,7 +115,7 @@ export const GetPricingTemplate: FC<Props> = ({ type = 'default', children }) =>
   };
 
   const handleSubmit = async (formValues: FormValue) => {
-    await softSubmit(formValues, false);
+    // await softSubmit(formValues, false);
     setShowFinish(true);
     window.dataLayer.push({ event: 'getpricing_fullinfo' });
     window.scrollTo({ top: 0, behavior: 'smooth' });

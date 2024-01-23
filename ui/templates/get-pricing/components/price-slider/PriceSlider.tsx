@@ -1,6 +1,7 @@
 import { Slider, Typography } from 'antd';
 import { SliderMarks } from 'antd/es/slider';
 import variables from 'assets/styles/variables.module.scss';
+import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { Flex } from '~/ui/atoms/flex/Flex';
 import { Heading } from '~/ui/atoms/heading/Heading';
@@ -21,15 +22,16 @@ const marks: SliderMarks = {
   200: '$200K+',
 };
 export const PriceSlider = ({ onChange, ...props }: Props) => {
+  const { t } = useTranslation('questionnaire');
+  const { t: common } = useTranslation();
+
   const [price, setPrice] = useState(50);
   return (
     <div className={styles.priceSlider}>
       <div className={styles['priceSlider_slider-wrapper']}>
         <Flex gap={16} gapSp={8} direction="column">
-          <Heading level={3}>$0 - ${price ? price + 'K+' : '0'}</Heading>
-          <Text className="f-body-lg-semi text-grey">
-            What is your monthly credit card processing volume?
-          </Text>
+          <Heading level={3}>$0 - ${common('p[rice') ? common('price') + 'K+' : '0'}</Heading>
+          <Text className="f-body-lg-semi text-grey">{t('processing_volume')}</Text>
         </Flex>
         <Slider
           min={0}
