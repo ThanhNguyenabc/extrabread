@@ -182,5 +182,6 @@
     "example": "example",
     "required_message": "This field is required!",
     "station": "station",
-    "stations": "stations"
+    "stations": "stations",
+    "learn_more_business": "Learn more about how we can help your business."
 }
