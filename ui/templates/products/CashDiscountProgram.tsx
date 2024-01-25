@@ -1,7 +1,9 @@
 import { Collapse, Space, Typography } from 'antd';
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import CashDiscountProgramBanner from 'public/images/banners/Cash Discount Program.png';
 import TheUltimateSolutionImg from 'public/images/products/The Ultimate Solution.png';
+import { useMemo } from 'react';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { Flex } from '~/ui/atoms/flex/Flex';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
@@ -15,39 +17,40 @@ import { DiscoverBanner } from './components/discover-banner/DiscoverBanner';
 const { Panel } = Collapse;
 const { Text } = Typography;
 
-const BANNER_CONTENT = [
-  'Process payments at 0% cost',
-  'Fees are passed onto the customer',
-  'Compliant with laws and regulations in all 50 states',
-  'Receive a FREE credit card terminal at not cost',
-];
-
 export const CashDiscountProgram = () => {
+  const { t } = useTranslation('cash_discount');
+  const { t: common } = useTranslation();
+
+  const BANNER_CONTENT = useMemo(() => {
+    return t('banner', { returnObjects: true }) as string[];
+  }, [t]);
+
+  const PROGRAM = useMemo(() => {
+    return t('program_items', { returnObjects: true }) as string[];
+  }, [t]);
+
   return (
     <div className={styles['cash-discount-program']}>
       <Banner
         hasBackground
         type={['product', 'align-left']}
-        content={
-          <span>
-            Cash <br className="hide-tb" /> Discount <br className="hide-tb" /> Program
-          </span>
-        }
+        content={<span>{common('product_types.cash_discount.title')}</span>}
         button={<GetPricingButton />}
         src={CashDiscountProgramBanner.src}
         descriptions={
           <Space direction="vertical">
-            {BANNER_CONTENT.map((item, idx) => (
-              <Space
-                size={16}
-                align="baseline"
-                key={`${idx}`}
-                className={styles['product_icon-check']}
-              >
-                <Icon name="check" />
-                <Text strong>{item}</Text>
-              </Space>
-            ))}
+            {Array.isArray(BANNER_CONTENT) &&
+              BANNER_CONTENT?.map((item, idx) => (
+                <Space
+                  size={16}
+                  align="baseline"
+                  key={`${idx}`}
+                  className={styles['product_icon-check']}
+                >
+                  <Icon name="check" />
+                  <Text strong>{item}</Text>
+                </Space>
+              ))}
           </Space>
         }
       />
@@ -57,8 +60,8 @@ export const CashDiscountProgram = () => {
           noMargin
           centered
           className={styles['section-heading']}
-          heading="Pay 0% for your processing rates"
-          subHeading="Nowadays, cash discounting is increasingly becoming the preferred method of payment acceptance among small businesses, allowing thousands of them to save significant amounts of money on their monthly processing fees."
+          heading={t('heading')}
+          subHeading={t('desc')}
         />
       </BreadCard>
 
@@ -71,40 +74,28 @@ export const CashDiscountProgram = () => {
             alt="The Ultimate Solution for Your Business Needs"
           />
 
-          <SectionHeading
-            noMargin
-            heading="The Ultimate Solution for Your Business Needs"
-            subHeading="Enrolling in our Cash Discount Program is simple and hassle-free, allowing you to start saving immediately. Upon enrollment, you will receive all the necessary in-store materials to inform your customers about the potential savings, enabling you to maximize your savings."
-          />
+          <SectionHeading noMargin heading={t('program_heading')} subHeading={t('program_desc')} />
           <div>
             <Text className={styles['cash-discount-program_main_sub-header']}>
-              We provide your business with:
+              {t('provide_business')}
             </Text>
 
             <Flex direction="column" gap={32} gapTb={16}>
-              <Space size={12} align="baseline">
-                <Icon name="check-circle-solid" color="green" className={styles['checked-icon']} />
-                <Text strong className="font-18-16-16 text-grey">
-                  We offer simple and user-friendly signs for you to display at your business
-                  entrance and point-of-sale.
-                </Text>
-              </Space>
-
-              <Space size={12} align="baseline">
-                <Icon name="check-circle-solid" color="green" className={styles['checked-icon']} />
-                <Text strong className="font-18-16-16 text-grey">
-                  Our payment processing equipment comes equipped with pre-installed software to
-                  enable you to easily implement the Cash Discount Program.
-                </Text>
-              </Space>
-
-              <Space size={12} align="baseline">
-                <Icon name="check-circle-solid" color="green" className={styles['checked-icon']} />
-                <Text strong className="font-18-16-16 text-grey">
-                  We offer comprehensive back-office reporting tools that enable you to keep track
-                  of your transaction history and monitor your savings.
-                </Text>
-              </Space>
+              {Array.isArray(PROGRAM) &&
+                PROGRAM?.map((item, index) => {
+                  return (
+                    <Space key={`program-item-${index}`} size={12} align="baseline">
+                      <Icon
+                        name="check-circle-solid"
+                        color="green"
+                        className={styles['checked-icon']}
+                      />
+                      <Text strong className="font-18-16-16 text-grey">
+                        {item}
+                      </Text>
+                    </Space>
+                  );
+                })}
             </Flex>
           </div>
         </div>
@@ -146,8 +137,8 @@ export const CashDiscountProgram = () => {
         <AllBusinesses
           noColor
           type="product"
-          heading="Cash Discount Pricing for all types of business"
-          subHeading="Learn more about how we can help your business."
+          heading={t('all_business_heading')}
+          subHeading={common('learn_more_business')}
         />
       </BreadCard>
 
