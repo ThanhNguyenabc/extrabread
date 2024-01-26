@@ -1,0 +1,46 @@
+{
+    "desc": "Using Quickbooks makes bookkeeping easier so you can focus on the important parts of running your business",
+    "banner": [
+        "Transfers to QuickBooks programs without manual intervention",
+        "Handle payment methods and sales management",
+        "Record taxes using single, combined, or multiple rates",
+        "Dashboard can be customized to suit your needs"
+    ],
+    "features": [
+        {
+            "title": "Effortlessly move your sales data",
+            "description": "Avoid wasting time on manual data entry with nightly transfers that consolidate your sales information into the programs you already utilize.",
+            "details": [
+                "Migrate sales data to QuickBooks Online, QuickBooks for Desktop, or Xero",
+                "Link and transfer data to multiple destinations"
+            ]
+        },
+        {
+            "title": "Monitor Payment Information",
+            "description": "Efficiently manage your payment tracking with CommerceSync's simplified system.",
+            "details": [
+                "Keep track of payment methods and tax obligations using single, combined, or multiple rates",
+                "Log complete and partial refunds in a designated income account to maintain organization."
+            ]
+        },
+        {
+            "title": "Customize Your Support",
+            "description": "Get quick and convenient assistance with CommerceSync's customizable dashboard.",
+            "details": [
+                "Automatically reconcile credit settlements with access to support 'after hours'",
+                "No limit or additional fees for the number of daily, monthly, or yearly sales synchronized."
+            ]
+        },
+        {
+            "title": "Increased Functionality with Additional Features",
+            "description": "Eliminates the hassles of business management with its fully automated capabilities.",
+            "details": [
+                "Utilize the Customer Detail function to monitor sales on an individual customer basis.",
+                "Invoices are automatically updated with discounts, tips, refunds, and other adjustments for improved efficiency."
+            ]
+        }
+    ],
+    "all_business_desc": "Eliminate manual bookkeeping for good with QuickBooks Plugin. Find the one that’s right for your business.",
+    "all_business_heading": "Quickbooks Plugin for every business.",
+    "footer_heading": "Ready to implement a Customer Loyalty & Rewards for your business?"
+}

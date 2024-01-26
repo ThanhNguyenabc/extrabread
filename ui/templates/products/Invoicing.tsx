@@ -25,7 +25,6 @@ const ICONS = [
 ];
 export const Invoicing = () => {
   const { t } = useTranslation('invoicing');
-  const { t: common } = useTranslation();
 
   const BANNER_CONTENT = useMemo(() => {
     return t('banner', { returnObjects: true }) as string[];
@@ -80,7 +79,6 @@ export const Invoicing = () => {
               />
             );
           })}
-       
       </BreadCard>
 
       <BreadCard>
