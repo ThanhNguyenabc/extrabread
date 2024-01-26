@@ -162,6 +162,7 @@
     "business_name": "Business name",
     "phone_number": "Phone number",
     "email": "Email",
+    "phone": "Phone",
     "website": "Website",
     "continue": "Continue",
     "please_specify": "Please specify",
@@ -183,5 +184,19 @@
     "required_message": "This field is required!",
     "station": "station",
     "stations": "stations",
-    "learn_more_business": "Learn more about how we can help your business."
+    "learn_more_business": "Learn more about how we can help your business.",
+    "message": "Message",
+    "contact": {
+        "leave_us_message": "Leave us a message",
+        "send_message": "Send message",
+        "contact_message": "If you have any questions, please do not hesitate to contact us.",
+        "share_thought": "What's on your mind? Share your thoughts",
+        "call_us": "Call us now",
+        "email_us": "Email to us",
+        "email_any_questions": "Please email any questions, comments or <br /> suggestions to us",
+        "got_questions": "Got questions? <br /> We’re ready to help you find the answer.",
+        "find_answer": "Find the answers using our Self-service",
+        "FAQs": "FAQs",
+        "generalFAQ": "General FAQ"
+    }
 }

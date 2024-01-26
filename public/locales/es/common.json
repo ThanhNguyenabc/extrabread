@@ -161,6 +161,7 @@
     "or": "O",
     "suggested_business": "Tipos de negocios sugeridos",
     "your_name": "Su nombre",
+    "phone": "Teléfono",
     "business_name": "Nombre del Negocio",
     "phone_number": "Teléfono",
     "website": "Sitio web",
@@ -183,5 +184,19 @@
     "station": "estación",
     "stations": "estaciones",
     "submit": "Entregar",
-    "learn_more_business": "Obtenga más información sobre cómo podemos ayudar a su negocio."
+    "learn_more_business": "Obtenga más información sobre cómo podemos ayudar a su negocio.",
+    "message": "Mensaje",
+    "contact": {
+        "leave_us_message": "Déjanos un mensaje",
+        "send_message": "Enviar mensaje",
+        "contact_message": "Si tiene alguna pregunta, no dude en contactarnos.",
+        "share_thought": "¿Qué tienes en mente? Comparte tus pensamientos",
+        "call_us": "Llámanos ahora",
+        "email_us": "Envíenos un correo electrónico",
+        "email_any_questions": "Envíe un correo electrónico con cualquier pregunta, comentario o sugerencias para nosotros",
+        "got_questions": "¿Tienes preguntas? <br /> Estamos listos para ayudarle a encontrar la respuesta.",
+        "find_answer": "Encuentra las respuestas utilizando nuestro Autoservicio",
+        "FAQs": "Preguntas frecuentes",
+        "generalFAQ": "Preguntas frecuentes generales"
+    }
 }
