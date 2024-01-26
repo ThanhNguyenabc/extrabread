@@ -11,126 +11,85 @@ import HandlingDisputesImg from 'public/images/products/Handling Disputes.png';
 import ReviewYourDepositImg from 'public/images/products/Review Your Deposit History.png';
 import TrackYourStatementsImg from 'public/images/products/Track Your Statements.png';
 
+import { useTranslation } from 'next-i18next';
+import { useMemo } from 'react';
 import { AllBusinesses } from '~/ui/organisms/all-businesses/AllBusinesses';
 import styles from './ProductsTemplate.module.scss';
 import { DiscoverBanner } from './components/discover-banner/DiscoverBanner';
 
 const { Text } = Typography;
-const BANNER_CONTENT = [
-  'Access account activity 24/7.',
-  'Review and reconcile deposit history.',
-  'Generate and download reports with ease.',
-  'Analyze business performance through online analytics.',
-];
+const ICONS = [TrackYourStatementsImg, ReviewYourDepositImg, HandlingDisputesImg, EffortlesslyImg];
 
 export const OnlineReporting = () => {
+  const { t } = useTranslation('online_analytics');
+  const { t: common } = useTranslation();
+
+  const BANNER_CONTENT = useMemo(() => {
+    return t('banner', { returnObjects: true }) as string[];
+  }, [t]);
+
+  const FEATURES = useMemo(() => {
+    return t('features', { returnObjects: true }) as Array<any>;
+  }, [t]);
+
   return (
     <div>
       <Banner
         hasBackground
         type={['product', 'align-left']}
-        content={<span>Online Analytics</span>}
+        content={<span>{common('product_types.online_analytics.title')}</span>}
         button={<GetPricingButton />}
         src={OnlineReportingBanner.src}
         descriptions={
           <Space direction="vertical">
-            {BANNER_CONTENT.map((item, idx) => (
-              <Space
-                size={16}
-                align="baseline"
-                key={`${idx}`}
-                className={styles['product_icon-check']}
-              >
-                <Icon name="check" />
-                <Text strong>{item}</Text>
-              </Space>
-            ))}
+            {Array.isArray(BANNER_CONTENT) &&
+              BANNER_CONTENT?.map((item, idx) => (
+                <Space
+                  size={16}
+                  align="baseline"
+                  key={`${idx}`}
+                  className={styles['product_icon-check']}
+                >
+                  <Icon name="check" />
+                  <Text strong>{item}</Text>
+                </Space>
+              ))}
           </Space>
         }
       />
 
       <BreadCard>
         <div className={styles['product_info']}>
-          <Text color="green">Gain real-time access to your business</Text>
-          <Text>
-            {' '}
-            account activity and acquire comprehensive industry insights and forecasts, making more
-            informed decisions at every turn.
-          </Text>
+          <Text> {t('desc')}</Text>
         </div>
       </BreadCard>
 
       <BreadCard>
-        <ProductFeature
-          reversed
-          src={TrackYourStatementsImg}
-          alt="Track Your Statements"
-          content={{
-            title: 'Track Your Statements',
-            description:
-              'Easily monitor all of your business activities with our online account manager, so you can address any discrepancies before they become a problem.',
-            details: [
-              'Quickly find information on transactions, chargebacks, and more.',
-              'Access your account online 24/7.',
-            ],
-          }}
-        />
-        <ProductFeature
-          src={ReviewYourDepositImg}
-          alt="Review Your Deposit History"
-          content={{
-            title: 'Review Your Deposit History',
-            description:
-              'Reconcile and view your deposit history so you always know when funds are available.',
-            details: [
-              'Seamlessly use your accounting software and online reporting together.',
-              'Keep track of critical account information with ease.',
-            ],
-          }}
-        />
-        <ProductFeature
-          reversed
-          src={HandlingDisputesImg}
-          alt="Handling Disputes"
-          content={{
-            title: 'Handling Disputes',
-            description:
-              'Gain insight into all your transactions and manage disputes with ease using our online reporting.',
-            details: [
-              'Quickly access the most recent account information at any time.',
-              'Monitor chargebacks in real-time as they happen.',
-            ],
-          }}
-        />
-        <ProductFeature
-          src={EffortlesslyImg}
-          alt="Effortlessly"
-          content={{
-            title: 'Monitor and track industry performance',
-            description:
-              'Gain access to valuable tools and data management systems that eliminate the guesswork and aid in business development.',
-            details: [
-              'Conduct performance comparisons with your competitors',
-              'Receive valuable insights about your industry and community to inform better decision making',
-            ],
-          }}
-        />
+        {Array.isArray(FEATURES) &&
+          FEATURES.map((item, index) => {
+            return (
+              <ProductFeature
+                reversed={index % 2 == 0}
+                key={item.title}
+                src={ICONS[index]}
+                alt={item.title}
+                content={item}
+              />
+            );
+          })}
       </BreadCard>
 
       <BreadCard>
         <AllBusinesses
           noColor
           type="product"
-          heading={'Online Analytics for all types of business'}
-          subHeading="Learn more about how we can help your business."
+          heading={t('all_business_heading')}
+          subHeading={common('learn_more_business')}
         />
       </BreadCard>
 
       <BreadCard>
-        <DiscoverBanner
-          type="product"
-          heading="Ready to implement a Online Analytics for your business?"
-        />
+        <DiscoverBanner type="product" heading={t('footer_heading')} />
       </BreadCard>
     </div>
   );
