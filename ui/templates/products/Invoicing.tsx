@@ -25,6 +25,7 @@ const ICONS = [
 ];
 export const Invoicing = () => {
   const { t } = useTranslation('invoicing');
+  const { t: common } = useTranslation();
 
   const BANNER_CONTENT = useMemo(() => {
     return t('banner', { returnObjects: true }) as string[];
@@ -39,7 +40,7 @@ export const Invoicing = () => {
       <Banner
         hasBackground
         type={['product', 'align-left']}
-        content={<span>Invoicing</span>}
+        content={<span> {common('product_types.invoicing.title')}</span>}
         button={<GetPricingButton />}
         src={InvoicingBanner.src}
         descriptions={
@@ -74,7 +75,7 @@ export const Invoicing = () => {
                 reversed={index % 2 == 0}
                 key={item.title}
                 src={ICONS[index]}
-                alt="Faster Funds"
+                alt={item.title}
                 content={item}
               />
             );
