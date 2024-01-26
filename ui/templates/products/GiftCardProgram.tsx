@@ -14,134 +14,129 @@ import DigitalCardsImg from 'public/images/products/Digital cards.png';
 import PhysicalCrdsImg from 'public/images/products/Physical cards.png';
 import PreventFraudActivitiesImg from 'public/images/products/Prevent Fraud Activities.png';
 
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
+import { useMemo } from 'react';
 import styles from './ProductsTemplate.module.scss';
 
 const { Text } = Typography;
 
-const BANNER_CONTENT = [
-  'Wide range of designs to pick from',
-  'Enable customers to purchase and redeem via their mobile phones',
-  'Minimize the risk of fraudulent activities with both physical and digital cards',
-  'Boost revenue and improve sales performance',
+const ICONS = [BoostSalesImg, PreventFraudActivitiesImg];
+
+const PROGRAM_CONFIGS = [
+  {
+    style: 'gift-card_text',
+  },
+  {
+    style: 'gift-card_card-red',
+    icon: PhysicalCrdsImg,
+  },
+  {
+    style: 'gift-card_card-blue',
+    icon: DigitalCardsImg,
+  },
 ];
 
 export const GiftCardProgram = () => {
+  const { t } = useTranslation('giftcard');
+  const { t: common } = useTranslation();
+
+  const BANNER_CONTENT = useMemo(() => {
+    return t('banner', { returnObjects: true }) as string[];
+  }, [t]);
+
+  const FEATURES = useMemo(() => {
+    return t('features', { returnObjects: true }) as Array<any>;
+  }, [t]);
+
+  const PROGRAMS = useMemo(() => {
+    return t('programs', { returnObjects: true }) as Array<any>;
+  }, [t]);
+
   return (
     <div className={styles['gift-card']}>
       <Banner
         hasBackground
         type={['product', 'align-left']}
-        content={<span>Gift Card Program</span>}
+        content={<span>{common('product_types.gift.title')}</span>}
         button={<GetPricingButton />}
         src={GiftCardProgramBanner.src}
         descriptions={
           <Space direction="vertical">
-            {BANNER_CONTENT.map((item, idx) => (
-              <Space
-                size={16}
-                align="baseline"
-                key={`${idx}`}
-                className={styles['product_icon-check']}
-              >
-                <Icon name="check" />
-                <Text strong>{item}</Text>
-              </Space>
-            ))}
+            {Array.isArray(BANNER_CONTENT) &&
+              BANNER_CONTENT?.map((item, idx) => (
+                <Space
+                  size={16}
+                  align="baseline"
+                  key={`${idx}`}
+                  className={styles['product_icon-check']}
+                >
+                  <Icon name="check" />
+                  <Text strong>{item}</Text>
+                </Space>
+              ))}
           </Space>
         }
       />
 
       <BreadCard>
         <div className={styles['product_info']}>
-          <Text color="green">ExtraBread&#39;s Gift Card Program by Elecpayments Inc.</Text>
-          <Text>
-            {' '}
-            provides both physical and digital gift card options, complete with essential features
-            to help boost your brand, customer base, and sales.
-          </Text>
+          <Text>{t('desc')}</Text>
         </div>
       </BreadCard>
 
       <BreadCard>
         <div className={styles['gift-card_card-row']}>
-          <div className={styles['gift-card_text']}>
-            <Heading level={4} className={styles['gift-card-heading']}>
-              Improve Customer Loyalty with Physical or Digital Cards
-            </Heading>
-            <Text className="font-18 text-grey">
-              Merchants can choose between physical or digital gift cards and enjoy the benefits of
-              a comprehensive program that offers custom options, quick setup, and a range of
-              features to drive loyalty and boost sales.
-            </Text>
-          </div>
-          <div className={styles['gift-card_card-red']}>
-            <div>
-              <Heading level={4} className="mb-8">
-                Physical cards
-              </Heading>
-              <Text className="font-16-16-14">
-                Choose from a wide range of design templates or upload your own
-              </Text>
-            </div>
-            <Image width={376} src={PhysicalCrdsImg} alt="Physical Crds" quality={100} />
-          </div>
-          <div className={styles['gift-card_card-blue']}>
-            <div>
-              <Heading level={4} className="mb-8">
-                Digital cards
-              </Heading>
-              <Text className="font-16-16-14">Redeem gift cards that work on any smart device</Text>
-            </div>
-            <Image width={376} src={DigitalCardsImg} alt="Digital Cards" quality={100} />
-          </div>
+          {Array.isArray(PROGRAMS) &&
+            PROGRAMS.map((item, index) => {
+              return (
+                <div className={styles[PROGRAM_CONFIGS[index].style]} key={item.heading}>
+                  <div>
+                    <Heading level={4} className={styles['gift-card-heading']}>
+                      {item.heading}
+                    </Heading>
+                    <Text className="font-18 text-grey">{item.desc}</Text>
+                  </div>
+                  {PROGRAM_CONFIGS[index].icon && (
+                    <Image
+                      width={376}
+                      src={PROGRAM_CONFIGS[index].icon!}
+                      alt={item.heading}
+                      quality={100}
+                    />
+                  )}
+                </div>
+              );
+            })}
         </div>
       </BreadCard>
 
       <BreadCard className={styles['product-items']} noPadding>
-        <ProductFeature
-          src={BoostSalesImg}
-          alt="Boost Sales"
-          content={{
-            title: 'Boost Sales',
-            description:
-              'With our gift cards, you can simplify your checkout process and effortlessly issue store credit, leading to increased sales and improved customer loyalty.',
-            details: [
-              'Issue store credit directly from yor device',
-              `Accept gift cards from customers' mobile phones with our gift cards`,
-            ],
-          }}
-        />
-        <ProductFeature
-          reversed
-          src={PreventFraudActivitiesImg}
-          alt="Prevent Fraud Activities"
-          content={{
-            title: 'Prevent Fraud Activities',
-            description:
-              'Digital or physical card options provide greater security and peace of mind as compared to gift certificates, which are prone to being lost, stolen, or counterfeited',
-            details: [
-              'Convenience of managing card inventory easily',
-              'Keeping track of sales through gift card reports',
-            ],
-          }}
-        />
+        {Array.isArray(FEATURES) &&
+          FEATURES.map((item, index) => {
+            return (
+              <ProductFeature
+                reversed={index % 2 == 0}
+                key={item.title}
+                src={ICONS[index]}
+                alt={item.title}
+                content={item}
+              />
+            );
+          })}
       </BreadCard>
 
       <BreadCard>
         <AllBusinesses
           noColor
           type="product"
-          heading={'Gift Card Program for all types of business'}
-          subHeading="Learn more about how we can help your business."
+          heading={t('all_business_heading')}
+          subHeading={common('learn_more_business')}
         />
       </BreadCard>
 
       <BreadCard>
-        <DiscoverBanner
-          type="product"
-          heading="Ready to implement a Gift Card Program for your business?"
-        />
+        <DiscoverBanner type="product" heading={t('footer_heading')} />
       </BreadCard>
     </div>
   );

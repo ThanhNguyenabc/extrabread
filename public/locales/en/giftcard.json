@@ -1,0 +1,43 @@
+{
+    "desc": "ExtraBread's Gift Card Program by Elecpayments Inc. provides both physical and digital gift card options, complete with essential features to help boost your brand, customer base, and sales.",
+    "banner": [
+        "Wide range of designs to pick from",
+        "Enable customers to purchase and redeem via their mobile phones",
+        "Minimize the risk of fraudulent activities with both physical and digital cards",
+        "Boost revenue and improve sales performance"
+    ],
+    "programs": [
+        {
+            "heading": "Improve Customer Loyalty with Physical or Digital Cards",
+            "desc": "Merchants can choose between physical or digital gift cards and enjoy the benefits of a comprehensive program that offers custom options, quick setup, and a range of features to drive loyalty and boost sales."
+        },
+        {
+            "heading": "Physical cards",
+            "desc": "Choose from a wide range of design templates or upload your own"
+        },
+        {
+            "heading": "Digital cards",
+            "desc": "Redeem gift cards that work on any smart device"
+        }
+    ],
+    "features": [
+        {
+            "title": "Boost Sales",
+            "description": "With our gift cards, you can simplify your checkout process and effortlessly issue store credit, leading to increased sales and improved customer loyalty.",
+            "details": [
+                "Issue store credit directly from yor device",
+                "Accept gift cards from customers' mobile phones with our gift cards"
+            ]
+        },
+        {
+            "title": "Prevent Fraud Activities",
+            "description": "Digital or physical card options provide greater security and peace of mind as compared to gift certificates, which are prone to being lost, stolen, or counterfeited",
+            "details": [
+                "Convenience of managing card inventory easily",
+                "Keeping track of sales through gift card reports"
+            ]
+        }
+    ],
+    "all_business_heading": "Gift Card Program for all types of business",
+    "footer_heading": "Ready to implement a Gift Card Program for your business?"
+}
