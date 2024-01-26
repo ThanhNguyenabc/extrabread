@@ -71,7 +71,7 @@ export const CashAdvance = () => {
                 reversed={index % 2 == 0}
                 key={item.title}
                 src={ICONS[index]}
-                alt="Faster Funds"
+                alt={item.title}
                 content={item}
               />
             );

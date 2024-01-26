@@ -1,0 +1,44 @@
+{
+    "desc": "Our customized Loyalty & Rewards Program by Elecpayments can assist you in attracting new customers and incentivizing your existing clientele.",
+    "banner": [
+        "Offer incentives to the customers",
+        "Provide rewards to customers",
+        "Use analytic tools to keep track of customer behaviors",
+        "Focus on building strong relationships"
+    ],
+    "features": [
+        {
+            "title": "Engaging with Customers",
+            "description": "Create a personalized customer experience by providing exclusive perks that are simple to establish.",
+            "details": [
+                "Customize your program to align with your business needs and design various rewards to attract a broader range of customers.",
+                "Customers receive notifications when they earn a reward, and they can redeem it during checkout."
+            ]
+        },
+        {
+            "title": "Simplify your Sales Process",
+            "description": "Transform your rewards program into a robust sales tool with practical, ready-to-use solutions.",
+            "details": [
+                "Monitor customer analytics and usage through a user-friendly dashboard.",
+                "Speed up transactions with touchless payment alternatives to reduce wait times."
+            ]
+        },
+        {
+            "title": "Personalize Your Programs",
+            "description": "With various customer engagement options and adaptable levels that align with your brand, business model, and customer preferences, personalizing your program is effortless and impactful.",
+            "details": [
+                "Design in-store marketing materials and promotional signage.",
+                "Select between a punch-based or points-based system."
+            ]
+        },
+        {
+            "title": "Drive Sales",
+            "description": "Attract new customers and incentivize them to return with promotional programs that generate interest and boost your profits.",
+            "details": [
+                "Dispatch digital offers, in-store coupons, and real-time promotions directly from your POS.",
+                "Certain promos are pre-installed and ready to use."
+            ]
+        }
+    ],
+    "footer_heading": "Ready to implement a Customer Loyalty & Rewards for your business?"
+}

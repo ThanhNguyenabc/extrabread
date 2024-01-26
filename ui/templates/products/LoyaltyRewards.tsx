@@ -12,113 +12,73 @@ import DriveSalesImg from 'public/images/products/Drive Sales.png';
 import NeverMissImg from 'public/images/products/Never Miss A Sale.png';
 import PersonalizeYourProgramsImg from 'public/images/products/Personalize Your Programs.png';
 
+import { useTranslation } from 'next-i18next';
+import { useMemo } from 'react';
 import styles from './ProductsTemplate.module.scss';
 
 const { Text } = Typography;
-const BANNER_CONTENT = [
-  'Offer incentives to the customers',
-  'Provide rewards to customers',
-  'Use analytic tools to keep track of customer behaviors',
-  'Focus on building strong relationships',
-];
-
+const ICONS = [NeverMissImg, BoostSalesImg, PersonalizeYourProgramsImg, DriveSalesImg];
 export const LoyaltyRewards = () => {
+  const { t } = useTranslation('loyalty');
+  const { t: common } = useTranslation();
+
+  const BANNER_CONTENT = useMemo(() => {
+    return t('banner', { returnObjects: true }) as string[];
+  }, [t]);
+
+  const FEATURES = useMemo(() => {
+    return t('features', { returnObjects: true }) as Array<any>;
+  }, [t]);
+
   return (
     <div>
       <Banner
         hasBackground
         type={['product', 'align-left']}
-        content={<span>Customer Loyalty & Rewards</span>}
+        content={<span>{common('product_types.loyalty.title')}</span>}
         button={<GetPricingButton />}
         src={LoyaltyRewardsBanner.src}
         descriptions={
           <Space direction="vertical">
-            {BANNER_CONTENT.map((item, idx) => (
-              <Space
-                key={`${idx}`}
-                size={16}
-                align="baseline"
-                className={styles['product_icon-check']}
-              >
-                <Icon name="check" />
-                <Text strong>{item}</Text>
-              </Space>
-            ))}
+            {Array.isArray(BANNER_CONTENT) &&
+              BANNER_CONTENT?.map((item, idx) => (
+                <Space
+                  key={`${idx}`}
+                  size={16}
+                  align="baseline"
+                  className={styles['product_icon-check']}
+                >
+                  <Icon name="check" />
+                  <Text strong>{item}</Text>
+                </Space>
+              ))}
           </Space>
         }
       />
 
       <BreadCard>
         <div className={styles['product_info']}>
-          <Text color="green">Our customized Loyalty & Rewards Program by Elecpayments</Text>{' '}
-          <Text>
-            can assist you in attracting new customers and incentivizing your existing clientele.
-          </Text>
+          <Text>{t('desc')}</Text>
         </div>
       </BreadCard>
 
       <BreadCard>
-        <ProductFeature
-          reversed
-          src={NeverMissImg}
-          alt="Never Miss A Sale"
-          content={{
-            title: 'Engaging with Customers',
-            description:
-              'Create a personalized customer experience by providing exclusive perks that are simple to establish.',
-            details: [
-              'Customize your program to align with your business needs and design various rewards to attract a broader range of customers.',
-              'Customers receive notifications when they earn a reward, and they can redeem it during checkout.',
-            ],
-          }}
-        />
-        <ProductFeature
-          src={BoostSalesImg}
-          alt="Boost Sales"
-          content={{
-            title: 'Simplify your Sales Process',
-            description:
-              'Transform your rewards program into a robust sales tool with practical, ready-to-use solutions.',
-            details: [
-              'Monitor customer analytics and usage through a user-friendly dashboard.',
-              'Speed up transactions with touchless payment alternatives to reduce wait times.',
-            ],
-          }}
-        />
-        <ProductFeature
-          reversed
-          src={PersonalizeYourProgramsImg}
-          alt="Personalize Your Programs"
-          content={{
-            title: 'Personalize Your Programs',
-            description:
-              'With various customer engagement options and adaptable levels that align with your brand, business model, and customer preferences, personalizing your program is effortless and impactful.',
-            details: [
-              'Design in-store marketing materials and promotional signage.',
-              'Select between a punch-based or points-based system.',
-            ],
-          }}
-        />
-        <ProductFeature
-          src={DriveSalesImg}
-          alt="Drive Sales"
-          content={{
-            title: 'Drive Sales',
-            description:
-              'Attract new customers and incentivize them to return with promotional programs that generate interest and boost your profits.',
-            details: [
-              'Dispatch digital offers, in-store coupons, and real-time promotions directly from your POS.',
-              'Certain promos are pre-installed and ready to use.',
-            ],
-          }}
-        />
+        {Array.isArray(FEATURES) &&
+          FEATURES.map((item, index) => {
+            return (
+              <ProductFeature
+                reversed={index % 2 == 0}
+                key={item.title}
+                src={ICONS[index]}
+                alt={item.title}
+                content={item}
+              />
+            );
+          })}
       </BreadCard>
 
       <BreadCard>
-        <DiscoverBanner
-          type="product"
-          heading="Ready to implement a Customer Loyalty & Rewards for your business?"
-        />
+        <DiscoverBanner type="product" heading={t('footer_heading')} />
       </BreadCard>
     </div>
   );
