@@ -1,3 +1,4 @@
+import { getBlogsAPI } from '@/apis/blogs';
 import { BlogDetail } from '@/ui/templates/blogs/blog-detail/BlogDetail';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -8,12 +9,20 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   props: {
     ...(await serverSideTranslations(locale ?? 'en', ['common'])),
   },
+  revalidate: 120,
 });
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const links = (await getBlogsAPI()) as Array<any>;
+
   return {
-    paths: [],
-    fallback: false,
+    paths:
+      links?.map(item => ({
+        params: {
+          blogId: item['slug'],
+        },
+      })) || [],
+    fallback: 'blocking',
   };
 };
 
