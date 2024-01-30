@@ -1,4 +1,4 @@
-import { Button, buttonVariants } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 import { RouteConfig } from '@/constants';
 import { cn } from '@/lib/utils';
 import { BreadCard } from '@/ui/atoms/bread-card/BreadCard';
