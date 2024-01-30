@@ -2,5 +2,42 @@
     "saving_money": "Save money with a free POS",
     "siging_bonus": "Receive a large cash signing bonus",
     "processing_fee": "Zero Processing Fees",
-    "pageTitle": "Save & Earn More with Top Payment & POS Solutions"
+    "pageTitle": "Save & Earn More with Top Payment & POS Solutions",
+    "merchant_heading": "No More Merchant Fees",
+    "merchant_desc": "We're able to maintain our services at no cost to you by <span className='font-semibold text-green-500'>applying a 3.5% charge </span> on your <span className='font-semibold text-green-500'>customer's order total </span> during the checkout process. On top of that, your customers cover the credit card fees, relieving you of any merchant fees.",
+    "merchant_option": [
+        {
+            "id": "small",
+            "heading": "Small Restaurant",
+            "pos_number": "One Free POS",
+            "price": "($10k - $50k in sales per month)",
+            "items": [
+                "Includes a POS, KDS, Car Reader, Printer, and Cash Drawer",
+                "Analytics Dashboard, QR Code /Online Ordering, Gift Cards, Order Notifications",
+                "LTE Connectivity Available at S30/mo per line"
+            ]
+        },
+        {
+            "id": "medium",
+            "heading": "Med Restaurant",
+            "pos_number": "Up to 3 free POS",
+            "price": "($50k - $115k in sales per month)",
+            "items": [
+                "Includes a POS, KDS, 2 Handheld POS's, 3 Card Readers, 2 Printers, and Cash Drawer",
+                "Analytics Dashboard, QR Code /Online Ordering, Gift Cards, Order Notifications",
+                "Additional POS's and KDS's available at $30/mo"
+            ]
+        },
+        {
+            "id": "large",
+            "heading": "Large Restaurant",
+            "pos_number": "Up to 6 free POS",
+            "price": "(Over $115k in sales per month)",
+            "items": [
+                "Includes a POS, KDS, Card Readers, Handheld POS's, Printer, and Cash Drawer",
+                "Analytics Dashboard, QR Code /Online Ordering, Gift Cards, Order Notifications",
+                "LTE Connectivity Available at S30/mo per line"
+            ]
+        }
+    ]
 }

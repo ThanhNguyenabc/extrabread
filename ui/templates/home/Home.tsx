@@ -7,6 +7,7 @@ import {
   ZeroProcessingFeesIcon,
 } from '~/ui/img-resource/ImageResources';
 
+import MerchantFee from '@/components/elements/home/MerchantFee';
 import { Button } from '@/ui/atoms/button/Button';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
@@ -83,6 +84,7 @@ export const HomeTemplate = () => {
 
       <HowItWorks />
 
+      <MerchantFee />
       <UniqueValue />
 
       <WorkWithTheBest />

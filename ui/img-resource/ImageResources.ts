@@ -28,6 +28,7 @@ import FastCheckoutIcon from 'public/images/color-icons/fast-checkout.svg';
 import ItemManagementIcon from 'public/images/color-icons/ItemManagement.svg';
 import NegociationIcon from 'public/images/color-icons/negociation.svg';
 import OnlineOrderingIcon from 'public/images/color-icons/online-ordering.svg';
+import IcCheckCircle from 'public/images/icons/check-circle-solid.svg';
 
 import PuzzleIcon from 'public/images/color-icons/puzzle.svg';
 import RewardIcon from 'public/images/color-icons/reward.svg';
@@ -86,9 +87,9 @@ import IcBonus from 'public/images/icons/ic_bonus.svg';
 import IcIncome from 'public/images/icons/ic_income.svg';
 import PartnerBoss from 'public/images/partner/being_boss.webp';
 import PartnerCalling from 'public/images/partner/calling_person.webp';
+import PartnerCover from 'public/images/partner/partner_cover.png';
 import PartnerTeamate from 'public/images/partner/teamate.webp';
 import PartnerWFH from 'public/images/partner/working_from_home.webp';
-import PartnerCover from 'public/images/partner/partner_cover.png';
 
 //About us
 import AboutBanner from 'public/images/about-us/about-banner.png';
@@ -125,6 +126,7 @@ export {
   IcBasePay,
   IcBonus,
   IcCheck,
+  IcCheckCircle,
   IcChevronRight,
   IcIncome,
   IcLoading,
@@ -152,9 +154,9 @@ export {
   OptionIcon,
   PartnerBoss,
   PartnerCalling,
+  PartnerCover,
   PartnerTeamate,
   PartnerWFH,
-  PartnerCover,
   PaymentTerminalIcon,
   PhoneIcon,
   PizzeriasImg,
