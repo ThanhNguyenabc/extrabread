@@ -84,7 +84,7 @@ export const HomeTemplate = () => {
 
       <HowItWorks />
 
-      {/* <MerchantFee /> */}
+      <MerchantFee />
       <UniqueValue />
 
       <WorkWithTheBest />
