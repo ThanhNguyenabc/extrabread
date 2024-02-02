@@ -105,6 +105,7 @@ export const COMPANY_MENU = [
   { title: 'partner', href: RouteConfig.Partner },
   { title: 'about_us', href: RouteConfig.AboutUs },
   { title: 'point_of_sale_systems', href: RouteConfig.SaleSystems },
+  { title: 'Referal Agent Packet', href: '/welcome_packet.pdf', newTab: true },
 ];
 
 export const SOLUTIONS_MENU = [

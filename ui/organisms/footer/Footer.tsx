@@ -40,6 +40,7 @@ const MenuCategory = ({
   menus: {
     title: string;
     href: string;
+    newTab?: boolean;
     replaceTitle?: string | undefined;
   }[];
 }) => {
@@ -48,7 +49,12 @@ const MenuCategory = ({
     <div className={styles['footer_menu-category']}>
       <Text strong>{t(title)}</Text>
       {menus.map((item, idx) => (
-        <Link key={`${idx}`} href={item.href}>
+        <Link
+          key={`${idx}`}
+          href={item.href}
+          target={item.newTab ? '_blank' : '_parent'}
+          rel="noreferrer noopener"
+        >
           <Text className={styles['text-400']}>{t(item.title)}</Text>
         </Link>
       ))}
@@ -181,7 +187,12 @@ export const BreadFooter = () => {
             >
               <Panel header={t(NavigationLabel.Company)} key={NavigationLabel.Company}>
                 {COMPANY_MENU.map((item, idx) => (
-                  <Link key={`${idx}`} href={item.href}>
+                  <Link
+                    key={`${idx}`}
+                    href={item.href}
+                    target={item.newTab ? '_blank' : '_parent'}
+                    rel="noreferrer noopener"
+                  >
                     <Text className={styles['text-400']}>{item.title}</Text>
                   </Link>
                 ))}
