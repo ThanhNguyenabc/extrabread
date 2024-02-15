@@ -34,13 +34,13 @@ type SolutionType = {
 
 const SOLUTIONS = [
   {
-    icon: <PaymentTerminalIcon />,
+    icon: PaymentTerminalIcon ,
   },
   {
-    icon: <ChipIcon />,
+    icon: ChipIcon ,
   },
   {
-    icon: <WirelessIcon />,
+    icon: WirelessIcon ,
   },
 ];
 
@@ -81,6 +81,7 @@ export const CreditCardTerminal = ({ children }: PropsWithChildren) => {
       ),
     [t],
   );
+
   return (
     <>
       <Head>
@@ -102,14 +103,15 @@ export const CreditCardTerminal = ({ children }: PropsWithChildren) => {
         src={CreditCardTerminalBanner.src}
         descriptions={
           <Space direction="vertical">
-            {BANNER_CONTENT?.map((item, idx) => (
-              <Space size={16} key={`banner-${idx}`}>
-                <Icon name="check-circle-solid" color="green" />
-                <Text strong className="font-18-16-16">
-                  {item}
-                </Text>
-              </Space>
-            ))}
+            {Array.isArray(BANNER_CONTENT) &&
+              BANNER_CONTENT?.map((item, idx) => (
+                <Space size={16} key={`banner-${idx}`}>
+                  <Icon name="check-circle-solid" color="green" />
+                  <Text strong className="font-18-16-16">
+                    {item}
+                  </Text>
+                </Space>
+              ))}
           </Space>
         }
       />
@@ -117,17 +119,18 @@ export const CreditCardTerminal = ({ children }: PropsWithChildren) => {
       <BreadCard>
         <SectionHeading centered level={3} heading={t('credit.transactions.heading')} />
         <div className={styles['solutions_features']}>
-          {TRANS.map(({ alt, href, src, reversed, textLink = '', content }) => (
-            <SolutionFeature
-              key={content['title']}
-              reversed={reversed}
-              href={href}
-              src={src}
-              textLink={textLink}
-              alt={alt}
-              content={content}
-            />
-          ))}
+          {Array.isArray(TRANS) &&
+            TRANS.map(({ alt, href, src, reversed, textLink = '', content }) => (
+              <SolutionFeature
+                key={content['title']}
+                reversed={reversed}
+                href={href}
+                src={src}
+                textLink={textLink}
+                alt={alt}
+                content={content}
+              />
+            ))}
         </div>
       </BreadCard>
 

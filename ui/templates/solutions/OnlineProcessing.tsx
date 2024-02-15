@@ -25,10 +25,10 @@ import { SolutionFeature } from './solution-feature/SolutionFeature';
 const { Text } = Typography;
 
 const SOLUTIONS = [
-  { icon: <CartIcon /> },
-  { icon: <InterfaceIcon /> },
+  { icon: CartIcon },
+  { icon: InterfaceIcon },
   {
-    icon: <VirtualIcon />,
+    icon: VirtualIcon,
   },
 ];
 

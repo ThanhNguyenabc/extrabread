@@ -8,7 +8,7 @@ type Props = {
   heading: ReactNode;
   type?: 'product';
   data: {
-    icon: JSX.Element;
+    icon: React.FunctionComponent<any>;
     title: string;
     description: string;
   }[];
@@ -21,13 +21,15 @@ export const DetailSolution = ({ heading, data, type }: Props) => {
         {heading}
       </Heading>
       <div className={styles['detail-solution_content']}>
-        {data.map((item, idx) => (
-          <div className={styles['detail-solution_item']} key={`${idx}`}>
-            {item.icon}
-            <Heading size="sm" className={styles['detail-solution_title']}>
-              {item.title}
-            </Heading>
-            <Typography.Text className="text-grey">{item.description}</Typography.Text>
+        {data.map(({ icon: Icon, title, description }, idx) => (
+          <div className={'flex flex-row gap-6 md:gap-5 md:flex-col'} key={`${idx}`}>
+            <Icon className="w-12 h-12 md:w-16 md:h-16" />
+            <div className="flex flex-col flex-1 gap-2 md:gap-0">
+              <Heading size="sm" className={styles['detail-solution_title']}>
+                {title}
+              </Heading>
+              <Typography.Text className="text-grey">{description}</Typography.Text>
+            </div>
           </div>
         ))}
       </div>

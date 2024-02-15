@@ -27,13 +27,13 @@ const { Text } = Typography;
 
 const SOLUTIONS = [
   {
-    icon: <DevicesIcon />,
+    icon: DevicesIcon,
   },
   {
-    icon: <CreditCardIcon />,
+    icon: CreditCardIcon,
   },
   {
-    icon: <OptionIcon />,
+    icon: OptionIcon,
   },
 ];
 

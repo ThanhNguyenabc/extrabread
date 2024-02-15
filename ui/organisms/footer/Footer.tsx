@@ -120,7 +120,7 @@ export const BreadFooter = () => {
               <Panel header={t(NavigationLabel.Solutions)} key={NavigationLabel.Solutions}>
                 {FOOTER_SOLUTION_MENU.map((item, idx) => (
                   <Link key={`${idx}`} href={item.href}>
-                    <Text className={styles['text-400']}>{item.title}</Text>
+                    <Text className={styles['text-400']}>{t(item.title)}</Text>
                   </Link>
                 ))}
               </Panel>
@@ -137,7 +137,7 @@ export const BreadFooter = () => {
               <Panel header={t(NavigationLabel.Equipments)} key={NavigationLabel.Equipments}>
                 {EQUIPMENTS_MENU.map((item, idx) => (
                   <Link key={`${idx}`} href={item.href}>
-                    <Text className={styles['text-400']}>{item.title}</Text>
+                    <Text className={styles['text-400']}>{t(item.title)}</Text>
                   </Link>
                 ))}
               </Panel>
@@ -154,7 +154,7 @@ export const BreadFooter = () => {
               <Panel header={t(NavigationLabel.BusinessTypes)} key={NavigationLabel.BusinessTypes}>
                 {BUSINESS_MENU.map((item, idx) => (
                   <Link key={`${idx}`} href={item.href}>
-                    <Text className={styles['text-400']}>{item.title}</Text>
+                    <Text className={styles['text-400']}>{t(item.title)}</Text>
                   </Link>
                 ))}
               </Panel>
@@ -171,7 +171,7 @@ export const BreadFooter = () => {
               <Panel header={t(NavigationLabel.Products)} key={NavigationLabel.Products}>
                 {PRODUCTS_MENU.map((item, idx) => (
                   <Link key={`${idx}`} href={item.href}>
-                    <Text className={styles['text-400']}>{item.title}</Text>
+                    <Text className={styles['text-400']}>{t(item.title)}</Text>
                   </Link>
                 ))}
               </Panel>
@@ -193,7 +193,7 @@ export const BreadFooter = () => {
                     target={item.newTab ? '_blank' : '_parent'}
                     rel="noreferrer noopener"
                   >
-                    <Text className={styles['text-400']}>{item.title}</Text>
+                    <Text className={styles['text-400']}>{t(item.title)}</Text>
                   </Link>
                 ))}
               </Panel>

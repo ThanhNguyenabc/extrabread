@@ -5,7 +5,7 @@ import { Banner } from '~/ui/organisms/banner/Banner';
 import styles from './ProductsTemplate.module.scss';
 
 // Images
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import AdpTimeIcon from 'public/images/products/ADP Time.png';
 
 import AbreezeLinkIcon from 'public/images/products/Abreeze Link.png';
@@ -127,6 +127,7 @@ export const CloverAppMarket = () => {
       icon: CUSTOMER_ICONS[index],
     }));
   }, [t]);
+
   return (
     <div>
       <Banner

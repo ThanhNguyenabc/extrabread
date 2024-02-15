@@ -7,7 +7,7 @@ import { WorkWithTheBest } from '@/ui/organisms/work-with-the-best/WorkWithTheBe
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { RouteConfig, SOLUTIONS_MENU } from '~/constants/index';
 import { Heading } from '~/ui/atoms/heading/Heading';
 import { Segmented } from '~/ui/atoms/segment/Segment';
@@ -30,7 +30,7 @@ const PAGES = {
 };
 
 export const SolutionsTemplate = () => {
-  const { t: common } = useTranslation();
+  const { t: common } = useTranslation('common');
   const { t } = useTranslation('solutions');
 
   const { push, query } = useRouter();
@@ -44,6 +44,10 @@ export const SolutionsTemplate = () => {
 
   const Cmp = PAGES[activeTab] || null;
 
+  const FAQItems = useMemo(() => {
+    return t('faq.items', { returnObjects: true }) as Array<any>;
+  }, [t]);
+
   return (
     <main className={styles['solutions']}>
       <div className={styles['solutions_segment']}>
@@ -51,7 +55,7 @@ export const SolutionsTemplate = () => {
           activeKey={`${RouteConfig.Solution}/${activeTab}`}
           onChange={value => push(value)}
           items={SOLUTIONS_MENU.map(item => ({
-            title: common(item.title),
+            title: common(item.title) || '',
             value: item.href,
           }))}
         />
@@ -64,13 +68,12 @@ export const SolutionsTemplate = () => {
             </Heading>
 
             <Collapse>
-              {(t('faq.items', { returnObjects: true }) as Array<any>)?.map(
-                ({ header, content }, index) => (
+              {Array.isArray(FAQItems) &&
+                FAQItems?.map(({ header, content }, index) => (
                   <Panel header={header} key={header}>
                     {content}
                   </Panel>
-                ),
-              )}
+                ))}
             </Collapse>
 
             <div className={styles['solutions_faq-button']}>

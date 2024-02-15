@@ -44,7 +44,7 @@ const MenuDrawer = ({
   lang?: string;
   margin?: number;
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   const [currentMenu, setCurrentMenu] = useState('');
   const [selectedLang, setSelectedLang] = useState(lang);
   const { isMobile, isLessTablet } = useDevice();
@@ -112,7 +112,7 @@ const MenuDrawer = ({
               className={styles['header-nav-item']}
               onClick={() => props.onClose?.({} as any)}
             >
-              <Text strong>Home</Text>
+              <Text strong>{t('home')}</Text>
             </Button>
             {MENU_ITEMS.map(item => (
               <Button
@@ -187,7 +187,7 @@ const MenuDrawer = ({
                 <AntLink onClick={() => setCurrentMenu('')}>
                   <Icon name="left" />
                 </AntLink>
-                <Heading size="sm">{currentMenu}</Heading>
+                <Heading size="sm">{t(currentMenu)}</Heading>
               </div>
 
               {item.children[0].label}
