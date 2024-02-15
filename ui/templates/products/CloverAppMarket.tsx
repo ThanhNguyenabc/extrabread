@@ -48,7 +48,7 @@ import { DiscoverBanner } from './components/discover-banner/DiscoverBanner';
 
 const { Text } = Typography;
 
-const CUSTOMER_ICONS = [<PromosIcon />, <RewardIcon />, <GiftCardIcon />];
+const CUSTOMER_ICONS = [PromosIcon, RewardIcon, GiftCardIcon];
 
 const TYPES_OF_APPS_ICONS = {
   promos: Promos1Icon,
