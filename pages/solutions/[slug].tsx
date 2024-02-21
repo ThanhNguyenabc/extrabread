@@ -1,7 +1,7 @@
 import { SOLUTIONS_MENU } from '@/constants';
 import { Meta } from '@/models/app_config.model';
 import { SolutionsTemplate } from '@/ui/templates/solutions/SolutionsTemplate';
-import { GetStaticProps } from 'next';
+import { GetStaticPathsContext, GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Seo } from '~/ui/util-components/Seo';
 import { getSEOTag } from '../api/app-configs';
@@ -20,10 +20,10 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   };
 };
 
-export const getStaticPaths = () => {
+export const getStaticPaths = ({ locales = ['en'] }: GetStaticPathsContext) => {
   return {
     paths: SOLUTIONS_MENU.flatMap(item => {
-      return ['en', 'es'].map(locale => ({
+      return locales.map(locale => ({
         params: {
           slug: item.href,
         },

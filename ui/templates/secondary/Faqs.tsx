@@ -32,7 +32,7 @@ const DATA = {
 };
 
 export const Faqs = () => {
-  const { t } = useTranslation('faq');
+  const { t } = useTranslation(['faq']);
   const [activeTab, setActiveTab] = useState<TabType>(TabsEnum.General);
 
   const items = t(DATA[activeTab]['faqs'], {

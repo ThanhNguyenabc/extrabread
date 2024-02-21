@@ -19,6 +19,8 @@ const { Text } = Typography;
 
 export const CashDiscountProgram = () => {
   const { t } = useTranslation('cash_discount');
+  const { t: faqs } = useTranslation('cash_discount_faqs');
+
   const { t: common } = useTranslation();
 
   const BANNER_CONTENT = useMemo(() => {
@@ -28,6 +30,10 @@ export const CashDiscountProgram = () => {
   const PROGRAM = useMemo(() => {
     return t('program_items', { returnObjects: true }) as string[];
   }, [t]);
+
+  const FAQ = useMemo(() => {
+    return faqs('cash_discount_faqs', { returnObjects: true }) as Array<any>;
+  }, [faqs]);
 
   return (
     <div className={styles['cash-discount-program']}>
@@ -106,8 +112,8 @@ export const CashDiscountProgram = () => {
           centered
           noMargin
           className={styles['section-heading']}
-          heading="Frequently Asked Questions"
-          subHeading="With Extrabread’s Cash Discount Program, your business will pay 0% for your processing rates while offering your customers a discount they’ll be happy to cash in."
+          heading={t('faq_heading')}
+          subHeading={t('faq_sub_heading')}
         />
         <Collapse
           ghost
@@ -117,19 +123,12 @@ export const CashDiscountProgram = () => {
             return <Icon name={props.isActive ? 'chevron-up' : 'chevron-down'} color="black" />;
           }}
         >
-          <Panel header="How does it work?" key="1">
-            Extrabread’s Cash Discount Program passes the cost of accepting credit card payments to
-            your customer. Customers who pay with cash receive a discounted price compared to
-            customers that pay with a credit card. Cash Discount pricing lets business owners enjoy
-            the same profit margins on cash payments and non-cash payments by including processing
-            fees into the price of sales made by customers paying by credit card.
-          </Panel>
-          <Panel header="Is it legal to pass credit card fees to customers?" key="2"></Panel>
-          <Panel header="How does it affect my customers?" key="3"></Panel>
-          <Panel
-            header="Why should I consider the Cash Discount Program for my business?"
-            key="4"
-          ></Panel>
+          {Array.isArray(FAQ) &&
+            FAQ.map(({ header, content }, index) => (
+              <Panel key={index} header={header}>
+                {content}
+              </Panel>
+            ))}
         </Collapse>
       </BreadCard>
 
@@ -143,10 +142,7 @@ export const CashDiscountProgram = () => {
       </BreadCard>
 
       <BreadCard>
-        <DiscoverBanner
-          type="product"
-          heading="Ready to implement a Cash Discount Program for your business?"
-        />
+        <DiscoverBanner type="product" heading={t('footer_heading')} />
       </BreadCard>
     </div>
   );

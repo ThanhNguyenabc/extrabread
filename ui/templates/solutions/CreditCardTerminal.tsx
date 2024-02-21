@@ -34,13 +34,13 @@ type SolutionType = {
 
 const SOLUTIONS = [
   {
-    icon: PaymentTerminalIcon ,
+    icon: PaymentTerminalIcon,
   },
   {
-    icon: ChipIcon ,
+    icon: ChipIcon,
   },
   {
-    icon: WirelessIcon ,
+    icon: WirelessIcon,
   },
 ];
 
