@@ -1,5 +1,5 @@
 import { Meta } from '@/models/app_config.model';
-import { GetStaticPathsContext, GetStaticProps } from 'next';
+import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Faqs } from '~/ui/templates/secondary/Faqs';
 import { Seo } from '~/ui/util-components/Seo';
