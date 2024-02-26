@@ -3,40 +3,40 @@
     "siging_bonus": "Reciba un bono grande en efectivo por firmar con nosotros",
     "processing_fee": "Tarifas de procesamiento cero",
     "pageTitle": "Ahorre y gane más con las mejores soluciones de pago y punto de venta",
-    "merchant_heading": "Competitive Rates",
-    "merchant_desc": "We're able to maintain our services at no cost to you by <span className='font-semibold text-green-500'>applying a 3.5% charge </span> on your <span className='font-semibold text-green-500'>customer's order total </span> during the checkout process. On top of that, your customers cover the credit card fees, relieving you of any merchant fees.",
+    "merchant_heading": "Tarifas competitivas",
+    "merchant_desc": "Podemos mantener nuestros servicios sin costo alguno para usted aplicando un cargo de 3,5% al ​​total del pedido de su cliente durante el proceso de pago. Además de eso, sus clientes cubren las tarifas de la tarjeta de crédito,liberándolo a usted de cualquier tarifa comercial.",
     "merchant_option": [
         {
             "id": "small",
-            "heading": "Small Restaurant",
-            "pos_number": "One Free POS",
-            "price": "($10k - $50k in sales per month)",
+            "heading": "Restaurante pequeño",
+            "pos_number": "Un POS gratis",
+            "price": "($10k - $50k en ventas por mes)",
             "items": [
-                "Includes a POS, KDS, Car Reader, Printer, and Cash Drawer",
-                "Analytics Dashboard, QR Code /Online Ordering, Gift Cards, Order Notifications",
-                "LTE Connectivity Available at S30/mo per line"
+                "Incluye un POS, KDS, lector de tarjetas, impresora y cajón de dinero",
+                "Panel de análisis, código QR/pedidos en línea, tarjetas de regalo, notificaciones de pedidos",
+                "Conectividad LTE disponible a S30/mes por línea"
             ]
         },
         {
             "id": "medium",
-            "heading": "Med Restaurant",
-            "pos_number": "Up to 3 free POS",
-            "price": "($50k - $115k in sales per month)",
+            "heading": "Restaurante médiano",
+            "pos_number": "Hasta 3 POS's gratis",
+            "price": "($50 mil - $115 mil en ventas por mes)",
             "items": [
-                "Includes a POS, KDS, 2 Handheld POS's, 3 Card Readers, 2 Printers, and Cash Drawer",
-                "Analytics Dashboard, QR Code /Online Ordering, Gift Cards, Order Notifications",
-                "Additional POS's and KDS's available at $30/mo"
+                "Incluye un POS, KDS, 2 POS portátiles, 3 lectores de tarjetas, 2 impresoras y cajón de efectivo",
+                "Panel de análisis, código QR/pedidos en línea, tarjetas de regalo, notificaciones de pedidos",
+                "POS y KDS adicionales disponibles a $30/mes"
             ]
         },
         {
             "id": "large",
-            "heading": "Large Restaurant",
-            "pos_number": "Up to 6 free POS",
-            "price": "(Over $115k in sales per month)",
+            "heading": "Restaurante grande",
+            "pos_number": "Hasta 6 TPV gratis",
+            "price": "(Más de $115 mil en ventas por mes)",
             "items": [
-                "Includes a POS, KDS, Card Readers, Handheld POS's, Printer, and Cash Drawer",
-                "Analytics Dashboard, QR Code /Online Ordering, Gift Cards, Order Notifications",
-                "LTE Connectivity Available at S30/mo per line"
+                "Incluye un POS, KDS, lectores de tarjetas, POS portátiles, impresora y cajón de dinero",
+                "Panel de análisis, código QR/pedidos en línea, tarjetas de regalo, notificaciones de pedidos",
+                "Conectividad LTE disponible a S30/mes por línea"
             ]
         }
     ]
