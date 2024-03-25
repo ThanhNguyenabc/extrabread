@@ -87,9 +87,14 @@ import IcBonus from 'public/images/icons/ic_bonus.svg';
 import IcIncome from 'public/images/icons/ic_income.svg';
 import PartnerBoss from 'public/images/partner/being_boss.webp';
 import PartnerCalling from 'public/images/partner/calling_person.webp';
+import Consideration from 'public/images/partner/consideration.png';
 import PartnerCover from 'public/images/partner/partner_cover.png';
+import ReferalProgram1 from 'public/images/partner/referal_program1.png';
 import PartnerTeamate from 'public/images/partner/teamate.webp';
 import PartnerWFH from 'public/images/partner/working_from_home.webp';
+import EarningCash from 'public/images/partner/earn_cash.png';
+import ReferringBusiness from 'public/images/partner/referring_business.png';
+
 
 //About us
 import AboutBanner from 'public/images/about-us/about-banner.png';
@@ -111,6 +116,7 @@ export {
   ChipIcon,
   CloudSystemIcon,
   CloverAppMarketImg,
+  Consideration,
   CreditCardBanner,
   CreditCardIcon,
   CreditCardTerminalImg,
@@ -168,6 +174,7 @@ export {
   QuickBooksPluginImg,
   QuickServiceRestaurantsImg,
   ReceiveCashIcon,
+  ReferalProgram1,
   RetailBusinessesImg,
   RewardIcon,
   SaveMoneyIcon,
@@ -184,4 +191,6 @@ export {
   WirelessIcon,
   WritingIcon,
   ZeroProcessingFeesIcon,
+  EarningCash,
+  ReferringBusiness
 };

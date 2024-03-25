@@ -27,7 +27,7 @@
     "programs": [
         {
             "key": "referral",
-            "tag" : "Referral Program",
+            "tag": "Referral Program",
             "title": "Quick & Easy Cash Flow",
             "desc": "Earn quick and easy money through our referral program by introducing your favorite establishments to ExtraBread. Enjoy residual monthly income for successful referrals and closed deals. Join now to turn your network into a lucrative source of earnings!",
             "items": [
@@ -51,7 +51,7 @@
         },
         {
             "key": "in-house",
-            "tag" : "In-house Agent Program",
+            "tag": "In-house Agent Program",
             "title": "Working With The Best",
             "desc": "Our In-house Agent Program is an exclusive opportunity to delve deep into our service offerings. By enrolling, you'll gain valuable insights, become an integral team member, and receive expert training to excel in your role. Alongside this, you'll enjoy numerous benefits, such as access to dedicated office facilities, administrative support, and a variety of enticing perks. The program also offers a competitive base salary with the potential for significant residuals and performance-based bonuses.",
             "items": [
@@ -75,7 +75,7 @@
         },
         {
             "key": "iso-agent",
-            "tag" : "Iso Agent Program",
+            "tag": "Iso Agent Program",
             "title": "Being Your Own Boss",
             "desc": "Join ExtraBread as an independent sales office agent and embrace the freedom of being your own boss. Empower merchants with expert advice on ideal point-of-sale systems, build long-term relationships, and expand your portfolio alongside us.",
             "imageDirection": "left",
@@ -99,7 +99,70 @@
             ]
         }
     ],
-    "discover_side_hustle": "Discover the Ultimate Side Hustle with ExtraBread",
-    "discover_desc": "At ExtraBread, we offer the ultimate side hustle for individuals seeking flexible opportunities during their free time.We&apos;re dedicated to keeping you at the forefront of the ever-changing payments landscape through innovative products and program offerings. Construct your sales office with a partner deeply invested in ensuring your success! With our three programs:",
-    "discover_desc1": "You can generate extra income and expand your skill set while maintaining your current commitments. Partnered with numerous established point-of-sale systems, you will have the chance to learn all about the ins and outs of the business."
+    "referal_program": "How our Referral Program works",
+    "referal_program_desc": "The referral program is the perfect opportunity to secure extra income during your off-hours. It's straightforward: refer your favorite bars or restaurants, and for each successful referral, you'll receive a consistent monthly income. And if you're seeking stability, we have part-time or full-time positions available.",
+    "referal_items": [
+        {
+            "title": "Referring a Business",
+            "desc": "Tell us all about your referral(s) and with your introduction, we'll explain our services and what we can offer their business"
+        },
+        {
+            "title": "Signing Them Up",
+            "desc": "Allow the account manager to successfully sign up and close the deal on your referral"
+        },
+        {
+            "title": "Earning Residuals",
+            "desc": "As the client continues to happily use ExtraBread's services, you continue to earn monthly residuals"
+        },
+        {
+            "title": "Expand Your Network",
+            "desc": "Use your successful referrals to grow your network and continue to keep referring businesses"
+        }
+    ],
+    "referal_program_desc1": "You're in control of your earning potential. Refer as many businesses as you can, and there's no limit to what you can earn. The more referrals you send our way, the more you can earn - it's that simple!",
+    "feature_heading": "What’s in it for you?",
+    "feature_items": [
+        {
+            "title": "Lucrative Signing Bonus",
+            "desc": "Receive a signing bonus of up to $10,000+ for merchants who decide to switch over and use ExtraBread's services"
+        },
+        {
+            "title": "Experienced Staff",
+            "desc": "Work alongside and receive guidance from an amazing crew that possesses an in-depth knowledge of the ins and outs of the industry"
+        },
+        {
+            "title": "Virtual Office",
+            "desc": "With our virtual office, you'll be able to track and see your signed referrals, daily & monthly reporting, and your bonus and residual payouts"
+        },
+        {
+            "title": "Monthly Residual Income",
+            "desc": "As your client continues to benefit from ExtraBread's services, you continue to earn a monthly residual income"
+        },
+        {
+            "title": "Competitive Products/Service",
+            "desc": "We offer a wide range of cutting-edge products and services that put our agents at a great advantage in the industry"
+        },
+        {
+            "title": "Networking Possibilities",
+            "desc": "By referring business, you have the opportunity to expand your network and establish new connections in the process"
+        }
+    ],
+    "pick_extrabread_heading": "Why should businesses pick ExtraBread?",
+    "pick_extrabread_desc": "From consultation to installation, ExtraBread is the one stop shop for all things merchant services for a business! Our unique strength lies in our partnerships with top-tier point-of-sale systems and credit card processing providers. We can offer a business zero processing fees, save their money on POS systems, and even offer large cash signing bonuses. Along with this, we offer 24/7 support - whenever you need us, we’re there.",
+    "picking_reason_items": [
+        {
+            "title": "For more information to share with clients",
+            "text_link": "View our various marketing materials.",
+            "link": ""
+        },
+        {
+            "title": "With over two decades of industry experience, count on us to stand by you clients every step of the way!",
+            "text_link": "Learn more about what we can offer for yor referral",
+            "link": ""
+        }
+    ],
+    "earning_title": "Earn Extra Cash with ExtraBread",
+    "earning_desc": "Turn your downtime into extra cash with ExtraBread! No need for big commitments - refer businesses and watch the bonuses and monthly residual income roll in. Sign up with us today.",
+    "start_business_title": "Start Referring Business today",
+    "start_business_desc": "Have some businesses in mind that you want to refer to ExtraBread? Click here to get started and tell us all about it."
 }

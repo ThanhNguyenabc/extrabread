@@ -1,5 +1,6 @@
 @import './utils';
 
+
 body {
   min-height: fill-available;
   overflow-x: hidden;
@@ -19,4 +20,9 @@ body {
 
 .ant-typography[color='white'] {
   color: $neutral-0 !important;
+}
+
+
+.stroke-text {
+  -webkit-text-stroke: 5px transparent;
 }
