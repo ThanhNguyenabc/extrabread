@@ -1,11 +1,11 @@
 import { Button } from '@/components/ui/button';
 import Hero from '@/components/ui/hero';
-import { PartnerContext, usePartnerContext } from '@/pages/partner';
+import { usePartnerContext } from '@/pages/partner';
 import { EarningCash, ReferringBusiness } from '@/ui/img-resource/ImageResources';
 import clsx from 'clsx';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
-import React, { useContext } from 'react';
+import React from 'react';
 
 const CalculatorItem = ({
   className,
