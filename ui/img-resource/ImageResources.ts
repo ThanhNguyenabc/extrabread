@@ -29,6 +29,8 @@ import ItemManagementIcon from 'public/images/color-icons/ItemManagement.svg';
 import NegociationIcon from 'public/images/color-icons/negociation.svg';
 import OnlineOrderingIcon from 'public/images/color-icons/online-ordering.svg';
 import IcCheckCircle from 'public/images/icons/check-circle-solid.svg';
+import IcClose from 'public/images/icons/close.svg';
+import IcPlus from 'public/images/icons/plus.svg';
 
 import PuzzleIcon from 'public/images/color-icons/puzzle.svg';
 import RewardIcon from 'public/images/color-icons/reward.svg';
@@ -85,16 +87,15 @@ import IcAppointment from 'public/images/icons/ic_appointment.svg';
 import IcBasePay from 'public/images/icons/ic_base_pay.svg';
 import IcBonus from 'public/images/icons/ic_bonus.svg';
 import IcIncome from 'public/images/icons/ic_income.svg';
-import PartnerBoss from 'public/images/partner/being_boss.webp';
 import PartnerCalling from 'public/images/partner/calling_person.webp';
 import Consideration from 'public/images/partner/consideration.png';
+import EarningCash from 'public/images/partner/earn_cash.png';
+import PartnerISOProgram from 'public/images/partner/iso_program.png';
 import PartnerCover from 'public/images/partner/partner_cover.png';
 import ReferalProgram1 from 'public/images/partner/referal_program1.png';
-import PartnerTeamate from 'public/images/partner/teamate.webp';
-import PartnerWFH from 'public/images/partner/working_from_home.webp';
-import EarningCash from 'public/images/partner/earn_cash.png';
 import ReferringBusiness from 'public/images/partner/referring_business.png';
-
+import PartnerTeamMate from 'public/images/partner/teammate.webp';
+import PartnerWFH from 'public/images/partner/working_from_home.webp';
 
 //About us
 import AboutBanner from 'public/images/about-us/about-banner.png';
@@ -121,6 +122,7 @@ export {
   CreditCardIcon,
   CreditCardTerminalImg,
   DevicesIcon,
+  EarningCash,
   EfficientFastIcon,
   EmailIcon,
   ESIcon,
@@ -134,8 +136,10 @@ export {
   IcCheck,
   IcCheckCircle,
   IcChevronRight,
+  IcClose,
   IcIncome,
   IcLoading,
+  IcPlus,
   InterfaceIcon,
   InvoicingImg,
   ItemManagementIcon,
@@ -158,10 +162,10 @@ export {
   OnlineReportingImg,
   OnsiteSupportIcon,
   OptionIcon,
-  PartnerBoss,
   PartnerCalling,
   PartnerCover,
-  PartnerTeamate,
+  PartnerISOProgram,
+  PartnerTeamMate,
   PartnerWFH,
   PaymentTerminalIcon,
   PhoneIcon,
@@ -175,6 +179,7 @@ export {
   QuickServiceRestaurantsImg,
   ReceiveCashIcon,
   ReferalProgram1,
+  ReferringBusiness,
   RetailBusinessesImg,
   RewardIcon,
   SaveMoneyIcon,
@@ -191,6 +196,4 @@ export {
   WirelessIcon,
   WritingIcon,
   ZeroProcessingFeesIcon,
-  EarningCash,
-  ReferringBusiness
 };

@@ -23,6 +23,14 @@ const PageConfigs = {
     table: 'Leads',
     service: '',
   },
+  referral: {
+    adminEmail: {
+      title: 'New Business Inquiry',
+      desc: 'We have received a new referral information. Here are the details',
+    },
+    table: 'Referral',
+    service: '',
+  },
 };
 
 export default async function handler(request: NextApiRequest, response: NextApiResponse) {

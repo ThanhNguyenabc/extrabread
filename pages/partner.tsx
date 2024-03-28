@@ -1,13 +1,13 @@
 import BannerX from '@/components/elements/partner/BannerX';
 import Calculator from '@/components/elements/partner/Calculator';
 import DiscoverPartner from '@/components/elements/partner/DiscoverPartner';
-import InfoList from '@/components/elements/partner/InfoList';
 import PartnerForm from '@/components/elements/partner/PartnerForm';
 import { Button } from '@/components/ui/button';
 import Hero from '@/components/ui/hero';
-import InfoSection, { ImageDirection } from '@/components/ui/info_section';
 import { subject } from '@/helpers';
 import { Meta } from '@/models/app_config.model';
+import { Collapse, Panel } from '@/ui/atoms/collapse/Collapse';
+import { Heading } from '@/ui/atoms/heading/Heading';
 import {
   CashBonusIcon,
   Consideration,
@@ -17,10 +17,7 @@ import {
   IcIncome,
   ItemManagementIcon,
   NegociationIcon,
-  PartnerBoss,
   PartnerCover,
-  PartnerTeamate,
-  PartnerWFH,
   ReferalProgram1,
   TipPoolingIcon,
   UserFriendlyIcon,
@@ -34,42 +31,7 @@ import { GetStaticProps } from 'next/types';
 import React, { useContext, useEffect, useRef } from 'react';
 import { getSEOTag } from './api/app-configs';
 
-type PartnerProgram = {
-  key: string;
-  tag: string;
-  title: string;
-  desc: string;
-  items: Array<{
-    title: string;
-    desc: string;
-  }>;
-};
-
 const PartnerProgramConfigs = {
-  referral: {
-    imageLink: PartnerWFH,
-    imageDirection: 'left',
-    tagConfig: {
-      text: 'Referral Program',
-      tagClassName: 'bg-yellow-200',
-    },
-  },
-  'in-house': {
-    imageLink: PartnerTeamate,
-    imageDirection: 'right',
-    tagConfig: {
-      text: 'In-house Agent Program',
-      tagClassName: 'bg-red-200',
-    },
-  },
-  'iso-agent': {
-    imageLink: PartnerBoss,
-    imageDirection: 'left',
-    tagConfig: {
-      text: 'Iso Agent Program',
-      tagClassName: 'bg-green-200',
-    },
-  },
   basePay: IcBasePay,
   bonus: IcBonus,
   income: IcIncome,
@@ -110,14 +72,17 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
   const { t: common } = useTranslation();
   const { t } = useTranslation('partner');
   const registerForm = useRef<HTMLDivElement>(null);
-  const programs = t('programs', { returnObjects: true }) as Array<PartnerProgram>;
-
   const featureItems = t('feature_items', { returnObjects: true }) as Array<{
     title: string;
     desc: string;
   }>;
 
-  const bannerItems = t('items', { returnObjects: true }) as Array<any>;
+  const bannerItems = t('items', { returnObjects: true }) as Array<any> | null;
+
+  const FAQ = t('partner_faq', { returnObjects: true }) as Array<{
+    header: string;
+    content: string;
+  }> | null;
 
   const onJoinExtrabread = () => {
     registerForm?.current?.scrollIntoView({
@@ -127,16 +92,11 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
     });
   };
 
-  const ctaConfig = {
-    title: common('join_extrbread'),
-    onClick: onJoinExtrabread,
-  };
-
   const pickReasonItems = t('picking_reason_items', { returnObjects: true }) as Array<{
     title: string;
     text_link: string;
     link: string;
-  }>;
+  }> | null;
 
   useEffect(() => {
     subject?.subscribe({
@@ -148,7 +108,6 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
       },
     });
   }, []);
-
   return (
     <>
       <Seo title={title} description={description} keywords={keywords} imageFeature={image}></Seo>
@@ -172,7 +131,7 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
               leftCmpClassName="lg:justify-between"
               extraComponent={
                 <div className="flex gap-3 md:gap-4 lg:mx-auto">
-                  {bannerItems.map(item => {
+                  {bannerItems?.map(item => {
                     const Icon = PartnerProgramConfigs[item.key];
                     return (
                       <div key={`${item.key}`} className="flex flex-col items-center gap-2">
@@ -202,6 +161,7 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
             <h3 className="mt-2 mb-8 heading-xs md:text-center md:heading-lg">
               {t('referal_program')}
             </h3>
+
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8 lg:grid-cols-3">
               {featureItems?.map((item, index) => {
                 const Icon = FeatureIcons[index];
@@ -209,7 +169,7 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
                   <div className="flex flex-col gap-3 md:gap-4" key={item.title}>
                     <Icon />
                     <h4 className="text-md-semibold md:text-2xl-semibold"> {item.title}</h4>
-                    <p className="text-neutral-700">{item.desc}</p>
+                    <p className="md:text-lg text-neutral-700">{item.desc}</p>
                   </div>
                 );
               })}
@@ -247,37 +207,20 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
               </Button>
             </div>
           </Hero>
-          {/* <div className="flex flex-col">
-          {programs.map(item => (
-            <InfoSection
-              id={item.key}
-              key={`${item.key}`}
-              dataConfig={{
-                ...item,
-                tagConfig: {
-                  ...PartnerProgramConfigs[item.key]['tagConfig'],
-                  text: t(item.tag),
-                },
-                ctaConfig: ctaConfig,
-                infoClassName: 'lg:max-w-[560px]',
-                extraComponent: <InfoList data={item.items} />,
-              }}
-              image={
-                <div className="flex w-full md:w-[40%] lg:w-[45%] h-[100%] bg-green-100">
-                  <Image
-                    src={PartnerProgramConfigs[item.key].imageLink || ''}
-                    alt="info-image"
-                    width={700}
-                    height={780}
-                    quality={100}
-                    className=" object-contain bg-green-100 h-full"
-                  />
-                </div>
-              }
-              imageDirection={PartnerProgramConfigs[item.key]['imageDirection'] as ImageDirection}
-            />
-          ))}
-        </div> */}
+          <Hero className=" items-center">
+            <Heading level={3} centered>
+              {common('frequently_questions')}
+            </Heading>
+
+            <Collapse>
+              {FAQ?.map(({ header, content }) => (
+                <Panel header={header} key={header} className="w-full sm:w-[768px]">
+                  {content}
+                </Panel>
+              ))}
+            </Collapse>
+          </Hero>
+
           <Calculator />
           <PartnerForm
             ref={registerForm}

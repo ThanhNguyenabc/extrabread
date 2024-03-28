@@ -198,5 +198,10 @@
         "find_answer": "Encuentra las respuestas utilizando nuestro Autoservicio",
         "FAQs": "Preguntas frecuentes",
         "generalFAQ": "Preguntas frecuentes generales"
+    } ,
+    "referal_program": {
+        "heading": "Referral program",
+        "desc": "Want to secure monthly income? Provide your details below – your information is strictly confidential. We protect your referrals and use this data to calculate your potential earnings.",
+        "referrer_info": "Referrer’s Information"
     }
 }

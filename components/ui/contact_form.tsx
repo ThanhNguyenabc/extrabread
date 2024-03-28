@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import React from 'react';
+import React, { forwardRef, useImperativeHandle, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 
@@ -16,6 +16,7 @@ interface ContactFormProps {
     btnProps?: ButtonProps;
     showLoading?: boolean;
   };
+  showBtnSubmit?: boolean;
   onSubmitData: (data?: Contact) => void;
 }
 
@@ -44,8 +45,19 @@ const formSchema = z.object({
   email: z.string().email('This is not a valid email.'),
 });
 
-const ContactForm = ({ btnSubmitConfig, onSubmitData }: ContactFormProps) => {
+export type CustomFormElement = {
+  resetForm: () => void;
+  submitForm: () => void;
+};
+
+const ContactForm = forwardRef<
+  CustomFormElement,
+  React.FormHTMLAttributes<HTMLFormElement> & ContactFormProps
+>((props, ref) => {
+  const { btnSubmitConfig, showBtnSubmit, onSubmitData } = props;
   const { btnProps, title, showLoading = false } = btnSubmitConfig || {};
+
+  const formRef = useRef<HTMLFormElement>(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -57,7 +69,20 @@ const ContactForm = ({ btnSubmitConfig, onSubmitData }: ContactFormProps) => {
     },
   });
 
-  const { setValue, getValues } = form;
+  const { setValue, getValues, reset } = form;
+
+  useImperativeHandle(
+    ref,
+    () => ({
+      resetForm() {
+        reset();
+      },
+      submitForm() {
+        formRef?.current?.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+      },
+    }),
+    [],
+  );
 
   const onChangePhone = (event: React.ChangeEvent<HTMLInputElement>) => {
     let value = event.target.value;
@@ -82,6 +107,7 @@ const ContactForm = ({ btnSubmitConfig, onSubmitData }: ContactFormProps) => {
   return (
     <Form {...form}>
       <form
+        ref={formRef}
         className="flex flex-col gap-4 md:gap-6 w-full"
         onSubmit={form.handleSubmit(onSubmitData)}
       >
@@ -144,18 +170,19 @@ const ContactForm = ({ btnSubmitConfig, onSubmitData }: ContactFormProps) => {
             </FormItem>
           )}
         />
-
-        <Button
-          type="submit"
-          className="w-[200px] md:w-[200px] mt-4 md:mt-6 self-center gap-2"
-          {...btnProps}
-        >
-          {showLoading && <IcLoading className="text-white" />}
-          {title || 'Submit'}
-        </Button>
+        {showBtnSubmit && (
+          <Button
+            type="submit"
+            className="w-[200px] md:w-[200px] mt-4 md:mt-6 self-center gap-2"
+            {...btnProps}
+          >
+            {showLoading && <IcLoading className="text-white" />}
+            {title || 'Submit'}
+          </Button>
+        )}
       </form>
     </Form>
   );
-};
+});
 
 export default ContactForm;

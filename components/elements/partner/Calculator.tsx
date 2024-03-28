@@ -1,3 +1,4 @@
+import ReferalProgramModal, { ReferalProgramType } from '@/components/elements/ReferalProgram';
 import { Button } from '@/components/ui/button';
 import Hero from '@/components/ui/hero';
 import { usePartnerContext } from '@/pages/partner';
@@ -5,7 +6,7 @@ import { EarningCash, ReferringBusiness } from '@/ui/img-resource/ImageResources
 import clsx from 'clsx';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
-import React from 'react';
+import React, { useRef } from 'react';
 
 const CalculatorItem = ({
   className,
@@ -45,6 +46,7 @@ const Calculator = () => {
   const { t: common } = useTranslation('common');
   const { t } = useTranslation('partner');
   const { navigatePartnerForm } = usePartnerContext();
+  const referalProgramRef = useRef<ReferalProgramType>(null);
 
   return (
     <Hero className="flex flex-col gap-6 md:gap-8 lg:flex-row">
@@ -63,8 +65,9 @@ const Calculator = () => {
         btnTitle={common('get_start_today')}
         btnClassName="bg-blue-500"
         image={ReferringBusiness.src}
-        onClick={navigatePartnerForm}
+        onClick={() => referalProgramRef.current?.showDialog()}
       />
+      <ReferalProgramModal ref={referalProgramRef} />
     </Hero>
   );
 };
