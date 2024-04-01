@@ -162,6 +162,7 @@ const App = (props: AppProps) => {
             colorSuccess: primaryColor,
             colorLinkHover: primaryColor,
             colorTextPlaceholder: neutral400,
+            zIndexBase: 1000,
           },
         }}
       >
@@ -174,8 +175,8 @@ const App = (props: AppProps) => {
             <BreadFooter />
           </StyleProvider>
         </div>
-        <Toaster />
       </ConfigProvider>
+      <Toaster />
     </>
   );
 };

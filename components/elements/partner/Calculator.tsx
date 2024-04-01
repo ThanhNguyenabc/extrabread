@@ -1,4 +1,6 @@
-import ReferalProgramModal, { ReferalProgramType } from '@/components/elements/ReferalProgram';
+import ReferalProgramModal, {
+  ReferalProgramType,
+} from '@/components/elements/partner/referral/ReferalProgramModal';
 import { Button } from '@/components/ui/button';
 import Hero from '@/components/ui/hero';
 import { usePartnerContext } from '@/pages/partner';
