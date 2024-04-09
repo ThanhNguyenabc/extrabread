@@ -121,7 +121,7 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
         <div className="flex flex-col">
           <div className="bg-green-100">
             <BannerX
-              tag={common('tag')}
+              tag={t('tag')}
               heading={t('heading')}
               desc={t('sub_heading')}
               image={PartnerCover}
