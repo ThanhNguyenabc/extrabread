@@ -209,7 +209,7 @@
         "any_additional_business": "If you have any additional business...",
         "note_hint": "You can add the business Google profile link or website here as well."
     },
-    "first name": "First name",
+    "first_name": "First name",
     "last_name": "Last name",
     "notes": "Additional Notes:",
     "city": "City",
