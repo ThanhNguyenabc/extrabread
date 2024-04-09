@@ -1,4 +1,7 @@
 {
+    "tag": "Programa de referencia",
+    "heading": "Programa de referencia ExtraBread",
+    "sub_heading": "La oportunidad perfecta para obtener ingresos mensuales adicionales y bonificaciones en tu tiempo libre.",
     "referral": "REMISIÓN",
     "iso-agent": "AGENTE ISO",
     "in-house": "EN CASA",
@@ -27,112 +30,115 @@
     "from_sub_heading": "¡Convierta su tiempo de inactividad en dinero extra con ExtraBread! No hay necesidad de grandes compromisos - consulte empresas y observe cómo llegan las bonificaciones y los ingresos residuales mensuales. Regístrese con nosotros hoy.",
     "form_title": "Comience a obtener ingresos residuales mensuales hoy",
     "form_desc": "Complete el formulario y nos comunicaremos con usted en 24-48 horas",
-    "referal_program": "How our Referral Program works",
-    "referal_program_desc": "The referral program is the perfect opportunity to secure extra income during your off-hours. It's straightforward: refer your favorite bars or restaurants, and for each successful referral, you'll receive a consistent monthly income. And if you're seeking stability, we have part-time or full-time positions available.",
+    "referal_program": "Cómo funciona nuestro programa de referencias",
+    "referal_program_desc": "El programa de referencia es la oportunidad perfecta para obtener ingresos adicionales durante sus horas libres. Es sencillo: recomienda tus bares o restaurantes favoritos y, por cada recomendación exitosa, recibirás un ingreso mensual constante. Y si busca estabilidad, tenemos puestos disponibles a tiempo parcial o completo.",
     "referal_items": [
         {
-            "title": "Referring a Business",
-            "desc": "Tell us all about your referral(s) and with your introduction, we'll explain our services and what we can offer their business"
+            "title": "Recomendar una empresa",
+            "desc": "cuéntenos sobre sus referencias y, con su presentación, le explicaremos nuestros servicios y lo que podemos ofrecerle a su empresa"
         },
         {
-            "title": "Signing Them Up",
-            "desc": "Allow the account manager to successfully sign up and close the deal on your referral"
+            "title": "Registrarlos",
+            "desc": "permita que el administrador de cuentas se registre exitosamente y cierre el trato con su referencia"
         },
         {
-            "title": "Earning Residuals",
-            "desc": "As the client continues to happily use ExtraBread's services, you continue to earn monthly residuals"
+            "title": "Obtención de residuos",
+            "desc": "a medida que el cliente continúa utilizando felizmente los servicios de ExtraBread, usted continúa ganando residuos mensuales"
         },
         {
-            "title": "Expand Your Network",
-            "desc": "Use your successful referrals to grow your network and continue to keep referring businesses"
+            "title": "Amplíe su red",
+            "desc": "utilice sus referencias exitosas para hacer crecer su red y continúe recomendando empresas"
         }
     ],
-    "referal_program_desc1": "You're in control of your earning potential. Refer as many businesses as you can, and there's no limit to what you can earn. The more referrals you send our way, the more you can earn - it's that simple!",
-    "feature_heading": "What’s in it for you?",
+    "referal_program_desc1": "Usted tiene el control de su potencial de ingresos. Recomiende muchas empresas como pueda y no habrá límite para lo que puede ganar. Cuantas más referencias nos envíes, más podrá ganar. ¡Es así de simple!",
+    "feature_heading": "¿Tú qué sacas de esto?",
     "feature_items": [
         {
-            "title": "Lucrative Signing Bonus",
-            "desc": "Receive a signing bonus of up to $10,000+ for merchants who decide to switch over and use ExtraBread's services"
+            "title": "Bono de firma lucrativo",
+            "desc": "Reciba un bono de firma de hasta $10,000+ para los comerciantes que decidan cambiar y utilizar los servicios de ExtraBread"
         },
         {
-            "title": "Experienced Staff",
-            "desc": "Work alongside and receive guidance from an amazing crew that possesses an in-depth knowledge of the ins and outs of the industry"
+            "title": "Personal con experiencia",
+            "desc": "Trabaje junto con un equipo increíble y reciba orientación de él, que posee un conocimiento profundo de los entresijos de la industria"
         },
         {
-            "title": "Virtual Office",
-            "desc": "With our virtual office, you'll be able to track and see your signed referrals, daily & monthly reporting, and your bonus and residual payouts"
+            "title": "Oficina Virtual",
+            "desc": "Con nuestra oficina virtual, podrá realizar un seguimiento y ver sus referencias firmadas, informes diarios y mensuales, y sus bonos y pagos residuales"
         },
         {
-            "title": "Monthly Residual Income",
-            "desc": "As your client continues to benefit from ExtraBread's services, you continue to earn a monthly residual income"
+            "title": "Ingreso residual mensual",
+            "desc": "A medida que su cliente continúa beneficiándose de los servicios de ExtraBread, usted continúa ganando un ingreso residual mensual"
         },
         {
-            "title": "Competitive Products/Service",
-            "desc": "We offer a wide range of cutting-edge products and services that put our agents at a great advantage in the industry"
+            "title": "Productos/servicios competitivos",
+            "desc": "Ofrecemos una amplia gama de productos y servicios de vanguardia que colocan a nuestros agentes en una gran ventaja en la industria"
         },
         {
-            "title": "Networking Possibilities",
-            "desc": "By referring business, you have the opportunity to expand your network and establish new connections in the process"
+            "title": "Posibilidades de establecer contactos",
+            "desc": "Al recomendar negocios, tiene la oportunidad de ampliar su red y establecer nuevas conexiones en el proceso"
         }
     ],
-    "pick_extrabread_heading": "Why should businesses pick ExtraBread?",
-    "pick_extrabread_desc": "From consultation to installation, ExtraBread is the one stop shop for all things merchant services for a business! Our unique strength lies in our partnerships with top-tier point-of-sale systems and credit card processing providers. We can offer a business zero processing fees, save their money on POS systems, and even offer large cash signing bonuses. Along with this, we offer 24/7 support - whenever you need us, we’re there.",
+    "pick_extrabread_heading": "¿Por qué las empresas deberían elegir ExtraBread?",
+    "pick_extrabread_desc": "Desde consultas hasta instalación, Extra Bread es la ventanilla única para todo lo relacionado con los servicios comerciales para una empresa. Nuestra fortaleza única radica en nuestras asociaciones con sistemas de punto de venta y proveedores de procesamiento de tarjetas de crédito de primer nivel. Podemos ofrecerle a una empresa cero tarifas de procesamiento, ahorrarle dinero en sistemas POS e incluso ofrecer grandes bonificaciones por firma en efectivo. Además de esto, ofrecemos soporte 24 horas al día, 7 días a la semana, siempre que nos necesite, estamos allí.",
     "picking_reason_items": [
         {
-            "title": "For more information to share with clients",
-            "text_link": "View our various marketing materials.",
+            "title": "Para obtener más información para compartir con los clientes",
+            "text_link": "Vea nuestros diversos materiales de marketing",
             "link": ""
         },
         {
-            "title": "With over two decades of industry experience, count on us to stand by you clients every step of the way!",
-            "text_link": "Learn more about what we can offer for yor referral",
+            "title": "Con más de dos décadas de experiencia en la industria, ¡cuente con nosotros para acompañar a sus clientes en cada paso del camino!",
+            "text_link": "Conozca más sobre lo que podemos ofrecer para su referencia",
             "link": ""
         }
     ],
-    "earning_title": "Earn Extra Cash with ExtraBread",
-    "earning_desc": "Turn your downtime into extra cash with ExtraBread! No need for big commitments - refer businesses and watch the bonuses and monthly residual income roll in. Sign up with us today.",
-    "start_business_title": "Start Referring Business today",
-    "start_business_desc": "Have some businesses in mind that you want to refer to ExtraBread? Click here to get started and tell us all about it.",
-    "partner_program_heading": "Or join the team and earn even more",
-    "partner_program_desc": "Interested in doing more or working a full-time position at ExtraBread? Learn more about our other programs, in-house and the ISO agent program.",
+    "earning_title": "Gana dinero extra con Extrabread",
+    "earning_desc": "¡Convierta su tiempo de inactividad en efectivo con extrabread! No hay necesidad de grandes compromisos: recomiende empresas y observe cómo llegan las bonificaciones y el ingreso residual mensual. Regístrese con nosotros hoy.",
+    "start_business_title": "Comience a recomendar negocios hoy",
+    "start_business_desc": "¿Tienes en mente algunos negocios a los que quieres referir a  Extrabread? Haga clic aquí para comenzar y contarnos todo al respecto.",
+    "partner_program_heading": "O únete al equipo y gana aún más",
+    "partner_program_desc": "¿Está interesado en hacer más o trabajar en un puesto de tiempo completo con dinero extra?\nObtenga más información sobre nuestros otros programas, internos y el programa de agente ISO",
     "partner_program_items": [
         {
-            "title": "In-House Agent Program",
-            "desc": "This program is an exclusive opportunity to delve deep into our service offerings. By enrolling you’ll become an integral team member. Enjoy numerous benefits, such as access to dedicated office facilities, administrative support, and a variety of enticing perks. "
+            "title": "Programa de agente interno",
+            "desc": "Este programa es una oportunidad exclusiva para profundizar en nuestras ofertas de servicios. Al inscribirte te convertirás en un miembro integral del equipo. Disfrutar de numerosos beneficios, como acceso a instalaciones de oficina exclusivas, soporte administrativo y una variedad de atractivos beneficios"
         },
         {
-            "title": "ISO Agent Program",
-            "desc": "Join ExtraBread as an independent sales office agent and embrace the freedom of being your own boss. Empower merchants with expert advice on ideal point-of-sale systems, build long-term relationships, and expand your portfolio alongside us."
+            "title": "Programa de agente ISO",
+            "desc": "Únase a Extrabread como agente de oficina de ventas independiente y disfrute de la libertad de ser su propio jefe. Brinde a los comerciantes asesoramiento experto sobre sistemas ideales de punto de venta, establezca relaciones a largo plazo y amplíe su portafolio  junto con nosotros"
         }
     ],
     "partner_faq": [
         {
-            "header": "What kind of business would make for a good referral?",
-            "content": "ExtraBread is designed to be compatible with all types of businesses such as full and quick service restaurants, retail, small businesses, bars & nightclubs, pizzerias and any other business you can think of."
+            "header": "¿Qué tipo de negocio sería una buena recomendación?",
+            "content": "Extrabread está diseñado para ser compatible con todo tipo de negocios, como restaurantes de servicio completo y rápido, comercio minorista, pequeñas empresas, bares y discotecas, pizzerías y cualquier otro negocio que se le ocurra."
         },
         {
-            "header": "What is the process to become a referral agent?",
+            "header": "¿Cuál es el proceso para convertirse en un agente de referencia?",
             "content": "Prospective referral agents can apply to become a partner by signing up on the form via bottom of the page. We will review your application and respond back to you within one to two weeks."
         },
         {
-            "header": "What happens after I apply to become a referral partner?",
+            "header": "¿Qué sucede después de solicitar convertirme en socio de referencia?",
             "content": "We will proceed to set up a meeting/phone call to get to know your business better. We’ll share more information on how our services can benefit your referred business and explain the process more in detail. Once everything is all understood, an account manager will be in contact with the referred business."
         },
         {
-            "header": "How long does it take to become a referral agent?",
+            "header": "¿Cuánto tiempo lleva convertirse en agente de referencias?",
             "content": "The time it takes to become a referral agent varies with each application. The process can be as fast as one to two weeks with standard agreement terms."
         },
         {
-            "header": "How much can I earn?",
-            "content": "With each successful referral, you earn ______. There is no limit as to how many referrals you can send us. The more referrals you send our way, the more you can earn!"
+            "header": "¿Cuánto puedo ganar?",
+            "content": "With each successful referral, you can earn between $100 to $2,000.  It varies depending on a number of factors such as, businesses total volume, locations, how long they’ve been operating, total terminals, etc. There is no limit as to how many referrals you can send us. The more referrals you send our way, the more you can earn!"
         },
         {
             "header": "How will I know my referral is successful?",
             "content": "Once your referral is submitted, we will send email notifications throughout each phase of the referral process to share the status of your referral(s)."
         },
         {
-            "header": "How do I submit a referral?",
+            "header": "¿Cómo envío una referencia?",
             "content": "Fill out this quick form here. Once submitted, you will receive an email confirmation that your submission has been received. Please allow 3-5 business days for our team to review your referral and we will get back to you."
         }
-    ]
+    ],
+    "current_profession": "Tu profesión actual",
+    "select_date_form": "Selecciona tu fecha para asistir",
+    "select_time_form": "Selecciona tu hora"
 }

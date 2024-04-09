@@ -13,6 +13,7 @@ import { TextArea } from '@/components/ui/textarea';
 import { US_STATE_CODE } from '@/constants/us-state-code';
 import { IcClose } from '@/ui/img-resource/ImageResources';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useTranslation } from 'next-i18next';
 import React, { forwardRef, useImperativeHandle, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
@@ -76,7 +77,7 @@ type ReferalFormProps = React.FormHTMLAttributes<HTMLFormElement> & {
 const ReferalInformationForm = forwardRef<CustomFormElement, ReferalFormProps>((props, ref) => {
   const { data, formTitle, showCloseIcon, onRemoveForm, onSubmitedData } = props;
   const formRef = useRef<HTMLFormElement>(null);
-
+  const { t: common } = useTranslation('common');
   const form = useForm<z.infer<typeof fromXSchema>>({
     resolver: zodResolver(fromXSchema),
     defaultValues: {
@@ -144,7 +145,7 @@ const ReferalInformationForm = forwardRef<CustomFormElement, ReferalFormProps>((
           name="businessName"
           render={({ field }) => (
             <FormItem className="flex-1">
-              <FormLabel>Business name</FormLabel>
+              <FormLabel>{common('business_name')}</FormLabel>
               <FormControl>
                 <Input type="text" {...field} />
               </FormControl>
@@ -157,7 +158,7 @@ const ReferalInformationForm = forwardRef<CustomFormElement, ReferalFormProps>((
           name="address"
           render={({ field }) => (
             <FormItem className="flex-1">
-              <FormLabel>Address</FormLabel>
+              <FormLabel>{common('address')}</FormLabel>
               <FormControl>
                 <Input type="text" {...field} />
               </FormControl>
@@ -171,7 +172,7 @@ const ReferalInformationForm = forwardRef<CustomFormElement, ReferalFormProps>((
             name="city"
             render={({ field }) => (
               <FormItem className="flex-1">
-                <FormLabel>City</FormLabel>
+                <FormLabel>{common('city')}</FormLabel>
                 <FormControl>
                   <Input type="text" {...field} />
                 </FormControl>
@@ -184,7 +185,7 @@ const ReferalInformationForm = forwardRef<CustomFormElement, ReferalFormProps>((
             name="state"
             render={({ field }) => (
               <FormItem className="flex-1">
-                <FormLabel>State</FormLabel>
+                <FormLabel>{common('state')}</FormLabel>
                 <FormControl>
                   <Input type="text" {...field} />
                 </FormControl>
@@ -193,14 +194,14 @@ const ReferalInformationForm = forwardRef<CustomFormElement, ReferalFormProps>((
             )}
           />
         </div>
-        <h4 className="text-md-semibold">Contact Details</h4>
+        <h4 className="text-md-semibold">{common('contact_detail')}</h4>
         <div className="flex flex-col gap-4 w-full md:gap-6 md:flex-row">
           <FormField
             control={form.control}
             name="firstName"
             render={({ field }) => (
               <FormItem className="flex-1">
-                <FormLabel>First name</FormLabel>
+                <FormLabel>{common('first_name')}</FormLabel>
                 <FormControl>
                   <Input type="text" {...field} />
                 </FormControl>
@@ -213,7 +214,7 @@ const ReferalInformationForm = forwardRef<CustomFormElement, ReferalFormProps>((
             name="lastName"
             render={({ field }) => (
               <FormItem className="flex-1">
-                <FormLabel>Last name</FormLabel>
+                <FormLabel>{common('last_name')}</FormLabel>
                 <FormControl>
                   <Input type="text" {...field} />
                 </FormControl>
@@ -227,7 +228,7 @@ const ReferalInformationForm = forwardRef<CustomFormElement, ReferalFormProps>((
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Phone</FormLabel>
+              <FormLabel>{common('phone')}</FormLabel>
               <FormControl>
                 <Input
                   placeholder="(555) 000-0000"
@@ -245,12 +246,12 @@ const ReferalInformationForm = forwardRef<CustomFormElement, ReferalFormProps>((
           name="notes"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Additional Notes:</FormLabel>
+              <FormLabel>{common('notes')}</FormLabel>
               <FormControl>
                 <TextArea
                   {...field}
                   className="min-h-[100px]"
-                  placeholder="Please provide any other information here. You can add the businesses Google profile link or website here as well."
+                  placeholder={common('referal_program.note_hint')}
                 />
               </FormControl>
               <FormMessage />

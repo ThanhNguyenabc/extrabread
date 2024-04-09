@@ -1,13 +1,14 @@
 import { submitForm } from '@/apis';
 import ReferalInformationForm, {
   ReferalInformation,
-} from '@/components/elements/partner/ReferalInformationForm';
+} from '@/components/elements/partner/referral/ReferalInformationForm';
 import ReferralProgramHeader from '@/components/elements/partner/referral/ReferralProgramHeader';
 import { Button } from '@/components/ui/button';
 import ContactForm, { CustomFormElement } from '@/components/ui/contact_form';
 import { useToast } from '@/components/ui/use-toast';
 import { Contact } from '@/models/contact.model';
 import { IcLoading, IcPlus } from '@/ui/img-resource/ImageResources';
+import { useTranslation } from 'next-i18next';
 import React, { useEffect, useRef, useState } from 'react';
 
 const initialBusinessFrom = [
@@ -44,6 +45,8 @@ const ReferralProgram = ({
   onCloseBtnClick?: () => void;
   onSubmitSuccess?: () => void;
 }) => {
+  const { t: common } = useTranslation('common');
+
   const { toast } = useToast();
   const [isLoading, setLoading] = useState(false);
   const formRefs = useRef<CustomFormElement[]>([]);
@@ -170,7 +173,7 @@ const ReferralProgram = ({
     <div className="flex flex-col gap-4 md:gap-6">
       <ReferralProgramHeader onClose={onCloseBtnClick} showCloseBtn={showHeaderCloseButton} />
 
-      <h4 className="heading-xs">Referrer’s Information</h4>
+      <h4 className="heading-xs">{common('referal_program.referrer_info')}</h4>
       <ContactForm
         onSubmitData={data => {
           formData.current && data && (formData.current.contact = data);
@@ -180,14 +183,14 @@ const ReferralProgram = ({
           ref && formRefs.current?.push(ref);
         }}
       />
-      <h4 className="heading-xs">Referral Information</h4>
+      <h4 className="heading-xs">{common('referal_program.referal_information')}</h4>
       {businessFormList?.map((item, index) => (
         <ReferalInformationForm
           ref={ref => {
             ref && formRefs.current?.push(ref);
           }}
           key={`Business ${index + 1}`}
-          formTitle={`Business ${index + 1}`}
+          formTitle={`${common('referal_program.business')} ${index + 1}`}
           showCloseIcon={index > 0}
           onRemoveForm={onRemoveForm}
           data={item}
@@ -201,10 +204,10 @@ const ReferralProgram = ({
         />
       ))}
       <div className=" bg-neutral-300 h-[1px]" />
-      <p className=" text-neutral-600">If you have any additional business...</p>
+      <p className=" text-neutral-600">{common('referal_program.any_additional_business')}</p>
       <Button variant={'outline'} className=" gap-2 md:w-full" onClick={onAddBusinessInfo}>
         <IcPlus />
-        <p className="text-md-semibold">Add Business</p>
+        <p className="text-md-semibold">{common('referal_program.add_business')}</p>
       </Button>
 
       <Button
@@ -219,7 +222,7 @@ const ReferralProgram = ({
         }}
       >
         {isLoading && <IcLoading className="text-white" />}
-        {'Submit'}
+        {common('submit')}
       </Button>
     </div>
   );

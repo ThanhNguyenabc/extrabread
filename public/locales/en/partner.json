@@ -1,5 +1,8 @@
 {
     "referral": "REFERRAL",
+    "tag": "Referal Program",
+    "heading": "ExtraBread Referral Program",
+    "sub_heading": "The perfect opportunity to earn extra monthly income & bonuses in your free time.",
     "iso-agent": "ISO AGENT",
     "in-house": "IN-HOUSE",
     "items": [
@@ -90,8 +93,8 @@
     "earning_desc": "Turn your downtime into extra cash with ExtraBread! No need for big commitments - refer businesses and watch the bonuses and monthly residual income roll in. Sign up with us today.",
     "start_business_title": "Start Referring Business today",
     "start_business_desc": "Have some businesses in mind that you want to refer to ExtraBread? Click here to get started and tell us all about it.",
-    "partner_program_heading": "Or join the team and earn even more",
-    "partner_program_desc": "Interested in doing more or working a full-time position at ExtraBread? Learn more about our other programs, in-house and the ISO agent program.",
+    "partner_program_heading": "Or join the team and earn even more",
+    "partner_program_desc": "Interested in doing more or working a full-time position at ExtraBread?\nLearn more about our other programs, in-house and the ISO agent program.",
     "partner_program_items": [
         {
             "title": "In-House Agent Program",
@@ -121,7 +124,7 @@
         },
         {
             "header": "How much can I earn?",
-            "content": "With each successful referral, you earn ______. There is no limit as to how many referrals you can send us. The more referrals you send our way, the more you can earn!"
+            "content": "With each successful referral, you can earn between $100 to $2,000.  It varies depending on a number of factors such as, businesses total volume, locations, how long they’ve been operating, total terminals, etc. There is no limit as to how many referrals you can send us. The more referrals you send our way, the more you can earn!"
         },
         {
             "header": "How will I know my referral is successful?",
@@ -131,5 +134,8 @@
             "header": "How do I submit a referral?",
             "content": "Fill out this quick form here. Once submitted, you will receive an email confirmation that your submission has been received. Please allow 3-5 business days for our team to review your referral and we will get back to you."
         }
-    ]
+    ],
+    "current_profession": "Your current profession",
+    "select_date_form" : "Select your date to attend",
+    "select_time_form" : "Select your time"
 }

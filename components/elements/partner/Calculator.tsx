@@ -35,7 +35,7 @@ const CalculatorItem = ({
           <Image src={image} alt={title} fill />
         </div>
         <h3 className="heading-xs md:heading-lg lg:text-start">{title}</h3>
-        <p className="md:text-lg">{desc}</p>
+        <p className="md:text-lg flex-1">{desc}</p>
         <Button onClick={onClick} size={'responsive'} className={clsx(btnClassName)}>
           {btnTitle ?? common('join_extrbread')}
         </Button>

@@ -198,10 +198,22 @@
         "find_answer": "Encuentra las respuestas utilizando nuestro Autoservicio",
         "FAQs": "Preguntas frecuentes",
         "generalFAQ": "Preguntas frecuentes generales"
-    } ,
+    },
     "referal_program": {
-        "heading": "Referral program",
-        "desc": "Want to secure monthly income? Provide your details below – your information is strictly confidential. We protect your referrals and use this data to calculate your potential earnings.",
-        "referrer_info": "Referrer’s Information"
-    }
+        "heading": "Programa de recomendación",
+        "desc": "¿quiere asegurar un ingreso mensual? Proporcione sus datos a continuación; su información es estrictamente confidencial. Protegemos sus referencias y utilizamos estos datos para calcular sus ganancias potenciales",
+        "referrer_info": "Información del referente",
+        "referal_information": "Información de referencia",
+        "business": "Empresa",
+        "add_business": "Añadir empresa",
+        "any_additional_business": "Si tiene algún negocio adicional...",
+        "note_hint": "También puede agregar aquí el enlace del perfil empresarial de Google o el sitio web"
+    },
+    "first_name": "Nombre de pila",
+    "last_name": "Apellido",
+    "notes": "Notas adicionales",
+    "city": "Ciudad",
+    "address": "Dirección",
+    "state": "Estado",
+    "contact_detail": "Contacto"
 }

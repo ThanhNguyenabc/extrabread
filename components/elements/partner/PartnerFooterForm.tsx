@@ -1,25 +1,21 @@
-import { zodResolver } from '@hookform/resolvers/zod';
-import React, { forwardRef, useImperativeHandle, useRef } from 'react';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
-
+import { Button } from '@/components/ui/button';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
 import { US_STATE_CODE } from '@/constants/us-state-code';
 import { Contact } from '@/models/contact.model';
 import { IcLoading } from '@/ui/img-resource/ImageResources';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslation } from 'next-i18next';
-import { Button, ButtonProps } from './button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from './form';
-import { Input } from './input';
-
-interface ContactFormProps {
-  btnSubmitConfig?: {
-    title?: string;
-    btnProps?: ButtonProps;
-    showLoading?: boolean;
-  };
-  showBtnSubmit?: boolean;
-  onSubmitData: (data?: Contact) => void;
-}
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import * as z from 'zod';
 
 const formSchema = z.object({
   firstname: z.string().min(3, {
@@ -44,22 +40,20 @@ const formSchema = z.object({
       },
     ),
   email: z.string().email('This is not a valid email.'),
+  profession: z.string().min(3, 'Current profession must not be empty'),
+  date: z.string().min(3, 'Please select date'),
+  time: z.string().min(3, 'Please select time'),
 });
 
-export type CustomFormElement = {
-  resetForm: () => void;
-  submitForm: () => void;
-};
-
-const ContactForm = forwardRef<
-  CustomFormElement,
-  React.FormHTMLAttributes<HTMLFormElement> & ContactFormProps
->((props, ref) => {
-  const { btnSubmitConfig, showBtnSubmit, onSubmitData } = props;
-  const { btnProps, title, showLoading = false } = btnSubmitConfig || {};
-
+const PartnerFooterForm = ({
+  showLoading,
+  onSubmitData,
+}: {
+  onSubmitData: (data?: Contact) => void;
+  showLoading?: boolean;
+}) => {
   const { t } = useTranslation('common');
-  const formRef = useRef<HTMLFormElement>(null);
+  const { t: partner } = useTranslation('partner');
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -68,23 +62,12 @@ const ContactForm = forwardRef<
       firstname: '',
       phone: '',
       email: '',
+      date: '',
+      profession: '',
+      time: '',
     },
   });
-
-  const { setValue, getValues, reset } = form;
-
-  useImperativeHandle(
-    ref,
-    () => ({
-      resetForm() {
-        reset();
-      },
-      submitForm() {
-        formRef?.current?.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
-      },
-    }),
-    [],
-  );
+  const { setValue, getValues } = form;
 
   const onChangePhone = (event: React.ChangeEvent<HTMLInputElement>) => {
     let value = event.target.value;
@@ -109,7 +92,6 @@ const ContactForm = forwardRef<
   return (
     <Form {...form}>
       <form
-        ref={formRef}
         className="flex flex-col gap-4 md:gap-6 w-full"
         onSubmit={form.handleSubmit(onSubmitData)}
       >
@@ -146,7 +128,7 @@ const ContactForm = forwardRef<
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{t('phone')} </FormLabel>
+              <FormLabel>{t('phone')}</FormLabel>
               <FormControl>
                 <Input
                   placeholder="(555) 000-0000"
@@ -172,19 +154,54 @@ const ContactForm = forwardRef<
             </FormItem>
           )}
         />
-        {showBtnSubmit && (
-          <Button
-            type="submit"
-            className="w-[200px] md:w-[200px] mt-4 md:mt-6 self-center gap-2"
-            {...btnProps}
-          >
-            {showLoading && <IcLoading className="text-white" />}
-            {title || t('submit')}
-          </Button>
-        )}
+        <FormField
+          control={form.control}
+          name="profession"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{partner('current_profession')}</FormLabel>
+              <FormControl>
+                <Input type="text" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <div className="flex flex-col gap-4 lg:flex-row">
+          <FormField
+            control={form.control}
+            name="date"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{partner('select_date_form')}</FormLabel>
+                <FormControl>
+                  <Input type="date" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="time"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{partner('select_time_form')}</FormLabel>
+                <FormControl>
+                  <Input type="time" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        <Button type="submit" className="w-[200px] md:w-[200px] mt-4 md:mt-6 self-center gap-2">
+          {showLoading && <IcLoading className="text-white" />}
+          {t('submit')}
+        </Button>
       </form>
     </Form>
   );
-});
+};
 
-export default ContactForm;
+export default PartnerFooterForm;

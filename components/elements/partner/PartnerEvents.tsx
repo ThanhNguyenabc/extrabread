@@ -70,10 +70,15 @@ const PartnerEvents = () => {
 
   return (
     <Hero className="flex flex-col gap-6 md:gap-8 sm:items-center">
-      <h3 className="heading-xs text-center sm:max-w-3xl md:text-center md:heading-lg">
-        {t('partner_program_heading')}
-      </h3>
-      <p className="md:text-lg text-neutral-700 sm:max-w-3xl">{t('partner_program_desc')}</p>
+      <div className="flex flex-col gap-2 items-center">
+        <h3 className="heading-xs text-center md:max-w-[475px] md:heading-lg">
+          {t('partner_program_heading')}
+        </h3>
+        <p className="md:text-lg text-neutral-700 text-center whitespace-pre-line sm:max-w-2xl">
+          {t('partner_program_desc')}
+        </p>
+      </div>
+
       {program?.map((item, index) => (
         <PartnerItem
           key={item.title}

@@ -1,8 +1,8 @@
 import { submitForm } from '@/apis';
+import PartnerFooterForm from '@/components/elements/partner/PartnerFooterForm';
 import { FormData } from '@/models/form_data';
 import React, { HTMLAttributes, ReactElement, useEffect, useState } from 'react';
 import useSWRMutation from 'swr/mutation';
-import ContactForm from '../../ui/contact_form';
 import Hero from '../../ui/hero';
 import { useToast } from '../../ui/use-toast';
 
@@ -41,6 +41,8 @@ const PartnerForm = React.forwardRef<HTMLDivElement, FooterRegisterFromProps>(
             'Last name': data.lastname,
             'Created Date': new Date().toDateString(),
             'Phone number': data.phone,
+            Profession: data.profession,
+            'Meeting Time': `${data.date} ${data.time}`,
             Email: data.email,
           },
         },
@@ -78,15 +80,7 @@ const PartnerForm = React.forwardRef<HTMLDivElement, FooterRegisterFromProps>(
               <h4 className="text-xl-semibold md:heading-md md:max-w-xl">{formTitle}</h4>
               <p className="text-base text-neutral-700 md:text-lg">{formSubTilte}</p>
             </div>
-            <ContactForm
-              onSubmitData={onSubmitData}
-              btnSubmitConfig={{
-                btnProps: {
-                  disabled: isLoading,
-                },
-                showLoading: isLoading,
-              }}
-            />
+            <PartnerFooterForm onSubmitData={onSubmitData} showLoading={isLoading} />
           </div>
         </Hero>
       </div>

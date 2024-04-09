@@ -1,6 +1,7 @@
 import BannerX from '@/components/elements/partner/BannerX';
 import Calculator from '@/components/elements/partner/Calculator';
 import DiscoverPartner from '@/components/elements/partner/DiscoverPartner';
+import PartnerEvents from '@/components/elements/partner/PartnerEvents';
 import PartnerForm from '@/components/elements/partner/PartnerForm';
 import { Button } from '@/components/ui/button';
 import Hero from '@/components/ui/hero';
@@ -120,9 +121,9 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
         <div className="flex flex-col">
           <div className="bg-green-100">
             <BannerX
-              tag={common('side_hustle.partner_ship')}
-              heading={common('side_hustle.heading')}
-              desc={common('side_hustle.desc2')}
+              tag={common('tag')}
+              heading={t('heading')}
+              desc={t('sub_heading')}
               image={PartnerCover}
               button={{
                 title: common('join_extrbread'),
@@ -159,7 +160,7 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
               sizes="100vw"
             />
             <h3 className="mt-2 mb-8 heading-xs md:text-center md:heading-lg">
-              {t('referal_program')}
+              {t('feature_heading')}
             </h3>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8 lg:grid-cols-3">
@@ -207,6 +208,7 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
               </Button>
             </div>
           </Hero>
+          <PartnerEvents />
           <Hero className=" items-center">
             <Heading level={3} centered>
               {common('frequently_questions')}
