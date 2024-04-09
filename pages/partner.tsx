@@ -70,7 +70,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
 const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
   const { title, description, keywords, image } = seoTag || {};
-  const { t: common } = useTranslation();
+  const { t: common } = useTranslation('common');
   const { t } = useTranslation('partner');
   const registerForm = useRef<HTMLDivElement>(null);
   const featureItems = t('feature_items', { returnObjects: true }) as Array<{

@@ -44,7 +44,7 @@ const BannerX = ({
             headingClassName,
           )}
         >
-          {tag && <Badge>Partnership</Badge>}
+          {tag && <Badge>{tag}</Badge>}
           <h1 className="heading-md md:heading-xl"> {heading}</h1>
           {desc && <h3 className="text-base text-neutral-700 font-semibold md:text-lg"> {desc}</h3>}
         </div>
