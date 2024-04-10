@@ -2,20 +2,25 @@
     "desc": "Hoy en día, el descuento por effectivo se está convirtiendo cada vez más en el método preferido de aceptación de pagos entre las pequeñas empresas, lo que permite a miles de ellas ahorrar importantes cantidades de dinero en sus tarifas de procesamiento mensuales.",
     "heading": "Paga 0% por tus tarifas de procesamiento",
     "banner": [
-        "Procesar pagos al 0% de costo",
+        "Cero tarifas de procesamiento ",
         "Las tarifas se pasan al cliente",
         "Cumple con las leyes y regulaciones en los 50 estados",
         "Reciba GRATIS un terminal de tarjeta de crédito sin costo"
     ],
-    "pay_zero_fee_heading": "Pay ZERO CC fees at the end of the month",
-    "pay_zero_fee_desc": "Our cash discount program allows merchants to collect up to 100% of their revenue without all of the extra fees that come with accepting credit cards. The fees for processing the cards come directly to us and we pay all your monthly transactions.<br /><br /> When you receive your merchant statement each month, you will always pay ZERO. A solution that completely eliminates merchant service fees and reduces your credit card fees 100%.",
-    "save_money_heading": "Save Money When Using Cash",
-    "save_money_desc": "When a customer checks out, the receipt will showcase the cash discount and the percentage. Your business is able to accept the full value of the product or service—free of credit card fees—while the customer is happy to receive a discount. They will still have the option to pay with a credit/debit card, just simply without the discount.",
-    "additional_value_heading": "Additional Values for your Business:",
+    "pay_zero_fee_heading": "Pague CERO tarifas de tarjeta a fin de mes",
+    "pay_zero_fee_desc": "Nuestro programa de descuento por efectivo permite a los comerciantes cobrar hasta el 100 % de sus ingresos sin todos los cargos adicionales que conlleva aceptar tarjetas de crédito.\n\nLas tarifas por procesar las tarjetas nos llegan directamente a nosotros y pagamos todas sus transacciones mensuales.Cuando reciba su estado de cuenta comercial cada mes, siempre pagará CERO. Una solución que elimina por completo las tarifas de servicio comercial y reduce las tarifas de su tarjeta de crédito al 100%.",
+    "save_money_heading": "Ahorre dinero al usar efectivo",
+    "save_money_desc": "Cuando un cliente realiza el pago, el recibo mostrará el descuento por efectivo y el porcentaje. Su empresa puede aceptar el valor total del producto o servicio, sin cargos por tarjeta de crédito, mientras que el cliente está feliz de recibir un descuento. Seguirán teniendo la opción de pagar con tarjeta de crédito/débito, simplemente sin el descuento.",
+    "save_money_items": [
+        "Cero tarifas de procesamiento ",
+        "Cumple con las leyes y regulaciones en los 50 estados",
+        "Reciba GRATIS un terminal de tarjeta de crédito sin costo"
+    ],
+    "additional_value_heading": "Valores adicionales para su negocio:",
     "additional_items": [
-        "Next day funding (11PM EST)",
-        "Month-to-month contracts on all accounts",
-        "Equipment comes pre-installed with software to easily implement the cash discount program and offers back-office reporting tools"
+        "Financiación al día siguiente (11 p.m. EST)",
+        "Contratos mes a mes en todas las cuentas.",
+        "El equipo viene preinstalado con software para implementar fácilmente el programa de descuento por efectivo y ofrecer herramientas de informes administrativos"
     ],
     "provide_business": "Proporcionamos a su negocio:",
     "all_business_heading": "Precios de descuento por efectivo para todo tipo de negocios",

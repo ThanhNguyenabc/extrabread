@@ -2,15 +2,20 @@
     "desc": "Nowadays, cash discounting is increasingly becoming the preferred method of payment acceptance among small businesses, allowing thousands of them to save significant amounts of money on their monthly processing fees.",
     "heading": "Pay 0% for your processing rates",
     "banner": [
-        "Process payments at 0% cost",
+        "Zero processing fees",
         "Fees are passed onto the customer",
         "Compliant with laws and regulations in all 50 states",
         "Receive a Free Credit Card terminal at no cos"
     ],
     "pay_zero_fee_heading": "Pay ZERO CC fees at the end of the month",
-    "pay_zero_fee_desc": "Our cash discount program allows merchants to collect up to 100% of their revenue without all of the extra fees that come with accepting credit cards. The fees for processing the cards come directly to us and we pay all your monthly transactions.<br /><br /> When you receive your merchant statement each month, you will always pay ZERO. A solution that completely eliminates merchant service fees and reduces your credit card fees 100%.",
+    "pay_zero_fee_desc": "Our cash discount program allows merchants to collect up to 100% of their revenue without all of the extra fees that come with accepting credit cards. The fees for processing the cards come directly to us and we pay all your monthly transactions.\n\nWhen you receive your merchant statement each month, you will always pay <span className = 'text-green-500 font-extrabold'>ZERO</span>. A solution that completely eliminates merchant service fees and reduces your credit card fees 100%.",
     "save_money_heading": "Save Money When Using Cash",
     "save_money_desc": "When a customer checks out, the receipt will showcase the cash discount and the percentage. Your business is able to accept the full value of the product or service—free of credit card fees—while the customer is happy to receive a discount. They will still have the option to pay with a credit/debit card, just simply without the discount.",
+    "save_money_items": [
+        "Zero Processing Fees",
+        "Compliant with law and regulations in all 50 states",
+        "Receive a Free credit card terminal"
+    ],
     "provide_business": "We provide your business with:",
     "additional_value_heading": "Additional Values for your Business:",
     "additional_items": [

@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 
 import {
+  IcCheckCircle,
   InterfaceIcon,
   PaymentTerminalIcon,
   ReceiveCashIcon,
@@ -36,8 +37,12 @@ export const CashDiscountProgram = () => {
     return t('banner', { returnObjects: true }) as string[];
   }, [t]);
 
+  const SaveMoneyItems = useMemo(() => {
+    return t('save_money_items', { returnObjects: true }) as Array<String>;
+  }, [t]);
+
   const AdditionalValues = useMemo(() => {
-    return t('additional_items', { returnObjects: true }) as Array<String>;
+    return t('additional_items', { returnObjects: true }) as Array<any>;
   }, [t]);
 
   const FAQ = useMemo(() => {
@@ -73,7 +78,7 @@ export const CashDiscountProgram = () => {
       <BreadCard innerClassName="flex flex-col items-center lg:flex-row gap-8">
         <div className="flex flex-1 flex-col gap-4 md:gap-6">
           <SectionHeading noMargin heading={t('pay_zero_fee_heading')} />
-          <p className="md:text-lg">{HTMLReactParser(t('pay_zero_fee_desc'))}</p>
+          <p className="whitespace-pre-line md:text-lg">{t('pay_zero_fee_desc')}</p>
         </div>
 
         <div className="flex-1">
@@ -94,6 +99,15 @@ export const CashDiscountProgram = () => {
         <div className="flex flex-1 flex-col gap-4 md:gap-6">
           <SectionHeading noMargin heading={t('save_money_heading')} />
           <p className="md:text-lg">{HTMLReactParser(t('save_money_desc'))}</p>
+
+          <div className="flex flex-col gap-3">
+            {SaveMoneyItems?.map(item => (
+              <div className="flex gap-2 items-center md:gap-3" key={`${item}`}>
+                <IcCheckCircle className="w-6 h-6 text-green-500" />
+                <span className="flex-1 text-md-semibold text-neutral-700">{item}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </BreadCard>
 
