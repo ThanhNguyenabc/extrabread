@@ -9,6 +9,7 @@ import {
 
 import MerchantFee from '@/components/elements/home/MerchantFee';
 import { Button } from '@/ui/atoms/button/Button';
+import CompetitiveAdvantage from '@/ui/templates/home/components/CompetitiveAdvantage';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { RouteConfig } from '~/constants/index';
@@ -85,6 +86,9 @@ export const HomeTemplate = () => {
       <HowItWorks />
 
       <MerchantFee />
+
+      <CompetitiveAdvantage />
+      
       <UniqueValue />
 
       <WorkWithTheBest />

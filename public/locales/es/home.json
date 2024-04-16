@@ -39,5 +39,23 @@
                 "Conectividad LTE disponible a S30/mes por línea"
             ]
         }
-    ]
+    ],
+    "competitive_advantage": {
+        "heading": "Our Competitive  Advantage",
+        "sub_heading": "At ExtraBread, we're all about improving your business's bottom line by reducing unnecessary credit card processing and POS System fees.  Our partners, expertise, and approach are what sets us apart.",
+        "items": [
+            {
+                "title": "Partnerships",
+                "desc": "Our partnership with top-tier credit card processing and point-of-sale providers in the industry gives us the flexibility to arrange the best package for your business."
+            },
+            {
+                "title": "Expertise",
+                "desc": "With a solid two decades under our belt, we know what system and features your business requires."
+            },
+            {
+                "title": "Our Approach",
+                "desc": "You can count on us to guide you through every step plus some more."
+            }
+        ]
+    }
 }
