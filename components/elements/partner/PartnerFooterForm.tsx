@@ -12,6 +12,7 @@ import { US_STATE_CODE } from '@/constants/us-state-code';
 import { Contact } from '@/models/contact.model';
 import { IcLoading } from '@/ui/img-resource/ImageResources';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { DatePicker } from 'antd';
 import { useTranslation } from 'next-i18next';
 import React from 'react';
 import { useForm } from 'react-hook-form';
@@ -45,6 +46,7 @@ const formSchema = z.object({
   time: z.string().min(3, 'Please select time'),
 });
 
+const defaultTime = ['9 AM', '10 AM', '11 AM', '12 PM'];
 const PartnerFooterForm = ({
   showLoading,
   onSubmitData,
@@ -64,7 +66,7 @@ const PartnerFooterForm = ({
       email: '',
       date: '',
       profession: '',
-      time: '',
+      time: defaultTime[0],
     },
   });
   const { setValue, getValues } = form;
@@ -100,7 +102,7 @@ const PartnerFooterForm = ({
             control={form.control}
             name="firstname"
             render={({ field }) => (
-              <FormItem className="flex-1">
+              <FormItem className="flex-1 ">
                 <FormLabel>{t('first_name')}</FormLabel>
                 <FormControl>
                   <Input {...field} />
@@ -167,34 +169,57 @@ const PartnerFooterForm = ({
             </FormItem>
           )}
         />
-        <div className="flex flex-col gap-4 lg:flex-row">
-          <FormField
-            control={form.control}
-            name="date"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{partner('select_date_form')}</FormLabel>
-                <FormControl>
-                  <Input type="date" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="time"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{partner('select_time_form')}</FormLabel>
-                <FormControl>
-                  <Input type="time" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+
+        <div className="flex flex-col gap-3">
+          <FormLabel className=" whitespace-pre-wrap">{partner('txt_desc')}</FormLabel>
+          <div className="flex flex-col gap-4 lg:flex-row">
+            <FormField
+              control={form.control}
+              name="date"
+              render={() => (
+                <FormItem>
+                  <FormControl className=" flex flex-col">
+                    <DatePicker
+                      name="date"
+                      disabledDate={date => date.get('day') == 0}
+                      className="p-[6px]"
+                      onChange={date => {
+                        if (!date) setValue('date', '');
+                        else setValue('date', date.format('YYYY-MM-DD'));
+                      }}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="time"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <select
+                      {...field}
+                      className="flex h-10 w-full rounded-md border-2 border-neutral-300 bg-white px-3 py-2 text-base 
+          file:border-0 file:text-sm file:font-medium 
+          placeholder:text-slate-500 
+          focus-visible:outline-none focus:border-blue-500"
+                    >
+                      {defaultTime.map(time => (
+                        <option key={time} value={time}>
+                          {time}
+                        </option>
+                      ))}
+                    </select>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
         </div>
+
         <Button type="submit" className="w-[200px] md:w-[200px] mt-4 md:mt-6 self-center gap-2">
           {showLoading && <IcLoading className="text-white" />}
           {t('submit')}

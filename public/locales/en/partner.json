@@ -1,7 +1,7 @@
 {
     "referral": "REFERRAL",
     "tag": "Referal Program",
-    "heading": "ExtraBread Referral Program",
+    "heading": "Referral Program",
     "sub_heading": "The perfect opportunity to earn extra monthly income & bonuses in your free time.",
     "iso-agent": "ISO AGENT",
     "in-house": "IN-HOUSE",
@@ -127,15 +127,16 @@
             "content": "With each successful referral, you can earn between $100 to $2,000.  It varies depending on a number of factors such as, businesses total volume, locations, how long they’ve been operating, total terminals, etc. There is no limit as to how many referrals you can send us. The more referrals you send our way, the more you can earn!"
         },
         {
-            "header": "How will I know my referral is successful?",
-            "content": "Once your referral is submitted, we will send email notifications throughout each phase of the referral process to share the status of your referral(s)."
-        },
-        {
             "header": "How do I submit a referral?",
             "content": "Fill out this quick form here. Once submitted, you will receive an email confirmation that your submission has been received. Please allow 3-5 business days for our team to review your referral and we will get back to you."
+        },
+        {
+            "header": "How will I know my referral is successful?",
+            "content": "Once your referral is submitted, we will send email notifications throughout each phase of the referral process to share the status of your referral(s)."
         }
     ],
     "current_profession": "Your current profession",
     "select_date_form" : "Select your date to attend",
-    "select_time_form" : "Select your time"
+    "select_time_form" : "Select your time",
+    "txt_desc" : "Join one of our seminars to learn more about the program. Please select a day and time"
 }

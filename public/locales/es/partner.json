@@ -1,6 +1,6 @@
 {
     "tag": "Programa de referencia",
-    "heading": "Programa de referencia ExtraBread",
+    "heading": "Programa de referencia",
     "sub_heading": "La oportunidad perfecta para obtener ingresos mensuales adicionales y bonificaciones en tu tiempo libre.",
     "referral": "REMISIÓN",
     "iso-agent": "AGENTE ISO",
@@ -115,30 +115,31 @@
         },
         {
             "header": "¿Cuál es el proceso para convertirse en un agente de referencia?",
-            "content": "Prospective referral agents can apply to become a partner by signing up on the form via bottom of the page. We will review your application and respond back to you within one to two weeks."
+            "content": "Los posibles agentes de referencia pueden postularse para convertirse en socios registrándose en el formulario que se encuentra en la parte inferior de la página. Revisaremos su solicitud y le responderemos dentro de una o dos semanas."
         },
         {
             "header": "¿Qué sucede después de solicitar convertirme en socio de referencia?",
-            "content": "We will proceed to set up a meeting/phone call to get to know your business better. We’ll share more information on how our services can benefit your referred business and explain the process more in detail. Once everything is all understood, an account manager will be in contact with the referred business."
+            "content": "Procederemos a concertar una reunión/llamada telefónica para conocer mejor su negocio. Compartiremos más información sobre cómo nuestros servicios pueden beneficiar a su negocio recomendado y le explicaremos el proceso con más detalle. Una vez entendido todo, un gerente de cuenta se pondrá en contacto con la empresa referida."
         },
         {
             "header": "¿Cuánto tiempo lleva convertirse en agente de referencias?",
-            "content": "The time it takes to become a referral agent varies with each application. The process can be as fast as one to two weeks with standard agreement terms."
+            "content": "El tiempo que lleva convertirse en agente de referencia varía según cada solicitud. El proceso puede tardar entre una y dos semanas con los términos del acuerdo estándar."
         },
         {
             "header": "¿Cuánto puedo ganar?",
-            "content": "With each successful referral, you can earn between $100 to $2,000.  It varies depending on a number of factors such as, businesses total volume, locations, how long they’ve been operating, total terminals, etc. There is no limit as to how many referrals you can send us. The more referrals you send our way, the more you can earn!"
-        },
-        {
-            "header": "How will I know my referral is successful?",
-            "content": "Once your referral is submitted, we will send email notifications throughout each phase of the referral process to share the status of your referral(s)."
+            "content": "Con cada referencia exitosa, puede ganar entre $100 y $2000. Varía dependiendo de una serie de factores, como el volumen total de las empresas, las ubicaciones, el tiempo que llevan operando, el total de terminales, etc. No hay límite en cuanto a cuántas referencias puede enviarnos. ¡Cuantas más referencias nos envíes, más podrás ganar!"
         },
         {
             "header": "¿Cómo envío una referencia?",
-            "content": "Fill out this quick form here. Once submitted, you will receive an email confirmation that your submission has been received. Please allow 3-5 business days for our team to review your referral and we will get back to you."
+            "content": "Complete este formulario rápido aquí. Una vez enviado, recibirá una confirmación por correo electrónico de que se ha recibido su envío. Espere entre 3 y 5 días hábiles para que nuestro equipo revise su referencia y nos comunicaremos con usted."
+        },
+        {
+            "header": "¿Cómo sabré que mi recomendación fue exitosa?",
+            "content": "Una vez que se envíe su referencia, le enviaremos notificaciones por correo electrónico a lo largo de cada fase del proceso de referencia para compartir el estado de su(s) referencia(s)."
         }
     ],
     "current_profession": "Tu profesión actual",
     "select_date_form": "Selecciona tu fecha para asistir",
-    "select_time_form": "Selecciona tu hora"
+    "select_time_form": "Selecciona tu hora",
+    "txt_desc": "Únase a uno de nuestros seminarios para obtener más información sobre el programa. Por favor seleccione un día y hora"
 }

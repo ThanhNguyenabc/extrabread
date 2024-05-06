@@ -201,12 +201,12 @@
     },
     "referal_program": {
         "heading": "Referral program",
-        "desc": "Want to secure monthly income? Provide your details below – your information is strictly confidential. We protect your referrals and use this data to calculate your potential earnings.",
+        "desc": "We're excited to get you started on securing a monthly residual income. To begin this process, please fill out as much information as you can below. This data is crucial for us to precisely evaluate your potential earnings per referral.  An account manager from our team will review and assess the information provided then follow up with you on next steps. All information provided is kept confidential.  Refer to our Privacy Policies",
         "referrer_info": "Referrer’s Information",
         "referal_information": "Referral information",
         "business": "Business",
         "add_business": "Add business",
-        "any_additional_business": "If you have any additional business...",
+        "any_additional_business": "Have more businesses you want to refer? You can continue to add more before submitting.",
         "note_hint": "You can add the business Google profile link or website here as well."
     },
     "first_name": "First name",

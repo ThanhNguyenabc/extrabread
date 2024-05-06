@@ -31,15 +31,17 @@ export type ReferalInformation = {
 
 const fromXSchema = z.object({
   businessName: z.string().min(3, {
-    message: 'Business name must not be empty',
+    message: 'Please input business name',
   }),
 
   address: z.string().min(10, {
-    message: 'Address must not be empty',
+    message: 'Please input business address',
   }),
   phone: z
     .string()
-    .min(10)
+    .min(10, {
+      message: 'Provide the  business phone number',
+    })
     .max(14)
     .refine(
       value => {
@@ -52,16 +54,16 @@ const fromXSchema = z.object({
       },
     ),
   city: z.string().min(3, {
-    message: 'City must not be empty',
+    message: 'Please input the City of the business',
   }),
   state: z.string().min(3, {
-    message: 'State must not be empty',
+    message: 'Please input the State of the business',
   }),
   firstName: z.string().min(3, {
-    message: 'First name must not be empty',
+    message: 'Enter the first name of the business owner',
   }),
   lastName: z.string().min(3, {
-    message: 'Last name must not be empty',
+    message: 'Enter the last name of the business owner',
   }),
   notes: z.string(),
 });
