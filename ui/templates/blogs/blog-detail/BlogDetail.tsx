@@ -22,6 +22,14 @@ const { Paragraph, Text } = Typography;
 
 export const BlogDetail = () => {
   const [blogs, setBlogs] = useState<any>([]);
+  const {
+    asPath,
+    query: { blogId },
+  } = useRouter();
+  const sharingUrl = `${DOMAIN}${asPath}`;
+  const formattedBlogs: Blog[] = blogs.map(parseBlogData);
+  const blog: Blog = parseBlogData(blogs.find(item => item.slug === blogId));
+  const loading = isEmpty(blog);
 
   useEffect(() => {
     const getBlogs = async () => {
@@ -30,21 +38,17 @@ export const BlogDetail = () => {
     };
     getBlogs();
   }, []);
-  const {
-    asPath,
-    query: { blogId },
-  } = useRouter();
 
-  const sharingUrl = `${DOMAIN}${asPath}`;
+  useEffect(() => {
+    if (blog && blog.title) {
+      document.title = blog.title;
+    }
+  }, [blog]);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(sharingUrl);
     message.success('Copied');
   };
-
-  const formattedBlogs: Blog[] = blogs.map(parseBlogData);
-  const blog: Blog = parseBlogData(blogs.find(item => item.slug === blogId));
-  const loading = isEmpty(blog);
 
   return (
     <main className={styles.blogDetail}>

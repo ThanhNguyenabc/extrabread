@@ -11,6 +11,7 @@ export const GetPricingButton = ({
 }) => {
   const { t } = useTranslation();
   const txtButton = title || t('get_pricing');
+
   return (
     <Link href={RouteConfig.GetPricing}>
       <Button type="primary" {...props}>

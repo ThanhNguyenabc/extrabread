@@ -1,14 +1,14 @@
 import { Meta } from '@/models/app_config.model';
-import { BlogsTemplate } from '@/ui/templates/blogs/Blogs';
-import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { GetStaticProps } from 'next/types';
+import { HomeTemplate } from '~/ui/templates/home/Home';
 import { Seo } from '~/ui/util-components/Seo';
-import { getSEOTag } from '../api/app-configs';
+import { getSEOTag } from './api/app-configs';
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const [seoTag, translation] = await Promise.all([
-    getSEOTag('blogs', locale),
-    serverSideTranslations(locale ?? 'en', ['common']),
+    getSEOTag('home', locale),
+    serverSideTranslations(locale ?? 'en', ['common', 'home', 'how_it_work']),
   ]);
   return {
     props: {
@@ -19,15 +19,14 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   };
 };
 
-const BlogPage = ({ seoTag }: { seoTag?: Meta }) => {
+const HomePageHp2 = ({ seoTag }: { seoTag?: Meta }) => {
   const { title, description, keywords, image } = seoTag || {};
-
   return (
     <>
-      <Seo title={title} description={description} keywords={keywords} imageFeature={image} />
-      <BlogsTemplate />
+      <Seo title={title} description={description} keywords={keywords} imageFeature={image}></Seo>
+      <HomeTemplate />
     </>
   );
 };
 
-export default BlogPage;
+export default HomePageHp2;

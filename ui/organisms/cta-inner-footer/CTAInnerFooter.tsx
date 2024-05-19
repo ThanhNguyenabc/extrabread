@@ -1,4 +1,4 @@
-import { RouteConfig } from '@/constants';
+import { GetPricingButton } from '@/ui/atoms/get-pricing/GetPricingButton';
 import { useHookstate } from '@hookstate/core';
 import { Col, Row, Slider, Space, Typography } from 'antd';
 import variables from 'assets/styles/variables.module.scss';
@@ -40,16 +40,7 @@ export const CTAInnerFooter = (props: Props) => {
                   }}
                 />
               </Heading>
-
-              <Button
-                type="primary"
-                size="large"
-                color="black"
-                className={styles['cta-footer_btn']}
-                onClick={() => push(RouteConfig.GetPricing)}
-              >
-                {t('get_start_today')}
-              </Button>
+              <GetPricingButton title={t('get_start_today')} color="black" size="large" />
             </Space>
           </Col>
           <Col
