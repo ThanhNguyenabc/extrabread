@@ -41,3 +41,4 @@ styles/dist.css
 yarn.lock
 .vscode
 
+.vscode/settings.json
