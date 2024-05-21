@@ -388,7 +388,7 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
           )}
           <AdditionalInfo
             onSubmit={values => {
-              setAnswer(prevVal => ({ ...prevVal, ...values }));
+              // setAnswer(prevVal => ({ ...prevVal, ...values }));
               onFinish?.({ ...answer, ...values });
             }}
           />
