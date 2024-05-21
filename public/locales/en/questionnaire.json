@@ -8,7 +8,7 @@
     "all_done": "All done!",
     "type_of_business": "What type of business?",
     "looking_for": "What are you <br className='only-sp' /> looking for?",
-    "card_payment_fee": "Are you currently passing your card payments fees to the customer?<br className='hide-pc' /> (cash discount program)",
+    "card_payment_fee": "Are you currently passing your card payments fees to the customer? (cash discount program)",
     "cash_signing_bonus": "Cash signing bonus",
     "follow_up_contact": "We need your contact to follow up",
     "steps": {
@@ -29,6 +29,7 @@
             "label": "Final set of questions"
         }
     },
+    "zero_fee": "Zero Processing Fees",
     "all_of_above": "All of the above",
     "set_of_questions": "Final set of questions",
     "confirm_heading": "Great! We&#39;ve received <br className='only-sp' /> your initial information.",
@@ -55,5 +56,7 @@
     "station_question": "How many stations do you currently have?",
     "on_cash_discount": "Yes, I'm on it",
     "franchise": "Yes, I'm a franchise",
-    "name_of_pos": "Name of POS system"
+    "name_of_pos": "Name of POS system",
+    "point_of_sale_systems": "Point Of Sale Systems"
+
 }

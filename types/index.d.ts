@@ -12,4 +12,5 @@ declare interface Blog {
   date?: number;
   thumbnail?: StaticImageData;
   content?: string;
+  link?: string;
 }

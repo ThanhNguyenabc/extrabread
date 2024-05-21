@@ -8,7 +8,7 @@
     "all_done": "¡Todo listo!",
     "type_of_business": "¿Qué tipo de negocio tienes?",
     "looking_for": "¿Qué tipo de negocio tienes?",
-    "card_payment_fee": "¿Actualmente estás transfiriendo las tarifas de pagos con tarjeta al cliente?<br className='hide-pc' /> (programa de descuento en efectivo)",
+    "card_payment_fee": "¿Actualmente estás transfiriendo las tarifas de pagos con tarjeta al cliente? (programa de descuento en efectivo)",
     "cash_signing_bonus": "Bono por firmar en efectivo",
     "follow_up_contact": "Necesitamos su contacto seguimiento",
     "steps": {
@@ -29,6 +29,7 @@
             "label": "Conjunto final de preguntas"
         }
     },
+    "zero_fee": "Cero tarifas de procesamiento",
     "all_of_above": "Todo lo anterior",
     "set_of_questions": "Conjunto final de preguntas",
     "confirm_heading": "Genial. Hemos recibido su información inicial.",
@@ -55,5 +56,7 @@
     "station_question": "¿Cuántas estaciones tienes actualmente?",
     "on_cash_discount": "Si, estoy en eso",
     "franchise": "Si, soy una franquicia",
-    "name_of_pos": "Nombre del sistema POS"
+    "name_of_pos": "Nombre del sistema POS",
+    "point_of_sale_systems": "Sistemas de punto de venta"
+
 }

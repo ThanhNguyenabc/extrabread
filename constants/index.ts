@@ -10,6 +10,11 @@ import {
   CloverAppMarketImg,
   FullServiceRestaurantsImg,
   GiftCardProgramImg,
+  IcBarClub,
+  IcPizza,
+  IcQuickService,
+  IcRetail,
+  IcSmallBusiness,
   InvoicingImg,
   LoyaltyRewardsImg,
   MobileCardReaderImg,
@@ -214,31 +219,37 @@ export const BUSINESS_MENU = [
     title: 'business_categories.full_service',
     src: FullServiceRestaurantsImg.src,
     href: RouteConfig.FullServiceRestaurants,
+    icon : IcQuickService
   },
   {
     title: 'business_categories.retail',
     src: RetailBusinessesImg.src,
     href: RouteConfig.Retail,
+    icon: IcRetail
   },
   {
     title: 'business_categories.quick_service',
     src: QuickServiceRestaurantsImg.src,
     href: RouteConfig.QuickServiceRestaurants,
+    icon : IcQuickService
   },
   {
     title: 'business_categories.small_business',
     src: SmallBusinessImg.src,
     href: RouteConfig.SmallBusiness,
+    icon: IcSmallBusiness
   },
   {
     title: 'business_categories.bar_nightclub',
     src: BarNightImg.src,
     href: RouteConfig.BarsAndNightClubs,
+    icon : IcBarClub
   },
   {
     title: 'business_categories.pizza',
     src: PizzeriasImg.src,
     href: RouteConfig.Pizzerias,
+    icon: IcPizza
   },
 ];
 

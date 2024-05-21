@@ -55,7 +55,7 @@ export const HomeTemplate = () => {
           <>
             <div className="flex items-center justify-center flex-col gap-3 md:flex-row  md:gap-4 lg:justify-start">
               <GetPricingButton title={common('get_pricing_today')} size="large" />
-              <Link href={RouteConfig.Partner}>
+              <Link href={RouteConfig.Partner} className="w-full">
                 <Button
                   size="large"
                   className="flex justify-center items-center gap-2 border-none hover:text-green-500"
@@ -88,7 +88,7 @@ export const HomeTemplate = () => {
       <MerchantFee />
 
       <CompetitiveAdvantage />
-      
+
       <UniqueValue />
 
       <WorkWithTheBest />

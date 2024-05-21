@@ -31,6 +31,7 @@ export const parseBlogData = (blog: any) => {
     description: blog.excerpt.rendered,
     author: 'Admin',
     date: blog.date,
+    link: blog.link,
     content: blog.content.rendered,
   } as Blog;
 };
