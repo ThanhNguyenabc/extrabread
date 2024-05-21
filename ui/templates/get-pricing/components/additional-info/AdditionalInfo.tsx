@@ -11,14 +11,15 @@ import styles from './AdditionalInfo.module.scss';
 
 type Props = {
   onSubmit?: (values: FormValue) => void;
+  showAllForm?: boolean
 };
 
-export const AdditionalInfo = (props: Props) => {
+export const AdditionalInfo = ({onSubmit , showAllForm = true}: Props) => {
   const { t } = useTranslation('questionnaire');
   const { t: common } = useTranslation();
 
   const [form] = Form.useForm<FormValue>();
-  const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(showAllForm);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -41,7 +42,7 @@ export const AdditionalInfo = (props: Props) => {
         requiredMark={false}
         onFinish={() => {
           setLoading(true);
-          props.onSubmit?.(form.getFieldsValue());
+          onSubmit?.(form.getFieldsValue());
         }}
       >
         <div style={{ marginBottom: 24, alignSelf: 'center' }}>

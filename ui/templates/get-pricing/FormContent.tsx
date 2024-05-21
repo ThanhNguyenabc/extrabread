@@ -7,6 +7,7 @@ import { PatternFormat } from 'react-number-format';
 import { US_STATE_CODE } from '@/constants/us-state-code';
 import HtmlParser from 'html-react-parser';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 import { US_MASK } from '~/constants/index';
 import { useDevice } from '~/hooks/useDetectMobile';
 import { Button } from '~/ui/atoms/button/Button';
@@ -48,10 +49,14 @@ const { infoBaseColor } = variables;
 const { Text } = Typography;
 
 export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
+  const { query } = useRouter();
+
+  const { curStep, data } = query;
+
   const { t } = useTranslation('questionnaire');
   const { t: common } = useTranslation();
   const { isMobile } = useDevice();
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(curStep ? Number(curStep) : 1);
   const [subStep2, setSubStep2] = useState(0);
   const [selectedBusiness, setBusiness] = useState<number | undefined>(undefined);
   const [form] = Form.useForm<{ name: string; age: number }>();
@@ -69,6 +74,13 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
     }
   }, [step]);
 
+  useEffect(() => {
+    if (data) {
+      const formValues = JSON.parse((data as string) ?? '');
+      setAnswer(formValues);
+    }
+  }, [data]);
+
   const STEPS = useMemo(() => {
     return [
       { ...t('steps.first', { returnObjects: true }) },
@@ -84,7 +96,9 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
 
   return (
     <Fragment>
-      <ProcessBar activeIndex={step - 1} steps={STEPS} onGoBack={() => setStep(step - 1)} />
+      {!curStep && (
+        <ProcessBar activeIndex={step - 1} steps={STEPS} onGoBack={() => setStep(step - 1)} />
+      )}
       {step === 1 && (
         <div className={styles['get-pricing_list']}>
           {!isMobile && <Text className="heading-display-sm">{t('type_of_business')}</Text>}
@@ -374,7 +388,7 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
           )}
           <AdditionalInfo
             onSubmit={values => {
-              // setAnswer(prevVal => ({ ...prevVal, ...values }));
+              setAnswer(prevVal => ({ ...prevVal, ...values }));
               onFinish?.({ ...answer, ...values });
             }}
           />
