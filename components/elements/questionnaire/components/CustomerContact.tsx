@@ -1,3 +1,4 @@
+import { submitGetPricing } from '@/apis';
 import { Button } from '@/components/ui/button';
 import { BUSINESS_MENU } from '@/constants';
 import { GetPricingForm } from '@/ui/templates/get-pricing/GetPricingForm';
@@ -26,6 +27,36 @@ const CustomerContact = () => {
     setShowConfirmDialog(true);
   };
 
+  const sendData = async () => {
+    const submittedData = {
+      typeBusiness: common(BUSINESS_MENU[data.businessIndex!].title),
+      lookingFor: t(QuestionData[data.customerLookingIndex!].title),
+      cashBonus: YesAndNo[data.isHavingCardIndex!] == 'yes' ? true : false,
+      ...data.contact,
+    };
+    setShowConfirmDialog(false);
+    submitGetPricing(
+      {
+        typeBusiness: submittedData.typeBusiness,
+        lookingFor: submittedData.lookingFor,
+        cashBonus: submittedData.cashBonus,
+        ...data.contact,
+      },
+      'get-pricing',
+      true,
+    );
+    router.push(
+      {
+        pathname: 'get-pricing',
+        query: {
+          curStep: 4,
+          data: JSON.stringify(submittedData),
+        },
+      },
+      'get-pricing',
+    );
+  };
+
   return (
     <div className="flex flex-col gap-4 items-center w-full">
       <h3 className="text-lg-semibold">{t('follow_up_contact')}</h3>
@@ -40,24 +71,7 @@ const CustomerContact = () => {
       <ConfirmModal
         centered
         open={showConfirm}
-        onContinue={() => {
-          setShowConfirmDialog(false);
-          router.push(
-            {
-              pathname: 'get-pricing',
-              query: {
-                curStep: 4,
-                data: JSON.stringify({
-                  typeBusiness: common(BUSINESS_MENU[data.businessIndex!].title),
-                  lookingFor: t(QuestionData[data.customerLookingIndex!].title),
-                  cashBonus: YesAndNo[data.isHavingCardIndex!] == 'yes' ? true : false,
-                  ...data.contact,
-                }),
-              },
-            },
-            'get-pricing',
-          );
-        }}
+        onContinue={sendData}
         onCancel={() => setShowConfirmDialog(false)}
       />
     </div>
