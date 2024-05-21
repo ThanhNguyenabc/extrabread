@@ -64,6 +64,12 @@ import QuickBooksPluginImg from 'public/images/QuickBooks Plugin.png';
 // Businesses Type
 import BarNightImg from 'public/images/Bar Night.png';
 import FullServiceRestaurantsImg from 'public/images/Full Service Restaurants.jpg';
+import IcBarClub from 'public/images/icons/ic_barclub.svg';
+import IcPizza from 'public/images/icons/ic_pizza.svg';
+import IcRestaurant from 'public/images/icons/ic_restaurant.svg';
+import IcRetail from 'public/images/icons/ic_retail.svg';
+import IcQuickService from 'public/images/icons/ic_service1.svg';
+import IcSmallBusiness from 'public/images/icons/ic_small_business.svg';
 import PizzeriasImg from 'public/images/Pizzerias.png';
 import QuickServiceRestaurantsImg from 'public/images/Quick Service Restaurants.jpg';
 import RetailBusinessesImg from 'public/images/Retail Businesses.jpg';
@@ -131,6 +137,7 @@ export {
   GiftCardIcon,
   GiftCardProgramImg,
   IcAppointment,
+  IcBarClub,
   IcBasePay,
   IcBonus,
   IcCheck,
@@ -139,7 +146,12 @@ export {
   IcClose,
   IcIncome,
   IcLoading,
+  IcPizza,
   IcPlus,
+  IcQuickService,
+  IcRestaurant,
+  IcRetail,
+  IcSmallBusiness,
   InterfaceIcon,
   InvoicingImg,
   ItemManagementIcon,
