@@ -32,7 +32,7 @@ const QuestionSection2 = () => {
         selectIndex={data.customerLookingIndex}
         data={QuestionData}
         selectedClassName="border-blue-500"
-        className={' md:grid-cols-2 lg:grid-cols-4'}
+        className={'grid w-full md:grid-cols-2 lg:grid-cols-4'}
         renderItem={item => {
           return (
             <div
@@ -63,7 +63,7 @@ const QuestionSection2 = () => {
             return (
               <div
                 key={item}
-                className="w-[120px] flex flex-row items-center p-3 gap-3 hover:border-none hover:text-white hover:bg-neutral-900 md:gap-2 md:flex-col md:justify-center"
+                className="w-[120px] flex flex-row justify-center p-3 gap-3 hover:border-none hover:text-white hover:bg-neutral-900 md:gap-2 md:flex-col md:justify-center"
               >
                 <p className="text-md-semibold md:text-center">{common(item)}</p>
               </div>
