@@ -119,36 +119,34 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
         }}
       >
         <div className="flex flex-col">
-          <div className="bg-green-100">
-            <BannerX
-              heading={t('heading')}
-              desc={t('sub_heading')}
-              image={PartnerCover}
-              button={{
-                title: common('join_extrbread'),
-                onBtnClick: onJoinExtrabread,
-              }}
-              leftCmpClassName="lg:justify-between"
-              extraComponent={
-                <div className="flex gap-3 md:gap-4 lg:mx-auto">
-                  {bannerItems?.map(item => {
-                    const Icon = PartnerProgramConfigs[item.key];
-                    return (
-                      <div key={`${item.key}`} className="flex flex-col items-center gap-2">
-                        <Icon
-                          style={{
-                            width: 48,
-                            height: 48,
-                          }}
-                        />
-                        <p className="text-center text-sm max-w-[100px]">{t(item.text)}</p>
-                      </div>
-                    );
-                  })}
-                </div>
-              }
-            />
-          </div>
+          <BannerX
+            heading={t('heading')}
+            desc={t('sub_heading')}
+            image={PartnerCover}
+            button={{
+              title: common('join_extrbread'),
+              onBtnClick: onJoinExtrabread,
+            }}
+            leftCmpClassName="lg:justify-between"
+            extraComponent={
+              <div className="flex gap-3 md:gap-4 lg:mx-auto">
+                {bannerItems?.map(item => {
+                  const Icon = PartnerProgramConfigs[item.key];
+                  return (
+                    <div key={`${item.key}`} className="flex flex-col items-center gap-2">
+                      <Icon
+                        style={{
+                          width: 48,
+                          height: 48,
+                        }}
+                      />
+                      <p className="text-center text-sm max-w-[100px]">{t(item.text)}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            }
+          />
           <DiscoverPartner />
           <Hero className="flex flex-col items-center gap-12 md:gap-14 lg:gap-16">
             <Image
@@ -193,6 +191,7 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
                 {t('pick_extrabread_heading')}
               </h3>
               <p className=" md:text-lg text-neutral-700">{t('pick_extrabread_desc')}</p>
+
               {pickReasonItems?.map(item => (
                 <div key={item.title} className="flex flex-col gap-3 md:gap-4 w-full md:text-lg">
                   <div className=" h-[1px] bg-neutral-300" />

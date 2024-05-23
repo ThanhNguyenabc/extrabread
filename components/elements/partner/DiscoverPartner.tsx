@@ -14,7 +14,7 @@ const DiscoverPartner = () => {
   }, [t]);
 
   return (
-    <Hero className="gap-8 lg:gap-12 items-center">
+    <Hero className="gap-8 lg:gap-12 items-center overflow-hidden">
       <div className="md:max-w-[784px] self-center">
         <h3 className="mt-2 mb-8 heading-xs md:text-center md:heading-lg">
           {t('referal_program')}
@@ -23,16 +23,16 @@ const DiscoverPartner = () => {
           {t('referal_program_desc')}
         </p>
       </div>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:gap-8 lg:grid-cols-4">
+      <div className="flex flex-row gap-4 lg:gap-8 w-full overflow-auto">
         {Array.isArray(referalItems) &&
           referalItems.map((item, index) => (
             <div
               key={item.title}
-              className="flex flex-col bg-gradient-to-b from-green-100 to-white rounded-2xl p-6 gap-4 md:gap-6"
+              className="flex flex-col min-w-[200px] bg-gradient-to-b from-green-100 to-white rounded-2xl p-4 gap-4 md:w-[300px] md:p-6 md:gap-6"
             >
-              <h4 className="text-md-semibold md:text-2xl md:font-extrabold"> {item.title}</h4>
-              <p className="flex-1 text-neutral-700">{item.desc}</p> 
-              <span className="stroke-text text-[100px] self-end font-bold lg:text-[120px] bg-clip-text text-white  bg-gradient-to-b  from-green-500 to-[#CDE762]">
+              <h4 className="text-lg-semibold md:text-2xl md:font-extrabold"> {item.title}</h4>
+              <p className="flex-1 text-neutral-700">{item.desc}</p>
+              <span className="stroke-text text-[100px] self-end font-bold text-5xl lg:text-[120px] bg-clip-text text-white  bg-gradient-to-b  from-green-500 to-[#CDE762]">
                 0{index + 1}
               </span>
             </div>
