@@ -73,7 +73,9 @@ const Questionnaire = forwardRef<QuestionnaireProps>((props, ref) => {
         <QuestionnaireProvider.Provider value={{ ...data, setData }}>
           <div className="flex flex-col gap-3 md:gap-8 lg:gap-10">
             <div className="flex flex-row bg-green-100 gap-1 px-4 py-2 rounded-2xl font-normal">
-              Our experts at BestPOS will recommend the Best POS systems for your business needs.
+              We need a bit of information to get you started. To ensure we provide accurate payment
+              processing & point of sale solutions plus an estimated cash signing bonus for your
+              business, please fill out the following info.
               <button className="h-fit" onClick={onClose}>
                 <IcClose />
               </button>

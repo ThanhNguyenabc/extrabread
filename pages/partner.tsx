@@ -109,6 +109,7 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
       },
     });
   }, []);
+
   return (
     <>
       <Seo title={title} description={description} keywords={keywords} imageFeature={image}></Seo>
@@ -196,7 +197,7 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
                 <div key={item.title} className="flex flex-col gap-3 md:gap-4 w-full md:text-lg">
                   <div className=" h-[1px] bg-neutral-300" />
                   <p>{item.title}</p>
-                  <Link href={item.link} className=" font-medium underline">
+                  <Link href={`/${item.link}`} className="font-medium underline" target="_blank">
                     {item.text_link}
                   </Link>
                 </div>

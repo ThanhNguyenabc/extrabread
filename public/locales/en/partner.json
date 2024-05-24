@@ -79,14 +79,9 @@
     "pick_extrabread_desc": "From consultation to installation, ExtraBread is the one stop shop for all things merchant services for a business! Our unique strength lies in our partnerships with top-tier point-of-sale systems and credit card processing providers. We can offer a business zero processing fees, save their money on POS systems, and even offer large cash signing bonuses. Along with this, we offer 24/7 support - whenever you need us, we’re there.",
     "picking_reason_items": [
         {
-            "title": "For more information to share with clients",
-            "text_link": "View our various marketing materials.",
-            "link": ""
-        },
-        {
             "title": "With over two decades of industry experience, count on us to stand by you clients every step of the way!",
             "text_link": "Learn more about what we can offer for yor referral",
-            "link": ""
+            "link": "extrabread-booklet.pdf"
         }
     ],
     "earning_title": "Earn Extra Cash with ExtraBread",

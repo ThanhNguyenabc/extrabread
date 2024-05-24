@@ -63,7 +63,7 @@ const CustomerContact = () => {
       <GetPricingForm
         btnSubmit={
           <Button type="submit" style={{ width: 200 }} className=" self-center">
-            Get Result
+            {`${common('continue')} ->`}
           </Button>
         }
         onFinish={onFinishAll}
