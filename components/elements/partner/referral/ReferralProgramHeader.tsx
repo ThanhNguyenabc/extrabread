@@ -12,22 +12,23 @@ const ReferralProgramHeader = ({
 }) => {
   const { t } = useTranslation('common');
   return (
-    <div className="flex flex-row gap-4 sm:gap-6">
-      {showCloseBtn && (
-        <Button
-          variant={'outline'}
-          size={'default'}
-          className="w-12 h-12 p-3  rounded-3xl"
-          onClick={onClose}
-        >
-          <IcClose />
-        </Button>
-      )}
-
-      <div className="flex-1 flex flex-col text-center gap-2">
-        <h4 className="text-xl-semibold md:heading-md">{t('referal_program.heading')}</h4>
-        <p className="text-neutral-700 font-normal text-sm"> {t('referal_program.desc')}</p>
+    <div className=" flex flex-col gap-3">
+      <div className="flex flex-row items-center gap-6">
+        {showCloseBtn && (
+          <Button
+            variant={'outline'}
+            size={'default'}
+            className="w-12 h-12 p-3  rounded-3xl"
+            onClick={onClose}
+          >
+            <IcClose />
+          </Button>
+        )}
+        <h4 className="flex-1 md:text-center text-xl-semibold md:heading-md">
+          {t('referal_program.heading')}
+        </h4>
       </div>
+      <p className="text-neutral-700 font-normal text-sm"> {t('referal_program.desc')}</p>
     </div>
   );
 };

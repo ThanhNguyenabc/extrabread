@@ -120,7 +120,7 @@ const App = (props: AppProps) => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    if (router.asPath === RouteConfig.Home) {
+    if (router.asPath === RouteConfig.Home || router.asPath == '/hp2') {
       setShowBanner(true);
     } else if (showBanner) {
       setShowBanner(false);

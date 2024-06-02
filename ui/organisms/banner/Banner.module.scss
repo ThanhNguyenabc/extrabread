@@ -38,11 +38,7 @@
   }
 
   &--home {
-    #{$root}-img {
-      @include tablet-up {
-        height: 560px;
-      }
-    }
+    
 
     @include sp {
       #{$root}-text {
@@ -162,9 +158,11 @@
 
   &-img {
     text-align: center;
-
+    height: 100%; 
+    align-self: flex-end;
     @include tablet-up {
       height: 612px;
+
     }
 
     img {

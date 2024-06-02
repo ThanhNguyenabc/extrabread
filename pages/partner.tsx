@@ -165,10 +165,14 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
               {featureItems?.map((item, index) => {
                 const Icon = FeatureIcons[index];
                 return (
-                  <div className="flex flex-col gap-3 md:gap-4" key={item.title}>
-                    <Icon />
-                    <h4 className="text-md-semibold md:text-2xl-semibold"> {item.title}</h4>
-                    <p className="md:text-lg text-neutral-700">{item.desc}</p>
+                  <div className="flex flex-row gap-4 md:flex-col" key={item.title}>
+                    <div>
+                      <Icon />
+                    </div>
+                    <div className="flex flex-1 flex-col gap-3 md:gap-4">
+                      <h4 className="text-md-semibold md:text-2xl-semibold"> {item.title}</h4>
+                      <p className="md:text-lg text-neutral-700">{item.desc}</p>
+                    </div>
                   </div>
                 );
               })}
@@ -177,7 +181,7 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
               {common('join_extrbread')}
             </Button>
           </Hero>
-          <Hero className="flex flex-col gap-6 md:gap-8 lg:flex-row">
+          <Hero className="flex flex-col gap-6 md:gap-8 lg:flex-row-reverse">
             <div className="flex-1 self-center">
               <Image
                 src={Consideration}
@@ -188,14 +192,13 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
               />
             </div>
             <div className="flex-1 flex flex-col gap-8 md:gap-10">
-              <h3 className="heading-xs text-center md:heading-lg lg:text-start">
+              <h3 className="heading-xs md:text-center md:heading-lg lg:text-start">
                 {t('pick_extrabread_heading')}
               </h3>
               <p className=" md:text-lg text-neutral-700">{t('pick_extrabread_desc')}</p>
 
               {pickReasonItems?.map(item => (
                 <div key={item.title} className="flex flex-col gap-3 md:gap-4 w-full md:text-lg">
-                  <div className=" h-[1px] bg-neutral-300" />
                   <p>{item.title}</p>
                   <Link href={`/${item.link}`} className="font-medium underline" target="_blank">
                     {item.text_link}

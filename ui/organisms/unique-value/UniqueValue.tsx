@@ -31,10 +31,8 @@ export const UniqueValue = () => {
   return (
     <Container className={styles['unique-value']}>
       <BreadCard>
-        <div className={styles['unique-value_inner']}>
-          {isMobile && items && <Detail data={items} />}
-
-          <div className={styles['unique-value_content']}>
+        <div className="flex flex-col gap-4 md:gap-8 md:flex-row">
+          <div className="inline-flex h-[358px] md:h-[580px]">
             <Image
               quality={100}
               width={580}
@@ -43,14 +41,10 @@ export const UniqueValue = () => {
               src={UniqueValueImg.src}
               alt="UniqueValue"
             />
-
-            <div className={'flex flex-col gap-4'}>
-              <SectionHeading
-                noMargin
-                heading={<span className="hide-sp">{t('unique.heading')}</span>}
-              />
-              {!isMobile && items && <Detail data={items} />}
-            </div>
+          </div>
+          <div className="flex flex-col gap-4 md:justify-center">
+            <h3 className="heading-xs md:heading-lg">{t('unique.heading')}</h3>
+            {items && <Detail data={items} />}
           </div>
         </div>
       </BreadCard>
