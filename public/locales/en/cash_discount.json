@@ -2,27 +2,19 @@
     "desc": "Nowadays, cash discounting is increasingly becoming the preferred method of payment acceptance among small businesses, allowing thousands of them to save significant amounts of money on their monthly processing fees.",
     "heading": "Pay 0% for your processing rates",
     "banner": [
-        "Zero processing fees",
+        "Process payments at 0% cost",
         "Fees are passed onto the customer",
         "Compliant with laws and regulations in all 50 states",
         "Receive a Free Credit Card terminal at no cos"
     ],
-    "pay_zero_fee_heading": "Pay ZERO CC fees at the end of the month",
-    "pay_zero_fee_desc": "Our cash discount program allows merchants to collect up to 100% of their revenue without all of the extra fees that come with accepting credit cards. The fees for processing the cards come directly to us and we pay all your monthly transactions.\n\nWhen you receive your merchant statement each month, you will always pay <span className = 'text-green-500 font-extrabold'>ZERO</span>. A solution that completely eliminates merchant service fees and reduces your credit card fees 100%.",
-    "save_money_heading": "Save Money When Using Cash",
-    "save_money_desc": "When a customer checks out, the receipt will showcase the cash discount and the percentage. Your business is able to accept the full value of the product or service—free of credit card fees—while the customer is happy to receive a discount. They will still have the option to pay with a credit/debit card, just simply without the discount.",
-    "save_money_items": [
-        "Zero Processing Fees",
-        "Compliant with law and regulations in all 50 states",
-        "Receive a Free credit card terminal"
+    "program_heading": "The Ultimate Solution for Your Business Needs",
+    "program_desc": "Enrolling in our Cash Discount Program is simple and hassle-free, allowing you to start saving immediately. Upon enrollment, you will receive all the necessary in-store materials to inform your customers about the potential savings, enabling you to maximize your savings.",
+    "program_items": [
+        "We offer simple and user-friendly signs for you to display at your business entrance and point-of-sale.",
+        "Our payment processing equipment comes equipped with pre-installed software to enable you to easily implement the Cash Discount Program.",
+        "We offer comprehensive back-office reporting tools that enable you to keep track of your transaction history and monitor your savings."
     ],
     "provide_business": "We provide your business with:",
-    "additional_value_heading": "Additional Values for your Business:",
-    "additional_items": [
-        "Next day funding (11PM EST)",
-        "Month-to-month contracts on all accounts",
-        "Equipment comes pre-installed with software to easily implement the cash discount program and offers back-office reporting tools"
-    ],
     "all_business_heading": "Cash Discount Pricing for all types of business",
     "footer_heading": "Ready to implement a Cash Discount Program for your business?",
     "faq_heading": "Frequently asked questions",
