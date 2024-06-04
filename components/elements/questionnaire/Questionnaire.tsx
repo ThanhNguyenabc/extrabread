@@ -55,10 +55,8 @@ const Questionnaire = forwardRef<QuestionnaireProps>((props, ref) => {
   return (
     <>
       <Drawer
-        styles={{
-          wrapper: {
-            width: (isTablet && 600) || (isLaptop && 768) || '100%',
-          },
+        contentWrapperStyle={{
+          width: (isTablet && 600) || (isLaptop && 768) || '100%',
         }}
         style={{
           zIndex: 1000,
