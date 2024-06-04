@@ -41,7 +41,7 @@ const BannerItems = [
   },
 ];
 
-export const HomeTemplate = () => {
+export const HomeTemplate = ({ title }: { title?: string }) => {
   const { t: common } = useTranslation();
   const { t } = useTranslation('home');
 
@@ -50,7 +50,7 @@ export const HomeTemplate = () => {
       <Banner
         hasBackground
         type="home"
-        content={<>{t('pageTitle')}</>}
+        content={<>{title ?? t('pageTitle')}</>}
         button={
           <>
             <div className="flex items-center justify-center flex-col gap-3 md:flex-row  md:gap-4 lg:justify-start">

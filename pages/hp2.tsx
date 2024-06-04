@@ -4,6 +4,7 @@ import { GetStaticProps } from 'next/types';
 import { HomeTemplate } from '~/ui/templates/home/Home';
 import { Seo } from '~/ui/util-components/Seo';
 import { getSEOTag } from './api/app-configs';
+import { useTranslation } from "next-i18next";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const [seoTag, translation] = await Promise.all([
@@ -21,10 +22,12 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
 const HomePageHp2 = ({ seoTag }: { seoTag?: Meta }) => {
   const { title, description, keywords, image } = seoTag || {};
+  const { t } = useTranslation('home');
+
   return (
     <>
       <Seo title={title} description={description} keywords={keywords} imageFeature={image}></Seo>
-      <HomeTemplate />
+      <HomeTemplate title={t("hp2pageTitle")} />
     </>
   );
 };

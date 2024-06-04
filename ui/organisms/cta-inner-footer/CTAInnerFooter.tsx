@@ -71,7 +71,7 @@ export const CTAInnerFooter = (props: Props) => {
                 <Slider
                   step={100}
                   min={100_000}
-                  max={5_000_000}
+                  max={500_000_000}
                   defaultValue={2_500000}
                   trackStyle={{ backgroundColor: textColor }}
                   rootClassName={styles['cta-footer_slider']}
@@ -82,7 +82,7 @@ export const CTAInnerFooter = (props: Props) => {
                 />
                 <div className={styles['cta-footer_slider-values']}>
                   <Text>$100,000</Text>
-                  <Text>$5,000,000</Text>
+                  <Text>$500,000,000</Text>
                 </div>
               </div>
             </div>

@@ -5,7 +5,6 @@ const { i18n } = require('./next-i18next.config');
 const nextConfig = {
   i18n,
   reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
-  transpilePackages: ['antd'],
   sassOptions: {
     includePaths: [path.join(__dirname, 'assets/styles')],
     prependData: `
