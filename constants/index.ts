@@ -1,4 +1,4 @@
-export const DOMAIN = 'http://extrabread.com';
+export const DOMAIN = 'https://extrabread.com';
 export const BLOGS_API = 'https://blog.extrabread.com/wp-json/wp/v2/posts';
 
 import CreditCardTerminalImg from 'public/images/Credit Card Terminal.png';
