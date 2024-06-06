@@ -39,6 +39,7 @@ export enum RouteConfig {
   Contacts = '/contacts',
   Faqs = '/faqs',
   Blogs = '/blogs',
+  Calculator = '/credit-card-processing-calculator',
   PrivacyPolicy = '/privacy-policy',
   TermsOfService = '/terms-of-service',
   BusinessTypes = '/business',
@@ -111,6 +112,7 @@ export const COMPANY_MENU = [
   { title: 'about_us', href: RouteConfig.AboutUs },
   { title: 'point_of_sale_systems', href: RouteConfig.SaleSystems },
   { title: 'Referal Agent Packet', href: '/welcome_packet.pdf', newTab: true },
+  { title: 'Credit Card Processing Calculator', href: RouteConfig.Calculator},
 ];
 
 export const SOLUTIONS_MENU = [
@@ -219,37 +221,37 @@ export const BUSINESS_MENU = [
     title: 'business_categories.full_service',
     src: FullServiceRestaurantsImg.src,
     href: RouteConfig.FullServiceRestaurants,
-    icon : IcQuickService
+    icon: IcQuickService,
   },
   {
     title: 'business_categories.retail',
     src: RetailBusinessesImg.src,
     href: RouteConfig.Retail,
-    icon: IcRetail
+    icon: IcRetail,
   },
   {
     title: 'business_categories.quick_service',
     src: QuickServiceRestaurantsImg.src,
     href: RouteConfig.QuickServiceRestaurants,
-    icon : IcQuickService
+    icon: IcQuickService,
   },
   {
     title: 'business_categories.small_business',
     src: SmallBusinessImg.src,
     href: RouteConfig.SmallBusiness,
-    icon: IcSmallBusiness
+    icon: IcSmallBusiness,
   },
   {
     title: 'business_categories.bar_nightclub',
     src: BarNightImg.src,
     href: RouteConfig.BarsAndNightClubs,
-    icon : IcBarClub
+    icon: IcBarClub,
   },
   {
     title: 'business_categories.pizza',
     src: PizzeriasImg.src,
     href: RouteConfig.Pizzerias,
-    icon: IcPizza
+    icon: IcPizza,
   },
 ];
 
