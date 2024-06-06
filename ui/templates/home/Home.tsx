@@ -82,14 +82,12 @@ export const HomeTemplate = ({ title }: { title?: string }) => {
           </div>
         }
       />
+      <CompetitiveAdvantage />
+      <UniqueValue />
+      <MerchantFee />
 
       <HowItWorks />
 
-      <MerchantFee />
-
-      <CompetitiveAdvantage />
-
-      <UniqueValue />
 
       <WorkWithTheBest />
 
