@@ -1,6 +1,5 @@
 .header {
   position: relative;
-
   &:after {
     position: absolute;
     bottom: -1px;
@@ -14,6 +13,7 @@
   &-inner {
     display: flex;
     align-items: center;
+    width: 100%;
     height: $header-height-pc !important;
     padding-inline: $spacing-3 !important;
     line-height: $header-height-pc !important;

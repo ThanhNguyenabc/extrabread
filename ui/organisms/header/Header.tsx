@@ -224,7 +224,7 @@ export const Header = () => {
   };
 
   return (
-    <div className={styles['header']} ref={menuRef}>
+    <>
       <Container>
         <AntHeader className={styles['header-inner']}>
           {!isLaptop && (
@@ -239,9 +239,7 @@ export const Header = () => {
           <Link href={RouteConfig.Home} className={styles['header-logo']}>
             <Image quality={100} alt="logo" width={192} height={32} src={LogoFullIcon.src} />
           </Link>
-
-          <Navigation />
-
+          {isLaptop && <Navigation />}
           <div className={styles['header-right-content']}>
             <div className={styles['header-phone']}>
               <Space size={4}>
@@ -278,6 +276,6 @@ export const Header = () => {
           className={styles['header-drawer']}
         />
       </SafeHydrate>
-    </div>
+    </>
   );
 };
