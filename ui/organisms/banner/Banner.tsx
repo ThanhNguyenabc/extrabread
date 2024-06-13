@@ -53,8 +53,10 @@ export const Banner = ({
             height={600}
             src={src}
             alt="banner"
+            priority
             quality={100}
             className="aspect-[700/600]"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
           />
         </div>
       </div>

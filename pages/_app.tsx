@@ -15,13 +15,16 @@ import { useEffect, useMemo, useState } from 'react';
 import { useDevice } from '~/hooks/useDetectMobile';
 import { globalState } from '~/hooks/useLanguage';
 
-import { Toaster } from '@/components/ui/toaster';
 import { RouteConfig } from '@/constants';
 import { Alert } from '@/ui/organisms/alert/Alert';
-import { BreadFooter } from '@/ui/organisms/footer/Footer';
-import { Header } from '@/ui/organisms/header/Header';
 import { appWithTranslation } from 'next-i18next';
+import dynamic from 'next/dynamic';
 import nextI18NextConfig from '../next-i18next.config.js';
+const Toaster = dynamic(() => import('@/components/ui/toaster').then(res => res.Toaster));
+const Header = dynamic(() => import('@/ui/organisms/header/Header').then(res => res.Header));
+const BreadFooter = dynamic(() =>
+  import('@/ui/organisms/footer/Footer').then(res => res.BreadFooter),
+);
 const {
   errorColor,
   errorHoverColor,
