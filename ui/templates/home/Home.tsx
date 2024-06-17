@@ -1,4 +1,5 @@
 import { Space } from 'antd';
+import dynamic from 'next/dynamic';
 import {
   IcChevronRight,
   LandingBanner,
@@ -6,26 +7,42 @@ import {
   SaveMoneyIcon,
   ZeroProcessingFeesIcon,
 } from '~/ui/img-resource/ImageResources';
+import styles from './Home.module.scss';
 
-import MerchantFee from '@/components/elements/home/MerchantFee';
 import { Button } from '@/ui/atoms/button/Button';
-import CompetitiveAdvantage from '@/ui/templates/home/components/CompetitiveAdvantage';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { RouteConfig } from '~/constants/index';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { TrustScore } from '~/ui/atoms/trust-score/TrustScore';
-import { AllBusinesses } from '~/ui/organisms/all-businesses/AllBusinesses';
 import { Banner } from '~/ui/organisms/banner/Banner';
-import { CTAInnerFooter } from '~/ui/organisms/cta-inner-footer/CTAInnerFooter';
-import { UniqueValue } from '~/ui/organisms/unique-value/UniqueValue';
-import { WorkWithTheBest } from '~/ui/organisms/work-with-the-best/WorkWithTheBest';
-import styles from './Home.module.scss';
-import { HowItWorks } from './components/HowItWorks';
-import { SolutionList } from './components/SolutionList';
-import { Testimonials } from './components/testimonials/Testimonials';
+const MerchantFee = dynamic(() => import('@/components/elements/home/MerchantFee'));
+const CompetitiveAdvantage = dynamic(
+  () => import('@/ui/templates/home/components/CompetitiveAdvantage'),
+);
+const AllBusinesses = dynamic(() =>
+  import('~/ui/organisms/all-businesses/AllBusinesses').then(res => res.AllBusinesses),
+);
+const CTAInnerFooter = dynamic(() =>
+  import('~/ui/organisms/cta-inner-footer/CTAInnerFooter').then(res => res.CTAInnerFooter),
+);
+const UniqueValue = dynamic(() =>
+  import('~/ui/organisms/unique-value/UniqueValue').then(res => res.UniqueValue),
+);
+const WorkWithTheBest = dynamic(() =>
+  import('~/ui/organisms/work-with-the-best/WorkWithTheBest').then(res => res.WorkWithTheBest),
+);
 
+const HowItWorks = dynamic(() => import('./components/HowItWorks').then(res => res.HowItWorks));
+const SolutionList = dynamic(() =>
+  import('./components/SolutionList').then(res => res.SolutionList),
+);
+// import { Testimonials } from './components/testimonials/Testimonials';
+
+const Testimonials = dynamic(() =>
+  import('./components/testimonials/Testimonials').then(res => res.Testimonials),
+);
 const BannerItems = [
   {
     title: 'saving_money',
