@@ -31,7 +31,7 @@ export default function Document() {
         {/* // BOOKMARK ICON */}
         <link rel="apple-touch-icon" href={`${DOMAIN}/apple-touch-icon.png`} />
         <link rel="apple-touch-icon" href={`${DOMAIN}/apple-touch-icon.png`} sizes="180x180" />
-        <script src="//code.tidio.co/qdbq3bk4yponnps9btlc4ouz4gfpunie.js" async></script>
+        <Script src="//code.tidio.co/qdbq3bk4yponnps9btlc4ouz4gfpunie.js" async />
       </Head>
 
       <body>
