@@ -5,7 +5,6 @@ import PartnerEvents from '@/components/elements/partner/PartnerEvents';
 import PartnerForm from '@/components/elements/partner/PartnerForm';
 import { Button } from '@/components/ui/button';
 import Hero from '@/components/ui/hero';
-import { subject } from '@/helpers';
 import { Meta } from '@/models/app_config.model';
 import { Collapse, Panel } from '@/ui/atoms/collapse/Collapse';
 import { Heading } from '@/ui/atoms/heading/Heading';
@@ -31,6 +30,8 @@ import Link from 'next/link';
 import { GetStaticProps } from 'next/types';
 import React, { useContext, useEffect, useRef } from 'react';
 import { getSEOTag } from './api/app-configs';
+import {Subject} from 'rxjs';
+const subject = new Subject<{ [key: string]: string }>();
 
 const PartnerProgramConfigs = {
   basePay: IcBasePay,

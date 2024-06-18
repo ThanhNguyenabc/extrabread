@@ -1,10 +1,11 @@
 import { useDevice } from '@/hooks/useDetectMobile';
 import { IcClose } from '@/ui/img-resource/ImageResources';
-import { Drawer, DrawerProps } from 'antd';
+import { Drawer } from 'antd';
 import React, { forwardRef, useContext, useImperativeHandle, useState } from 'react';
 import BusinessTypes from './components/BusinessTypes';
 import CustomerContact from './components/CustomerContact';
 import QuestionSection2 from './components/QuestionSection2';
+import { QuestionnaireProps } from './Questionnaire.type';
 
 type QuestionnaireData = {
   data: {
@@ -31,11 +32,6 @@ const initialValue: QuestionnaireData = {
 
 const QuestionnaireProvider = React.createContext<QuestionnaireData>(initialValue);
 export const useQuestionnaire = () => useContext(QuestionnaireProvider);
-
-export type QuestionnaireProps = {
-  showDialog: () => void;
-  closeDialog: () => void;
-} & DrawerProps;
 
 const Questionnaire = forwardRef<QuestionnaireProps>((props, ref) => {
   const [open, setShow] = useState(false);

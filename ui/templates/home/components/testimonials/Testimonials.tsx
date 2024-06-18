@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
-import { uuid } from 'uuidv4';
+import { v4 } from 'uuid';
 import { BreakPoints, useDevice } from '~/hooks/useDetectMobile';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { Heading } from '~/ui/atoms/heading/Heading';
@@ -28,7 +28,7 @@ const CONTENTS: {
   };
 }[] = [
   {
-    index: uuid(),
+    index: v4(),
     rating: 5,
     title: 'Upgraded to a new Micros',
     img: '/images/Testimonials-di-vinos.webp',
@@ -40,7 +40,7 @@ const CONTENTS: {
     },
   },
   {
-    index: uuid(),
+    index: v4(),
     rating: 5,
     title: 'Switched from Revel to Union',
     img: '/images/Testimonials-cabana.jpeg',
@@ -52,7 +52,7 @@ const CONTENTS: {
     },
   },
   {
-    index: uuid(),
+    index: v4(),
     rating: 5,
     title: 'Switched from Restaurant Manager to Revel Deal',
     img: '/images/Testimonials-juanas.jpeg',
@@ -64,7 +64,7 @@ const CONTENTS: {
     },
   },
   {
-    index: uuid(),
+    index: v4(),
     rating: 5,
     title: 'Switched from Aldelo to Revel',
     img: '/images/Testimonials-wicked-monk.png',

@@ -1,5 +1,3 @@
-import { Subject } from 'rxjs';
-
 type ModifiersType = string | string[] | false | undefined | ModifiersType[];
 
 export type ModifierProp<M extends string> = M | M[];
@@ -42,5 +40,3 @@ export function mapModifiers(
         .trim()}`.trim()
     : '';
 }
-
-export const subject = new Subject<{ [key: string]: string }>();

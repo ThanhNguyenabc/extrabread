@@ -3,7 +3,7 @@ import { Button, Carousel, Rate, Space, Typography } from 'antd';
 import { CarouselProps, CarouselRef } from 'antd/es/carousel';
 import classNames from 'classnames';
 import { useRef, useState } from 'react';
-import { uuid } from 'uuidv4';
+import { v4 } from "uuid";
 import { BreakPoints, useDevice } from '~/hooks/useDetectMobile';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { Heading } from '~/ui/atoms/heading/Heading';
@@ -25,7 +25,7 @@ const CONTENTS: {
   };
 }[] = [
   {
-    index: uuid(),
+    index: v4(),
     rating: 5,
     title: 'Upgraded to a new Micros',
     quote:
@@ -36,7 +36,7 @@ const CONTENTS: {
     },
   },
   {
-    index: uuid(),
+    index: v4(),
     rating: 5,
     title: 'Switched from Pixapoint to Union',
     quote:
@@ -47,7 +47,7 @@ const CONTENTS: {
     },
   },
   {
-    index: uuid(),
+    index: v4(),
     rating: 5,
     title: 'Switched from Restaurant Manager to Revel Deal',
     quote:
@@ -58,7 +58,7 @@ const CONTENTS: {
     },
   },
   {
-    index: uuid(),
+    index: v4(),
     rating: 5,
     title: 'Switched from Aldelo to Revel',
     quote:

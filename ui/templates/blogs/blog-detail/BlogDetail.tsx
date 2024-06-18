@@ -13,7 +13,7 @@ import dayjs from 'dayjs';
 import { isEmpty } from 'lodash';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FC, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FacebookShareButton, LinkedinShareButton } from 'react-share';
 import styles from '../Blogs.module.scss';
 import { SubscriptionForm } from '../subscription-form/SubscriptionForm';

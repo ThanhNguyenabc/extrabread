@@ -1,13 +1,14 @@
+
 import 'antd/dist/reset.css';
 import 'assets/styles/index.scss';
 import 'assets/styles/tailwind.scss';
+import variables from 'assets/styles/variables.module.scss';
 
 import { Loading } from '@/ui/atoms/loading/Loading';
 import { StyleProvider } from '@ant-design/cssinjs';
 import { useHookstate } from '@hookstate/core';
 import { ConfigProvider } from 'antd';
 import { AliasToken } from 'antd/es/theme/internal';
-import variables from 'assets/styles/variables.module.scss';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -16,15 +17,15 @@ import { useDevice } from '~/hooks/useDetectMobile';
 import { globalState } from '~/hooks/useLanguage';
 
 import { RouteConfig } from '@/constants';
-import { Alert } from '@/ui/organisms/alert/Alert';
 import { appWithTranslation } from 'next-i18next';
 import dynamic from 'next/dynamic';
 import nextI18NextConfig from '../next-i18next.config.js';
+const Alert = dynamic(() => import('@/ui/organisms/alert/Alert').then(res => res.Alert));
 const Toaster = dynamic(() => import('@/components/ui/toaster').then(res => res.Toaster));
 const Header = dynamic(() => import('@/ui/organisms/header/Header').then(res => res.Header));
-const BreadFooter = dynamic(() =>
-  import('@/ui/organisms/footer/Footer').then(res => res.BreadFooter),
-);
+// const BreadFooter = dynamic(() =>
+//   import('@/ui/organisms/footer/Footer').then(res => res.BreadFooter),
+// );
 const {
   errorColor,
   errorHoverColor,
@@ -175,7 +176,7 @@ const App = (props: AppProps) => {
             {showBanner && <Alert />}
             <Header />
             <Component {...pageProps} />
-            <BreadFooter />
+            {/* <BreadFooter /> */}
           </StyleProvider>
         </div>
       </ConfigProvider>

@@ -38,7 +38,6 @@ const HowItWorks = dynamic(() => import('./components/HowItWorks').then(res => r
 const SolutionList = dynamic(() =>
   import('./components/SolutionList').then(res => res.SolutionList),
 );
-// import { Testimonials } from './components/testimonials/Testimonials';
 
 const Testimonials = dynamic(() =>
   import('./components/testimonials/Testimonials').then(res => res.Testimonials),
@@ -104,7 +103,6 @@ export const HomeTemplate = ({ title }: { title?: string }) => {
       <MerchantFee />
 
       <HowItWorks />
-
 
       <WorkWithTheBest />
 

@@ -21,7 +21,6 @@ import PromosIcon from 'public/images/color-icons/promos.svg';
 import QuestionIcon from 'public/images/color-icons/question.svg';
 import ReceiveCashIcon from 'public/images/color-icons/Receive Cash.svg';
 import TipPoolingIcon from 'public/images/color-icons/Tip Pooling.svg';
-// import ReducePriceIcon from 'public/images/color-icons/reduce-price.svg';
 import AcceptAllPaymentIcon from 'public/images/color-icons/Accept all payment methods.svg';
 import EfficientFastIcon from 'public/images/color-icons/Efficient fast bar menu.svg';
 import FastCheckoutIcon from 'public/images/color-icons/fast-checkout.svg';
