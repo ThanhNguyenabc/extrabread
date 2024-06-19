@@ -2,7 +2,7 @@ import { RouteConfig } from '@/constants';
 import { Typography } from 'antd';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { Heading } from '~/ui/atoms/heading/Heading';
@@ -20,7 +20,7 @@ export type Solution = {
   path: string;
 };
 
-const Images: { [key: string]: StaticImageData } = {
+const Images: { [key: string]: string } = {
   'credit-card': CreditCardBanner,
   'mobile-card': MobileCardReaderBanner,
   'online-processing': OnlineProcessingBanner,

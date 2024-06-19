@@ -1,6 +1,4 @@
-import Hero from '@/components/ui/hero';
 import { BreadCard } from '@/ui/atoms/bread-card/BreadCard';
-import { SectionHeading } from '@/ui/atoms/heading/Heading';
 import { useTranslation } from 'next-i18next';
 import React from 'react';
 

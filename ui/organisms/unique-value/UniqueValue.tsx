@@ -1,13 +1,10 @@
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { clsx } from 'yet-another-react-lightbox/core';
-import { useDevice } from '~/hooks/useDetectMobile';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { Container } from '~/ui/atoms/container/Container';
 import { Flex } from '~/ui/atoms/flex/Flex';
-import { SectionHeading } from '~/ui/atoms/heading/Heading';
 import { Icon } from '~/ui/atoms/icon/Icon';
-import { UniqueValueImg } from '~/ui/img-resource/ImageResources';
 import styles from './UniqueValue.module.scss';
 
 const Detail = ({ data }: { data: Array<string> }) => {
@@ -24,7 +21,6 @@ const Detail = ({ data }: { data: Array<string> }) => {
 };
 
 export const UniqueValue = () => {
-  const { isMobile } = useDevice();
   const { t } = useTranslation();
   const items = t('unique.items', { returnObjects: true }) as Array<string> | null;
 
@@ -38,7 +34,7 @@ export const UniqueValue = () => {
               width={580}
               height={580}
               className={clsx(styles['unique-value_img'])}
-              src={UniqueValueImg.src}
+              src={"https://res.cloudinary.com/dgrym3yz3/image/upload/v1718772698/extrabread/common/tdqyjoymfqyk8cbjqnby.webp"}
               alt="UniqueValue"
             />
           </div>

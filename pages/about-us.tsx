@@ -25,7 +25,6 @@ import { useRouter } from 'next/router';
 import { GetStaticProps } from 'next/types';
 import React from 'react';
 import { getSEOTag } from './api/app-configs';
-
 const DataStatistics = [
   {
     title: '$100K',
@@ -74,7 +73,7 @@ const InfoSections = [
       title: 'get_started',
       href: RouteConfig.Contacts,
     },
-    desc: '24/7_support.,desc',
+    desc: '24/7_support.desc',
   },
   {
     image: SigningBonus,
@@ -192,7 +191,13 @@ const AboutUS = ({ seoTag }: { seoTag?: Meta }) => {
               imageDirection={item.imageDirection as ImageDirection}
               image={
                 <div className="w-full flex-1 self-center">
-                  <Image src={item.image} alt={`${item.title}`} quality={90} />
+                  <Image
+                    src={item.image}
+                    alt={`${item.title}`}
+                    quality={100}
+                    width={584}
+                    height={584}
+                  />
                 </div>
               }
             />

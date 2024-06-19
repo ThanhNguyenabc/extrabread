@@ -5,7 +5,6 @@ import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { Segmented } from '~/ui/atoms/segment/Segment';
 import { BusinessExplore } from '~/ui/organisms/business-explore/BusinessExplore';
 import { CTAInnerFooter } from '~/ui/organisms/cta-inner-footer/CTAInnerFooter';
-import { BreadFooter } from '~/ui/organisms/footer/Footer';
 
 import { useTranslation } from 'next-i18next';
 import { useDevice } from '~/hooks/useDetectMobile';
@@ -25,31 +24,31 @@ const SOLUTION_CONFIGS = [
     title: 'product_types.market.title',
     description: 'product_types.market.description',
     href: RouteConfig.CloverAppMarket,
-    src: CloverAppMarketImg.src,
+    src: CloverAppMarketImg,
   },
   {
     title: 'product_types.gift.title',
     description: 'product_types.gift.description',
     href: RouteConfig.GiftCardProgram,
-    src: GiftCardProgramImg.src,
+    src: GiftCardProgramImg,
   },
   {
     title: 'product_types.loyalty.title',
     description: 'product_types.loyalty.description',
     href: RouteConfig.CustomerLoyaltyProgramsAndRewards,
-    src: LoyaltyRewardsImg.src,
+    src: LoyaltyRewardsImg,
   },
   {
     title: 'product_types.cash_discount.title',
     description: 'product_types.cash_discount.description',
     href: RouteConfig.CashDiscountProgram,
-    src: CashDiscountProgramImg.src,
+    src: CashDiscountProgramImg,
   },
   {
     title: 'product_types.check_service.title',
     description: 'product_types.check_service.description',
     href: RouteConfig.CheckServices,
-    src: CheckServicesImg.src,
+    src: CheckServicesImg,
   },
 ];
 

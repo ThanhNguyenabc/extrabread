@@ -57,7 +57,7 @@ const Calculator = () => {
         title={t('earning_title')}
         desc={t('earning_desc')}
         btnClassName="bg-neutral-900"
-        image={EarningCash.src}
+        image={EarningCash}
         onClick={navigatePartnerForm}
       />
       <CalculatorItem
@@ -66,7 +66,7 @@ const Calculator = () => {
         desc={t('start_business_desc')}
         btnTitle={common('get_start_today')}
         btnClassName="bg-blue-500"
-        image={ReferringBusiness.src}
+        image={ReferringBusiness}
         onClick={() => referalProgramRef.current?.showDialog()}
       />
       <ReferalProgramModal ref={referalProgramRef} />

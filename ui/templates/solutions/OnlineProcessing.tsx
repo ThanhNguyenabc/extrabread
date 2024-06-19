@@ -1,7 +1,6 @@
 import { Space, Typography } from 'antd';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
-import OnlineProcessingBanner from 'public/images/banners/online-processing.png';
 import Item2 from 'public/images/solutions/Integration.png';
 import Item1 from 'public/images/solutions/Processing Capabilities.png';
 import { PropsWithChildren, useMemo } from 'react';
@@ -15,6 +14,7 @@ import {
   InterfaceIcon,
   MobileCardReaderImg,
   VirtualIcon,
+  OnlineProcessingBanner
 } from '~/ui/img-resource/ImageResources';
 import { Banner } from '~/ui/organisms/banner/Banner';
 import { SolutionExplore } from '~/ui/organisms/solution-explore/SolutionExplore';
@@ -97,7 +97,7 @@ export const OnlineProcessing = ({ children }: PropsWithChildren) => {
             className={styles['solutions_pricing-button']}
           />
         }
-        src={OnlineProcessingBanner.src}
+        src={OnlineProcessingBanner}
         descriptions={
           <Space direction="vertical">
             {BANNER_CONTENT.map((item, idx) => (
@@ -142,13 +142,13 @@ export const OnlineProcessing = ({ children }: PropsWithChildren) => {
               name: common('solutions.credit-card.title'),
               description: common('solutions.credit-card.desc'),
               link: SOLUTIONS_MENU[1].href,
-              src: CreditCardTerminalImg.src,
+              src: CreditCardTerminalImg,
             },
             {
               name: common('solutions.mobile-card.title'),
               description: common('solutions.mobile-card.desc'),
               link: SOLUTIONS_MENU[2].href,
-              src: MobileCardReaderImg.src,
+              src: MobileCardReaderImg,
             },
           ]}
         />

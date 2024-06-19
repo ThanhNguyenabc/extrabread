@@ -2,7 +2,6 @@ import { Space } from 'antd';
 import dynamic from 'next/dynamic';
 import {
   IcChevronRight,
-  LandingBanner,
   ReceiveCashIcon,
   SaveMoneyIcon,
   ZeroProcessingFeesIcon,
@@ -86,7 +85,7 @@ export const HomeTemplate = ({ title }: { title?: string }) => {
             </div>
           </>
         }
-        src={LandingBanner.src}
+        src={"https://res.cloudinary.com/dgrym3yz3/image/upload/v1718772055/extrabread/banners/hjjfbyzvjb22veb0zhu2.webp"}
         extractComponent={
           <div className={styles['home-template_banner-footer']}>
             {BannerItems.map(({ title, icon: Icon }) => (

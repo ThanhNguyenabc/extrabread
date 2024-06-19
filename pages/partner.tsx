@@ -29,8 +29,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { GetStaticProps } from 'next/types';
 import React, { useContext, useEffect, useRef } from 'react';
+import { Subject } from 'rxjs';
 import { getSEOTag } from './api/app-configs';
-import {Subject} from 'rxjs';
 const subject = new Subject<{ [key: string]: string }>();
 
 const PartnerProgramConfigs = {
@@ -188,6 +188,7 @@ const PartnerPage = ({ seoTag }: { seoTag?: Meta }) => {
                 src={Consideration}
                 width={534}
                 height={526}
+                quality={100}
                 alt="consider image"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />

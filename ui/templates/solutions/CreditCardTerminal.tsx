@@ -169,13 +169,13 @@ export const CreditCardTerminal = ({ children }: PropsWithChildren) => {
               name: common('solutions.mobile-card.title'),
               description: common('solutions.mobile-card.desc'),
               link: SOLUTIONS_MENU[1].href,
-              src: MobileCardReaderImg.src,
+              src: MobileCardReaderImg,
             },
             {
               name: common('solutions.online-processing.title'),
               description: common('solutions.online-processing.desc'),
               link: SOLUTIONS_MENU[2].href,
-              src: OnlineProcessingImg.src,
+              src: OnlineProcessingImg,
             },
           ]}
         />

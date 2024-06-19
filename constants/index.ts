@@ -1,10 +1,8 @@
 export const DOMAIN = 'https://extrabread.com';
 export const BLOGS_API = 'https://blog.extrabread.com/wp-json/wp/v2/posts';
 
-import CreditCardTerminalImg from 'public/images/Credit Card Terminal.png';
 import {
   BarNightImg,
-  CashAdvanceImg,
   CashDiscountProgramImg,
   CheckServicesImg,
   CloverAppMarketImg,
@@ -25,6 +23,7 @@ import {
   QuickServiceRestaurantsImg,
   RetailBusinessesImg,
   SmallBusinessImg,
+  CreditCardTerminalImg
 } from '~/ui/img-resource/ImageResources';
 
 export const PHONE = '1-800-209-7120';
@@ -121,19 +120,19 @@ export const SOLUTIONS_MENU = [
     title: 'solutions.credit-card.title',
     replaceTitle: 'solutions.credit-card.secondTitle',
     description: 'solutions.credit-card.desc',
-    src: CreditCardTerminalImg.src,
+    src: CreditCardTerminalImg,
   },
   {
     href: RouteConfig.MobileCard,
     title: 'solutions.mobile-card.title',
     description: 'solutions.mobile-card.desc',
-    src: MobileCardReaderImg.src,
+    src: MobileCardReaderImg,
   },
   {
     href: RouteConfig.OnlineProcessing,
     title: 'solutions.online-processing.title',
     description: 'solutions.online-processing.desc',
-    src: OnlineProcessingImg.src,
+    src: OnlineProcessingImg,
   },
 ];
 
@@ -219,37 +218,37 @@ export const EQUIPMENTS_MENU = [
 export const BUSINESS_MENU = [
   {
     title: 'business_categories.full_service',
-    src: FullServiceRestaurantsImg.src,
+    src: FullServiceRestaurantsImg,
     href: RouteConfig.FullServiceRestaurants,
     icon: IcQuickService,
   },
   {
     title: 'business_categories.retail',
-    src: RetailBusinessesImg.src,
+    src: RetailBusinessesImg,
     href: RouteConfig.Retail,
     icon: IcRetail,
   },
   {
     title: 'business_categories.quick_service',
-    src: QuickServiceRestaurantsImg.src,
+    src: QuickServiceRestaurantsImg,
     href: RouteConfig.QuickServiceRestaurants,
     icon: IcQuickService,
   },
   {
     title: 'business_categories.small_business',
-    src: SmallBusinessImg.src,
+    src: SmallBusinessImg,
     href: RouteConfig.SmallBusiness,
     icon: IcSmallBusiness,
   },
   {
     title: 'business_categories.bar_nightclub',
-    src: BarNightImg.src,
+    src: BarNightImg,
     href: RouteConfig.BarsAndNightClubs,
     icon: IcBarClub,
   },
   {
     title: 'business_categories.pizza',
-    src: PizzeriasImg.src,
+    src: PizzeriasImg,
     href: RouteConfig.Pizzerias,
     icon: IcPizza,
   },
@@ -258,47 +257,47 @@ export const BUSINESS_MENU = [
 export const PRODUCTS_MENU = [
   {
     title: 'product_types.market.title',
-    src: CloverAppMarketImg.src,
+    src: CloverAppMarketImg,
     href: RouteConfig.CloverAppMarket,
   },
   {
     title: 'product_types.gift.title',
-    src: GiftCardProgramImg.src,
+    src: GiftCardProgramImg,
     href: RouteConfig.GiftCardProgram,
   },
   {
     title: 'product_types.loyalty.title',
-    src: LoyaltyRewardsImg.src,
+    src: LoyaltyRewardsImg,
     href: RouteConfig.CustomerLoyaltyProgramsAndRewards,
   },
   {
     title: 'product_types.cash_discount.title',
-    src: CashDiscountProgramImg.src,
+    src: CashDiscountProgramImg,
     href: RouteConfig.CashDiscountProgram,
   },
   {
     title: 'product_types.check_service.title',
-    src: CheckServicesImg.src,
+    src: CheckServicesImg,
     href: RouteConfig.CheckServices,
   },
   {
     title: 'product_types.online_analytics.title',
-    src: OnlineReportingImg.src,
+    src: OnlineReportingImg,
     href: RouteConfig.OnlineAnalytics,
   },
   {
     title: 'product_types.quick_book.title',
-    src: QuickBooksPluginImg.src,
+    src: QuickBooksPluginImg,
     href: RouteConfig.QuickbooksPlugin,
   },
   {
     title: 'product_types.cash_advance.title',
-    src: CashAdvanceImg.src,
+    src: "https://res.cloudinary.com/dgrym3yz3/image/upload/v1718773308/extrabread/common/so6uh0almm4o7jwmlijw.png",
     href: RouteConfig.CashAdvance,
   },
   {
     title: 'product_types.invoicing.title',
-    src: InvoicingImg.src,
+    src: InvoicingImg,
     href: RouteConfig.Invoicing,
   },
 ];

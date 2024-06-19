@@ -1,3 +1,24 @@
+export const BarNightImg =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718781475/extrabread/common/t3p3eyppxjrnzdyepb75.webp';
+export const FullServiceRestaurantsImg =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718781659/extrabread/common/trkqvy3nuayzch8872wd.webp';
+export const PizzeriasImg =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718781762/extrabread/common/vmaahboyhvxkb8njvvyq.webp';
+export const QuickServiceRestaurantsImg =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718781851/extrabread/common/bm2lzxwsnjnlihyzafvx.jpg';
+export const RetailBusinessesImg =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718781968/extrabread/common/kyhei2ollta7wkrr3qj0.webp';
+export const SmallBusinessImg =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718782116/extrabread/common/um5xpbx1vuilaunhqng7.webp';
+  
+import AcceptAllPaymentIcon from 'public/images/color-icons/Accept all payment methods.svg';
+import ESIcon from 'public/images/color-icons/ES.svg';
+import EfficientFastIcon from 'public/images/color-icons/Efficient fast bar menu.svg';
+import ItemManagementIcon from 'public/images/color-icons/ItemManagement.svg';
+import ReceiveCashIcon from 'public/images/color-icons/Receive Cash.svg';
+import TipPoolingIcon from 'public/images/color-icons/Tip Pooling.svg';
+import USIcon from 'public/images/color-icons/US.svg';
+import ZeroProcessingFeesIcon from 'public/images/color-icons/Zero Processing Fees.svg';
 import CartIcon from 'public/images/color-icons/cart.svg';
 import CashBonusIcon from 'public/images/color-icons/cash-bonus.svg';
 import ChartIcon from 'public/images/color-icons/chart.svg';
@@ -6,135 +27,134 @@ import CloudSystemIcon from 'public/images/color-icons/cloud-system.svg';
 import CreditCardIcon from 'public/images/color-icons/credit-card-1.svg';
 import DevicesIcon from 'public/images/color-icons/devices.svg';
 import EmailIcon from 'public/images/color-icons/email.svg';
-import ESIcon from 'public/images/color-icons/ES.svg';
+import FastCheckoutIcon from 'public/images/color-icons/fast-checkout.svg';
 import GiftCardIcon from 'public/images/color-icons/gift-card.svg';
 import InterfaceIcon from 'public/images/color-icons/interface.svg';
 import ManagementIcon from 'public/images/color-icons/management.svg';
 import MenuIcon from 'public/images/color-icons/menu.svg';
+import NegociationIcon from 'public/images/color-icons/negociation.svg';
 import NotificationIcon from 'public/images/color-icons/notification.svg';
+import OnlineOrderingIcon from 'public/images/color-icons/online-ordering.svg';
 import OnlineRemoteIcon from 'public/images/color-icons/online-remote.svg';
 import OnsiteSupportIcon from 'public/images/color-icons/onsite-support.svg';
 import OptionIcon from 'public/images/color-icons/option-1.svg';
 import PaymentTerminalIcon from 'public/images/color-icons/payment-terminal.svg';
 import PhoneIcon from 'public/images/color-icons/phone.svg';
 import PromosIcon from 'public/images/color-icons/promos.svg';
-import QuestionIcon from 'public/images/color-icons/question.svg';
-import ReceiveCashIcon from 'public/images/color-icons/Receive Cash.svg';
-import TipPoolingIcon from 'public/images/color-icons/Tip Pooling.svg';
-import AcceptAllPaymentIcon from 'public/images/color-icons/Accept all payment methods.svg';
-import EfficientFastIcon from 'public/images/color-icons/Efficient fast bar menu.svg';
-import FastCheckoutIcon from 'public/images/color-icons/fast-checkout.svg';
-import ItemManagementIcon from 'public/images/color-icons/ItemManagement.svg';
-import NegociationIcon from 'public/images/color-icons/negociation.svg';
-import OnlineOrderingIcon from 'public/images/color-icons/online-ordering.svg';
-import IcCheckCircle from 'public/images/icons/check-circle-solid.svg';
-import IcClose from 'public/images/icons/close.svg';
-import IcPlus from 'public/images/icons/plus.svg';
-
 import PuzzleIcon from 'public/images/color-icons/puzzle.svg';
+import QuestionIcon from 'public/images/color-icons/question.svg';
 import RewardIcon from 'public/images/color-icons/reward.svg';
 import SaveMoneyIcon from 'public/images/color-icons/save-money.svg';
 import SystemIcon from 'public/images/color-icons/system.svg';
-import USIcon from 'public/images/color-icons/US.svg';
 import UserFriendlyIcon from 'public/images/color-icons/user-friendly.svg';
 import VirtualIcon from 'public/images/color-icons/virtual.svg';
 import WirelessIcon from 'public/images/color-icons/wireless.svg';
 import WritingIcon from 'public/images/color-icons/writing.svg';
-import ZeroProcessingFeesIcon from 'public/images/color-icons/Zero Processing Fees.svg';
 import LogoFooterIcon from 'public/images/footer-logo.svg';
+import IcCheckCircle from 'public/images/icons/check-circle-solid.svg';
 import IcCheck from 'public/images/icons/check.svg';
 import IcChevronRight from 'public/images/icons/chevron-right.svg';
-import IcLoading from 'public/images/icons/loading.svg';
-
-import LandingBanner from 'public/images/banners/landing.png';
-import CashAdvanceImg from 'public/images/Cash Advance.png';
-import CashDiscountProgramImg from 'public/images/Cash Discount Program.png';
-import CheckServicesImg from 'public/images/Check Services.png';
-import CloverAppMarketImg from 'public/images/Clover App Market.png';
-import CreditCardTerminalImg from 'public/images/Credit Card Terminal.png';
-import GiftCardProgramImg from 'public/images/Gift Card Program.png';
-import InvoicingImg from 'public/images/Invoicing.png';
-import LoyaltyRewardsImg from 'public/images/Loyalty & Rewards.png';
-import MobileCardReaderImg from 'public/images/Mobile Card Reader.png';
-import OnlineProcessingImg from 'public/images/Online Processing.png';
-import OnlineReportingImg from 'public/images/Online Reporting.png';
-import QuickBooksPluginImg from 'public/images/QuickBooks Plugin.png';
-
-// Businesses Type
-import BarNightImg from 'public/images/Bar Night.png';
-import FullServiceRestaurantsImg from 'public/images/Full Service Restaurants.jpg';
+import IcClose from 'public/images/icons/close.svg';
+import IcAppointment from 'public/images/icons/ic_appointment.svg';
 import IcBarClub from 'public/images/icons/ic_barclub.svg';
+import IcBasePay from 'public/images/icons/ic_base_pay.svg';
+import IcBonus from 'public/images/icons/ic_bonus.svg';
+import IcIncome from 'public/images/icons/ic_income.svg';
 import IcPizza from 'public/images/icons/ic_pizza.svg';
 import IcRestaurant from 'public/images/icons/ic_restaurant.svg';
 import IcRetail from 'public/images/icons/ic_retail.svg';
 import IcQuickService from 'public/images/icons/ic_service1.svg';
 import IcSmallBusiness from 'public/images/icons/ic_small_business.svg';
-import PizzeriasImg from 'public/images/Pizzerias.png';
-import QuickServiceRestaurantsImg from 'public/images/Quick Service Restaurants.jpg';
-import RetailBusinessesImg from 'public/images/Retail Businesses.jpg';
-import SmallBusinessImg from 'public/images/Small Businesses.jpg';
+import IcLoading from 'public/images/icons/loading.svg';
+import IcPlus from 'public/images/icons/plus.svg';
+export const LogoSmallIcon =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718780447/extrabread/common/kmytcsgos3nfe8z5jcza.webp';
+export const LogoFullIcon =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718780306/extrabread/common/ystcqx1migdz7hp3e5ac.webp';
+export const LogoFooter =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718780210/extrabread/common/k24a2xbahvwoynjmbprx.webp';
+export const Consideration =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718779973/extrabread/partner/nspksbjyiboxocecdhxd.png';
+export const EarningCash =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718779516/extrabread/partner/bfgl2oyvm2gxiip9lowd.png';
+export const PartnerISOProgram =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718779473/extrabread/partner/sjxhyjrdfjo1mlpg86ks.png';
+export const PartnerCover =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718779418/extrabread/partner/ejtlrrssovkhulqx16pp.png';
+export const ReferalProgram1 =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718779373/extrabread/partner/ldz2mhoecpsqujarbha1.png';
+export const ReferringBusiness =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718779308/extrabread/partner/k8fd8etcp5bnk846xe00.png';
+export const PartnerTeamMate =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718779249/extrabread/partner/neum5ae2duiildtlcqzl.webp';
+export const PartnerCalling =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718779183/extrabread/partner/hhmbpo0x8exxyvjz5oww.webp';
+
+export const CloverAppMarketImg =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718774900/extrabread/common/dnqtcqgh8h1ipvubxllt.png';
+export const GiftCardProgramImg =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718774798/extrabread/common/incfczjzo24stqkocapf.webp';
+
+export const LoyaltyRewardsImg =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718774650/extrabread/common/qb3vgaaujqum7b92oswa.webp';
+export const MobileCardReaderImg =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718774425/extrabread/common/g7hlrqbtdvtqyeg36l11.png';
+export const OnlineReportingImg =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718774363/extrabread/common/ouoo7kweolivgwmligv6.png';
+export const InvoicingImg =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718774317/extrabread/common/jekwcfjjguqmkewwhxfz.png';
+export const QuickBooksPluginImg =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718773974/extrabread/common/qsjx50n0kugqwhindu5s.png';
+export const OnlineProcessingImg =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718773894/extrabread/common/qnr8nybqgvtfmmiy5qs8.png';
+
+export const CheckServicesImg =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718773589/extrabread/common/rdfilr9lxoydnuxe0tkj.png';
+export const CreditCardTerminalImg =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718773794/extrabread/common/xwji18ge8p0jlynylxkp.png';
+
+export const CashDiscountProgramImg =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718773401/extrabread/common/tkuihfwa8rgtm98ckhjw.png';
+
+// Businesses Type
+export const MobileCardReaderBanner =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718775413/extrabread/banners/eeqbpirf1q8ejduldhs5.webp';
 
 // Banner
-import CreditCardBanner from 'public/images/banners/credit-card.png';
-import MobileCardReaderBanner from 'public/images/banners/mobile-card-reader.png';
-import OnlineProcessingBanner from 'public/images/banners/online-processing.png';
-
-import UniqueValueTbImg from 'public/images/Unique Value-tb.png';
-import UniqueValueImg from 'public/images/Unique Value.png';
+export const CreditCardBanner =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718775178/extrabread/banners/xwuaqjuebst4cysnpmit.webp';
+export const OnlineProcessingBanner =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718772926/extrabread/banners/dnhrvkgmawaxt9sihuaq.webp';
 
 // Logo
-import LogoFooter from 'public/images/logo-footer.png';
-import LogoFullIcon from 'public/images/logo-full.png';
-import LogoSmallIcon from 'public/images/logo-icon.png';
+export const Support =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718776728/extrabread/common/rjnbe6l6sopiu1fm4le7.jpg';
 
 // Partner
-import IcAppointment from 'public/images/icons/ic_appointment.svg';
-import IcBasePay from 'public/images/icons/ic_base_pay.svg';
-import IcBonus from 'public/images/icons/ic_bonus.svg';
-import IcIncome from 'public/images/icons/ic_income.svg';
-import PartnerCalling from 'public/images/partner/calling_person.webp';
-import Consideration from 'public/images/partner/consideration.png';
-import EarningCash from 'public/images/partner/earn_cash.png';
-import PartnerISOProgram from 'public/images/partner/iso_program.png';
-import PartnerCover from 'public/images/partner/partner_cover.png';
-import ReferalProgram1 from 'public/images/partner/referal_program1.png';
-import ReferringBusiness from 'public/images/partner/referring_business.png';
-import PartnerTeamMate from 'public/images/partner/teammate.webp';
-import PartnerWFH from 'public/images/partner/working_from_home.webp';
+export const PosSytem =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/w_584,h_584/v1718772053/extrabread/banners/eck9g4dj3v7vb1vlvozq.png';
+export const SigningBonus =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/w_584,h_584/v1718772054/extrabread/banners/xn268jxmos7gtnpiranm.png';
+export const ProcessingFee =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/w_584,h_584/v1718772055/extrabread/banners/mhgeufafxb7yipqfbtet.png';
 
-//About us
-import AboutBanner from 'public/images/about-us/about-banner.png';
-import PosSytem from 'public/images/about-us/pos-system.png';
-import ProcessingFee from 'public/images/about-us/processing-fee.png';
-import SigningBonus from 'public/images/about-us/signing-bonus.png';
-import Support from 'public/images/about-us/support24.jpg';
+export const AboutBanner =
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718775716/extrabread/banners/kmzeofenlycywwpufc2s.webp';
 
 export {
-  AboutBanner,
   AcceptAllPaymentIcon,
-  BarNightImg,
   CartIcon,
-  CashAdvanceImg,
   CashBonusIcon,
-  CashDiscountProgramImg,
   ChartIcon,
-  CheckServicesImg,
   ChipIcon,
   CloudSystemIcon,
-  CloverAppMarketImg,
-  Consideration,
-  CreditCardBanner,
   CreditCardIcon,
-  CreditCardTerminalImg,
   DevicesIcon,
-  EarningCash,
+  ESIcon,
   EfficientFastIcon,
   EmailIcon,
-  ESIcon,
   FastCheckoutIcon,
-  FullServiceRestaurantsImg,
   GiftCardIcon,
-  GiftCardProgramImg,
   IcAppointment,
   IcBarClub,
   IcBasePay,
@@ -152,57 +172,28 @@ export {
   IcRetail,
   IcSmallBusiness,
   InterfaceIcon,
-  InvoicingImg,
   ItemManagementIcon,
-  LandingBanner,
-  LogoFooter,
   LogoFooterIcon,
-  LogoFullIcon,
-  LogoSmallIcon,
-  LoyaltyRewardsImg,
   ManagementIcon,
   MenuIcon,
-  MobileCardReaderBanner,
-  MobileCardReaderImg,
   NegociationIcon,
   NotificationIcon,
   OnlineOrderingIcon,
-  OnlineProcessingBanner,
-  OnlineProcessingImg,
   OnlineRemoteIcon,
-  OnlineReportingImg,
   OnsiteSupportIcon,
   OptionIcon,
-  PartnerCalling,
-  PartnerCover,
-  PartnerISOProgram,
-  PartnerTeamMate,
-  PartnerWFH,
   PaymentTerminalIcon,
   PhoneIcon,
-  PizzeriasImg,
-  PosSytem,
-  ProcessingFee,
   PromosIcon,
   PuzzleIcon,
   QuestionIcon,
-  QuickBooksPluginImg,
-  QuickServiceRestaurantsImg,
   ReceiveCashIcon,
-  ReferalProgram1,
-  ReferringBusiness,
-  RetailBusinessesImg,
   RewardIcon,
   SaveMoneyIcon,
-  SigningBonus,
-  SmallBusinessImg,
-  Support,
   SystemIcon,
   TipPoolingIcon,
-  UniqueValueImg,
-  UniqueValueTbImg,
-  UserFriendlyIcon,
   USIcon,
+  UserFriendlyIcon,
   VirtualIcon,
   WirelessIcon,
   WritingIcon,

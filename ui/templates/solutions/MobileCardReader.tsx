@@ -14,10 +14,10 @@ import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { SectionHeading } from '~/ui/atoms/heading/Heading';
 import {
   CreditCardIcon,
-  CreditCardTerminalImg,
   DevicesIcon,
-  OnlineProcessingImg,
   OptionIcon,
+  CreditCardTerminalImg,
+  OnlineProcessingImg
 } from '~/ui/img-resource/ImageResources';
 import { SolutionExplore } from '~/ui/organisms/solution-explore/SolutionExplore';
 import { DetailSolution } from '../../organisms/detail-solution/DetailSolution';
@@ -134,13 +134,13 @@ export const MobileCardReader = ({ children }: PropsWithChildren) => {
               name: common('solutions.credit-card.title'),
               description: common('solutions.credit-card.desc'),
               link: SOLUTIONS_MENU[0].href,
-              src: CreditCardTerminalImg.src,
+              src: CreditCardTerminalImg,
             },
             {
               name: common('solutions.online-processing.title'),
               description: common('solutions.online-processing.desc'),
               link: SOLUTIONS_MENU[2].href,
-              src: OnlineProcessingImg.src,
+              src: OnlineProcessingImg,
             },
           ]}
         />
