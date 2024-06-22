@@ -17,7 +17,7 @@ export default function Document() {
         <Script
           src="//code.tidio.co/qdbq3bk4yponnps9btlc4ouz4gfpunie.js"
           async
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script
           strategy="afterInteractive"
