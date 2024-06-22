@@ -19,13 +19,16 @@ import { useEffect, useMemo, useState } from 'react';
 import { useDevice } from '~/hooks/useDetectMobile';
 import { globalState } from '~/hooks/useLanguage';
 import nextI18NextConfig from '../next-i18next.config.js';
-const Alert = dynamic(() => import('@/ui/organisms/alert/Alert').then(res => res.Alert));
+const Alert = dynamic(() => import('@/ui/organisms/alert/Alert').then(res => res.Alert), {
+  ssr: false,
+});
 const Toaster = dynamic(() => import('@/components/ui/toaster').then(res => res.Toaster), {
   ssr: false,
 });
 const Header = dynamic(() => import('@/ui/organisms/header/Header').then(res => res.Header));
-const BreadFooter = dynamic(() =>
-  import('@/ui/organisms/footer/Footer').then(res => res.BreadFooter),
+const BreadFooter = dynamic(
+  () => import('@/ui/organisms/footer/Footer').then(res => res.BreadFooter),
+  { ssr: false },
 );
 const inter = Inter({ subsets: ['latin'], weight: ['300', '400', '500', '800'], display: 'swap' });
 
@@ -173,7 +176,10 @@ const App = (props: AppProps) => {
           },
         }}
       >
-        <div className={inter.className} style={{ ...(state.get().openMenu && { overflow: 'hidden', height: '100vh' }) }}>
+        <div
+          className={inter.className}
+          style={{ ...(state.get().openMenu && { overflow: 'hidden', height: '100vh' }) }}
+        >
           <Loading isRouteChanging={routeState.isRouteChanging} key={routeState.loadingKey} />
           <StyleProvider ssrInline>
             {showBanner && <Alert />}
