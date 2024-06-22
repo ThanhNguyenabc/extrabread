@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { IcClose } from '@/ui/img-resource/ImageResources';
+import { IcClose } from '@/ui/img-resource/ExIcon';
 import { useTranslation } from 'next-i18next';
 import React from 'react';
 

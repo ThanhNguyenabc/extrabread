@@ -6,13 +6,9 @@ import {
   CashDiscountProgramImg,
   CheckServicesImg,
   CloverAppMarketImg,
+  CreditCardTerminalImg,
   FullServiceRestaurantsImg,
   GiftCardProgramImg,
-  IcBarClub,
-  IcPizza,
-  IcQuickService,
-  IcRetail,
-  IcSmallBusiness,
   InvoicingImg,
   LoyaltyRewardsImg,
   MobileCardReaderImg,
@@ -23,15 +19,14 @@ import {
   QuickServiceRestaurantsImg,
   RetailBusinessesImg,
   SmallBusinessImg,
-  CreditCardTerminalImg
 } from '~/ui/img-resource/ImageResources';
 import { RouteConfig } from './routes';
+import { IcQuickService, IcRetail, IcSmallBusiness, IcBarClub, IcPizza } from '@/ui/img-resource/ExIcon';
 
 export const PHONE = '1-800-209-7120';
 export const EMAIL = 'info@extrabread.com';
 
 export const US_MASK = '(###) ###-####';
-
 
 export enum Languages {
   US = 'en',
@@ -56,7 +51,7 @@ export const COMPANY_MENU = [
   { title: 'about_us', href: RouteConfig.AboutUs },
   { title: 'point_of_sale_systems', href: RouteConfig.SaleSystems },
   { title: 'Referal Agent Packet', href: '/welcome_packet.pdf', newTab: true },
-  { title: 'Credit Card Processing Calculator', href: RouteConfig.Calculator},
+  { title: 'Credit Card Processing Calculator', href: RouteConfig.Calculator },
 ];
 
 export const SOLUTIONS_MENU = [
@@ -237,7 +232,7 @@ export const PRODUCTS_MENU = [
   },
   {
     title: 'product_types.cash_advance.title',
-    src: "https://res.cloudinary.com/dgrym3yz3/image/upload/v1718773308/extrabread/common/so6uh0almm4o7jwmlijw.png",
+    src: 'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718773308/extrabread/common/so6uh0almm4o7jwmlijw.png',
     href: RouteConfig.CashAdvance,
   },
   {

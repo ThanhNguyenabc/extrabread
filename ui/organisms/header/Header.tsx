@@ -1,3 +1,5 @@
+import { RouteConfig } from '@/constants/routes';
+import { ESIcon, USIcon } from '@/ui/img-resource/ExIcon';
 import { useHookstate } from '@hookstate/core';
 import { Drawer, DrawerProps, Dropdown, Layout, Space, Typography } from 'antd';
 import classNames from 'classnames';
@@ -16,10 +18,9 @@ import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { Heading } from '~/ui/atoms/heading/Heading';
 import { Icon } from '~/ui/atoms/icon/Icon';
 import SafeHydrate from '~/ui/atoms/safe-hydrate';
-import { ESIcon, LogoFullIcon, LogoSmallIcon, USIcon } from '~/ui/img-resource/ImageResources';
+import { LogoFullIcon, LogoSmallIcon } from '~/ui/img-resource/ImageResources';
 import { MENU_ITEMS, Navigation } from '~/ui/organisms/navigation/Navigation';
 import styles from './Header.module.scss';
-import { RouteConfig } from '@/constants/routes';
 
 const { Link: AntLink, Text } = Typography;
 const { Header: AntHeader } = Layout;

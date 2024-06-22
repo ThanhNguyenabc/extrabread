@@ -3,7 +3,7 @@ import {
   NegociationIcon,
   PuzzleIcon,
   WritingIcon,
-} from '@/ui/img-resource/ImageResources';
+} from '@/ui/img-resource/ExIcon';
 import { Typography } from 'antd';
 import { useTranslation } from 'next-i18next';
 import React from 'react';

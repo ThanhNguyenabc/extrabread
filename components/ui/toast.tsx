@@ -1,8 +1,8 @@
+import { cn } from '@/lib/utils';
+import { IcClose } from '@/ui/img-resource/ExIcon';
 import * as ToastPrimitives from '@radix-ui/react-toast';
 import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
-import { cn } from '@/lib/utils';
-import { IcClose } from '@/ui/img-resource/ImageResources';
 
 const ToastProvider = ToastPrimitives.Provider;
 

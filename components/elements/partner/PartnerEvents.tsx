@@ -16,7 +16,7 @@ const PartnerItem = ({
   imageDirection: string;
   title: string;
   desc: string;
-  image: StaticImageData;
+  image: string | StaticImageData;
 }) => {
   const { navigatePartnerForm } = usePartnerContext();
   const { t: common } = useTranslation('common');

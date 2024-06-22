@@ -1,5 +1,5 @@
 import { useDevice } from '@/hooks/useDetectMobile';
-import { IcClose } from '@/ui/img-resource/ImageResources';
+import { IcClose } from '@/ui/img-resource/ExIcon';
 import { Drawer } from 'antd';
 import React, { forwardRef, useContext, useImperativeHandle, useState } from 'react';
 import BusinessTypes from './components/BusinessTypes';

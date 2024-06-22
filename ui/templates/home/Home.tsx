@@ -5,7 +5,7 @@ import {
   ReceiveCashIcon,
   SaveMoneyIcon,
   ZeroProcessingFeesIcon,
-} from '~/ui/img-resource/ImageResources';
+} from '~/ui/img-resource/ExIcon';
 import styles from './Home.module.scss';
 
 import { RouteConfig } from '@/constants/routes';

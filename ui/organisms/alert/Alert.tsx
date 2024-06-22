@@ -2,7 +2,7 @@ import { Badge } from '@/components/ui/badge';
 import { RouteConfig } from '@/constants/routes';
 
 import Link from 'next/link';
-import { IcChevronRight, NotificationIcon } from '~/ui/img-resource/ImageResources';
+import { IcChevronRight, NotificationIcon } from '~/ui/img-resource/ExIcon';
 
 export const Alert = () => {
   return (

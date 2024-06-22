@@ -8,7 +8,7 @@ import {
   OnsiteSupportIcon,
   TipPoolingIcon,
   UserFriendlyIcon,
-} from '~/ui/img-resource/ImageResources';
+} from '~/ui/img-resource/ExIcon';
 import { Banner } from '~/ui/organisms/banner/Banner';
 
 import AlohaImg from 'public/images/businesses/aloha.jpg';

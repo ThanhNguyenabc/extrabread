@@ -10,63 +10,8 @@ export const RetailBusinessesImg =
   'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718781968/extrabread/common/kyhei2ollta7wkrr3qj0.webp';
 export const SmallBusinessImg =
   'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718782116/extrabread/common/um5xpbx1vuilaunhqng7.webp';
-  
-import AcceptAllPaymentIcon from 'public/images/color-icons/Accept all payment methods.svg';
-import ESIcon from 'public/images/color-icons/ES.svg';
-import EfficientFastIcon from 'public/images/color-icons/Efficient fast bar menu.svg';
-import ItemManagementIcon from 'public/images/color-icons/ItemManagement.svg';
-import ReceiveCashIcon from 'public/images/color-icons/Receive Cash.svg';
-import TipPoolingIcon from 'public/images/color-icons/Tip Pooling.svg';
-import USIcon from 'public/images/color-icons/US.svg';
-import ZeroProcessingFeesIcon from 'public/images/color-icons/Zero Processing Fees.svg';
-import CartIcon from 'public/images/color-icons/cart.svg';
-import CashBonusIcon from 'public/images/color-icons/cash-bonus.svg';
-import ChartIcon from 'public/images/color-icons/chart.svg';
-import ChipIcon from 'public/images/color-icons/chip.svg';
-import CloudSystemIcon from 'public/images/color-icons/cloud-system.svg';
-import CreditCardIcon from 'public/images/color-icons/credit-card-1.svg';
-import DevicesIcon from 'public/images/color-icons/devices.svg';
-import EmailIcon from 'public/images/color-icons/email.svg';
-import FastCheckoutIcon from 'public/images/color-icons/fast-checkout.svg';
-import GiftCardIcon from 'public/images/color-icons/gift-card.svg';
-import InterfaceIcon from 'public/images/color-icons/interface.svg';
-import ManagementIcon from 'public/images/color-icons/management.svg';
-import MenuIcon from 'public/images/color-icons/menu.svg';
-import NegociationIcon from 'public/images/color-icons/negociation.svg';
-import NotificationIcon from 'public/images/color-icons/notification.svg';
-import OnlineOrderingIcon from 'public/images/color-icons/online-ordering.svg';
-import OnlineRemoteIcon from 'public/images/color-icons/online-remote.svg';
-import OnsiteSupportIcon from 'public/images/color-icons/onsite-support.svg';
-import OptionIcon from 'public/images/color-icons/option-1.svg';
-import PaymentTerminalIcon from 'public/images/color-icons/payment-terminal.svg';
-import PhoneIcon from 'public/images/color-icons/phone.svg';
-import PromosIcon from 'public/images/color-icons/promos.svg';
-import PuzzleIcon from 'public/images/color-icons/puzzle.svg';
-import QuestionIcon from 'public/images/color-icons/question.svg';
-import RewardIcon from 'public/images/color-icons/reward.svg';
-import SaveMoneyIcon from 'public/images/color-icons/save-money.svg';
-import SystemIcon from 'public/images/color-icons/system.svg';
-import UserFriendlyIcon from 'public/images/color-icons/user-friendly.svg';
-import VirtualIcon from 'public/images/color-icons/virtual.svg';
-import WirelessIcon from 'public/images/color-icons/wireless.svg';
-import WritingIcon from 'public/images/color-icons/writing.svg';
-import LogoFooterIcon from 'public/images/footer-logo.svg';
-import IcCheckCircle from 'public/images/icons/check-circle-solid.svg';
-import IcCheck from 'public/images/icons/check.svg';
-import IcChevronRight from 'public/images/icons/chevron-right.svg';
-import IcClose from 'public/images/icons/close.svg';
-import IcAppointment from 'public/images/icons/ic_appointment.svg';
-import IcBarClub from 'public/images/icons/ic_barclub.svg';
-import IcBasePay from 'public/images/icons/ic_base_pay.svg';
-import IcBonus from 'public/images/icons/ic_bonus.svg';
-import IcIncome from 'public/images/icons/ic_income.svg';
-import IcPizza from 'public/images/icons/ic_pizza.svg';
-import IcRestaurant from 'public/images/icons/ic_restaurant.svg';
-import IcRetail from 'public/images/icons/ic_retail.svg';
-import IcQuickService from 'public/images/icons/ic_service1.svg';
-import IcSmallBusiness from 'public/images/icons/ic_small_business.svg';
-import IcLoading from 'public/images/icons/loading.svg';
-import IcPlus from 'public/images/icons/plus.svg';
+
+
 export const LogoSmallIcon =
   'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718780447/extrabread/common/kmytcsgos3nfe8z5jcza.webp';
 export const LogoFullIcon =
@@ -141,61 +86,54 @@ export const ProcessingFee =
 export const AboutBanner =
   'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718775716/extrabread/banners/kmzeofenlycywwpufc2s.webp';
 
-export {
-  AcceptAllPaymentIcon,
-  CartIcon,
-  CashBonusIcon,
-  ChartIcon,
-  ChipIcon,
-  CloudSystemIcon,
-  CreditCardIcon,
-  DevicesIcon,
-  ESIcon,
-  EfficientFastIcon,
-  EmailIcon,
-  FastCheckoutIcon,
-  GiftCardIcon,
-  IcAppointment,
-  IcBarClub,
-  IcBasePay,
-  IcBonus,
-  IcCheck,
-  IcCheckCircle,
-  IcChevronRight,
-  IcClose,
-  IcIncome,
-  IcLoading,
-  IcPizza,
-  IcPlus,
-  IcQuickService,
-  IcRestaurant,
-  IcRetail,
-  IcSmallBusiness,
-  InterfaceIcon,
-  ItemManagementIcon,
-  LogoFooterIcon,
-  ManagementIcon,
-  MenuIcon,
-  NegociationIcon,
-  NotificationIcon,
-  OnlineOrderingIcon,
-  OnlineRemoteIcon,
-  OnsiteSupportIcon,
-  OptionIcon,
-  PaymentTerminalIcon,
-  PhoneIcon,
-  PromosIcon,
-  PuzzleIcon,
-  QuestionIcon,
-  ReceiveCashIcon,
-  RewardIcon,
-  SaveMoneyIcon,
-  SystemIcon,
-  TipPoolingIcon,
-  USIcon,
-  UserFriendlyIcon,
-  VirtualIcon,
-  WirelessIcon,
-  WritingIcon,
-  ZeroProcessingFeesIcon,
-};
+// export {
+//   CartIcon,
+//   CashBonusIcon,
+//   ChartIcon,
+//   ChipIcon,
+//   CloudSystemIcon,
+//   CreditCardIcon,
+//   DevicesIcon,
+//   EmailIcon,
+//   FastCheckoutIcon,
+//   GiftCardIcon,
+//   IcAppointment,
+//   IcBarClub,
+//   IcBasePay,
+//   IcBonus,
+//   IcCheck,
+//   IcCheckCircle,
+//   IcChevronRight,
+//   IcClose,
+//   IcIncome,
+//   IcLoading,
+//   IcPizza,
+//   IcPlus,
+//   IcQuickService,
+//   IcRestaurant,
+//   IcRetail,
+//   IcSmallBusiness,
+//   InterfaceIcon,
+//   LogoFooterIcon,
+//   ManagementIcon,
+//   MenuIcon,
+//   NegociationIcon,
+//   NotificationIcon,
+//   OnlineOrderingIcon,
+//   OnlineRemoteIcon,
+//   OnsiteSupportIcon,
+//   OptionIcon,
+//   PaymentTerminalIcon,
+//   PhoneIcon,
+//   PromosIcon,
+//   PuzzleIcon,
+//   QuestionIcon,
+//   RewardIcon,
+//   SaveMoneyIcon,
+//   SystemIcon,
+//   UserFriendlyIcon,
+//   VirtualIcon,
+//   WirelessIcon,
+//   WritingIcon,
+//   ZeroProcessingFeesIcon,
+// };

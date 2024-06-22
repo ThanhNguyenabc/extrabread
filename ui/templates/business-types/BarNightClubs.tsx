@@ -4,12 +4,12 @@ import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { Icon } from '~/ui/atoms/icon/Icon';
 import {
-  EfficientFastIcon,
   ManagementIcon,
   OnsiteSupportIcon,
   UserFriendlyIcon,
-} from '~/ui/img-resource/ImageResources';
+} from '~/ui/img-resource/ExIcon';
 import { Banner } from '~/ui/organisms/banner/Banner';
+import EfficientFastIcon from 'public/images/color-icons/Efficient fast bar menu.svg';
 
 import cloverImg from 'public/images/businesses/clover-2.jpg';
 import exatouchImg from 'public/images/businesses/exatouch.jpg';

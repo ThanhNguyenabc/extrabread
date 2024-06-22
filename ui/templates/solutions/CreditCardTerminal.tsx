@@ -1,3 +1,5 @@
+import { RouteConfig } from '@/constants/routes';
+import { ChipIcon, PaymentTerminalIcon, WirelessIcon } from '@/ui/img-resource/ExIcon';
 import { Space, Typography } from 'antd';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
@@ -11,19 +13,12 @@ import { Flex } from '~/ui/atoms/flex/Flex';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { Heading, SectionHeading } from '~/ui/atoms/heading/Heading';
 import { Icon } from '~/ui/atoms/icon/Icon';
-import {
-  ChipIcon,
-  MobileCardReaderImg,
-  OnlineProcessingImg,
-  PaymentTerminalIcon,
-  WirelessIcon,
-} from '~/ui/img-resource/ImageResources';
+import { MobileCardReaderImg, OnlineProcessingImg } from '~/ui/img-resource/ImageResources';
 import { Banner } from '~/ui/organisms/banner/Banner';
 import { SolutionExplore } from '~/ui/organisms/solution-explore/SolutionExplore';
 import { DetailSolution } from '../../organisms/detail-solution/DetailSolution';
 import styles from './Solutions.module.scss';
 import { SectionItem, SolutionFeature } from './solution-feature/SolutionFeature';
-import { RouteConfig } from '@/constants/routes';
 
 const { Text } = Typography;
 

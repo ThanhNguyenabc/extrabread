@@ -8,26 +8,25 @@ import Hero from '@/components/ui/hero';
 import { Meta } from '@/models/app_config.model';
 import { Collapse, Panel } from '@/ui/atoms/collapse/Collapse';
 import { Heading } from '@/ui/atoms/heading/Heading';
+import { Consideration, PartnerCover, ReferalProgram1 } from '@/ui/img-resource/ImageResources';
+
 import {
   CashBonusIcon,
-  Consideration,
   IcAppointment,
   IcBasePay,
   IcBonus,
   IcIncome,
-  ItemManagementIcon,
   NegociationIcon,
-  PartnerCover,
-  ReferalProgram1,
   TipPoolingIcon,
   UserFriendlyIcon,
-} from '@/ui/img-resource/ImageResources';
+} from '@/ui/img-resource/ExIcon';
 import { Seo } from '@/ui/util-components/Seo';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Image from 'next/image';
 import Link from 'next/link';
 import { GetStaticProps } from 'next/types';
+import ItemManagementIcon from 'public/images/color-icons/ItemManagement.svg';
 import React, { useContext, useEffect, useRef } from 'react';
 import { Subject } from 'rxjs';
 import { getSEOTag } from './api/app-configs';

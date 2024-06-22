@@ -6,7 +6,6 @@ import InfoSection, { ImageDirection } from '@/components/ui/info_section';
 import { Meta } from '@/models/app_config.model';
 import {
   AboutBanner,
-  IcChevronRight,
   PosSytem,
   ProcessingFee,
   SigningBonus,
@@ -25,6 +24,7 @@ import { GetStaticProps } from 'next/types';
 import React from 'react';
 import { getSEOTag } from './api/app-configs';
 import { RouteConfig } from '@/constants/routes';
+import { IcChevronRight } from '@/ui/img-resource/ExIcon';
 const DataStatistics = [
   {
     title: '$100K',

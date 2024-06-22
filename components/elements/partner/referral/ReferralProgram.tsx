@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import ContactForm, { CustomFormElement } from '@/components/ui/contact_form';
 import { useToast } from '@/components/ui/use-toast';
 import { Contact } from '@/models/contact.model';
-import { IcLoading, IcPlus } from '@/ui/img-resource/ImageResources';
+import { IcLoading, IcPlus } from '@/ui/img-resource/ExIcon';
 import { useTranslation } from 'next-i18next';
 import React, { useEffect, useRef, useState } from 'react';
 

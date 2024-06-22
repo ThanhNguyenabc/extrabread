@@ -1,14 +1,10 @@
 import { Space, Typography } from 'antd';
 import BannerImg from 'public/images/banners/Small Businesses.jpg';
+import AcceptAllPaymentIcon from 'public/images/color-icons/Accept all payment methods.svg';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { Icon } from '~/ui/atoms/icon/Icon';
-import {
-  AcceptAllPaymentIcon,
-  FastCheckoutIcon,
-  OnsiteSupportIcon,
-  UserFriendlyIcon,
-} from '~/ui/img-resource/ImageResources';
+import { FastCheckoutIcon, OnsiteSupportIcon, UserFriendlyIcon } from '~/ui/img-resource/ExIcon';
 import { Banner } from '~/ui/organisms/banner/Banner';
 
 import cloverImg from 'public/images/businesses/clover-2.jpg';

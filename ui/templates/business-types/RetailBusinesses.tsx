@@ -8,7 +8,7 @@ import {
   ManagementIcon,
   OnsiteSupportIcon,
   UserFriendlyIcon,
-} from '~/ui/img-resource/ImageResources';
+} from '~/ui/img-resource/ExIcon';
 import { Banner } from '~/ui/organisms/banner/Banner';
 
 import cloverImg from 'public/images/businesses/clover.jpg';

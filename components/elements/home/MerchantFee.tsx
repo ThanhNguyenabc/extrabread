@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import { RouteConfig } from '@/constants/routes';
 import { cn } from '@/lib/utils';
 import { BreadCard } from '@/ui/atoms/bread-card/BreadCard';
-import { IcCheckCircle } from '@/ui/img-resource/ImageResources';
+import { IcCheckCircle } from '@/ui/img-resource/ExIcon';
 import htmlParser from 'html-react-parser';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';

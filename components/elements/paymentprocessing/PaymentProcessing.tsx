@@ -5,17 +5,19 @@ import { RouteConfig } from '@/constants/routes';
 import {
   CartIcon,
   ChipIcon,
-  CreditCardBanner,
   CreditCardIcon,
   DevicesIcon,
   IcChevronRight,
   InterfaceIcon,
-  MobileCardReaderBanner,
-  OnlineProcessingBanner,
   OptionIcon,
   PaymentTerminalIcon,
   VirtualIcon,
   WirelessIcon,
+} from '@/ui/img-resource/ExIcon';
+import {
+  CreditCardBanner,
+  MobileCardReaderBanner,
+  OnlineProcessingBanner,
 } from '@/ui/img-resource/ImageResources';
 import { CTAInnerFooter } from '@/ui/organisms/cta-inner-footer/CTAInnerFooter';
 import { useTranslation } from 'next-i18next';

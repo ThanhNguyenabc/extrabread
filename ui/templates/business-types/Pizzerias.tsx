@@ -1,26 +1,22 @@
 import { Space, Typography } from 'antd';
 import BannerImg from 'public/images/banners/Pizzerias.jpg';
-import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
-import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
-import { Icon } from '~/ui/atoms/icon/Icon';
-import {
-  ItemManagementIcon,
-  ManagementIcon,
-  OnsiteSupportIcon,
-  UserFriendlyIcon,
-} from '~/ui/img-resource/ImageResources';
-import { Banner } from '~/ui/organisms/banner/Banner';
-
 import cloverImg from 'public/images/businesses/clover-2.jpg';
 import exatouchImg from 'public/images/businesses/exatouch.jpg';
 import revelImg from 'public/images/businesses/revel.jpg';
 import toastImg from 'public/images/businesses/toast.jpg';
+import ItemManagementIcon from 'public/images/color-icons/ItemManagement.svg';
+import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
+import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
+import { Icon } from '~/ui/atoms/icon/Icon';
+import { ManagementIcon, OnsiteSupportIcon, UserFriendlyIcon } from '~/ui/img-resource/ExIcon';
+import { Banner } from '~/ui/organisms/banner/Banner';
 
 import cloverLogo from 'public/images/service-logos/clover-color.png';
 import exatouchLogo from 'public/images/service-logos/exatouch-color.png';
 import revelLogo from 'public/images/service-logos/revel-color.png';
 import toastLogo from 'public/images/service-logos/toast-color.png';
 
+import { RouteConfig } from '@/constants/routes';
 import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
 import { Flex } from '~/ui/atoms/flex/Flex';
@@ -28,7 +24,6 @@ import { Heading } from '~/ui/atoms/heading/Heading';
 import { BusinessList } from '~/ui/organisms/business-list/BusinessList';
 import { SolutionList } from '~/ui/organisms/solution-list/SolutionList';
 import styles from './BusinessTypesTemplate.module.scss';
-import { RouteConfig } from '@/constants/routes';
 
 const { Text } = Typography;
 

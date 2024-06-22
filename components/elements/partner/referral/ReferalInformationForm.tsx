@@ -11,7 +11,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { TextArea } from '@/components/ui/textarea';
 import { US_STATE_CODE } from '@/constants/us-state-code';
-import { IcClose } from '@/ui/img-resource/ImageResources';
+import { IcClose } from '@/ui/img-resource/ExIcon';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslation } from 'next-i18next';
 import React, { forwardRef, useImperativeHandle, useRef } from 'react';

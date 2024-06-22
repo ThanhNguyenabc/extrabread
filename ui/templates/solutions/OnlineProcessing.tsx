@@ -9,11 +9,8 @@ import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { Icon } from '~/ui/atoms/icon/Icon';
 import {
-  CartIcon,
   CreditCardTerminalImg,
-  InterfaceIcon,
   MobileCardReaderImg,
-  VirtualIcon,
   OnlineProcessingBanner
 } from '~/ui/img-resource/ImageResources';
 import { Banner } from '~/ui/organisms/banner/Banner';
@@ -21,6 +18,7 @@ import { SolutionExplore } from '~/ui/organisms/solution-explore/SolutionExplore
 import { DetailSolution } from '../../organisms/detail-solution/DetailSolution';
 import styles from './Solutions.module.scss';
 import { SolutionFeature } from './solution-feature/SolutionFeature';
+import { CartIcon, InterfaceIcon, VirtualIcon } from '@/ui/img-resource/ExIcon';
 
 const { Text } = Typography;
 

@@ -33,6 +33,7 @@ import StockitIcon from 'public/images/products/StockIt.png';
 import TimeClockIcon from 'public/images/products/Time Clock.png';
 import YelpForBusinessOwnersIcon from 'public/images/products/Yelp for Business Owners.png';
 
+import { GiftCardIcon, PromosIcon, RewardIcon } from '@/ui/img-resource/ExIcon';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
@@ -41,7 +42,6 @@ import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { Heading } from '~/ui/atoms/heading/Heading';
 import SafeHydrate from '~/ui/atoms/safe-hydrate';
-import { GiftCardIcon, PromosIcon, RewardIcon } from '~/ui/img-resource/ImageResources';
 import { AllBusinesses } from '~/ui/organisms/all-businesses/AllBusinesses';
 import { DetailSolution } from '../../organisms/detail-solution/DetailSolution';
 import { DiscoverBanner } from './components/discover-banner/DiscoverBanner';

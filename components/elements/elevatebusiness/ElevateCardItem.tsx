@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Product } from '@/models/product.model';
-import { IcCheck } from '@/ui/img-resource/ImageResources';
+import { IcCheck } from '@/ui/img-resource/ExIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';

@@ -8,7 +8,7 @@ import {
   OnlineOrderingIcon,
   OnsiteSupportIcon,
   UserFriendlyIcon,
-} from '~/ui/img-resource/ImageResources';
+} from '~/ui/img-resource/ExIcon';
 import { Banner } from '~/ui/organisms/banner/Banner';
 
 import brinkImg from 'public/images/businesses/brink.jpg';
@@ -21,6 +21,7 @@ import cloverLogo from 'public/images/service-logos/clover-color.png';
 import revelLogo from 'public/images/service-logos/revel-color.png';
 import toastLogo from 'public/images/service-logos/toast-color.png';
 
+import { RouteConfig } from '@/constants/routes';
 import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
 import { Flex } from '~/ui/atoms/flex/Flex';
@@ -28,7 +29,6 @@ import { Heading } from '~/ui/atoms/heading/Heading';
 import { BusinessList } from '~/ui/organisms/business-list/BusinessList';
 import { SolutionList } from '~/ui/organisms/solution-list/SolutionList';
 import styles from './BusinessTypesTemplate.module.scss';
-import { RouteConfig } from '@/constants/routes';
 
 const { Text } = Typography;
 
