@@ -17,42 +17,32 @@ import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { TrustScore } from '~/ui/atoms/trust-score/TrustScore';
 import { Banner } from '~/ui/organisms/banner/Banner';
 
-const MerchantFee = dynamic(() => import('@/components/elements/home/MerchantFee'), { ssr: false });
+const MerchantFee = dynamic(() => import('@/components/elements/home/MerchantFee'));
 const CompetitiveAdvantage = dynamic(
   () => import('@/ui/templates/home/components/CompetitiveAdvantage'),
-  { ssr: false },
 );
-const AllBusinesses = dynamic(
-  () => import('~/ui/organisms/all-businesses/AllBusinesses').then(res => res.AllBusinesses),
-  { ssr: false },
+const AllBusinesses = dynamic(() =>
+  import('~/ui/organisms/all-businesses/AllBusinesses').then(res => res.AllBusinesses),
 );
-const CTAInnerFooter = dynamic(
-  () => import('~/ui/organisms/cta-inner-footer/CTAInnerFooter').then(res => res.CTAInnerFooter),
-  { ssr: false },
+const CTAInnerFooter = dynamic(() =>
+  import('~/ui/organisms/cta-inner-footer/CTAInnerFooter').then(res => res.CTAInnerFooter),
 );
 
-const UniqueValue = dynamic(
-  () => import('~/ui/organisms/unique-value/UniqueValue').then(res => res.UniqueValue),
-  { ssr: false },
+const UniqueValue = dynamic(() =>
+  import('~/ui/organisms/unique-value/UniqueValue').then(res => res.UniqueValue),
 );
 
-const WorkWithTheBest = dynamic(
-  () =>
-    import('~/ui/organisms/work-with-the-best/WorkWithTheBest').then(res => res.WorkWithTheBest),
-  { ssr: false },
+const WorkWithTheBest = dynamic(() =>
+  import('~/ui/organisms/work-with-the-best/WorkWithTheBest').then(res => res.WorkWithTheBest),
 );
 
-const HowItWorks = dynamic(() => import('./components/HowItWorks').then(res => res.HowItWorks), {
-  ssr: false,
-});
-const SolutionList = dynamic(
-  () => import('./components/SolutionList').then(res => res.SolutionList),
-  { ssr: false },
+const HowItWorks = dynamic(() => import('./components/HowItWorks').then(res => res.HowItWorks));
+const SolutionList = dynamic(() =>
+  import('./components/SolutionList').then(res => res.SolutionList),
 );
 
-const Testimonials = dynamic(
-  () => import('./components/testimonials/Testimonials').then(res => res.Testimonials),
-  { ssr: false },
+const Testimonials = dynamic(() =>
+  import('./components/testimonials/Testimonials').then(res => res.Testimonials),
 );
 const BannerItems = [
   {
