@@ -21,7 +21,7 @@ import exatouchLogo from 'public/images/service-logos/exatouch-color.png';
 import lightspeedLogo from 'public/images/service-logos/lightspeed-color.png';
 import revelLogo from 'public/images/service-logos/revel-color.png';
 
-import { RouteConfig } from '@/constants';
+import { RouteConfig } from '@/constants/routes';
 import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
 import { Flex } from '~/ui/atoms/flex/Flex';
@@ -85,7 +85,7 @@ export const RetailBusinesses = () => {
               {common('point_of_sale_features.heading')}
             </Text>
             {Features.map(({ text, icon: Icon }) => (
-              <Flex direction="column" align="center">
+              <Flex key={text} direction="column" align="center">
                 <Icon />
                 <Text className="text-grey">{text}</Text>
               </Flex>

@@ -1,5 +1,5 @@
 import { Product } from '@/models/product.model';
-import { RouteConfig } from '.';
+import { RouteConfig } from '@/constants/routes';
 
 type ProductConfig = {
   [key: string]: Product;

@@ -1,4 +1,3 @@
-import { RouteConfig } from '@/constants';
 import { Typography } from 'antd';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
@@ -12,6 +11,7 @@ import {
   OnlineProcessingBanner,
 } from '~/ui/img-resource/ImageResources';
 import styles from '../Home.module.scss';
+import { RouteConfig } from '@/constants/routes';
 const { Text } = Typography;
 
 export type Solution = {

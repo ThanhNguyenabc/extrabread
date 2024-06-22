@@ -9,9 +9,9 @@ import {
   EQUIPMENTS_MENU,
   NavigationLabel,
   PRODUCTS_MENU,
-  RouteConfig,
   SOLUTIONS_MENU,
 } from '~/constants/index';
+import { RouteConfig } from '@/constants/routes';
 import { Container } from '~/ui/atoms/container/Container';
 import { Icon } from '~/ui/atoms/icon/Icon';
 import styles from './Navigation.module.scss';

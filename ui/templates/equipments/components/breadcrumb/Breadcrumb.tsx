@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { FC, Fragment } from 'react';
-import { RouteConfig } from '~/constants/index';
 import { Icon } from '~/ui/atoms/icon/Icon';
 
 import styles from './Breadcrumb.module.scss';
+import { RouteConfig } from '@/constants/routes';
 
 interface Props {
   items: {

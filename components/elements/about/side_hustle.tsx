@@ -1,5 +1,5 @@
 import InfoSection from '@/components/ui/info_section';
-import { RouteConfig } from '@/constants';
+import { RouteConfig } from '@/constants/routes';
 import { PartnerCalling } from '@/ui/img-resource/ImageResources';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';

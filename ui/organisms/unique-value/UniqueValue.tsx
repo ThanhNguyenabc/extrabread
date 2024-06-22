@@ -34,7 +34,10 @@ export const UniqueValue = () => {
               width={580}
               height={580}
               className={clsx(styles['unique-value_img'])}
-              src={"https://res.cloudinary.com/dgrym3yz3/image/upload/v1718772698/extrabread/common/tdqyjoymfqyk8cbjqnby.webp"}
+              src={
+                'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718772698/extrabread/common/tdqyjoymfqyk8cbjqnby.webp'
+              }
+              sizes="(max-width: 768px) 70vw, (max-width: 1200px) 50vw, 50vw"
               alt="UniqueValue"
             />
           </div>

@@ -9,20 +9,21 @@ import { Banner } from '~/ui/organisms/banner/Banner';
 import Head from 'next/head';
 import Item2 from 'public/images/solutions/Clover Go Mobile App.png';
 import Item1 from 'public/images/solutions/ProCharge Mobile.png';
-import { RouteConfig, SOLUTIONS_MENU } from '~/constants/index';
+import { SOLUTIONS_MENU } from '~/constants/index';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { SectionHeading } from '~/ui/atoms/heading/Heading';
 import {
   CreditCardIcon,
-  DevicesIcon,
-  OptionIcon,
   CreditCardTerminalImg,
-  OnlineProcessingImg
+  DevicesIcon,
+  OnlineProcessingImg,
+  OptionIcon,
 } from '~/ui/img-resource/ImageResources';
 import { SolutionExplore } from '~/ui/organisms/solution-explore/SolutionExplore';
 import { DetailSolution } from '../../organisms/detail-solution/DetailSolution';
 import styles from './Solutions.module.scss';
 import { SectionItem, SolutionFeature } from './solution-feature/SolutionFeature';
+import { RouteConfig } from '@/constants/routes';
 const { Text } = Typography;
 
 const SOLUTIONS = [

@@ -21,7 +21,6 @@ import exatouchLogo from 'public/images/service-logos/exatouch-color.png';
 import revelLogo from 'public/images/service-logos/revel-color.png';
 import toastLogo from 'public/images/service-logos/toast-color.png';
 
-import { RouteConfig } from '@/constants';
 import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
 import { Flex } from '~/ui/atoms/flex/Flex';
@@ -29,6 +28,7 @@ import { Heading } from '~/ui/atoms/heading/Heading';
 import { BusinessList } from '~/ui/organisms/business-list/BusinessList';
 import { SolutionList } from '~/ui/organisms/solution-list/SolutionList';
 import styles from './BusinessTypesTemplate.module.scss';
+import { RouteConfig } from '@/constants/routes';
 
 const { Text } = Typography;
 
@@ -85,7 +85,7 @@ export const Pizzerias = () => {
               {common('point_of_sale_features.heading')}
             </Text>
             {Features.map(({ text, icon: Icon }) => (
-              <Flex direction="column" align="center">
+              <Flex key={text} direction="column" align="center">
                 <Icon />
                 <Text className="text-grey">{text}</Text>
               </Flex>

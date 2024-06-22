@@ -16,7 +16,6 @@ import RevelImg from 'public/images/businesses/revel.jpg';
 import ToastImg from 'public/images/businesses/toast.jpg';
 import TouchImg from 'public/images/businesses/touch.jpg';
 
-import { RouteConfig } from '@/constants';
 import { useTranslation } from 'next-i18next';
 import AlohaLogo from 'public/images/service-logos/aloha-color.png';
 import RevelLogo from 'public/images/service-logos/revel-color.png';
@@ -28,6 +27,7 @@ import { Heading } from '~/ui/atoms/heading/Heading';
 import { BusinessList } from '~/ui/organisms/business-list/BusinessList';
 import { SolutionList } from '~/ui/organisms/solution-list/SolutionList';
 import styles from './BusinessTypesTemplate.module.scss';
+import { RouteConfig } from '@/constants/routes';
 
 const { Text } = Typography;
 
@@ -84,7 +84,7 @@ export const FullServiceRestaurants = () => {
               {common('point_of_sale_features.heading')}
             </Text>
             {Features.map(({ text, icon: Icon }) => (
-              <Flex direction="column" align="center">
+              <Flex key={text} direction="column" align="center">
                 <Icon />
                 <Text className="text-grey">{text}</Text>
               </Flex>

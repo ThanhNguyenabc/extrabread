@@ -5,7 +5,7 @@ import { Spin, Typography } from 'antd';
 import dayjs from 'dayjs';
 
 import { getBlogsAPI } from '@/apis/blogs';
-import { RouteConfig } from '@/constants';
+import { RouteConfig } from '@/constants/routes';
 import { parseBlogData } from '@/helpers';
 import { ImageWithFallback } from '@/ui/atoms/img-fallback/ImageWithFallback';
 import { isEmpty } from 'lodash';

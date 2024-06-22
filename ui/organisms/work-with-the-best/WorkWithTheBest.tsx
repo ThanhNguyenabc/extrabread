@@ -15,8 +15,8 @@ import toastLogo from 'public/images/service-logos/toast-color.png';
 import touchLogo from 'public/images/service-logos/touch-color.png';
 import unionLogo from 'public/images/service-logos/union-color.png';
 import upserveLogo from 'public/images/service-logos/upserve-color.png';
+import { RouteConfig } from '@/constants/routes';
 
-import { RouteConfig } from '@/constants';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';

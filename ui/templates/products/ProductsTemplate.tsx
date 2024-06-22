@@ -1,9 +1,10 @@
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { PropsWithChildren, useEffect, useState } from 'react';
-import { PRODUCTS_MENU, RouteConfigType } from '~/constants/index';
+import { PRODUCTS_MENU } from '~/constants/index';
 import { Segmented } from '~/ui/atoms/segment/Segment';
 import styles from './ProductsTemplate.module.scss';
+import { RouteConfigType } from '@/constants/routes';
 
 export const ProductsTemplate = ({ children }: PropsWithChildren) => {
   const { push, asPath } = useRouter();

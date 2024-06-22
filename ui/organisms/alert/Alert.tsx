@@ -1,5 +1,6 @@
 import { Badge } from '@/components/ui/badge';
-import { RouteConfig } from '@/constants';
+import { RouteConfig } from '@/constants/routes';
+
 import Link from 'next/link';
 import { IcChevronRight, NotificationIcon } from '~/ui/img-resource/ImageResources';
 

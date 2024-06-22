@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { RouteConfig } from '@/constants';
+import { RouteConfig } from '@/constants/routes';
 import { cn } from '@/lib/utils';
 import { BreadCard } from '@/ui/atoms/bread-card/BreadCard';
 import { IcCheckCircle } from '@/ui/img-resource/ImageResources';

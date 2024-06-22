@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { COMPANY_MENU, Languages, NavigationLabel, PHONE, RouteConfig } from '~/constants/index';
+import { COMPANY_MENU, Languages, NavigationLabel, PHONE } from '~/constants/index';
 import { useDevice } from '~/hooks/useDetectMobile';
 import { globalState } from '~/hooks/useLanguage';
 import { Button } from '~/ui/atoms/button/Button';
@@ -19,6 +19,7 @@ import SafeHydrate from '~/ui/atoms/safe-hydrate';
 import { ESIcon, LogoFullIcon, LogoSmallIcon, USIcon } from '~/ui/img-resource/ImageResources';
 import { MENU_ITEMS, Navigation } from '~/ui/organisms/navigation/Navigation';
 import styles from './Header.module.scss';
+import { RouteConfig } from '@/constants/routes';
 
 const { Link: AntLink, Text } = Typography;
 const { Header: AntHeader } = Layout;

@@ -1,3 +1,4 @@
+import { RouteConfig } from '@/constants/routes';
 import { BreadCard } from '@/ui/atoms/bread-card/BreadCard';
 import { Button } from '@/ui/atoms/button/Button';
 import { Collapse, Panel } from '@/ui/atoms/collapse/Collapse';
@@ -8,7 +9,7 @@ import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useMemo, useState } from 'react';
-import { RouteConfig, SOLUTIONS_MENU } from '~/constants/index';
+import { SOLUTIONS_MENU } from '~/constants/index';
 import { Heading } from '~/ui/atoms/heading/Heading';
 import { Segmented } from '~/ui/atoms/segment/Segment';
 import { CTAInnerFooter } from '~/ui/organisms/cta-inner-footer/CTAInnerFooter';
@@ -69,7 +70,7 @@ export const SolutionsTemplate = () => {
 
             <Collapse>
               {Array.isArray(FAQItems) &&
-                FAQItems?.map(({ header, content }, index) => (
+                FAQItems?.map(({ header, content }) => (
                   <Panel header={header} key={header}>
                     {content}
                   </Panel>

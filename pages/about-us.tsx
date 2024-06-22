@@ -3,7 +3,6 @@ import BannerX from '@/components/elements/partner/BannerX';
 import { Button } from '@/components/ui/button';
 import Hero from '@/components/ui/hero';
 import InfoSection, { ImageDirection } from '@/components/ui/info_section';
-import { RouteConfig } from '@/constants';
 import { Meta } from '@/models/app_config.model';
 import {
   AboutBanner,
@@ -25,6 +24,7 @@ import { useRouter } from 'next/router';
 import { GetStaticProps } from 'next/types';
 import React from 'react';
 import { getSEOTag } from './api/app-configs';
+import { RouteConfig } from '@/constants/routes';
 const DataStatistics = [
   {
     title: '$100K',

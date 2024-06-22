@@ -1,7 +1,7 @@
 import SideHustle from '@/components/elements/about/side_hustle';
 import BannerX from '@/components/elements/partner/BannerX';
 import InfoSection, { ImageDirection } from '@/components/ui/info_section';
-import { RouteConfig } from '@/constants';
+import { RouteConfig } from '@/constants/routes';
 import {
   CartIcon,
   ChipIcon,

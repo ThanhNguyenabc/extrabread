@@ -5,7 +5,7 @@ import CreditCardTerminalBanner from 'public/images/banners/credit-card.png';
 import Item2 from 'public/images/solutions/Clover Flex.png';
 import Item1 from 'public/images/solutions/PAX A920 Smart Terminal.png';
 import { PropsWithChildren, useMemo } from 'react';
-import { RouteConfig, SOLUTIONS_MENU } from '~/constants/index';
+import { SOLUTIONS_MENU } from '~/constants/index';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { Flex } from '~/ui/atoms/flex/Flex';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
@@ -23,6 +23,7 @@ import { SolutionExplore } from '~/ui/organisms/solution-explore/SolutionExplore
 import { DetailSolution } from '../../organisms/detail-solution/DetailSolution';
 import styles from './Solutions.module.scss';
 import { SectionItem, SolutionFeature } from './solution-feature/SolutionFeature';
+import { RouteConfig } from '@/constants/routes';
 
 const { Text } = Typography;
 

@@ -13,9 +13,9 @@ import {
   NavigationLabel,
   PHONE,
   PRODUCTS_MENU,
-  RouteConfig,
   SOLUTIONS_MENU,
 } from '~/constants/index';
+import { RouteConfig } from '@/constants/routes';
 import { useDevice } from '~/hooks/useDetectMobile';
 import { Icon } from '~/ui/atoms/icon/Icon';
 import { LogoFooter } from '~/ui/img-resource/ImageResources';

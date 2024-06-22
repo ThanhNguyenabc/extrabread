@@ -1,6 +1,6 @@
 import { Divider, Form, Input, Typography } from 'antd';
 import { PatternFormat } from 'react-number-format';
-import { EMAIL, PHONE, RouteConfig, US_MASK } from '~/constants/index';
+import { EMAIL, PHONE, US_MASK } from '~/constants/index';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { Button } from '~/ui/atoms/button/Button';
 import { Heading } from '~/ui/atoms/heading/Heading';
@@ -13,6 +13,7 @@ import htmlParser from 'html-react-parser';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import styles from './index.module.scss';
+import { RouteConfig } from '@/constants/routes';
 const { Text, Link: AntLink } = Typography;
 
 interface ContactInfoProp {

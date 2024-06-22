@@ -8,38 +8,65 @@ import {
 } from '~/ui/img-resource/ImageResources';
 import styles from './Home.module.scss';
 
+import { RouteConfig } from '@/constants/routes';
+import { useDevice } from '@/hooks/useDetectMobile';
 import { Button } from '@/ui/atoms/button/Button';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
-import { RouteConfig } from '~/constants/index';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { TrustScore } from '~/ui/atoms/trust-score/TrustScore';
-import { Banner } from '~/ui/organisms/banner/Banner';
-const MerchantFee = dynamic(() => import('@/components/elements/home/MerchantFee'));
+const Banner = dynamic(() => import('~/ui/organisms/banner/Banner').then(res => res.Banner), {});
+const MerchantFee = dynamic(() => import('@/components/elements/home/MerchantFee'), {
+  ssr: false,
+});
 const CompetitiveAdvantage = dynamic(
   () => import('@/ui/templates/home/components/CompetitiveAdvantage'),
+  {
+    ssr: false,
+  },
 );
-const AllBusinesses = dynamic(() =>
-  import('~/ui/organisms/all-businesses/AllBusinesses').then(res => res.AllBusinesses),
+const AllBusinesses = dynamic(
+  () => import('~/ui/organisms/all-businesses/AllBusinesses').then(res => res.AllBusinesses),
+  {
+    ssr: false,
+  },
 );
-const CTAInnerFooter = dynamic(() =>
-  import('~/ui/organisms/cta-inner-footer/CTAInnerFooter').then(res => res.CTAInnerFooter),
+const CTAInnerFooter = dynamic(
+  () => import('~/ui/organisms/cta-inner-footer/CTAInnerFooter').then(res => res.CTAInnerFooter),
+  {
+    ssr: false,
+  },
 );
-const UniqueValue = dynamic(() =>
-  import('~/ui/organisms/unique-value/UniqueValue').then(res => res.UniqueValue),
+const UniqueValue = dynamic(
+  () => import('~/ui/organisms/unique-value/UniqueValue').then(res => res.UniqueValue),
+  {
+    ssr: false,
+  },
 );
-const WorkWithTheBest = dynamic(() =>
-  import('~/ui/organisms/work-with-the-best/WorkWithTheBest').then(res => res.WorkWithTheBest),
+const WorkWithTheBest = dynamic(
+  () =>
+    import('~/ui/organisms/work-with-the-best/WorkWithTheBest').then(res => res.WorkWithTheBest),
+  {
+    ssr: false,
+  },
 );
 
-const HowItWorks = dynamic(() => import('./components/HowItWorks').then(res => res.HowItWorks));
-const SolutionList = dynamic(() =>
-  import('./components/SolutionList').then(res => res.SolutionList),
+const HowItWorks = dynamic(() => import('./components/HowItWorks').then(res => res.HowItWorks), {
+  ssr: false,
+});
+const SolutionList = dynamic(
+  () => import('./components/SolutionList').then(res => res.SolutionList),
+  {
+    ssr: false,
+  },
 );
 
-const Testimonials = dynamic(() =>
-  import('./components/testimonials/Testimonials').then(res => res.Testimonials),
+const Testimonials = dynamic(
+  () => import('./components/testimonials/Testimonials').then(res => res.Testimonials),
+  {
+    ssr: false,
+  },
 );
 const BannerItems = [
   {
@@ -59,6 +86,12 @@ const BannerItems = [
 export const HomeTemplate = ({ title }: { title?: string }) => {
   const { t: common } = useTranslation();
   const { t } = useTranslation('home');
+
+  const { isMobile } = useDevice();
+
+  const bannerUrl = isMobile
+    ? 'https://res.cloudinary.com/dgrym3yz3/image/upload/w_500/v1718772055/extrabread/banners/hjjfbyzvjb22veb0zhu2.webp'
+    : 'https://res.cloudinary.com/dgrym3yz3/image/upload//v1718772055/extrabread/banners/hjjfbyzvjb22veb0zhu2.webp';
 
   return (
     <>
@@ -85,7 +118,7 @@ export const HomeTemplate = ({ title }: { title?: string }) => {
             </div>
           </>
         }
-        src={"https://res.cloudinary.com/dgrym3yz3/image/upload/v1718772055/extrabread/banners/hjjfbyzvjb22veb0zhu2.webp"}
+        src={bannerUrl}
         extractComponent={
           <div className={styles['home-template_banner-footer']}>
             {BannerItems.map(({ title, icon: Icon }) => (

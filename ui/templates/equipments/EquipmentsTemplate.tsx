@@ -8,7 +8,7 @@ import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useEffect, useMemo, useState } from 'react';
-import { BUSINESS_MENU, EQUIPMENTS_MENU, RouteConfigType } from '~/constants/index';
+import { BUSINESS_MENU, EQUIPMENTS_MENU } from '~/constants/index';
 import { commonState } from '~/hooks/useCtaFooterState';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { Segmented } from '~/ui/atoms/segment/Segment';
@@ -19,6 +19,7 @@ import { BreadBreadcrumb } from './components/breadcrumb/Breadcrumb';
 import { EquipmentInfo } from './components/equipment-info/EquipmentInfo';
 import { KeyFeatures } from './components/key-features/KeyFeatures';
 import { Pricing } from './components/pricing/Pricing';
+import { RouteConfigType } from '@/constants/routes';
 
 type EquiqmentProps = {
   data?: Product;

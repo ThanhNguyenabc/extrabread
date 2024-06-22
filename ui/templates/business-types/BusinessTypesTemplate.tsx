@@ -1,11 +1,12 @@
 import { useRouter } from 'next/router';
 import { PropsWithChildren, useEffect, useMemo, useState } from 'react';
-import { BUSINESS_MENU, RouteConfig, RouteConfigType } from '~/constants/index';
+import { BUSINESS_MENU } from '~/constants/index';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { Segmented } from '~/ui/atoms/segment/Segment';
 import { BusinessExplore } from '~/ui/organisms/business-explore/BusinessExplore';
 import { CTAInnerFooter } from '~/ui/organisms/cta-inner-footer/CTAInnerFooter';
 
+import { RouteConfig, RouteConfigType } from '@/constants/routes';
 import { useTranslation } from 'next-i18next';
 import { useDevice } from '~/hooks/useDetectMobile';
 import {

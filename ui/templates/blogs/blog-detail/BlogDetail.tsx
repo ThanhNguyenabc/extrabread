@@ -1,5 +1,5 @@
 import { getBlogsAPI } from '@/apis/blogs';
-import { DOMAIN, RouteConfig } from '@/constants';
+import { DOMAIN } from '@/constants';
 import { parseBlogData } from '@/helpers';
 import { BreadCard } from '@/ui/atoms/bread-card/BreadCard';
 import { Button } from '@/ui/atoms/button/Button';
@@ -17,6 +17,7 @@ import { useEffect, useState } from 'react';
 import { FacebookShareButton, LinkedinShareButton } from 'react-share';
 import styles from '../Blogs.module.scss';
 import { SubscriptionForm } from '../subscription-form/SubscriptionForm';
+import { RouteConfig } from '@/constants/routes';
 
 const { Paragraph, Text } = Typography;
 
@@ -99,14 +100,14 @@ export const BlogDetail = () => {
                   <Icon name="facebook" size={28} />
                 </FacebookShareButton>
               </SafeHydrate>
-
+{/* 
               <LinkedinShareButton
                 title={blog.title}
                 url={sharingUrl}
                 className={styles.blogDetail_sharingButton}
               >
                 <Icon name="linkedin" size={25} />
-              </LinkedinShareButton>
+              </LinkedinShareButton> */}
             </Flex>
           </div>
 
