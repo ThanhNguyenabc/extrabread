@@ -55,7 +55,7 @@ export const Banner = ({
             src={src}
             alt="banner"
             priority
-            quality={100}
+            quality={80}
             sizes="(max-width: 768px) 40vw, (max-width: 1200px) 50vw, 40vw"
           />
         </div>

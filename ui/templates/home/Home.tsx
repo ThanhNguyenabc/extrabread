@@ -9,14 +9,14 @@ import {
 import styles from './Home.module.scss';
 
 import { RouteConfig } from '@/constants/routes';
-import { useDevice } from '@/hooks/useDetectMobile';
 import { Button } from '@/ui/atoms/button/Button';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { TrustScore } from '~/ui/atoms/trust-score/TrustScore';
-const Banner = dynamic(() => import('~/ui/organisms/banner/Banner').then(res => res.Banner), {});
+import { Banner } from '~/ui/organisms/banner/Banner';
+
 const MerchantFee = dynamic(() => import('@/components/elements/home/MerchantFee'), {
   ssr: false,
 });
@@ -44,6 +44,7 @@ const UniqueValue = dynamic(
     ssr: false,
   },
 );
+
 const WorkWithTheBest = dynamic(
   () =>
     import('~/ui/organisms/work-with-the-best/WorkWithTheBest').then(res => res.WorkWithTheBest),
@@ -87,12 +88,6 @@ export const HomeTemplate = ({ title }: { title?: string }) => {
   const { t: common } = useTranslation();
   const { t } = useTranslation('home');
 
-  const { isMobile } = useDevice();
-
-  const bannerUrl = isMobile
-    ? 'https://res.cloudinary.com/dgrym3yz3/image/upload/w_500/v1718772055/extrabread/banners/hjjfbyzvjb22veb0zhu2.webp'
-    : 'https://res.cloudinary.com/dgrym3yz3/image/upload//v1718772055/extrabread/banners/hjjfbyzvjb22veb0zhu2.webp';
-
   return (
     <>
       <Banner
@@ -118,7 +113,9 @@ export const HomeTemplate = ({ title }: { title?: string }) => {
             </div>
           </>
         }
-        src={bannerUrl}
+        src={
+          'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718772055/extrabread/banners/hjjfbyzvjb22veb0zhu2.webp'
+        }
         extractComponent={
           <div className={styles['home-template_banner-footer']}>
             {BannerItems.map(({ title, icon: Icon }) => (
