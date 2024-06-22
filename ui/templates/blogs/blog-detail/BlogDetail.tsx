@@ -14,7 +14,6 @@ import { isEmpty } from 'lodash';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { FacebookShareButton, LinkedinShareButton } from 'react-share';
 import styles from '../Blogs.module.scss';
 import { SubscriptionForm } from '../subscription-form/SubscriptionForm';
 import { RouteConfig } from '@/constants/routes';
@@ -92,13 +91,13 @@ export const BlogDetail = () => {
               </Button>
 
               <SafeHydrate>
-                <FacebookShareButton
+                {/* <FacebookShareButton
                   url={sharingUrl}
                   quote={blog.title}
                   className={styles.blogDetail_sharingButton}
                 >
                   <Icon name="facebook" size={28} />
-                </FacebookShareButton>
+                </FacebookShareButton> */}
               </SafeHydrate>
 {/* 
               <LinkedinShareButton

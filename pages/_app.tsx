@@ -12,6 +12,7 @@ import { AliasToken } from 'antd/es/theme/internal';
 import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
+import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useMemo, useState } from 'react';
@@ -26,6 +27,8 @@ const Header = dynamic(() => import('@/ui/organisms/header/Header').then(res => 
 const BreadFooter = dynamic(() =>
   import('@/ui/organisms/footer/Footer').then(res => res.BreadFooter),
 );
+const inter = Inter({ subsets: ['latin'], weight: ['300', '400', '500', '800'], display: 'swap' });
+
 const {
   errorColor,
   errorHoverColor,
@@ -170,7 +173,7 @@ const App = (props: AppProps) => {
           },
         }}
       >
-        <div style={{ ...(state.get().openMenu && { overflow: 'hidden', height: '100vh' }) }}>
+        <div className={inter.className} style={{ ...(state.get().openMenu && { overflow: 'hidden', height: '100vh' }) }}>
           <Loading isRouteChanging={routeState.isRouteChanging} key={routeState.loadingKey} />
           <StyleProvider ssrInline>
             {showBanner && <Alert />}

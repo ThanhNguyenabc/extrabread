@@ -20,7 +20,7 @@ export default function Document() {
           strategy="lazyOnload"
         />
         <Script
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -28,12 +28,6 @@ export default function Document() {
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-W5ZGDT8');`,
           }}
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={''} />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap"
-          rel="stylesheet"
         />
       </Head>
 
