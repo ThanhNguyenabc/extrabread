@@ -19,13 +19,11 @@ import { useEffect, useMemo, useState } from 'react';
 import { useDevice } from '~/hooks/useDetectMobile';
 import { globalState } from '~/hooks/useLanguage';
 import nextI18NextConfig from '../next-i18next.config.js';
-const Alert = dynamic(() => import('@/ui/organisms/alert/Alert').then(res => res.Alert), {
-  ssr: false,
-});
+const Alert = dynamic(() => import('@/ui/organisms/alert/Alert').then(res => res.Alert));
 const Toaster = dynamic(() => import('@/components/ui/toaster').then(res => res.Toaster), {
   ssr: false,
 });
-const Header = dynamic(() => import('@/ui/organisms/header/Header').then(res => res.Header), {});
+const Header = dynamic(() => import('@/ui/organisms/header/Header').then(res => res.Header));
 const BreadFooter = dynamic(
   () => import('@/ui/organisms/footer/Footer').then(res => res.BreadFooter),
   { ssr: false },
