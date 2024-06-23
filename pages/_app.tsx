@@ -23,9 +23,7 @@ const Alert = dynamic(() => import('@/ui/organisms/alert/Alert').then(res => res
 const Toaster = dynamic(() => import('@/components/ui/toaster').then(res => res.Toaster), {
   ssr: false,
 });
-const Header = dynamic(() => import('@/ui/organisms/header/Header').then(res => res.Header), {
-  ssr: false,
-});
+const Header = dynamic(() => import('@/ui/organisms/header/Header').then(res => res.Header));
 const BreadFooter = dynamic(
   () => import('@/ui/organisms/footer/Footer').then(res => res.BreadFooter),
   { ssr: false },

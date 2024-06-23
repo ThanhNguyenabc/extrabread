@@ -76,7 +76,7 @@ const MenuDrawer = ({
     >
       <div>
         <div className={styles['header-nav_logo']}>
-          <Image alt="" width={34} height={30} quality={100} src={LogoSmallIcon} />
+          <Image alt="logo" width={34} height={30} quality={100} src={LogoSmallIcon} />
           <Icon name="close" animation onClick={props.onClose as any} />
         </div>
         <CSSTransition
@@ -239,7 +239,7 @@ export const Header = () => {
             />
           )}
           <Link href={RouteConfig.Home} className={styles['header-logo']}>
-            <Image quality={100} alt="logo" width={192} height={32} src={LogoFullIcon} />
+            <Image quality={90} alt="logo" width={192} height={32} src={LogoFullIcon} />
           </Link>
           {isLaptop && <Navigation />}
           <div className={styles['header-right-content']}>
