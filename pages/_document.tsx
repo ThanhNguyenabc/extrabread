@@ -14,6 +14,11 @@ export default function Document() {
         {/* // BOOKMARK ICON */}
         <link rel="apple-touch-icon" href={`${DOMAIN}/apple-touch-icon.png`} />
         <link rel="apple-touch-icon" href={`${DOMAIN}/apple-touch-icon.png`} sizes="180x180" />
+      </Head>
+
+      <body>
+        <Main />
+        <NextScript />
         <Script
           src="//code.tidio.co/qdbq3bk4yponnps9btlc4ouz4gfpunie.js"
           async
@@ -30,12 +35,6 @@ export default function Document() {
           })(window,document,'script','dataLayer','GTM-W5ZGDT8');`,
           }}
         />
-      </Head>
-
-      <body>
-        <Main />
-        <NextScript />
-
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-W5ZGDT8"
