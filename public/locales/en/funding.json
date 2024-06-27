@@ -1,0 +1,16 @@
+{
+    "heading" : "Same-Day Funding",
+    "sub_heading" : "Tired of Waiting for Deposits? Get Same-Day Funding with ExtraBread!",
+    "bannerItems" : ["Fast Application", "Quick Approval","Instant Funding"],
+    "quickItems" : [{
+        "title": "Fast Application",
+        "desc" : "No hassle here: Fill out our quick 5-minute form."
+    }, {
+        "title": "Quick Approval",
+        "desc" : "Get approved quickly and easily with our streamlined application process - no paperwork required."
+    }, {
+        "title": "Instant Funding",
+        "desc":"Access your funds fast: Get funded within 24 hours after approval."
+    }]
+
+}

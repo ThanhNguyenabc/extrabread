@@ -51,3 +51,4 @@ export { default as IcLoading } from 'public/images/icons/loading.svg';
 export { default as IcPlus } from 'public/images/icons/plus.svg';
 export { default as ESIcon }  from 'public/images/color-icons/ES.svg';
 export { default as USIcon }   from 'public/images/color-icons/US.svg';
+export { default as CheckCircleIcon }   from 'public/images/color-icons/check-cricle.svg';

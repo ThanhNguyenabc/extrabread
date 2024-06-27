@@ -95,7 +95,7 @@ export const HomeTemplate = ({ title }: { title?: string }) => {
           <div className={styles['home-template_banner-footer']}>
             {BannerItems.map(({ title, icon: Icon }) => (
               <Space key={title}>
-                <Icon />
+                <Icon width={48} height={48} />
                 {t(title)}
               </Space>
             ))}

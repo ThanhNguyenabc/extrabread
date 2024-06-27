@@ -12,6 +12,7 @@ interface BannerX {
   button?: {
     title: string;
     onBtnClick?: () => void;
+    className?: string
   };
   headingClassName?: string;
   image?: StaticImageData | string;
@@ -29,9 +30,10 @@ const BannerX = ({
   button,
   image,
   extraComponent,
+  className
 }: BannerX) => {
   return (
-    <Hero className="gap-4 md:gap-8 lg:flex-row">
+    <Hero className={cn("gap-4 md:gap-8 lg:flex-row" , className)}>
       <div
         className={cn(
           `flex flex-col h-fit self-center gap-4 md:gap-10 lg:gap-12`,
@@ -50,7 +52,7 @@ const BannerX = ({
         </div>
         {extraComponent && extraComponent}
         {button && (
-          <Button size={'responsive'} onClick={button.onBtnClick} className="md:w-[250px]">
+          <Button size={'responsive'} onClick={button.onBtnClick} className={cn("md:w-[250px]" , button.className)}>
             {button.title}
           </Button>
         )}
@@ -64,6 +66,7 @@ const BannerX = ({
             alt="banner-image"
             className="lg:mt-4"
             quality={100}
+            priority
           />
         </div>
       )}
