@@ -31,6 +31,14 @@ const PageConfigs = {
     table: 'Referral',
     service: '',
   },
+  funding: {
+    adminEmail: {
+      title: 'New Business Inquiry',
+      desc: 'We have received a new customer information from funding. Here are the details',
+    },
+    table: 'SameDayFunding',
+    service: '',
+  },
 };
 
 export default async function handler(request: NextApiRequest, response: NextApiResponse) {

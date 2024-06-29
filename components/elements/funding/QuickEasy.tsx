@@ -13,10 +13,8 @@ const QuickEasy = ({ btnClick }: { btnClick?: () => void }) => {
 
   return (
     <div className="bg-green-100">
-      <Hero className="gap-6 md:gap-8 lg:gap-12">
-        <h3 className="heading-sm text-center md:heading-lg">
-          {`Quick and easy`}
-        </h3>
+      <Hero className="gap-6 md:gap-8 lg:gap-12 items-center">
+        <h3 className="heading-sm text-center md:heading-lg">{`Quick and easy`}</h3>
         <div className="flex flex-col lg:flex-row gap-4 md:gap-8">
           {sectionItems?.map((item, index) => {
             const Icon = Icons[index];
@@ -36,11 +34,9 @@ const QuickEasy = ({ btnClick }: { btnClick?: () => void }) => {
             );
           })}
         </div>
-        <div>
-          <Button size={'responsive'} onClick={btnClick}>
-            {common('get_start_today')}
-          </Button>
-        </div>
+        <Button size={'responsive'} onClick={btnClick}>
+          {common('get_start_today')}
+        </Button>
       </Hero>
     </div>
   );

@@ -4,8 +4,9 @@ import { CheckCircleIcon, ReceiveCashIcon, WritingIcon } from '@/ui/img-resource
 import HTMLReactParser from 'html-react-parser';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
-import React from 'react';
+import React, { useRef } from 'react';
 import BannerX from '../partner/BannerX';
+import FundingForm, { FundingFormHandle } from './FundingForm';
 import QuickEasy from './QuickEasy';
 import ReliableTechnology from './ReliableTechnology';
 
@@ -13,11 +14,12 @@ const BannerIcons = [WritingIcon, CheckCircleIcon, ReceiveCashIcon];
 
 const Funding = () => {
   const { t: common } = useTranslation();
+  const formRef = useRef<FundingFormHandle>(null);
   const { t } = useTranslation('funding');
 
   const bannerItems = t('bannerItems', { returnObjects: true }) as string[];
 
-  const startSameDayForm = () => {};
+  const startSameDayForm = () => formRef.current?.showDialog();
 
   return (
     <>
@@ -125,6 +127,7 @@ const Funding = () => {
       </Hero>
       <ReliableTechnology />
       <QuickEasy btnClick={startSameDayForm} />
+      <FundingForm ref={formRef} />
     </>
   );
 };

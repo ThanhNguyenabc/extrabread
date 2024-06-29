@@ -1,9 +1,4 @@
-import {
-  CashBonusIcon,
-  NegociationIcon,
-  PuzzleIcon,
-  WritingIcon,
-} from '@/ui/img-resource/ExIcon';
+import { CashBonusIcon, NegociationIcon, PuzzleIcon, WritingIcon } from '@/ui/img-resource/ExIcon';
 import { Typography } from 'antd';
 import { useTranslation } from 'next-i18next';
 import React from 'react';
@@ -16,10 +11,10 @@ import { CollapseHowItWorks } from './collapse-how-it-works/CollapseHowItWorks';
 const { Text } = Typography;
 
 const Icons = {
-  WritingIcon: <WritingIcon />,
-  PuzzleIcon: <PuzzleIcon />,
-  NegociationIcon: <NegociationIcon />,
-  CashBonusIcon: <CashBonusIcon />,
+  WritingIcon: WritingIcon,
+  PuzzleIcon: PuzzleIcon,
+  NegociationIcon: NegociationIcon,
+  CashBonusIcon: CashBonusIcon,
 };
 
 export const HowItWorks = () => {
@@ -43,9 +38,10 @@ export const HowItWorks = () => {
       {!isMobile && (
         <ul className={styles['home-template_how-it-works_features']}>
           {items.map((item, idx) => {
+            const Icon = Icons[item.icon];
             return (
               <li key={idx}>
-                {Icons[item.icon]}
+                <Icon width={48} height={48} />
                 <Text strong className="font-16-14">
                   {item.title}
                 </Text>
