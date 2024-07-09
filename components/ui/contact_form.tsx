@@ -5,11 +5,11 @@ import * as z from 'zod';
 
 import { US_STATE_CODE } from '@/constants/us-state-code';
 import { Contact } from '@/models/contact.model';
-import { IcLoading } from '@/ui/img-resource/ImageResources';
 import { useTranslation } from 'next-i18next';
 import { Button, ButtonProps } from './button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from './form';
 import { Input } from './input';
+import { IcLoading } from '@/ui/img-resource/ExIcon';
 
 interface ContactFormProps {
   btnSubmitConfig?: {
