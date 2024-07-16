@@ -104,7 +104,7 @@ export const BusinessTypesTemplate = ({ children }: PropsWithChildren) => {
       <BreadCard>
         <BusinessExplore heading={common('explore_other_types')} items={menus as any} />
       </BreadCard>
-      <CTAInnerFooter htmlText={common('footer.heading')} bonus={240} sale={7500} />
+      <CTAInnerFooter htmlText={common('footer.heading')}/>
     </main>
   );
 };
