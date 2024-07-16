@@ -1,4 +1,8 @@
+import { COLORS } from './constants/colors';
+const { nextui } = require('@nextui-org/react');
+
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   darkMode: ['class'],
   content: [
@@ -7,6 +11,7 @@ module.exports = {
     './ui/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
+    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     container: {
@@ -17,29 +22,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        neutral: {
-          100: '#f2f4f7',
-          200: '#eaecf0',
-          300: '#d0d5dd',
-          400: '#98a2b3',
-          600: '#475467',
-          700: '#344054',
-          900: '#101828',
-        },
-        green: {
-          100: '#ccf5de',
-          500: '#009640',
-          600: '#007833',
-        },
-        yellow: {
-          200: '#feee95',
-        },
-        red: {
-          200: '#fecdca',
-        },
-        blue: {
-          500: '#0B70FE',
-        },
+        ...COLORS,
       },
       keyframes: {
         'accordion-down': {
@@ -56,6 +39,20 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
+    fontFamily: {
+      sans: ['var(--font-inter)'],
+    },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    nextui({
+      themes: {
+        light: {
+          colors: {
+            foreground: COLORS.neutral[900],
+          },
+        },
+      },
+    }),
+  ],
 };

@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ES6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -18,14 +22,30 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
-      "~/assets/*": ["assets/*"],
-      "~/lib/*": ["lib/*"],
-      "~/styles/*": ["styles/*"],
-      "~/ui/*": ["ui/*"],
-      "~/states/*": ["states/*"],
-      "~/constants/*": ["constants/*"],
-      "~/hooks/*": ["hooks/*"]
+      "@/*": [
+        "./*"
+      ],
+      "~/assets/*": [
+        "assets/*"
+      ],
+      "~/lib/*": [
+        "lib/*"
+      ],
+      "~/styles/*": [
+        "styles/*"
+      ],
+      "~/ui/*": [
+        "ui/*"
+      ],
+      "~/states/*": [
+        "states/*"
+      ],
+      "~/constants/*": [
+        "constants/*"
+      ],
+      "~/hooks/*": [
+        "hooks/*"
+      ]
     },
     "plugins": [
       {
@@ -33,6 +53,15 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "i18n.js" , "global.d.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "i18n.js",
+    "global.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

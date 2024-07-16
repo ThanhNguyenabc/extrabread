@@ -14,13 +14,12 @@ const nextConfig = {
     @import "assets/styles/constants.scss";
     `,
   },
-  experimental: {
-    // Required:
-    appDir: false,
+
+  env: {
+    API_KEY: process.env.API_KEY,
+    TABLE_NAME: process.env.TABLE_NAME,
+    BASE_ID: process.env.BASE_ID,
   },
-  API_KEY: process.env.API_KEY,
-  TABLE_NAME: process.env.TABLE_NAME,
-  BASE_ID: process.env.BASE_ID,
   images: {
     domains: ['res.cloudinary.com', 'blog.extrabread.com'],
   },
@@ -35,6 +34,19 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  transpilePackages: [
+    'antd',
+    '@ant-design',
+    'rc-util',
+    'rc-pagination',
+    'rc-picker',
+    'rc-notification',
+    'rc-tooltip',
+    'rc-tree',
+    'rc-table',
+    'rc-field-form',
+  ],
+
   rewrites: () => {
     return [
       {

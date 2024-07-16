@@ -70,7 +70,7 @@ const Funding = () => {
               'https://res.cloudinary.com/dgrym3yz3/image/upload/v1719305641/extrabread/common/ssvtvvbybhhlvewsiedk.webp'
             }
           />
-
+          {/* 
           <h3 className="heading-xs">Switch to Same Day Funding Today</h3>
 
           <Button
@@ -79,7 +79,7 @@ const Funding = () => {
             className="bg-neutral-900 hover:bg-neutral-900/90"
           >
             {common('get_start_today')}
-          </Button>
+          </Button> */}
         </Hero>
       </div>
       <Hero className="gap-6 md:gap-12 items-center">
@@ -120,9 +120,9 @@ const Funding = () => {
           <p className="whitespace-pre-line">
             {`Get faster deposits, delivering funds in as little as 8 hours. Simply process your batch before the 6:00 AM EST cut-off time at your point of sale or terminal. If you meet this deadline, your batch deposit will arrive in your bank account before 5:00 PM EST on the same day.\n\nYou can choose any bank account for the deposit and same day funding is available even on weekends. Plus, on Fridays, same day funding has an edge over next day funding. Settle your batch by the Friday cut-off time to receive your deposit on the same day.`}
           </p>
-          <Button size={'responsive'} onClick={startSameDayForm}>
+          {/* <Button size={'responsive'} onClick={startSameDayForm}>
             {common('get_start_today')}
-          </Button>
+          </Button> */}
         </div>
       </Hero>
       <ReliableTechnology />
