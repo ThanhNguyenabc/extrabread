@@ -13,6 +13,6 @@ interface State {
   )[];
 }
 export const commonState = hookstate<State>({
-  footerText: 'Get your hands on a Free POS system <br /> today!',
+  footerText: 'Get your hands on a Free POS system \n today!',
   suggestedBusiness: undefined,
 });

@@ -2,6 +2,13 @@ export const DOMAIN = 'https://extrabread.com';
 export const BLOGS_API = 'https://blog.extrabread.com/wp-json/wp/v2/posts';
 
 import {
+  IcBarClub,
+  IcPizza,
+  IcQuickService,
+  IcRetail,
+  IcSmallBusiness,
+} from '@/ui/img-resource/ExIcon';
+import {
   BarNightImg,
   CashDiscountProgramImg,
   CheckServicesImg,
@@ -21,7 +28,6 @@ import {
   SmallBusinessImg,
 } from '~/ui/img-resource/ImageResources';
 import { RouteConfig } from './routes';
-import { IcQuickService, IcRetail, IcSmallBusiness, IcBarClub, IcPizza } from '@/ui/img-resource/ExIcon';
 
 export const PHONE = '1-800-209-7120';
 export const EMAIL = 'info@extrabread.com';
@@ -53,7 +59,7 @@ export const COMPANY_MENU = [
   { title: 'Referal Agent Packet', href: '/welcome_packet.pdf', newTab: true },
   { title: 'Credit Card Processing Calculator', href: RouteConfig.Calculator },
   { title: 'Same Day Funding', href: RouteConfig.Funding },
-
+  { title: 'Cash Signing Bonus Calculator', href: RouteConfig.CashBonusCalculator },
 ];
 
 export const SOLUTIONS_MENU = [

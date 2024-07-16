@@ -52,7 +52,7 @@ export enum RouteConfig {
   CreditCard = '/solutions/credit-card',
   OnlineProcessing = '/solutions/online-processing',
   Funding = '/same-day-funding',
-
+  CashBonusCalculator = '/cash-signing-bonus-calculator',
 }
 
 export type RouteConfigType = `${RouteConfig}`;
