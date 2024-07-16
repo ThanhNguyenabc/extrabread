@@ -11,7 +11,6 @@ export const RetailBusinessesImg =
 export const SmallBusinessImg =
   'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718782116/extrabread/common/um5xpbx1vuilaunhqng7.webp';
 
-
 export const LogoSmallIcon =
   'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718780447/extrabread/common/kmytcsgos3nfe8z5jcza.webp';
 export const LogoFullIcon =
@@ -85,55 +84,3 @@ export const ProcessingFee =
 
 export const AboutBanner =
   'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718775716/extrabread/banners/kmzeofenlycywwpufc2s.webp';
-
-// export {
-//   CartIcon,
-//   CashBonusIcon,
-//   ChartIcon,
-//   ChipIcon,
-//   CloudSystemIcon,
-//   CreditCardIcon,
-//   DevicesIcon,
-//   EmailIcon,
-//   FastCheckoutIcon,
-//   GiftCardIcon,
-//   IcAppointment,
-//   IcBarClub,
-//   IcBasePay,
-//   IcBonus,
-//   IcCheck,
-//   IcCheckCircle,
-//   IcChevronRight,
-//   IcClose,
-//   IcIncome,
-//   IcLoading,
-//   IcPizza,
-//   IcPlus,
-//   IcQuickService,
-//   IcRestaurant,
-//   IcRetail,
-//   IcSmallBusiness,
-//   InterfaceIcon,
-//   LogoFooterIcon,
-//   ManagementIcon,
-//   MenuIcon,
-//   NegociationIcon,
-//   NotificationIcon,
-//   OnlineOrderingIcon,
-//   OnlineRemoteIcon,
-//   OnsiteSupportIcon,
-//   OptionIcon,
-//   PaymentTerminalIcon,
-//   PhoneIcon,
-//   PromosIcon,
-//   PuzzleIcon,
-//   QuestionIcon,
-//   RewardIcon,
-//   SaveMoneyIcon,
-//   SystemIcon,
-//   UserFriendlyIcon,
-//   VirtualIcon,
-//   WirelessIcon,
-//   WritingIcon,
-//   ZeroProcessingFeesIcon,
-// };
