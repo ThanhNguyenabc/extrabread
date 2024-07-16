@@ -7,6 +7,7 @@ import { RouteConfig } from '@/constants/routes';
 import { Loading } from '@/ui/atoms/loading/Loading';
 import { StyleProvider } from '@ant-design/cssinjs';
 import { useHookstate } from '@hookstate/core';
+import { NextUIProvider } from '@nextui-org/react';
 import { ConfigProvider } from 'antd';
 import { AliasToken } from 'antd/es/theme/internal';
 import { appWithTranslation } from 'next-i18next';
@@ -28,7 +29,11 @@ const BreadFooter = dynamic(
   () => import('@/ui/organisms/footer/Footer').then(res => res.BreadFooter),
   { ssr: false },
 );
-const inter = Inter({ subsets: ['latin'], weight: ['300', '400', '500', '800'], display: 'swap' });
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '800'],
+  display: 'swap',
+});
 
 const {
   errorColor,
@@ -174,18 +179,20 @@ const App = (props: AppProps) => {
           },
         }}
       >
-        <div
-          className={inter.className}
-          style={{ ...(state.get().openMenu && { overflow: 'hidden', height: '100vh' }) }}
-        >
-          <Loading isRouteChanging={routeState.isRouteChanging} key={routeState.loadingKey} />
-          <StyleProvider ssrInline>
-            {showBanner && <Alert />}
-            <Header />
-            <Component {...pageProps} />
-            <BreadFooter />
-          </StyleProvider>
-        </div>
+        <NextUIProvider >
+          <div
+            className={inter.className}
+            style={{ ...(state.get().openMenu && { overflow: 'hidden', height: '100vh' }) }}
+          >
+            <Loading isRouteChanging={routeState.isRouteChanging} key={routeState.loadingKey} />
+            <StyleProvider ssrInline>
+              {showBanner && <Alert />}
+              <Header />
+              <Component {...pageProps} />
+              <BreadFooter />
+            </StyleProvider>
+          </div>
+        </NextUIProvider>
       </ConfigProvider>
       <Toaster />
     </>
