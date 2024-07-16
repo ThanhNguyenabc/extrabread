@@ -31,6 +31,8 @@ const SideHustle = () => {
             <Image
               src={PartnerCalling}
               alt="partner"
+              width={580}
+              height={244}
               className=" md:h-[244px] object-cover rounded-xl"
             />
           </div>

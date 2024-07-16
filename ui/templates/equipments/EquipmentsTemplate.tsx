@@ -1,3 +1,4 @@
+import { RouteConfigType } from '@/constants/routes';
 import { Product } from '@/models/product.model';
 import { SectionHeading } from '@/ui/atoms/heading/Heading';
 import SafeHydrate from '@/ui/atoms/safe-hydrate';
@@ -19,7 +20,6 @@ import { BreadBreadcrumb } from './components/breadcrumb/Breadcrumb';
 import { EquipmentInfo } from './components/equipment-info/EquipmentInfo';
 import { KeyFeatures } from './components/key-features/KeyFeatures';
 import { Pricing } from './components/pricing/Pricing';
-import { RouteConfigType } from '@/constants/routes';
 
 type EquiqmentProps = {
   data?: Product;
@@ -161,7 +161,7 @@ export const EquipmentsTemplate = ({ data }: EquiqmentProps) => {
         />
       </BreadCard>
 
-      <CTAInnerFooter bonus={240} sale={7500} />
+      <CTAInnerFooter htmlText={state.footerText.get()} />
     </main>
   );
 };

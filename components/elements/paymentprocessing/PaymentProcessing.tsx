@@ -164,7 +164,7 @@ const PaymentProcessing = () => {
         })}
       </div>
       <SideHustle />
-      <CTAInnerFooter htmlText={t('footer.heading')} bonus={2500} sale={250000} />
+      <CTAInnerFooter htmlText={t('footer.heading')} />
     </>
   );
 };
