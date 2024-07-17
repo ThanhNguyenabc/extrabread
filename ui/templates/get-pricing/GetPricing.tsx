@@ -22,7 +22,7 @@ export const GetPricingTemplate: FC<Props> = ({ type = 'default', children }) =>
   const [showFinish, setShowFinish] = useState(false);
 
   useEffect(() => {
-    window.dataLayer.push({ event: 'getpricing_business_type' });
+    window.dataLayer?.push({ event: 'getpricing_business_type' });
   }, []);
 
   const softSubmit = async (formValues: FormValue, sendMailToCustomer = true) => {
@@ -42,7 +42,7 @@ export const GetPricingTemplate: FC<Props> = ({ type = 'default', children }) =>
   const handleSubmit = async (formValues: FormValue) => {
     await softSubmit(formValues, false);
     setShowFinish(true);
-    window.dataLayer.push({ event: 'getpricing_fullinfo' });
+    window.dataLayer?.push({ event: 'getpricing_fullinfo' });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

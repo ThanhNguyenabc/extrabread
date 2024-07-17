@@ -34,7 +34,7 @@ const QuickEasy = ({ btnClick }: { btnClick?: () => void }) => {
             );
           })}
         </div>
-        <Button size={'responsive'} onClick={btnClick}>
+        <Button size={'responsive'} onClick={btnClick} className="lg:hidden">
           {common('get_start_today')}
         </Button>
       </Hero>

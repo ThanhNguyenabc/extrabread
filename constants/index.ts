@@ -58,7 +58,6 @@ export const COMPANY_MENU = [
   { title: 'point_of_sale_systems', href: RouteConfig.SaleSystems },
   { title: 'Referal Agent Packet', href: '/welcome_packet.pdf', newTab: true },
   { title: 'Credit Card Processing Calculator', href: RouteConfig.Calculator },
-  { title: 'Same Day Funding', href: RouteConfig.Funding },
   { title: 'Cash Signing Bonus Calculator', href: RouteConfig.CashBonusCalculator },
 ];
 

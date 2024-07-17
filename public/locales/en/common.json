@@ -214,5 +214,6 @@
     "city": "City",
     "address": "Address",
     "state": "State",
-    "contact_detail": "Contact Details"
+    "contact_detail": "Contact Details",
+    "same_day_funding": "Same Day Funding"
 }
