@@ -10,7 +10,6 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     getSEOTag('home', locale),
     serverSideTranslations(locale ?? 'en', ['common' , "funding"]),
   ]);
-  console.log(translation);
   return {
     props: {
       seoTag,

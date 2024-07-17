@@ -71,7 +71,7 @@ const Funding = () => {
             }
           />
 
-          <h3 className="heading-xs">Switch to Same Day Funding Today</h3>
+          <h3 className="heading-xs md:heading-md">Switch to Same Day Funding Today</h3>
 
           <Button
             size={'responsive'}
@@ -120,7 +120,7 @@ const Funding = () => {
           <p className="whitespace-pre-line">
             {`Get faster deposits, delivering funds in as little as 8 hours. Simply process your batch before the 6:00 AM EST cut-off time at your point of sale or terminal. If you meet this deadline, your batch deposit will arrive in your bank account before 5:00 PM EST on the same day.\n\nYou can choose any bank account for the deposit and same day funding is available even on weekends. Plus, on Fridays, same day funding has an edge over next day funding. Settle your batch by the Friday cut-off time to receive your deposit on the same day.`}
           </p>
-          <Button size={'responsive'} onClick={startSameDayForm}>
+          <Button size={'responsive'} onClick={startSameDayForm} className='hidden md:flex'>
             {common('get_start_today')}
           </Button>
         </div>

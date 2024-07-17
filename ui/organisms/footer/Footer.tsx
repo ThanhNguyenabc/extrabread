@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
+import { RouteConfig } from '@/constants/routes';
 import { cn } from '@/lib/utils';
 import { Collapse, Layout, Space, Typography } from 'antd';
 import { useTranslation } from 'next-i18next';
@@ -15,7 +16,6 @@ import {
   PRODUCTS_MENU,
   SOLUTIONS_MENU,
 } from '~/constants/index';
-import { RouteConfig } from '@/constants/routes';
 import { useDevice } from '~/hooks/useDetectMobile';
 import { Icon } from '~/ui/atoms/icon/Icon';
 import { LogoFooter } from '~/ui/img-resource/ImageResources';
@@ -32,6 +32,13 @@ const FOOTER_SOLUTION_MENU = [
   },
 ];
 
+const FOOTER_PRODUCT_MENU = [
+  ...PRODUCTS_MENU,
+  {
+    href: RouteConfig.SameDayFunding,
+    title: 'same_day_funding',
+  },
+];
 const MenuCategory = ({
   title,
   menus,
@@ -169,7 +176,7 @@ export const BreadFooter = () => {
               }}
             >
               <Panel header={t(NavigationLabel.Products)} key={NavigationLabel.Products}>
-                {PRODUCTS_MENU.map((item, idx) => (
+                {FOOTER_PRODUCT_MENU.map((item, idx) => (
                   <Link key={`${idx}`} href={item.href}>
                     <Text className={styles['text-400']}>{t(item.title)}</Text>
                   </Link>
@@ -204,7 +211,7 @@ export const BreadFooter = () => {
             <MenuCategory title={t(NavigationLabel.Solutions)} menus={FOOTER_SOLUTION_MENU} />
             <MenuCategory title={t(NavigationLabel.Equipments)} menus={EQUIPMENTS_MENU} />
             <MenuCategory title={t(NavigationLabel.BusinessTypes)} menus={BUSINESS_MENU} />
-            <MenuCategory title={t(NavigationLabel.Products)} menus={PRODUCTS_MENU} />
+            <MenuCategory title={t(NavigationLabel.Products)} menus={FOOTER_PRODUCT_MENU} />
             <MenuCategory title={t(NavigationLabel.Company)} menus={COMPANY_MENU} />
           </div>
         )}

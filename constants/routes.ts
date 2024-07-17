@@ -51,6 +51,7 @@ export enum RouteConfig {
   MobileCard = '/solutions/mobile-card',
   CreditCard = '/solutions/credit-card',
   OnlineProcessing = '/solutions/online-processing',
+  SameDayFunding = "/same-day-funding"
 }
 
 export type RouteConfigType = `${RouteConfig}`;

@@ -177,7 +177,6 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
                   </Space>
                 </div>
               )}
-              {/* Residual-current device (RCD) button */}
               <Button
                 onClick={() => {
                   setStep(3);
@@ -193,7 +192,6 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
                 {common('Zero Processing Fees')}
               </Button>
 
-              {/* Point-of-sale system button */}
               <Button
                 onClick={() => {
                   setSubStep2(3);
@@ -235,6 +233,21 @@ export const FormContent: FC<Props> = ({ softSubmit, onFinish }) => {
                   </div>
                 </div>
               )}
+
+              <Button
+                onClick={() => {
+                  setAnswer(preVal => ({
+                    ...preVal,
+                    cashBonus: undefined,
+                    stationsLookingFor: undefined,
+                    lookingFor: "Same day Funding",
+                  }));
+                  setStep(3);
+                }}
+                className={classNames(subStep2 === 4 && styles['btn-selected'])}
+              >
+                {`Same day Funding`}
+              </Button>
 
               {/*  All of the above */}
               <Button
