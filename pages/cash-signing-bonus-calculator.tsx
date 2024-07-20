@@ -1,8 +1,8 @@
-import { Button } from '@/components/ui/button';
 import Col from '@/components/ui/col';
 import Hero from '@/components/ui/hero';
 import { Meta } from '@/models/app_config.model';
 import { CashBonusCalculator } from '@/ui/organisms/cta-inner-footer/CashBonusCalculator';
+import { Button } from '@nextui-org/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next/types';
 import { Seo } from '~/ui/util-components/Seo';
@@ -38,9 +38,11 @@ No strings attached, no interests, contracts, or hidden fees involved. Swipe to 
           </p>
         </Col>
         <CashBonusCalculator>
-          <Button className="w-full md:w-full" size={'responsive'}>
+          {/* <Button className="w-full md:w-full" size={'responsive'}>
             {`Request a quote abc`}
           </Button>
+           */}{' '}
+          <Button color="primary">Button</Button>
         </CashBonusCalculator>
       </Hero>
     </>
