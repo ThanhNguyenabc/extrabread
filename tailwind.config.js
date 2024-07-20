@@ -1,5 +1,5 @@
 import { COLORS } from './constants/colors';
-const { nextui } = require('@nextui-org/react');
+const { nextui } = require("@nextui-org/theme");
 
 /** @type {import('tailwindcss').Config} */
 
@@ -43,5 +43,16 @@ module.exports = {
       sans: ['var(--font-inter)'],
     },
   },
-  plugins: [require('tailwindcss-animate'), nextui()],
+  plugins: [
+    require('tailwindcss-animate'),
+    nextui({
+      themes: {
+        light: {
+          colors: {
+            foreground: COLORS.neutral[900],
+          },
+        },
+      },
+    }),
+  ],
 };
