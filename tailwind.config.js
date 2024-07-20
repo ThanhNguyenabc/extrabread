@@ -43,16 +43,5 @@ module.exports = {
       sans: ['var(--font-inter)'],
     },
   },
-  plugins: [
-    require('tailwindcss-animate'),
-    nextui({
-      themes: {
-        light: {
-          colors: {
-            foreground: COLORS.neutral[900],
-          },
-        },
-      },
-    }),
-  ],
+  plugins: [require('tailwindcss-animate'), nextui()],
 };
