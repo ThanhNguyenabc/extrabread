@@ -102,9 +102,8 @@
 
   &-text {
     margin: 64px auto;
-
     @include tablet-down {
-      max-width: 70vw;
+      max-width: 85vw;
       margin: 56px auto 0;
     }
 
@@ -117,10 +116,11 @@
   }
 
   &-content {
-    font-size: 60px;
+    font-size: 58px;
     font-weight: 800;
     line-height: 60px;
     letter-spacing: -0.02em;
+    white-space: pre-line;
 
     @include sp {
       font-size: 36px;
