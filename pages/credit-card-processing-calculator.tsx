@@ -1,5 +1,8 @@
+import CreditCardCalculator from '@/components/elements/credit-card-calculator/CreditCardCalculator';
 import { Meta } from '@/models/app_config.model';
-import { CTAInnerFooter } from '@/ui/organisms/cta-inner-footer/CTAInnerFooter';
+import { BreadCard } from '@/ui/atoms/bread-card/BreadCard';
+import { AllBusinesses } from '@/ui/organisms/all-businesses/AllBusinesses';
+import { SolutionList } from '@/ui/templates/home/components/SolutionList';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next/types';
@@ -22,11 +25,15 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
 const HomePage = ({ seoTag }: { seoTag?: Meta }) => {
   const { title, description, keywords, image } = seoTag || {};
-  const { t } = useTranslation();
+  const { t: common } = useTranslation();
   return (
     <>
       <Seo title={title} description={description} keywords={keywords} imageFeature={image}></Seo>
-      <CTAInnerFooter htmlText={t('footer.heading')} bonus={2500} sale={250000} />
+      <CreditCardCalculator />
+      <SolutionList />
+      <BreadCard>
+        <AllBusinesses heading={common('point_of_sale.heading')} />
+      </BreadCard>
     </>
   );
 };

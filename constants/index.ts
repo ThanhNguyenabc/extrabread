@@ -1,5 +1,5 @@
 export const DOMAIN = 'https://extrabread.com';
-export const BLOGS_API = 'https://blog.extrabread.com/wp-json/wp/v2/posts';
+export const BLOGS_API = 'https://blog.extrabread.com/wp-json/wp/v2/posts?per_page=100';
 
 import {
   IcBarClub,

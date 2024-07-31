@@ -1,4 +1,4 @@
-import { Box, Col, Heading, Row, Text } from '@/components/ui';
+import { Box, Col, Heading, Text } from '@/components/ui';
 import Slider from '@/components/ui/slider';
 import { cn } from '@/lib/utils';
 import { IcThumb } from '@/ui/img-resource/ExIcon';
@@ -11,7 +11,8 @@ type CashBonusCalculatorProps = PropsWithChildren<HTMLAttributes<HTMLDivElement>
   onValueChange?: (price: number) => void;
   headingStyle?: string;
 };
-export const CashBonusCalculator = ({
+
+export const FooterCashBonusCalculator = ({
   children,
   className,
   headingStyle,
@@ -36,14 +37,18 @@ export const CashBonusCalculator = ({
         {t('footer.subTitle')}
       </Text>
       <Col className="bg-yellow-400 px-4 py-3 items-center rounded-2xl md:gap-2 md:px-6 md:py-8">
-        <Text className="text-xs-semibold whitespace-pre-line md:text-lg">{t('footer.subTitle2')}</Text>
+        <Text className="text-xs-semibold whitespace-pre-line md:text-lg">
+          {t('footer.subTitle2')}
+        </Text>
         <Heading level={'3'} className="heading-sm">
           ${formatCurrency(price / 100)}
         </Heading>
       </Col>
 
       <Col className="gap-1 bg-white rounded-2xl md:gap-2 px-4 py-3 md:px-6 md:py-8">
-        <Text className="text-xs-semibold self-center whitespace-pre-line md:text-lg">{t('footer.subtitle3')}</Text>
+        <Text className="text-xs-semibold self-center whitespace-pre-line md:text-lg">
+          {t('footer.subtitle3')}
+        </Text>
         <Box className="p-2 rounded-lg text-center w-full">
           <Heading className="heading-sm" level={'3'}>
             ${formatCurrency(price)}
@@ -57,6 +62,9 @@ export const CashBonusCalculator = ({
           onChange={onChange}
           className="mt-5 mx-2"
           color="foreground"
+          leftLabel="$100,000"
+          rightLabel="$500,000,000"
+          labelStyle='mt-2 justify-between text-neutral-600 md:text-lg'
           renderThumb={props => (
             <div
               {...props}
@@ -66,10 +74,6 @@ export const CashBonusCalculator = ({
             </div>
           )}
         />
-        <Row className="mt-2 justify-between text-neutral-600 md:text-lg">
-          <Text>$100,000</Text>
-          <Text>$500,000,000</Text>
-        </Row>
       </Col>
       {children}
     </Col>

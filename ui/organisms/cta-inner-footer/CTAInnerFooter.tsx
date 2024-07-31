@@ -3,7 +3,7 @@ import Hero from '@/components/ui/hero';
 import { GetPricingButton } from '@/ui/atoms/get-pricing/GetPricingButton';
 import { useTranslation } from 'next-i18next';
 
-import { CashBonusCalculator } from './CashBonusCalculator';
+import { FooterCashBonusCalculator } from './FooterCashBonusCalculator';
 
 interface Props {
   htmlText?: string;
@@ -23,7 +23,7 @@ export const CTAInnerFooter = (props: Props) => {
           </Heading>
           <GetPricingButton title={t('get_start_today')} color="black" size="large" />
         </Col>
-        <CashBonusCalculator headingStyle="text-white" />
+        <FooterCashBonusCalculator headingStyle="text-white" />
       </Hero>
     </footer>
   );
