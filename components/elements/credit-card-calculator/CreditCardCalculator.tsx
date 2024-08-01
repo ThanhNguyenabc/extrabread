@@ -2,9 +2,11 @@ import { Col, Heading, Text } from '@/components/ui';
 import { Button } from '@/components/ui/button';
 import Hero from '@/components/ui/hero';
 import Slider from '@/components/ui/slider';
+import { RouteConfig } from '@/constants/routes';
 import { useDevice } from '@/hooks/useDetectMobile';
 import { Input } from '@nextui-org/react';
 import { Row } from 'antd';
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 const Styles = {
@@ -116,7 +118,9 @@ const CreditCardCalculator = () => {
           <Text className="heading-lg md:heading-xl">${keepingFee}</Text>
         </Col>
         <Col className="gap-4">
-          <Button className="md:w-full">{`Lower your Fees Today`}</Button>
+          <Link href={RouteConfig.GetPricing}>
+            <Button className="md:w-full">{`Lower your Fees Today`}</Button>
+          </Link>
           <Text className=" text-xs text-neutral-600">
             {`*The values displayed are estimations only based on the data you provide and do not
           constitute an offer or guarantee of any kind. The estimated amount you keep does not
