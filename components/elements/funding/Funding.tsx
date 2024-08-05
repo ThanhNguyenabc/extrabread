@@ -15,9 +15,8 @@ const BannerIcons = [WritingIcon, CheckCircleIcon, ReceiveCashIcon];
 const Funding = () => {
   const { t: common } = useTranslation();
   const formRef = useRef<FundingFormHandle>(null);
-  const { t } = useTranslation('funding');
 
-  const bannerItems = t('bannerItems', { returnObjects: true }) as string[];
+  const bannerItems = common('funding_form.bannerItems', { returnObjects: true }) as string[];
 
   const startSameDayForm = () => formRef.current?.showDialog();
 
@@ -25,8 +24,8 @@ const Funding = () => {
     <>
       <BannerX
         className="lg:gap-10"
-        heading={t('heading')}
-        desc={t('sub_heading')}
+        heading={common('funding_form.heading')}
+        desc={common('funding_form.sub_heading')}
         image={
           'https://res.cloudinary.com/dgrym3yz3/image/upload/v1719305641/extrabread/common/a63udd8qlcys1dtahzod.webp'
         }
@@ -45,7 +44,7 @@ const Funding = () => {
                 <div key={`${item}`} className="flex flex-col flex-1  items-center gap-2">
                   <Icon width={24} height={24} />
                   <p className="text-center text-xs-semibold md:text-lg  text-neutral-700 ">
-                    {t(item)}
+                    {item}
                   </p>
                 </div>
               );

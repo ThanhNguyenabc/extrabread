@@ -2,7 +2,8 @@ import { Box, Col, Text } from '@/components/ui';
 import { Button } from '@/components/ui/button';
 import { formatCurrency } from '@/helpers';
 import { Input } from '@nextui-org/react';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
+import FundingForm, { FundingFormHandle } from '../funding/FundingForm';
 
 const CashInputItem = ({
   title,
@@ -45,30 +46,37 @@ const CashInputItem = ({
   );
 };
 
-const CashBonusInput = ({ onClick }: { onClick?: () => void }) => {
+const CashBonusInput = () => {
   const [price, setPrice] = useState(-1);
+  const formRef = useRef<FundingFormHandle>(null);
 
+  const openForm = () => {
+    formRef.current?.showDialog();
+  };
   return (
     <>
-      <Col className="bg-white rounded">
-        <CashInputItem
-          title="Input your average monthly credit card sales."
-          value={price}
-          setValue={setPrice}
-          placeHolder="0"
-        />
-        <Box className=" h-[1px] bg-neutral-300 w-full" />
-        <CashInputItem
-          title="Your Cash Signing Bonus"
-          disable
-          value={price == -1 ? 0 : price / 100}
-        />
+      <Col className="flex-1 border border-neutral-300 bg-neutral-100 rounded-2xl p-4 md:p-10">
+        <Col>
+          <CashInputItem
+            title="Input your average monthly credit card sales."
+            value={price}
+            setValue={setPrice}
+            placeHolder="0"
+          />
+          <Box className=" h-[1px] bg-neutral-300 w-full" />
+          <CashInputItem
+            title="Your Cash Signing Bonus"
+            disable
+            value={price == -1 ? 0 : price / 100}
+          />
+        </Col>
+        <Button
+          onClick={openForm}
+          size={'responsive'}
+          className="mt-6 mb-10 md:w-full md:mb-0"
+        >{`Request a quote`}</Button>
       </Col>
-      <Button
-        onClick={onClick}
-        size={'responsive'}
-        className="mt-6 mb-10 md:w-full md:mb-0"
-      >{`Request a quote`}</Button>
+      <FundingForm ref={formRef} />
     </>
   );
 };

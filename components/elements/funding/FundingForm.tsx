@@ -27,11 +27,10 @@ const FundingForm = forwardRef<FundingFormHandle>((props, ref) => {
   const [open, setOpen] = useState(false);
   const { isLaptop, isTablet } = useDevice();
   const contactRef = useRef<CustomFormElement>(null);
-  const { t } = useTranslation('funding');
-  const { t: common } = useTranslation();
+  const { t: common } = useTranslation('common');
   const { toast } = useToast();
 
-  const Credits = t('credits', { returnObjects: true }) as string[] | null;
+  const Credits = common('funding_form.credits', { returnObjects: true }) as string[] | null;
 
   const [data, setData] = useState<{
     contact?: Contact;
@@ -154,7 +153,7 @@ const FundingForm = forwardRef<FundingFormHandle>((props, ref) => {
             <IcClose />
           </Button>
           <h4 className="flex-1 text-center whitespace-pre-line text-xl-semibold md:heading-md">
-            {t('form_title')}
+            {common('funding_form.form_title')}
           </h4>
         </div>
         <ContactForm onSubmitData={onSubmitForm} ref={contactRef} />
@@ -166,13 +165,13 @@ const FundingForm = forwardRef<FundingFormHandle>((props, ref) => {
               data.contact && data.businessIndex == undefined && ' text-red-500',
             )}
           >
-            {t('business_types')}
+            {common('funding_form.business_types')}
           </h5>
           <Dropdown menu={{ items: BusinessTypes }} placement="bottomLeft" className="w-full" arrow>
             <Button className={cn('md:w-full justify-between group')} variant={'outline'}>
               {data.businessIndex != undefined && data.businessIndex >= 0
                 ? BusinessTypes[data.businessIndex]?.key?.toString()
-                : t('select_business')}
+                : common('funding_form.select_business')}
 
               <IcChevronDown className="group-hover:rotate-180 active:rotate-180" />
             </Button>
@@ -185,7 +184,7 @@ const FundingForm = forwardRef<FundingFormHandle>((props, ref) => {
               data.contact && data.creditIndex == undefined && 'text-sm-semibold text-red-500',
             )}
           >
-            {t('credit_title')}
+            {common('funding_form.credit_title')}
           </h5>
           <div className=" flex flex-wrap gap-4">
             {Credits?.map((item, index) => (
@@ -208,7 +207,7 @@ const FundingForm = forwardRef<FundingFormHandle>((props, ref) => {
           type="submit"
           size={'default'}
           className="w-[200px] md:w-[200px]"
-          disabled = {data.isSubmit}
+          disabled={data.isSubmit}
           onClick={() => {
             contactRef.current?.submitForm();
           }}

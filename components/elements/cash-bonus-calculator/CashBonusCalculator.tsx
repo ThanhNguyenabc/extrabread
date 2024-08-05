@@ -14,9 +14,7 @@ const CashBonusCalculator = ({ children }: PropsWithChildren) => {
 No strings attached, no interests, contracts, or hidden fees involved. Swipe to input your businesses’ yearly credit card sales and see how much you could potentially earn!`}
         </Text>
       </Col>
-      <Col className="flex-1 border border-neutral-300 bg-neutral-100 rounded-2xl p-4 md:p-10">
-        {children}
-      </Col>
+      {children}
     </Hero>
   );
 };
