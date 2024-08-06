@@ -27,10 +27,10 @@ const FundingForm = forwardRef<FundingFormHandle>((props, ref) => {
   const [open, setOpen] = useState(false);
   const { isLaptop, isTablet } = useDevice();
   const contactRef = useRef<CustomFormElement>(null);
-  const { t: common } = useTranslation('common');
+  const { t: common } = useTranslation();
   const { toast } = useToast();
 
-  const Credits = common('funding_form.credits', { returnObjects: true }) as string[] | null;
+  const Credits = (common('funding_form.credits', { returnObjects: true }) as string[]) ?? null;
 
   const [data, setData] = useState<{
     contact?: Contact;
@@ -187,19 +187,20 @@ const FundingForm = forwardRef<FundingFormHandle>((props, ref) => {
             {common('funding_form.credit_title')}
           </h5>
           <div className=" flex flex-wrap gap-4">
-            {Credits?.map((item, index) => (
-              <Button
-                key={item}
-                variant={'outline'}
-                className={clsx(
-                  'bg-white',
-                  data.creditIndex === index && 'bg-green-500 text-white',
-                )}
-                onClick={() => setData({ ...data, creditIndex: index })}
-              >
-                {item}
-              </Button>
-            ))}
+            {Array.isArray(Credits) &&
+              Credits?.map((item, index) => (
+                <Button
+                  key={item}
+                  variant={'outline'}
+                  className={clsx(
+                    'bg-white',
+                    data.creditIndex === index && 'bg-green-500 text-white',
+                  )}
+                  onClick={() => setData({ ...data, creditIndex: index })}
+                >
+                  {item}
+                </Button>
+              ))}
           </div>
         </div>
 
