@@ -1,4 +1,4 @@
-import { Col, Heading } from '@/components/ui';
+import { Col, Heading, Text } from '@/components/ui';
 import Hero from '@/components/ui/hero';
 import { GetPricingButton } from '@/ui/atoms/get-pricing/GetPricingButton';
 import { useTranslation } from 'next-i18next';
@@ -23,7 +23,15 @@ export const CTAInnerFooter = (props: Props) => {
           </Heading>
           <GetPricingButton title={t('get_start_today')} color="black" size="large" />
         </Col>
-        <CashBonusInput />
+        <Col className="gap-4">
+          <Heading level="1" className="heading-xs whitespace-pre-line md:heading-md text-white">
+            Your Cash Signing Bonus
+          </Heading>
+          <Text className="text-white">
+            {`Receive a cash signing bonus once you sign with Extrabread. Ask our team to learn more and if your business qualifies for a cash signing bonus`}
+          </Text>
+          <CashBonusInput />
+        </Col>
       </Hero>
     </footer>
   );

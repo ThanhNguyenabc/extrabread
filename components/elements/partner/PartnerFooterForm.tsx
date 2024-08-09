@@ -13,6 +13,7 @@ import { Contact } from '@/models/contact.model';
 import { IcLoading } from '@/ui/img-resource/ExIcon';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { DatePicker } from 'antd';
+import { Dayjs } from 'dayjs';
 import { useTranslation } from 'next-i18next';
 import React from 'react';
 import { useForm } from 'react-hook-form';
@@ -40,10 +41,13 @@ const formSchema = z.object({
         message: 'Invalid us area code',
       },
     ),
+  city: z.string().min(3, 'Please input your city'),
+  state: z.string().min(3, 'Please input your state'),
   email: z.string().email('This is not a valid email.'),
   profession: z.string().min(3, 'Current profession must not be empty'),
   date: z.string().min(3, 'Please select date'),
   time: z.string().min(3, 'Please select time'),
+  haveRelationship: z.string().optional(),
 });
 
 const defaultTime = ['9 AM', '10 AM', '11 AM', '12 PM'];
@@ -66,10 +70,14 @@ const PartnerFooterForm = ({
       email: '',
       date: '',
       profession: '',
+      city: '',
+      state: '',
+      haveRelationship: 'no',
       time: defaultTime[0],
     },
   });
   const { setValue, getValues } = form;
+  const isHaveRelationship = form.watch('haveRelationship') == 'yes';
 
   const onChangePhone = (event: React.ChangeEvent<HTMLInputElement>) => {
     let value = event.target.value;
@@ -91,6 +99,10 @@ const PartnerFooterForm = ({
     setValue('phone', value);
   };
 
+  const disableDate = (date: Dayjs) => {
+    const day = date.get('day');
+    return isHaveRelationship ? day == 0 || day == 6 : day == 0;
+  };
   return (
     <Form {...form}>
       <form
@@ -125,6 +137,7 @@ const PartnerFooterForm = ({
             )}
           />
         </div>
+
         <FormField
           control={form.control}
           name="phone"
@@ -143,6 +156,34 @@ const PartnerFooterForm = ({
             </FormItem>
           )}
         />
+        <div className="flex flex-col gap-4 w-full md:gap-6 md:flex-row">
+          <FormField
+            control={form.control}
+            name="city"
+            render={({ field }) => (
+              <FormItem className="flex-1 ">
+                <FormLabel>{t('city')}</FormLabel>
+                <FormControl>
+                  <Input {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="state"
+            render={({ field }) => (
+              <FormItem className="flex-1">
+                <FormLabel>{t('state')}</FormLabel>
+                <FormControl>
+                  <Input type="text" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
         <FormField
           control={form.control}
           name="email"
@@ -169,9 +210,37 @@ const PartnerFooterForm = ({
             </FormItem>
           )}
         />
-
+        <FormField
+          control={form.control}
+          name="haveRelationship"
+          render={({ field }) => (
+            <FormItem className="flex-1">
+              <FormLabel>{`Do you have existing relationships with business owners?`}</FormLabel>
+              <FormControl>
+                <select
+                  {...field}
+                  className="flex h-10 w-full rounded-md border-2 border-neutral-300 bg-white px-3 py-2 text-base 
+          file:border-0 file:text-sm file:font-medium 
+          placeholder:text-slate-500 
+          focus-visible:outline-none focus:border-blue-500"
+                >
+                  {['no', 'yes'].map(item => (
+                    <option key={item} value={item}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <div className="flex flex-col gap-3">
-          <FormLabel className=" whitespace-pre-wrap">{partner('txt_desc')}</FormLabel>
+          <FormLabel className=" whitespace-pre-wrap">
+            {isHaveRelationship
+              ? 'Schedule a time with our account manager to learn more about the program'
+              : partner('txt_desc')}
+          </FormLabel>
           <div className="flex flex-col gap-4 lg:flex-row">
             <FormField
               control={form.control}
@@ -181,7 +250,7 @@ const PartnerFooterForm = ({
                   <FormControl className=" flex flex-col">
                     <DatePicker
                       name="date"
-                      disabledDate={date => date.get('day') == 0}
+                      disabledDate={disableDate}
                       className="p-[6px]"
                       onChange={date => {
                         if (!date) setValue('date', '');

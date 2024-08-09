@@ -1,11 +1,11 @@
 import { submitForm } from '@/apis';
 import PartnerFooterForm from '@/components/elements/partner/PartnerFooterForm';
 import { FormData } from '@/models/form_data';
+import { Modal } from 'antd';
+import Link from 'next/link';
 import React, { HTMLAttributes, ReactElement, useEffect, useState } from 'react';
 import useSWRMutation from 'swr/mutation';
 import Hero from '../../ui/hero';
-import { useToast } from '../../ui/use-toast';
-
 interface FooterRegisterFromProps extends HTMLAttributes<HTMLDivElement> {
   heading: ReactElement | string;
   description: ReactElement | string;
@@ -15,8 +15,6 @@ interface FooterRegisterFromProps extends HTMLAttributes<HTMLDivElement> {
 
 const PartnerForm = React.forwardRef<HTMLDivElement, FooterRegisterFromProps>(
   ({ heading, description, formTitle, formSubTilte, ...props }, ref) => {
-    const { toast } = useToast();
-
     const { trigger } = useSWRMutation(
       `api/submit-form`,
       async (
@@ -29,7 +27,13 @@ const PartnerForm = React.forwardRef<HTMLDivElement, FooterRegisterFromProps>(
       ) => submitForm(arg),
     );
 
-    const [isLoading, setLoading] = useState(false);
+    const [status, setStatus] = useState<{ state: 'success' | 'loading' | 'initial' }>({
+      state: 'initial',
+    });
+
+    const onClose = () => {
+      setStatus({ state: 'initial' });
+    };
 
     const onSubmitData = async data => {
       trigger({
@@ -49,22 +53,17 @@ const PartnerForm = React.forwardRef<HTMLDivElement, FooterRegisterFromProps>(
         conversionFunnel: 'partner',
         refUrl: 'window.location.href',
       });
-      setLoading(true);
+      setStatus({ state: 'loading' });
     };
 
     useEffect(() => {
-      if (isLoading) {
+      if (status.state === 'loading') {
         const listenner = setTimeout(() => {
           if (listenner) clearTimeout(listenner);
-          toast({
-            title: 'Successfull',
-            description: 'We have received your registration',
-            variant: 'success',
-          });
-          setLoading(false);
+          setStatus({ state: 'success' });
         }, 500);
       }
-    }, [isLoading]);
+    }, [status.state]);
 
     return (
       <div ref={ref} className="bg-green-200" {...props}>
@@ -80,9 +79,32 @@ const PartnerForm = React.forwardRef<HTMLDivElement, FooterRegisterFromProps>(
               <h4 className="text-xl-semibold md:heading-md md:max-w-xl">{formTitle}</h4>
               <p className="text-base text-neutral-700 md:text-lg">{formSubTilte}</p>
             </div>
-            <PartnerFooterForm onSubmitData={onSubmitData} showLoading={isLoading} />
+            <PartnerFooterForm
+              onSubmitData={onSubmitData}
+              showLoading={status.state == 'loading'}
+            />
           </div>
         </Hero>
+        <Modal
+          title="Success"
+          open={status.state == 'success'}
+          centered
+          footer={null}
+          width={'auto'}
+          onCancel={onClose}
+        >
+          <p>
+            {`We've received your info. Our team will follow up shortly to confirm details and next steps.`}
+          </p>
+          <br></br>
+          <Link
+            href={'https://youtu.be/Oswyy-8DNoI'}
+            className="underline text-green-500"
+            target="_blank"
+          >
+            {`Here's a short video to tell you more about the program.`}
+          </Link>
+        </Modal>
       </div>
     );
   },
