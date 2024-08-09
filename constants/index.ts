@@ -1,6 +1,13 @@
 export const DOMAIN = 'https://extrabread.com';
-export const BLOGS_API = 'https://blog.extrabread.com/wp-json/wp/v2/posts';
+export const BLOGS_API = 'https://blog.extrabread.com/wp-json/wp/v2/posts?per_page=100';
 
+import {
+  IcBarClub,
+  IcPizza,
+  IcQuickService,
+  IcRetail,
+  IcSmallBusiness,
+} from '@/ui/img-resource/ExIcon';
 import {
   BarNightImg,
   CashDiscountProgramImg,
@@ -21,7 +28,6 @@ import {
   SmallBusinessImg,
 } from '~/ui/img-resource/ImageResources';
 import { RouteConfig } from './routes';
-import { IcQuickService, IcRetail, IcSmallBusiness, IcBarClub, IcPizza } from '@/ui/img-resource/ExIcon';
 
 export const PHONE = '1-800-209-7120';
 export const EMAIL = 'info@extrabread.com';
