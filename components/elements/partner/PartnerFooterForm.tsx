@@ -50,7 +50,7 @@ const formSchema = z.object({
   haveRelationship: z.string().optional(),
 });
 
-const defaultTime = ['9 AM', '10 AM', '11 AM', '12 PM'];
+const defaultTime = ['10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM'];
 const PartnerFooterForm = ({
   showLoading,
   onSubmitData,
@@ -101,7 +101,7 @@ const PartnerFooterForm = ({
 
   const disableDate = (date: Dayjs) => {
     const day = date.get('day');
-    return isHaveRelationship ? day == 0 || day == 6 : day == 0;
+    return day == 0 || day == 6;
   };
   return (
     <Form {...form}>
