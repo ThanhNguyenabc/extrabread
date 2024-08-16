@@ -8,7 +8,7 @@ import { WorkWithTheBest } from '@/ui/organisms/work-with-the-best/WorkWithTheBe
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SOLUTIONS_MENU } from '~/constants/index';
 import { Heading } from '~/ui/atoms/heading/Heading';
 import { Segmented } from '~/ui/atoms/segment/Segment';
@@ -45,9 +45,7 @@ export const SolutionsTemplate = () => {
 
   const Cmp = PAGES[activeTab] || null;
 
-  const FAQItems = useMemo(() => {
-    return t('faq.items', { returnObjects: true }) as Array<any>;
-  }, [t]);
+  const FAQItems = t('faq.items', { returnObjects: true }) as Array<any> | null;
 
   return (
     <main className={styles['solutions']}>

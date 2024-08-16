@@ -209,7 +209,7 @@ const AboutUS = ({ seoTag }: { seoTag?: Meta }) => {
       <UniqueValue />
       <SideHustle />
 
-      <CTAInnerFooter htmlText={common('footer.heading')} bonus={2500} sale={250000} />
+      <CTAInnerFooter htmlText={common('footer.heading')} />
     </>
   );
 };

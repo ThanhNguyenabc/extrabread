@@ -1,9 +1,4 @@
-/**
- * @type {import('next-i18next').UserConfig}
- */
-module.exports = {
-  // https://www.i18next.com/overview/configuration-options#logging
-  // debug: process.env.NODE_ENV === 'development',
+const config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['es', 'en'],
@@ -17,3 +12,4 @@ module.exports = {
   },
   react: { useSuspense: false },
 };
+module.exports = config;

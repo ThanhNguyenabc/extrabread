@@ -51,6 +51,7 @@ export enum RouteConfig {
   MobileCard = '/solutions/mobile-card',
   CreditCard = '/solutions/credit-card',
   OnlineProcessing = '/solutions/online-processing',
+  CashBonusCalculator = '/cash-signing-bonus-calculator',
   SameDayFunding = "/same-day-funding"
 }
 

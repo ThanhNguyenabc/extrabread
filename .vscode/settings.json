@@ -3,9 +3,9 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": false,
-    "source.sortImports": true,
-    "source.fixAll.stylelint": true
+    "source.fixAll": "never",
+    "source.sortImports": "explicit",
+    "source.fixAll.stylelint": "explicit"
   },
   "css.validate": false,
   "less.validate": false,

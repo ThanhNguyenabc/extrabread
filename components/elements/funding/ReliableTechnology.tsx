@@ -17,6 +17,7 @@ const ReliableItems = [
     img: 'https://res.cloudinary.com/dgrym3yz3/image/upload/v1719464791/extrabread/common/xufrexmzwymxklkbaf9t.png',
   },
 ];
+
 const ReliableTechnology = () => {
   return (
     <Hero className="gap-6 md:gap-8 lg:flex-row lg:gap-10">

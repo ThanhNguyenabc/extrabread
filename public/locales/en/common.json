@@ -3,8 +3,8 @@
     "trustpilot": "Trustpilot",
     "get_started": "Get Started",
     "get_pricing": "Get Pricing",
-    "get_pricing_today": "Get Pricing Today",
-    "get_start_today": "Get Stated today!",
+    "get_pricing_today": "Get Free Consultation",
+    "get_start_today": "Get Started today!",
     "partner_with_us": "Partner with us",
     "Zero Processing Fees": "Zero Processing Fees",
     "support": "Support",
@@ -145,7 +145,7 @@
     "point_of_sale_systems": "Point Of Sale Systems",
     "about_us": "About Us",
     "partner": "Partner",
-    "get_your_hand": "Get your hands on on a Free [name] POS <br/> System today!",
+    "get_your_hand": "Get your hands on on a Free [name] POS \n System today!",
     "extrabread_offer": "ExtraBread’s Offer",
     "pos_cost": "Save Big on POS Costs",
     "pricing_desc": "Start using [name] for your business today, with pricing options starting at",
@@ -215,5 +215,39 @@
     "address": "Address",
     "state": "State",
     "contact_detail": "Contact Details",
-    "same_day_funding": "Same Day Funding"
+    "same_day_funding": "Same Day Funding",
+    "funding_form": {
+            "heading": "Same-Day Funding",
+            "sub_heading": "Tired of Waiting for Deposits? Get Same-Day Funding with ExtraBread!",
+            "bannerItems": [
+                "Fast Application",
+                "Quick Approval",
+                "Instant Funding"
+            ],
+            "quickItems": [
+                {
+                    "title": "Fast Application",
+                    "desc": "No hassle here: Fill out our quick 5-minute form."
+                },
+                {
+                    "title": "Quick Approval",
+                    "desc": "Get approved quickly and easily with our streamlined application process - no paperwork required."
+                },
+                {
+                    "title": "Instant Funding",
+                    "desc": "Access your funds fast: Get funded within 24 hours after approval."
+                }
+            ],
+            "form_title": "Get Started with Same Day \nFunding",
+            "credit_title": "Monthly Credit Card Volume",
+            "credits" :  [
+                "New or Not Sure",
+                "0 - $10,000",
+                "$10,000 - $50,000",
+                "$50,000 -  $115,000",
+                "$115,000+"
+            ],
+            "business_types" : "Type of Business",
+            "select_business":"Select type of business"
+        }
 }

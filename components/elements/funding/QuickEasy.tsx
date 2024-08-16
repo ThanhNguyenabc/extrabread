@@ -7,9 +7,8 @@ import React from 'react';
 const Icons = [WritingIcon, CheckCircleIcon, ReceiveCashIcon];
 
 const QuickEasy = ({ btnClick }: { btnClick?: () => void }) => {
-  const { t } = useTranslation('funding');
   const { t: common } = useTranslation();
-  const sectionItems = t('quickItems', { returnObjects: true }) as Array<any> | null;
+  const sectionItems = common('funding_form.quickItems', { returnObjects: true }) as Array<any> | null;
 
   return (
     <div className="bg-green-100">

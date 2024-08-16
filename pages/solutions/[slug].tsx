@@ -16,7 +16,6 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       seoTag,
       ...translation,
     },
-    revalidate: 120,
   };
 };
 
