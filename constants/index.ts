@@ -248,3 +248,5 @@ export const PRODUCTS_MENU = [
     href: RouteConfig.Invoicing,
   },
 ];
+
+export const CreditPercentage = 0.015;

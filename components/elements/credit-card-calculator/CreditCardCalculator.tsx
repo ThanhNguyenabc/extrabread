@@ -2,7 +2,9 @@ import { Col, Heading, Text } from '@/components/ui';
 import { Button } from '@/components/ui/button';
 import Hero from '@/components/ui/hero';
 import Slider from '@/components/ui/slider';
+import { CreditPercentage } from '@/constants';
 import { RouteConfig } from '@/constants/routes';
+import { formatCurrency } from '@/helpers';
 import { useDevice } from '@/hooks/useDetectMobile';
 import { Input } from '@nextui-org/react';
 import { Row } from 'antd';
@@ -38,7 +40,7 @@ const CreditCardCalculator = () => {
   });
 
   const monthlyFee = calculateMonthlyFee(data.transactionAmount, data.percentageTransaction);
-  const creditCardFee = Math.round(monthlyFee * 0.03 * 100) / 100;
+  const creditCardFee = Math.round(monthlyFee * CreditPercentage * 100) / 100;
   const keepingFee = Math.round(creditCardFee * 12 * 100) / 100;
 
   return (
@@ -72,7 +74,7 @@ const CreditCardCalculator = () => {
               label="What percentage of your transactions are card payments?"
               placeholder="0"
               labelPlacement="outside-left"
-              startContent="$"
+              startContent="%"
               variant="bordered"
               value={data.percentageTransaction.toString()}
               readOnly
@@ -100,9 +102,9 @@ const CreditCardCalculator = () => {
           {[
             {
               title: 'Monthly  Credit card sales',
-              value: monthlyFee,
+              value: formatCurrency(monthlyFee),
             },
-            { title: 'Credit Card Fees', value: creditCardFee },
+            { title: 'Credit Card Fees', value: formatCurrency(creditCardFee) },
           ].map(item => (
             <Row
               key={item.title}
@@ -115,7 +117,7 @@ const CreditCardCalculator = () => {
         </Col>
         <Col className="md:gap-4">
           <Text className="text-md-semibold md:text-xl">Amount you save annually</Text>
-          <Text className="heading-lg md:heading-xl">${keepingFee}</Text>
+          <Text className="heading-lg md:heading-xl">${formatCurrency(keepingFee)}</Text>
         </Col>
         <Col className="gap-4">
           <Link href={RouteConfig.GetPricing}>
