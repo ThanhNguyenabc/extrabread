@@ -1,5 +1,4 @@
 import { Row, Space, Tabs, Typography } from 'antd';
-import CloverAppMarketBanner from 'public/images/banners/Clover App Market.png';
 import { Icon } from '~/ui/atoms/icon/Icon';
 import { Banner } from '~/ui/organisms/banner/Banner';
 import styles from './ProductsTemplate.module.scss';
@@ -35,6 +34,7 @@ import YelpForBusinessOwnersIcon from 'public/images/products/Yelp for Business 
 
 import { GiftCardIcon, PromosIcon, RewardIcon } from '@/ui/img-resource/ExIcon';
 import classNames from 'classnames';
+import HTMLReactParser from 'html-react-parser';
 import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
 import { useDevice } from '~/hooks/useDetectMobile';
@@ -131,11 +131,13 @@ export const CloverAppMarket = () => {
   return (
     <div>
       <Banner
-        hasBackground
+        className="bg-blue-300"
         type={['product', 'align-left']}
         content={<span>{common('product_types.market.title')}</span>}
         button={<GetPricingButton />}
-        src={CloverAppMarketBanner.src}
+        src={
+          'https://res.cloudinary.com/dgrym3yz3/image/upload/v1727948233/bestpos/banner/nwkfpdd0zowalk5u0xtv.webp'
+        }
         descriptions={
           <Space direction="vertical">
             {Array.isArray(BANNER_CONTENT) &&
@@ -179,7 +181,11 @@ export const CloverAppMarket = () => {
       </BreadCard>
 
       <BreadCard>
-        <DetailSolution type="product" heading={t('loyalty_heading')} data={CUSTOMERS} />
+        <DetailSolution
+          type="product"
+          heading={HTMLReactParser(t('loyalty_heading'))}
+          data={CUSTOMERS}
+        />
       </BreadCard>
 
       <BreadCard isGrey>

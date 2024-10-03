@@ -1,8 +1,6 @@
 import { Collapse, Space, Typography } from 'antd';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
-import CashDiscountProgramBanner from 'public/images/banners/Cash Discount Program.png';
-import TheUltimateSolutionImg from 'public/images/products/The Ultimate Solution.png';
 import { useMemo } from 'react';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { Flex } from '~/ui/atoms/flex/Flex';
@@ -38,11 +36,13 @@ export const CashDiscountProgram = () => {
   return (
     <div className={styles['cash-discount-program']}>
       <Banner
-        hasBackground
+        className="bg-blue-300"
         type={['product', 'align-left']}
         content={<span>{common('product_types.cash_discount.title')}</span>}
         button={<GetPricingButton />}
-        src={CashDiscountProgramBanner.src}
+        src={
+          'https://res.cloudinary.com/dgrym3yz3/image/upload/v1727948467/bestpos/banner/rgl4k7knyroqecarqvlh.webp'
+        }
         descriptions={
           <Space direction="vertical">
             {Array.isArray(BANNER_CONTENT) &&
@@ -76,7 +76,10 @@ export const CashDiscountProgram = () => {
           <Image
             quality={100}
             width={580}
-            src={TheUltimateSolutionImg}
+            height={580}
+            src={
+              'https://res.cloudinary.com/dgrym3yz3/image/upload/v1727949346/bestpos/banner/egxpnvqxw4a5m7jufsop.webp'
+            }
             alt="The Ultimate Solution for Your Business Needs"
           />
 

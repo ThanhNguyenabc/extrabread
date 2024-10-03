@@ -1,5 +1,4 @@
 import { Space, Typography } from 'antd';
-import GiftCardProgramBanner from 'public/images/banners/Gift Card Program.png';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { Heading } from '~/ui/atoms/heading/Heading';
@@ -9,11 +8,11 @@ import { Banner } from '~/ui/organisms/banner/Banner';
 import { DiscoverBanner } from './components/discover-banner/DiscoverBanner';
 import { ProductFeature } from './components/features/ProductFeature';
 
-import BoostSalesImg from 'public/images/products/Boost Sales.png';
 import DigitalCardsImg from 'public/images/products/Digital cards.png';
 import PhysicalCrdsImg from 'public/images/products/Physical cards.png';
-import PreventFraudActivitiesImg from 'public/images/products/Prevent Fraud Activities.png';
 
+import { cn } from '@/lib/utils';
+import HTMLReactParser from 'html-react-parser';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { useMemo } from 'react';
@@ -21,7 +20,10 @@ import styles from './ProductsTemplate.module.scss';
 
 const { Text } = Typography;
 
-const ICONS = [BoostSalesImg, PreventFraudActivitiesImg];
+const ICONS = [
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1727950939/bestpos/qix1r0ad1hvwo9waht1p.png',
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1727950987/bestpos/kyhaxmd0lmuvvbwv5peb.png',
+];
 
 const PROGRAM_CONFIGS = [
   {
@@ -56,11 +58,13 @@ export const GiftCardProgram = () => {
   return (
     <div className={styles['gift-card']}>
       <Banner
-        hasBackground
+        className="bg-blue-300"
         type={['product', 'align-left']}
         content={<span>{common('product_types.gift.title')}</span>}
         button={<GetPricingButton />}
-        src={GiftCardProgramBanner.src}
+        src={
+          'https://res.cloudinary.com/dgrym3yz3/image/upload/v1727949732/bestpos/banner/yvwcajstgtcsb7zrnyja.webp'
+        }
         descriptions={
           <Space direction="vertical">
             {Array.isArray(BANNER_CONTENT) &&
@@ -80,8 +84,8 @@ export const GiftCardProgram = () => {
       />
 
       <BreadCard>
-        <div className={styles['product_info']}>
-          <Text>{t('desc')}</Text>
+        <div className={cn(styles['product_info'], ' lg:max-w-[900px]')}>
+          <Text>{HTMLReactParser(t('desc'))}</Text>
         </div>
       </BreadCard>
 
