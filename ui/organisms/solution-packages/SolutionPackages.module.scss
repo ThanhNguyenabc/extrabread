@@ -50,7 +50,7 @@
     transition: outline 0.2s ease-in-out;
 
     @include hover {
-      outline-color: $green-500;
+      outline-color: $orange-500;
     }
 
     @include sp {

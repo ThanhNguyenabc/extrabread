@@ -325,7 +325,7 @@
       .ant-radio-wrapper {
         @include hover {
           .ant-radio-inner {
-            border-color: $green-500;
+            border-color: $orange-500;
           }
         }
 
@@ -349,7 +349,7 @@
       .ant-radio-wrapper-checked {
         .ant-radio-inner {
           vertical-align: middle;
-          background-color: $green-500;
+          background-color: $orange-500;
           border-color: $neutral-400;
           mask-type: alpha;
           -webkit-mask-repeat: no-repeat;

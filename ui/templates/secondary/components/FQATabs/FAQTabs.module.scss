@@ -2,7 +2,6 @@
   overflow-x: auto;
 
   :global {
-
     .ant-segmented-group {
       column-gap: 8px;
     }
@@ -22,12 +21,11 @@
       }
 
       @include container-tablet;
-
     }
 
     .ant-segmented-item-selected {
       color: $neutral-0;
-      background-color: $green-500;
+      background-color: $orange-500;
     }
   }
 }

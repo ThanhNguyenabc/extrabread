@@ -7,9 +7,7 @@ export default function Document() {
     <Html>
       <Head>
         {/* FAVICON */}
-        <link rel="icon" href={`${DOMAIN}/favicon.ico`} type="image/x-icon" />
-        <link rel="icon" href={`${DOMAIN}/favicon-16x16.png`} type="image/png" sizes="16x16" />
-        <link rel="icon" href={`${DOMAIN}/favicon-32x32.png`} type="image/png" sizes="32x32" />
+        <link rel="icon" href={`${DOMAIN}/favicon.svg`} type="image/svg" />
 
         {/* // BOOKMARK ICON */}
         <link rel="apple-touch-icon" href={`${DOMAIN}/apple-touch-icon.png`} />

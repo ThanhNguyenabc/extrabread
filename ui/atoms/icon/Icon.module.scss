@@ -17,11 +17,11 @@
   }
 
   &--green {
-    background-color: $green-500;
+    background-color: $orange-500;
   }
 
   &--green-active {
-    background-color: $green-600;
+    background-color: $orange-600;
   }
 
   &--black {
@@ -48,7 +48,7 @@
     cursor: pointer;
 
     @include hover {
-      background-color: $green-500;
+      background-color: $orange-500;
       transform: scale(1.1);
     }
   }

@@ -31,12 +31,12 @@
     }
 
     &--active {
-      border-color: $green-500;
+      border-color: $orange-500;
     }
 
     &-text--active {
       font-weight: 600;
-      color: $green-600 !important;
+      color: $orange-600 !important;
     }
   }
 
@@ -90,7 +90,7 @@
       background-color: $green-100;
 
       span {
-        color: $green-600 !important;
+        color: $orange-600 !important;
       }
     }
 

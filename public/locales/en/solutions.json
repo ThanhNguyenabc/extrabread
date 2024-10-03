@@ -39,14 +39,14 @@
     },
     "credit": {
         "heading": "Credit Card Terminal",
-        "title": "Making payments in person has never been simpler",
+        "title": "Making in-person payments has never been easier!",
         "benefits": [
-            "Operates at incredible speed",
+            "All features and premium support",
             "Contactless payments",
             "Accepts chip cards and magstripe"
         ],
         "transactions": {
-            "heading": "It has never been simpler to carry out transactions",
+            "heading": "Conducting transactions has never been easier.",
             "items": [
                 {
                     "title": "PAX A920 Smart Terminal",
@@ -107,7 +107,7 @@
             "Bluetooth card reader with app"
         ],
         "smart_features": {
-            "heading": "Pay faster with smarter features",
+            "heading": "Accelerate your payments with our advanced features.",
             "items": [
                 {
                     "title": "ProCharge Mobile",
@@ -150,14 +150,14 @@
     },
     "online_processing": {
         "heading": "Online Processing",
-        "title": "Streamline Your Online Payments",
+        "title": "Optimize Your Online Payment Process.",
         "benefits": [
             "Process credit cards through your computer",
             "Send out invoices and process checks",
             "Easily integrates into your website"
         ],
         "solutions": {
-            "heading": "Turn your computer into a credit card machine & transform your website into an online store in seconds",
+            "heading": "Empower your computer to process <span className ='text-orange-600'>credit card transactions</span> and convert your website into a dynamic <span className='text-orange-600'>online store</span> within seconds!",
             "items": [
                 {
                     "title": "Processing Capabilities",

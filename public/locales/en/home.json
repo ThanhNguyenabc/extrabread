@@ -2,10 +2,10 @@
     "saving_money": "Free Premium POS Solutiuons",
     "siging_bonus": "Same Day Funding",
     "processing_fee": "Zero Processing Fees",
-    "pageTitle": "Save & Earn More\nWith Top Payment\nAnd POS Solutions",
+    "pageTitle": "Get some real advice from real people",
     "hp2pageTitle": "Same Day Funding With Credit Card Processing Solutions",
     "merchant_heading": "Competitive Rates",
-    "merchant_desc": "We're able to maintain our services at no cost to you by <span className='font-semibold text-green-500'>applying a 3.5% charge </span> on your <span className='font-semibold text-green-500'>customer's order total </span> during the checkout process. On top of that, your customers cover the credit card fees, relieving you of any merchant fees.",
+    "merchant_desc": "We're able to maintain our services at no cost to you by <span className='font-semibold text-orange-500'>applying a 3.5% charge </span> on your <span className='font-semibold text-orange-500'>customer's order total </span> during the checkout process. On top of that, your customers cover the credit card fees, relieving you of any merchant fees.",
     "merchant_option": [
         {
             "id": "small",
@@ -43,7 +43,7 @@
     ],
     "competitive_advantage": {
         "heading": "Our Competitive  Advantage",
-        "sub_heading": "At ExtraBread, we're all about improving your business's bottom line by reducing unnecessary credit card processing and POS System fees.  Our partners, expertise, and approach are what sets us apart.",
+        "sub_heading": "At BestPOS, we specialize in maximizing your business's profits by minimizing unnecessary credit card processing and POS system fees. Our unique partnerships, expertise, and approach set us apart from the rest.",
         "items": [
             {
                 "title": "Partnerships",

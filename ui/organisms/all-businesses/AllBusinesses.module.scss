@@ -37,7 +37,7 @@
 
       &:nth-child(odd) {
         #{$root}:not(#{$root}--no-color) & {
-          color: $green-500;
+          color: $orange-500;
         }
       }
     }

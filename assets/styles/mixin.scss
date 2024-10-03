@@ -102,6 +102,6 @@
   transition: border-color 0.3s ease-in-out;
 
   @include hover {
-    border-color: $green-500;
+    border-color: $orange-500;
   }
 }

@@ -54,12 +54,12 @@
     },
     "work_with_thebest": "Work with the best",
     "point_of_sale": {
-        "heading": "<span className='text-green-500'>Point-of-sale</span> for all business categories"
+        "heading": "<span className='text-orange-500'>Point-of-sale</span> for all business categories"
     },
     "point_of_sale_features": {
         "heading": "Point-of-Sale Features"
     },
-    "find_right_solution": "Find the right processing solutions for your business.",
+    "find_right_solution": "Discover the ideal processing solutions for your business",
     "hear_from_client": "Hear From Our Satisfied Clients",
     "solutions": {
         "credit-card": {

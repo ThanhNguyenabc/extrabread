@@ -8,7 +8,7 @@
   box-shadow: $shadow-md;
 
   @include hover {
-    outline: 2px solid $green-500;
+    outline: 2px solid $orange-500;
     box-shadow: $shadow-3xl;
   }
 

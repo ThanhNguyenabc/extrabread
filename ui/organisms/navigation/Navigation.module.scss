@@ -8,7 +8,7 @@
 
   @include hover {
     background-color: $bg-white;
-    box-shadow: 0 0 0 2px $green-500;
+    box-shadow: 0 0 0 2px $orange-500;
   }
 }
 
@@ -39,7 +39,7 @@
       }
 
       @include hover {
-        color: $green-500 !important;
+        color: $orange-500 !important;
 
         i {
           background-color: currentColor;
@@ -49,7 +49,7 @@
 
     .ant-menu-item-selected,
     .ant-menu-submenu-open {
-      color: $green-500;
+      color: $orange-500;
 
       i {
         background-color: currentColor;
@@ -57,13 +57,13 @@
       }
 
       .ant-menu-title-content {
-        color: $green-500;
+        color: $orange-500;
       }
     }
 
     .ant-menu-submenu-active {
       .ant-space-item {
-        color: $green-500;
+        color: $orange-500;
 
         i {
           background-color: currentColor;
@@ -100,7 +100,7 @@
     margin-right: auto;
 
     @include tablet-up {
-      &>a {
+      & > a {
         max-width: 386px;
       }
 
@@ -123,10 +123,6 @@
       max-height: calc(100vh - 146px);
       overflow: auto;
     }
-
-
-
-
   }
 
   &-solution-card {
@@ -260,7 +256,7 @@
     @include sp {
       padding: $spacing-1;
 
-      &>span {
+      & > span {
         font-size: 16px;
         line-height: 24px;
       }

@@ -72,11 +72,10 @@
 
   /* stylelint-disable-next-line no-descending-specificity */
   a {
-
     &:link,
     &:visited,
     &:active {
-      color: $green-500 !important;
+      color: $orange-500 !important;
       text-decoration: none;
     }
   }
@@ -111,7 +110,7 @@
       margin-inline: -16px;
     }
 
-    &>img {
+    & > img {
       width: 991px;
       height: auto;
 

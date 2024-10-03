@@ -56,7 +56,7 @@
     },
     "work_with_thebest": "Trabaja con lo mejor",
     "point_of_sale": {
-        "heading": "<span className='text-green-500'>Punto de venta para</span> todas las categorías comerciales"
+        "heading": "<span className='text-orange-500'>Punto de venta para</span> todas las categorías comerciales"
     },
     "point_of_sale_features": {
         "heading": "Funciones del punto de venta"
