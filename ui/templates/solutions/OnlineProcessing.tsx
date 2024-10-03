@@ -1,4 +1,6 @@
+import { CartIcon, InterfaceIcon, VirtualIcon } from '@/ui/img-resource/ExIcon';
 import { Space, Typography } from 'antd';
+import HTMLReactParser from 'html-react-parser';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Item2 from 'public/images/solutions/Integration.png';
@@ -11,14 +13,13 @@ import { Icon } from '~/ui/atoms/icon/Icon';
 import {
   CreditCardTerminalImg,
   MobileCardReaderImg,
-  OnlineProcessingBanner
+  OnlineProcessingBanner,
 } from '~/ui/img-resource/ImageResources';
 import { Banner } from '~/ui/organisms/banner/Banner';
 import { SolutionExplore } from '~/ui/organisms/solution-explore/SolutionExplore';
 import { DetailSolution } from '../../organisms/detail-solution/DetailSolution';
 import styles from './Solutions.module.scss';
 import { SolutionFeature } from './solution-feature/SolutionFeature';
-import { CartIcon, InterfaceIcon, VirtualIcon } from '@/ui/img-resource/ExIcon';
 
 const { Text } = Typography;
 
@@ -84,6 +85,7 @@ export const OnlineProcessing = ({ children }: PropsWithChildren) => {
       </Head>
       <Banner
         hasBackground
+        className="bg-blue-300"
         tagText={t('online_processing.heading')}
         type="align-left"
         content={<>{t('online_processing.title')}</>}
@@ -112,7 +114,7 @@ export const OnlineProcessing = ({ children }: PropsWithChildren) => {
 
       <BreadCard>
         <div className={styles['solutions_info']}>
-          <Text>{t('online_processing.solutions.heading')}</Text>
+          <Text>{HTMLReactParser(t('online_processing.solutions.heading'))}</Text>
         </div>
         <div className={styles['solutions_features']}>
           {TRANS.map(({ alt, src, reversed, textLink = '', content }) => (

@@ -6,22 +6,19 @@ import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { Icon } from '~/ui/atoms/icon/Icon';
 import { Banner } from '~/ui/organisms/banner/Banner';
 
+import { RouteConfig } from '@/constants/routes';
+import { CreditCardIcon, DevicesIcon, OptionIcon } from '@/ui/img-resource/ExIcon';
 import Head from 'next/head';
 import Item2 from 'public/images/solutions/Clover Go Mobile App.png';
 import Item1 from 'public/images/solutions/ProCharge Mobile.png';
 import { SOLUTIONS_MENU } from '~/constants/index';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { SectionHeading } from '~/ui/atoms/heading/Heading';
-import {
-  CreditCardTerminalImg,
-  OnlineProcessingImg,
-} from '~/ui/img-resource/ImageResources';
+import { CreditCardTerminalImg, OnlineProcessingImg } from '~/ui/img-resource/ImageResources';
 import { SolutionExplore } from '~/ui/organisms/solution-explore/SolutionExplore';
 import { DetailSolution } from '../../organisms/detail-solution/DetailSolution';
 import styles from './Solutions.module.scss';
 import { SectionItem, SolutionFeature } from './solution-feature/SolutionFeature';
-import { RouteConfig } from '@/constants/routes';
-import { DevicesIcon, CreditCardIcon, OptionIcon } from '@/ui/img-resource/ExIcon';
 const { Text } = Typography;
 
 const SOLUTIONS = [
@@ -77,6 +74,7 @@ export const MobileCardReader = ({ children }: PropsWithChildren) => {
       </Head>
       <Banner
         hasBackground
+        className="bg-blue-300"
         tagText={t('mobile.heading')}
         type="align-left"
         content={<>{t('mobile.title')}</>}

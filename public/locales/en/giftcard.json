@@ -1,5 +1,5 @@
 {
-    "desc": "ExtraBread's Gift Card Program by Elecpayments Inc. provides both physical and digital gift card options, complete with essential features to help boost your brand, customer base, and sales.",
+    "desc": "<div className='text-blue-500'>BestPOS's Gift Card Program by Elecpayments Inc.</div>offers physical and digital gift card options with essential features to boost your brand, customer base, and sales.",
     "banner": [
         "Wide range of designs to pick from",
         "Enable customers to purchase and redeem via their mobile phones",
@@ -8,8 +8,8 @@
     ],
     "programs": [
         {
-            "heading": "Improve Customer Loyalty with Physical or Digital Cards",
-            "desc": "Merchants can choose between physical or digital gift cards and enjoy the benefits of a comprehensive program that offers custom options, quick setup, and a range of features to drive loyalty and boost sales."
+            "heading": "Enhance Customer Loyalty with Physical or Digital Cards.",
+            "desc": "Merchants can choose physical or digital gift cards and benefit from a program offering customization, quick setup, and various features to drive loyalty and boost sales."
         },
         {
             "heading": "Physical cards",
@@ -31,7 +31,7 @@
         },
         {
             "title": "Prevent Fraud Activities",
-            "description": "Digital or physical card options provide greater security and peace of mind as compared to gift certificates, which are prone to being lost, stolen, or counterfeited",
+            "description": "Digital or physical card options provide superior security and peace of mind compared to gift certificates, which are susceptible to being lost, stolen, or counterfeited.",
             "details": [
                 "Convenience of managing card inventory easily",
                 "Keeping track of sales through gift card reports"

@@ -86,6 +86,7 @@ export const CreditCardTerminal = ({ children }: PropsWithChildren) => {
       <Banner
         tagText={common('get_pricing_today')}
         hasBackground
+        className="bg-blue-300"
         type="align-left"
         content={<>{t('credit.title')}</>}
         button={

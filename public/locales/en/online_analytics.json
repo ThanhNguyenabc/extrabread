@@ -1,5 +1,5 @@
 {
-    "desc": "Gain real-time access to your business account activity and acquire comprehensive industry insights and forecasts, making more informed decisions at every turn.",
+    "desc": "<div className='text-blue-500'>Access real-time updates on your business</div> account activities and unlock comprehensive industry insights and forecasts, empowering you to make informed decisions at every step.",
     "banner": [
         "Access account activity 24/7.",
         "Review and reconcile deposit history.",
@@ -9,15 +9,15 @@
     "features": [
         {
             "title": "Track Your Statements",
-            "description": "Easily monitor all of your business activities with our online account manager, so you can address any discrepancies before they become a problem.",
+            "description": "Keep an eye on all of your business activities effortlessly with our online account manager. Stay ahead of any discrepancies before they cause issues.",
             "details": [
-                "Quickly find information on transactions, chargebacks, and more.",
+                "Easily access information about transactions, chargebacks, and other relevant details.",
                 "Access your account online 24/7."
             ]
         },
         {
             "title": "Review Your Deposit History",
-            "description": "Reconcile and view your deposit history so you always know when funds are available.",
+            "description": "Keep an eye on your deposit history to ensure you always know when your funds are available.",
             "details": [
                 "Seamlessly use your accounting software and online reporting together.",
                 "Keep track of critical account information with ease."
@@ -25,7 +25,8 @@
         },
         {
             "title": "Handling Disputes",
-            "description": "Gain insight into all your transactions and manage disputes with ease using our online reporting.",
+            
+            "description": "Gain valuable insights into every transaction and effortlessly resolve disputes using our user-friendly online reporting system.",
             "details": [
                 "Quickly access the most recent account information at any time.",
                 "Monitor chargebacks in real-time as they happen."
@@ -33,7 +34,7 @@
         },
         {
             "title": "Monitor and track industry performance'",
-            "description": "Gain access to valuable tools and data management systems that eliminate the guesswork and aid in business development.",
+            "description": "Access essential tools and data management systems to eliminate guesswork and drive business development forward.",
             "details": [
                 "Conduct performance comparisons with your competitors",
                 "Receive valuable insights about your industry and community to inform better decision making"
