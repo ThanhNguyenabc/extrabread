@@ -32,7 +32,7 @@ const DiscoverPartner = () => {
             >
               <h4 className="text-lg-semibold md:text-2xl md:font-extrabold"> {item.title}</h4>
               <p className="flex-1 text-neutral-700">{item.desc}</p>
-              <span className="stroke-text text-[100px] self-end font-bold text-5xl lg:text-[120px] bg-clip-text text-white  bg-gradient-to-b  from-green-500 to-[#CDE762]">
+              <span className="stroke-text text-[100px] self-end font-bold text-5xl lg:text-[120px] bg-clip-text text-white  bg-gradient-to-b  from-orange-500 to-[#CDE762]">
                 0{index + 1}
               </span>
             </div>

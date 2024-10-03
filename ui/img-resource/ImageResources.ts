@@ -11,10 +11,8 @@ export const RetailBusinessesImg =
 export const SmallBusinessImg =
   'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718782116/extrabread/common/um5xpbx1vuilaunhqng7.webp';
 
-export const LogoSmallIcon =
-  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718780447/extrabread/common/kmytcsgos3nfe8z5jcza.webp';
-export const LogoFullIcon =
-  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718780306/extrabread/common/ystcqx1migdz7hp3e5ac.webp';
+export const LogoSmallIcon = '/images/mobile_logo.svg';
+export const LogoFullIcon = '/images/pos_logo.png';
 export const LogoFooter =
   'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718780210/extrabread/common/k24a2xbahvwoynjmbprx.webp';
 export const Consideration =
@@ -42,7 +40,7 @@ export const GiftCardProgramImg =
 export const LoyaltyRewardsImg =
   'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718774650/extrabread/common/qb3vgaaujqum7b92oswa.webp';
 export const MobileCardReaderImg =
-  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718774425/extrabread/common/g7hlrqbtdvtqyeg36l11.png';
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1727945051/bestpos/g6kv6wbvl3uagrxkqic4.png';
 export const OnlineReportingImg =
   'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718774363/extrabread/common/ouoo7kweolivgwmligv6.png';
 export const InvoicingImg =
@@ -50,26 +48,24 @@ export const InvoicingImg =
 export const QuickBooksPluginImg =
   'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718773974/extrabread/common/qsjx50n0kugqwhindu5s.png';
 export const OnlineProcessingImg =
-  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718773894/extrabread/common/qnr8nybqgvtfmmiy5qs8.png';
-
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1727945051/bestpos/m72admtmltn9hnlzblft.png';
 export const CheckServicesImg =
   'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718773589/extrabread/common/rdfilr9lxoydnuxe0tkj.png';
 export const CreditCardTerminalImg =
-  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718773794/extrabread/common/xwji18ge8p0jlynylxkp.png';
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1727945051/bestpos/ubk2hpjmxx7uwaudzkgg.png';
 
 export const CashDiscountProgramImg =
   'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718773401/extrabread/common/tkuihfwa8rgtm98ckhjw.png';
 
 // Businesses Type
 export const MobileCardReaderBanner =
-  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718775413/extrabread/banners/eeqbpirf1q8ejduldhs5.webp';
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1727945051/bestpos/g6kv6wbvl3uagrxkqic4.png';
 
 // Banner
 export const CreditCardBanner =
-  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718775178/extrabread/banners/xwuaqjuebst4cysnpmit.webp';
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1727945051/bestpos/ubk2hpjmxx7uwaudzkgg.png';
 export const OnlineProcessingBanner =
-  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718772926/extrabread/banners/dnhrvkgmawaxt9sihuaq.webp';
-
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1727945051/bestpos/m72admtmltn9hnlzblft.png';
 // Logo
 export const Support =
   'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718776728/extrabread/common/rjnbe6l6sopiu1fm4le7.jpg';

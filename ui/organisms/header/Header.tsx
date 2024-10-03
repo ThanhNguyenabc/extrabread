@@ -239,7 +239,7 @@ export const Header = () => {
             />
           )}
           <Link href={RouteConfig.Home} className={styles['header-logo']}>
-            <Image quality={90} alt="logo" width={192} height={32} src={LogoFullIcon} />
+            <Image quality={90} alt="logo" width={180} height={40} src={LogoFullIcon} />
           </Link>
           {isLaptop && <Navigation />}
           <div className={styles['header-right-content']}>

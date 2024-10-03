@@ -9,7 +9,7 @@ import styles from './ProductFeature.module.scss';
 const { Text } = Typography;
 
 type Props = {
-  src: StaticImageData;
+  src: StaticImageData | string;
   alt: string;
   reversed?: boolean;
   content: {
@@ -23,7 +23,7 @@ type Props = {
 export const ProductFeature = ({ src, alt, content, reversed }: Props) => {
   return (
     <div className={mapModifiers('product-features', styles, reversed && 'reversed')}>
-      <Image src={src} alt={alt} width={480} quality={100} />
+      <Image src={src} alt={alt} width={480} height={480} quality={100} />
       <div className={styles['product-features_content']}>
         <Heading level={3}>{content.title}</Heading>
 

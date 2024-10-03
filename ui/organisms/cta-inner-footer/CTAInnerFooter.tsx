@@ -15,19 +15,19 @@ export const CTAInnerFooter = (props: Props) => {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-green-500">
+    <footer className="bg-blue-300">
       <Hero className="flex flex-col gap-10 lg:flex-row lg:gap-10">
         <Col className="gap-4 md:gap-12 lg:max-w-xl">
-          <Heading level="3" className="heading-xs whitespace-pre-line md:heading-lg text-white">
+          <Heading level="3" className="heading-xs whitespace-pre-line md:heading-lg">
             {props.htmlText}
           </Heading>
-          <GetPricingButton title={t('get_start_today')} color="black" size="large" />
+          <GetPricingButton title={t('get_start_today')} size="large" />
         </Col>
         <Col className="gap-4">
-          <Heading level="1" className="heading-xs whitespace-pre-line md:heading-md text-white">
+          <Heading level="1" className="heading-xs whitespace-pre-line md:heading-md">
             Your Cash Signing Bonus
           </Heading>
-          <Text className="text-white">
+          <Text>
             {`Receive a cash signing bonus once you sign with Extrabread. Ask our team to learn more and if your business qualifies for a cash signing bonus`}
           </Text>
           <CashBonusInput />

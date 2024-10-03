@@ -1,5 +1,5 @@
 export const DOMAIN = 'https://extrabread.com';
-export const BLOGS_API = 'https://blog.extrabread.com/wp-json/wp/v2/posts?per_page=100';
+export const BLOGS_API = process.env.NEXT_PUBLIC_WORDPRESS_HOST;
 
 import {
   IcBarClub,
@@ -29,8 +29,8 @@ import {
 } from '~/ui/img-resource/ImageResources';
 import { RouteConfig } from './routes';
 
-export const PHONE = '1-800-209-7120';
-export const EMAIL = 'info@extrabread.com';
+export const PHONE = '1-888-410-2188';
+export const EMAIL = 'info@bestpos.com';
 
 export const US_MASK = '(###) ###-####';
 

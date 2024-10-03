@@ -22,7 +22,7 @@ const ElevateCardItem = ({ desc, logo, pros, route = '' }: Product) => {
       <div className="flex-1 flex flex-col gap-1">
         {pros?.map(item => (
           <div key={`${item}`} className="flex gap-1 items-end">
-            <IcCheck className="text-green-500 w-6 h-6" />
+            <IcCheck className="text-orange-500 w-6 h-6" />
             <p className="flex-1 text-sm text-neutral-600">{item}</p>
           </div>
         ))}

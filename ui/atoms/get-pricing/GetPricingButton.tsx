@@ -1,3 +1,4 @@
+import Questionnaire from '@/components/elements/questionnaire/Questionnaire';
 import { QuestionnaireProps } from '@/components/elements/questionnaire/Questionnaire.type';
 import { RouteConfig } from '@/constants/routes';
 import { useTranslation } from 'next-i18next';
@@ -5,7 +6,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useRef } from 'react';
 import { BreadButtonProps, Button } from '../button/Button';
-import Questionnaire from '@/components/elements/questionnaire/Questionnaire'
 export const GetPricingButton = ({
   title,
   ...props

@@ -10,7 +10,7 @@ export const COLORS = {
   },
   green: {
     100: '#ccf5de',
-    500: '#009640',
+    500: '#FF5A22',
     600: '#007833',
   },
   yellow: {
@@ -21,6 +21,11 @@ export const COLORS = {
     200: '#fecdca',
   },
   blue: {
+    300: '#CEE2FF',
     500: '#0B70FE',
+  },
+  orange: {
+    500: '#FF5A22',
+    600: '#FF5A22',
   },
 };

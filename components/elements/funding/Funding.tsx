@@ -52,7 +52,7 @@ const Funding = () => {
           </div>
         }
       />
-      <div className="bg-green-500">
+      <div className="bg-orange-500">
         <Hero className="gap-6 md:gap-12 text-white text-center items-center">
           <h3 className="heading-xs md:text-center whitespace-pre-line md:heading-lg">
             {`Same day funding\nVs. Standard funding`}
@@ -84,7 +84,7 @@ const Funding = () => {
       <Hero className="gap-6 md:gap-12 items-center">
         <h3 className="heading-xs text-center md:heading-lg md:max-w-[650px]">
           {HTMLReactParser(
-            `Waiting for deposits can be a major challenge for businesses but not with <span className="text-green-500">ExtraBread</span>`,
+            `Waiting for deposits can be a major challenge for businesses but not with <span className="text-orange-500">ExtraBread</span>`,
           )}
         </h3>
         <p className=" whitespace-pre-line md:text-lg">

@@ -20,7 +20,7 @@ const CompetitiveAdvantage = () => {
       </div>
       <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-3 md:mt-4">
         {Items?.map(item => (
-          <div key={item.title} className="flex flex-col p-4 bg-green-100 rounded-2xl gap-4 md:p-6">
+          <div key={item.title} className="flex flex-col p-4 border-orange-500 border-[2px] rounded-2xl gap-4 md:p-6">
             <h3 className="text-lg-semibold md:heading-xs">{item.title}</h3>
             <p className="text-sm text-neutral-700">{item.desc}</p>
           </div>

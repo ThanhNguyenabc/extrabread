@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils';
 import { mapModifiers } from 'helpers';
 import { FC, PropsWithChildren } from 'react';
 import { BreadButtonProps } from '~/ui/atoms/button/Button';
@@ -18,7 +19,7 @@ export const DiscoverBanner: FC<PropsWithChildren<Props>> = ({
   type,
 }) => {
   return (
-    <div className={mapModifiers('discover-banner', styles, type)}>
+    <div className={cn(mapModifiers('discover-banner', styles, type), 'bg-blue-300')}>
       <Heading centered level={3}>
         {heading}
       </Heading>

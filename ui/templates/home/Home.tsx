@@ -8,6 +8,7 @@ import {
 } from '~/ui/img-resource/ExIcon';
 import styles from './Home.module.scss';
 
+import { Text } from '@/components/ui';
 import { RouteConfig } from '@/constants/routes';
 import { Button } from '@/ui/atoms/button/Button';
 import { useTranslation } from 'next-i18next';
@@ -66,9 +67,9 @@ export const HomeTemplate = ({ title }: { title?: string }) => {
   return (
     <>
       <Banner
-        hasBackground
+        className=" bg-gradient-to-b from-[#FF5A22] to-[#FFA722]"
         type="home"
-        content={<>{title ?? t('pageTitle')}</>}
+        content={<span className="text-white">{title ?? t('pageTitle')}</span>}
         button={
           <>
             <div className="flex items-center justify-center flex-col gap-3 md:flex-row  md:gap-4 lg:justify-start">
@@ -76,7 +77,7 @@ export const HomeTemplate = ({ title }: { title?: string }) => {
               <Link href={RouteConfig.Partner} className="w-full">
                 <Button
                   size="large"
-                  className="flex justify-center items-center gap-2 border-none hover:text-green-500"
+                  className="flex justify-center items-center gap-2 border-none hover:text-orange-500"
                 >
                   {common('partner_with_us')}
                   <IcChevronRight />
@@ -89,24 +90,25 @@ export const HomeTemplate = ({ title }: { title?: string }) => {
           </>
         }
         src={
-          'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718772055/extrabread/banners/hjjfbyzvjb22veb0zhu2.webp'
+          'https://res.cloudinary.com/dgrym3yz3/image/upload/v1727944273/bestpos/banner/qwllcfsf9qhtobo6qwij.png'
         }
         extractComponent={
           <div className={styles['home-template_banner-footer']}>
             {BannerItems.map(({ title, icon: Icon }) => (
               <Space key={title}>
                 <Icon width={48} height={48} />
-                {t(title)}
+                <Text className="font-semibold">{t(title)}</Text>
               </Space>
             ))}
           </div>
         }
       />
-      <CompetitiveAdvantage />
-      <UniqueValue />
+      <HowItWorks />
       <MerchantFee />
 
-      <HowItWorks />
+      <CompetitiveAdvantage />
+
+      <UniqueValue />
 
       <WorkWithTheBest />
 

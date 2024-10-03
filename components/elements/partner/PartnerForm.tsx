@@ -102,7 +102,7 @@ const PartnerForm = React.forwardRef<HTMLDivElement, FooterRegisterFromProps>(
           <br></br>
           <Link
             href={'https://youtu.be/Oswyy-8DNoI'}
-            className="underline text-green-500"
+            className="underline text-orange-500"
             target="_blank"
           >
             {`Here's a short video to tell you more about the program.`}

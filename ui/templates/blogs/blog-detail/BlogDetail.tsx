@@ -1,5 +1,6 @@
 import { getBlogsAPI } from '@/apis/blogs';
 import { DOMAIN } from '@/constants';
+import { RouteConfig } from '@/constants/routes';
 import { parseBlogData } from '@/helpers';
 import { BreadCard } from '@/ui/atoms/bread-card/BreadCard';
 import { Button } from '@/ui/atoms/button/Button';
@@ -7,7 +8,6 @@ import { Flex } from '@/ui/atoms/flex/Flex';
 import { Heading } from '@/ui/atoms/heading/Heading';
 import { Icon } from '@/ui/atoms/icon/Icon';
 import { ImageWithFallback } from '@/ui/atoms/img-fallback/ImageWithFallback';
-import SafeHydrate from '@/ui/atoms/safe-hydrate';
 import { Spin, Typography, message } from 'antd';
 import dayjs from 'dayjs';
 import { isEmpty } from 'lodash';
@@ -16,8 +16,60 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import styles from '../Blogs.module.scss';
 import { SubscriptionForm } from '../subscription-form/SubscriptionForm';
-import { RouteConfig } from '@/constants/routes';
 
+import HTMLReactParser, {
+  DOMNode,
+  Element,
+  HTMLReactParserOptions,
+  attributesToProps,
+  domToReact,
+} from 'html-react-parser';
+
+const options: HTMLReactParserOptions = {
+  replace: (domNode: DOMNode) => {
+    if (domNode instanceof Element && domNode.attributes) {
+      switch (domNode.name) {
+        case 'h5':
+        case 'h4':
+        case 'h3':
+        case 'h2':
+        case 'h1': {
+          return (
+            <h5 className="txt-heading-xsmal mt-10 mb-4 md:txt-heading-small md:mt-12 md:mb-6 lg:mt-16">
+              {domToReact(domNode.children, options)}
+            </h5>
+          );
+        }
+
+        case 'ol': {
+          return (
+            <ul className="flex  flex-col list-decimal ml-10 gap-2">
+              {domToReact(domNode.children, options)}
+            </ul>
+          );
+        }
+        case 'ul':
+          return (
+            <ul className="flex flex-col list-disc ml-10 gap-2">
+              {domToReact(domNode.children, options)}
+            </ul>
+          );
+
+        case 'a': {
+          const props = attributesToProps(domNode.attribs);
+          return (
+            <a {...props} className=" underline">
+              {domToReact(domNode.children, options)}
+            </a>
+          );
+        }
+
+        default:
+          break;
+      }
+    }
+  },
+};
 const { Paragraph, Text } = Typography;
 
 export const BlogDetail = () => {
@@ -64,7 +116,7 @@ export const BlogDetail = () => {
               <span dangerouslySetInnerHTML={{ __html: blog.title ?? '' }} />
             </Heading>
             <div className={styles.blogDetail_mainContent}>
-              <div dangerouslySetInnerHTML={{ __html: blog.content ?? '' }} />
+              {HTMLReactParser(blog.content ?? '')}
             </div>
           </div>
 
@@ -89,24 +141,6 @@ export const BlogDetail = () => {
                   Copy link
                 </Flex>
               </Button>
-
-              <SafeHydrate>
-                {/* <FacebookShareButton
-                  url={sharingUrl}
-                  quote={blog.title}
-                  className={styles.blogDetail_sharingButton}
-                >
-                  <Icon name="facebook" size={28} />
-                </FacebookShareButton> */}
-              </SafeHydrate>
-{/* 
-              <LinkedinShareButton
-                title={blog.title}
-                url={sharingUrl}
-                className={styles.blogDetail_sharingButton}
-              >
-                <Icon name="linkedin" size={25} />
-              </LinkedinShareButton> */}
             </Flex>
           </div>
 

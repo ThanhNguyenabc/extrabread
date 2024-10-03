@@ -194,7 +194,7 @@ const FundingForm = forwardRef<FundingFormHandle>((props, ref) => {
                   variant={'outline'}
                   className={clsx(
                     'bg-white',
-                    data.creditIndex === index && 'bg-green-500 text-white',
+                    data.creditIndex === index && 'bg-orange-500 text-white',
                   )}
                   onClick={() => setData({ ...data, creditIndex: index })}
                 >

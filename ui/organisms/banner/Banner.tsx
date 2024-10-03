@@ -33,10 +33,9 @@ export const Banner = ({
     'banner',
     styles,
     Array.isArray(type) ? [...type] : type,
-    hasBackground && 'has-bg',
+    hasBackground && 'bg-blue',
   );
 
-  
   return (
     <div className={classNames(_className, className)}>
       <div className={styles['banner-inner']}>

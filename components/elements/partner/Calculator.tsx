@@ -53,7 +53,7 @@ const Calculator = () => {
   return (
     <Hero className="flex flex-col gap-6 md:gap-8 lg:flex-row">
       <CalculatorItem
-        className="bg-green-500 text-white"
+        className="bg-orange-500 text-white"
         title={t('earning_title')}
         desc={t('earning_desc')}
         btnClassName="bg-neutral-900"

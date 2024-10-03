@@ -6,6 +6,7 @@ import { GetStaticPaths, GetStaticProps } from 'next/types';
 import { Seo } from '~/ui/util-components/Seo';
 import { getSEOTag } from '../api/app-configs';
 
+
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const [seoTag, translation] = await Promise.all([
     getSEOTag('blogs', locale),
