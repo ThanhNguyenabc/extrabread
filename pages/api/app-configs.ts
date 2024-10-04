@@ -17,7 +17,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
 export const getAppConfig = async (): Promise<AppConfig | null> => {
   try {
-    const db = await getMongoDbClient();
+    const db = await getMongoDbClient(process.env.MONGODB_URL);
     const data = (await db?.collection('app_configs').findOne<AppConfig>({})) || null;
     return data;
   } catch (error) {

@@ -1,5 +1,6 @@
 export const DOMAIN = 'https://bestpos.com';
 export const BLOGS_API = process.env.NEXT_PUBLIC_WORDPRESS_HOST;
+export const BEST_POS_URL = process.env.BESTPOS_MONGODB_URL;
 
 import {
   IcBarClub,

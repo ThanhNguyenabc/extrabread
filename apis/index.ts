@@ -1,5 +1,8 @@
+import { ApiResponse } from '@/models/bestpos/api_response';
+import { DataSubmission } from '@/models/bestpos/data_submission';
 import { FormData } from '@/models/form_data';
 import { FormValue } from '@/ui/templates/get-pricing/types';
+import { fetcher } from './fetcher';
 
 export const submitForm = async (data: FormData) => {
   try {
@@ -99,4 +102,32 @@ export const submitGetPricing = async (
     console.log(error);
   }
   return false;
+};
+
+export const submitForDemoPOS = async (data: DataSubmission) => {
+  try {
+    const result = await fetcher<ApiResponse<boolean>>({
+      url: '/requestdemo',
+      method: 'POST',
+      data,
+    });
+    return result.data;
+  } catch (error) {
+    console.log('error = ', error);
+    return false;
+  }
+};
+
+export const submitContact = async (data: DataSubmission) => {
+  try {
+    const result = await fetcher<ApiResponse<boolean>>({
+      url: '/contact_info',
+      method: 'POST',
+      data,
+    });
+    return result.data;
+  } catch (error) {
+    console.log('error = ', error);
+    return false;
+  }
 };

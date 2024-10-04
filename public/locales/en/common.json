@@ -249,5 +249,11 @@
             ],
             "business_types" : "Type of Business",
             "select_business":"Select type of business"
-        }
-}
+        },
+    "request_a_demo": "Request a Demo",
+    "type_of_business": "Type of business",
+    "thank_you_form_title": "Thanks for filling out the form!",
+    "thank_you_form_desc": "We will review your information and get back to you in 1-2 business days.",
+    "thank_you_form_message": "If you would like to learn more, feel free to contact us at"
+
+    }

@@ -10,7 +10,9 @@ const nanoid = customAlphabet('123456789abcde', 10);
 
 const sendToAirtable = async (table: string, body: object) => {
   try {
-    const data = { ...body, ID: nanoid() };
+    const data = { ...body };
+    console.log('air table');
+    console.log(data);
     const base = Airtable.base(BASE_ID);
     await base(table).create(data);
     return true;

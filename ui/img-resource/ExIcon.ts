@@ -54,3 +54,6 @@ export { default as IcQuickService } from 'public/images/icons/ic_service1.svg';
 export { default as IcSmallBusiness } from 'public/images/icons/ic_small_business.svg';
 export { default as IcLoading } from 'public/images/icons/loading.svg';
 export { default as IcPlus } from 'public/images/icons/plus.svg';
+export { default as IcAdd } from 'public/images/icons/ic_add.svg';
+export { default as IcPhone } from 'public/images/icons/phone.svg';
+export { default as IcMail } from 'public/images/icons/mail.svg';

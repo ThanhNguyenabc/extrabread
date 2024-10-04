@@ -1,3 +1,8 @@
+export enum Locale {
+  'en' = 'en',
+  'es' = 'es',
+}
+
 export type Meta = {
   title: string;
   description: string;
