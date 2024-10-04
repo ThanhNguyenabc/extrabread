@@ -12,6 +12,7 @@ export const useDevice = () => {
     isLessTablet: false,
     isTablet: false,
     isLaptop: true,
+    screenSize: window.innerWidth || 0,
   });
 
   useEffect(() => {
@@ -21,6 +22,7 @@ export const useDevice = () => {
         isLessTablet: window.innerWidth <= BreakPoints.tablet,
         isTablet: window.innerWidth > BreakPoints.mobile && window.innerWidth <= BreakPoints.tablet,
         isLaptop: window.innerWidth > BreakPoints.tablet,
+        screenSize: window.innerWidth,
       });
     };
     handleResize();

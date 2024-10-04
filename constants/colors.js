@@ -28,4 +28,5 @@ export const COLORS = {
     500: '#FF5A22',
     600: '#FF5A22',
   },
+  success: '#039855',
 };

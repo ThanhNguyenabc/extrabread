@@ -1,3 +1,9 @@
+import DefaultImg from '/images/default-image.webp';
+export { DefaultImg };
+
+export const BreadMeImg =
+  "https://res.cloudinary.com/dgrym3yz3/image/upload/v1685506557/assets/common/extra_bread_uh9hyy.png";
+
 export const BarNightImg =
   'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718781475/extrabread/common/t3p3eyppxjrnzdyepb75.webp';
 export const FullServiceRestaurantsImg =

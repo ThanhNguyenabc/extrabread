@@ -1,3 +1,5 @@
+
+
 export const DOMAIN = 'https://bestpos.com';
 export const BLOGS_API = process.env.NEXT_PUBLIC_WORDPRESS_HOST;
 export const BEST_POS_URL = process.env.BESTPOS_MONGODB_URL;
@@ -32,7 +34,9 @@ import { RouteConfig } from './routes';
 
 export const PHONE = '1-888-410-2188';
 export const EMAIL = 'info@bestpos.com';
-
+export const SM_SCREEN = 640;
+export const MD_SCREEN = 768;
+export const LG_SCREEN = 1024;
 export const US_MASK = '(###) ###-####';
 
 export enum Languages {
@@ -250,3 +254,4 @@ export const PRODUCTS_MENU = [
 ];
 
 export const CreditPercentage = 0.015;
+
