@@ -1,5 +1,5 @@
 {
-    "desc": "Accept and convert paper checks into secure electronic payments at the point of sale, providing increased security and faster processing times.",
+    "desc": "<span className='text-blue-500'>Accept and convert paper checks into secure electronic payments</span> at the point of sale, providing increased security and faster processing times.",
     "heading": "",
     "banner": [
         "Mitigate the risk of fraud and minimize potential losses",
@@ -18,7 +18,7 @@
         },
         {
             "title": "Mitigate Risk",
-            "description": "Elecpayments offers protection and assurance with every transaction.",
+            "description": "Count on Elecpayments for secure and guaranteed transactions.",
             "details": [
                 "Reduce chargebacks and losses due to fraud",
                 "Receive instant notification of check declines"
@@ -26,7 +26,7 @@
         },
         {
             "title": "Never Miss A Sale",
-            "description": "Offer your customers more payment options and have more confidence, knowing that you can capture every sale.",
+            "description": "Offer your customers a wide range of payment options and feel assured that you won't miss out on any sales.",
             "details": [
                 "Making customers satisfied by being able to pay with any payment option",
                 "Boost cash flow with a fast processing and funding"

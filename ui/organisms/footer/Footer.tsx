@@ -32,13 +32,7 @@ const FOOTER_SOLUTION_MENU = [
   },
 ];
 
-const FOOTER_PRODUCT_MENU = [
-  ...PRODUCTS_MENU,
-  {
-    href: RouteConfig.SameDayFunding,
-    title: 'same_day_funding',
-  },
-];
+const FOOTER_PRODUCT_MENU = [...PRODUCTS_MENU];
 const MenuCategory = ({
   title,
   menus,
@@ -82,10 +76,10 @@ export const BreadFooter = () => {
       <div className={styles['footer-inner']}>
         <div className={styles['footer-heading']}>
           <Image
-            alt=""
-            quality={100}
-            width={192}
-            height={32}
+            alt="logo footer"
+            width={180}
+            height={180}
+            quality={90}
             src={LogoFooter}
             className={styles['footer-logo']}
           />

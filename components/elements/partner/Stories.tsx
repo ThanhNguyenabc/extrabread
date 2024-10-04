@@ -3,15 +3,15 @@ import React from 'react';
 
 const StoryData = [
   {
-    text: "“The excellence of ExtraBread's products and services has been a game-changer, giving me an advantage in securing new clients”",
+    text: "“The excellence of Bestpos's products and services has been a game-changer, giving me an advantage in securing new clients”",
     author: 'Bryan',
   },
   {
-    text: '“ExtraBread has made it so easy, as a bartender, to have a second income by simply referring other businesses”',
+    text: 'Bestpos has made it so easy, as a bartender, to have a second income by simply referring other businesses”',
     author: 'Stephanie',
   },
   {
-    text: "“Thanks to ExtraBread's one-on-one training, it gave me the confidence and opportunity to be successfully self-employed!”",
+    text: "“Thanks to Bestpos's one-on-one training, it gave me the confidence and opportunity to be successfully self-employed!”",
     author: 'Jose',
   },
 ];

@@ -28,7 +28,7 @@ export const CTAInnerFooter = (props: Props) => {
             Your Cash Signing Bonus
           </Heading>
           <Text>
-            {`Receive a cash signing bonus once you sign with Extrabread. Ask our team to learn more and if your business qualifies for a cash signing bonus`}
+            {`Receive a cash signing bonus once you sign with Bestpos. Ask our team to learn more and if your business qualifies for a cash signing bonus`}
           </Text>
           <CashBonusInput />
         </Col>

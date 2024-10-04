@@ -10,7 +10,7 @@ const CashBonusCalculator = ({ children }: PropsWithChildren) => {
           {`Cash Signing Bonus Calculator`}
         </Heading>
         <Text type="paragraph" className="whitespace-pre-line text-neutral-700 md:text-lg">
-          {`At ExtraBread, we go the extra mile by offering a generous cash signing bonus depending on your businesses’ yearly credit card sales.\n
+          {`At Bestpos, we go the extra mile by offering a generous cash signing bonus depending on your businesses’ yearly credit card sales.\n
 No strings attached, no interests, contracts, or hidden fees involved. Swipe to input your businesses’ yearly credit card sales and see how much you could potentially earn!`}
         </Text>
       </Col>

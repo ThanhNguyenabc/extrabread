@@ -1,5 +1,4 @@
 import { Space, Typography } from 'antd';
-import QuickbooksPluginBanner from 'public/images/banners/Quickbooks Plugin.png';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { Icon } from '~/ui/atoms/icon/Icon';
@@ -7,17 +6,19 @@ import { Banner } from '~/ui/organisms/banner/Banner';
 import { DiscoverBanner } from './components/discover-banner/DiscoverBanner';
 import { ProductFeature } from './components/features/ProductFeature';
 
-import CustomizeYourSupportImg from 'public/images/products/Customize Your Support.png';
-import EffortlesslyImg from 'public/images/products/Effortlessly.png';
-import TrackYourStatementsImg from 'public/images/products/Track Your Statements.png';
-
+import HTMLReactParser from 'html-react-parser';
 import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
 import { AllBusinesses } from '~/ui/organisms/all-businesses/AllBusinesses';
 import styles from './ProductsTemplate.module.scss';
 
 const { Text } = Typography;
-const ICONS = [EffortlesslyImg, TrackYourStatementsImg, CustomizeYourSupportImg, EffortlesslyImg];
+const ICONS = [
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728012979/bestpos/banner/zmu7obeixkreoiwf48vh.png',
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1727951928/bestpos/banner/n7gmfluwxtc0fqersa5o.png',
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728013030/bestpos/banner/womzyoolz7gtyjk2hpxa.png',
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728013072/bestpos/banner/nntcmfpjcyj48lpguunl.png',
+];
 
 export const QuickBooksPlugin = () => {
   const { t } = useTranslation('quickbook');
@@ -33,11 +34,13 @@ export const QuickBooksPlugin = () => {
   return (
     <div>
       <Banner
-        hasBackground
+        className="bg-blue-300"
         type={['product', 'align-left']}
         content={<span>{common('product_types.quick_book.title')}</span>}
         button={<GetPricingButton />}
-        src={QuickbooksPluginBanner.src}
+        src={
+          'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728012930/bestpos/banner/lt6rfcrubl7dwmbdmd3c.webp'
+        }
         descriptions={
           <Space direction="vertical">
             {Array.isArray(BANNER_CONTENT) &&
@@ -57,9 +60,7 @@ export const QuickBooksPlugin = () => {
       />
 
       <BreadCard>
-        <div className={styles['product_info']}>
-          <Text>{t('desc')}</Text>
-        </div>
+        <div className={styles['product_info']}>{HTMLReactParser(t('desc'))}</div>
       </BreadCard>
 
       <BreadCard>

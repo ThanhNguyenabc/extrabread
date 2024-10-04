@@ -8,10 +8,6 @@ export default function Document() {
       <Head>
         {/* FAVICON */}
         <link rel="icon" href={`${DOMAIN}/favicon.svg`} type="image/svg" />
-
-        {/* // BOOKMARK ICON */}
-        <link rel="apple-touch-icon" href={`${DOMAIN}/apple-touch-icon.png`} />
-        <link rel="apple-touch-icon" href={`${DOMAIN}/apple-touch-icon.png`} sizes="180x180" />
       </Head>
 
       <body>

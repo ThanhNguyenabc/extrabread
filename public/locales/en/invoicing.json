@@ -1,5 +1,5 @@
 {
-    "desc": "Authorize.Net provides you with the flexibility to get paid quickly and easily, with features that automate the process and a comprehensive dashboard that allows you to search, sort, and filter.",
+    "desc": "Authorize.Net offers payment flexibility, automation features, and a comprehensive dashboard for quick and easy transactions.",
     "banner": [
         "Tailored to fit your business needs",
         "User-friendly dashboard for easy management",
@@ -9,7 +9,7 @@
     "features": [
         {
             "title": "Personalize Your Invoicing",
-            "description": "With invoicing through your Authorize.Net account, you can create customized invoices that strengthen your brand and allow you to tailor your message for each payment.",
+            "description": "By using invoicing with your Authorize.Net account, you have the opportunity to craft professional and unique invoices that reinforce your brand identity and allow you to tailor your communication for each individual payment.",
             "details": [
                 "Add your logo and choose your preferred colors and fonts",
                 "Include personal notes to your customers for a more personalized touch"
@@ -17,7 +17,7 @@
         },
         {
             "title": "Improve Customer Convenience",
-            "description": "Authorize.Net's mobile-friendly technology provides a quick and secure way for your customers to receive and pay invoices using any mobile device, ensuring that your customers will appreciate the convenience and come back for more.",
+            "description": "Authorize.Net's mobile-friendly technology enables quick and secure invoice payment using any mobile device, ensuring customer convenience and satisfaction.",
             "details": [
                 "Convenient, mobile-friendly payment option",
                 "Secure way to pay from any mobile device"
@@ -25,7 +25,7 @@
         },
         {
             "title": "Your Business, Your Way",
-            "description": "Authorize.Net offers flexibility for organizing your invoicing to suit your business needs. With an easy-to-use dashboard and automated features, you can customize your invoicing experience.",
+            "description": "Authorize.Net provides flexible invoicing options with a user-friendly dashboard and automated features for a customized experience.",
             "details": [
                 "Sort and Filter",
                 "Automatic Email Reminders"
@@ -37,7 +37,7 @@
         },
         {
             "title": "Protect Your Business",
-            "description": "Authorize.Net ensures the security of your payments with automated receipts, fraud protection, and 24/7 support to give you peace of mind.",
+            "description": "Authorize.Net provides payment security with automated receipts, fraud protection, and 24/7 support for peace of mind.",
             "details": [
                 "Select a plan that suits your business requirements",
                 "Receive reliable, round-the-clock assistance."

@@ -84,7 +84,7 @@ const Funding = () => {
       <Hero className="gap-6 md:gap-12 items-center">
         <h3 className="heading-xs text-center md:heading-lg md:max-w-[650px]">
           {HTMLReactParser(
-            `Waiting for deposits can be a major challenge for businesses but not with <span className="text-orange-500">ExtraBread</span>`,
+            `Waiting for deposits can be a major challenge for businesses but not with <span className="text-orange-500">Bestpos</span>`,
           )}
         </h3>
         <p className=" whitespace-pre-line md:text-lg">
@@ -93,7 +93,7 @@ const Funding = () => {
           Simply known as same-day funding, this option eliminates the typical delay of waiting for
           funds to clear, providing immediate access to your funds when you need it most.\n\nEmpower your business with greater financial agility and responsiveness with our rapid funding
           solutions. Perfect for bars, restaurants and any other type of businesses, say goodbye to
-          transaction delays and processing fees and get started with ExtraBread today!`}
+          transaction delays and processing fees and get started with Bestpos today!`}
         </p>
         <Button size={'responsive'} onClick={startSameDayForm}>
           {common('get_start_today')}

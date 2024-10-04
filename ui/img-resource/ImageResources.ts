@@ -14,7 +14,8 @@ export const SmallBusinessImg =
 export const LogoSmallIcon = '/images/mobile_logo.svg';
 export const LogoFullIcon = '/images/pos_logo.png';
 export const LogoFooter =
-  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718780210/extrabread/common/k24a2xbahvwoynjmbprx.webp';
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1686197195/assets/common/footer_cgdmie.png';
+
 export const Consideration =
   'https://res.cloudinary.com/dgrym3yz3/image/upload/v1718779973/extrabread/partner/nspksbjyiboxocecdhxd.png';
 export const EarningCash =

@@ -85,7 +85,7 @@ export const GiftCardProgram = () => {
 
       <BreadCard>
         <div className={cn(styles['product_info'], ' lg:max-w-[900px]')}>
-          <Text>{HTMLReactParser(t('desc'))}</Text>
+          {HTMLReactParser(t('desc'))}
         </div>
       </BreadCard>
 

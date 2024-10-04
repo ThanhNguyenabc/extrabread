@@ -51,7 +51,7 @@ const CreditCardCalculator = () => {
             {`How much can you save in credit card processing fees?`}
           </Heading>
           <Text type="paragraph" className="whitespace-pre-line text-base text-neutral-600">
-            {`We won't surprise you with hidden fees. Extrabread keeps it clear and upfront. Ask about our Cash Discount program to avoid credit card processing fees.`}
+            {`We won't surprise you with hidden fees. Bestpos keeps it clear and upfront. Ask about our Cash Discount program to avoid credit card processing fees.`}
           </Text>
         </Col>
 

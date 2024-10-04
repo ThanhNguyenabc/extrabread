@@ -1,5 +1,4 @@
 import { Space, Typography } from 'antd';
-import LoyaltyRewardsBanner from 'public/images/banners/Loyalty Rewards.png';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { Icon } from '~/ui/atoms/icon/Icon';
@@ -7,17 +6,18 @@ import { Banner } from '~/ui/organisms/banner/Banner';
 import { DiscoverBanner } from './components/discover-banner/DiscoverBanner';
 import { ProductFeature } from './components/features/ProductFeature';
 
-import BoostSalesImg from 'public/images/products/Boost Sales.png';
-import DriveSalesImg from 'public/images/products/Drive Sales.png';
-import NeverMissImg from 'public/images/products/Never Miss A Sale.png';
-import PersonalizeYourProgramsImg from 'public/images/products/Personalize Your Programs.png';
-
+import HTMLReactParser from 'html-react-parser';
 import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
 import styles from './ProductsTemplate.module.scss';
 
 const { Text } = Typography;
-const ICONS = [NeverMissImg, BoostSalesImg, PersonalizeYourProgramsImg, DriveSalesImg];
+const ICONS = [
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728013570/bestpos/banner/vnsoreamy77rkgeqg7lv.png',
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728013933/bestpos/banner/hztpoa9l9sxujc3gmk0g.png',
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728013932/bestpos/banner/rmn0ywoseo5jmvldic7n.png',
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728013932/bestpos/banner/epbwpcxaaxnsbkbj5vfm.png',
+];
 export const LoyaltyRewards = () => {
   const { t } = useTranslation('loyalty');
   const { t: common } = useTranslation();
@@ -33,11 +33,13 @@ export const LoyaltyRewards = () => {
   return (
     <div>
       <Banner
-        hasBackground
+        className='bg-blue-300'
         type={['product', 'align-left']}
         content={<span>{common('product_types.loyalty.title')}</span>}
         button={<GetPricingButton />}
-        src={LoyaltyRewardsBanner.src}
+        src={
+          'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728013805/bestpos/banner/k16zp3p5tv7azhpvp2tm.webp'
+        }
         descriptions={
           <Space direction="vertical">
             {Array.isArray(BANNER_CONTENT) &&
@@ -57,9 +59,7 @@ export const LoyaltyRewards = () => {
       />
 
       <BreadCard>
-        <div className={styles['product_info']}>
-          <Text>{t('desc')}</Text>
-        </div>
+        <div className={styles['product_info']}>{HTMLReactParser(t('desc'))}</div>
       </BreadCard>
 
       <BreadCard>

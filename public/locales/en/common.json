@@ -27,9 +27,9 @@
             "Monday - Friday, 5am - 7pm PT",
             "Saturday - Sunday, 6am - 5pm PT"
         ],
-        "policy": "ExtraBread is a POS consultant service that provides financial assistance and advice to businesses. We strive to provide accurate and up-to-date information to our clients, but we do not guarantee the accuracy, completeness, or timeliness of the information provided. This website is owned and operated by ELECPAYMENTS INC. Reproduction of this website, in whole or in part, is strictly prohibited.\n\nBy using our service, you agree to be bound by these",
-        "any_question": "If you have any questions or concerns, please contact us at info@extrabread.com.",
-        "copy_right": "@ Copyright 2023 ExtraBread. All Rights Reserved."
+        "policy": "Bestpos is a POS consultant service that provides financial assistance and advice to businesses. We strive to provide accurate and up-to-date information to our clients, but we do not guarantee the accuracy, completeness, or timeliness of the information provided. This website is owned and operated by ELECPAYMENTS INC. Reproduction of this website, in whole or in part, is strictly prohibited.\n\nBy using our service, you agree to be bound by these",
+        "any_question": "If you have any questions or concerns, please contact us at info@Bestpos.com.",
+        "copy_right": "@ Copyright 2023 Bestpos. All Rights Reserved."
     },
     "solution": "Solution",
     "pos_equipments": "POS Equipments",
@@ -39,7 +39,7 @@
     "home": "Home",
     "unique": {
         "heading": "Enjoy these benefits",
-        "desc": "At ExtraBread, we're committed to helping you save on Point of Sale costs and increase your profits through reduced payment processing fees. That's why we offer professional and personalized consulting on the ideal point of sale system, payment processing, merchant services, and more",
+        "desc": "At Bestpos, we're committed to helping you save on Point of Sale costs and increase your profits through reduced payment processing fees. That's why we offer professional and personalized consulting on the ideal point of sale system, payment processing, merchant services, and more",
         "items": [
             "24/7 U.S. - based, in-house technical support",
             "Cash Discount Program",
@@ -130,11 +130,11 @@
     "side_hustle": {
         "partner_ship": "Partnership",
         "heading": "The Ultimate Side Hustle",
-        "desc": "Partner with ExtraBread today and start your side hustle journey!",
+        "desc": "Partner with Bestpos today and start your side hustle journey!",
         "desc2": "This is the perfect opportunity to earn extra monthly income & bonuses on your free time."
     },
     "explore_pos": "Explore POS equipments",
-    "join_extrbread": "Join ExtraBread Today",
+    "join_extrbread": "Join Bestpos Today",
     "how_it_works": "HOW IT WORKS",
     "explore_other_types": "Explore other business types",
     "feature_favored": "POS Features favored by businesses like yours",
@@ -146,7 +146,7 @@
     "about_us": "About Us",
     "partner": "Partner",
     "get_your_hand": "Get your hands on on a Free [name] POS \n System today!",
-    "extrabread_offer": "ExtraBread’s Offer",
+    "Bestpos_offer": "Bestpos’s Offer",
     "pos_cost": "Save Big on POS Costs",
     "pricing_desc": "Start using [name] for your business today, with pricing options starting at",
     "get_full_price_from": "Get full the price from",
@@ -218,7 +218,7 @@
     "same_day_funding": "Same Day Funding",
     "funding_form": {
             "heading": "Same-Day Funding",
-            "sub_heading": "Tired of Waiting for Deposits? Get Same-Day Funding with ExtraBread!",
+            "sub_heading": "Tired of Waiting for Deposits? Get Same-Day Funding with Bestpos!",
             "bannerItems": [
                 "Fast Application",
                 "Quick Approval",

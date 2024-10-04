@@ -1,5 +1,4 @@
 import { Space, Typography } from 'antd';
-import InvoicingBanner from 'public/images/banners/Invoicing.png';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { Icon } from '~/ui/atoms/icon/Icon';
@@ -9,19 +8,16 @@ import { DiscoverBanner } from './components/discover-banner/DiscoverBanner';
 import { ProductFeature } from './components/features/ProductFeature';
 
 import { useTranslation } from 'next-i18next';
-import Improve247Img from 'public/images/products/Improve24-7.png';
-import LevelingUpImg from 'public/images/products/Leveling Up.png';
-import PersonalizeYourInvoicingImg from 'public/images/products/Personalize Your Invoicing.png';
-import PreventFraudActivitiesImg from 'public/images/products/Prevent Fraud Activities.png';
+
 import { useMemo } from 'react';
 import { AllBusinesses } from '~/ui/organisms/all-businesses/AllBusinesses';
 
 const { Text } = Typography;
 const ICONS = [
-  PersonalizeYourInvoicingImg,
-  Improve247Img,
-  LevelingUpImg,
-  PreventFraudActivitiesImg,
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728011715/bestpos/banner/mqr0roxadkli0yvdf0dt.png',
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728011714/bestpos/banner/efzqxqawofphaoklgb53.png',
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728011714/bestpos/banner/cxsaqxfz6htm1sd5uxou.png',
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728011714/bestpos/banner/lz6l8yvvjquocgkikakh.png',
 ];
 export const Invoicing = () => {
   const { t } = useTranslation('invoicing');
@@ -38,11 +34,13 @@ export const Invoicing = () => {
   return (
     <div>
       <Banner
-        hasBackground
+        className="bg-blue-300"
         type={['product', 'align-left']}
         content={<span> {common('product_types.invoicing.title')}</span>}
         button={<GetPricingButton />}
-        src={InvoicingBanner.src}
+        src={
+          'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728011668/bestpos/banner/phmz0xovfrjvze4znymc.webp'
+        }
         descriptions={
           <Space direction="vertical">
             {Array.isArray(BANNER_CONTENT) &&
@@ -62,9 +60,7 @@ export const Invoicing = () => {
       />
 
       <BreadCard>
-        <div className={styles['product_info']}>
-          <Text>{t('desc')}</Text>
-        </div>
+        <div className={styles['product_info']}>{t('desc')}</div>
       </BreadCard>
 
       <BreadCard>

@@ -1,4 +1,4 @@
-export const DOMAIN = 'https://extrabread.com';
+export const DOMAIN = 'https://bestpos.com';
 export const BLOGS_API = process.env.NEXT_PUBLIC_WORDPRESS_HOST;
 
 import {
@@ -49,9 +49,8 @@ export enum NavigationLabel {
 }
 
 export const COMPANY_MENU = [
-  { title: 'support', href: RouteConfig.Contacts },
+  { title: 'contact_us', href: RouteConfig.Contacts },
   { title: 'FAQ', href: RouteConfig.Faqs },
-  { title: 'state_regulation', href: '#' },
   { title: 'Blog', href: RouteConfig.Blogs },
   { title: 'partner', href: RouteConfig.Partner },
   { title: 'about_us', href: RouteConfig.AboutUs },

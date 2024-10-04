@@ -1,5 +1,4 @@
 import { Space, Typography } from 'antd';
-import CashAdvanceProgramBanner from 'public/images/banners/Cash Advance.png';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { Icon } from '~/ui/atoms/icon/Icon';
@@ -8,16 +7,19 @@ import { DiscoverBanner } from './components/discover-banner/DiscoverBanner';
 import { ProductFeature } from './components/features/ProductFeature';
 
 import { useTranslation } from 'next-i18next';
-import EffortlesslyImg from 'public/images/products/Effortlessly.png';
-import FasterFundsImg from 'public/images/products/Faster Funds.png';
-import LevelingUpImg from 'public/images/products/Leveling Up.png';
-import MitigateRiskImg from 'public/images/products/Mitigate Risk.png';
+
+import HTMLReactParser from 'html-react-parser';
 import { useMemo } from 'react';
 import { AllBusinesses } from '~/ui/organisms/all-businesses/AllBusinesses';
 import styles from './ProductsTemplate.module.scss';
 
 const { Text } = Typography;
-const ICONS = [FasterFundsImg, MitigateRiskImg, EffortlesslyImg, LevelingUpImg];
+const ICONS = [
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728012099/bestpos/banner/xdoz3gxklik1xo6tbjov.png',
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728012099/bestpos/banner/ojjvfmdaj3h814doyk5k.png',
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728012099/bestpos/banner/m3znxmm8wjkv2bj1krhf.png',
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728012099/bestpos/banner/ycek2kk96soqzlvrmfs6.png',
+];
 
 export const CashAdvance = () => {
   const { t } = useTranslation('cash_advance');
@@ -34,11 +36,13 @@ export const CashAdvance = () => {
   return (
     <div>
       <Banner
-        hasBackground
+        className="bg-blue-300"
         type={['product', 'align-left']}
         content={<span>{common('product_types.cash_advance.title')}</span>}
         button={<GetPricingButton />}
-        src={CashAdvanceProgramBanner.src}
+        src={
+          'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728012099/bestpos/banner/oc8m3nnuv7peh03krqzf.webp'
+        }
         descriptions={
           <Space direction="vertical">
             {Array.isArray(BANNER_CONTENT) &&
@@ -58,9 +62,7 @@ export const CashAdvance = () => {
       />
 
       <BreadCard>
-        <div className={styles['product_info']}>
-          <Text>{t('desc')}</Text>
-        </div>
+        <div className={styles['product_info']}>{HTMLReactParser(t('desc'))}</div>
       </BreadCard>
 
       <BreadCard>

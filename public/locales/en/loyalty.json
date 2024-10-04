@@ -1,5 +1,5 @@
 {
-    "desc": "Our customized Loyalty & Rewards Program by Elecpayments can assist you in attracting new customers and incentivizing your existing clientele.",
+    "desc": "<span className='text-blue-500'>Our customized Loyalty & Rewards Program by Elecpayments</span> can assist you in attracting new customers and incentivizing your existing clientele.",
     "banner": [
         "Offer incentives to the customers",
         "Provide rewards to customers",
@@ -9,23 +9,25 @@
     "features": [
         {
             "title": "Engaging with Customers",
-            "description": "Create a personalized customer experience by providing exclusive perks that are simple to establish.",
+            "description": "Ensure a personalized customer experience by offering exclusive perks that are easy to set up.",
             "details": [
-                "Customize your program to align with your business needs and design various rewards to attract a broader range of customers.",
+                "Tailor your program to meet your business requirements and create an array of incentives to appeal to a wider customer base.",      
                 "Customers receive notifications when they earn a reward, and they can redeem it during checkout."
+
             ]
         },
         {
             "title": "Simplify your Sales Process",
-            "description": "Transform your rewards program into a robust sales tool with practical, ready-to-use solutions.",
+            "description": "Enhance your rewards program into a powerful sales tool with practical and ready-to-use solutions.",
             "details": [
-                "Monitor customer analytics and usage through a user-friendly dashboard.",
-                "Speed up transactions with touchless payment alternatives to reduce wait times."
+                "Keep track of customer analytics and usage using a simple and intuitive dashboard.",
+                "Accelerate transactions by utilizing touchless payment alternatives to minimize wait times."
+
             ]
         },
         {
             "title": "Personalize Your Programs",
-            "description": "With various customer engagement options and adaptable levels that align with your brand, business model, and customer preferences, personalizing your program is effortless and impactful.",
+            "description": "Easily customize your program with a range of customer engagement options and flexible levels that perfectly match your brand, business model, and customer preferences, ensuring a seamless and powerful impact.",
             "details": [
                 "Design in-store marketing materials and promotional signage.",
                 "Select between a punch-based or points-based system."
@@ -33,10 +35,10 @@
         },
         {
             "title": "Drive Sales",
-            "description": "Attract new customers and incentivize them to return with promotional programs that generate interest and boost your profits.",
+            "description": "Attract and retain new customers with irresistible promotional programs designed to ignite interest and drive up your profits.",
             "details": [
-                "Dispatch digital offers, in-store coupons, and real-time promotions directly from your POS.",
-                "Certain promos are pre-installed and ready to use."
+                "Send out digital offers, in-store coupons, and real-time promotions directly from your point of sale system.",
+                "Some promotions are pre-installed and ready to use."
             ]
         }
     ],

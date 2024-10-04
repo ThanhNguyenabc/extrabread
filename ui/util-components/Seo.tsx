@@ -19,9 +19,10 @@ export const Seo: React.FC<Props> = ({
 }) => {
   const { asPath } = useRouter();
   const url = asPath ? `${DOMAIN}${asPath}` : DOMAIN;
-  const title = initTitle || 'ExtraBread: Save and Earn more Bread$ for your business';
+  const title = initTitle || 'BestPOS: Finding you the best POS';
   const isHome = asPath === '/';
-  let image = 'https://res.cloudinary.com/dgrym3yz3/image/upload/v1702024071/extrabread/ebrz7dhu2jh8zvaaw2fd.png';
+  let image =
+    'https://res.cloudinary.com/dgrym3yz3/image/upload/v1702024071/extrabread/ebrz7dhu2jh8zvaaw2fd.png';
   if (initImage && initImage.length > 0) image = initImage;
 
   return (
@@ -32,14 +33,14 @@ export const Seo: React.FC<Props> = ({
         name="description"
         content={
           initDesc ||
-          'Let ExtraBread help you save money with a free POS system, receive a cash signing bonus, and reduce your payment processing fees.'
+          'Let  help you save money with a free POS system, receive a cash signing bonus, and reduce your payment processing fees.'
         }
       />
       <meta
         name="keywords"
         content={
           initKeywords ||
-          'extra bread, capital, processing fees, cash signing bonus, cash bonus, no processing, cash discount, zero processing, POS system, point of sale, Revel, Clover, Clover Flex, Clover Duo, Ovvi, Micros, Exatouch, Simphony, Aldelo, Toast, Union, Rpower, Aloha, TouchBistro, best pos, pos, small business, retail, pizzeria, bar and night club, quick service, restaurant, point of sale system, revel pos, clover pos, ovvi pos, micros pos, exatouch pos, simphony pos, aldelo pos, toast pos, square, top pos providers, smart pos system'
+          'OS system, point of sale, Revel, Clover, Clover Flex, Clover Duo, Ovvi, Micros, Exatouch, Simphony, Aldelo, Toast, RPower, Union, POSusa, best pos, pos, small business, retail, pizzeria, bar and night club, quick service, restaurant, point of sale system, revel pos, clover pos, ovvi pos, micros pos, exatouch pos, simphony pos, aldelo pos, toast pos, square, rpower pos, union pos, top pos providers, smart pos system'
         }
       />
 

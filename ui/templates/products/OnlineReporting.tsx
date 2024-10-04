@@ -61,9 +61,7 @@ export const OnlineReporting = () => {
       />
 
       <BreadCard>
-        <div className={styles['product_info']}>
-          <Text>{HTMLReactParser(t('desc'))}</Text>
-        </div>
+        <div className={styles['product_info']}>{HTMLReactParser(t('desc'))}</div>
       </BreadCard>
 
       <BreadCard>

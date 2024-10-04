@@ -1,5 +1,4 @@
 import { Space, Typography } from 'antd';
-import CheckServicesBanner from 'public/images/banners/Check Services.png';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { GetPricingButton } from '~/ui/atoms/get-pricing/GetPricingButton';
 import { Icon } from '~/ui/atoms/icon/Icon';
@@ -7,17 +6,17 @@ import { Banner } from '~/ui/organisms/banner/Banner';
 import { DiscoverBanner } from './components/discover-banner/DiscoverBanner';
 import { ProductFeature } from './components/features/ProductFeature';
 
-import FasterFundsImg from 'public/images/products/Faster Funds.png';
-import MitigateRiskImg from 'public/images/products/Mitigate Risk.png';
-import NeverMissImg from 'public/images/products/Never Miss A Sale.png';
-
 import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
 import { AllBusinesses } from '~/ui/organisms/all-businesses/AllBusinesses';
 import styles from './ProductsTemplate.module.scss';
 
 const { Text } = Typography;
-const ICONS = [FasterFundsImg, MitigateRiskImg, NeverMissImg];
+const ICONS = [
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728012099/bestpos/banner/xdoz3gxklik1xo6tbjov.png',
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728012099/bestpos/banner/ojjvfmdaj3h814doyk5k.png',
+  'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728013570/bestpos/banner/vnsoreamy77rkgeqg7lv.png',
+];
 export const CheckServices = () => {
   const { t } = useTranslation('check_services');
   const { t: common } = useTranslation();
@@ -33,11 +32,13 @@ export const CheckServices = () => {
   return (
     <div>
       <Banner
-        hasBackground
+        className="bg-blue-300"
         type={['product', 'align-left']}
         content={<span>{common('product_types.check_service.title')}</span>}
         button={<GetPricingButton />}
-        src={CheckServicesBanner.src}
+        src={
+          'https://res.cloudinary.com/dgrym3yz3/image/upload/v1728013451/bestpos/banner/hdfgrosyw1tglbcv9e7v.webp'
+        }
         descriptions={
           <Space direction="vertical">
             {BANNER_CONTENT.map((item, idx) => (
@@ -56,9 +57,7 @@ export const CheckServices = () => {
       />
 
       <BreadCard>
-        <div className={styles['product_info']}>
-          <Text>{t('desc')}</Text>
-        </div>
+        <div className={styles['product_info']}>{t('desc')}</div>
       </BreadCard>
 
       <BreadCard>
