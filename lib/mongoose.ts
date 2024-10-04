@@ -1,7 +1,6 @@
 import { BEST_POS_URL } from '@/constants';
 import mongoose from 'mongoose';
 
-let dbInstance;
 const dbURL = BEST_POS_URL || '';
 
 export const connectMongo = async () => {
@@ -9,7 +8,7 @@ export const connectMongo = async () => {
     if (mongoose.connection.readyState >= 1) {
       return;
     }
-    dbInstance = await mongoose.connect(dbURL, {
+    await mongoose.connect(dbURL, {
       maxPoolSize: 10,
       socketTimeoutMS: 100000,
     });

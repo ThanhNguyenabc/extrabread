@@ -5,7 +5,7 @@ import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
 
 export const sendEmail = async (option: Mail.Options, prefix = 'BestPOS lead') => {
-  const mail_receivers: Array<string> = [];
+  const mailReceivers: Array<string> = [];
 
   if (!process.env.ENABLE_SENDING_EMAIL) {
     return false;
@@ -17,9 +17,9 @@ export const sendEmail = async (option: Mail.Options, prefix = 'BestPOS lead') =
     if (process.env.ENV === 'production') {
       await getMongoDbClient(BEST_POS_URL);
       const configs = await AppConfigModel.find({});
-      mail_receivers.push(...(configs?.[0]?.mail_receivers || []));
+      mailReceivers.push(...(configs?.[0]?.mail_receivers || []));
     } else {
-      mail_receivers.push(`${process.env.RECEIVER_EMAIL}`);
+      mailReceivers.push(`${process.env.RECEIVER_EMAIL}`);
     }
 
     const transporter = nodemailer.createTransport({
@@ -34,7 +34,7 @@ export const sendEmail = async (option: Mail.Options, prefix = 'BestPOS lead') =
 
     const res = await transporter.sendMail({
       from: `${prefix} <${senderMail}>`,
-      to: mail_receivers,
+      to: mailReceivers,
       subject: 'bestpos',
       ...option,
     });

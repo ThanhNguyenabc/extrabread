@@ -19,7 +19,7 @@ module.exports = {
   plugins: ['react', '@typescript-eslint'],
   rules: {
     'react/react-in-jsx-scope': 0,
-    camelcase: [1, { properties: 'never' }],
+    camelcase: 0,
     '@typescript-eslint/ban-ts-ignore': 0,
     '@typescript-eslint/explicit-module-boundary-types': 0,
     '@typescript-eslint/explicit-function-return-type': 0,

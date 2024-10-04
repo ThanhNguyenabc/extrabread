@@ -1,12 +1,10 @@
 import Airtable from 'airtable';
-import { customAlphabet } from 'nanoid';
 
 Airtable.configure({
   apiKey: `${process.env.AIR_TABLE_KEY}`,
 });
 
 const BASE_ID = `${process.env.AIR_TABLE_BASE_ID}`;
-const nanoid = customAlphabet('123456789abcde', 10);
 
 const sendToAirtable = async (table: string, body: object) => {
   try {

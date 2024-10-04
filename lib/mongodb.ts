@@ -1,7 +1,5 @@
 import { Db, MongoClient } from 'mongodb';
 
-const URL = `${process.env.MONGODB_URL}`;
-
 const connectDb = async url => {
   try {
     const instance = await new MongoClient(url, {

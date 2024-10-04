@@ -9,7 +9,7 @@ interface ThanksYouFormProps {
   eventName?: string;
   className?: string;
 }
-const ThanksYouForm = ({ title, className, eventName = 'lead_form' }: ThanksYouFormProps) => {
+const ThanksYouForm = ({ title, className }: ThanksYouFormProps) => {
   const { t } = useTranslation();
 
   return (
