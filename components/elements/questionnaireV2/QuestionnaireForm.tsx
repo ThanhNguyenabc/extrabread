@@ -12,7 +12,7 @@ import SaleSystemQuestion from './SaleSystemQuestion';
 import StationQuestion, { StationData } from './StationQuestion';
 import { RouteConfig } from '@/constants/routes';
 
-const QuestionnaireForm = () => {
+const QuestionnaireForm = ({onClose}:{onClose:() => void}) => {
   const router = useRouter();
 
   const questionnaireStore = useQuestionnaireStore(state => state);
@@ -39,7 +39,7 @@ const QuestionnaireForm = () => {
 
   return (
     <Box className="flex flex-col gap-6 py-8 md:py-10 md:gap-10">
-      <Button variant={"outline"}  size={'icon'} className='rounded-[20px]'>
+      <Button variant={"outline"}  size={'icon'} className='rounded-[20px]' onClick ={onClose}>
         <IcClose   />
       </Button>
       <p className="txt-md-bold p-4 bg-accent  rounded-2xl -mt-4">

@@ -1,16 +1,15 @@
-import useTrans from 'hooks/useTrans';
 import React from 'react';
 
 import SelectedList from '@/components/ui/select-list';
 import { BUSINESS_MENU } from '@/constants';
 import useQuestionnaireStore, { updateQuestionnaireAns } from '@/hooks/questionnaire_store';
+import { useTranslation } from 'next-i18next';
 
 const BusinessQuestion = () => {
   const businessId = useQuestionnaireStore(state => state.businessId);
   const updateData = updateQuestionnaireAns();
 
-  const { locale } = useTrans();
-
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col gap-4">
       <h3 className="txt-large-bold">What best describes your business?</h3>
@@ -26,7 +25,7 @@ const BusinessQuestion = () => {
               className="flex flex-row items-center p-3 gap-3 md:gap-2 md:flex-col md:justify-center"
             >
               <Icon className="text-4xl" />
-              <p className="txt-md-bold md:text-center">{item.title[locale]}</p>
+              <p className="txt-md-bold md:text-center">{t(item.title)}</p>
             </div>
           );
         }}
