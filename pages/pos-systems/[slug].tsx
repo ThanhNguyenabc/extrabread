@@ -1,29 +1,34 @@
-import POSSystems from "components/elements/POSSytems";
-import { MetaTag } from "models/app_configs";
-import { Product } from "models/product.model";
-import { GetStaticPropsContext } from "next";
-import { getSEOTagByBusinessType } from "pages/api/configs";
-import { fetchProductList } from "pages/api/products";
-import React from "react";
-import { CategoryList } from "utils/routes";
+import { BUSINESS_MENU } from '@/constants';
+import { MetaTag } from '@/models/bestpos/app_configs';
+import { Product } from '@/models/bestpos/product.model';
+import { getSEOTagByBusinessType } from '@/pages/api/configs';
+import POSSystems from 'components/elements/POSSytems';
+import { GetStaticPropsContext } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { fetchProductList } from 'pages/api/products';
+import React from 'react';
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const slug = context.params?.slug as string;
-  const data = await Promise.all([
+  const locale = context.locale || 'en';
+  const [products, seoTag, translations] = await Promise.all([
     fetchProductList({ type: slug }),
     getSEOTagByBusinessType(slug),
+    serverSideTranslations(locale, ['common', 'pos_systems']),
   ]);
   return {
     props: {
-      products: JSON.parse(JSON.stringify(data?.[0] || [])),
-      seoTag: data?.[1],
+      products: JSON.parse(JSON.stringify(products || [])),
+      seoTag,
+      ...translations,
     },
+
     revalidate: 60,
   };
 };
 
 export async function getStaticPaths() {
-  const paths = CategoryList.map((item) => ({
+  const paths = BUSINESS_MENU.map(item => ({
     params: {
       slug: item.type,
     },

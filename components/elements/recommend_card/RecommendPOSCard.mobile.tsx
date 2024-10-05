@@ -7,12 +7,12 @@ import { twMerge } from 'tailwind-merge';
 import { COLORS } from '@/constants/colors';
 import useTrans from '@/hooks/useTrans';
 import { DefaultImg } from '@/ui/img-resource/ImageResources';
-import { BreadMeBtn } from '../../common/BreadmeBtn';
-import PricingBtn from '../../common/PricingBtn';
 import { POSCardProps } from '../pos_card/POSCardTypes';
+import { BreadMeBtn } from '@/components/ui/BreadmeBtn';
+import PricingBtn from '@/components/ui/PricingBtn';
 
 const RecommendPOSCardMobile = ({ data, classname = '' }: POSCardProps) => {
-  const overallRating = data.expert_opinion.overall;
+  const overallRating = data.expert_opinion?.overall;
   const { locale } = useTrans();
   return (
     <div

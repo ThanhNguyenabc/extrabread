@@ -1,11 +1,11 @@
-import Questionnaire from '@/components/elements/questionnaire/Questionnaire';
 import { QuestionnaireProps } from '@/components/elements/questionnaire/Questionnaire.type';
-import { RouteConfig } from '@/constants/routes';
+import QuestionnaireForm from '@/components/elements/questionnaireV2/QuestionnaireForm';
+import BDrawer from '@/components/ui/drawer';
 import { useTranslation } from 'next-i18next';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { BreadButtonProps, Button } from '../button/Button';
+
 export const GetPricingButton = ({
   title,
   ...props
@@ -13,26 +13,25 @@ export const GetPricingButton = ({
   title?: string;
 }) => {
   const ref = useRef<QuestionnaireProps>(null);
-  const { t } = useTranslation();
-  const { pathname } = useRouter();
-  const txtButton = title || t('get_pricing');
+  const { t: common } = useTranslation();
 
-  if (pathname == '/hp2') {
-    return (
-      <>
-        <Button type="primary" {...props} onClick={() => ref.current?.showDialog()}>
-          {txtButton}
-        </Button>
-        <Questionnaire ref={ref} />
-      </>
-    );
-  }
+  const [showForm, setShowForm] = useState(false);
+  const txtButton = title || common('get_pricing');
 
+  const setShowSuggestForm = () => setShowForm(!showForm);
   return (
-    <Link href={RouteConfig.GetPricing}>
-      <Button type="primary" {...props}>
+    <>
+      <Button
+        type="primary"
+        className='w-fit'
+        {...props}
+        onClick={setShowSuggestForm}
+      >
         {txtButton}
       </Button>
-    </Link>
+      <BDrawer open={showForm} onClose={setShowSuggestForm}>
+        <QuestionnaireForm />
+      </BDrawer>
+    </>
   );
 };

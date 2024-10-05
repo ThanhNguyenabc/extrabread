@@ -26,6 +26,14 @@ export const ItemList = memo(
     const baseItemStyle =
       'w-full border-2 rounded-lg cursor-pointer hover:border-secondary hover:bg-blue-light border-neutral-300';
 
+    console.log(isSelect);
+    console.log(
+      twMerge(
+        `${baseItemStyle}`,
+        child.props['className'],
+        isSelect && `bg-blue-light ${selectedStyle}`,
+      ),
+    );
     return React.cloneElement(child, {
       className: twMerge(
         `${baseItemStyle}`,

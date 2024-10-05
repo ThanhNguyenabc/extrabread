@@ -1,5 +1,7 @@
 import { ApiResponse } from '@/models/bestpos/api_response';
 import { DataSubmission } from '@/models/bestpos/data_submission';
+import { Product } from '@/models/bestpos/product.model';
+import { SuggestPOSParams } from '@/models/bestpos/suggest_pos_request_param';
 import { FormData } from '@/models/form_data';
 import { FormValue } from '@/ui/templates/get-pricing/types';
 import { fetcher } from './fetcher';
@@ -130,4 +132,18 @@ export const submitContact = async (data: DataSubmission) => {
     console.log('error = ', error);
     return false;
   }
+};
+
+export const getSuggestPOS = async (params: SuggestPOSParams) => {
+  try {
+    const result = await fetcher<ApiResponse<Product[]>>({
+      url: '/questionnaire',
+      params,
+    });
+
+    return result.data;
+  } catch (error) {
+    console.log('error = ', error);
+  }
+  return [];
 };

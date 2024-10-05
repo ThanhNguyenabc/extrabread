@@ -62,3 +62,5 @@ export { default as IcLike } from 'public/images/icons/ic_like.svg';
 export { default as IcApple } from 'public/images/icons/apple.svg';
 export { default as IcAndroid } from 'public/images/icons/android.svg';
 export { default as IcWindow } from 'public/images/icons/windows.svg';
+export { default as IcStar } from 'public/images/icons/ic_star.svg';
+export { default as IcInfo } from 'public/images/icons/ic_info.svg'

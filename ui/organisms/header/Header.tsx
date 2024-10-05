@@ -192,7 +192,7 @@ const MenuDrawer = ({
                 <Heading size="sm">{t(currentMenu)}</Heading>
               </div>
 
-              {item.children[0].label}
+              {item.children?.[0].label}
             </div>
           </CSSTransition>
         ))}

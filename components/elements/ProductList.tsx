@@ -1,32 +1,28 @@
-import useTrans from "hooks/useTrans";
-import { CategoryType } from "@/models/bestpos/category_type";
-import React from "react";
-import { Priority, RecommendColorConfig } from "./pos_card/POSCardTypes";
-import POSCard from "./pos_card/POSCard";
-import { Product } from "models/product.model";
-import Loading from "../ui/loading/Loading";
-import Box from "../ui/bestpos/Box";
+import RequestDemoPOS from '@/components/elements/request_demo_pos/RequestDemoPOS';
+import BDrawer from '@/components/ui/drawer';
+import { CategoryType } from '@/models/bestpos/category_type';
+import { Product } from '@/models/bestpos/product.model';
+import { useTranslation } from 'next-i18next';
+import React, { useState } from 'react';
+import Box from '../ui/bestpos/Box';
+import Loading from '../ui/loading/Loading';
+import POSCard from './pos_card/POSCard';
+import { Priority, RecommendColorConfig } from './pos_card/POSCardTypes';
 
-const ProductList = ({
-  type,
-  data,
-}: {
-  type: string;
-  data: Array<Product>;
-}) => {
-  const { t } = useTrans();
+const ProductList = ({ type, data }: { type: string; data: Array<Product> }) => {
+  const { t } = useTranslation('pos_systems');
+  const [openForm, setOpenForm] = useState(false);
 
+  const changeDrawerState = () => {
+    setOpenForm(!openForm);
+  };
   const renderItems = () => {
     let items: Array<React.ReactElement> = [];
     if (data)
       data.forEach((item, index) => {
         if (index < 3) {
           const priority =
-            index == 0
-              ? Priority.first
-              : index == 1
-              ? Priority.second
-              : Priority.third;
+            index == 0 ? Priority.first : index == 1 ? Priority.second : Priority.third;
 
           const customClassName = `${RecommendColorConfig[priority].borderColor}`;
 
@@ -36,35 +32,42 @@ const ProductList = ({
               data={item}
               classname={customClassName}
               priority={priority}
-            />
+              openRequestDemo={changeDrawerState}
+            />,
           );
           if (index == 2 && type == CategoryType.popular) {
             items.push(
-              <div
-                className="relative w-full h-[32px]"
-                key={`divider-${index}`}
-              >
+              <div className="relative w-full h-[32px]" key={`divider-${index}`}>
                 <div className="absolute mx-auto left-0 right-0 bg-neutral-100 px-4 py-1 border-neutral-300 border-2 rounded-lg w-fit">
-                  <p className="txt-sm-bold md:text-base ">
-                    {t("other_recommend_pos")}
-                  </p>
+                  <p className="txt-sm-bold md:text-base ">{t('other_recommend_pos')}</p>
                 </div>
                 <span className="divider h-[2px]" />
-              </div>
+              </div>,
             );
           }
         } else {
-          items.push(<POSCard key={`card-item-${index}`} data={item} />);
+          items.push(
+            <POSCard
+              key={`card-item-${index}`}
+              data={item}
+              openRequestDemo={changeDrawerState}
+            />,
+          );
         }
       });
     return items;
   };
 
   return (
-    <Box className="flex flex-1 container-content gap-6 items-center min-h-[300px]">
-      {!data && <Loading />}
-      {data && renderItems()}
-    </Box>
+    <>
+      <Box className="flex flex-1 container-content gap-6 items-center min-h-[300px] mb-10">
+        {!data && <Loading />}
+        {data && renderItems()}
+      </Box>
+      <BDrawer onClose={changeDrawerState} open={openForm}>
+        <RequestDemoPOS onClose={changeDrawerState} />
+      </BDrawer>
+    </>
   );
 };
 export default ProductList;

@@ -1,5 +1,5 @@
+import { IcRecommend } from "@/ui/img-resource/ExIcon";
 import React from "react";
-import IcRecommend from "assets/icons/ic_recommend.svg";
 import { twMerge } from "tailwind-merge";
 
 export interface RecommendTagProps {

@@ -2,11 +2,10 @@ import RecommendTag from '@/components/ui/RecommendTag';
 import { getSystemIcon } from '@/helpers';
 import useTrans from '@/hooks/useTrans';
 import { DefaultImg } from '@/ui/img-resource/ImageResources';
-import IcCheckbox from 'assets/icons/ic_checkbox.svg';
-import IcChervonRight from 'assets/icons/ic_chervon_right.svg';
 
 import { Button } from '@/components/ui/button';
 import CustomCircularProgress from '@/components/ui/CustomCircularProgress';
+import { IcCheck, IcChevronDown, IcChevronRight } from '@/ui/img-resource/ExIcon';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -20,15 +19,14 @@ const POSCardDesktop = ({
   classname = '',
   priority,
   recommendTagProps,
+  openRequestDemo,
   navigateTo = '',
 }: POSCardProps) => {
-  const openSideBar = () => {};
-  const { t } = useTranslation();
+  const { t } = useTranslation('pos_systems');
   const { locale } = useTrans();
-  const overallRating = data.expert_opinion.overall;
+  const overallRating = data.expert_opinion?.overall;
   const { id, slug, name } = data;
 
-  const openDemoDialog = () => openSideBar();
 
   return (
     <div
@@ -61,7 +59,7 @@ const POSCardDesktop = ({
               if (index > 3) return;
               return (
                 <li className="flex flex-row items-center gap-2 mt-2" key={`${index}-item-pros`}>
-                  <IcCheckbox className="text-secondary text-sm" />
+                  <IcCheck className="text-secondary text-sm" />
                   <p className="txt-sm flex-1 text-left text-neutral-700">{item}</p>
                 </li>
               );
@@ -82,21 +80,22 @@ const POSCardDesktop = ({
           <p className="text-sm text-neutral-600">{(priority && t('out_standing')) || t('good')}</p>
           <div className="inline-flex link-hover text-secondary txt-sm-bold items-center gap-1">
             {t('read_review')}
-            <IcChervonRight className=" text-[9px]" />
+            <IcChevronRight className="text-[9px]" />
           </div>
         </Link>
         <div className="flex-1 flex flex-col gap-8 py-8 px-4 items-center self-center">
           <div
-            onClick={openDemoDialog}
+            onClick={openRequestDemo}
             className="text-base link-hover font-semibold text-secondary cursor-pointer px-3 text-center max-w-[230px]"
           >
             {t('free_pos').replace('#', name)}
           </div>
           <Button
-            title={t('request_a_demo')}
-            onClick={openDemoDialog}
-            className="rounded-[30px] w-[210px] bg-success-500 md:text-base lg:text-base"
-          />
+            onClick={openRequestDemo}
+            className="rounded-[30px] w-[210px] bg-success hover:bg-success/90 md:text-base lg:text-base"
+          >
+            {t('request_a_demo')}
+          </Button>
         </div>
       </div>
 

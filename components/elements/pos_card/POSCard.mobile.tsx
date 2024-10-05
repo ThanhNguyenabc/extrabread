@@ -1,11 +1,9 @@
-import IcChervonRight from 'assets/icons/ic_chervon_right.svg';
-import IcLike from 'assets/icons/ic_like.svg';
 import Image from 'next/image';
 import React from 'react';
-
 import { Button } from '@/components/ui/button';
-import { COLORS } from '@/constants/colors';
+import CustomCircularProgress from '@/components/ui/CustomCircularProgress';
 import { getSystemIcon } from '@/helpers';
+import { IcChevronRight, IcLike } from '@/ui/img-resource/ExIcon';
 import { DefaultImg } from '@/ui/img-resource/ImageResources';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
@@ -13,13 +11,11 @@ import { twMerge } from 'tailwind-merge';
 import POSCardBusinessType from './POSCardBusinessType';
 import { POSCardProps } from './POSCardTypes';
 
-const POSCardMobile = ({ data, priority, classname, navigateTo = '' }: POSCardProps) => {
-  const openSideBar = () => {};
-  const overallRating = data.expert_opinion.overall;
+const POSCardMobile = ({ data, priority, classname, navigateTo = '' ,openRequestDemo}: POSCardProps) => {
+  const overallRating = data.expert_opinion?.overall;
   const { id, slug, name } = data;
-  const { t } = useTranslation();
+  const { t } = useTranslation("pos_systems");
 
-  const openDemoDialog = () => openSideBar();
 
   return (
     <div
@@ -69,7 +65,7 @@ const POSCardMobile = ({ data, priority, classname, navigateTo = '' }: POSCardPr
               </p>
               <div className="inline-flex link-hover text-secondary text-xs items-center gap-1">
                 {t('read_review')}
-                <IcChervonRight className="text-[8px]" />
+                <IcChevronRight className="text-[8px]" />
               </div>
             </div>
           </div>
@@ -77,17 +73,18 @@ const POSCardMobile = ({ data, priority, classname, navigateTo = '' }: POSCardPr
 
         <div className="flex flex-1 flex-col gap-5 px-2 items-center justify-end py-3 border-l border-neutral-300">
           <div
-            onClick={openDemoDialog}
+            onClick={openRequestDemo}
             className="text-sm link-hover font-semibold leading-5 text-secondary cursor-pointer"
           >
             {t('free_pos').replace('#', name)}
           </div>
           <Button
-            title={t('request_a_demo')}
-            className="rounded-[30px] w-[160px] text-sm md:text-sm"
-            style={{ background: COLORS.success }}
-            onClick={openDemoDialog}
-          />
+            onClick={openRequestDemo}
+            className="rounded-[30px] w-[160px] bg-success hover:bg-success/90 text-sm md:text-sm"
+          >
+            {t('request_a_demo')}
+          </Button>
+         
         </div>
       </div>
 

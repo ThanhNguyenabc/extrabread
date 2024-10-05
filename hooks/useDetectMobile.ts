@@ -12,7 +12,7 @@ export const useDevice = () => {
     isLessTablet: false,
     isTablet: false,
     isLaptop: true,
-    screenSize: window.innerWidth || 0,
+    screenSize: 0,
   });
 
   useEffect(() => {

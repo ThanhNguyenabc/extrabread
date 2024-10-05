@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next';
 import React, { useCallback, useEffect } from 'react';
 
 const BusinessTypes = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
 
   const setBusinessType = (index: number) => {
     useRequestDemoStore.setState(state => ({

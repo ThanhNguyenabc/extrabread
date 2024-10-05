@@ -1,30 +1,30 @@
+import RequestDemoPOS from '@/components/elements/request_demo_pos/RequestDemoPOS';
+import BDrawer from '@/components/ui/drawer';
+import SelectedList from '@/components/ui/select-list';
+import { BUSINESS_MENU } from '@/constants';
+import { RouteConfig } from '@/constants/routes';
+import { getCurrentMonth } from '@/helpers/date';
+import { MetaTag } from '@/models/bestpos/app_configs';
 import { CategoryType } from '@/models/bestpos/category_type';
-import IcStar from 'assets/icons/ic_star.svg';
-import Categories from 'components/common/Categories';
-import FooterCTA from 'components/common/FooterCTA';
-import HeadTag from 'components/common/HeadTag';
+import { Product } from '@/models/bestpos/product.model';
+import { IcStar } from '@/ui/img-resource/ExIcon';
+import { Seo } from '@/ui/util-components/Seo';
 import useTrans from 'hooks/useTrans';
 import HTMLReactParser from 'html-react-parser';
-import { Locale, MetaTag } from 'models/app_configs';
-import { Product } from 'models/product.model';
 import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
-import { getCurrentMonth } from 'utils/date_utils';
-import { AppRoutes, CategoryList } from 'utils/routes';
+import React, { useState } from 'react';
 import ProductList from './ProductList';
 
 const ALLTABS = [
   {
-    title: {
-      [Locale.en]: 'Popular',
-      [Locale.es]: 'Popular',
-    },
+    title: 'popular',
     type: CategoryType.popular,
-    link: AppRoutes.POSSystemPage,
+    link: RouteConfig.POSSystems,
     icon: IcStar,
   },
-  ...CategoryList,
+  ...BUSINESS_MENU,
 ];
 
 interface POSSystemsProps {
@@ -34,7 +34,9 @@ interface POSSystemsProps {
 }
 
 const POSSystems = ({ seoTag, data }: POSSystemsProps) => {
-  const { t } = useTranslation();
+  const { t: common } = useTranslation('common');
+
+  const { t } = useTranslation('pos_systems');
   const { locale } = useTrans();
   const router = useRouter();
   const { slug: type = CategoryType.popular } = router.query;
@@ -42,10 +44,10 @@ const POSSystems = ({ seoTag, data }: POSSystemsProps) => {
 
   return (
     <>
-      <HeadTag tags={seoTag} />
-      <div className="flex flex-col bg-neutral-100 flex-1">
+      <Seo title={seoTag?.title[locale]} description={seoTag?.description[locale]} />
+      <div className="flex flex-col bg-neutral-100 flex-1 overflow-hidden">
         <div className="flex flex-col gap-4 py-6 bg-white mb-6 px-4 lg:items-center text-center md:py-10 md:px-12">
-          <p className="txt-sm-bold">{`${t('last_updated')} ${getCurrentMonth(locale)}`}</p>
+          <p className="txt-sm-bold">{`${common('last_updated')} ${getCurrentMonth(locale)}`}</p>
 
           <h1 className="txt-heading-medium mx-auto md:txt-heading-xlarge">
             {HTMLReactParser(t('category_title'))}
@@ -54,11 +56,37 @@ const POSSystems = ({ seoTag, data }: POSSystemsProps) => {
             {HTMLReactParser(t('category_desc'))}
           </h2>
 
-          <Categories items={ALLTABS} selectedIndex={selectedTabIndex} />
+          <SelectedList
+            data={ALLTABS}
+            className="flex overflow-auto"
+            selectedClassName="bg-neutral-900 text-white"
+            selectIndex={selectedTabIndex}
+            renderItem={(item, index) => {
+              const Icon = item.icon;
+              return (
+                <Link
+                  key={item.title}
+                  href={`${RouteConfig.POSSystems}/${
+                    item.type == CategoryType.popular ? '' : item.type
+                  }`}
+                  className="border-none rounded-3xl"
+                >
+                  <div
+                    className="flex flex-col items-center gap-1 text-sm font-semibold py-[10px] min-w-[180px] lg:min-w-fit px-4 border rounded-3xl border-neutral-300
+               hover:bg-neutral-900 h-full hover:text-white"
+                  >
+                    <Icon width={20} height={20} />
+                    {common(item.title)}
+                  </div>
+                </Link>
+              );
+            }}
+          />
         </div>
 
         <ProductList type={type as string} data={data} />
-        <FooterCTA className="mt-12" />
+        {/* <FooterCTA className="mt-12" /> */}
+     
       </div>
     </>
   );

@@ -18,13 +18,13 @@ const POSCard = (props: POSCardProps) => {
 
   if (screenSize >= LG_SCREEN) CardCmp = POSCardDesktop;
 
-  // const detailURL = props.navigateTo || `${AppRoutes.POSDetailPage}/${props.data.slug}`;
+  const detailURL = props.navigateTo || `/${props.data.slug}`;
 
   return (
     <CardCmp
       {...props}
       recommendTagProps={props.priority && RecommendColorConfig[props.priority]}
-      navigateTo={''}
+      navigateTo={detailURL}
     />
   );
 };

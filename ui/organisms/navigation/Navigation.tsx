@@ -1,3 +1,4 @@
+import { RouteConfig } from '@/constants/routes';
 import { Menu, Space, Typography } from 'antd';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
@@ -11,7 +12,6 @@ import {
   PRODUCTS_MENU,
   SOLUTIONS_MENU,
 } from '~/constants/index';
-import { RouteConfig } from '@/constants/routes';
 import { Container } from '~/ui/atoms/container/Container';
 import { Icon } from '~/ui/atoms/icon/Icon';
 import styles from './Navigation.module.scss';
@@ -127,25 +127,7 @@ export const MENU_ITEMS = [
       },
     ],
   },
-  {
-    key: RouteConfig.Equipment,
-    label: NavigationLabel.Equipments,
-    children: [
-      {
-        type: 'group',
-        label: (
-          <div className={styles['navigation_pos-menus']}>
-            <Container className={styles['navigation_pos-menus-container']}>
-              {EQUIPMENTS_MENU.map((item, idx) => (
-                <POSCard key={`${idx}`} {...item} />
-              ))}
-            </Container>
-            <ContactUs />
-          </div>
-        ),
-      },
-    ],
-  },
+
   {
     key: RouteConfig.BusinessTypes,
     label: NavigationLabel.BusinessTypes,
@@ -167,6 +149,7 @@ export const MENU_ITEMS = [
   {
     key: RouteConfig.Products,
     label: NavigationLabel.Products,
+
     children: [
       {
         type: 'group',
@@ -181,6 +164,10 @@ export const MENU_ITEMS = [
         ),
       },
     ],
+  },
+  {
+    key: RouteConfig.POSSystems,
+    label: NavigationLabel.Pos_systems,
   },
 ];
 
@@ -239,6 +226,7 @@ export const Navigation: FC = () => {
     ) {
       return RouteConfig.Products;
     }
+    if (pathname == RouteConfig.POSSystems) return RouteConfig.POSSystems;
   }, [pathname]);
 
   return (
@@ -247,17 +235,32 @@ export const Navigation: FC = () => {
         activeKey={activeKey}
         mode="horizontal"
         // openKeys={[RouteConfig.Products]}
-        items={MENU_ITEMS.map(item => ({
-          ...item,
-          label: (
-            <Space size={0}>
-              {t(item.label)}
-              <Icon name="chevron-down" color="grey" />
-            </Space>
-          ),
-          popupClassName: styles['navigation_mega-menu'],
-          popupOffset: [0, 0],
-        }))}
+        items={MENU_ITEMS.map(item => {
+          if (!item.children) {
+            return {
+              ...item,
+
+              label: (
+                <Space size={0}>
+                  <Link key={item.key} href={item.key}>
+                    {t(item.label)}
+                  </Link>
+                </Space>
+              ),
+            };
+          }
+          return {
+            ...item,
+            label: (
+              <Space size={0}>
+                {t(item.label)}
+                <Icon name="chevron-down" color="grey" />
+              </Space>
+            ),
+            popupClassName: styles['navigation_mega-menu'],
+            popupOffset: [0, 0],
+          };
+        })}
       />
     </nav>
   );
