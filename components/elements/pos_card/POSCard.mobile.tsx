@@ -13,7 +13,7 @@ import { POSCardProps } from './POSCardTypes';
 
 const POSCardMobile = ({ data, priority, classname, navigateTo = '' ,openRequestDemo}: POSCardProps) => {
   const overallRating = data.expert_opinion?.overall;
-  const { id, slug, name } = data;
+  const { id, name } = data;
   const { t } = useTranslation("pos_systems");
 
 

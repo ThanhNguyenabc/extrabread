@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import SelectedList from '@/components/ui/select-list';
 import useQuestionnaireStore, { updateQuestionnaireAns } from '@/hooks/questionnaire_store';
@@ -32,9 +32,9 @@ const StationQuestion = () => {
         data={StationData}
         selectIndex={stationIndex}
         className={' md:grid-cols-2 lg:grid-cols-3'}
-        renderItem={(item, index: number) => {
+        renderItem={item => {
           return (
-            <div className="p-4">
+            <div key={item.content} className="p-4">
               <p className="text-center txt-md-bold">
                 {item.content} {t('stations')}
               </p>

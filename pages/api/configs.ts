@@ -24,7 +24,9 @@ export const getSEOTags = async (page: keyof PageMeta) => {
     return (
       data?.[0].metaTags?.pageTags?.[page] || data?.[0].metaTags?.pageTags?.home
     );
-  } catch (error) {}
+  } catch (error) {
+    console.log(error)
+  }
   return {};
 };
 
@@ -33,7 +35,9 @@ export const getSEOTagByProduct = async (productSlug: string) => {
     await connectMongo();
     const data = await AppConfigModel.find({});
     return data?.[0].metaTags?.pageTags?.["products"]?.[productSlug];
-  } catch (error) {}
+  } catch (error) {
+    console.log(error)
+  }
   return null;
 };
 
@@ -41,6 +45,8 @@ export const getSEOTagByBusinessType = async (type: string) => {
   try {
     const data = (await getSEOTags("businessTypes")) as BusinessTypeMeta;
     return data[type as keyof BusinessTypeMeta] || {};
-  } catch (error) {}
+  } catch (error) {
+    console.log(error)
+  }
   return {};
 };

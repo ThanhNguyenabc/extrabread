@@ -1,7 +1,7 @@
 import SelectedList from '@/components/ui/select-list';
 import useQuestionnaireStore, { updateQuestionnaireAns } from '@/hooks/questionnaire_store';
 import { useTranslation } from 'next-i18next';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 export const HandHeldData = [
   {
@@ -31,9 +31,9 @@ const HandHeldQuestion = () => {
         data={HandHeldData}
         selectIndex={handHeldIndex}
         className={' md:grid-cols-2 lg:grid-cols-3'}
-        renderItem={(item, index: number) => {
+        renderItem={item => {
           return (
-            <div className="p-4">
+            <div key={item.title} className="p-4">
               <p className="text-center txt-md-bold">
                 {item.title} {t('handhelds')}
               </p>

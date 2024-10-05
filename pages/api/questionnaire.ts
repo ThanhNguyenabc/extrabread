@@ -36,8 +36,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const data = productIds?.map(item => mappingData[item]);
         return res.status(200).json({ data });
       }
-      case 'POST':
-        const { ref_url, conversion_funnel, data } = req.body as DataSubmission;
+      case 'POST': {
+        const { data } = req.body as DataSubmission;
         const {
           business,
           haveSaleSystem,
@@ -48,7 +48,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         } = data as QuestionnaireContact;
         const { name, phone, email } = contact;
 
-        let content = [
+        const content = [
           `Business Type: ${BusinessMapper[business as keyof typeof BusinessMapper]}`,
           `Own a point sale system: ${haveSaleSystem}`,
           `The nubmer of station: ${numberOfStations}`,
@@ -66,11 +66,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           sendEmail({
             subject: 'Bestpos lead - Questionnaire',
             html: `<b>We have new data with the following information</b><br>
-            ${content.join('<br>')}`,
+              ${content.join('<br>')}`,
           }),
         ];
         await Promise.all(promises);
         return;
+      }
     }
   } catch (error) {
     return res.status(500).json({ error: error });

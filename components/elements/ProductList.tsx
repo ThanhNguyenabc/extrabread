@@ -17,7 +17,7 @@ const ProductList = ({ type, data }: { type: string; data: Array<Product> }) => 
     setOpenForm(!openForm);
   };
   const renderItems = () => {
-    let items: Array<React.ReactElement> = [];
+    const items: Array<React.ReactElement> = [];
     if (data)
       data.forEach((item, index) => {
         if (index < 3) {

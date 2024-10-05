@@ -1,5 +1,3 @@
-import RequestDemoPOS from '@/components/elements/request_demo_pos/RequestDemoPOS';
-import BDrawer from '@/components/ui/drawer';
 import SelectedList from '@/components/ui/select-list';
 import { BUSINESS_MENU } from '@/constants';
 import { RouteConfig } from '@/constants/routes';
@@ -14,7 +12,7 @@ import HTMLReactParser from 'html-react-parser';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import React from 'react';
 import ProductList from './ProductList';
 
 const ALLTABS = [
@@ -61,7 +59,7 @@ const POSSystems = ({ seoTag, data }: POSSystemsProps) => {
             className="flex overflow-auto"
             selectedClassName="bg-neutral-900 text-white"
             selectIndex={selectedTabIndex}
-            renderItem={(item, index) => {
+            renderItem={item => {
               const Icon = item.icon;
               return (
                 <Link
@@ -86,7 +84,6 @@ const POSSystems = ({ seoTag, data }: POSSystemsProps) => {
 
         <ProductList type={type as string} data={data} />
         {/* <FooterCTA className="mt-12" /> */}
-     
       </div>
     </>
   );

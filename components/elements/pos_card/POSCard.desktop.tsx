@@ -5,7 +5,7 @@ import { DefaultImg } from '@/ui/img-resource/ImageResources';
 
 import { Button } from '@/components/ui/button';
 import CustomCircularProgress from '@/components/ui/CustomCircularProgress';
-import { IcCheck, IcChevronDown, IcChevronRight } from '@/ui/img-resource/ExIcon';
+import { IcCheck, IcChevronRight } from '@/ui/img-resource/ExIcon';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -25,7 +25,7 @@ const POSCardDesktop = ({
   const { t } = useTranslation('pos_systems');
   const { locale } = useTrans();
   const overallRating = data.expert_opinion?.overall;
-  const { id, slug, name } = data;
+  const { id, name } = data;
 
 
   return (

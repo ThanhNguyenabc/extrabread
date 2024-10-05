@@ -16,9 +16,9 @@ const SaleSystemQuestion = () => {
         data={YesNoQuestion}
         selectIndex={saleSystemIndex}
         className={' md:grid-cols-2'}
-        renderItem={(item, index: number) => {
+        renderItem={item => {
           return (
-            <div className="p-4">
+            <div key={item} className="p-4">
               <p className="text-center txt-md-bold">{t(item)}</p>
             </div>
           );
