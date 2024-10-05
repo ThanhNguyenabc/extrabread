@@ -36,7 +36,7 @@ export const BlogsTemplate = () => {
         <SectionHeading
           centered
           level={2}
-          heading={'ExtraBread blog'}
+          heading={'Bestpos blog'}
           subHeading={`Tool and strategies modern teams need to help their companies grow.`}
         />
 

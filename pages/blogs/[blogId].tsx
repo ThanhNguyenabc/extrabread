@@ -1,45 +1,30 @@
-import { getBlogsAPI } from '@/apis/blogs';
+import useTrans from '@/hooks/useTrans';
 import { Meta } from '@/models/app_config.model';
+import { getSEOTags } from '@/pages/api/configs';
 import { BlogDetail } from '@/ui/templates/blogs/blog-detail/BlogDetail';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { GetStaticPaths, GetStaticProps } from 'next/types';
 import { Seo } from '~/ui/util-components/Seo';
-import { getSEOTag } from '../api/app-configs';
 
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getServerSideProps = async ({ locale }) => {
   const [seoTag, translation] = await Promise.all([
-    getSEOTag('blogs', locale),
+    getSEOTags('blog'),
     serverSideTranslations(locale ?? 'en', ['common']),
   ]);
   return {
     props: {
-      seoTag,
+      seoTag: seoTag,
       ...translation,
     },
     revalidate: 120,
   };
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const links = (await getBlogsAPI()) as Array<any>;
-
-  return {
-    paths:
-      links?.map(item => ({
-        params: {
-          blogId: item['slug'],
-        },
-      })) || [],
-    fallback: 'blocking',
-  };
-};
-
 const BlogDetailPage = ({ seoTag }: { seoTag?: Meta }) => {
-  const { title, description, keywords, image } = seoTag || {};
+  const { locale } = useTrans();
+
   return (
     <>
-      <Seo title={title} description={description} keywords={keywords} imageFeature={image} />
+      <Seo title={seoTag?.title[locale]} description={seoTag?.description[locale]} />
       <BlogDetail />
     </>
   );
