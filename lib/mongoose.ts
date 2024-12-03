@@ -1,7 +1,6 @@
-import { BEST_POS_URL } from '@/constants';
 import mongoose from 'mongoose';
 
-const dbURL = BEST_POS_URL || '';
+const dbURL = process.env.BEST_POS_URL || '';
 
 export const connectMongo = async () => {
   try {

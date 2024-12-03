@@ -2,10 +2,12 @@ export const DOMAIN = 'https://bestpos.com';
 export const BLOGS_API = process.env.NEXT_PUBLIC_WORDPRESS_HOST;
 export const BEST_POS_URL = process.env.BESTPOS_MONGODB_URL;
 
+import { CategoryType } from '@/models/bestpos/category_type';
 import {
   IcBarClub,
   IcPizza,
   IcQuickService,
+  IcRestaurant,
   IcRetail,
   IcSmallBusiness,
 } from '@/ui/img-resource/ExIcon';
@@ -32,7 +34,9 @@ import { RouteConfig } from './routes';
 
 export const PHONE = '1-888-410-2188';
 export const EMAIL = 'info@bestpos.com';
-
+export const SM_SCREEN = 640;
+export const MD_SCREEN = 768;
+export const LG_SCREEN = 1024;
 export const US_MASK = '(###) ###-####';
 
 export enum Languages {
@@ -47,6 +51,7 @@ export enum NavigationLabel {
   Products = 'products',
   Home = 'home',
   Company = 'company',
+  Pos_systems = 'pos_systems',
 }
 
 export const COMPANY_MENU = [
@@ -167,37 +172,43 @@ export const BUSINESS_MENU = [
     title: 'business_categories.full_service',
     src: FullServiceRestaurantsImg,
     href: RouteConfig.FullServiceRestaurants,
-    icon: IcQuickService,
+    icon: IcRestaurant,
+    type: CategoryType.full_service,
   },
   {
     title: 'business_categories.retail',
     src: RetailBusinessesImg,
     href: RouteConfig.Retail,
     icon: IcRetail,
+    type: CategoryType.retail,
   },
   {
     title: 'business_categories.quick_service',
     src: QuickServiceRestaurantsImg,
     href: RouteConfig.QuickServiceRestaurants,
     icon: IcQuickService,
+    type: CategoryType.quick_service,
   },
   {
     title: 'business_categories.small_business',
     src: SmallBusinessImg,
     href: RouteConfig.SmallBusiness,
     icon: IcSmallBusiness,
+    type: CategoryType.small_business,
   },
   {
     title: 'business_categories.bar_nightclub',
     src: BarNightImg,
     href: RouteConfig.BarsAndNightClubs,
     icon: IcBarClub,
+    type: CategoryType.club,
   },
   {
     title: 'business_categories.pizza',
     src: PizzeriasImg,
     href: RouteConfig.Pizzerias,
     icon: IcPizza,
+    type: CategoryType.pizza,
   },
 ];
 
@@ -250,3 +261,5 @@ export const PRODUCTS_MENU = [
 ];
 
 export const CreditPercentage = 0.015;
+
+export const YesNoQuestion = ['yes', 'no'];

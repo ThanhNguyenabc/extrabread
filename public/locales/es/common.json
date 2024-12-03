@@ -86,6 +86,8 @@
     "signing_bonus": "Bono por firmar",
     "cash_discount": "Descuento de efectivo",
     "sale_system": "Sistema de venta",
+    "popular": "Popular",
+    "pos_systems": "Reseñas de puntos de venta",
     "business_categories": {
         "full_service": "Restaurantes servicio completo",
         "retail": "Comercio minorista",
@@ -250,10 +252,11 @@
         "business_types": "Type of Business",
         "select_business": "Select type of business"
     },
+    "last_updated": "última vez actualizado:",
+    "i_dont_know": "I don’t know",
     "request_a_demo": "Solicitar una demostración",
     "type_of_business": "Tipo de negocio",
     "thank_you_form_title": "¡Gracias por llenar el formulario!",
     "thank_you_form_desc": "Revisaremos su información y nos pondremos en contacto con usted en 1-2 días hábiles.",
     "thank_you_form_message": "Si desea obtener más información, no dude en ponerse en contacto con nosotros en"
-
 }

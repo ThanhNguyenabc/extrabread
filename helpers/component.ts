@@ -1,3 +1,6 @@
+import { SystemOs } from '@/models/bestpos/product.model';
+import { IcAndroid, IcApple, IcWindow } from '@/ui/img-resource/ExIcon';
+
 type ModifiersType = string | string[] | false | undefined | ModifiersType[];
 
 export type ModifierProp<M extends string> = M | M[];
@@ -40,3 +43,14 @@ export function mapModifiers(
         .trim()}`.trim()
     : '';
 }
+
+export const getSystemIcon = (os: SystemOs): React.ElementType => {
+  switch (os) {
+    case SystemOs.iOS:
+      return IcApple;
+    case SystemOs.Android:
+      return IcAndroid;
+    case SystemOs.Window:
+      return IcWindow;
+  }
+};

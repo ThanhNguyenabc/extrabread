@@ -28,4 +28,8 @@ export const COLORS = {
     500: '#FF5A22',
     600: '#FF5A22',
   },
+  primary: '#FF5A22',
+  success: '#039855',
+  secondary: '#0B70FE',
+  accent: '#FFD8C6',
 };

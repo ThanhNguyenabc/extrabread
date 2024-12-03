@@ -1,8 +1,8 @@
-import React, { forwardRef, useEffect } from 'react';
 import HeaderWithBack from '@/components/ui/HeaderWithBack';
 import useRequestDemoStore from '@/store/request_demo_store';
 import { useTranslation } from 'next-i18next';
 import dynamic from 'next/dynamic';
+import React, { forwardRef, useEffect } from 'react';
 import { twMerge } from 'tailwind-merge';
 import BusinessTypes from './BusinessTypes';
 import RequestDemoContactForm from './RequestDemoContactForm';
@@ -27,12 +27,12 @@ RequestDemoSection.displayName = 'RequestDemoSection';
 interface RequestDemoPOS {
   showCloseButton?: boolean;
   afterSubmit?: () => void;
+  onClose?: () => void;
 }
-const RequestDemoPOS = ({ showCloseButton = true, afterSubmit }: RequestDemoPOS) => {
+const RequestDemoPOS = ({ showCloseButton = true, afterSubmit, onClose }: RequestDemoPOS) => {
   const isSubmittedForm = useRequestDemoStore(store => store.isSubmittedForm);
 
-  const { t } = useTranslation();
-  const closeSidebar = () => {};
+  const { t } = useTranslation('common');
 
   const clearStore = useRequestDemoStore(store => store.clearStore);
 
@@ -47,10 +47,10 @@ const RequestDemoPOS = ({ showCloseButton = true, afterSubmit }: RequestDemoPOS)
   }, [isSubmittedForm]);
 
   return (
-    <>
+    <div className='flex flex-col w-full'>
       <HeaderWithBack
         title={t('request_a_demo')}
-        onClose={showCloseButton ? closeSidebar : undefined}
+        onClose={showCloseButton ? onClose : undefined}
         subTitle={
           !isSubmittedForm ? (
             <p className="txt-sm max-w-xl text-neutral-700 md:text-center md:ml-3">
@@ -78,7 +78,7 @@ const RequestDemoPOS = ({ showCloseButton = true, afterSubmit }: RequestDemoPOS)
       ) : (
         <ThanksYouForm className="mt-16 lg:mt-[100px]" eventName="request_demo_lead_form" />
       )}
-    </>
+    </div>
   );
 };
 

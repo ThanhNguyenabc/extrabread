@@ -8,7 +8,7 @@ interface HeaderWithBackProps {
 }
 const HeaderWithBack = ({ onClose, title, subTitle }: HeaderWithBackProps) => {
   return (
-    <div className="flex flex-col md:flex-row  p-4 sticky top-0 bg-white z-10">
+    <div className="flex flex-col md:flex-row p-4  bg-white z-10">
       {onClose && (
         <button onClick={onClose} className="md:w-10 md:h-10">
           <IcClose />

@@ -1,5 +1,6 @@
 /* eslint-disable no-async-promise-executor */
-import { BLOGS_API } from '@/constants';
+
+const BLOGS_API = process.env.NEXT_PUBLIC_WORDPRESS_HOST || '';
 
 export const getBlogsAPI = () => {
   return new Promise(async (resolve, reject) => {
