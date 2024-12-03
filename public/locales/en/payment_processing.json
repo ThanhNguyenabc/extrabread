@@ -1,22 +1,22 @@
 {
-    "payment_desc": "Our processing solutions allow customers to pay using their preferred payment methods, keeping the line moving and enabling your business to function smoothly.",
+    "payment_desc": "With our processing solutions, customers can utilize their preferred payment methods, helping to keep lines flowing and ensuring the seamless operation of your business.",
     "payment_credit_card": {
         "title": "Credit Card Terminal",
-        "desc": "Making payments in person has never been simpler. With ExtraBread’s credit card terminals operate your business at incredible speeds, be able to receive contactless payments and accept chip cards and magstripe.\n \n Our processing solutions allow customers to pay using their preferred payment methods, keeping the line moving and enabling your business to function smoothly.",
+        "desc": "Making in-person payments has never been easier. With Bestpos's credit card terminals, you can run your business at incredible speeds, effortlessly accepting contactless payments, chip cards, and magstripe transactions.\n\nOur processing solutions empower customers to use their preferred payment methods, ensuring lines keep moving and your business operates smoothly.",
         "payment_flexible": "Payment flexbility",
         "chip_reader": "EMV chip reader compatibility",
         "wireless_models": "Wifi and Wireless models available"
     },
     "payment_mobile_card": {
         "title": "Credit Card Terminal",
-        "desc": "Accept payments from anywhere at any time and allow for compatibility with any mobile device. Turn your smartphone or tablet into a POS, allowing you to accept card transactions or record cash-based sales. Take more payments on the go and expand your POS capabilities for less.",
+        "desc": "Process payments from anywhere at any time, with compatibility for all mobile devices. Convert your smartphone or tablet into a point-of-sale system that allows you to accept card payments and track cash transactions. Expand your payment capabilities on the move and enhance your POS options without breaking the bank.",
         "pair_device": "Pairs with any device",
         "collect_payments": "Collect payments with ease",
         "affordable": "Affordable choices"
     },
     "payment_online_processing": {
         "title": "Online Processing",
-        "desc": "To cater to consumers who shop at any time, it's crucial to have a dependable online payment processing service. ExtraBread provides this service, allowing you to accept credit and debit cards online through Authorize.Net non-stop.",
+        "desc": "To accommodate consumers who shop anytime, having a reliable online payment processing service is essential. Bestpos offers this service, enabling you to accept credit and debit card payments online through Authorize.Net around the clock.",
         "shopping_cart": "Shopping cart compatibility",
         "mechant_interface": "A built-in merchant interface",
         "online_terminal": "Online terminal"
