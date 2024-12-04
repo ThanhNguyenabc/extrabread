@@ -1,35 +1,38 @@
 {
-    "desc": "<span className='text-blue-500'>Accept and convert paper checks into secure electronic payments</span> at the point of sale, providing increased security and faster processing times.",
+    "desc": "Transform paper checks into secure electronic payments right at the point of sale, enhancing security and accelerating processing times",
     "heading": "",
     "banner": [
-        "Mitigate the risk of fraud and minimize potential losses",
-        "Cut down on processing costs",
-        "Instantly approved checks",
-        "Receive funds more quickly"
+        "Reduce the risk of fraud and limit potential losses",
+        "Lower processing costs significantly",
+        "Checks are approved instantly",
+        "Access funds more rapidly"
+
     ],
     "features": [
         {
             "title": "Faster Funds",
-            "description": "By using a faster, affordable, and secure check processing system, you get rid of the wait and eliminate all the extra trips to the bank",
+            "description": "Utilizing a fast, cost-effective, and secure check processing system eliminates the wait and removes the need for extra trips to the bank.",
             "details": [
-                "Snap a photo of a check for instant acceptance",
-                "Get funds from approved checks within two business days"
+                "Take a snapshot of a check for quick acceptance",
+                "Access funds from approved checks in just two business days"
+
             ]
         },
         {
             "title": "Mitigate Risk",
-            "description": "Count on Elecpayments for secure and guaranteed transactions.",
+            "description": "Rely on Elecpayments for secure and reliable transactions.",
             "details": [
-                "Reduce chargebacks and losses due to fraud",
-                "Receive instant notification of check declines"
+                "Decrease chargebacks and fraud-related losses",
+                "Get immediate alerts for check declines"
             ]
         },
         {
             "title": "Never Miss A Sale",
-            "description": "Offer your customers a wide range of payment options and feel assured that you won't miss out on any sales.",
+            "description": "Provide your customers with diverse payment options and ensure you never miss a sale.",
             "details": [
-                "Making customers satisfied by being able to pay with any payment option",
-                "Boost cash flow with a fast processing and funding"
+                "Enhance customer satisfaction by allowing payments with any method",
+                "Improve cash flow with quick processing and funding"
+
             ]
         }
     ],

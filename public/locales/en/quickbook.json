@@ -1,42 +1,45 @@
 {
     "desc": "<span className='text-blue-500'>Using QuickBooks significantly simplifies bookkeeping</span>, giving you the confidence to direct your full attention to running your business.",
     "banner": [
-        "Transfers to QuickBooks programs without manual intervention",
-        "Handle payment methods and sales management",
-        "Record taxes using single, combined, or multiple rates",
-        "Dashboard can be customized to suit your needs"
+        "Automate transfers to QuickBooks without manual input",
+        "Manage payment methods and oversee sales effortlessly",
+        "Record taxes with single, combined, or multiple rates",
+        "Customize your dashboard to fit your preferences"
+
     ],
     "features": [
         {
             "title": "Easily transfer your sales data.",
             "description": "Eliminate wasted time on manual data entry with nightly transfers that seamlessly consolidate your sales information into the programs you currently use.",
             "details": [
-                "Migrate sales data to QuickBooks Online, QuickBooks for Desktop, or Xero",
-                "Link and transfer data to multiple destinations"
+                "Transfer sales data effortlessly to QuickBooks Online, QuickBooks for Desktop, or Xero",
+                "Connect and move data to various destinations seamlessly"
             ]
         },
         {
             "title": "Monitor Payment Information",
             "description": "Manage your payments efficiently with CommerceSync's simplified tracking system.",
             "details": [
-                "Keep track of payment methods and tax obligations using single, combined, or multiple rates",
-                "Log complete and partial refunds in a designated income account to maintain organization."
+                "Monitor payment methods and tax responsibilities using single, combined, or multiple rates",
+                "Record both complete and partial refunds in a specific income account for better organization"
+
             ]
         },
         {
             "title": "Customize Your Support",
             "description": "Receive fast and convenient support using CommerceSync's customizable dashboard.",
             "details": [
-                "Automatically reconcile credit settlements with access to support 'after hours'",
-                "No limit or additional fees for the number of daily, monthly, or yearly sales synchronized."
+                "Effortlessly reconcile credit settlements while enjoying 'after hours' support access",
+                "There are no caps or extra charges for synchronizing daily, monthly, or yearly sales"
             ]
         },
         {
             "title": "Increased Functionality with Additional Features",
             "description": "Simplify business management with fully automated capabilities to eliminate hassles.",
             "details": [
-                "Utilize the Customer Detail function to monitor sales on an individual customer basis.",
-                "Invoices are automatically updated with discounts, tips, refunds, and other adjustments for improved efficiency."
+                "Leverage the Customer Detail feature to track sales for each individual customer",
+                "Invoices are automatically revised to include discounts, tips, refunds, and other adjustments for greater efficiency"
+
             ]
         }
     ],

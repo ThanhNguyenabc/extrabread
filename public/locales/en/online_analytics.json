@@ -1,26 +1,27 @@
 {
     "desc": "<span className='text-blue-500'>Access real-time updates on your business</span> account activities and unlock comprehensive industry insights and forecasts, empowering you to make informed decisions at every step.",
     "banner": [
-        "Access account activity 24/7.",
-        "Review and reconcile deposit history.",
-        "Generate and download reports with ease.",
-        "Analyze business performance through online analytics."
+        "Enjoy 24/7 access to your account activity",
+        "Easily review and reconcile your deposit history",
+        "Create and download reports with minimal effort",
+        "Utilize online analytics to assess your business performance"
+
     ],
     "features": [
         {
             "title": "Track Your Statements",
             "description": "Keep an eye on all of your business activities effortlessly with our online account manager. Stay ahead of any discrepancies before they cause issues.",
             "details": [
-                "Easily access information about transactions, chargebacks, and other relevant details.",
-                "Access your account online 24/7."
+                "Easily access information about transactions, chargebacks, and other relevant details",
+                "Access your account online 24/7"
             ]
         },
         {
             "title": "Review Your Deposit History",
             "description": "Keep an eye on your deposit history to ensure you always know when your funds are available.",
             "details": [
-                "Seamlessly use your accounting software and online reporting together.",
-                "Keep track of critical account information with ease."
+                "Combine your accounting software and online reporting for seamless use",
+                "Track important account details with simplicity and convenience"
             ]
         },
         {
@@ -28,8 +29,8 @@
             
             "description": "Gain valuable insights into every transaction and effortlessly resolve disputes using our user-friendly online reporting system.",
             "details": [
-                "Quickly access the most recent account information at any time.",
-                "Monitor chargebacks in real-time as they happen."
+                "Easily obtain up-to-date account information at any moment",
+                "Keep an eye on chargebacks in real-time as they happen"
             ]
         },
         {

@@ -1,42 +1,45 @@
 {
     "desc": "<span className='text-blue-500'>Empower your business with the essential funds and flexibility</span> to scale operations or navigate challenging times with your staff.",
     "banner": [
-        "Fast approvals within 24-48 hours",
-        "Streamlined application process with minimal paperwork",
-        "Low rates starting from 1.15%",
-        "Renewal options for continued access to funds"
+        "Receive approvals within 24-48 hours",
+        "Enjoy a hassle-free application process with minimal documentation",
+        "Benefit from low rates starting at 1.15%",
+        "Convenient renewal options to keep funds readily available"
+
     ],
     "features": [
         {
             "title": "Faster Funds",
             "description": "Say goodbye to long wait times with our easy application process and quick approvals in as little as 24-48 hours.",
             "details": [
-                "Dedicated teams for quick application approval",
-                "Simple and convenient online application process"
+                "Specialized teams ensure fast approval of applications",
+                "Enjoy a straightforward and convenient online application process"
             ]
         },
         {
             "title": "Minimal Risk, Maximum Savings",
             "description": "Gain access to cash at incredibly low industry rates without the need for collateral. We provide affordable financial support, giving you peace of mind.",
             "details": [
-                "Enjoy rates starting as low as 1.15%",
-                "Access cash without needing to provide personal guarantee or collateral"
+                "Benefit from rates as low as 1.15%",
+                "Secure cash without requiring a personal guarantee or collateral"
             ]
         },
         {
             "title": "Faster Credit Approval",
             "description": "Cash advances are designed to provide funding, even if you have imperfect credit, ensuring you can access the financial support you need for your business.",
             "details": [
-                "Benefit from a quicker application process and shorter waiting period",
-                "Approval decisions are based on your projected sales, not your credit score"
+                "Enjoy a streamlined application process with a shorter waiting period",
+                "Approval decisions are based on your expected sales, rather than your credit score"
+
             ]
         },
         {
             "title": "Leveling Up Your Business",
             "description": "We are fully dedicated to empowering you with the financial support required to fulfill your short-term aspirations and long-term business ambitions.",
             "details": [
-                "Amazing cash advances",
-                "Helping small and big businesses all over"
+                "Incredible cash advances supporting businesses of all sizes",
+                "Assisting both small and large businesses everywhere"
+
             ]
         }
     ],
