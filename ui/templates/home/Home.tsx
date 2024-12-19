@@ -73,13 +73,15 @@ export const HomeTemplate = ({ title }: { title?: string }) => {
         button={
           <>
             <div className="flex items-center justify-center flex-col gap-3 md:flex-row  md:gap-4 lg:justify-start">
-              <GetPricingButton title={common('get_pricing_today')} size="large" />
-              <Link href={RouteConfig.Partner} className="w-full">
+              <Link href={RouteConfig.GetPricing} className="w-full md:w-fit">
+                <GetPricingButton title={common('get_pricing')} size="large" onClick={() => {}} />
+              </Link>
+              <Link href={RouteConfig.RequestDemo} className="w-full md:w-fit">
                 <Button
                   size="large"
                   className="flex justify-center items-center gap-2 border-none hover:text-orange-500"
                 >
-                  {common('partner_with_us')}
+                  {common('request_a_demo')}
                   <IcChevronRight />
                 </Button>
               </Link>

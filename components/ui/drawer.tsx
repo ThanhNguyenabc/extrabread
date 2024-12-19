@@ -1,12 +1,19 @@
 import { useDevice } from '@/hooks/useDetectMobile';
-import { Drawer, DrawerProps } from 'antd';
+import useDrawer from '@/hooks/useDrawer';
+import { Drawer } from 'antd';
 import React from 'react';
 
-const BDrawer = ({ children, ...other }: DrawerProps) => {
+const BDrawer = () => {
   const { isLaptop, isTablet } = useDevice();
+  const { isOpen, child, closeDrawer } = useDrawer();
+
+  console.log('drawer');
+  console.log(child);
+  console.log('asdadad', isOpen);
   return (
     <Drawer
-      {...other}
+      open={isOpen}
+      onClose={closeDrawer}
       closeIcon={null}
       title={null}
       contentWrapperStyle={{
@@ -16,7 +23,7 @@ const BDrawer = ({ children, ...other }: DrawerProps) => {
         zIndex: 1000,
       }}
     >
-      {children}
+      {child}
     </Drawer>
   );
 };

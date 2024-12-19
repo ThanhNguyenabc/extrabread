@@ -1,8 +1,6 @@
-import QuestionnaireForm from '@/components/elements/questionnaireV2/QuestionnaireForm';
-import BDrawer from '@/components/ui/drawer';
+import useQuestionnaire from '@/hooks/useQuestionnaire';
 import { useTranslation } from 'next-i18next';
 import { BreadButtonProps, Button } from '../button/Button';
-import { useState } from 'react';
 
 export const GetPricingButton = ({
   title,
@@ -12,18 +10,13 @@ export const GetPricingButton = ({
 }) => {
   const { t: common } = useTranslation();
 
-  const [showForm, setShowForm] = useState(false);
   const txtButton = title || common('get_pricing');
 
-  const setShowSuggestForm = () => setShowForm(!showForm);
+  const { openForm } = useQuestionnaire();
+
   return (
-    <>
-      <Button type="primary" className="w-fit" {...props} onClick={setShowSuggestForm}>
-        {txtButton}
-      </Button>
-      <BDrawer open={showForm} onClose={setShowSuggestForm}>
-        <QuestionnaireForm onClose={setShowSuggestForm} />
-      </BDrawer>
-    </>
+    <Button type="primary" className="w-fit" {...props} onClick={props.onClick || openForm}>
+      {txtButton}
+    </Button>
   );
 };

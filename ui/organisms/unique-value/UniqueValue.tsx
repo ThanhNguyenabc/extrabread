@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
+import { useEffect } from 'react';
 import { clsx } from 'yet-another-react-lightbox/core';
 import { BreadCard } from '~/ui/atoms/bread-card/BreadCard';
 import { Container } from '~/ui/atoms/container/Container';
@@ -21,6 +22,9 @@ const Detail = ({ data }: { data: Array<string> }) => {
 };
 
 export const UniqueValue = () => {
+  useEffect(() => {
+    console.log('render unique value');
+  }, []);
   const { t } = useTranslation();
   const items = t('unique.items', { returnObjects: true }) as Array<string> | null;
 

@@ -84,7 +84,7 @@ export const CreditCardTerminal = ({ children }: PropsWithChildren) => {
         <title>{t('credit.heading')}</title>
       </Head>
       <Banner
-        tagText={common('get_pricing_today')}
+        tagText={common('get_pricing')}
         hasBackground
         className="bg-blue-300"
         type="align-left"
@@ -92,7 +92,7 @@ export const CreditCardTerminal = ({ children }: PropsWithChildren) => {
         button={
           <GetPricingButton
             className={styles['solutions_pricing-button']}
-            title={`${common('get_pricing_today')}!`}
+            title={`${common('get_pricing')}!`}
             color="black"
             size="large"
           />

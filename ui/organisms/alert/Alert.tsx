@@ -1,23 +1,26 @@
 import { Badge } from '@/components/ui/badge';
-import { RouteConfig } from '@/constants/routes';
+import useQuestionnaire from '@/hooks/useQuestionnaire';
 
-import Link from 'next/link';
 import { IcChevronRight, NotificationIcon } from '~/ui/img-resource/ExIcon';
 
 export const Alert = () => {
+  const { openForm } = useQuestionnaire();
+
   return (
-    <div className="flex flex-row bg-neutral-900 justify-center items-center p-3 gap-3 text-neutral-200 text-sm-semibold">
+    <div className="flex flex-col md:flex-row bg-neutral-900 justify-center items-center p-3 gap-3 text-neutral-200 text-sm-semibold">
       <span>
         <NotificationIcon />
       </span>
-      <span>Ultimate Side Hustle - Secure residual monthly income by partnering with us!</span>
+      <span className=" text-center">
+        Find the right POS System for your business type with our POS Comparison Tool
+      </span>
 
-      <Link href={RouteConfig.Partner}>
+      <button onClick={openForm}>
         <Badge className="bg-neutral-900 text-sm border-2 border-neutral-300 font-normal rounded-lg px-3">
-          Partner
+          Opens up the following form
           <IcChevronRight />
         </Badge>
-      </Link>
+      </button>
     </div>
   );
 };

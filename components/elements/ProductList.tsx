@@ -1,9 +1,9 @@
 import RequestDemoPOS from '@/components/elements/request_demo_pos/RequestDemoPOS';
-import BDrawer from '@/components/ui/drawer';
+import useDrawer from '@/hooks/useDrawer';
 import { CategoryType } from '@/models/bestpos/category_type';
 import { Product } from '@/models/bestpos/product.model';
 import { useTranslation } from 'next-i18next';
-import React, { useState } from 'react';
+import React from 'react';
 import Box from '../ui/bestpos/Box';
 import Loading from '../ui/loading/Loading';
 import POSCard from './pos_card/POSCard';
@@ -11,11 +11,15 @@ import { Priority, RecommendColorConfig } from './pos_card/POSCardTypes';
 
 const ProductList = ({ type, data }: { type: string; data: Array<Product> }) => {
   const { t } = useTranslation('pos_systems');
-  const [openForm, setOpenForm] = useState(false);
 
-  const changeDrawerState = () => {
-    setOpenForm(!openForm);
+  const { openDrawer, closeDrawer } = useDrawer();
+
+  const requestForm = <RequestDemoPOS onClose={closeDrawer} />;
+
+  const openRedquestForm = () => {
+    openDrawer(requestForm);
   };
+  
   const renderItems = () => {
     const items: Array<React.ReactElement> = [];
     if (data)
@@ -32,7 +36,7 @@ const ProductList = ({ type, data }: { type: string; data: Array<Product> }) => 
               data={item}
               classname={customClassName}
               priority={priority}
-              openRequestDemo={changeDrawerState}
+              openRequestDemo={openRedquestForm}
             />,
           );
           if (index == 2 && type == CategoryType.popular) {
@@ -47,11 +51,7 @@ const ProductList = ({ type, data }: { type: string; data: Array<Product> }) => 
           }
         } else {
           items.push(
-            <POSCard
-              key={`card-item-${index}`}
-              data={item}
-              openRequestDemo={changeDrawerState}
-            />,
+            <POSCard key={`card-item-${index}`} data={item} openRequestDemo={openRedquestForm} />,
           );
         }
       });
@@ -64,9 +64,6 @@ const ProductList = ({ type, data }: { type: string; data: Array<Product> }) => 
         {!data && <Loading />}
         {data && renderItems()}
       </Box>
-      <BDrawer onClose={changeDrawerState} open={openForm}>
-        <RequestDemoPOS onClose={changeDrawerState} />
-      </BDrawer>
     </>
   );
 };

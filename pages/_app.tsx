@@ -3,6 +3,7 @@ import 'assets/styles/index.scss';
 import 'assets/styles/tailwind.scss';
 import variables from 'assets/styles/variables.module.scss';
 
+import BDrawer from '@/components/ui/drawer';
 import { RouteConfig } from '@/constants/routes';
 import { Loading } from '@/ui/atoms/loading/Loading';
 import { StyleProvider } from '@ant-design/cssinjs';
@@ -179,7 +180,7 @@ const App = (props: AppProps) => {
           },
         }}
       >
-        <NextUIProvider >
+        <NextUIProvider>
           <div
             className={inter.className}
             style={{ ...(state.get().openMenu && { overflow: 'hidden', height: '100vh' }) }}
@@ -195,6 +196,7 @@ const App = (props: AppProps) => {
         </NextUIProvider>
       </ConfigProvider>
       <Toaster />
+      <BDrawer />
     </>
   );
 };

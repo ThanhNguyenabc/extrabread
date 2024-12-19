@@ -91,7 +91,7 @@ export const OnlineProcessing = ({ children }: PropsWithChildren) => {
         content={<>{t('online_processing.title')}</>}
         button={
           <GetPricingButton
-            title={`${common('get_pricing_today')}!`}
+            title={`${common('get_pricing')}!`}
             color="black"
             size="large"
             className={styles['solutions_pricing-button']}

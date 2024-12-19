@@ -55,15 +55,25 @@ export enum NavigationLabel {
 }
 
 export const COMPANY_MENU = [
+  { title: 'about_us', href: RouteConfig.AboutUs },
   { title: 'contact_us', href: RouteConfig.Contacts },
   { title: 'FAQ', href: RouteConfig.Faqs },
   { title: 'Blog', href: RouteConfig.Blogs },
-  { title: 'partner', href: RouteConfig.Partner },
-  { title: 'about_us', href: RouteConfig.AboutUs },
-  { title: 'point_of_sale_systems', href: RouteConfig.SaleSystems },
-  { title: 'Referal Agent Packet', href: '/welcome_packet.pdf', newTab: true },
   { title: 'Credit Card Processing Calculator', href: RouteConfig.Calculator },
   { title: 'Cash Signing Bonus Calculator', href: RouteConfig.CashBonusCalculator },
+  { title: 'Request Demo POS', href: RouteConfig.RequestDemo },
+  {
+    title: 'funding_form.heading',
+    href: RouteConfig.SameDayFunding,
+  },
+  { title: 'term_condition', href: 'https://blog.bestpos.com/terms-and-conditions/', newTab: true },
+  { title: 'Privacy and Policy', href: 'https://blog.bestpos.com/privacy-policy/', newTab: true },
+  { title: 'How We Rate', href: 'https://blog.bestpos.com/how-we-rate/', newTab: true },
+  {
+    title: 'Advertiser Disclosure',
+    href: 'https://blog.bestpos.com/advertiser-disclosure/',
+    newTab: true,
+  },
 ];
 
 export const SOLUTIONS_MENU = [
