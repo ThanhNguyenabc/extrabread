@@ -46,7 +46,7 @@ const MenuDrawer = ({
   lang?: string;
   margin?: number;
 }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   const [currentMenu, setCurrentMenu] = useState('');
   const [selectedLang, setSelectedLang] = useState(lang);
   const { isMobile, isLessTablet } = useDevice();
@@ -202,7 +202,7 @@ const MenuDrawer = ({
 };
 
 export const Header = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   const { isLaptop } = useDevice();
   const state = useHookstate(globalState);
   const { asPath, push, pathname, query } = useRouter();

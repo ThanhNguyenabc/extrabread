@@ -7,6 +7,7 @@ export const COLORS = {
     600: '#475467',
     700: '#344054',
     900: '#101828',
+    dark: '#020202',
   },
   green: {
     100: '#ccf5de',
@@ -19,6 +20,7 @@ export const COLORS = {
   },
   red: {
     200: '#fecdca',
+    500: '#D92D20',
   },
   blue: {
     300: '#CEE2FF',

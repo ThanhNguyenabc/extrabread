@@ -5,13 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC, useMemo } from 'react';
-import {
-  BUSINESS_MENU,
-  EQUIPMENTS_MENU,
-  NavigationLabel,
-  PRODUCTS_MENU,
-  SOLUTIONS_MENU,
-} from '~/constants/index';
+import { BUSINESS_MENU, NavigationLabel, PRODUCTS_MENU, SOLUTIONS_MENU } from '~/constants/index';
 import { Container } from '~/ui/atoms/container/Container';
 import { Icon } from '~/ui/atoms/icon/Icon';
 import styles from './Navigation.module.scss';

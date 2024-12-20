@@ -21,12 +21,8 @@ export const getListPOS = async ({
         fields,
       },
     });
-
-    console.log('daaaa');
-    console.log(result.data);
     return result.data;
   } catch (error) {
-    console.log('error = ', error);
     return [];
   }
 };

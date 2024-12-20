@@ -1,7 +1,7 @@
 const config = {
   i18n: {
     defaultLocale: 'en',
-    locales: ['es', 'en'],
+    locales: ["en" , "es"],
   },
   /** To avoid issues when deploying to some paas (vercel...) */
   localePath:

@@ -1,0 +1,48 @@
+{
+    "explore_all": "Explorar todo",
+    "specification": {
+        "heading": "Especificaciones",
+        "businessSize": "Tamaño de la empresa",
+        "posType": "Tipo de punto de venta",
+        "softwareType": "Software type",
+        "freeTrial": "Prueba Gratuita",
+        "merchant": "Servicios comerciales",
+        "pricingModel": "Modelo de precios",
+        "pricingRange": "Price Range"
+    },
+    "pos-integration": "Integraciones",
+    "software": "Software",
+    "pricing": {
+        "title": "Precios",
+        "monthly_plan": "3 estaciones o más",
+        "one_time_purchase": "Compra unica de Hardware",
+        "per_month": "Por mes",
+        "per_station": "Por estación"
+    },
+    "expertOpinion": {
+        "heading": "Expert Opinions",
+        "average": "Promedio",
+        "easy_use": "Fácil de usar",
+        "value": "Valor",
+        "support": "Apoyo",
+        "functionality": "Funcionalidad",
+        "feedback": "Comentario"
+    },
+    "frequentlyQuestion": {
+        "title": "Preguntas frecuentes",
+        "questions": [
+            {
+                "question": "¿Puedo cambiar mi plan después?",
+                "ans": "YSiempre puede cambiar el plan de su sistema POS."
+            },
+            {
+                "question": "¿Cúal es su política de cancelación?",
+                "ans": "Dependiendo de sistema POS y el contrato, las politicas de cancelación varian."
+            },
+            {
+                "question": "¿Cómo funciona la facturación??",
+                "ans": "Gratuita, mensual, anual o dependiendo de su contrato"
+            }
+        ]
+    }
+}

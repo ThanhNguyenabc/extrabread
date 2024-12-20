@@ -1,0 +1,53 @@
+{
+    "explore_all": "Explore all POS",
+    "specification": {
+        "title": "Specifications",
+        "businessSize": "Business Size",
+        "posType": "POS Type",
+        "softwareType": "Software type",
+        "freeTrial": "Free Trial",
+        "merchant": "Merchant Services",
+        "pricingModel": "Pricing Model",
+        "pricingRange": "Price Range"
+    },
+    "pos-integration": "POS Integrations",
+    "software":"Software",
+    "pricing": {
+        "title": "Pricing",
+        "monthly_plan": "Service Monthly Plan",
+        "one_time_purchase": "One Time Purchase",
+        "per_month": "Per month",
+        "per_station": "Per station"
+    },
+    "expertOpinion": {
+        "heading": "Expert Opinions",
+        "average": "Average",
+        "easy_use": "Easy to use",
+        "value": "Value",
+        "support": "Support",
+        "functionality": "Functionality",
+        "feedback": "Feedback"
+    },
+    "paymentProcessing": {
+        "title": "Payment Processing",
+        "breadme_title": "Get zero processing fees with Breadme",
+        "btnBreadme": "Learn more"
+    },
+    "frequentlyQuestion": {
+        "title": "Frequently Question",
+        "questions": [
+            {
+                "question": "Can I change my plan later?",
+                "ans" : "You are always free to change the plan of your POS system."
+            },
+            {
+                "question": "What is your cancellation policy?",
+                "ans" : "Depending on the POS system and contract, the cancellation policy differs."
+            },
+            {
+                "question": "How does billing work?",
+                "ans" : "Free, monthly or yearly depending on your contract."
+            }
+        ]
+    }
+}

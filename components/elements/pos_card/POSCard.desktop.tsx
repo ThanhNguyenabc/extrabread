@@ -27,7 +27,6 @@ const POSCardDesktop = ({
   const overallRating = data.expert_opinion?.overall;
   const { id, name } = data;
 
-
   return (
     <div
       className={twMerge(
@@ -103,7 +102,7 @@ const POSCardDesktop = ({
         <div className="flex items-center gap-3 border-r border-neutral-300 pr-6">
           {data.os_system?.map((item, index) => {
             const Icon = getSystemIcon(item);
-            return <Icon key={`item-os-${index}`} className="w-5 h-5" />;
+            return <Icon key={`item-os-${index}`} className="w-6 h-6 text-neutral-400" />;
           })}
         </div>
         <POSCardBusinessType productId={id} />

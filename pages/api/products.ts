@@ -1,3 +1,4 @@
+import { ProductDetailModel } from '@/lib/entities/product-detail';
 import { connectMongo } from '@/lib/mongoose';
 import { Product } from '@/models/bestpos/product.model';
 import { CategoryModel } from 'lib/entities/category';
@@ -43,7 +44,7 @@ export const fetchProductList = async ({
   limit?: number;
   fields?: string;
 } = {}) => {
-  await connectMongo()
+  await connectMongo();
   let filterKeys;
   if (fields) filterKeys = fields.replaceAll(',', ' ');
   if (!type || type.length == 0) {
@@ -76,4 +77,20 @@ export const fetchProductList = async ({
   }
 
   return result;
+};
+
+export const getProductDetail = async (slug: string) => {
+  try {
+    await connectMongo();
+    const product = await ProductModel.findOne({ slug }).exec();
+    const productDetail = await ProductDetailModel.findOne({
+      productId: product?.id,
+    }).exec();
+    const data = { ...product?.toObject(), ...productDetail?.toObject() };
+    delete data._id;
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+  return null;
 };

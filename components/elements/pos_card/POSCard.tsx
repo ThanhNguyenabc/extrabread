@@ -18,7 +18,7 @@ const POSCard = (props: POSCardProps) => {
 
   if (screenSize >= LG_SCREEN) CardCmp = POSCardDesktop;
 
-  const detailURL = props.navigateTo || `/${props.data.slug}`;
+  const detailURL = props.navigateTo || `/product/${props.data.slug}`;
 
   return (
     <CardCmp

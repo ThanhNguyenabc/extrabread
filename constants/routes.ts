@@ -9,7 +9,7 @@ export enum RouteConfig {
   PrivacyPolicy = '/privacy-policy',
   TermsOfService = '/terms-of-service',
   BusinessTypes = '/business',
-  Products = '/products',
+  Products = '/product',
   Equipment = '/pos-equipments',
   // Business
   FullServiceRestaurants = '/full-service-restaurants',

@@ -7,15 +7,17 @@ const BDrawer = () => {
   const { isLaptop, isTablet } = useDevice();
   const { isOpen, child, closeDrawer } = useDrawer();
 
-  console.log('drawer');
-  console.log(child);
-  console.log('asdadad', isOpen);
   return (
     <Drawer
       open={isOpen}
       onClose={closeDrawer}
-      closeIcon={null}
-      title={null}
+      headerStyle={{
+        height: 0,
+        display: 'none',
+      }}
+      bodyStyle={{
+        padding: 0,
+      }}
       contentWrapperStyle={{
         width: (isTablet && 600) || (isLaptop && 768) || '100%',
       }}
