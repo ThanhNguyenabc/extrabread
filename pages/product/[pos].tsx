@@ -1,10 +1,11 @@
 import { ProductDetailView } from '@/components/elements/pos-detail/ProductDetail';
 import SimilarPOS from '@/components/elements/pos-detail/SimilarPOS';
 import Hero from '@/components/ui/hero';
+import useLocale from '@/hooks/useLocale';
 import { MetaTag } from '@/models/bestpos/app_configs';
 import { ProductDetail } from '@/models/bestpos/product-detail.model';
+import { Seo } from '@/ui/util-components/Seo';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { getSEOTagByProduct } from '../api/configs';
 import { getProductDetail } from '../api/products';
@@ -68,17 +69,19 @@ export const getStaticPaths: GetStaticPaths = () => {
   };
 };
 
-const POSDetail = ({ productDetail }: { productDetail: ProductDetail; seoTag?: MetaTag }) => {
-  const { t } = useTranslation('equipment');
+const POSDetail = ({
+  productDetail,
+  seoTag,
+}: {
+  productDetail: ProductDetail;
+  seoTag?: MetaTag;
+}) => {
+  const { locale } = useLocale();
 
-  // const title = t(`${product?.id}.title`);
-  // const description = t(`${product?.id}.description`);
-  // const tags = t(`${product?.id}.tags`);
-  // const thumbnail = t(`${product?.id}.thumbnail`);
-
+  const { title, description, image } = seoTag || {};
   return (
     <>
-      {/* <Seo title={title} description={description} keywords={tags} imageFeature={thumbnail} /> */}
+      <Seo title={title?.[locale]} description={description?.[locale]} imageFeature={image} />
       <Hero>
         <ProductDetailView productData={productDetail} />
       </Hero>

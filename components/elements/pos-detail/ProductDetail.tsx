@@ -1,4 +1,3 @@
-import Box from '@/components/ui/bestpos/Box';
 import { Button } from '@/components/ui/button';
 import Loading from '@/components/ui/loading/Loading';
 import { COLORS } from '@/constants/colors';
@@ -13,6 +12,7 @@ import Image from 'next/image';
 import React from 'react';
 import ExpertOpinion from './ExpertOpinion';
 import FrequentlyQuestion from './FrequentlyQuestion';
+import ImageGrid from './ImageGrid';
 import PaymentProcessing from './payment_processing';
 import Pricing from './Pricing';
 import ProsAndCons from './ProsAndCons';
@@ -75,7 +75,7 @@ export const ProductDetailView = ({ productData }: { productData: ProductDetail 
         </div>
       </div>
 
-      {/* <ImageGrid images={productData.images} /> */}
+      <ImageGrid images={productData.images} />
       <ProsAndCons pros={productData.pros} cons={productData.cons} />
       <ExpertOpinion data={productData.expert_opinion} />
       <SpecificationView posId={`${productData.id}`} />

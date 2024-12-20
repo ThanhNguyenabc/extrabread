@@ -1,10 +1,13 @@
+import Slide, { SlideComponent } from '@/components/ui/slide';
+import { DefaultImg } from '@/ui/img-resource/ImageResources';
+import Image from 'next/image';
 import React, { memo, useRef } from 'react';
 
 const ImageGrid = memo(({ images }: { images?: Array<string> }) => {
   const ref = useRef<SlideComponent>(null);
 
   if (!images) return <></>;
-  const imageGrid = [];
+  const imageGrid: Array<any> = [];
 
   const onShowSlide = (index: number) => () => {
     ref.current?.showSlide(index);
@@ -21,7 +24,7 @@ const ImageGrid = memo(({ images }: { images?: Array<string> }) => {
           width={290}
           onClick={onShowSlide(i)}
           height={192}
-          blurDataURL={DefaultImg.src}
+          blurDataURL={DefaultImg}
           placeholder="blur"
         />
       </div>,
@@ -39,7 +42,7 @@ const ImageGrid = memo(({ images }: { images?: Array<string> }) => {
               height: 'auto',
             }}
             onClick={onShowSlide(0)}
-            blurDataURL={DefaultImg.src}
+            blurDataURL={DefaultImg}
             placeholder="blur"
             className="w-full aspect-[1.42] object-contain transition hover:scale-105 cursor-pointer"
             width={592}
@@ -47,9 +50,10 @@ const ImageGrid = memo(({ images }: { images?: Array<string> }) => {
           />
         </div>
         {imageGrid}
+        {images && <Slide images={images} ref={ref} />}
       </div>
-      {images && <Slide ref={ref} images={images} />}
     </>
   );
 });
+export default ImageGrid;
 ImageGrid.displayName = 'ImageGrid';
