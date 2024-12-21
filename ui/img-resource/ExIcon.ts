@@ -50,13 +50,17 @@ export { default as IcAppointment } from 'public/images/icons/ic_appointment.svg
 export { default as IcBarClub } from 'public/images/icons/ic_barclub.svg';
 export { default as IcBasePay } from 'public/images/icons/ic_base_pay.svg';
 export { default as IcBonus } from 'public/images/icons/ic_bonus.svg';
+export { default as IcBusiness } from 'public/images/icons/ic_business.svg';
+export { default as IcDecision } from 'public/images/icons/ic_decision.svg';
 export { default as IcIncome } from 'public/images/icons/ic_income.svg';
 export { default as IcInfo } from 'public/images/icons/ic_info.svg';
 export { default as IcLike } from 'public/images/icons/ic_like.svg';
 export { default as IcPizza } from 'public/images/icons/ic_pizza.svg';
+export { default as IcPricing } from 'public/images/icons/ic_pricing.svg';
 export { default as IcRecommend } from 'public/images/icons/ic_recommend.svg';
 export { default as IcRestaurant } from 'public/images/icons/ic_restaurant.svg';
 export { default as IcRetail } from 'public/images/icons/ic_retail.svg';
+export { default as IcSchedule } from 'public/images/icons/ic_schedule.svg';
 export { default as IcQuickService } from 'public/images/icons/ic_service1.svg';
 export { default as IcSmallBusiness } from 'public/images/icons/ic_small_business.svg';
 export { default as IcStar } from 'public/images/icons/ic_star.svg';

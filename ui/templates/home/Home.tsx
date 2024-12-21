@@ -8,6 +8,7 @@ import {
 } from '~/ui/img-resource/ExIcon';
 import styles from './Home.module.scss';
 
+import HelpingPOS from '@/components/elements/home/HelpingPOS';
 import { Text } from '@/components/ui';
 import { RouteConfig } from '@/constants/routes';
 import { Button } from '@/ui/atoms/button/Button';
@@ -37,7 +38,6 @@ const WorkWithTheBest = dynamic(() =>
   import('~/ui/organisms/work-with-the-best/WorkWithTheBest').then(res => res.WorkWithTheBest),
 );
 
-const HowItWorks = dynamic(() => import('./components/HowItWorks').then(res => res.HowItWorks));
 const SolutionList = dynamic(() =>
   import('./components/SolutionList').then(res => res.SolutionList),
 );
@@ -105,7 +105,8 @@ export const HomeTemplate = ({ title }: { title?: string }) => {
           </div>
         }
       />
-      <HowItWorks />
+      {/* <HowItWorks /> */}
+      <HelpingPOS />
       <MerchantFee />
 
       <CompetitiveAdvantage />

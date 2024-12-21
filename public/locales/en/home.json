@@ -58,5 +58,17 @@
                 "desc": "You can count on us to guide you through every step plus some more."
             }
         ]
+    },
+    "helpingsection": {
+        "helping_section_title": "<span className='text-secondary'>Helping you</span>\n Find the Best POS System and Secure the Best Deal",
+        "helping_section_desc": "BestPOS - point-of-sale experts with 20+ years. We work with the top POS system providers in the market, enabling us to secure unbeatable deals on your behalf.<br/><br/> Let us handle all the work and save you and your business up to 100% on the ideal POS solution. Discover seamless transactions all while growing your business.",
+        "business_review": "Customized Recommendations",
+        "business_review_desc": "After our chat, we will find the perfect point-of-sale solution that matches your needs and business goals",
+        "schedule_a_demo": "Schedule a Demo",
+        "schedule_a_demo_desc": "Our team will be reaching out to you soon to get a better understanding of you and your business' needs",
+        "obtain_pricing": "Exclusive Savings",
+        "obtain_pricing_desc": "Our team will negotiate exclusive deals for you, ensuring competitive pricing and terms that suit your budget and objectives",
+        "final_decision": "Sealed Deal",
+        "final_decision_desc": "When you're ready, we will connect you withy our chosen POS solution. Our role doesn't end here and we continue to provide ongoing guidance and support for your ongoing success."
     }
 }

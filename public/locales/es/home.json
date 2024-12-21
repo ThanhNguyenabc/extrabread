@@ -58,5 +58,15 @@
                 "desc": "You can count on us to guide you through every step plus some more."
             }
         ]
+    },
+    "helpingsection": {
+        "helping_section_title": "Ayudándote a comparar",
+        "helping_section_desc": "Con el conocimiento de nuestros consultores que han estado en el negocio por más de 30 años, te ayudaremos a encontrar el mejor sistema de puntos de venta. Ya seas una empresa grande o pequeña, ¡encontraremos la combinación perfecta para ti!",
+        "business_review": "Revisión comercial inicial",
+        "business_review_desc": "Habla con nuestro consultor profesional de punto de venta sobre tu negocio y todas sus necesidades de puntos de venta. Ellos podrán responder a cualquiera de tus preguntas, comentarios y/o inquietudes.",
+        "schedule_a_demo": "Programe una demostración",
+        "schedule_a_demo_desc": "Recomendaremos y ayudaremos a programar demostraciones in situ o remotas con nuestro equipo y la empresa de punto de venta",
+        "obtain_pricing": "Obtener precios",
+        "obtain_pricing_desc": "Nuestro método de clasificación es una combinación de reseñas en línea, popularidad, comentarios, precios y algunos otros factores."
     }
 }
