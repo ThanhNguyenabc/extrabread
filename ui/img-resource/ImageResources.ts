@@ -1,4 +1,4 @@
-export const DefaultImg = '/images/default-image.webp';
+export const DefaultImg = '/images/placeholder-image.jpg';
 export const BreadMeImg =
   'https://res.cloudinary.com/dgrym3yz3/image/upload/v1685506557/assets/common/extra_bread_uh9hyy.png';
 

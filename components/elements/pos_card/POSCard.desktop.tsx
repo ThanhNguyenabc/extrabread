@@ -5,11 +5,12 @@ import { DefaultImg } from '@/ui/img-resource/ImageResources';
 
 import { Button } from '@/components/ui/button';
 import CustomCircularProgress from '@/components/ui/CustomCircularProgress';
+import useRequestDemoForm from '@/hooks/useRequestDemoForm';
 import { IcCheck, IcChevronRight } from '@/ui/img-resource/ExIcon';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useCallback } from 'react';
 import { twMerge } from 'tailwind-merge';
 import POSCardBusinessType from './POSCardBusinessType';
 import { POSCardProps } from './POSCardTypes';
@@ -19,13 +20,16 @@ const POSCardDesktop = ({
   classname = '',
   priority,
   recommendTagProps,
-  openRequestDemo,
   navigateTo = '',
 }: POSCardProps) => {
   const { t } = useTranslation('pos_systems');
   const { locale } = useTrans();
   const overallRating = data.expert_opinion?.overall;
   const { id, name } = data;
+
+  const { openForm } = useRequestDemoForm();
+
+  const openRequestDemo = useCallback(openForm, []);
 
   return (
     <div

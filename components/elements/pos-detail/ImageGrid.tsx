@@ -19,6 +19,7 @@ const ImageGrid = memo(({ images }: { images?: Array<string> }) => {
       <div className="block" key={`detail-image-${i}`}>
         <Image
           src={images[i] || DefaultImg}
+          draggable={false}
           alt="pos-pic"
           className="w-full object-cover aspect-[3/2] lg:h-full cursor-pointer hover:scale-105 transition rounded-lg"
           width={290}

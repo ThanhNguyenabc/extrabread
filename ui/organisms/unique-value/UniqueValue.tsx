@@ -22,9 +22,6 @@ const Detail = ({ data }: { data: Array<string> }) => {
 };
 
 export const UniqueValue = () => {
-  useEffect(() => {
-    console.log('render unique value');
-  }, []);
   const { t } = useTranslation();
   const items = t('unique.items', { returnObjects: true }) as Array<string> | null;
 

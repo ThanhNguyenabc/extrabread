@@ -15,7 +15,6 @@ const useDrawer = () => {
 
     return () => {
       const index = DrawerListeners.indexOf(setModal);
-      console.log(index);
       if (index > -1) {
         DrawerListeners.splice(index, 1);
       }
@@ -23,7 +22,6 @@ const useDrawer = () => {
   }, [state]);
 
   const openDrawer = (component: ReactElement) => {
-    console.log(DrawerListeners);
     DrawerListeners?.forEach(item => {
       item({
         child: component,

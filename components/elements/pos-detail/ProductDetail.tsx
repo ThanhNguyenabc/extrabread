@@ -24,7 +24,6 @@ export const ProductDetailView = ({ productData }: { productData: ProductDetail 
   const { t } = useTranslation('pos-detail');
   const { openForm } = useRequestDemoForm();
   const { locale } = useLocale();
-  console.log(productData);
 
   if (!productData) {
     return (

@@ -121,7 +121,10 @@ const MenuDrawer = ({
                 type="link"
                 key={item.key}
                 className={styles['header-nav-item']}
-                onClick={() => setCurrentMenu(item.label)}
+                onClick={() => {
+                  if (!item.url) setCurrentMenu(item.label);
+                  else push(item.url);
+                }}
               >
                 <Text strong>{t(item.label)}</Text>
                 <Icon name="chevron-right" />
@@ -171,31 +174,36 @@ const MenuDrawer = ({
               },
             ],
           },
-        ].map(item => (
-          <CSSTransition
-            key={item.key}
-            unmountOnExit
-            in={currentMenu === item.label}
-            timeout={250}
-            classNames={{
-              enter: styles['header-subMenu--enter'],
-              enterActive: styles['header-subMenu--enter-active'],
-              exit: styles['header-subMenu--exit'],
-              exitActive: styles['header-subMenu--exit-active'],
-            }}
-          >
-            <div className={styles['header-subMenu']}>
-              <div>
-                <AntLink onClick={() => setCurrentMenu('')}>
-                  <Icon name="left" />
-                </AntLink>
-                <Heading size="sm">{t(currentMenu)}</Heading>
-              </div>
+        ].map(item => {
+          return (
+            <CSSTransition
+              key={item.key}
+              unmountOnExit
+              in={currentMenu === item.label}
+              timeout={250}
+              classNames={{
+                enter: styles['header-subMenu--enter'],
+                enterActive: styles['header-subMenu--enter-active'],
+                exit: styles['header-subMenu--exit'],
+                exitActive: styles['header-subMenu--exit-active'],
+              }}
+            >
+              <div className={styles['header-subMenu']}>
+                <div>
+                  {item.children && (
+                    <AntLink onClick={() => setCurrentMenu('')}>
+                      <Icon name="left" />
+                    </AntLink>
+                  )}
 
-              {item.children?.[0].label}
-            </div>
-          </CSSTransition>
-        ))}
+                  <Heading size="sm">{t(currentMenu)}</Heading>
+                </div>
+
+                {item.children && item.children?.[0].label}
+              </div>
+            </CSSTransition>
+          );
+        })}
       </div>
     </Drawer>
   );

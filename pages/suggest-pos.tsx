@@ -56,7 +56,6 @@ const SuggestPOSPage = ({ params, seoTag }: { params: SuggestPOSParams; seoTag: 
   const key = `${params.business}-${params.discount}-${params.handheld}-${params.salesystem}-${params.stations}`;
   const { data: suggestProducts } = useSWRImmutable(key, () => getSuggestPOS(params));
 
-  console.log(suggestProducts);
   return (
     <>
       <Seo title={seoTag.title[locale]} description={seoTag.description[locale]} />

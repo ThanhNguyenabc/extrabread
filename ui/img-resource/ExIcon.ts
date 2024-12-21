@@ -36,7 +36,6 @@ export { default as VirtualIcon } from 'public/images/color-icons/virtual.svg';
 export { default as WirelessIcon } from 'public/images/color-icons/wireless.svg';
 export { default as WritingIcon } from 'public/images/color-icons/writing.svg';
 export { default as ZeroProcessingFeesIcon } from 'public/images/color-icons/Zero Processing Fees.svg';
-export { default as LogoFooterIcon } from 'public/images/footer-logo.svg';
 export { default as IcCheckCircle } from 'public/images/icons/check-circle-solid.svg';
 export { default as IcCheck } from 'public/images/icons/check.svg';
 export { default as IcChevronDown } from 'public/images/icons/chevron-down.svg';

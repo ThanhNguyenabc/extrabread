@@ -40,15 +40,6 @@ const SolutionCard = ({ title, description, src, href }: CardProp) => {
   );
 };
 
-const POSCard = ({ title, href }: CardProp) => {
-  return (
-    <Link href={href} className={styles['navigation-pos-card']}>
-      <Text strong>{title}</Text>
-      <Icon size={20} className={styles['navigation-pos-card_arrow']} name="right" />
-    </Link>
-  );
-};
-
 const BusinessCard = ({ title, src, href }: CardProp) => {
   const { t } = useTranslation();
 
@@ -88,22 +79,6 @@ const ProductCard = ({ title, src, href }: CardProp) => {
   );
 };
 
-const ContactUs = () => {
-  const { t } = useTranslation();
-  return (
-    <div className={styles['navigation_pos-menus-footer']}>
-      <Text type="secondary" className="font-14">
-        Request your POS brand
-      </Text>
-      <Space size={4} className="cursor">
-        <Link href={RouteConfig.Contacts}>
-          <Text strong>{t('contact_us')}</Text>
-        </Link>
-        <Icon name="chevron-right" />
-      </Space>
-    </div>
-  );
-};
 export const MENU_ITEMS = [
   {
     key: RouteConfig.Solution,
@@ -162,6 +137,7 @@ export const MENU_ITEMS = [
   {
     key: RouteConfig.POSSystems,
     label: NavigationLabel.Pos_systems,
+    url: RouteConfig.POSSystems,
   },
 ];
 

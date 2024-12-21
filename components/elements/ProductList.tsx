@@ -1,5 +1,3 @@
-import RequestDemoPOS from '@/components/elements/request_demo_pos/RequestDemoPOS';
-import useDrawer from '@/hooks/useDrawer';
 import { CategoryType } from '@/models/bestpos/category_type';
 import { Product } from '@/models/bestpos/product.model';
 import { useTranslation } from 'next-i18next';
@@ -12,14 +10,6 @@ import { Priority, RecommendColorConfig } from './pos_card/POSCardTypes';
 const ProductList = ({ type, data }: { type: string; data: Array<Product> }) => {
   const { t } = useTranslation('pos_systems');
 
-  const { openDrawer, closeDrawer } = useDrawer();
-
-  const requestForm = <RequestDemoPOS onClose={closeDrawer} />;
-
-  const openRedquestForm = () => {
-    openDrawer(requestForm);
-  };
-  
   const renderItems = () => {
     const items: Array<React.ReactElement> = [];
     if (data)
@@ -36,7 +26,6 @@ const ProductList = ({ type, data }: { type: string; data: Array<Product> }) => 
               data={item}
               classname={customClassName}
               priority={priority}
-              openRequestDemo={openRedquestForm}
             />,
           );
           if (index == 2 && type == CategoryType.popular) {
@@ -50,9 +39,7 @@ const ProductList = ({ type, data }: { type: string; data: Array<Product> }) => 
             );
           }
         } else {
-          items.push(
-            <POSCard key={`card-item-${index}`} data={item} openRequestDemo={openRedquestForm} />,
-          );
+          items.push(<POSCard key={`card-item-${index}`} data={item} />);
         }
       });
     return items;

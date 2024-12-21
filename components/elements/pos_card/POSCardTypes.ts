@@ -28,7 +28,6 @@ export interface POSCardProps {
   data: Product;
   classname?: string;
   priority?: Priority;
-  openRequestDemo?: () => void;
   recommendTagProps?: RecommendTagProps;
   navigateTo?: string;
 }

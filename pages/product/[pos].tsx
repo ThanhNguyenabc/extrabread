@@ -8,25 +8,7 @@ import { Seo } from '@/ui/util-components/Seo';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { getSEOTagByProduct } from '../api/configs';
-import { getProductDetail } from '../api/products';
-
-const SlugToKey = {
-  revel: 'revel',
-  rpower: 'rpower',
-  brink: 'brink',
-  toast: 'toast',
-  aldelo: 'aldelo',
-  aloha: 'aloha',
-  exatouch: 'exatouch',
-  ovvi: 'ovvi',
-  lightspeed: 'lightspeed',
-  simphony: 'simphony',
-  touchbistro: 'touchbistro',
-  union: 'union',
-  upserve: 'upserve',
-  'clover-flex': 'cloverflex',
-  'clover-duo': 'clover',
-};
+import { fetchProductList, getProductDetail } from '../api/products';
 
 export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
   const slug = (params?.['pos'] as string) || '';
@@ -50,21 +32,24 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
     props: {
       ...translations,
       productDetail,
-      seoTag,
+      seoTag: seoTag || {},
     },
   };
 };
 
-export const getStaticPaths: GetStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = async () => {
+  const products = await fetchProductList();
+  const paths = products.flatMap(item => {
+    return ['en', 'es'].map(locale => ({
+      params: {
+        pos: item.slug,
+      },
+      locale,
+    }));
+  });
+  console.log('paths:::::', paths);
   return {
-    paths: Object.keys(SlugToKey).flatMap(item => {
-      return ['en', 'es'].map(locale => ({
-        params: {
-          pos: item,
-        },
-        locale,
-      }));
-    }),
+    paths,
     fallback: true,
   };
 };
@@ -78,7 +63,7 @@ const POSDetail = ({
 }) => {
   const { locale } = useLocale();
 
-  const { title, description, image } = seoTag || {};
+  const { title = '', description = '', image = '' } = seoTag || {};
   return (
     <>
       <Seo title={title?.[locale]} description={description?.[locale]} imageFeature={image} />

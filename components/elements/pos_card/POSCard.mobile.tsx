@@ -1,22 +1,25 @@
-import Image from 'next/image';
-import React from 'react';
 import { Button } from '@/components/ui/button';
 import CustomCircularProgress from '@/components/ui/CustomCircularProgress';
 import { getSystemIcon } from '@/helpers';
+import useRequestDemoForm from '@/hooks/useRequestDemoForm';
 import { IcChevronRight, IcLike } from '@/ui/img-resource/ExIcon';
 import { DefaultImg } from '@/ui/img-resource/ImageResources';
 import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
 import Link from 'next/link';
+import React, { useCallback } from 'react';
 import { twMerge } from 'tailwind-merge';
 import POSCardBusinessType from './POSCardBusinessType';
 import { POSCardProps } from './POSCardTypes';
 
-const POSCardMobile = ({ data, priority, classname, navigateTo = '' ,openRequestDemo}: POSCardProps) => {
+const POSCardMobile = ({ data, priority, classname, navigateTo = '' }: POSCardProps) => {
   const overallRating = data.expert_opinion?.overall;
   const { id, name } = data;
-  const { t } = useTranslation("pos_systems");
+  const { t } = useTranslation('pos_systems');
 
+  const { openForm } = useRequestDemoForm();
 
+  const openRequestDemo = useCallback(openForm, []);
   return (
     <div
       className={twMerge(
@@ -84,7 +87,6 @@ const POSCardMobile = ({ data, priority, classname, navigateTo = '' ,openRequest
           >
             {t('request_a_demo')}
           </Button>
-         
         </div>
       </div>
 
