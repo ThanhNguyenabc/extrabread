@@ -17,7 +17,7 @@ export const Alert = () => {
 
       <button onClick={openForm}>
         <Badge className="bg-neutral-900 text-sm border-2 border-neutral-300 font-normal rounded-lg px-3">
-          Opens up the following form
+          Compare POS Systems
           <IcChevronRight />
         </Badge>
       </button>
